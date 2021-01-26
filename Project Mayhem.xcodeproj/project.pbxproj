@@ -7,12 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9D561382259195E600F1695A /* Project_MayhemApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D561381259195E600F1695A /* Project_MayhemApp.swift */; };
 		9D561384259195E600F1695A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D561383259195E600F1695A /* ContentView.swift */; };
 		9D561386259195E700F1695A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D561385259195E700F1695A /* Assets.xcassets */; };
 		9D561389259195E700F1695A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D561388259195E700F1695A /* Preview Assets.xcassets */; };
 		9D561394259195E800F1695A /* Project_MayhemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D561393259195E800F1695A /* Project_MayhemTests.swift */; };
 		9D56139F259195E800F1695A /* Project_MayhemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56139E259195E800F1695A /* Project_MayhemUITests.swift */; };
+		9D5613B8259196CB00F1695A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5613B7259196CB00F1695A /* Main.storyboard */; };
+		9D5613BD259196DE00F1695A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5613BC259196DE00F1695A /* LaunchScreen.storyboard */; };
+		9D56140F2591CFFD00F1695A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56140E2591CFFD00F1695A /* CustomButton.swift */; };
+		9D5614202591D1C300F1695A /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56141F2591D1C300F1695A /* MainScreen.swift */; };
+		9D5614302591DC5400F1695A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56142F2591DC5400F1695A /* AppDelegate.swift */; };
+		9D5614C925928E5500F1695A /* Adoring.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D5613CE2591C7FC00F1695A /* Adoring.otf */; };
+		9D5614CD25928E5E00F1695A /* Lover.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D5613CD2591C7FC00F1695A /* Lover.otf */; };
+		9D5614D125928E6000F1695A /* Invission Pro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D5613CC2591C7FC00F1695A /* Invission Pro.otf */; };
+		9D5614D525928E6300F1695A /* MYRIADPRO-REGULAR.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 9D5613CF2591C7FC00F1695A /* MYRIADPRO-REGULAR.OTF */; };
+		9D5614DE2592A00200F1695A /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5614DD2592A00200F1695A /* Levels.swift */; };
+		9D5614E32592FC5F00F1695A /* CustomButtonOutline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5614E22592FC5F00F1695A /* CustomButtonOutline.swift */; };
+		9D5614E82593153C00F1695A /* chapter1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5614E72593153C00F1695A /* chapter1.swift */; };
+		9D5B42BA259C858100A4F34A /* chapter4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B42B9259C858100A4F34A /* chapter4.swift */; };
+		9D5B42C5259C97FB00A4F34A /* animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B42C4259C97FB00A4F34A /* animations.swift */; };
+		9DEA6A0625948BBA002A8739 /* chapter2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEA6A0525948BBA002A8739 /* chapter2.swift */; };
+		9DEA6A0C259515D8002A8739 /* keyboardTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEA6A0B259515D8002A8739 /* keyboardTemplate.swift */; };
+		9DEA6A112595162B002A8739 /* chapterTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEA6A102595162B002A8739 /* chapterTemplate.swift */; };
+		9DEA6A1725951730002A8739 /* foregroundEventTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEA6A1625951730002A8739 /* foregroundEventTemplate.swift */; };
+		9DEA6A3825972495002A8739 /* chapter3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEA6A3725972495002A8739 /* chapter3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +52,6 @@
 
 /* Begin PBXFileReference section */
 		9D56137E259195E600F1695A /* Project Mayhem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Mayhem.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D561381259195E600F1695A /* Project_MayhemApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_MayhemApp.swift; sourceTree = "<group>"; };
 		9D561383259195E600F1695A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9D561385259195E700F1695A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D561388259195E700F1695A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,6 +62,25 @@
 		9D56139A259195E800F1695A /* Project MayhemUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project MayhemUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D56139E259195E800F1695A /* Project_MayhemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_MayhemUITests.swift; sourceTree = "<group>"; };
 		9D5613A0259195E800F1695A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D5613B7259196CB00F1695A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9D5613BC259196DE00F1695A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9D5613CC2591C7FC00F1695A /* Invission Pro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Invission Pro.otf"; sourceTree = "<group>"; };
+		9D5613CD2591C7FC00F1695A /* Lover.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Lover.otf; sourceTree = "<group>"; };
+		9D5613CE2591C7FC00F1695A /* Adoring.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Adoring.otf; sourceTree = "<group>"; };
+		9D5613CF2591C7FC00F1695A /* MYRIADPRO-REGULAR.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MYRIADPRO-REGULAR.OTF"; sourceTree = "<group>"; };
+		9D56140E2591CFFD00F1695A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		9D56141F2591D1C300F1695A /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		9D56142F2591DC5400F1695A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9D5614DD2592A00200F1695A /* Levels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
+		9D5614E22592FC5F00F1695A /* CustomButtonOutline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonOutline.swift; sourceTree = "<group>"; };
+		9D5614E72593153C00F1695A /* chapter1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter1.swift; sourceTree = "<group>"; };
+		9D5B42B9259C858100A4F34A /* chapter4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter4.swift; sourceTree = "<group>"; };
+		9D5B42C4259C97FB00A4F34A /* animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animations.swift; sourceTree = "<group>"; };
+		9DEA6A0525948BBA002A8739 /* chapter2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter2.swift; sourceTree = "<group>"; };
+		9DEA6A0B259515D8002A8739 /* keyboardTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keyboardTemplate.swift; sourceTree = "<group>"; };
+		9DEA6A102595162B002A8739 /* chapterTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapterTemplate.swift; sourceTree = "<group>"; };
+		9DEA6A1625951730002A8739 /* foregroundEventTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foregroundEventTemplate.swift; sourceTree = "<group>"; };
+		9DEA6A3725972495002A8739 /* chapter3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +131,16 @@
 		9D561380259195E600F1695A /* Project Mayhem */ = {
 			isa = PBXGroup;
 			children = (
-				9D561381259195E600F1695A /* Project_MayhemApp.swift */,
 				9D561383259195E600F1695A /* ContentView.swift */,
 				9D561385259195E700F1695A /* Assets.xcassets */,
+				9D56140E2591CFFD00F1695A /* CustomButton.swift */,
+				9D5614E22592FC5F00F1695A /* CustomButtonOutline.swift */,
+				9D56142F2591DC5400F1695A /* AppDelegate.swift */,
+				9D5613B7259196CB00F1695A /* Main.storyboard */,
+				9D5614242591D2DA00F1695A /* View Controllers */,
+				9DEA6A0A259515B0002A8739 /* Templates */,
+				9D5613CB2591C7F200F1695A /* Fonts */,
+				9D5613BC259196DE00F1695A /* LaunchScreen.storyboard */,
 				9D56138A259195E700F1695A /* Info.plist */,
 				9D561387259195E700F1695A /* Preview Content */,
 			);
@@ -128,6 +171,41 @@
 				9D5613A0259195E800F1695A /* Info.plist */,
 			);
 			path = "Project MayhemUITests";
+			sourceTree = "<group>";
+		};
+		9D5613CB2591C7F200F1695A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9D5613CE2591C7FC00F1695A /* Adoring.otf */,
+				9D5613CD2591C7FC00F1695A /* Lover.otf */,
+				9D5613CC2591C7FC00F1695A /* Invission Pro.otf */,
+				9D5613CF2591C7FC00F1695A /* MYRIADPRO-REGULAR.OTF */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		9D5614242591D2DA00F1695A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9D56141F2591D1C300F1695A /* MainScreen.swift */,
+				9D5614DD2592A00200F1695A /* Levels.swift */,
+				9D5614E72593153C00F1695A /* chapter1.swift */,
+				9DEA6A0525948BBA002A8739 /* chapter2.swift */,
+				9DEA6A3725972495002A8739 /* chapter3.swift */,
+				9D5B42B9259C858100A4F34A /* chapter4.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		9DEA6A0A259515B0002A8739 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				9DEA6A0B259515D8002A8739 /* keyboardTemplate.swift */,
+				9DEA6A1625951730002A8739 /* foregroundEventTemplate.swift */,
+				9D5B42C4259C97FB00A4F34A /* animations.swift */,
+				9DEA6A102595162B002A8739 /* chapterTemplate.swift */,
+			);
+			path = Templates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +313,12 @@
 			files = (
 				9D561389259195E700F1695A /* Preview Assets.xcassets in Resources */,
 				9D561386259195E700F1695A /* Assets.xcassets in Resources */,
+				9D5614D525928E6300F1695A /* MYRIADPRO-REGULAR.OTF in Resources */,
+				9D5614CD25928E5E00F1695A /* Lover.otf in Resources */,
+				9D5614C925928E5500F1695A /* Adoring.otf in Resources */,
+				9D5614D125928E6000F1695A /* Invission Pro.otf in Resources */,
+				9D5613BD259196DE00F1695A /* LaunchScreen.storyboard in Resources */,
+				9D5613B8259196CB00F1695A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,8 +343,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D5614DE2592A00200F1695A /* Levels.swift in Sources */,
+				9D5614E32592FC5F00F1695A /* CustomButtonOutline.swift in Sources */,
+				9DEA6A0625948BBA002A8739 /* chapter2.swift in Sources */,
+				9D5614202591D1C300F1695A /* MainScreen.swift in Sources */,
 				9D561384259195E600F1695A /* ContentView.swift in Sources */,
-				9D561382259195E600F1695A /* Project_MayhemApp.swift in Sources */,
+				9DEA6A0C259515D8002A8739 /* keyboardTemplate.swift in Sources */,
+				9D5614302591DC5400F1695A /* AppDelegate.swift in Sources */,
+				9DEA6A3825972495002A8739 /* chapter3.swift in Sources */,
+				9DEA6A112595162B002A8739 /* chapterTemplate.swift in Sources */,
+				9D56140F2591CFFD00F1695A /* CustomButton.swift in Sources */,
+				9D5B42C5259C97FB00A4F34A /* animations.swift in Sources */,
+				9DEA6A1725951730002A8739 /* foregroundEventTemplate.swift in Sources */,
+				9D5B42BA259C858100A4F34A /* chapter4.swift in Sources */,
+				9D5614E82593153C00F1695A /* chapter1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +515,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Project Mayhem/Preview Content\"";
+				DEVELOPMENT_TEAM = 68L233566P;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Project Mayhem/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -440,6 +537,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Project Mayhem/Preview Content\"";
+				DEVELOPMENT_TEAM = 68L233566P;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Project Mayhem/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
