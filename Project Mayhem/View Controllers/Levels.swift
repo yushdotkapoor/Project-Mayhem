@@ -11,6 +11,10 @@ let game = UserDefaults.standard
 
 class Levels: UIViewController {
     
+    @IBOutlet weak var chap10: CustomButtonOutline!
+    @IBOutlet weak var chap9: CustomButtonOutline!
+    @IBOutlet weak var chap8: CustomButtonOutline!
+    @IBOutlet weak var chap7: CustomButtonOutline!
     @IBOutlet weak var chap6: CustomButtonOutline!
     @IBOutlet weak var chap5: CustomButtonOutline!
     @IBOutlet weak var chap4: CustomButtonOutline!
@@ -24,6 +28,10 @@ class Levels: UIViewController {
     @IBOutlet weak var chap4Center: NSLayoutConstraint!
     @IBOutlet weak var chap5Center: NSLayoutConstraint!
     @IBOutlet weak var chap6Center: NSLayoutConstraint!
+    @IBOutlet weak var chap7Center: NSLayoutConstraint!
+    @IBOutlet weak var chap8Center: NSLayoutConstraint!
+    @IBOutlet weak var chap9Center: NSLayoutConstraint!
+    @IBOutlet weak var chap10Center: NSLayoutConstraint!
     
     var del = 0.5
     
@@ -31,27 +39,59 @@ class Levels: UIViewController {
            super.viewDidLoad()
         del = 0.5
         requestNotificationAuthorization()
+        
+        let controllers = getData(string: "ViewController") as! [UIViewController]
+        
+        for c in controllers {
+            NotificationCenter.default.removeObserver(c)
+        }
+        
+        //reset()
+    }
+    
+    func reset() {
+        let reset = getData(string: "String") as! [String]
+        
+        for r in reset {
+            game.setValue(false, forKey: r)
+        }
+    }
+    
+    func getData(string: String) -> [Any] {
+        if string == "Center" {
+        return [chap1Center, chap2Center, chap3Center, chap4Center, chap5Center, chap6Center, chap7Center, chap8Center, chap9Center, chap10Center] as [NSLayoutConstraint]
+        }
+        else if string == "String" {
+            return ["chap1", "chap2", "chap3", "chap4", "chap5", "chap6", "chap7", "chap8", "chap9", "chap10"] as [String]
+        }
+        else if string == "ViewController" {
+            return [chapter1(), chapter2(), chapter3(), chapter4(), chapter5(), chapter6(), chapter7(), chapter8(), chapter9(), chapter10()] as [UIViewController]
+        }
+        else {
+            return [chap1, chap2, chap3, chap4, chap5, chap6, chap7, chap8, chap9, chap10] as [CustomButtonOutline]
+        }
     }
     
     func colorize() {
-        let array = ["chap1", "chap2", "chap3", "chap4", "chap5", "chap6"]
-        let arrayButtons = [chap1, chap2, chap3, chap4, chap5, chap6]
+        let array = getData(string: "String") as! [String]
+        
+        let arrayButtons = getData(string: "Buttons") as! [CustomButtonOutline]
         var i = 0
         
         for button in arrayButtons {
             if button != chap1 {
-            button?.setupButton(color: UIColor.darkGray)
-            button?.isEnabled = false
+                button.setupButton(color: UIColor.darkGray)
+                button.isEnabled = false
             }
         }
         
         for chapter in array {
             let completion = game.bool(forKey: chapter)
             if completion {
-                arrayButtons[i]?.setupButton(color: UIColor.green)
-                arrayButtons[i]?.isEnabled = true
-                arrayButtons[i+1]?.setupButton(color: UIColor.white)
-                arrayButtons[i+1]?.isEnabled = true
+                arrayButtons[i].setupButton(color: UIColor.green)
+                arrayButtons[i].isEnabled = true
+                arrayButtons[i+1].setupButton(color: UIColor.white)
+                arrayButtons[i+1].isEnabled = true
             }
             i += 1
         }
@@ -65,22 +105,22 @@ class Levels: UIViewController {
             self.view.layoutIfNeeded()
         }, completion: nil)
         
-        animate(constraint: chap1Center)
-        animate(constraint: chap2Center)
-        animate(constraint: chap3Center)
-        animate(constraint: chap4Center)
-        animate(constraint: chap5Center)
-        animate(constraint: chap6Center)
+        let centers = getData(string: "Center")
+        
+        for button in centers {
+            animate(constraint: button as! NSLayoutConstraint)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        chap1Center.constant -= view.bounds.width
-        chap2Center.constant -= view.bounds.width
-        chap3Center.constant -= view.bounds.width
-        chap4Center.constant -= view.bounds.width
-        chap5Center.constant -= view.bounds.width
-        chap6Center.constant -= view.bounds.width
+        
+        let centers = getData(string: "Center")
+        
+        for button in centers {
+            let b = button as! NSLayoutConstraint
+            b.constant -= view.bounds.width
+        }
     }
     
     @IBAction func chap1(_ sender: Any) {
@@ -122,7 +162,6 @@ class Levels: UIViewController {
         UIView.animate(withDuration: 0.5, delay: del, options: .curveEaseOut, animations: {
             constraint.constant += self.view.bounds.width
             self.view.layoutIfNeeded()
-            print(self.chap1.bounds)
         }, completion: nil)
         del += 0.1
     }
@@ -137,24 +176,5 @@ func requestNotificationAuthorization() {
     }
 }
 
-extension UIViewController {
-    func alert(title: String, message: String, actionTitle: String) {
-        
-    let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: actionTitle, style: .cancel, handler: nil)
-        alertController.addAction(defaultAction)
-            self.present(alertController, animated: true, completion: nil)
-    }
-    
-    func alert(title: String, message: String, actionTitle: String, actions: @escaping () -> Void) {
-        
-    let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: actionTitle, style: .cancel, handler: { action in actions()})
-        
-        alertController.addAction(defaultAction)
-            self.present(alertController, animated: true, completion: nil)
-    }
-    
-    
-}
+
 

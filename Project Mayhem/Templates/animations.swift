@@ -36,7 +36,42 @@ extension UIView {
             }
     }
     
+    func flickerIn(iterations:Int) {
+        var i = iterations + 10
+        if i > 10 {
+            self.alpha = 0.0
+            let last = 1.0 / (2.0 * Double(i))
+            let dur = Double.random(in: 0..<last)
+            DispatchQueue.main.asyncAfter(deadline: .now() + dur) {
+                self.alpha = 1.0
+                i -= 11
+                DispatchQueue.main.asyncAfter(deadline: .now() + dur) {
+                    self.flickerIn(iterations: i)
+                }
+            }
+        }
+    }
+    
+    func flickerIn() {
+        let i = 10
+        flickerIn(iterations: i)
+    }
+    
+    
+    func flickerOut(iterations:Int) {
+        var i = iterations
+        if i > 0 {
+            self.alpha = 1.0
+            let dur = Double.random(in: 0..<0.2)
+            DispatchQueue.main.asyncAfter(deadline: .now() + dur) {
+                self.alpha = 0.0
+                i -= 1
+                DispatchQueue.main.asyncAfter(deadline: .now() + dur) {
+                    self.flickerOut(iterations: i)
+                }
+            }
+        }
+    }
     
 }
-
 

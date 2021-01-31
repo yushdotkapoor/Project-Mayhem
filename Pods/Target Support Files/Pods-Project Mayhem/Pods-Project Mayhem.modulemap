@@ -1,0 +1,6 @@
+framework module Pods_Project_Mayhem {
+  umbrella header "Pods-Project Mayhem-umbrella.h"
+
+  export *
+  module * { export * }
+}

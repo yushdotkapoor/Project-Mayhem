@@ -3,10 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E2C78F7A0FA24F44631CEEA /* Pods_Project_Mayhem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD1F1D9679D55448FFC23C4 /* Pods_Project_Mayhem.framework */; };
+		76C8679125D64E40ADBCC9F7 /* Pods_Project_Mayhem_Project_MayhemUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85EE15C35486E22CC94021A /* Pods_Project_Mayhem_Project_MayhemUITests.framework */; };
+		996B405403970228E743082D /* Pods_Project_MayhemTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA19177C2993D8BC26D9AC75 /* Pods_Project_MayhemTests.framework */; };
+		9D0C536225C4DB3D000EE579 /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9D0C53A825C4EE13000EE579 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D0C53A725C4EE13000EE579 /* AudioKit */; };
+		9D0C543D25C50F97000EE579 /* audioKitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C543C25C50F97000EE579 /* audioKitHelpers.swift */; };
+		9D0C544125C51AA7000EE579 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C544025C51AA7000EE579 /* UIViewControllerExtensions.swift */; };
 		9D561384259195E600F1695A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D561383259195E600F1695A /* ContentView.swift */; };
 		9D561386259195E700F1695A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D561385259195E700F1695A /* Assets.xcassets */; };
 		9D561389259195E700F1695A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D561388259195E700F1695A /* Preview Assets.xcassets */; };
@@ -26,11 +33,18 @@
 		9D5614E82593153C00F1695A /* chapter1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5614E72593153C00F1695A /* chapter1.swift */; };
 		9D5B42BA259C858100A4F34A /* chapter4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B42B9259C858100A4F34A /* chapter4.swift */; };
 		9D5B42C5259C97FB00A4F34A /* animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B42C4259C97FB00A4F34A /* animations.swift */; };
+		9DBBF73025C279310022FC63 /* chapter5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBBF72F25C279310022FC63 /* chapter5.swift */; };
 		9DEA6A0625948BBA002A8739 /* chapter2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEA6A0525948BBA002A8739 /* chapter2.swift */; };
 		9DEA6A0C259515D8002A8739 /* keyboardTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEA6A0B259515D8002A8739 /* keyboardTemplate.swift */; };
 		9DEA6A112595162B002A8739 /* chapterTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEA6A102595162B002A8739 /* chapterTemplate.swift */; };
 		9DEA6A1725951730002A8739 /* foregroundEventTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEA6A1625951730002A8739 /* foregroundEventTemplate.swift */; };
 		9DEA6A3825972495002A8739 /* chapter3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEA6A3725972495002A8739 /* chapter3.swift */; };
+		9DEB282625C54C3A00E3F102 /* chapter6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB282525C54C3A00E3F102 /* chapter6.swift */; };
+		9DEB282C25C5D78700E3F102 /* chapter7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB282B25C5D78700E3F102 /* chapter7.swift */; };
+		9DEB283025C5D7D000E3F102 /* chapter8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB282F25C5D7D000E3F102 /* chapter8.swift */; };
+		9DEB283425C5D7DF00E3F102 /* chapter9.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB283325C5D7DF00E3F102 /* chapter9.swift */; };
+		9DEB283825C5D7EE00E3F102 /* chapter10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB283725C5D7EE00E3F102 /* chapter10.swift */; };
+		9DEB283F25C6095000E3F102 /* stringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB283E25C6095000E3F102 /* stringExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +64,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9D0C535E25C4DB39000EE579 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9D0C536225C4DB3D000EE579 /* (null) in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		3DD1F1D9679D55448FFC23C4 /* Pods_Project_Mayhem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_Mayhem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DDC00304681805AA8BFE16B /* Pods-Project Mayhem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Mayhem.release.xcconfig"; path = "Target Support Files/Pods-Project Mayhem/Pods-Project Mayhem.release.xcconfig"; sourceTree = "<group>"; };
+		99C48B6A29085A842D6E6AF6 /* Pods-Project Mayhem-Project MayhemUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Mayhem-Project MayhemUITests.release.xcconfig"; path = "Target Support Files/Pods-Project Mayhem-Project MayhemUITests/Pods-Project Mayhem-Project MayhemUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9D0C535A25C4DB21000EE579 /* AudioKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AudioKit; path = ../../Downloads/AudioKit; sourceTree = "<group>"; };
+		9D0C535B25C4DB39000EE579 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = "../../Downloads/AudioKit/AudioKit.xcframework/ios-arm64_armv7/AudioKit.framework"; sourceTree = "<group>"; };
+		9D0C543C25C50F97000EE579 /* audioKitHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audioKitHelpers.swift; sourceTree = "<group>"; };
+		9D0C544025C51AA7000EE579 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		9D56137E259195E600F1695A /* Project Mayhem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Mayhem.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D561383259195E600F1695A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9D561385259195E700F1695A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,11 +111,24 @@
 		9D5614E72593153C00F1695A /* chapter1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter1.swift; sourceTree = "<group>"; };
 		9D5B42B9259C858100A4F34A /* chapter4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter4.swift; sourceTree = "<group>"; };
 		9D5B42C4259C97FB00A4F34A /* animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animations.swift; sourceTree = "<group>"; };
+		9DBBF72F25C279310022FC63 /* chapter5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter5.swift; sourceTree = "<group>"; };
 		9DEA6A0525948BBA002A8739 /* chapter2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter2.swift; sourceTree = "<group>"; };
 		9DEA6A0B259515D8002A8739 /* keyboardTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keyboardTemplate.swift; sourceTree = "<group>"; };
 		9DEA6A102595162B002A8739 /* chapterTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapterTemplate.swift; sourceTree = "<group>"; };
 		9DEA6A1625951730002A8739 /* foregroundEventTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foregroundEventTemplate.swift; sourceTree = "<group>"; };
 		9DEA6A3725972495002A8739 /* chapter3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter3.swift; sourceTree = "<group>"; };
+		9DEB282525C54C3A00E3F102 /* chapter6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter6.swift; sourceTree = "<group>"; };
+		9DEB282B25C5D78700E3F102 /* chapter7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter7.swift; sourceTree = "<group>"; };
+		9DEB282F25C5D7D000E3F102 /* chapter8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter8.swift; sourceTree = "<group>"; };
+		9DEB283325C5D7DF00E3F102 /* chapter9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter9.swift; sourceTree = "<group>"; };
+		9DEB283725C5D7EE00E3F102 /* chapter10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter10.swift; sourceTree = "<group>"; };
+		9DEB283E25C6095000E3F102 /* stringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stringExtensions.swift; sourceTree = "<group>"; };
+		A85EE15C35486E22CC94021A /* Pods_Project_Mayhem_Project_MayhemUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_Mayhem_Project_MayhemUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABED7CDB4229742E6FEF7134 /* Pods-Project MayhemTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project MayhemTests.release.xcconfig"; path = "Target Support Files/Pods-Project MayhemTests/Pods-Project MayhemTests.release.xcconfig"; sourceTree = "<group>"; };
+		BE26DA8EA970DBADE6E35441 /* Pods-Project MayhemTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project MayhemTests.debug.xcconfig"; path = "Target Support Files/Pods-Project MayhemTests/Pods-Project MayhemTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C406F0BE2B71DDB27F5FD965 /* Pods-Project Mayhem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Mayhem.debug.xcconfig"; path = "Target Support Files/Pods-Project Mayhem/Pods-Project Mayhem.debug.xcconfig"; sourceTree = "<group>"; };
+		E4628540A99DB5EC6AC5EDDB /* Pods-Project Mayhem-Project MayhemUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Mayhem-Project MayhemUITests.debug.xcconfig"; path = "Target Support Files/Pods-Project Mayhem-Project MayhemUITests/Pods-Project Mayhem-Project MayhemUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FA19177C2993D8BC26D9AC75 /* Pods_Project_MayhemTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_MayhemTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +136,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D0C53A825C4EE13000EE579 /* AudioKit in Frameworks */,
+				2E2C78F7A0FA24F44631CEEA /* Pods_Project_Mayhem.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				996B405403970228E743082D /* Pods_Project_MayhemTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,12 +153,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76C8679125D64E40ADBCC9F7 /* Pods_Project_Mayhem_Project_MayhemUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		686C6C4E28FB66CABEEB59D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D0C535B25C4DB39000EE579 /* AudioKit.framework */,
+				9D0C535A25C4DB21000EE579 /* AudioKit */,
+				3DD1F1D9679D55448FFC23C4 /* Pods_Project_Mayhem.framework */,
+				A85EE15C35486E22CC94021A /* Pods_Project_Mayhem_Project_MayhemUITests.framework */,
+				FA19177C2993D8BC26D9AC75 /* Pods_Project_MayhemTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		90E02D21C2433C4DDF373F30 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C406F0BE2B71DDB27F5FD965 /* Pods-Project Mayhem.debug.xcconfig */,
+				5DDC00304681805AA8BFE16B /* Pods-Project Mayhem.release.xcconfig */,
+				E4628540A99DB5EC6AC5EDDB /* Pods-Project Mayhem-Project MayhemUITests.debug.xcconfig */,
+				99C48B6A29085A842D6E6AF6 /* Pods-Project Mayhem-Project MayhemUITests.release.xcconfig */,
+				BE26DA8EA970DBADE6E35441 /* Pods-Project MayhemTests.debug.xcconfig */,
+				ABED7CDB4229742E6FEF7134 /* Pods-Project MayhemTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9D0C543B25C50F79000EE579 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9D0C543C25C50F97000EE579 /* audioKitHelpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		9D561375259195E600F1695A = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +200,8 @@
 				9D561392259195E800F1695A /* Project MayhemTests */,
 				9D56139D259195E800F1695A /* Project MayhemUITests */,
 				9D56137F259195E600F1695A /* Products */,
+				90E02D21C2433C4DDF373F30 /* Pods */,
+				686C6C4E28FB66CABEEB59D1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +224,7 @@
 				9D5614E22592FC5F00F1695A /* CustomButtonOutline.swift */,
 				9D56142F2591DC5400F1695A /* AppDelegate.swift */,
 				9D5613B7259196CB00F1695A /* Main.storyboard */,
+				9D0C543B25C50F79000EE579 /* Helpers */,
 				9D5614242591D2DA00F1695A /* View Controllers */,
 				9DEA6A0A259515B0002A8739 /* Templates */,
 				9D5613CB2591C7F200F1695A /* Fonts */,
@@ -193,6 +281,12 @@
 				9DEA6A0525948BBA002A8739 /* chapter2.swift */,
 				9DEA6A3725972495002A8739 /* chapter3.swift */,
 				9D5B42B9259C858100A4F34A /* chapter4.swift */,
+				9DBBF72F25C279310022FC63 /* chapter5.swift */,
+				9DEB282525C54C3A00E3F102 /* chapter6.swift */,
+				9DEB283725C5D7EE00E3F102 /* chapter10.swift */,
+				9DEB282B25C5D78700E3F102 /* chapter7.swift */,
+				9DEB282F25C5D7D000E3F102 /* chapter8.swift */,
+				9DEB283325C5D7DF00E3F102 /* chapter9.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -202,7 +296,9 @@
 			children = (
 				9DEA6A0B259515D8002A8739 /* keyboardTemplate.swift */,
 				9DEA6A1625951730002A8739 /* foregroundEventTemplate.swift */,
+				9DEB283E25C6095000E3F102 /* stringExtensions.swift */,
 				9D5B42C4259C97FB00A4F34A /* animations.swift */,
+				9D0C544025C51AA7000EE579 /* UIViewControllerExtensions.swift */,
 				9DEA6A102595162B002A8739 /* chapterTemplate.swift */,
 			);
 			path = Templates;
@@ -215,15 +311,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D5613A3259195E800F1695A /* Build configuration list for PBXNativeTarget "Project Mayhem" */;
 			buildPhases = (
+				E49A3200C02911184E9E32CC /* [CP] Check Pods Manifest.lock */,
 				9D56137A259195E600F1695A /* Sources */,
 				9D56137B259195E600F1695A /* Frameworks */,
 				9D56137C259195E600F1695A /* Resources */,
+				9D0C535E25C4DB39000EE579 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Project Mayhem";
+			packageProductDependencies = (
+				9D0C53A725C4EE13000EE579 /* AudioKit */,
+			);
 			productName = "Project Mayhem";
 			productReference = 9D56137E259195E600F1695A /* Project Mayhem.app */;
 			productType = "com.apple.product-type.application";
@@ -232,6 +333,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D5613A6259195E800F1695A /* Build configuration list for PBXNativeTarget "Project MayhemTests" */;
 			buildPhases = (
+				82AE2A8FFC8CB361BA2742DC /* [CP] Check Pods Manifest.lock */,
 				9D56138B259195E800F1695A /* Sources */,
 				9D56138C259195E800F1695A /* Frameworks */,
 				9D56138D259195E800F1695A /* Resources */,
@@ -250,6 +352,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D5613A9259195E800F1695A /* Build configuration list for PBXNativeTarget "Project MayhemUITests" */;
 			buildPhases = (
+				226275A81363612742FE7189 /* [CP] Check Pods Manifest.lock */,
 				9D561396259195E800F1695A /* Sources */,
 				9D561397259195E800F1695A /* Frameworks */,
 				9D561398259195E800F1695A /* Resources */,
@@ -295,6 +398,9 @@
 				Base,
 			);
 			mainGroup = 9D561375259195E600F1695A;
+			packageReferences = (
+				9D0C53A625C4EE13000EE579 /* XCRemoteSwiftPackageReference "AudioKit" */,
+			);
 			productRefGroup = 9D56137F259195E600F1695A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -338,23 +444,101 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		226275A81363612742FE7189 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Project Mayhem-Project MayhemUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82AE2A8FFC8CB361BA2742DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Project MayhemTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E49A3200C02911184E9E32CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Project Mayhem-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9D56137A259195E600F1695A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9D5614DE2592A00200F1695A /* Levels.swift in Sources */,
+				9DEB283425C5D7DF00E3F102 /* chapter9.swift in Sources */,
+				9D0C544125C51AA7000EE579 /* UIViewControllerExtensions.swift in Sources */,
+				9DBBF73025C279310022FC63 /* chapter5.swift in Sources */,
 				9D5614E32592FC5F00F1695A /* CustomButtonOutline.swift in Sources */,
+				9DEB282625C54C3A00E3F102 /* chapter6.swift in Sources */,
 				9DEA6A0625948BBA002A8739 /* chapter2.swift in Sources */,
+				9DEB282C25C5D78700E3F102 /* chapter7.swift in Sources */,
 				9D5614202591D1C300F1695A /* MainScreen.swift in Sources */,
 				9D561384259195E600F1695A /* ContentView.swift in Sources */,
 				9DEA6A0C259515D8002A8739 /* keyboardTemplate.swift in Sources */,
 				9D5614302591DC5400F1695A /* AppDelegate.swift in Sources */,
+				9DEB283F25C6095000E3F102 /* stringExtensions.swift in Sources */,
 				9DEA6A3825972495002A8739 /* chapter3.swift in Sources */,
 				9DEA6A112595162B002A8739 /* chapterTemplate.swift in Sources */,
+				9DEB283825C5D7EE00E3F102 /* chapter10.swift in Sources */,
 				9D56140F2591CFFD00F1695A /* CustomButton.swift in Sources */,
 				9D5B42C5259C97FB00A4F34A /* animations.swift in Sources */,
 				9DEA6A1725951730002A8739 /* foregroundEventTemplate.swift in Sources */,
+				9DEB283025C5D7D000E3F102 /* chapter8.swift in Sources */,
+				9D0C543D25C50F97000EE579 /* audioKitHelpers.swift in Sources */,
 				9D5B42BA259C858100A4F34A /* chapter4.swift in Sources */,
 				9D5614E82593153C00F1695A /* chapter1.swift in Sources */,
 			);
@@ -510,6 +694,7 @@
 		};
 		9D5613A4259195E800F1695A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C406F0BE2B71DDB27F5FD965 /* Pods-Project Mayhem.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -526,12 +711,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YushRajKapoor.Project-Mayhem";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		9D5613A5259195E800F1695A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DDC00304681805AA8BFE16B /* Pods-Project Mayhem.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -548,12 +734,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.YushRajKapoor.Project-Mayhem";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		9D5613A7259195E800F1695A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE26DA8EA970DBADE6E35441 /* Pods-Project MayhemTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -575,6 +762,7 @@
 		};
 		9D5613A8259195E800F1695A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABED7CDB4229742E6FEF7134 /* Pods-Project MayhemTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -596,6 +784,7 @@
 		};
 		9D5613AA259195E800F1695A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4628540A99DB5EC6AC5EDDB /* Pods-Project Mayhem-Project MayhemUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -615,6 +804,7 @@
 		};
 		9D5613AB259195E800F1695A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99C48B6A29085A842D6E6AF6 /* Pods-Project Mayhem-Project MayhemUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -672,6 +862,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9D0C53A625C4EE13000EE579 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKit";
+			requirement = {
+				branch = "v5-main";
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9D0C53A725C4EE13000EE579 /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D0C53A625C4EE13000EE579 /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9D561376259195E600F1695A /* Project object */;
 }

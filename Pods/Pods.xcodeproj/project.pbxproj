@@ -1,0 +1,755 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A2D8D1FDDFC0739170781C13797122E /* Pods-Project Mayhem-Project MayhemUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C698DC7A37F96D15B11C19908A694C8A /* Pods-Project Mayhem-Project MayhemUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4A59CC94E980A6EFAFA63A1597F7126C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		5C1761659D3ABB92F05EAA9FA80DECF0 /* Pods-Project MayhemTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 12B16B10BBC2AD893CE9EE064CEA5017 /* Pods-Project MayhemTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72E34587DAD41885D8EAA46515803004 /* Pods-Project Mayhem-Project MayhemUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA3B8CE9FC9DA7FB012D5E6280C87B9 /* Pods-Project Mayhem-Project MayhemUITests-dummy.m */; };
+		99957B0A86C7FFF97D78EEE9CB762D96 /* Pods-Project Mayhem-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D9C4DA25DD8107D37430BCA0953817 /* Pods-Project Mayhem-dummy.m */; };
+		99C5C5179706E5428691C948054A953F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		A2C3AC559BC57106F30EA3D759EE762A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		CEF44339A2070D708422D85142FC2D6C /* Pods-Project Mayhem-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 369CE79636372933AA731F1FEE4094D4 /* Pods-Project Mayhem-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FB3FCC340A676E3135A3284435071004 /* Pods-Project MayhemTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A2003A52465F08073E951CEC8850DD /* Pods-Project MayhemTests-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		07BDD3C8B26457417C4B09C971F54B0D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7B0D1E38A8A4FFF04BBC3A463D86F1A;
+			remoteInfo = "Pods-Project Mayhem";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		12B16B10BBC2AD893CE9EE064CEA5017 /* Pods-Project MayhemTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Project MayhemTests-umbrella.h"; sourceTree = "<group>"; };
+		1BED7B2EAFB6D46D449455F6D64200FC /* Pods-Project Mayhem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Project Mayhem.release.xcconfig"; sourceTree = "<group>"; };
+		236CEBABCAC3CE81AF8383578DCFA8F7 /* Pods-Project Mayhem-Project MayhemUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Project Mayhem-Project MayhemUITests-Info.plist"; sourceTree = "<group>"; };
+		2A581CCCA874FB50E2638D5B7FF69D4D /* Pods_Project_MayhemTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Project_MayhemTests.framework; path = "Pods-Project MayhemTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3599E5FB20DCD50DB44DD3194BF981A0 /* Pods-Project Mayhem-Project MayhemUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Project Mayhem-Project MayhemUITests.modulemap"; sourceTree = "<group>"; };
+		369CE79636372933AA731F1FEE4094D4 /* Pods-Project Mayhem-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Project Mayhem-umbrella.h"; sourceTree = "<group>"; };
+		378F0955005A5A3F227C1BFB015618F2 /* Pods-Project Mayhem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Project Mayhem.debug.xcconfig"; sourceTree = "<group>"; };
+		44552C7799D5AE5CA690DB6D31541750 /* Pods-Project MayhemTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Project MayhemTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		6898EE7D5949CBBF896989980DA662EB /* Pods_Project_Mayhem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Project_Mayhem.framework; path = "Pods-Project Mayhem.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		75062FEA4A85D633DB114FEBD1F3A1E3 /* Pods-Project Mayhem-Project MayhemUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Project Mayhem-Project MayhemUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		752F6070817B1F6F8CA1E05A4C6DD590 /* Pods-Project Mayhem-Project MayhemUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Project Mayhem-Project MayhemUITests.release.xcconfig"; sourceTree = "<group>"; };
+		75A7CC39EC76D57EF42DDBE37B82E43D /* Pods-Project Mayhem-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Project Mayhem-acknowledgements.plist"; sourceTree = "<group>"; };
+		7BA3B8CE9FC9DA7FB012D5E6280C87B9 /* Pods-Project Mayhem-Project MayhemUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Project Mayhem-Project MayhemUITests-dummy.m"; sourceTree = "<group>"; };
+		7E98999EA069638BC93F016986A532DC /* Pods-Project MayhemTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Project MayhemTests.release.xcconfig"; sourceTree = "<group>"; };
+		86DEBCDA93809E253717A7461BBEACFB /* Pods-Project Mayhem-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Project Mayhem-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8BC43FF61D87144681E3B761D86C35B2 /* Pods_Project_Mayhem_Project_MayhemUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Project_Mayhem_Project_MayhemUITests.framework; path = "Pods-Project Mayhem-Project MayhemUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F6CC8EAB7824EDACE448298502DD944 /* Pods-Project Mayhem-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Project Mayhem-Info.plist"; sourceTree = "<group>"; };
+		A78A2FA54F1C2CE88DA7FCCCE0B82BFB /* Pods-Project Mayhem-Project MayhemUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Project Mayhem-Project MayhemUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A9C26ED9BAD3CA467CD162BB7D0DC9B0 /* Pods-Project MayhemTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Project MayhemTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B9D9C4DA25DD8107D37430BCA0953817 /* Pods-Project Mayhem-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Project Mayhem-dummy.m"; sourceTree = "<group>"; };
+		B9F0C9ABD2E3C71F5783C94F19CC465D /* Pods-Project MayhemTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Project MayhemTests.modulemap"; sourceTree = "<group>"; };
+		C00F5790AF18A9FE7DF08A44B4CF81A2 /* Pods-Project Mayhem-Project MayhemUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Project Mayhem-Project MayhemUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C698DC7A37F96D15B11C19908A694C8A /* Pods-Project Mayhem-Project MayhemUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Project Mayhem-Project MayhemUITests-umbrella.h"; sourceTree = "<group>"; };
+		D4A2003A52465F08073E951CEC8850DD /* Pods-Project MayhemTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Project MayhemTests-dummy.m"; sourceTree = "<group>"; };
+		DCAA94B362D62DBE6B114810EBF9FA9E /* Pods-Project MayhemTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Project MayhemTests-Info.plist"; sourceTree = "<group>"; };
+		E3455CBD2F17E1A61854E8FCDBA8E068 /* Pods-Project Mayhem.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Project Mayhem.modulemap"; sourceTree = "<group>"; };
+		FC3277C4C55B4FD17981EB98E19D3B83 /* Pods-Project MayhemTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Project MayhemTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		402EADE59409625A13A15DEFC34D2DD5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99C5C5179706E5428691C948054A953F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61E51E02D08E4B8F40B48E2FA79E862B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2C3AC559BC57106F30EA3D759EE762A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64BA8565FEEB18504C5BFAC3EE33F9DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A59CC94E980A6EFAFA63A1597F7126C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1132328AD43BF1DCECFCAC72CAC85B28 /* Pods-Project Mayhem-Project MayhemUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3599E5FB20DCD50DB44DD3194BF981A0 /* Pods-Project Mayhem-Project MayhemUITests.modulemap */,
+				C00F5790AF18A9FE7DF08A44B4CF81A2 /* Pods-Project Mayhem-Project MayhemUITests-acknowledgements.markdown */,
+				75062FEA4A85D633DB114FEBD1F3A1E3 /* Pods-Project Mayhem-Project MayhemUITests-acknowledgements.plist */,
+				7BA3B8CE9FC9DA7FB012D5E6280C87B9 /* Pods-Project Mayhem-Project MayhemUITests-dummy.m */,
+				236CEBABCAC3CE81AF8383578DCFA8F7 /* Pods-Project Mayhem-Project MayhemUITests-Info.plist */,
+				C698DC7A37F96D15B11C19908A694C8A /* Pods-Project Mayhem-Project MayhemUITests-umbrella.h */,
+				A78A2FA54F1C2CE88DA7FCCCE0B82BFB /* Pods-Project Mayhem-Project MayhemUITests.debug.xcconfig */,
+				752F6070817B1F6F8CA1E05A4C6DD590 /* Pods-Project Mayhem-Project MayhemUITests.release.xcconfig */,
+			);
+			name = "Pods-Project Mayhem-Project MayhemUITests";
+			path = "Target Support Files/Pods-Project Mayhem-Project MayhemUITests";
+			sourceTree = "<group>";
+		};
+		422B3D527A0A14BBADC9FC7E40287A6D /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D3442C9A99CAFBBEF0756FF4695AA7FB /* Pods-Project Mayhem */,
+				1132328AD43BF1DCECFCAC72CAC85B28 /* Pods-Project Mayhem-Project MayhemUITests */,
+				DE690813A7FA5A51B7412C6C97F96AC5 /* Pods-Project MayhemTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		6C5C3A1BB5E6506FD33BCD2489187C38 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6898EE7D5949CBBF896989980DA662EB /* Pods_Project_Mayhem.framework */,
+				8BC43FF61D87144681E3B761D86C35B2 /* Pods_Project_Mayhem_Project_MayhemUITests.framework */,
+				2A581CCCA874FB50E2638D5B7FF69D4D /* Pods_Project_MayhemTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				6C5C3A1BB5E6506FD33BCD2489187C38 /* Products */,
+				422B3D527A0A14BBADC9FC7E40287A6D /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D3442C9A99CAFBBEF0756FF4695AA7FB /* Pods-Project Mayhem */ = {
+			isa = PBXGroup;
+			children = (
+				E3455CBD2F17E1A61854E8FCDBA8E068 /* Pods-Project Mayhem.modulemap */,
+				86DEBCDA93809E253717A7461BBEACFB /* Pods-Project Mayhem-acknowledgements.markdown */,
+				75A7CC39EC76D57EF42DDBE37B82E43D /* Pods-Project Mayhem-acknowledgements.plist */,
+				B9D9C4DA25DD8107D37430BCA0953817 /* Pods-Project Mayhem-dummy.m */,
+				9F6CC8EAB7824EDACE448298502DD944 /* Pods-Project Mayhem-Info.plist */,
+				369CE79636372933AA731F1FEE4094D4 /* Pods-Project Mayhem-umbrella.h */,
+				378F0955005A5A3F227C1BFB015618F2 /* Pods-Project Mayhem.debug.xcconfig */,
+				1BED7B2EAFB6D46D449455F6D64200FC /* Pods-Project Mayhem.release.xcconfig */,
+			);
+			name = "Pods-Project Mayhem";
+			path = "Target Support Files/Pods-Project Mayhem";
+			sourceTree = "<group>";
+		};
+		DE690813A7FA5A51B7412C6C97F96AC5 /* Pods-Project MayhemTests */ = {
+			isa = PBXGroup;
+			children = (
+				B9F0C9ABD2E3C71F5783C94F19CC465D /* Pods-Project MayhemTests.modulemap */,
+				A9C26ED9BAD3CA467CD162BB7D0DC9B0 /* Pods-Project MayhemTests-acknowledgements.markdown */,
+				44552C7799D5AE5CA690DB6D31541750 /* Pods-Project MayhemTests-acknowledgements.plist */,
+				D4A2003A52465F08073E951CEC8850DD /* Pods-Project MayhemTests-dummy.m */,
+				DCAA94B362D62DBE6B114810EBF9FA9E /* Pods-Project MayhemTests-Info.plist */,
+				12B16B10BBC2AD893CE9EE064CEA5017 /* Pods-Project MayhemTests-umbrella.h */,
+				FC3277C4C55B4FD17981EB98E19D3B83 /* Pods-Project MayhemTests.debug.xcconfig */,
+				7E98999EA069638BC93F016986A532DC /* Pods-Project MayhemTests.release.xcconfig */,
+			);
+			name = "Pods-Project MayhemTests";
+			path = "Target Support Files/Pods-Project MayhemTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		17B251A48A3B99E0F1129AE62394A1EA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C1761659D3ABB92F05EAA9FA80DECF0 /* Pods-Project MayhemTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66EB9ADE9B662CEFBB5402A469A8CA31 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEF44339A2070D708422D85142FC2D6C /* Pods-Project Mayhem-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86168D84AAA86B60DCDF593C0492567E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A2D8D1FDDFC0739170781C13797122E /* Pods-Project Mayhem-Project MayhemUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8C78F4B2B9B406E11D097D45B1E86F41 /* Pods-Project MayhemTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23F8A9643444538B906A7E16C5DDAC86 /* Build configuration list for PBXNativeTarget "Pods-Project MayhemTests" */;
+			buildPhases = (
+				17B251A48A3B99E0F1129AE62394A1EA /* Headers */,
+				D5CFE2A281426C1255E63DAB610EA0A5 /* Sources */,
+				61E51E02D08E4B8F40B48E2FA79E862B /* Frameworks */,
+				7A8E4B5C41BC9DCF0BC536DEDBDA64D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D98BD7C1BD3E9737E39BF39BBA6A7662 /* PBXTargetDependency */,
+			);
+			name = "Pods-Project MayhemTests";
+			productName = "Pods-Project MayhemTests";
+			productReference = 2A581CCCA874FB50E2638D5B7FF69D4D /* Pods_Project_MayhemTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B7B0D1E38A8A4FFF04BBC3A463D86F1A /* Pods-Project Mayhem */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF69927516DDA69B323BDA0D6607B739 /* Build configuration list for PBXNativeTarget "Pods-Project Mayhem" */;
+			buildPhases = (
+				66EB9ADE9B662CEFBB5402A469A8CA31 /* Headers */,
+				4F095603DD4DBEDA1A89D42B2347176C /* Sources */,
+				402EADE59409625A13A15DEFC34D2DD5 /* Frameworks */,
+				D325D4AAEFC31ACB48ADBF5203CBE4A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Project Mayhem";
+			productName = "Pods-Project Mayhem";
+			productReference = 6898EE7D5949CBBF896989980DA662EB /* Pods_Project_Mayhem.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C75AC55885765098A6204FE051CD05E8 /* Pods-Project Mayhem-Project MayhemUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9ADE08D0364E5C4C8F2E3F94923E0DA /* Build configuration list for PBXNativeTarget "Pods-Project Mayhem-Project MayhemUITests" */;
+			buildPhases = (
+				86168D84AAA86B60DCDF593C0492567E /* Headers */,
+				F5D68E4F354A5EA6039EBCCC4DEAEF15 /* Sources */,
+				64BA8565FEEB18504C5BFAC3EE33F9DE /* Frameworks */,
+				CD639BB856CD4673B275A416CECA8CA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Project Mayhem-Project MayhemUITests";
+			productName = "Pods-Project Mayhem-Project MayhemUITests";
+			productReference = 8BC43FF61D87144681E3B761D86C35B2 /* Pods_Project_Mayhem_Project_MayhemUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 11.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 6C5C3A1BB5E6506FD33BCD2489187C38 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B7B0D1E38A8A4FFF04BBC3A463D86F1A /* Pods-Project Mayhem */,
+				C75AC55885765098A6204FE051CD05E8 /* Pods-Project Mayhem-Project MayhemUITests */,
+				8C78F4B2B9B406E11D097D45B1E86F41 /* Pods-Project MayhemTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7A8E4B5C41BC9DCF0BC536DEDBDA64D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD639BB856CD4673B275A416CECA8CA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D325D4AAEFC31ACB48ADBF5203CBE4A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F095603DD4DBEDA1A89D42B2347176C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99957B0A86C7FFF97D78EEE9CB762D96 /* Pods-Project Mayhem-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5CFE2A281426C1255E63DAB610EA0A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB3FCC340A676E3135A3284435071004 /* Pods-Project MayhemTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5D68E4F354A5EA6039EBCCC4DEAEF15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72E34587DAD41885D8EAA46515803004 /* Pods-Project Mayhem-Project MayhemUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D98BD7C1BD3E9737E39BF39BBA6A7662 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Project Mayhem";
+			target = B7B0D1E38A8A4FFF04BBC3A463D86F1A /* Pods-Project Mayhem */;
+			targetProxy = 07BDD3C8B26457417C4B09C971F54B0D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		276EB3A02A1F18A1D58B6515A7646609 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 752F6070817B1F6F8CA1E05A4C6DD590 /* Pods-Project Mayhem-Project MayhemUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Project Mayhem-Project MayhemUITests/Pods-Project Mayhem-Project MayhemUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Project Mayhem-Project MayhemUITests/Pods-Project Mayhem-Project MayhemUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4BC7450F9457737EE3E637BA155B56F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		7F302588C112C567664EBFB879599B59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BED7B2EAFB6D46D449455F6D64200FC /* Pods-Project Mayhem.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Project Mayhem/Pods-Project Mayhem-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Project Mayhem/Pods-Project Mayhem.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8B5A46FF8D3C1289CDEE3BAFACABCD2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		AA07C645EC585683F2A9206D2CD3D4F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E98999EA069638BC93F016986A532DC /* Pods-Project MayhemTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Project MayhemTests/Pods-Project MayhemTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Project MayhemTests/Pods-Project MayhemTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D3F5A0E19873486307BF9DA287AB9E66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A78A2FA54F1C2CE88DA7FCCCE0B82BFB /* Pods-Project Mayhem-Project MayhemUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Project Mayhem-Project MayhemUITests/Pods-Project Mayhem-Project MayhemUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Project Mayhem-Project MayhemUITests/Pods-Project Mayhem-Project MayhemUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E0EA8CC6942A5392FA1348610D6685DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC3277C4C55B4FD17981EB98E19D3B83 /* Pods-Project MayhemTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Project MayhemTests/Pods-Project MayhemTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Project MayhemTests/Pods-Project MayhemTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F9E896791EBADAE8E2C915BCA4B33F21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 378F0955005A5A3F227C1BFB015618F2 /* Pods-Project Mayhem.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Project Mayhem/Pods-Project Mayhem-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Project Mayhem/Pods-Project Mayhem.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		23F8A9643444538B906A7E16C5DDAC86 /* Build configuration list for PBXNativeTarget "Pods-Project MayhemTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0EA8CC6942A5392FA1348610D6685DA /* Debug */,
+				AA07C645EC585683F2A9206D2CD3D4F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BC7450F9457737EE3E637BA155B56F7 /* Debug */,
+				8B5A46FF8D3C1289CDEE3BAFACABCD2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9ADE08D0364E5C4C8F2E3F94923E0DA /* Build configuration list for PBXNativeTarget "Pods-Project Mayhem-Project MayhemUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3F5A0E19873486307BF9DA287AB9E66 /* Debug */,
+				276EB3A02A1F18A1D58B6515A7646609 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF69927516DDA69B323BDA0D6607B739 /* Build configuration list for PBXNativeTarget "Pods-Project Mayhem" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9E896791EBADAE8E2C915BCA4B33F21 /* Debug */,
+				7F302588C112C567664EBFB879599B59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

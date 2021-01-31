@@ -85,13 +85,13 @@ class chapter3: UIViewController {
                 self.button4.frame.origin.x += self.view.bounds.width
                 
             }, completion: { _ in
-                self.we.fadeIn()
+                self.we.flickerIn()
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     self.we.fadeOut()
-                    self.I.fadeIn()
+                    self.I.flickerIn()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        self.live.fadeIn()
+                        self.live.flickerIn()
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                             self.I.fadeOut()
                             DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
