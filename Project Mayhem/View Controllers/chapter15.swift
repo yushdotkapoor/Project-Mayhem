@@ -27,7 +27,7 @@ class chapter15: UIViewController {
     }
     
     func complete() {
-        //game.setValue(true, forKey: "chap15")
+        game.setValue(true, forKey: "chap15")
         game.setValue("none", forKey: "active")
         nextChap.isUserInteractionEnabled = true
         nextChap.fadeIn()
@@ -35,13 +35,11 @@ class chapter15: UIViewController {
     }
 
     @IBAction func goBack(_ sender: Any) {
-    //self.performSegue(withIdentifier: "chap15ToHome", sender: nil)
+    self.performSegue(withIdentifier: "chap15ToHome", sender: nil)
     }
     
     @IBAction func goNext(_ sender: Any) {
-   // self.performSegue(withIdentifier: "chap15ToChap16", sender: nil)
+        //self.performSegue(withIdentifier: "chap15ToChap16", sender: nil)
     }
-
-
 }
 

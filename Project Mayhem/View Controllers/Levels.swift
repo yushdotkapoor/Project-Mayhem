@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Speech
 
 let game = UserDefaults.standard
 
@@ -26,6 +27,7 @@ class Levels: UIViewController {
     @IBOutlet weak var chap3: CustomButtonOutline!
     @IBOutlet weak var chap2: CustomButtonOutline!
     @IBOutlet weak var chap1: CustomButtonOutline!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var logoWidth: NSLayoutConstraint!
     @IBOutlet weak var chap1Center: NSLayoutConstraint!
     @IBOutlet weak var chap2Center: NSLayoutConstraint!
@@ -49,6 +51,7 @@ class Levels: UIViewController {
            super.viewDidLoad()
         del = 0.5
         requestNotificationAuthorization()
+        requestTranscribePermissions()
         
         let controllers = getData(string: "ViewController") as! [UIViewController]
         
@@ -112,6 +115,9 @@ class Levels: UIViewController {
                     arrayButtons[i+1].setupButton(color: UIColor.white)
                     arrayButtons[i+1].isEnabled = true
                 }
+            }
+            else {
+                //scroll down to newest level
             }
             i += 1
         }
@@ -178,6 +184,26 @@ class Levels: UIViewController {
         })
     }
     
+    @IBAction func chap11(_ sender: Any) {
+        SFSpeechRecognizer.requestAuthorization { [unowned self] authStatus in
+            DispatchQueue.main.async {
+                if authStatus != .authorized {
+                    print("Transcription permission was declined.")
+                    alert(title: "Uh-Oh", message: "You must enable Speech Transcription in the Settings tab to have full access to the app. Go to Settings > Project Mayhem > Notifications > Turn on 'Speech Recognition'", actionTitle: "Okay", actions: {
+                        UIApplication.shared.open(URL(string:"App-Prefs:root=NOTIFICATIONS_ID")!, options: [:], completionHandler: nil)
+                        })
+                }
+                else {
+                    DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "LevelsToChap11", sender: nil)
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    
     func animate(constraint: NSLayoutConstraint) {
         UIView.animate(withDuration: 0.5, delay: del, options: .curveEaseOut, animations: {
             constraint.constant += self.view.bounds.width
@@ -185,6 +211,20 @@ class Levels: UIViewController {
         }, completion: nil)
         del += 0.05
     }
+    
+    func requestTranscribePermissions() {
+        SFSpeechRecognizer.requestAuthorization { [unowned self] authStatus in
+            DispatchQueue.main.async {
+                if authStatus != .authorized {
+                    print("Transcription permission was declined.")
+                    alert(title: "Uh-Oh", message: "You must enable Speech Transcription in the Settings tab to have full access to the app. Go to Settings > Project Mayhem > Notifications > Turn on 'Speech Recognition'", actionTitle: "Okay", actions: {
+                        UIApplication.shared.open(URL(string:"App-Prefs:root=NOTIFICATIONS_ID")!, options: [:], completionHandler: nil)
+                        })
+                }
+            }
+        }
+    }
+    
 }
 
 func requestNotificationAuthorization() {

@@ -99,5 +99,44 @@ extension UIView {
         rotate(rotation: gizmo, duration: 0.0)
     }
     
+    
+    func ripple(view: UIView) {
+        let path = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: bounds.size.width, height: bounds.size.height))
+        
+        /*! Position where the shape layer should be */
+        
+        let shapePosition = CGPoint(x: UIScreen.main.bounds.size.width / 2, y: UIScreen.main.bounds.size.height / 2)
+        let rippleShape = CAShapeLayer()
+        rippleShape.bounds = CGRect(x: 0, y: 0, width: bounds.size.width, height: bounds.size.height)
+        rippleShape.path = path.cgPath
+        rippleShape.fillColor = UIColor.clear.cgColor
+        rippleShape.strokeColor = UIColor.white.cgColor
+        rippleShape.lineWidth = 2
+        rippleShape.position = shapePosition
+        rippleShape.opacity = 0
+        
+        view.layer.addSublayer(rippleShape)
+        
+        let scaleAnim = CABasicAnimation(keyPath: "transform.scale")
+        scaleAnim.fromValue = NSValue(caTransform3D: CATransform3DIdentity)
+        scaleAnim.toValue = NSValue(caTransform3D: CATransform3DMakeScale(2, 2, 1))
+        
+        let opacityAnim = CABasicAnimation(keyPath: "opacity")
+        opacityAnim.fromValue = 1
+        opacityAnim.toValue = nil
+        
+        
+        let animation = CAAnimationGroup()
+        animation.animations = [scaleAnim, opacityAnim]
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+        animation.duration = CFTimeInterval(0.7)
+        animation.isRemovedOnCompletion = true
+        
+        
+        rippleShape.add(animation, forKey: "rippleEffect")
+    }
+    
+    
+    
 }
 

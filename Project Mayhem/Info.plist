@@ -22,6 +22,8 @@
 	<true/>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Project Mayhem would like access to your microphone</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Project Mayhem would like to have access to speech recognition for certain levels</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

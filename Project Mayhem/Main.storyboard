@@ -9,17 +9,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Adoring.otf">
-            <string>Adoring</string>
+        <array key="Adonay.otf">
+            <string>Adonay</string>
         </array>
-        <array key="Invission Pro.otf">
-            <string>InvissionPro-Italic</string>
-        </array>
-        <array key="Lover.otf">
-            <string>Lover</string>
+        <array key="NoisyWalk.ttf">
+            <string>NoisyWalk-Regular</string>
         </array>
         <array key="PigpenCipher.otf">
             <string>PigpenCipher</string>
+        </array>
+        <array key="Tomorrow-Regular.ttf">
+            <string>Tomorrow-Regular</string>
+        </array>
+        <array key="aAmbyarSobat.otf">
+            <string>aAmbyarSobat</string>
+        </array>
+        <array key="astro.ttf">
+            <string>Astro</string>
         </array>
     </customFonts>
     <scenes>
@@ -31,13 +37,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project Mayhem" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="CYU-mN-gQ4">
-                                <rect key="frame" x="57" y="284" width="300" height="47"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="G1e-Ns-EHV"/>
-                                    <constraint firstAttribute="width" constant="300" id="ORW-sg-Viw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="40"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROJECT MAYHEM" textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYU-mN-gQ4">
+                                <rect key="frame" x="20" y="284" width="374" height="36.5"/>
+                                <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -49,12 +51,12 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mq-Sy-8qd" customClass="CustomButton" customModule="Project_Mayhem" customModuleProvider="target">
-                                <rect key="frame" x="57" y="421" width="300" height="36"/>
+                                <rect key="frame" x="57" y="410.5" width="300" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="NJs-UH-1M7"/>
                                     <constraint firstAttribute="height" constant="36" id="nA8-MZ-m01"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="20"/>
                                 <state key="normal" title="Open File"/>
                                 <connections>
                                     <segue destination="GTF-CI-eye" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Rad-n7-9j2"/>
@@ -65,11 +67,13 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="CYU-mN-gQ4" firstAttribute="centerX" secondItem="7Og-Un-XLF" secondAttribute="centerX" id="1ha-c6-zZq"/>
+                            <constraint firstItem="CYU-mN-gQ4" firstAttribute="leading" secondItem="7Og-Un-XLF" secondAttribute="leading" constant="20" id="E5p-Vi-L97"/>
                             <constraint firstItem="b7K-pK-Zuh" firstAttribute="centerX" secondItem="7Og-Un-XLF" secondAttribute="centerX" id="ET7-8S-LuS"/>
                             <constraint firstItem="CYU-mN-gQ4" firstAttribute="top" secondItem="b7K-pK-Zuh" secondAttribute="bottom" constant="78" id="Ktd-WV-6sR"/>
                             <constraint firstItem="2mq-Sy-8qd" firstAttribute="centerX" secondItem="7Og-Un-XLF" secondAttribute="centerX" id="LF0-A8-mDg"/>
                             <constraint firstItem="2mq-Sy-8qd" firstAttribute="top" secondItem="CYU-mN-gQ4" secondAttribute="bottom" constant="90" id="Q4V-mc-xUE"/>
                             <constraint firstItem="CYU-mN-gQ4" firstAttribute="top" secondItem="LdV-Nh-ef6" secondAttribute="top" constant="240" id="RLt-is-oqe"/>
+                            <constraint firstAttribute="trailing" secondItem="CYU-mN-gQ4" secondAttribute="trailing" constant="20" id="hxI-1c-GHd"/>
                             <constraint firstItem="b7K-pK-Zuh" firstAttribute="top" secondItem="7Og-Un-XLF" secondAttribute="top" constant="78" id="jBn-D3-dqQ"/>
                         </constraints>
                     </view>
@@ -107,7 +111,7 @@
                                             <constraint firstAttribute="width" constant="300" id="cNa-br-cIK"/>
                                             <constraint firstAttribute="height" constant="40" id="mwY-8g-ApI"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
                                         <state key="normal" title="CHAPTER 1"/>
                                         <connections>
                                             <action selector="chap1:" destination="GTF-CI-eye" eventType="touchUpInside" id="Lkf-zR-yLU"/>
@@ -119,9 +123,10 @@
                                             <constraint firstAttribute="width" constant="300" id="3x6-P5-jW6"/>
                                             <constraint firstAttribute="height" constant="40" id="5r9-mC-RJ8"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
                                         <state key="normal" title="CHAPTER 2"/>
                                         <connections>
+                                            <action selector="chap2:" destination="GTF-CI-eye" eventType="touchUpInside" id="b5X-7Q-ezx"/>
                                             <segue destination="sHN-yQ-Lsv" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="4Jn-Pi-K9C"/>
                                         </connections>
                                     </button>
@@ -131,7 +136,7 @@
                                             <constraint firstAttribute="width" constant="300" id="SoT-fB-1jh"/>
                                             <constraint firstAttribute="height" constant="40" id="dYd-od-2uV"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
                                         <state key="normal" title="CHAPTER 3"/>
                                         <connections>
                                             <segue destination="OpN-T9-thB" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="rPy-e3-cah"/>
@@ -143,7 +148,7 @@
                                             <constraint firstAttribute="width" constant="300" id="C1Z-Q8-Pd8"/>
                                             <constraint firstAttribute="height" constant="40" id="pD7-K6-dee"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
                                         <state key="normal" title="CHAPTER 4"/>
                                         <connections>
                                             <segue destination="AAw-y6-5cI" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="fse-oy-gCD"/>
@@ -155,7 +160,7 @@
                                             <constraint firstAttribute="height" constant="40" id="R5i-LB-9L4"/>
                                             <constraint firstAttribute="width" constant="300" id="fyl-Fn-pdn"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
                                         <state key="normal" title="CHAPTER 5"/>
                                         <connections>
                                             <segue destination="hz8-tf-aCW" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="haB-wX-Ht8"/>
@@ -167,7 +172,7 @@
                                             <constraint firstAttribute="width" constant="300" id="bg7-dM-hYy"/>
                                             <constraint firstAttribute="height" constant="40" id="zGu-Wy-QH9"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
                                         <state key="normal" title="CHAPTER 6"/>
                                         <connections>
                                             <segue destination="3GX-UM-rT4" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="WVd-jK-rxp"/>
@@ -179,7 +184,7 @@
                                             <constraint firstAttribute="height" constant="40" id="Cpr-YQ-mb8"/>
                                             <constraint firstAttribute="width" constant="300" id="MuE-KH-MR5"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
                                         <state key="normal" title="CHAPTER 7"/>
                                         <connections>
                                             <segue destination="eN9-01-vdi" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="dbV-cl-syM"/>
@@ -191,7 +196,7 @@
                                             <constraint firstAttribute="height" constant="40" id="0Qm-gZ-hu9"/>
                                             <constraint firstAttribute="width" constant="300" id="4Tj-RN-V2o"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
                                         <state key="normal" title="CHAPTER 8"/>
                                         <connections>
                                             <segue destination="gwX-k8-aYX" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="9rP-sF-Yht"/>
@@ -203,7 +208,7 @@
                                             <constraint firstAttribute="height" constant="40" id="gWo-FQ-1FT"/>
                                             <constraint firstAttribute="width" constant="300" id="nkM-zW-OlD"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
                                         <state key="normal" title="CHAPTER 9"/>
                                         <connections>
                                             <segue destination="jAy-7q-lBT" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="o2i-uy-ToW"/>
@@ -215,7 +220,7 @@
                                             <constraint firstAttribute="height" constant="40" id="Iif-mg-o8M"/>
                                             <constraint firstAttribute="width" constant="300" id="Ix3-gR-Y1z"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
                                         <state key="normal" title="CHAPTER 10"/>
                                         <connections>
                                             <segue destination="4fV-be-1GN" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="3Az-ps-1h0"/>
@@ -227,10 +232,10 @@
                                             <constraint firstAttribute="height" constant="40" id="pID-i6-c7j"/>
                                             <constraint firstAttribute="width" constant="300" id="zaD-8J-EIO"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
                                         <state key="normal" title="CHAPTER 11"/>
                                         <connections>
-                                            <segue destination="ABU-DA-0bU" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="mwT-nr-ooz"/>
+                                            <action selector="chap11:" destination="GTF-CI-eye" eventType="touchUpInside" id="MVV-YV-hzk"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ono-9o-3sR" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
@@ -239,7 +244,7 @@
                                             <constraint firstAttribute="height" constant="40" id="1NJ-kM-vKc"/>
                                             <constraint firstAttribute="width" constant="300" id="rXf-Vs-GF1"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
                                         <state key="normal" title="CHAPTER 12"/>
                                         <connections>
                                             <segue destination="FJe-aw-Y0g" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="8va-rm-XAP"/>
@@ -251,7 +256,7 @@
                                             <constraint firstAttribute="width" constant="300" id="3GL-VI-MxH"/>
                                             <constraint firstAttribute="height" constant="40" id="7Bh-Qa-riC"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
                                         <state key="normal" title="CHAPTER 14"/>
                                         <connections>
                                             <segue destination="kGn-9U-lje" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="j8f-cg-Hji"/>
@@ -263,7 +268,7 @@
                                             <constraint firstAttribute="height" constant="40" id="1ZJ-3f-n9d"/>
                                             <constraint firstAttribute="width" constant="300" id="I9X-se-cbL"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
                                         <state key="normal" title="CHAPTER 15"/>
                                         <connections>
                                             <segue destination="smS-gE-5H0" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="dHH-0f-i87"/>
@@ -275,7 +280,7 @@
                                             <constraint firstAttribute="width" constant="300" id="0o1-nN-e8L"/>
                                             <constraint firstAttribute="height" constant="40" id="QMg-gr-et6"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
                                         <state key="normal" title="CHAPTER 13"/>
                                         <connections>
                                             <segue destination="v3Q-ax-3fC" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="9I8-69-dGt"/>
@@ -361,7 +366,9 @@
                         <outlet property="chap9" destination="NJP-qI-SIG" id="V8E-2d-WoU"/>
                         <outlet property="chap9Center" destination="bcf-Y3-O5G" id="WeK-iF-h8S"/>
                         <outlet property="logoWidth" destination="6bv-hy-ikq" id="ZwG-Zk-GN0"/>
+                        <outlet property="scrollView" destination="foj-Fg-5BA" id="FNU-W4-BLP"/>
                         <segue destination="F4e-Zn-CZO" kind="presentation" identifier="LevelsToChap1" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="lvv-Yn-sCd"/>
+                        <segue destination="ABU-DA-0bU" kind="presentation" identifier="LevelsToChap11" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Zjm-44-Rn8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vyJ-mb-5rP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -428,7 +435,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="SVM-Wh-3DI"/>
                                                     <constraint firstAttribute="width" constant="140" id="hw4-gw-HKJ"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                                <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="25"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -438,7 +445,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="eaW-BC-Iwl"/>
                                                     <constraint firstAttribute="width" constant="140" id="yme-9U-bFm"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                                <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="25"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -453,7 +460,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="SR0-Xt-cGX"/>
                                                     <constraint firstAttribute="width" constant="140" id="SSF-CB-SpC"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                                <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="25"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -463,7 +470,7 @@
                                                     <constraint firstAttribute="width" constant="300" id="NcE-9p-wl0"/>
                                                     <constraint firstAttribute="height" constant="60" id="rhg-aK-ENC"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                                <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="25"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -474,7 +481,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Umx-Lk-Z2G"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="25"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -486,7 +493,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="MLW-8N-55W"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                                <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="25"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -494,18 +501,18 @@
                                                 <rect key="frame" x="0.0" y="60" width="374" height="34"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6Pq-Na-mhJ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="309" height="34"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3m-h7-wzm">
-                                                        <rect key="frame" x="324" y="0.0" width="50" height="34"/>
+                                                        <rect key="frame" x="319" y="0.0" width="55" height="34"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="50" id="al2-bZ-N66"/>
+                                                            <constraint firstAttribute="width" constant="55" id="al2-bZ-N66"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="17"/>
+                                                        <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="15"/>
                                                         <state key="normal" title="Submit"/>
                                                         <connections>
                                                             <action selector="submitName:" destination="F4e-Zn-CZO" eventType="touchUpInside" id="c33-gK-qTg"/>
@@ -584,32 +591,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="s0j-pf-Dpx">
-                                <rect key="frame" x="68.5" y="119" width="277" height="90"/>
+                                <rect key="frame" x="47" y="119" width="320" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Before I begin briefing you," textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fay-Kj-Tmb">
-                                        <rect key="frame" x="0.0" y="0.0" width="277" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="mbQ-Op-MT5"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="25"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="we must make sure" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79N-T7-HQ8">
-                                        <rect key="frame" x="33" y="30" width="211" height="30"/>
+                                        <rect key="frame" x="42" y="30" width="236" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="wM3-6j-J3Y"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="25"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nobody can hear us" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sht-t6-CAj">
-                                        <rect key="frame" x="35" y="60" width="207.5" height="30"/>
+                                        <rect key="frame" x="43" y="60" width="234" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="6U4-CW-6Lh"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="25"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -742,7 +749,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgf-e2-RLl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="112" y="810"/>
+            <point key="canvasLocation" x="861" y="810"/>
         </scene>
         <!--Chapter3-->
         <scene sceneID="ItG-eb-BU6">
@@ -753,20 +760,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am Mayhem." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBD-ia-bKh">
-                                <rect key="frame" x="136" y="144" width="142" height="30"/>
+                                <rect key="frame" x="121" y="144" width="172" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="HDQ-Wy-LYl"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="25"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am the Rebellion." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="212-gX-A9s">
-                                <rect key="frame" x="111.5" y="174" width="191" height="30"/>
+                                <rect key="frame" x="96.5" y="174" width="221" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Qkt-ag-Xg1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="25"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -813,7 +820,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="400" id="aiS-6z-nTa"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="25"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -996,19 +1003,19 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mc3-tX-BHO">
-                                <rect key="frame" x="40" y="64" width="87" height="144"/>
-                                <fontDescription key="fontDescription" name="Lover" family="Lover" pointSize="150"/>
+                                <rect key="frame" x="40" y="64" width="106.5" height="154"/>
+                                <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="150"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiW-BS-5P7">
-                                <rect key="frame" x="40" y="252" width="334" height="72"/>
-                                <fontDescription key="fontDescription" name="Lover" family="Lover" pointSize="75"/>
+                                <rect key="frame" x="40" y="262" width="334" height="77"/>
+                                <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="75"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CjW-3D-0bt">
-                                <rect key="frame" x="40" y="228" width="334" height="4"/>
+                                <rect key="frame" x="40" y="238" width="334" height="4"/>
                                 <color key="progressTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </progressView>
                         </subviews>
@@ -1096,13 +1103,13 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From the darkness, comes the light" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XC-sK-4mn">
-                                <rect key="frame" x="20" y="94" width="374" height="138"/>
-                                <fontDescription key="fontDescription" name="InvissionPro-Italic" family="Invission Pro" pointSize="44"/>
+                                <rect key="frame" x="20" y="94" width="374" height="100.5"/>
+                                <fontDescription key="fontDescription" name="aAmbyarSobat" family="a Ambyar Sobat" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="VTG-K4-2nW">
-                                <rect key="frame" x="20" y="262" width="374" height="36"/>
+                                <rect key="frame" x="20" y="224.5" width="374" height="36"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="X5L-HA-LGC">
                                         <rect key="frame" x="0.0" y="0.0" width="330" height="36"/>
@@ -1587,29 +1594,29 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="kPZ-G5-GQx">
-                                <rect key="frame" x="30" y="264" width="354" height="198"/>
+                                <rect key="frame" x="30" y="264" width="354" height="254"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TODO: good" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVb-4d-3uz">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="31.5"/>
-                                        <fontDescription key="fontDescription" name="InvissionPro-Italic" family="Invission Pro" pointSize="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="45.5"/>
+                                        <fontDescription key="fontDescription" name="aAmbyarSobat" family="a Ambyar Sobat" pointSize="45"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Never stop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6F8-l7-tbV">
-                                        <rect key="frame" x="0.0" y="55.5" width="354" height="31.5"/>
-                                        <fontDescription key="fontDescription" name="InvissionPro-Italic" family="Invission Pro" pointSize="30"/>
+                                        <rect key="frame" x="0.0" y="69.5" width="354" height="45.5"/>
+                                        <fontDescription key="fontDescription" name="aAmbyarSobat" family="a Ambyar Sobat" pointSize="45"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No regrets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60X-Qw-efT">
-                                        <rect key="frame" x="0.0" y="111" width="354" height="31.5"/>
-                                        <fontDescription key="fontDescription" name="InvissionPro-Italic" family="Invission Pro" pointSize="30"/>
+                                        <rect key="frame" x="0.0" y="139" width="354" height="45.5"/>
+                                        <fontDescription key="fontDescription" name="aAmbyarSobat" family="a Ambyar Sobat" pointSize="45"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="balance yourself" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiw-8Z-Fu4">
-                                        <rect key="frame" x="0.0" y="166.5" width="354" height="31.5"/>
-                                        <fontDescription key="fontDescription" name="InvissionPro-Italic" family="Invission Pro" pointSize="30"/>
+                                        <rect key="frame" x="0.0" y="208.5" width="354" height="45.5"/>
+                                        <fontDescription key="fontDescription" name="aAmbyarSobat" family="a Ambyar Sobat" pointSize="45"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1891,9 +1898,9 @@
                                     <constraint firstItem="E90-IL-bsR" firstAttribute="centerX" secondItem="0tW-Nq-ruj" secondAttribute="centerX" id="wFU-B6-WrN"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Navigate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEP-35-QTA">
-                                <rect key="frame" x="128" y="94" width="158" height="43"/>
-                                <fontDescription key="fontDescription" name="Adoring" family="Adoring" pointSize="45"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Navigate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aEP-35-QTA">
+                                <rect key="frame" x="21.5" y="94" width="371.5" height="63"/>
+                                <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="45"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1987,17 +1994,49 @@
                                     <constraint firstItem="EcG-fv-nN9" firstAttribute="width" secondItem="EcG-fv-nN9" secondAttribute="height" multiplier="1:1" id="CRo-1G-pir"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PM" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="NQK-Od-Ufj">
+                                <rect key="frame" x="10" y="124" width="394" height="638"/>
+                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="200"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="deL-pa-K9w">
+                                <rect key="frame" x="167" y="44" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="KgU-lv-KDK"/>
+                                    <constraint firstAttribute="width" secondItem="deL-pa-K9w" secondAttribute="height" multiplier="1:1" id="OBb-qz-FxW"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Wha-mQ-QVs">
+                                <rect key="frame" x="157" y="398.5" width="100" height="99"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Wha-mQ-QVs" secondAttribute="height" multiplier="1:1" id="G1h-i8-DzB"/>
+                                    <constraint firstAttribute="height" constant="100" id="pXh-VU-DL6"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jXb-D8-6kP"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cpK-19-oHp" firstAttribute="leading" secondItem="jXb-D8-6kP" secondAttribute="leading" constant="20" id="2HL-fc-wBf"/>
+                            <constraint firstItem="NQK-Od-Ufj" firstAttribute="top" secondItem="deL-pa-K9w" secondAttribute="bottom" id="68d-NL-NuE"/>
+                            <constraint firstItem="NQK-Od-Ufj" firstAttribute="leading" secondItem="jXb-D8-6kP" secondAttribute="leading" constant="10" id="AoL-zQ-3MZ"/>
+                            <constraint firstItem="Wha-mQ-QVs" firstAttribute="centerX" secondItem="KcA-Bi-kt3" secondAttribute="centerX" id="Idr-Pf-MnA"/>
+                            <constraint firstItem="cpK-19-oHp" firstAttribute="top" secondItem="NQK-Od-Ufj" secondAttribute="bottom" constant="20" id="KHd-8d-DDa"/>
+                            <constraint firstItem="deL-pa-K9w" firstAttribute="top" secondItem="jXb-D8-6kP" secondAttribute="top" id="TpS-Vc-mx5"/>
+                            <constraint firstItem="deL-pa-K9w" firstAttribute="centerX" secondItem="KcA-Bi-kt3" secondAttribute="centerX" id="e23-9P-ngd"/>
                             <constraint firstItem="jXb-D8-6kP" firstAttribute="trailing" secondItem="cpK-19-oHp" secondAttribute="trailing" constant="20" id="jTz-Zm-7E7"/>
+                            <constraint firstItem="Wha-mQ-QVs" firstAttribute="centerY" secondItem="KcA-Bi-kt3" secondAttribute="centerY" id="jdn-ZP-5J3"/>
                             <constraint firstAttribute="bottom" secondItem="cpK-19-oHp" secondAttribute="bottom" constant="64" id="rQU-uG-gMY"/>
+                            <constraint firstItem="jXb-D8-6kP" firstAttribute="trailing" secondItem="NQK-Od-Ufj" secondAttribute="trailing" constant="10" id="yjJ-XM-f1E"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="label" destination="NQK-Od-Ufj" id="aKc-em-vB2"/>
+                        <outlet property="logo" destination="deL-pa-K9w" id="EPx-eu-qQg"/>
                         <outlet property="nextChap" destination="EcG-fv-nN9" id="qpg-Kx-iHa"/>
+                        <outlet property="rippleCircle" destination="Wha-mQ-QVs" id="aYW-IT-1rP"/>
                         <segue destination="FJe-aw-Y0g" kind="presentation" identifier="chap11ToChap12" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="pGP-Mq-ek9"/>
                         <segue destination="GTF-CI-eye" kind="presentation" identifier="chap11ToHome" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Wjo-mj-5dE"/>
                     </connections>
@@ -2271,11 +2310,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Fs4-JY-ETg"/>
-        <segue reference="kju-Ul-nqJ"/>
-        <segue reference="7ds-ad-yt1"/>
-        <segue reference="pGP-Mq-ek9"/>
-        <segue reference="mwT-nr-ooz"/>
+        <segue reference="dHH-0f-i87"/>
+        <segue reference="j8f-cg-Hji"/>
+        <segue reference="9I8-69-dGt"/>
+        <segue reference="8va-rm-XAP"/>
+        <segue reference="Zjm-44-Rn8"/>
         <segue reference="dbV-cl-syM"/>
         <segue reference="9rP-sF-Yht"/>
         <segue reference="o2i-uy-ToW"/>
@@ -2285,7 +2324,7 @@
         <segue reference="fse-oy-gCD"/>
         <segue reference="rPy-e3-cah"/>
         <segue reference="4Jn-Pi-K9C"/>
-        <segue reference="kSH-Ok-CN9"/>
+        <segue reference="Rad-n7-9j2"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Logo" width="3000" height="2000"/>
