@@ -47,7 +47,7 @@ class chapter5: UIViewController {
     func recurse() {
         let pitch = Int(microphone.fq)
         self.Hz.text = "\(pitch)"
-        if (pitch > 875 && pitch < 885) || (pitch > 435 && pitch < 445) || (pitch > 215 && pitch < 225) || (pitch > 105 && pitch < 115) {
+        if (pitch > 7035 && pitch < 7045) || (pitch > 3515 && pitch < 3525) || (pitch > 1765 && pitch < 1775) || (pitch > 875 && pitch < 885) || (pitch > 435 && pitch < 445) || (pitch > 215 && pitch < 225) || (pitch > 105 && pitch < 115) || (pitch > 50 && pitch < 60) {
             self.progressVal += 1
             self.changeProgress()
         }

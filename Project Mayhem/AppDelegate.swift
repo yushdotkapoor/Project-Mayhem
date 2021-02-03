@@ -20,9 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func application(_ application: UIApplication, didReceive notification: UNNotificationRequest) {
         UIApplication.shared.applicationIconBadgeNumber = 0
+        
     }
-        
-        
         
     
 }

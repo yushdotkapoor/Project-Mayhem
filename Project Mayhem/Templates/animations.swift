@@ -59,18 +59,44 @@ extension UIView {
     
     
     func flickerOut(iterations:Int) {
-        var i = iterations
+        var i = iterations + 10
         if i > 0 {
             self.alpha = 1.0
-            let dur = Double.random(in: 0..<0.2)
+            let last = 1.0 / (2.0 * Double(i))
+            let dur = Double.random(in: 0..<last)
             DispatchQueue.main.asyncAfter(deadline: .now() + dur) {
                 self.alpha = 0.0
-                i -= 1
+                i -= 11
                 DispatchQueue.main.asyncAfter(deadline: .now() + dur) {
                     self.flickerOut(iterations: i)
                 }
             }
         }
+    }
+    
+    
+    func flickerOut() {
+        let i = 10
+        flickerOut(iterations: i)
+    }
+    
+    
+    
+    func rotate(rotation: CGFloat, duration: TimeInterval) {
+        UIView.animate(withDuration: duration) {
+            
+            let radians:Float = atan2f(Float(self.transform.b), Float(self.transform.a))
+            let angle:CGFloat = CGFloat(radians) + (CGFloat.pi * rotation * 2)
+            self.transform = CGAffineTransform(rotationAngle: angle)
+        }
+    }
+    
+    func rotate(rotation: CGFloat) {
+        rotate(rotation: rotation, duration: 0.75)
+    }
+    
+    func setRotation(gizmo: CGFloat) {
+        rotate(rotation: gizmo, duration: 0.0)
     }
     
 }

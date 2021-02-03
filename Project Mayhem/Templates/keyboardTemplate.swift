@@ -22,9 +22,17 @@ class keyboardTemplate: UIViewController {
         toolBar.setItems([flexibleSpace, doneButton], animated: false)
        // nameField.inputAccessoryView = toolBar
         
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.viewTapped(gesture:)))
+        view.addGestureRecognizer(tapGesture)
+        view.isUserInteractionEnabled = true
     }
     
     @objc func doneClicked() {
+        view.endEditing(true)
+    }
+    
+    @objc func viewTapped(gesture: UIGestureRecognizer) {
         view.endEditing(true)
     }
     

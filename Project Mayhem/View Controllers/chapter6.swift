@@ -31,10 +31,13 @@ class chapter6: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        game.setValue("chap6", forKey: "active")
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.label.fadeIn()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.setupMorseFlashesSequence()
+                if game.string(forKey: "active") == "chap6" {
+                    self.setupMorseFlashesSequence()
+                }
             }
         }
         sequenceOfFlashes = []
@@ -93,6 +96,7 @@ class chapter6: UIViewController {
     }
  
     @objc func scheduleTimer() {
+        game.setValue("chap6", forKey: "active")
         timer = Timer.scheduledTimer(timeInterval: sequenceOfFlashes[index], target: self, selector: #selector(timerTick), userInfo: nil, repeats: false)
     }
 
@@ -149,6 +153,7 @@ class chapter6: UIViewController {
     }
 
     @objc func stop() {
+        game.setValue("none", forKey: "active")
         timer?.invalidate()
         turnFlashlight(on: false)
     }
@@ -179,7 +184,7 @@ class chapter6: UIViewController {
             
             if on {
                 device.torchMode = .on
-                try device.setTorchModeOn(level: 1.0)
+                try device.setTorchModeOn(level: 0.5)
             }
             else {
                 device.torchMode = .off
@@ -194,10 +199,10 @@ class chapter6: UIViewController {
     func complete() {
         NotificationCenter.default.removeObserver(self)
         game.setValue(true, forKey: "chap6")
-        game.setValue("none", forKey: "active")
         nextChap.isUserInteractionEnabled = true
         nextChap.fadeIn()
     }
+    
     
     @objc func doneClicked() {
         view.endEditing(true)

@@ -33,6 +33,14 @@
 		9D5614E82593153C00F1695A /* chapter1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5614E72593153C00F1695A /* chapter1.swift */; };
 		9D5B42BA259C858100A4F34A /* chapter4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B42B9259C858100A4F34A /* chapter4.swift */; };
 		9D5B42C5259C97FB00A4F34A /* animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B42C4259C97FB00A4F34A /* animations.swift */; };
+		9D74262425CA41F3008D9645 /* chapter14.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74261F25CA41F3008D9645 /* chapter14.swift */; };
+		9D74262525CA41F3008D9645 /* chapter15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74262025CA41F3008D9645 /* chapter15.swift */; };
+		9D74262625CA41F3008D9645 /* chapter11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74262125CA41F3008D9645 /* chapter11.swift */; };
+		9D74262725CA41F3008D9645 /* chapter12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74262225CA41F3008D9645 /* chapter12.swift */; };
+		9D74262825CA41F3008D9645 /* chapter13.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74262325CA41F3008D9645 /* chapter13.swift */; };
+		9D8C42AF25C7BE5C0039F857 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9D8C42AE25C7BE5C0039F857 /* Settings.bundle */; };
+		9D8C42BB25C7EFB90039F857 /* PigpenCipher.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D8C42B825C7ECEC0039F857 /* PigpenCipher.otf */; };
+		9D8C42BF25C7F9C30039F857 /* nonPastableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C42BE25C7F9C30039F857 /* nonPastableTextField.swift */; };
 		9DBBF73025C279310022FC63 /* chapter5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBBF72F25C279310022FC63 /* chapter5.swift */; };
 		9DEA6A0625948BBA002A8739 /* chapter2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEA6A0525948BBA002A8739 /* chapter2.swift */; };
 		9DEA6A0C259515D8002A8739 /* keyboardTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEA6A0B259515D8002A8739 /* keyboardTemplate.swift */; };
@@ -82,6 +90,7 @@
 		3DD1F1D9679D55448FFC23C4 /* Pods_Project_Mayhem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_Mayhem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DDC00304681805AA8BFE16B /* Pods-Project Mayhem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Mayhem.release.xcconfig"; path = "Target Support Files/Pods-Project Mayhem/Pods-Project Mayhem.release.xcconfig"; sourceTree = "<group>"; };
 		99C48B6A29085A842D6E6AF6 /* Pods-Project Mayhem-Project MayhemUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Mayhem-Project MayhemUITests.release.xcconfig"; path = "Target Support Files/Pods-Project Mayhem-Project MayhemUITests/Pods-Project Mayhem-Project MayhemUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9D0B057325C8B0DF00DB47CF /* Project Mayhem.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Project Mayhem.entitlements"; sourceTree = "<group>"; };
 		9D0C535A25C4DB21000EE579 /* AudioKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AudioKit; path = ../../Downloads/AudioKit; sourceTree = "<group>"; };
 		9D0C535B25C4DB39000EE579 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = "../../Downloads/AudioKit/AudioKit.xcframework/ios-arm64_armv7/AudioKit.framework"; sourceTree = "<group>"; };
 		9D0C543C25C50F97000EE579 /* audioKitHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audioKitHelpers.swift; sourceTree = "<group>"; };
@@ -111,6 +120,14 @@
 		9D5614E72593153C00F1695A /* chapter1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter1.swift; sourceTree = "<group>"; };
 		9D5B42B9259C858100A4F34A /* chapter4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter4.swift; sourceTree = "<group>"; };
 		9D5B42C4259C97FB00A4F34A /* animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animations.swift; sourceTree = "<group>"; };
+		9D74261F25CA41F3008D9645 /* chapter14.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chapter14.swift; sourceTree = "<group>"; };
+		9D74262025CA41F3008D9645 /* chapter15.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chapter15.swift; sourceTree = "<group>"; };
+		9D74262125CA41F3008D9645 /* chapter11.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chapter11.swift; sourceTree = "<group>"; };
+		9D74262225CA41F3008D9645 /* chapter12.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chapter12.swift; sourceTree = "<group>"; };
+		9D74262325CA41F3008D9645 /* chapter13.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chapter13.swift; sourceTree = "<group>"; };
+		9D8C42AE25C7BE5C0039F857 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		9D8C42B825C7ECEC0039F857 /* PigpenCipher.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = PigpenCipher.otf; path = "../../../../Downloads/pigpen-cipher/PigpenCipher.otf"; sourceTree = "<group>"; };
+		9D8C42BE25C7F9C30039F857 /* nonPastableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nonPastableTextField.swift; sourceTree = "<group>"; };
 		9DBBF72F25C279310022FC63 /* chapter5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter5.swift; sourceTree = "<group>"; };
 		9DEA6A0525948BBA002A8739 /* chapter2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter2.swift; sourceTree = "<group>"; };
 		9DEA6A0B259515D8002A8739 /* keyboardTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keyboardTemplate.swift; sourceTree = "<group>"; };
@@ -189,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				9D0C543C25C50F97000EE579 /* audioKitHelpers.swift */,
+				9D8C42BE25C7F9C30039F857 /* nonPastableTextField.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -218,12 +236,14 @@
 		9D561380259195E600F1695A /* Project Mayhem */ = {
 			isa = PBXGroup;
 			children = (
+				9D0B057325C8B0DF00DB47CF /* Project Mayhem.entitlements */,
+				9D5613B7259196CB00F1695A /* Main.storyboard */,
 				9D561383259195E600F1695A /* ContentView.swift */,
 				9D561385259195E700F1695A /* Assets.xcassets */,
 				9D56140E2591CFFD00F1695A /* CustomButton.swift */,
 				9D5614E22592FC5F00F1695A /* CustomButtonOutline.swift */,
 				9D56142F2591DC5400F1695A /* AppDelegate.swift */,
-				9D5613B7259196CB00F1695A /* Main.storyboard */,
+				9D8C42AE25C7BE5C0039F857 /* Settings.bundle */,
 				9D0C543B25C50F79000EE579 /* Helpers */,
 				9D5614242591D2DA00F1695A /* View Controllers */,
 				9DEA6A0A259515B0002A8739 /* Templates */,
@@ -266,6 +286,7 @@
 			children = (
 				9D5613CE2591C7FC00F1695A /* Adoring.otf */,
 				9D5613CD2591C7FC00F1695A /* Lover.otf */,
+				9D8C42B825C7ECEC0039F857 /* PigpenCipher.otf */,
 				9D5613CC2591C7FC00F1695A /* Invission Pro.otf */,
 				9D5613CF2591C7FC00F1695A /* MYRIADPRO-REGULAR.OTF */,
 			);
@@ -283,10 +304,15 @@
 				9D5B42B9259C858100A4F34A /* chapter4.swift */,
 				9DBBF72F25C279310022FC63 /* chapter5.swift */,
 				9DEB282525C54C3A00E3F102 /* chapter6.swift */,
-				9DEB283725C5D7EE00E3F102 /* chapter10.swift */,
 				9DEB282B25C5D78700E3F102 /* chapter7.swift */,
 				9DEB282F25C5D7D000E3F102 /* chapter8.swift */,
 				9DEB283325C5D7DF00E3F102 /* chapter9.swift */,
+				9DEB283725C5D7EE00E3F102 /* chapter10.swift */,
+				9D74262125CA41F3008D9645 /* chapter11.swift */,
+				9D74262225CA41F3008D9645 /* chapter12.swift */,
+				9D74262325CA41F3008D9645 /* chapter13.swift */,
+				9D74261F25CA41F3008D9645 /* chapter14.swift */,
+				9D74262025CA41F3008D9645 /* chapter15.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -424,6 +450,8 @@
 				9D5614C925928E5500F1695A /* Adoring.otf in Resources */,
 				9D5614D125928E6000F1695A /* Invission Pro.otf in Resources */,
 				9D5613BD259196DE00F1695A /* LaunchScreen.storyboard in Resources */,
+				9D8C42BB25C7EFB90039F857 /* PigpenCipher.otf in Resources */,
+				9D8C42AF25C7BE5C0039F857 /* Settings.bundle in Resources */,
 				9D5613B8259196CB00F1695A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,18 +547,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D5614DE2592A00200F1695A /* Levels.swift in Sources */,
+				9D74262425CA41F3008D9645 /* chapter14.swift in Sources */,
 				9DEB283425C5D7DF00E3F102 /* chapter9.swift in Sources */,
 				9D0C544125C51AA7000EE579 /* UIViewControllerExtensions.swift in Sources */,
 				9DBBF73025C279310022FC63 /* chapter5.swift in Sources */,
 				9D5614E32592FC5F00F1695A /* CustomButtonOutline.swift in Sources */,
 				9DEB282625C54C3A00E3F102 /* chapter6.swift in Sources */,
+				9D74262525CA41F3008D9645 /* chapter15.swift in Sources */,
 				9DEA6A0625948BBA002A8739 /* chapter2.swift in Sources */,
+				9D74262625CA41F3008D9645 /* chapter11.swift in Sources */,
 				9DEB282C25C5D78700E3F102 /* chapter7.swift in Sources */,
+				9D74262825CA41F3008D9645 /* chapter13.swift in Sources */,
 				9D5614202591D1C300F1695A /* MainScreen.swift in Sources */,
 				9D561384259195E600F1695A /* ContentView.swift in Sources */,
 				9DEA6A0C259515D8002A8739 /* keyboardTemplate.swift in Sources */,
 				9D5614302591DC5400F1695A /* AppDelegate.swift in Sources */,
 				9DEB283F25C6095000E3F102 /* stringExtensions.swift in Sources */,
+				9D74262725CA41F3008D9645 /* chapter12.swift in Sources */,
 				9DEA6A3825972495002A8739 /* chapter3.swift in Sources */,
 				9DEA6A112595162B002A8739 /* chapterTemplate.swift in Sources */,
 				9DEB283825C5D7EE00E3F102 /* chapter10.swift in Sources */,
@@ -539,6 +572,7 @@
 				9DEA6A1725951730002A8739 /* foregroundEventTemplate.swift in Sources */,
 				9DEB283025C5D7D000E3F102 /* chapter8.swift in Sources */,
 				9D0C543D25C50F97000EE579 /* audioKitHelpers.swift in Sources */,
+				9D8C42BF25C7F9C30039F857 /* nonPastableTextField.swift in Sources */,
 				9D5B42BA259C858100A4F34A /* chapter4.swift in Sources */,
 				9D5614E82593153C00F1695A /* chapter1.swift in Sources */,
 			);
@@ -698,6 +732,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Project Mayhem/Project Mayhem.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Project Mayhem/Preview Content\"";
 				DEVELOPMENT_TEAM = 68L233566P;
@@ -708,8 +744,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.YushRajKapoor.Project-Mayhem";
+				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -721,6 +758,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Project Mayhem/Project Mayhem.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Project Mayhem/Preview Content\"";
 				DEVELOPMENT_TEAM = 68L233566P;
@@ -731,8 +770,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.YushRajKapoor.Project-Mayhem";
+				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

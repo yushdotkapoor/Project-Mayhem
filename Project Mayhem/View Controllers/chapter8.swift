@@ -9,10 +9,25 @@ import UIKit
 
 class chapter8: UIViewController {
     @IBOutlet weak var nextChap: UIButton!
+    @IBOutlet weak var todo: UILabel!
+    @IBOutlet weak var never: UILabel!
+    @IBOutlet weak var no: UILabel!
+    @IBOutlet weak var balance: UILabel!
+    @IBOutlet weak var settings: UIImageView!
     
     override func viewDidLoad() {
            super.viewDidLoad()
+        settings.alpha = 0.15
         
+        if !game.bool(forKey: "settingsValueChanged") {
+            UserDefaults.standard.set(true, forKey: "enabled_preference")
+        }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.changed), name: UserDefaults.didChangeNotification, object: nil)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.viewTapped(gesture:)))
+        view.addGestureRecognizer(tapGesture)
+        view.isUserInteractionEnabled = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -21,18 +36,64 @@ class chapter8: UIViewController {
         nextChap.isUserInteractionEnabled = false
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-    }
-    
     func complete() {
-        //game.setValue(true, forKey: "chap1")
+        NotificationCenter.default.removeObserver(self)
+        game.setValue(true, forKey: "chap8")
         game.setValue("none", forKey: "active")
         nextChap.isUserInteractionEnabled = true
         nextChap.fadeIn()
-        
     }
+    
+    @objc func changed() {
+        let multi = game.string(forKey: "multi_value")
+        let text = game.string(forKey: "name_preference")
+        let toggle = game.bool(forKey: "enabled_preference")
+        let slider = game.float(forKey: "slider_preference")
+        
+        var one = false
+        var two = false
+        var three = false
+        var four = false
+        
+        if multi == "good" {
+            todo.textColor = UIColor.green
+            one = true
+        }
+        else {
+            todo.textColor = UIColor.white
+            one = false
+        }
+        if text == "stop" {
+            never.textColor = UIColor.green
+            two = true
+        }
+        else {
+            never.textColor = UIColor.white
+            two = false
+        }
+        if toggle == false {
+            no.textColor = UIColor.green
+            three = true
+        }
+        else {
+            no.textColor = UIColor.white
+            three = false
+        }
+        if slider > 0.45 && slider < 0.55 {
+            balance.textColor = UIColor.green
+            four = true
+        }
+        else {
+            balance.textColor = UIColor.white
+            four = false
+        }
+        
+        if one && two && three && four {
+            complete()
+            game.setValue(true, forKey: "settingsValueChanged")
+        }
+    }
+    
 
     @IBAction func goBack(_ sender: Any) {
         self.performSegue(withIdentifier: "chap8ToHome", sender: nil)
@@ -40,6 +101,10 @@ class chapter8: UIViewController {
     
     @IBAction func goNext(_ sender: Any) {
         self.performSegue(withIdentifier: "chap8ToChap9", sender: nil)
+    }
+    
+    @objc func viewTapped(gesture: UIGestureRecognizer) {
+        changed()
     }
 
 

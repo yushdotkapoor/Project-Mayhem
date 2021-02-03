@@ -11,6 +11,11 @@ let game = UserDefaults.standard
 
 class Levels: UIViewController {
     
+    @IBOutlet weak var chap15: CustomButtonOutline!
+    @IBOutlet weak var chap14: CustomButtonOutline!
+    @IBOutlet weak var chap13: CustomButtonOutline!
+    @IBOutlet weak var chap12: CustomButtonOutline!
+    @IBOutlet weak var chap11: CustomButtonOutline!
     @IBOutlet weak var chap10: CustomButtonOutline!
     @IBOutlet weak var chap9: CustomButtonOutline!
     @IBOutlet weak var chap8: CustomButtonOutline!
@@ -32,6 +37,11 @@ class Levels: UIViewController {
     @IBOutlet weak var chap8Center: NSLayoutConstraint!
     @IBOutlet weak var chap9Center: NSLayoutConstraint!
     @IBOutlet weak var chap10Center: NSLayoutConstraint!
+    @IBOutlet weak var chap11Center: NSLayoutConstraint!
+    @IBOutlet weak var chap12Center: NSLayoutConstraint!
+    @IBOutlet weak var chap13Center: NSLayoutConstraint!
+    @IBOutlet weak var chap14Center: NSLayoutConstraint!
+    @IBOutlet weak var chap15Center: NSLayoutConstraint!
     
     var del = 0.5
     
@@ -45,8 +55,8 @@ class Levels: UIViewController {
         for c in controllers {
             NotificationCenter.default.removeObserver(c)
         }
-        
         //reset()
+        //loadAll()
     }
     
     func reset() {
@@ -57,18 +67,26 @@ class Levels: UIViewController {
         }
     }
     
+    func loadAll() {
+        let reset = getData(string: "String") as! [String]
+        
+        for r in reset {
+            game.setValue(true, forKey: r)
+        }
+    }
+    
     func getData(string: String) -> [Any] {
         if string == "Center" {
-        return [chap1Center, chap2Center, chap3Center, chap4Center, chap5Center, chap6Center, chap7Center, chap8Center, chap9Center, chap10Center] as [NSLayoutConstraint]
+        return [chap1Center, chap2Center, chap3Center, chap4Center, chap5Center, chap6Center, chap7Center, chap8Center, chap9Center, chap10Center, chap11Center, chap12Center, chap13Center, chap14Center, chap15Center] as [NSLayoutConstraint]
         }
         else if string == "String" {
-            return ["chap1", "chap2", "chap3", "chap4", "chap5", "chap6", "chap7", "chap8", "chap9", "chap10"] as [String]
+            return ["chap1", "chap2", "chap3", "chap4", "chap5", "chap6", "chap7", "chap8", "chap9", "chap10", "chap11", "chap12", "chap13", "chap14", "chap15"] as [String]
         }
         else if string == "ViewController" {
-            return [chapter1(), chapter2(), chapter3(), chapter4(), chapter5(), chapter6(), chapter7(), chapter8(), chapter9(), chapter10()] as [UIViewController]
+            return [chapter1(), chapter2(), chapter3(), chapter4(), chapter5(), chapter6(), chapter7(), chapter8(), chapter9(), chapter10(), chapter11(), chapter12(), chapter13(), chapter14(), chapter15()] as [UIViewController]
         }
         else {
-            return [chap1, chap2, chap3, chap4, chap5, chap6, chap7, chap8, chap9, chap10] as [CustomButtonOutline]
+            return [chap1, chap2, chap3, chap4, chap5, chap6, chap7, chap8, chap9, chap10, chap11, chap12, chap13, chap14, chap15] as [CustomButtonOutline]
         }
     }
     
@@ -90,8 +108,10 @@ class Levels: UIViewController {
             if completion {
                 arrayButtons[i].setupButton(color: UIColor.green)
                 arrayButtons[i].isEnabled = true
-                arrayButtons[i+1].setupButton(color: UIColor.white)
-                arrayButtons[i+1].isEnabled = true
+                if arrayButtons.count != i + 1 {
+                    arrayButtons[i+1].setupButton(color: UIColor.white)
+                    arrayButtons[i+1].isEnabled = true
+                }
             }
             i += 1
         }
@@ -163,7 +183,7 @@ class Levels: UIViewController {
             constraint.constant += self.view.bounds.width
             self.view.layoutIfNeeded()
         }, completion: nil)
-        del += 0.1
+        del += 0.05
     }
 }
 
