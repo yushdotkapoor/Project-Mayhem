@@ -19,7 +19,6 @@ class chapter12: UIViewController {
     @IBOutlet weak var a2: UIImageView!
     @IBOutlet weak var a3: UIImageView!
     
-    
     var one = false
     var two = false
     var three = false
