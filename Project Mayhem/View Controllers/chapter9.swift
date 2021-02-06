@@ -87,6 +87,10 @@ class chapter9: UIViewController, UITextFieldDelegate {
             view.endEditing(true)
             complete()
         }
+        else {
+            textField.shake()
+            textField.text = ""
+        }
     }
     
     @IBAction func goBack(_ sender: Any) {

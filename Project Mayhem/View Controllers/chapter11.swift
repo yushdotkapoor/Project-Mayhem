@@ -11,8 +11,10 @@ import Speech
 class chapter11: UIViewController, SFSpeechRecognizerDelegate {
     @IBOutlet weak var nextChap: UIButton!
     @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var rippleCircle: UIImageView!
+    @IBOutlet weak var morseText: UILabel!
+    @IBOutlet weak var binaryText: UILabel!
+    @IBOutlet weak var pigpenCipherText: UILabel!
     
     var resetInProgress = false
     var currentString = ""
@@ -27,16 +29,11 @@ class chapter11: UIViewController, SFSpeechRecognizerDelegate {
            super.viewDidLoad()
         resetInProgress = false
         currentString = ""
-        setImage()
         label.alpha = 0.0
+        binaryText.text = binaryText.text?.stringToBinary()
+        morseText.text = morseText.text?.stringToMorse()
         game.setValue("chap11", forKey: "active")
         startRecording()
-    }
-    
-    func setImage() {
-        logo.layer.borderWidth = 1
-        logo.layer.borderColor = UIColor.white.cgColor
-        logo.layer.cornerRadius = 20
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -93,8 +90,11 @@ class chapter11: UIViewController, SFSpeechRecognizerDelegate {
             
             if result != nil {
                 self.rippleCircle.ripple(view: self.view)
-                if ((result?.bestTranscription.formattedString.lowercased().contains("project mayhem")) == true) || ((result?.bestTranscription.formattedString.lowercased().contains("project mayham")) == true) {
-                    self.label.text = "Project Mayhem"
+                if ((result?.bestTranscription.formattedString.lowercased().contains("william shakespeare")) == true) {
+                    self.label.text = "William Shakespeare"
+                    self.pigpenCipherText.fadeOut()
+                    self.morseText.fadeOut()
+                    self.binaryText.fadeOut()
                     self.label.fadeIn()
                     self.stopRecording()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {

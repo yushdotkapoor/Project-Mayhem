@@ -249,6 +249,9 @@
 			children = (
 				9D0C543C25C50F97000EE579 /* audioKitHelpers.swift */,
 				9D8C42BE25C7F9C30039F857 /* nonPastableTextField.swift */,
+				9DEB283E25C6095000E3F102 /* stringExtensions.swift */,
+				9D0C544025C51AA7000EE579 /* UIViewControllerExtensions.swift */,
+				9D5B42C4259C97FB00A4F34A /* animations.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -285,13 +288,13 @@
 				9D56140E2591CFFD00F1695A /* CustomButton.swift */,
 				9D5614E22592FC5F00F1695A /* CustomButtonOutline.swift */,
 				9D56142F2591DC5400F1695A /* AppDelegate.swift */,
+				9D5613BC259196DE00F1695A /* LaunchScreen.storyboard */,
+				9D56138A259195E700F1695A /* Info.plist */,
 				9D8C42AE25C7BE5C0039F857 /* Settings.bundle */,
 				9D0C543B25C50F79000EE579 /* Helpers */,
 				9D5614242591D2DA00F1695A /* View Controllers */,
 				9DEA6A0A259515B0002A8739 /* Templates */,
 				9D5613CB2591C7F200F1695A /* Fonts */,
-				9D5613BC259196DE00F1695A /* LaunchScreen.storyboard */,
-				9D56138A259195E700F1695A /* Info.plist */,
 				9D561387259195E700F1695A /* Preview Content */,
 			);
 			path = "Project Mayhem";
@@ -393,9 +396,6 @@
 			children = (
 				9DEA6A0B259515D8002A8739 /* keyboardTemplate.swift */,
 				9DEA6A1625951730002A8739 /* foregroundEventTemplate.swift */,
-				9DEB283E25C6095000E3F102 /* stringExtensions.swift */,
-				9D5B42C4259C97FB00A4F34A /* animations.swift */,
-				9D0C544025C51AA7000EE579 /* UIViewControllerExtensions.swift */,
 				9DEA6A102595162B002A8739 /* chapterTemplate.swift */,
 			);
 			path = Templates;

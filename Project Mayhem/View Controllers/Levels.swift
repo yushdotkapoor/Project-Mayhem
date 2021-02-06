@@ -127,7 +127,7 @@ class Levels: UIViewController {
         super.viewDidAppear(animated)
         colorize()
         UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut, animations: {
-            self.logoWidth.constant *= 0.5
+            self.logoWidth.constant *= 0.25
             self.view.layoutIfNeeded()
         }, completion: nil)
         
@@ -202,8 +202,6 @@ class Levels: UIViewController {
         }
     }
     
-    
-    
     func animate(constraint: NSLayoutConstraint) {
         UIView.animate(withDuration: 0.5, delay: del, options: .curveEaseOut, animations: {
             constraint.constant += self.view.bounds.width
@@ -211,6 +209,7 @@ class Levels: UIViewController {
         }, completion: nil)
         del += 0.05
     }
+    
     
     func requestTranscribePermissions() {
         SFSpeechRecognizer.requestAuthorization { [unowned self] authStatus in

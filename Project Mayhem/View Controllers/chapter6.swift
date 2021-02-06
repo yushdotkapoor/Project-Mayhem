@@ -40,8 +40,10 @@ class chapter6: UIViewController {
                 }
             }
         }
-        sequenceOfFlashes = []
-        actionArray = []
+        sequenceOfFlashes.removeAll()
+        actionArray.removeAll()
+        index = 0
+        vibrateShouldStop = false
     
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(stop), name: UIApplication.willResignActiveNotification, object: nil)
@@ -170,6 +172,7 @@ class chapter6: UIViewController {
             complete()
         }
         else {
+            textField.shake()
             textField.text = ""
         }
     }

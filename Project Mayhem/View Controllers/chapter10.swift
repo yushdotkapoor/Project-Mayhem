@@ -145,6 +145,10 @@ class chapter10: UIViewController {
             view.endEditing(true)
             complete()
         }
+        else {
+            textField.shake()
+            textField.text = ""
+        }
     }
     
     
