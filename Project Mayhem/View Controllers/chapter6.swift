@@ -131,7 +131,6 @@ class chapter6: UIViewController {
             }
             scheduleTimer()
         }
-        
         index += 1
     }
     
@@ -171,7 +170,7 @@ class chapter6: UIViewController {
             stop()
             complete()
         }
-        else {
+        else if textField.text != "" {
             textField.shake()
             textField.text = ""
         }
@@ -205,7 +204,6 @@ class chapter6: UIViewController {
         nextChap.isUserInteractionEnabled = true
         nextChap.fadeIn()
     }
-    
     
     @objc func doneClicked() {
         view.endEditing(true)

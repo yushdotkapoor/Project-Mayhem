@@ -2237,6 +2237,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mdR-rb-hRX">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </arscnView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quake" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Lew-oY-Xh1">
+                                <rect key="frame" x="15" y="94" width="384" height="63"/>
+                                <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="45"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="u3O-sL-5Q3">
+                                <rect key="frame" x="20" y="716" width="374" height="36"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Rcv-YH-TbO" customClass="nonPastableTextField" customModule="Project_Mayhem" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="330" height="36"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0m8-ro-KLk">
+                                        <rect key="frame" x="337" y="0.0" width="37" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="&gt;&gt;&gt;"/>
+                                        <connections>
+                                            <action selector="submit:" destination="v3Q-ax-3fC" eventType="touchUpInside" id="dbL-kp-G30"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Md8-ei-7ci">
                                 <rect key="frame" x="20" y="782" width="374" height="50"/>
                                 <subviews>
@@ -2276,24 +2305,54 @@
                                     <constraint firstItem="bTo-dd-ZBq" firstAttribute="width" secondItem="bTo-dd-ZBq" secondAttribute="height" multiplier="1:1" id="E0v-zk-duy"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sU0-q4-aTq" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
+                                <rect key="frame" x="177" y="656" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="AHL-qH-tJD"/>
+                                </constraints>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="reset:" destination="v3Q-ax-3fC" eventType="touchUpInside" id="bEd-qM-MaX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8ye-gY-SuS"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="8ye-gY-SuS" firstAttribute="trailing" secondItem="u3O-sL-5Q3" secondAttribute="trailing" constant="20" id="1sH-yn-ckW"/>
+                            <constraint firstItem="mdR-rb-hRX" firstAttribute="top" secondItem="ymX-G8-6Hb" secondAttribute="top" id="5aw-7c-dWd"/>
+                            <constraint firstItem="8ye-gY-SuS" firstAttribute="trailing" secondItem="Lew-oY-Xh1" secondAttribute="trailing" constant="15" id="9J7-Ta-LxU"/>
+                            <constraint firstItem="mdR-rb-hRX" firstAttribute="bottom" secondItem="ymX-G8-6Hb" secondAttribute="bottom" id="Bde-jE-gS5"/>
                             <constraint firstItem="8ye-gY-SuS" firstAttribute="trailing" secondItem="Md8-ei-7ci" secondAttribute="trailing" constant="20" id="Ekg-nv-tZC"/>
+                            <constraint firstItem="u3O-sL-5Q3" firstAttribute="top" secondItem="sU0-q4-aTq" secondAttribute="bottom" constant="30" id="FQs-dV-JdO"/>
+                            <constraint firstItem="mdR-rb-hRX" firstAttribute="leading" secondItem="8ye-gY-SuS" secondAttribute="leading" id="LUL-dT-H5I"/>
                             <constraint firstItem="Md8-ei-7ci" firstAttribute="leading" secondItem="8ye-gY-SuS" secondAttribute="leading" constant="20" id="U5o-VZ-MbF"/>
+                            <constraint firstItem="sU0-q4-aTq" firstAttribute="centerX" secondItem="ymX-G8-6Hb" secondAttribute="centerX" id="YYF-Uy-Aj8"/>
+                            <constraint firstItem="Lew-oY-Xh1" firstAttribute="top" secondItem="8ye-gY-SuS" secondAttribute="top" constant="50" id="bmE-eF-V4Q"/>
+                            <constraint firstItem="Lew-oY-Xh1" firstAttribute="leading" secondItem="8ye-gY-SuS" secondAttribute="leading" constant="15" id="gbA-0c-taP"/>
+                            <constraint firstItem="u3O-sL-5Q3" firstAttribute="leading" secondItem="8ye-gY-SuS" secondAttribute="leading" constant="20" id="kDM-Nk-cIC"/>
+                            <constraint firstItem="Md8-ei-7ci" firstAttribute="top" secondItem="u3O-sL-5Q3" secondAttribute="bottom" constant="30" id="lVS-rf-b7t"/>
+                            <constraint firstItem="8ye-gY-SuS" firstAttribute="trailing" secondItem="mdR-rb-hRX" secondAttribute="trailing" id="vNZ-RC-E0Z"/>
                             <constraint firstAttribute="bottom" secondItem="Md8-ei-7ci" secondAttribute="bottom" constant="64" id="w2K-99-diF"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Reset" destination="sU0-q4-aTq" id="1yC-0p-fMe"/>
+                        <outlet property="labelStack" destination="u3O-sL-5Q3" id="GCy-N6-eyy"/>
+                        <outlet property="labelStackBottom" destination="lVS-rf-b7t" id="jUF-Bc-sbb"/>
                         <outlet property="nextChap" destination="bTo-dd-ZBq" id="YRj-2i-cI5"/>
+                        <outlet property="quakeLabel" destination="Lew-oY-Xh1" id="VIn-5O-Nd6"/>
+                        <outlet property="sceneView" destination="mdR-rb-hRX" id="0Jh-qV-0Zm"/>
+                        <outlet property="textField" destination="Rcv-YH-TbO" id="vMc-My-Trl"/>
                         <segue destination="kGn-9U-lje" kind="presentation" identifier="chap13ToChap14" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="kju-Ul-nqJ"/>
                         <segue destination="GTF-CI-eye" kind="presentation" identifier="chap13ToHome" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="yhz-V3-kvn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Igf-ji-Snk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3300" y="1525"/>
+            <point key="canvasLocation" x="3300.0000000000005" y="1524.7767857142856"/>
         </scene>
         <!--Chapter14-->
         <scene sceneID="c4i-kj-84U">
@@ -2429,8 +2488,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="dHH-0f-i87"/>
-        <segue reference="j8f-cg-Hji"/>
-        <segue reference="9I8-69-dGt"/>
+        <segue reference="kju-Ul-nqJ"/>
+        <segue reference="7ds-ad-yt1"/>
         <segue reference="8va-rm-XAP"/>
         <segue reference="Zjm-44-Rn8"/>
         <segue reference="dbV-cl-syM"/>
@@ -2442,7 +2501,7 @@
         <segue reference="fse-oy-gCD"/>
         <segue reference="rPy-e3-cah"/>
         <segue reference="4Jn-Pi-K9C"/>
-        <segue reference="Rad-n7-9j2"/>
+        <segue reference="yhz-V3-kvn"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Logo" width="3000" height="2000"/>

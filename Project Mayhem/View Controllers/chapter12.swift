@@ -48,6 +48,7 @@ class chapter12: UIViewController {
     
     @objc func batteryStateDidChange() {
         let state = UIDevice.current.batteryState.rawValue
+        
         if state == 2 {
             batteryImg.fadeOut()
             backView.fadeIn()
@@ -57,12 +58,14 @@ class chapter12: UIViewController {
     }
     
     @objc func timeChanged() {
-        let currentDate = Date().timeIntervalSince1970
+        let date = Date().timeIntervalSince1970 * 1000
+        let timezoneOffset =  TimeZone.current.secondsFromGMT() * 1000
+        let currentDate = Int(date) + Int(timezoneOffset)
         
-        let may29 = 1020486962
-        let may30 = 1106886961
+        let may29 = 1022630400000
+        let may30 = 1022716799999
         
-        if Int(currentDate) > may29 && Int(currentDate) < may30 {
+        if currentDate > may29 && currentDate < may30 {
             backView.fadeOut()
             aStack.fadeIn()
             

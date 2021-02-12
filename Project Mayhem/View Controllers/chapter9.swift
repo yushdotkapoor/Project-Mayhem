@@ -17,6 +17,7 @@ class chapter9: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var thirdStack: UIStackView!
     
     var keyboardAdded: CGFloat = 0.0
+    var open = false
     
     override func viewDidLoad() {
            super.viewDidLoad()
@@ -48,6 +49,9 @@ class chapter9: UIViewController, UITextFieldDelegate {
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
+        if open {
+            return
+        }
         let bounds = UIScreen.main.bounds
         let deviceHeight = bounds.size.height
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
@@ -56,23 +60,19 @@ class chapter9: UIViewController, UITextFieldDelegate {
             let add = keyboardHeight - labelHeight + 70
             keyboardAdded = add
             firstStackTop.constant -= add
+            open = true
             }
     }
     
     @objc func keyboardWillHide() {
         firstStackTop.constant += keyboardAdded
+        open = false
     }
-  
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         nextChap.alpha = 0.0
         nextChap.isUserInteractionEnabled = false
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
     }
     
     func complete() {
@@ -87,7 +87,7 @@ class chapter9: UIViewController, UITextFieldDelegate {
             view.endEditing(true)
             complete()
         }
-        else {
+        else if textField.text != ""{
             textField.shake()
             textField.text = ""
         }
