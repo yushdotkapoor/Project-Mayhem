@@ -20,12 +20,12 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Project Mayhem would like to have access to the camera</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Project Mayhem would like access to your microphone</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Project Mayhem would like to have access to speech recognition for certain levels</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Project Mayhem would like to have access to the camera</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -36,6 +36,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIStatusBarHidden</key>
+	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

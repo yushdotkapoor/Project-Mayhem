@@ -13,6 +13,10 @@ class chapter4: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageWidth: NSLayoutConstraint!
     @IBOutlet weak var one: UILabel!
+    @IBOutlet weak var hint: UIButton!
+    @IBOutlet weak var toolbar: UIStackView!
+    
+    let customAlert = HintAlert()
     
     let motionManager = CMMotionManager()
     
@@ -157,6 +161,30 @@ class chapter4: UIViewController {
 
     @IBAction func goNext(_ sender: Any) {
         self.performSegue(withIdentifier: "chap4ToChap5", sender: nil)
+    }
+    
+
+    
+    @IBAction func hint(_ sender: Any) {
+        if menuState {
+            //if menu open and want to close
+            dismissAlert()
+        }
+        else {
+            menuState = true
+            //if menu closed and want to open
+            hint.rotate(rotation: 0.49999, duration: 0.5)
+            UIView.animate(withDuration: 0.5) {
+                self.hint.tintColor = UIColor.lightGray
+            }
+            customAlert.showAlert(message: "Move your phone a bit. Just kidding, a lot.", viewController: self, hintButton: hint)
+            view.bringSubviewToFront(toolbar)
+        }
+        
+    }
+    
+    func dismissAlert() {
+        customAlert.dismissAlert()
     }
     
 }

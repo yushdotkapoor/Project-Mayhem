@@ -23,6 +23,10 @@ class chapter10: UIViewController {
     @IBOutlet weak var textStack: UIStackView!
     @IBOutlet weak var textField: nonPastableTextField!
     @IBOutlet weak var buttonStackTop: NSLayoutConstraint!
+    @IBOutlet weak var hint: UIButton!
+    @IBOutlet weak var toolbar: UIStackView!
+    
+    let customAlert = HintAlert()
     
     var tiles:[UIButton] = []
     var keyboardAdded: CGFloat = 0.0
@@ -32,7 +36,7 @@ class chapter10: UIViewController {
         textStack.alpha = 0.0
         let gradient = CAGradientLayer()
         gradient.frame = view.bounds
-        gradient.colors = [UIColor.systemRed.cgColor, UIColor.systemOrange.cgColor, UIColor.systemYellow.cgColor]
+        gradient.colors = [UIColor.systemYellow.cgColor, UIColor.systemOrange.cgColor, UIColor.systemRed.cgColor]
         view.layer.addSublayer(gradient)
         view.bringSubviewToFront(bottomStack)
         view.bringSubviewToFront(buttonView)
@@ -219,6 +223,29 @@ class chapter10: UIViewController {
     
     @objc func viewTapped(gesture: UIGestureRecognizer) {
         view.endEditing(true)
+    }
+    
+
+    @IBAction func hint(_ sender: Any) {
+        if menuState {
+            //if menu open and want to close
+            dismissAlert()
+        }
+        else {
+            menuState = true
+            //if menu closed and want to open
+            hint.rotate(rotation: 0.49999, duration: 0.5)
+            UIView.animate(withDuration: 0.5) {
+                self.hint.tintColor = UIColor.lightGray
+            }
+            customAlert.showAlert(message: "I wonder what I could do with a QR code, once it is aligned", viewController: self, hintButton: hint)
+            view.bringSubviewToFront(toolbar)
+        }
+        
+    }
+    
+    func dismissAlert() {
+        customAlert.dismissAlert()
     }
 
 }

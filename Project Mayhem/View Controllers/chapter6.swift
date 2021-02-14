@@ -8,11 +8,17 @@
 import UIKit
 import AVFoundation
 
+var chap6Timer = false
+
 class chapter6: UIViewController {
     @IBOutlet weak var nextChap: UIButton!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var heder: UILabel!
+    @IBOutlet weak var hint: UIButton!
+    @IBOutlet weak var toolbar: UIStackView!
+    
+    let customAlert = HintAlert()
     
     var window:UIWindow?
     
@@ -44,10 +50,12 @@ class chapter6: UIViewController {
         actionArray.removeAll()
         index = 0
         vibrateShouldStop = false
+        chap6Timer = false
     
         let notificationCenter = NotificationCenter.default
+        notificationCenter.removeObserver(self)
         notificationCenter.addObserver(self, selector: #selector(stop), name: UIApplication.willResignActiveNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(scheduleTimer), name: UIApplication.didBecomeActiveNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(cameBack), name: UIApplication.didBecomeActiveNotification, object: nil)
         
         
         let toolBar = UIToolbar()
@@ -94,15 +102,25 @@ class chapter6: UIViewController {
                 break
             }
         }
-        scheduleTimer()
+        if !chap6Timer {
+            chap6Timer = true
+            scheduleTimer()
+        }
     }
  
     @objc func scheduleTimer() {
+        if index == 1000 || !chap6Timer {
+            return
+        }
+        
         game.setValue("chap6", forKey: "active")
         timer = Timer.scheduledTimer(timeInterval: sequenceOfFlashes[index], target: self, selector: #selector(timerTick), userInfo: nil, repeats: false)
     }
 
      @objc func timerTick() {
+        if index == 1000 || !chap6Timer {
+            return
+        }
         if index == sequenceOfFlashes.count {
             restart()
             return
@@ -148,19 +166,42 @@ class chapter6: UIViewController {
         }
     }
     
+    func checkArrayFilled() {
+        if sequenceOfFlashes.count == 0 {
+            sequenceOfFlashes.removeAll()
+            actionArray.removeAll()
+            setupMorseFlashesSequence()
+        }
+    }
+    
     func restart() {
-        index = 0
-        scheduleTimer()
+        if game.string(forKey: "active") == "chap6" && !chap6Timer {
+            chap6Timer = true
+            checkArrayFilled()
+            index = 0
+            scheduleTimer()
+        }
     }
 
     @objc func stop() {
         game.setValue("none", forKey: "active")
         timer?.invalidate()
+        chap6Timer = false
         turnFlashlight(on: false)
+        index = 1000
+    }
+    
+    @objc func cameBack() {
+        game.setValue("chap6", forKey: "active")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            if game.string(forKey: "active") == "chap6" {
+                self.restart()
+            }
+        }
     }
 
     deinit {
-        timer?.invalidate()
+        stop()
     }
     
     @IBAction func submit(_ sender: Any) {
@@ -220,6 +261,30 @@ class chapter6: UIViewController {
     
     @IBAction func goNext(_ sender: Any) {
         self.performSegue(withIdentifier: "chap6ToChap7", sender: nil)
+    }
+    
+
+    
+    @IBAction func hint(_ sender: Any) {
+        if menuState {
+            //if menu open and want to close
+            dismissAlert()
+        }
+        else {
+            menuState = true
+            //if menu closed and want to open
+            hint.rotate(rotation: 0.49999, duration: 0.5)
+            UIView.animate(withDuration: 0.5) {
+                self.hint.tintColor = UIColor.lightGray
+            }
+            customAlert.showAlert(message: "Seems like this is a coded message!", viewController: self, hintButton: hint)
+            view.bringSubviewToFront(toolbar)
+        }
+        
+    }
+    
+    func dismissAlert() {
+        customAlert.dismissAlert()
     }
 
 

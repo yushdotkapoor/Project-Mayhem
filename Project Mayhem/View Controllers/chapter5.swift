@@ -13,6 +13,10 @@ class chapter5: UIViewController {
     @IBOutlet weak var Hz: UILabel!
     @IBOutlet weak var progress: UIProgressView!
     @IBOutlet weak var A: UILabel!
+    @IBOutlet weak var hint: UIButton!
+    @IBOutlet weak var toolbar: UIStackView!
+    
+    let customAlert = HintAlert()
     
     let microphone = Listen()
     var progressVal:Float = 0.0
@@ -89,6 +93,30 @@ class chapter5: UIViewController {
     
     @IBAction func goNext(_ sender: Any) {
         self.performSegue(withIdentifier: "chap5ToChap6", sender: nil)
+    }
+    
+    
+    
+    @IBAction func hint(_ sender: Any) {
+        if menuState {
+            //if menu open and want to close
+            dismissAlert()
+        }
+        else {
+            menuState = true
+            //if menu closed and want to open
+            hint.rotate(rotation: 0.49999, duration: 0.5)
+            UIView.animate(withDuration: 0.5) {
+                self.hint.tintColor = UIColor.darkGray
+            }
+            customAlert.showAlert(message: "do re mi fa so laaaaaaaaaaaaaaaaaaaaaaaaaaaaa", viewController: self, hintButton: hint)
+            view.bringSubviewToFront(toolbar)
+        }
+        
+    }
+    
+    func dismissAlert() {
+        customAlert.dismissAlert()
     }
 
 

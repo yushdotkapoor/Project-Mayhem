@@ -25,6 +25,10 @@ class chapter7: UIViewController {
     @IBOutlet weak var button14: UIButton!
     @IBOutlet weak var button15: UIButton!
     @IBOutlet weak var button16: UIButton!
+    @IBOutlet weak var hint: UIButton!
+    @IBOutlet weak var toolbar: UIStackView!
+    
+    let customAlert = HintAlert()
     
     var current = 0
     var orderString:[String] = []
@@ -176,7 +180,29 @@ class chapter7: UIViewController {
         checkOrder()
     }
     
+
     
+    @IBAction func hint(_ sender: Any) {
+        if menuState {
+            //if menu open and want to close
+            dismissAlert()
+        }
+        else {
+            menuState = true
+            //if menu closed and want to open
+            hint.rotate(rotation: 0.49999, duration: 0.5)
+            UIView.animate(withDuration: 0.5) {
+                self.hint.tintColor = UIColor.lightGray
+            }
+            customAlert.showAlert(message: "Rule number 1: have patience. Rule number 2: have good memory skills. Rule number 3: see what happens when you tap (r1,c2).", viewController: self, hintButton: hint)
+            view.bringSubviewToFront(toolbar)
+        }
+        
+    }
+    
+    func dismissAlert() {
+        customAlert.dismissAlert()
+    }
     
     
 

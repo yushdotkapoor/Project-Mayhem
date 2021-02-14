@@ -16,6 +16,12 @@ class chapter13: UIViewController {
     @IBOutlet weak var labelStackBottom: NSLayoutConstraint!
     @IBOutlet weak var quakeLabel: UILabel!
     @IBOutlet weak var Reset: CustomButtonOutline!
+    @IBOutlet weak var hint: UIButton!
+    @IBOutlet weak var toolbar: UIStackView!
+    
+    let customAlert = HintAlert()
+    
+    var hintText = ""
     
     let config = ARWorldTrackingConfiguration()
     
@@ -38,6 +44,7 @@ class chapter13: UIViewController {
         textField.alpha = 0.2
         quakeLabel.numberOfLines = 3
         quakeLabel.text = "Sometimes we need to take a step back to get some perspective"
+        hintText = "Dude c'mon. The text on the screen IS the hint"
         
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
@@ -174,6 +181,7 @@ class chapter13: UIViewController {
                 }
                 if ct == i {
                     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+                    hintText = "Earthquake simulator? Look to your right :)"
                     lmt = shakeOrder[j + 1]
                     translateAll(xArr: xArr, zArr: zArr, xTrans: xTrans, nameArr: nameArr, limit:lmt)
                     return
@@ -192,6 +200,7 @@ class chapter13: UIViewController {
                 quakeLabel.numberOfLines = 1
                 textField.text = ""
                 view.endEditing(true)
+                hintText = "Earthquake simulator?"
                 sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
                     node.removeFromParentNode()
                 }
@@ -208,6 +217,7 @@ class chapter13: UIViewController {
             quakeLabel.text = "secret"
             textField.text = ""
             view.endEditing(true)
+            textField.isUserInteractionEnabled = false
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
             complete()
         }
@@ -244,6 +254,29 @@ class chapter13: UIViewController {
     
     @IBAction func goNext(_ sender: Any) {
         self.performSegue(withIdentifier: "chap13ToChap14", sender: nil)
+    }
+    
+
+    @IBAction func hint(_ sender: Any) {
+        if menuState {
+            //if menu open and want to close
+            dismissAlert()
+        }
+        else {
+            menuState = true
+            //if menu closed and want to open
+            hint.rotate(rotation: 0.49999, duration: 0.5)
+            UIView.animate(withDuration: 0.5) {
+                self.hint.tintColor = UIColor.lightGray
+            }
+            customAlert.showAlert(message: hintText, viewController: self, hintButton: hint)
+            view.bringSubviewToFront(toolbar)
+        }
+        
+    }
+    
+    func dismissAlert() {
+        customAlert.dismissAlert()
     }
 
 

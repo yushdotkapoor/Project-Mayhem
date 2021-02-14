@@ -14,6 +14,7 @@
 		9D0C53A825C4EE13000EE579 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D0C53A725C4EE13000EE579 /* AudioKit */; };
 		9D0C543D25C50F97000EE579 /* audioKitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C543C25C50F97000EE579 /* audioKitHelpers.swift */; };
 		9D0C544125C51AA7000EE579 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C544025C51AA7000EE579 /* UIViewControllerExtensions.swift */; };
+		9D18487D25D7A7B7007960C0 /* HintAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D18487C25D7A7B7007960C0 /* HintAlert.swift */; };
 		9D561384259195E600F1695A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D561383259195E600F1695A /* ContentView.swift */; };
 		9D561386259195E700F1695A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D561385259195E700F1695A /* Assets.xcassets */; };
 		9D561389259195E700F1695A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D561388259195E700F1695A /* Preview Assets.xcassets */; };
@@ -116,6 +117,7 @@
 		9D0C535B25C4DB39000EE579 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = "../../Downloads/AudioKit/AudioKit.xcframework/ios-arm64_armv7/AudioKit.framework"; sourceTree = "<group>"; };
 		9D0C543C25C50F97000EE579 /* audioKitHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audioKitHelpers.swift; sourceTree = "<group>"; };
 		9D0C544025C51AA7000EE579 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		9D18487C25D7A7B7007960C0 /* HintAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintAlert.swift; sourceTree = "<group>"; };
 		9D56137E259195E600F1695A /* Project Mayhem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Mayhem.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D561383259195E600F1695A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9D561385259195E700F1695A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				9D56140E2591CFFD00F1695A /* CustomButton.swift */,
 				9D5614E22592FC5F00F1695A /* CustomButtonOutline.swift */,
 				9D0C543C25C50F97000EE579 /* audioKitHelpers.swift */,
+				9D18487C25D7A7B7007960C0 /* HintAlert.swift */,
 				9D8C42BE25C7F9C30039F857 /* nonPastableTextField.swift */,
 				9DEB283E25C6095000E3F102 /* stringExtensions.swift */,
 				9D0C544025C51AA7000EE579 /* UIViewControllerExtensions.swift */,
@@ -639,6 +642,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D5614DE2592A00200F1695A /* Levels.swift in Sources */,
+				9D18487D25D7A7B7007960C0 /* HintAlert.swift in Sources */,
 				9D74262425CA41F3008D9645 /* chapter14.swift in Sources */,
 				9DEB283425C5D7DF00E3F102 /* chapter9.swift in Sources */,
 				9D0C544125C51AA7000EE579 /* UIViewControllerExtensions.swift in Sources */,

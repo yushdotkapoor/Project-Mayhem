@@ -12,6 +12,10 @@ class chapter3: UIViewController {
     @IBOutlet weak var we: UILabel!
     @IBOutlet weak var I: UILabel!
     @IBOutlet weak var live: UILabel!
+    @IBOutlet weak var hint: UIButton!
+    @IBOutlet weak var toolbar: UIStackView!
+    
+    let customAlert = HintAlert()
     
     var tapped1 = false
     var tapped2 = false
@@ -214,6 +218,30 @@ class chapter3: UIViewController {
         tapped2 = false
         tapped3 = false
         tapped4 = false
+    }
+    
+    
+    
+    @IBAction func hint(_ sender: Any) {
+        if menuState {
+            //if menu open and want to close
+            dismissAlert()
+        }
+        else {
+            menuState = true
+            //if menu closed and want to open
+            hint.rotate(rotation: 0.49999, duration: 0.5)
+            UIView.animate(withDuration: 0.5) {
+                self.hint.tintColor = UIColor.lightGray
+            }
+            customAlert.showAlert(message: "Tappity tap", viewController: self, hintButton: hint)
+            view.bringSubviewToFront(toolbar)
+        }
+        
+    }
+    
+    func dismissAlert() {
+        customAlert.dismissAlert()
     }
 
 

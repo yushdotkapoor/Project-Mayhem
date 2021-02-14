@@ -14,6 +14,11 @@ class chapter8: UIViewController {
     @IBOutlet weak var no: UILabel!
     @IBOutlet weak var balance: UILabel!
     @IBOutlet weak var settings: UIImageView!
+    @IBOutlet weak var hint: UIButton!
+    @IBOutlet weak var toolbar: UIStackView!
+    
+    let customAlert = HintAlert()
+    
     
     override func viewDidLoad() {
            super.viewDidLoad()
@@ -105,6 +110,29 @@ class chapter8: UIViewController {
     
     @objc func viewTapped(gesture: UIGestureRecognizer) {
         changed()
+    }
+    
+
+    @IBAction func hint(_ sender: Any) {
+        if menuState {
+            //if menu open and want to close
+            dismissAlert()
+        }
+        else {
+            menuState = true
+            //if menu closed and want to open
+            hint.rotate(rotation: 0.49999, duration: 0.5)
+            UIView.animate(withDuration: 0.5) {
+                self.hint.tintColor = UIColor.lightGray
+            }
+            customAlert.showAlert(message: "What's that on the top right?", viewController: self, hintButton: hint)
+            view.bringSubviewToFront(toolbar)
+        }
+        
+    }
+    
+    func dismissAlert() {
+        customAlert.dismissAlert()
     }
 
 

@@ -18,6 +18,13 @@ class chapter12: UIViewController {
     @IBOutlet weak var a1: UIImageView!
     @IBOutlet weak var a2: UIImageView!
     @IBOutlet weak var a3: UIImageView!
+    @IBOutlet weak var hint: UIButton!
+    @IBOutlet weak var toolbar: UIStackView!
+    
+    let customAlert = HintAlert()
+    
+    var hintText = ""
+    
     
     var one = false
     var two = false
@@ -29,6 +36,7 @@ class chapter12: UIViewController {
         p2Stack.alpha = 0
         aStack.alpha = 0
         year.text = year.text?.stringToBinary()
+        hintText = "Battery, battery, battery. It bugs me that the battery isn't completely full"
         
         one = false
         two = false
@@ -53,6 +61,7 @@ class chapter12: UIViewController {
             batteryImg.fadeOut()
             backView.fadeIn()
             p2Stack.fadeIn()
+            hintText = "Roses are red, violets are blue, i'm pretty sure that this is a date"
             NotificationCenter.default.addObserver(self, selector: #selector(timeChanged), name:UIApplication.significantTimeChangeNotification, object: nil)
         }
     }
@@ -68,7 +77,7 @@ class chapter12: UIViewController {
         if currentDate > may29 && currentDate < may30 {
             backView.fadeOut()
             aStack.fadeIn()
-            
+            hintText = "Is there a way to change the size of text?"
             NotificationCenter.default.addObserver(self, selector: #selector(sizeChanged), name:UIContentSizeCategory.didChangeNotification, object: nil)
             
         }
@@ -123,6 +132,28 @@ class chapter12: UIViewController {
         self.performSegue(withIdentifier: "chap12ToChap13", sender: nil)
     }
 
+
+    @IBAction func hint(_ sender: Any) {
+        if menuState {
+            //if menu open and want to close
+            dismissAlert()
+        }
+        else {
+            menuState = true
+            //if menu closed and want to open
+            hint.rotate(rotation: 0.49999, duration: 0.5)
+            UIView.animate(withDuration: 0.5) {
+                self.hint.tintColor = UIColor.lightGray
+            }
+            customAlert.showAlert(message: hintText, viewController: self, hintButton: hint)
+            view.bringSubviewToFront(toolbar)
+        }
+        
+    }
+    
+    func dismissAlert() {
+        customAlert.dismissAlert()
+    }
 
 }
 

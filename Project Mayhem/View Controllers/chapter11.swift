@@ -15,6 +15,11 @@ class chapter11: UIViewController, SFSpeechRecognizerDelegate {
     @IBOutlet weak var morseText: UILabel!
     @IBOutlet weak var binaryText: UILabel!
     @IBOutlet weak var pigpenCipherText: UILabel!
+    @IBOutlet weak var hint: UIButton!
+    @IBOutlet weak var toolbar: UIStackView!
+    
+    let customAlert = HintAlert()
+    
     
     var resetInProgress = false
     var currentString = ""
@@ -147,5 +152,27 @@ class chapter11: UIViewController, SFSpeechRecognizerDelegate {
     
     deinit {
         stopRecording()
+    }
+    
+    @IBAction func hint(_ sender: Any) {
+        if menuState {
+            //if menu open and want to close
+            dismissAlert()
+        }
+        else {
+            menuState = true
+            //if menu closed and want to open
+            hint.rotate(rotation: 0.49999, duration: 0.5)
+            UIView.animate(withDuration: 0.5) {
+                self.hint.tintColor = UIColor.lightGray
+            }
+            customAlert.showAlert(message: "Who wrote this?", viewController: self, hintButton: hint)
+            view.bringSubviewToFront(toolbar)
+        }
+        
+    }
+    
+    func dismissAlert() {
+        customAlert.dismissAlert()
     }
 }

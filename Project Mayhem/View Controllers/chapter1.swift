@@ -7,6 +7,8 @@
 
 import UIKit
 
+var menuState = false
+
 class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     @IBOutlet weak var leave: UILabel!
     @IBOutlet weak var now: UILabel!
@@ -17,12 +19,14 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     @IBOutlet weak var ScrollView: UIScrollView!
     @IBOutlet weak var welcome: UILabel!
     @IBOutlet weak var nextChap: UIButton!
-    
+    @IBOutlet weak var hint: UIButton!
+    @IBOutlet weak var toolbar: UIStackView!
     
     let notificationCenter = NotificationCenter.default
     
     override func viewDidLoad() {
            super.viewDidLoad()
+        menuState = false
         
             notificationCenter.addObserver(self, selector: #selector(foreground), name: UIApplication.willEnterForegroundNotification, object: nil)
         
@@ -178,6 +182,30 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
         UNUserNotificationCenter.current().add(request)
         
         game.setValue("chap1.1", forKey: "active")
+    }
+    
+    let customAlert = HintAlert()
+    
+    @IBAction func hint(_ sender: Any) {
+        if menuState {
+            //if menu open and want to close
+            dismissAlert()
+        }
+        else {
+            menuState = true
+            //if menu closed and want to open
+            hint.rotate(rotation: 0.49999, duration: 0.5)
+            UIView.animate(withDuration: 0.5) {
+                self.hint.tintColor = UIColor.lightGray
+            }
+            customAlert.showAlert(message: "Leave what?", viewController: self, hintButton: hint)
+            view.bringSubviewToFront(toolbar)
+        }
+        
+    }
+    
+    func dismissAlert() {
+        customAlert.dismissAlert()
     }
     
     @objc func doneClicked() {

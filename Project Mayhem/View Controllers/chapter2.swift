@@ -11,10 +11,13 @@ import AVFoundation
 
 class chapter2: UIViewController {
     @IBOutlet weak var nextChap: UIButton!
-    
     @IBOutlet weak var begin: UIStackView!
     @IBOutlet weak var viewHeight: NSLayoutConstraint!
     @IBOutlet weak var volumeView: UIView!
+    @IBOutlet weak var hint: UIButton!
+    @IBOutlet weak var toolbar: UIStackView!
+    
+    let customAlert = HintAlert()
     
     private var audioLevel : Float = 0.0
     
@@ -106,8 +109,33 @@ class chapter2: UIViewController {
         game.setValue(true, forKey: "chap2")
         nextChap.isUserInteractionEnabled = true
         nextChap.fadeIn()
+    }
+    
+   
+    
+    @IBAction func hint(_ sender: Any) {
+        if menuState {
+            //if menu open and want to close
+            dismissAlert()
+        }
+        else {
+            menuState = true
+            //if menu closed and want to open
+            hint.rotate(rotation: 0.49999, duration: 0.5)
+            UIView.animate(withDuration: 0.5) {
+                self.hint.tintColor = UIColor.lightGray
+            }
+            customAlert.showAlert(message: "What could people possibly overhear from you?", viewController: self, hintButton: hint)
+            view.bringSubviewToFront(toolbar)
+        }
         
     }
+    
+    func dismissAlert() {
+        customAlert.dismissAlert()
+    }
+    
+    
     
 }
 

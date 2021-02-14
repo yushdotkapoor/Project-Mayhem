@@ -15,6 +15,11 @@ class chapter9: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var secondStack: UIStackView!
     @IBOutlet weak var firstStackTop: NSLayoutConstraint!
     @IBOutlet weak var thirdStack: UIStackView!
+    @IBOutlet weak var hint: UIButton!
+    @IBOutlet weak var toolbar: UIStackView!
+    
+    let customAlert = HintAlert()
+    
     
     var keyboardAdded: CGFloat = 0.0
     var open = false
@@ -103,6 +108,29 @@ class chapter9: UIViewController, UITextFieldDelegate {
 
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+
+    @IBAction func hint(_ sender: Any) {
+        if menuState {
+            //if menu open and want to close
+            dismissAlert()
+        }
+        else {
+            menuState = true
+            //if menu closed and want to open
+            hint.rotate(rotation: 0.49999, duration: 0.5)
+            UIView.animate(withDuration: 0.5) {
+                self.hint.tintColor = UIColor.lightGray
+            }
+            customAlert.showAlert(message: "These are not just some random characters! Have you ever heard of Pigpen Cipher?", viewController: self, hintButton: hint)
+            view.bringSubviewToFront(toolbar)
+        }
+        
+    }
+    
+    func dismissAlert() {
+        customAlert.dismissAlert()
     }
     
     

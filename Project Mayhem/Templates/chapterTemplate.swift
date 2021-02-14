@@ -9,6 +9,10 @@ import UIKit
 
 class chapterTemplate: UIViewController {
     @IBOutlet weak var nextChap: UIButton!
+    @IBOutlet weak var hint: UIButton!
+    @IBOutlet weak var toolbar: UIStackView!
+    
+    let customAlert = HintAlert()
     
     override func viewDidLoad() {
            super.viewDidLoad()
@@ -41,6 +45,28 @@ class chapterTemplate: UIViewController {
     @IBAction func goNext(_ sender: Any) {
    // self.performSegue(withIdentifier: "chap1ToChap2", sender: nil)
     }
-
+    
+    
+    @IBAction func hint(_ sender: Any) {
+        if menuState {
+            //if menu open and want to close
+            dismissAlert()
+        }
+        else {
+            menuState = true
+            //if menu closed and want to open
+            hint.rotate(rotation: 0.49999, duration: 0.5)
+            UIView.animate(withDuration: 0.5) {
+                self.hint.tintColor = UIColor.lightGray
+            }
+            customAlert.showAlert(message: "", viewController: self, hintButton: hint)
+            view.bringSubviewToFront(toolbar)
+        }
+        
+    }
+    
+    func dismissAlert() {
+        customAlert.dismissAlert()
+    }
 
 }
