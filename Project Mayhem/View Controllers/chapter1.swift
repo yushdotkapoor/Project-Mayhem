@@ -194,7 +194,7 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
         else {
             menuState = true
             //if menu closed and want to open
-            hint.rotate(rotation: 0.49999, duration: 0.5)
+            hint.rotate(rotation: 0.49999, duration: 0.5, option: [])
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }

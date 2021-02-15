@@ -80,8 +80,8 @@ extension UIView {
         flickerOut(iterations: i)
     }
     
-    func rotate(rotation: CGFloat, duration: TimeInterval) {
-        UIView.animate(withDuration: duration) {
+    func rotate(rotation: CGFloat, duration: TimeInterval, option: UIView.AnimationOptions) {
+        UIView.animate(withDuration: duration, delay: 0.0, options: option) {
             let radians:Float = atan2f(Float(self.transform.b), Float(self.transform.a))
             let angle:CGFloat = CGFloat(radians) + (CGFloat.pi * rotation * 2)
             self.transform = CGAffineTransform(rotationAngle: angle)
@@ -89,11 +89,11 @@ extension UIView {
     }
     
     func rotate(rotation: CGFloat) {
-        rotate(rotation: rotation, duration: 0.75)
+        rotate(rotation: rotation, duration: 0.75, option: [])
     }
     
     func setRotation(gizmo: CGFloat) {
-        rotate(rotation: gizmo, duration: 0.0)
+        rotate(rotation: gizmo, duration: 0.0, option: [])
     }
     
     

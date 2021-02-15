@@ -78,7 +78,7 @@ class HintAlert: NSObject {
             return
         }
         
-        hintButt.rotate(rotation: -0.49999, duration: 0.5)
+        hintButt.rotate(rotation: -0.49999, duration: 0.5, option: [])
         UIView.animate(withDuration: 0.5, animations: {
             self.alertView.alpha = 0.0
             hintButt.tintColor = UIColor.systemYellow
