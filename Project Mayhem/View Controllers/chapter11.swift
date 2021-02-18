@@ -38,7 +38,7 @@ class chapter11: UIViewController, SFSpeechRecognizerDelegate {
         binaryText.text = binaryText.text?.stringToBinary()
         morseText.text = morseText.text?.stringToMorse()
         game.setValue("chap11", forKey: "active")
-        startRecording()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,6 +61,21 @@ class chapter11: UIViewController, SFSpeechRecognizerDelegate {
     
     @IBAction func goNext(_ sender: Any) {
         self.performSegue(withIdentifier: "chap11ToChap12", sender: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        alert.showAlert(title: "Message from Victoria Lambson", message: "I don’t remember there being a CEO before Yush, and there is also no historical record of this \"boss\" ever existing", viewController: self, buttonPush: #selector(dismissMessageAlert))
+        view.bringSubviewToFront(toolbar)
+    }
+    
+    // defines alert
+    let alert = MessageAlert()
+    
+    //function that gets called to dismiss the alertView
+    @objc func dismissMessageAlert() {
+        alert.dismissAlert()
+        startRecording()
     }
     
     
@@ -166,7 +181,7 @@ class chapter11: UIViewController, SFSpeechRecognizerDelegate {
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "Who wrote this?", viewController: self, hintButton: hint)
+            customAlert.showAlert(message: "All the world’s a stage, and all the men and women merely players. They have their exits and their entrances; And one man in his time plays many parts.\n\nThis sure does sound like iambic pentameter! I wonder who LOVED iambic pentameter?", viewController: self, hintButton: hint)
             view.bringSubviewToFront(toolbar)
         }
         
@@ -175,4 +190,8 @@ class chapter11: UIViewController, SFSpeechRecognizerDelegate {
     func dismissAlert() {
         customAlert.dismissAlert()
     }
+    
+    
+    
+    
 }

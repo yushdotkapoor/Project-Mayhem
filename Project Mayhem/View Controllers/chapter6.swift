@@ -17,6 +17,7 @@ class chapter6: UIViewController {
     @IBOutlet weak var heder: UILabel!
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var toolbar: UIStackView!
+    @IBOutlet weak var textStack: UIStackView!
     
     let customAlert = HintAlert()
     
@@ -85,10 +86,10 @@ class chapter6: UIViewController {
         
         for i in translatedArray {
             switch i {
-            case ".":
+            case "·":
                 sequenceOfFlashes.append(short)
                 sequenceOfFlashes.append(short)
-                actionArray.append(".")
+                actionArray.append("·")
                 actionArray.append("/")
             case "-":
                 sequenceOfFlashes.append(long)
@@ -102,6 +103,7 @@ class chapter6: UIViewController {
                 break
             }
         }
+        
         if !chap6Timer {
             chap6Timer = true
             scheduleTimer()
@@ -122,6 +124,7 @@ class chapter6: UIViewController {
             return
         }
         if index == sequenceOfFlashes.count {
+            chap6Timer = false
             restart()
             return
         }
@@ -140,7 +143,7 @@ class chapter6: UIViewController {
                 }
                 turnFlashlight(on: true)
             }
-            else if act == "." {
+            else if act == "·" {
                 impact()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
                     self.vibrateShouldStop = true
@@ -153,14 +156,13 @@ class chapter6: UIViewController {
     }
     
     func impact() {
-        let vibrate = UIImpactFeedbackGenerator(style: .medium)
         if vibrateShouldStop {
             vibrateShouldStop = false
             return
         }
         else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-                vibrate.impactOccurred()
+                self.impact(style: .medium)
                 self.impact()
             }
         }
@@ -209,13 +211,26 @@ class chapter6: UIViewController {
             doneClicked()
             heder.flickerIn()
             stop()
-            complete()
+            textStack.isUserInteractionEnabled = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self.alert.showAlert(title: "Message from Victoria Lambson", message: "This is quite interesting. What does Neuschwanstein castle have to do with Project Mayhem? This was never reported in our security reports.", viewController: self, buttonPush: #selector(self.dismissMessageAlert))
+                self.view.bringSubviewToFront(self.toolbar)
+            }
         }
         else if textField.text != "" {
             textField.shake()
             textField.text = ""
         }
     }
+
+// defines alert
+let alert = MessageAlert()
+
+//function that gets called to dismiss the alertView
+@objc func dismissMessageAlert() {
+    alert.dismissAlert()
+    complete()
+}
     
     
     func turnFlashlight(on: Bool) {

@@ -9,11 +9,10 @@ import UIKit
 
 class chapter3: UIViewController {
     @IBOutlet weak var nextChap: UIButton!
-    @IBOutlet weak var we: UILabel!
-    @IBOutlet weak var I: UILabel!
-    @IBOutlet weak var live: UILabel!
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var toolbar: UIStackView!
+    @IBOutlet weak var stack: UIStackView!
+    @IBOutlet weak var message: UILabel!
     
     let customAlert = HintAlert()
     
@@ -29,18 +28,25 @@ class chapter3: UIViewController {
     
     override func viewDidLoad() {
            super.viewDidLoad()
-     
+        let text = "Dear employees, I am pleased to announce that one week from today, we will revolutionize human nature with VIS. Our scientists have been working for decades developing ‘Brane’, our custom programming language and integrating it with a human mind. Vision Consolidated will become the pioneer in Brain-Computer Interfaces (BCIs) and have an incredible impact on the future!\n\n-Yush “the Developer” Kapoor"
+        
+        if let font = UIFont(name: "American Typewriter", size: 25) {
+           let height = heightForView(text: text, font: font, width: UIScreen.main.bounds.size.width - 40)
+            message.frame.size.height = height
+            message.text = text
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        we.alpha = 0.0
-        I.alpha = 0.0
-        live.alpha = 0.0
+        stack.alpha = 0.0
         nextChap.alpha = 0.0
         nextChap.isUserInteractionEnabled = false
-        createButtonsForPart2()
-        createButtonsForPart1()
+        
+        alert.showAlert(title: "Message from Vision Consolidated", message: "Welcome to the Vision Consolidated Research and Development Division! We hope you have a pleasant experience working with us!", viewController: self, buttonPush: #selector(dismissMessageAlert))
+        view.bringSubviewToFront(toolbar)
+        
+        
         
     }
     
@@ -54,9 +60,9 @@ class chapter3: UIViewController {
     func part1() {
         game.setValue("chap2.1", forKey: "active")
         UIView.animate(withDuration: 1.0, delay: 0, animations: {
-            self.button1.frame.origin = CGPoint(x: 50, y: self.I.frame.origin.y + 210.5)
+            self.button1.frame.origin = CGPoint(x: 50, y: self.message.frame.origin.y + 210.5)
             
-            self.button2.frame.origin = CGPoint(x: self.view.bounds.width - 161, y: self.I.frame.origin.y + 70.5)
+            self.button2.frame.origin = CGPoint(x: self.view.bounds.width - 161, y: self.message.frame.origin.y + 70.5)
             
         }, completion: { _ in
             self.tapReset()
@@ -89,21 +95,9 @@ class chapter3: UIViewController {
                 self.button4.frame.origin.x += self.view.bounds.width
                 
             }, completion: { _ in
-                self.we.flickerIn()
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self.we.fadeOut()
-                    self.I.flickerIn()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        self.live.flickerIn()
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                            self.I.fadeOut()
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-                                self.complete()
-                            }
-                        }
-                    }
-                    
+                self.stack.fadeIn()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.complete()
                 }
             })
             
@@ -121,13 +115,13 @@ class chapter3: UIViewController {
     }
     
     func createButtonsForPart2() {
-         button3 = UIButton(frame: CGRect(x: self.view.bounds.width - 161, y: self.I.frame.origin.y + 70.5, width: 100, height: 100))
+         button3 = UIButton(frame: CGRect(x: self.view.bounds.width - 161, y: self.message.frame.origin.y + 70.5, width: 100, height: 100))
         button3.setBackgroundImage(UIImage(systemName: "circle.fill"), for: .normal)
         button3.tintColor = UIColor.white
         button3.addTarget(self, action: #selector(button3TouchUpInside), for: .touchUpInside)
         button3.addTarget(self, action: #selector(button3TouchDown), for: .touchDown)
         
-        button4 = UIButton(frame: CGRect(x: 50, y: self.I.frame.origin.y + 210.5, width: 100, height: 100))
+        button4 = UIButton(frame: CGRect(x: 50, y: self.message.frame.origin.y + 210.5, width: 100, height: 100))
         button4.setBackgroundImage(UIImage(systemName: "circle.fill"), for: .normal)
         button4.tintColor = UIColor.white
         button4.addTarget(self, action: #selector(button4TouchUpInside), for: .touchUpInside)
@@ -138,20 +132,24 @@ class chapter3: UIViewController {
     }
     
     func createButtonsForPart1() {
-         button1 = UIButton(frame: CGRect(x: self.view.bounds.width - 161, y: self.I.frame.origin.y + 70.5, width: 100, height: 100))
+         button1 = UIButton(frame: CGRect(x: self.view.bounds.width - 161, y: self.message.frame.origin.y + 70.5, width: 100, height: 100))
         button1.setBackgroundImage(UIImage(systemName: "circle.fill"), for: .normal)
         button1.tintColor = UIColor.black
         button1.addTarget(self, action: #selector(button1TouchUpInside), for: .touchUpInside)
         button1.addTarget(self, action: #selector(button1TouchDown), for: .touchDown)
+        button1.alpha = 0.0
         
-        button2 = UIButton(frame: CGRect(x: 50, y: self.I.frame.origin.y + 210.5, width: 100, height: 100))
+        button2 = UIButton(frame: CGRect(x: 50, y: self.message.frame.origin.y + 210.5, width: 100, height: 100))
         button2.setBackgroundImage(UIImage(systemName: "circle.fill"), for: .normal)
         button2.tintColor = UIColor.black
         button2.addTarget(self, action: #selector(button2TouchUpInside), for: .touchUpInside)
         button2.addTarget(self, action: #selector(button2TouchDown), for: .touchDown)
+        button2.alpha = 0.0
 
         self.view.addSubview(button1)
         self.view.addSubview(button2)
+        button1.fadeIn()
+        button2.fadeIn()
     }
     
     @IBAction func goBack(_ sender: Any) {
@@ -220,7 +218,19 @@ class chapter3: UIViewController {
         tapped4 = false
     }
     
+
+// defines alert
+let alert = MessageAlert()
+
+//function that gets called to dismiss the alertView
+@objc func dismissMessageAlert() {
+    alert.dismissAlert()
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+        self.createButtonsForPart2()
+        self.createButtonsForPart1()
+    }
     
+}
     
     @IBAction func hint(_ sender: Any) {
         if menuState {

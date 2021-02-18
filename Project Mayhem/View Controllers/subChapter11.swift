@@ -1,44 +1,40 @@
 //
-//  chapter9.swift
+//  subChapter11.swift
 //  Project Mayhem
 //
-//  Created by Yush Raj Kapoor on 1/30/21.
+//  Created by Yush Raj Kapoor on 2/18/21.
 //
 
 import UIKit
-import AudioToolbox
 
-class chapter9: UIViewController, UITextFieldDelegate {
+class subChapter11: UIViewController {
+    @IBOutlet weak var toolbar: UIStackView!
+    @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var nextChap: UIButton!
     @IBOutlet weak var textField: nonPastableTextField!
-    @IBOutlet weak var firstStack: UIStackView!
-    @IBOutlet weak var secondStack: UIStackView!
-    @IBOutlet weak var firstStackTop: NSLayoutConstraint!
-    @IBOutlet weak var thirdStack: UIStackView!
-    @IBOutlet weak var hint: UIButton!
-    @IBOutlet weak var toolbar: UIStackView!
-    @IBOutlet weak var pass: UILabel!
+    @IBOutlet weak var textStack: UIStackView!
+    @IBOutlet weak var textFieldConstraint: NSLayoutConstraint!
     
     let customAlert = HintAlert()
-    
-    let codeToMatch = "kapoor is lying"
     
     var keyboardAdded: CGFloat = 0.0
     var open = false
     
     override func viewDidLoad() {
            super.viewDidLoad()
-        pass.text = codeToMatch
-        firstStack.flickerIn()
-        secondStack.flickerIn()
+        
+        //TODO: add hint
+        //TODO: add image
+        
+        nextChap.isUserInteractionEnabled = false
+        nextChap.isHidden = true
         
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneClicked))
-        
         toolBar.setItems([flexibleSpace, doneButton], animated: false)
-        textField.inputAccessoryView = toolBar
+       textField.inputAccessoryView = toolBar
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.viewTapped(gesture:)))
         view.addGestureRecognizer(tapGesture)
@@ -64,56 +60,70 @@ class chapter9: UIViewController, UITextFieldDelegate {
         let deviceHeight = bounds.size.height
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
                 let keyboardHeight = keyboardSize.height
-            let labelHeight = deviceHeight - thirdStack.frame.origin.y
+            let labelHeight = deviceHeight - textStack.frame.origin.y
             let add = keyboardHeight - labelHeight + 70
             keyboardAdded = add
-            firstStackTop.constant -= add
+            textFieldConstraint.constant += add
             open = true
             }
     }
     
     @objc func keyboardWillHide() {
-        firstStackTop.constant += keyboardAdded
+        textFieldConstraint.constant -= keyboardAdded
         open = false
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        nextChap.alpha = 0.0
-        nextChap.isUserInteractionEnabled = false
-    }
-    
-    func complete() {
-        game.setValue(true, forKey: "chap9")
-        game.setValue("none", forKey: "active")
-        nextChap.isUserInteractionEnabled = true
-        nextChap.fadeIn()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        alert.showAlert(title: "Message from Victoria Lambson", message: "You might want to see this.", viewController: self, buttonPush: #selector(dismissMessageAlert))
+       view.bringSubviewToFront(toolbar)
     }
 
+
+// defines alert
+let alert = MessageAlert()
+
+//function that gets called to dismiss the alertView
+@objc func dismissMessageAlert() {
+    alert.dismissAlert()
+    //add code if needed
+}
+
+    @IBAction func goBack(_ sender: Any) {
+    self.performSegue(withIdentifier: "subChap11ToHome", sender: nil)
+    }
+    
     @IBAction func submit(_ sender: Any) {
-        if textField.text?.lowercased() == codeToMatch {
-            view.endEditing(true)
-            complete()
+        let text = textField.text
+        
+        if text == "" {
+            return
         }
-        else if textField.text != ""{
+        
+        if text?.lowercased() == "murder" {
+            vibrate(count: 5)
+            view.endEditing(true)
+            textField.textColor = .green
+            textStack.isUserInteractionEnabled = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.textStack.flickerOut()
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.performSegue(withIdentifier: "subChap11ToChap11", sender: nil)
+            }
+        }
+        else {
             textField.shake()
             textField.text = ""
+            impact(style: .light)
+            
         }
+        
+        
     }
     
-    @IBAction func goBack(_ sender: Any) {
-        self.performSegue(withIdentifier: "chap9ToHome", sender: nil)
-    }
     
-    @IBAction func goNext(_ sender: Any) {
-        self.performSegue(withIdentifier: "chap9ToChap10", sender: nil)
-    }
-
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
-
+ 
     @IBAction func hint(_ sender: Any) {
         if menuState {
             //if menu open and want to close
@@ -126,7 +136,7 @@ class chapter9: UIViewController, UITextFieldDelegate {
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "These are not just some random characters! Have you ever heard of Pigpen Cipher?", viewController: self, hintButton: hint)
+            customAlert.showAlert(message: "", viewController: self, hintButton: hint)
             view.bringSubviewToFront(toolbar)
         }
         
@@ -135,6 +145,5 @@ class chapter9: UIViewController, UITextFieldDelegate {
     func dismissAlert() {
         customAlert.dismissAlert()
     }
-    
-    
+
 }

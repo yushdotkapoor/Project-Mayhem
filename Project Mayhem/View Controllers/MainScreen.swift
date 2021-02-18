@@ -25,15 +25,22 @@ class MainScreen: UIViewController {
             self.logoCenterConstraint.constant += self.view.bounds.width
             self.view.layoutIfNeeded()
         }, completion: nil)
-        
-      
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         logoCenterConstraint.constant -= view.bounds.width
         enterCenterConstraint.constant -= view.bounds.width
-        
     }
+    
+    @IBAction func enter(_ sender: Any) {
+        if game.string(forKey: "name") == nil {
+            self.performSegue(withIdentifier: "MainScreenToNameQuery", sender: nil)
+        }
+        else {
+        self.performSegue(withIdentifier: "MainScreenToLevels", sender: nil)
+        }
+    }
+    
     
 }

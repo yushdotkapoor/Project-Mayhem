@@ -99,7 +99,9 @@ class chapter2: UIViewController {
               
             viewHeight.constant = view.frame.size.height * CGFloat(audioLevel)
             if audioLevel == 0.0 {
-                complete()
+                let name = game.string(forKey: "name")
+                alert.showAlert(title: "Message from Defender Command", message: "\(name!), I have an assignment for you. I know you’ve heard of Vision Consolidated’s new Vision Intelligence Supplements (VIS). Internal sources say that the development of the service has been very shady. In fact, they called it ‘Project Mayhem’. Sounds pretty sinister to me. We need you to investigate the company and see if there is anything to worry about. This could be your biggest case as a Defender, if Vision Consolidated is not what we think it is. You’ve been given employee access to their facilities, but make sure to stay under the radar. Good luck, Brainchild.", viewController: self, buttonPush: #selector(dismissMessageAlert))
+                view.bringSubviewToFront(toolbar)
             }
          }
     }
@@ -110,8 +112,15 @@ class chapter2: UIViewController {
         nextChap.isUserInteractionEnabled = true
         nextChap.fadeIn()
     }
-    
-   
+
+    // defines alert
+    let alert = MessageAlert()
+
+    //function that gets called to dismiss the alertView
+    @objc func dismissMessageAlert() {
+        alert.dismissAlert()
+        complete()
+    }
     
     @IBAction func hint(_ sender: Any) {
         if menuState {

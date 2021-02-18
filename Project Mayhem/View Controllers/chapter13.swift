@@ -39,27 +39,23 @@ class chapter13: UIViewController {
     
     override func viewDidLoad() {
            super.viewDidLoad()
-        Reset.setupButton()
-        Reset.alpha = 0.5
-        textField.alpha = 0.2
-        quakeLabel.numberOfLines = 3
-        quakeLabel.text = "Sometimes we need to take a step back to get some perspective"
-        hintText = "Dude c'mon. The text on the screen IS the hint"
-        
-        let toolBar = UIToolbar()
-        toolBar.sizeToFit()
-        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneClicked))
-        
-        toolBar.setItems([flexibleSpace, doneButton], animated: false)
-        textField.inputAccessoryView = toolBar
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.viewTapped(gesture:)))
-        view.addGestureRecognizer(tapGesture)
-        view.isUserInteractionEnabled = true
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        sceneView.isHidden = true
+
+    }
+    
+// defines alert
+let alert = MessageAlert()
+
+//function that gets called to dismiss the alertView
+@objc func dismissMessageAlert() {
+    alert.dismissAlert()
+    startUp()
+}
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        alert.showAlert(title: "Message from Victoria Lambson", message: "We are detecting harsh radio waves around you. See if you have a device to visualize them. In regards to your health, you should be fine, I think, but be careful, we don’t know what is being transmitted.", viewController: self, buttonPush: #selector(dismissMessageAlert))
+        view.bringSubviewToFront(toolbar)
     }
     
     @objc func doneClicked() {
@@ -86,6 +82,33 @@ class chapter13: UIViewController {
             }
     }
     
+    func startUp() {
+        sceneView.isHidden = false
+        setupAR()
+        Reset.setupButton()
+        Reset.alpha = 0.5
+        textField.alpha = 0.2
+        hintText = "Dude c'mon. The text on the screen IS the hint"
+        quakeLabel.numberOfLines = 3
+        quakeLabel.text = "Sometimes we need to take a step back to get some perspective"
+       
+        
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneClicked))
+        
+        toolBar.setItems([flexibleSpace, doneButton], animated: false)
+        textField.inputAccessoryView = toolBar
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.viewTapped(gesture:)))
+        view.addGestureRecognizer(tapGesture)
+        view.isUserInteractionEnabled = true
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+    
     @objc func keyboardWillHide() {
         labelStackBottom.constant -= keyboardAdded
         open = false
@@ -100,7 +123,7 @@ class chapter13: UIViewController {
         nextChap.alpha = 0.0
         nextChap.isUserInteractionEnabled = false
         game.setValue("chap13", forKey: "active")
-        setupAR()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -119,6 +142,16 @@ class chapter13: UIViewController {
         node.geometry = text
         
         sceneView.scene.rootNode.addChildNode(node)
+        
+        let r = SCNText(string: "r", extrusionDepth: 5)
+        
+        let rNode = SCNNode()
+        rNode.position = SCNVector3(x:0, y:0, z:-0.5)
+        rNode.scale = SCNVector3(x:0.001, y:0.001, z:0.001)
+        rNode.geometry = r
+        
+        sceneView.scene.rootNode.addChildNode(rNode)
+        
         sceneView.autoenablesDefaultLighting = true
         
         let Sa = nd()
@@ -197,6 +230,7 @@ class chapter13: UIViewController {
         if active == "chap13" {
             if textField.text?.lowercased() == "quake" {
                 quakeLabel.text = "Quake"
+                quakeLabel.shake()
                 quakeLabel.numberOfLines = 1
                 textField.text = ""
                 view.endEditing(true)
@@ -247,7 +281,6 @@ class chapter13: UIViewController {
     }
     
     
-
     @IBAction func goBack(_ sender: Any) {
         self.performSegue(withIdentifier: "chap13ToHome", sender: nil)
     }

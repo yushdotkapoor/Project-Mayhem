@@ -41,10 +41,10 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
         nameField.inputAccessoryView = toolBar
        
     }
+  
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         let active = game.string(forKey: "active")
         switch active! {
             case "chap1":
@@ -121,6 +121,24 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     
     @IBAction func submitName(_ sender: Any) {
         let name = nameField.text
+        let gameName = game.string(forKey: "name")
+        if gameName != name {
+            let alertController = UIAlertController(title: "Please advise", message: "This name conflicts with the name you gave before: \(gameName!). Would you like to change your name from \(gameName!) to \(name!)?", preferredStyle: .alert)
+            let yes = UIAlertAction(title: "Yes", style: .default, handler: { action in
+                self.setName(name: name!)
+                })
+            let no = UIAlertAction(title: "No", style: .cancel, handler: nil)
+                
+                alertController.addAction(yes)
+                alertController.addAction(no)
+                self.present(alertController, animated: true, completion: nil)
+        }
+        else {
+            setName(name: name!)
+        }
+    }
+    
+    func setName(name: String) {
         if name != "" {
             nextChap.alpha = 0.0
             game.setValue(name, forKey: "name")
@@ -128,14 +146,26 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
             game.setValue("none", forKey: "active")
             view.endEditing(true)
             nameField.text = ""
-            welcome.text = "Welcome to Project Mayhem, \(name!)"
+            welcome.text = "Welcome to Project Mayhem, \(name)"
             welcome.fadeIn()
-            nextChap.isUserInteractionEnabled = true
-            nextChap.fadeIn()
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.nameStack.fadeOut()
                 self.good.fadeOut()
                 self.glad.fadeOut()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.welcome.flickerIn(iterations: 10)
+                    self.welcome.text = "Welcome to Project Mayhem, Branechild"
+                    self.welcome.textColor = .red
+                    self.vibrate(count: 5)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+                        self.vibrate(count: 5)
+                        self.welcome.flickerIn(iterations: 10)
+                        self.welcome.text = "Welcome to Project Mayhem, Brainchild"
+                        self.welcome.textColor = .black
+                        self.nextChap.isUserInteractionEnabled = true
+                        self.nextChap.fadeIn()
+                    }
+                }
             }
         }
         else {
@@ -143,7 +173,7 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
             alert(title: "Error", message: "You must enter your name in the provided field. Otherwise, I cannot trust you.", actionTitle: "OK")
         }
     }
-   
+    
     
     @IBAction func goNext(_ sender: Any) {
         notificationCenter.removeObserver(self, name: UIApplication.didEnterBackgroundNotification, object: nil)

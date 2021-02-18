@@ -27,5 +27,31 @@ extension UIViewController {
             self.present(alertController, animated: true, completion: nil)
     }
     
+    func impact(style: UIImpactFeedbackGenerator.FeedbackStyle) {
+        let generator = UIImpactFeedbackGenerator(style: style)
+        generator.impactOccurred()
+    }
+    
+    func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat{
+        let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
+        label.numberOfLines = 0
+        //label.lineBreakMode = NSLineBreakMode.byWordWrapping
+        label.font = font
+        label.font = label.font.withSize(font.pointSize + 1)
+        label.text = text
+
+        label.sizeToFit()
+        return label.frame.height
+   }
+    
+    func vibrate(count: Int) {
+        if count != 0 {
+            impact(style: .medium)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.vibrate(count: count - 1)
+            }
+        }
+    }
+    
     
 }

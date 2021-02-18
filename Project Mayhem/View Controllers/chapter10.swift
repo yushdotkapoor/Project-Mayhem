@@ -25,6 +25,7 @@ class chapter10: UIViewController {
     @IBOutlet weak var buttonStackTop: NSLayoutConstraint!
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var toolbar: UIStackView!
+    @IBOutlet weak var i: UILabel!
     
     let customAlert = HintAlert()
     
@@ -40,6 +41,7 @@ class chapter10: UIViewController {
         view.layer.addSublayer(gradient)
         view.bringSubviewToFront(bottomStack)
         view.bringSubviewToFront(buttonView)
+        view.bringSubviewToFront(i)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -139,7 +141,7 @@ class chapter10: UIViewController {
     }
     
     @IBAction func goNext(_ sender: Any) {
-        self.performSegue(withIdentifier: "chap10ToChap11", sender: nil)
+        self.performSegue(withIdentifier: "chap10ToSubChap11", sender: nil)
     }
     
     
@@ -147,13 +149,25 @@ class chapter10: UIViewController {
         if textField.text?.lowercased() == "burj khalifa" {
             buttonView.fadeOut()
             view.endEditing(true)
-            complete()
+            alert.showAlert(title: "Message from Victoria Lambson", message: "Again, another location. First Neuschwanstein castle and now Burj Khalifa?", viewController: self, buttonPush: #selector(dismissMessageAlert))
+            view.bringSubviewToFront(toolbar)
+            
         }
         else {
             textField.shake()
             textField.text = ""
         }
     }
+    
+    
+// defines alert
+let alert = MessageAlert()
+
+//function that gets called to dismiss the alertView
+@objc func dismissMessageAlert() {
+    alert.dismissAlert()
+    complete()
+}
     
     
     @IBAction func qr1_1(_ sender: Any) {

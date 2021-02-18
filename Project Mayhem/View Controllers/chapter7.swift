@@ -38,8 +38,9 @@ class chapter7: UIViewController {
            super.viewDidLoad()
         orderString = []
         current = 0
-        
     }
+
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -49,7 +50,9 @@ class chapter7: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        let name = game.string(forKey: "name")
+        alert.showAlert(title: "Message from Yush Kapoor", message: "Hello there, \(name!). I see you’re trying to access something you probably shouldn’t. That’s alright, you won’t get far. I know the Defenders very well and I've been keeping close tabs on you for the past few months. You have quite a reputation! I need you to understand that this company is trying to do good for the world. The sole purpose of Project Mayhem is to increase human efficiency. Let me show you.", viewController: self, buttonPush: #selector(dismissMessageAlert))
+        view.bringSubviewToFront(toolbar)
     }
     
     func complete() {
@@ -83,7 +86,9 @@ class chapter7: UIViewController {
             arr[current].fadeOut()
             current += 1
             if current == 16 {
-                complete()
+                alert2.showAlert(title: "Message from Yush Kapoor", message: "That took awhile for you to complete. See, if you had been enhanced, you could have done that in just a few seconds. Imagine a world where you could write a thirty-page thesis in just an hour, all while you drink coffee with friends. VIS can enable a world like that. Trust me, brainy — we are not the enemy. You can continue your investigation for your own peace of mind, but it’s just wasting your time.", viewController: self, buttonPush: #selector(dismissMessageAlert2))
+                view.bringSubviewToFront(toolbar)
+                
             }
         }
         else {
@@ -92,6 +97,23 @@ class chapter7: UIViewController {
             current = 0
         }
     }
+    
+    // defines alert
+    let alert = MessageAlert()
+
+    //function that gets called to dismiss the alertView
+    @objc func dismissMessageAlert() {
+        alert.dismissAlert()
+    }
+        
+        // defines alert
+        let alert2 = MessageAlert()
+
+        //function that gets called to dismiss the alertView
+        @objc func dismissMessageAlert2() {
+            alert2.dismissAlert()
+            complete()
+        }
     
     func reform() {
         let arr:[UIButton] = getData(string: "numerical")
