@@ -15,7 +15,13 @@
 		9D0C543D25C50F97000EE579 /* audioKitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C543C25C50F97000EE579 /* audioKitHelpers.swift */; };
 		9D0C544125C51AA7000EE579 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C544025C51AA7000EE579 /* UIViewControllerExtensions.swift */; };
 		9D18487D25D7A7B7007960C0 /* HintAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D18487C25D7A7B7007960C0 /* HintAlert.swift */; };
+		9D420EBB25DF02AF00A3A13D /* globalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D420EBA25DF02AF00A3A13D /* globalFunctions.swift */; };
+		9D438C9725E58D39005CC20A /* videoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D438C9625E58D39005CC20A /* videoDelegate.swift */; };
+		9D438CB125E5E201005CC20A /* Chap1Intro.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9D438CB025E5E201005CC20A /* Chap1Intro.mov */; };
+		9D438CB925E6015F005CC20A /* postChapter15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D438CB825E6015F005CC20A /* postChapter15.swift */; };
 		9D4BFC6925DE41260013D840 /* subChapter11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4BFC6825DE41260013D840 /* subChapter11.swift */; };
+		9D4BFC7525DE5FF00013D840 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4BFC7425DE5FF00013D840 /* PlayerView.swift */; };
+		9D4BFC7925DE600C0013D840 /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4BFC7825DE600C0013D840 /* VideoPlayer.swift */; };
 		9D561384259195E600F1695A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D561383259195E600F1695A /* ContentView.swift */; };
 		9D561386259195E700F1695A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D561385259195E700F1695A /* Assets.xcassets */; };
 		9D561389259195E700F1695A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D561388259195E700F1695A /* Preview Assets.xcassets */; };
@@ -71,6 +77,9 @@
 		9DB0749B25DE156200515283 /* NameQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0749A25DE156200515283 /* NameQuery.swift */; };
 		9DB074A625DE1E1700515283 /* subChapter1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB074A525DE1E1700515283 /* subChapter1.swift */; };
 		9DBBF73025C279310022FC63 /* chapter5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBBF72F25C279310022FC63 /* chapter5.swift */; };
+		9DD618E725E62BB20036089B /* ProjectVenomTrailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD618E625E62BB20036089B /* ProjectVenomTrailer.swift */; };
+		9DD618EB25E62BCE0036089B /* videoTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD618EA25E62BCE0036089B /* videoTemplate.swift */; };
+		9DD618EF25E62EBC0036089B /* subPostChapter15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD618EE25E62EBC0036089B /* subPostChapter15.swift */; };
 		9DEA6A0625948BBA002A8739 /* chapter2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEA6A0525948BBA002A8739 /* chapter2.swift */; };
 		9DEA6A0C259515D8002A8739 /* keyboardTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEA6A0B259515D8002A8739 /* keyboardTemplate.swift */; };
 		9DEA6A112595162B002A8739 /* chapterTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEA6A102595162B002A8739 /* chapterTemplate.swift */; };
@@ -125,7 +134,13 @@
 		9D0C543C25C50F97000EE579 /* audioKitHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audioKitHelpers.swift; sourceTree = "<group>"; };
 		9D0C544025C51AA7000EE579 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		9D18487C25D7A7B7007960C0 /* HintAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintAlert.swift; sourceTree = "<group>"; };
+		9D420EBA25DF02AF00A3A13D /* globalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globalFunctions.swift; sourceTree = "<group>"; };
+		9D438C9625E58D39005CC20A /* videoDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoDelegate.swift; sourceTree = "<group>"; };
+		9D438CB025E5E201005CC20A /* Chap1Intro.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Chap1Intro.mov; sourceTree = "<group>"; };
+		9D438CB825E6015F005CC20A /* postChapter15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postChapter15.swift; sourceTree = "<group>"; };
 		9D4BFC6825DE41260013D840 /* subChapter11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subChapter11.swift; sourceTree = "<group>"; };
+		9D4BFC7425DE5FF00013D840 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		9D4BFC7825DE600C0013D840 /* VideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayer.swift; sourceTree = "<group>"; };
 		9D56137E259195E600F1695A /* Project Mayhem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Mayhem.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D561383259195E600F1695A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9D561385259195E700F1695A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -187,6 +202,9 @@
 		9DB0749A25DE156200515283 /* NameQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NameQuery.swift; path = "Project Mayhem/NameQuery.swift"; sourceTree = SOURCE_ROOT; };
 		9DB074A525DE1E1700515283 /* subChapter1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subChapter1.swift; sourceTree = "<group>"; };
 		9DBBF72F25C279310022FC63 /* chapter5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter5.swift; sourceTree = "<group>"; };
+		9DD618E625E62BB20036089B /* ProjectVenomTrailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectVenomTrailer.swift; sourceTree = "<group>"; };
+		9DD618EA25E62BCE0036089B /* videoTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoTemplate.swift; sourceTree = "<group>"; };
+		9DD618EE25E62EBC0036089B /* subPostChapter15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subPostChapter15.swift; sourceTree = "<group>"; };
 		9DEA6A0525948BBA002A8739 /* chapter2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter2.swift; sourceTree = "<group>"; };
 		9DEA6A0B259515D8002A8739 /* keyboardTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keyboardTemplate.swift; sourceTree = "<group>"; };
 		9DEA6A102595162B002A8739 /* chapterTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapterTemplate.swift; sourceTree = "<group>"; };
@@ -263,19 +281,46 @@
 		9D0C543B25C50F79000EE579 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				9D56140E2591CFFD00F1695A /* CustomButton.swift */,
-				9D5614E22592FC5F00F1695A /* CustomButtonOutline.swift */,
-				9D0C543C25C50F97000EE579 /* audioKitHelpers.swift */,
-				9D18487C25D7A7B7007960C0 /* HintAlert.swift */,
-				9D6C28E625DCCC950039D12C /* MessageAlert.swift */,
-				9D8B292D25DC189A007750DF /* CALayerExtension.swift */,
-				9D8C42BE25C7F9C30039F857 /* nonPastableTextField.swift */,
-				9DEB283E25C6095000E3F102 /* stringExtensions.swift */,
+				9D420EBF25DF032000A3A13D /* Custom Classes */,
+				9D420EBE25DF02E500A3A13D /* Extensions */,
+				9D420EBA25DF02AF00A3A13D /* globalFunctions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9D420EBE25DF02E500A3A13D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
 				9D8B292925DC187D007750DF /* UIColorExtension.swift */,
 				9D0C544025C51AA7000EE579 /* UIViewControllerExtensions.swift */,
 				9D5B42C4259C97FB00A4F34A /* animations.swift */,
+				9DEB283E25C6095000E3F102 /* stringExtensions.swift */,
+				9D8B292D25DC189A007750DF /* CALayerExtension.swift */,
 			);
-			path = Helpers;
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9D420EBF25DF032000A3A13D /* Custom Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9D6C28E625DCCC950039D12C /* MessageAlert.swift */,
+				9D18487C25D7A7B7007960C0 /* HintAlert.swift */,
+				9D5614E22592FC5F00F1695A /* CustomButtonOutline.swift */,
+				9D56140E2591CFFD00F1695A /* CustomButton.swift */,
+				9D8C42BE25C7F9C30039F857 /* nonPastableTextField.swift */,
+				9D4BFC7425DE5FF00013D840 /* PlayerView.swift */,
+				9D4BFC7825DE600C0013D840 /* VideoPlayer.swift */,
+				9D0C543C25C50F97000EE579 /* audioKitHelpers.swift */,
+			);
+			path = "Custom Classes";
+			sourceTree = "<group>";
+		};
+		9D4BFC6D25DE5E190013D840 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				9D438CB025E5E201005CC20A /* Chap1Intro.mov */,
+			);
+			path = Videos;
 			sourceTree = "<group>";
 		};
 		9D561375259195E600F1695A = {
@@ -310,11 +355,13 @@
 				9D56142F2591DC5400F1695A /* AppDelegate.swift */,
 				9D5613BC259196DE00F1695A /* LaunchScreen.storyboard */,
 				9D56138A259195E700F1695A /* Info.plist */,
+				9D438C9625E58D39005CC20A /* videoDelegate.swift */,
 				9D8C42AE25C7BE5C0039F857 /* Settings.bundle */,
 				9D0C543B25C50F79000EE579 /* Helpers */,
 				9D5614242591D2DA00F1695A /* View Controllers */,
 				9DEA6A0A259515B0002A8739 /* Templates */,
 				9D5613CB2591C7F200F1695A /* Fonts */,
+				9D4BFC6D25DE5E190013D840 /* Videos */,
 				9D561387259195E700F1695A /* Preview Content */,
 			);
 			path = "Project Mayhem";
@@ -385,6 +432,9 @@
 				9D74262325CA41F3008D9645 /* chapter13.swift */,
 				9D74261F25CA41F3008D9645 /* chapter14.swift */,
 				9D74262025CA41F3008D9645 /* chapter15.swift */,
+				9D438CB825E6015F005CC20A /* postChapter15.swift */,
+				9DD618EE25E62EBC0036089B /* subPostChapter15.swift */,
+				9DD618E625E62BB20036089B /* ProjectVenomTrailer.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -420,6 +470,7 @@
 				9DEA6A0B259515D8002A8739 /* keyboardTemplate.swift */,
 				9DEA6A1625951730002A8739 /* foregroundEventTemplate.swift */,
 				9DEA6A102595162B002A8739 /* chapterTemplate.swift */,
+				9DD618EA25E62BCE0036089B /* videoTemplate.swift */,
 				9D6C28EA25DCD8330039D12C /* messageTemplate.swift */,
 			);
 			path = Templates;
@@ -567,6 +618,7 @@
 				9D5613BD259196DE00F1695A /* LaunchScreen.storyboard in Resources */,
 				9D8C42BB25C7EFB90039F857 /* PigpenCipher.otf in Resources */,
 				9D74267525CA590D008D9645 /* Tomorrow-BlackItalic.ttf in Resources */,
+				9D438CB125E5E201005CC20A /* Chap1Intro.mov in Resources */,
 				9D8C42AF25C7BE5C0039F857 /* Settings.bundle in Resources */,
 				9D5613B8259196CB00F1695A /* Main.storyboard in Resources */,
 			);
@@ -665,13 +717,18 @@
 				9D5614DE2592A00200F1695A /* Levels.swift in Sources */,
 				9D18487D25D7A7B7007960C0 /* HintAlert.swift in Sources */,
 				9D74262425CA41F3008D9645 /* chapter14.swift in Sources */,
+				9D438CB925E6015F005CC20A /* postChapter15.swift in Sources */,
 				9DEB283425C5D7DF00E3F102 /* chapter9.swift in Sources */,
 				9D0C544125C51AA7000EE579 /* UIViewControllerExtensions.swift in Sources */,
+				9DD618E725E62BB20036089B /* ProjectVenomTrailer.swift in Sources */,
 				9D6C28EB25DCD8330039D12C /* messageTemplate.swift in Sources */,
+				9DD618EF25E62EBC0036089B /* subPostChapter15.swift in Sources */,
 				9DBBF73025C279310022FC63 /* chapter5.swift in Sources */,
 				9D5614E32592FC5F00F1695A /* CustomButtonOutline.swift in Sources */,
 				9D4BFC6925DE41260013D840 /* subChapter11.swift in Sources */,
 				9DEB282625C54C3A00E3F102 /* chapter6.swift in Sources */,
+				9D420EBB25DF02AF00A3A13D /* globalFunctions.swift in Sources */,
+				9D438C9725E58D39005CC20A /* videoDelegate.swift in Sources */,
 				9D74262525CA41F3008D9645 /* chapter15.swift in Sources */,
 				9D6C28E725DCCC950039D12C /* MessageAlert.swift in Sources */,
 				9DEA6A0625948BBA002A8739 /* chapter2.swift in Sources */,
@@ -679,6 +736,7 @@
 				9DEB282C25C5D78700E3F102 /* chapter7.swift in Sources */,
 				9D74262825CA41F3008D9645 /* chapter13.swift in Sources */,
 				9D5614202591D1C300F1695A /* MainScreen.swift in Sources */,
+				9D4BFC7525DE5FF00013D840 /* PlayerView.swift in Sources */,
 				9D561384259195E600F1695A /* ContentView.swift in Sources */,
 				9DB0749B25DE156200515283 /* NameQuery.swift in Sources */,
 				9D8B292E25DC189A007750DF /* CALayerExtension.swift in Sources */,
@@ -686,10 +744,12 @@
 				9D5614302591DC5400F1695A /* AppDelegate.swift in Sources */,
 				9D8B292A25DC187D007750DF /* UIColorExtension.swift in Sources */,
 				9DEB283F25C6095000E3F102 /* stringExtensions.swift in Sources */,
+				9DD618EB25E62BCE0036089B /* videoTemplate.swift in Sources */,
 				9D74262725CA41F3008D9645 /* chapter12.swift in Sources */,
 				9DEA6A3825972495002A8739 /* chapter3.swift in Sources */,
 				9DEA6A112595162B002A8739 /* chapterTemplate.swift in Sources */,
 				9DEB283825C5D7EE00E3F102 /* chapter10.swift in Sources */,
+				9D4BFC7925DE600C0013D840 /* VideoPlayer.swift in Sources */,
 				9D56140F2591CFFD00F1695A /* CustomButton.swift in Sources */,
 				9D5B42C5259C97FB00A4F34A /* animations.swift in Sources */,
 				9DEA6A1725951730002A8739 /* foregroundEventTemplate.swift in Sources */,

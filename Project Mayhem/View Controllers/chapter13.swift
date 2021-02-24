@@ -70,6 +70,7 @@ let alert = MessageAlert()
         if open {
             return
         }
+        textField.alpha = 1.0
         let bounds = UIScreen.main.bounds
         let deviceHeight = bounds.size.height
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
@@ -110,6 +111,7 @@ let alert = MessageAlert()
     }
     
     @objc func keyboardWillHide() {
+        textField.alpha = 0.2
         labelStackBottom.constant -= keyboardAdded
         open = false
     }
@@ -149,6 +151,7 @@ let alert = MessageAlert()
         rNode.position = SCNVector3(x:0, y:0, z:-0.5)
         rNode.scale = SCNVector3(x:0.001, y:0.001, z:0.001)
         rNode.geometry = r
+        rNode.geometry?.firstMaterial?.diffuse.contents = UIColor.systemBlue
         
         sceneView.scene.rootNode.addChildNode(rNode)
         
@@ -192,6 +195,7 @@ let alert = MessageAlert()
             }
             let y = Float.random(in: -1...(-0.7))
             nameArr[ct].position = SCNVector3(factorX + xArr[ct], factorY + y, factorZ + zArr[ct])
+            nameArr[ct].geometry?.firstMaterial?.diffuse.contents = UIColor.red
             if xTrans[ct] {
                 nameArr[ct].eulerAngles = SCNVector3(Double.pi/2,0,0)
             }

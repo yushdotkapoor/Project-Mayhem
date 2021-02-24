@@ -41,6 +41,5 @@ class MainScreen: UIViewController {
         self.performSegue(withIdentifier: "MainScreenToLevels", sender: nil)
         }
     }
-    
-    
 }
+ 

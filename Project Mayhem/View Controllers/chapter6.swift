@@ -39,13 +39,13 @@ class chapter6: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         game.setValue("chap6", forKey: "active")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        wait {
             self.label.fadeIn()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            wait(time: 0.5, actions: {
                 if game.string(forKey: "active") == "chap6" {
                     self.setupMorseFlashesSequence()
                 }
-            }
+            })
         }
         sequenceOfFlashes.removeAll()
         actionArray.removeAll()
@@ -138,16 +138,16 @@ class chapter6: UIViewController {
             }
             else if act == "-" {
                 impact()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
+                wait(time: 0.35, actions: {
                     self.vibrateShouldStop = true
-                }
+                })
                 turnFlashlight(on: true)
             }
             else if act == "·" {
                 impact()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+                wait(time: 0.15, actions: {
                     self.vibrateShouldStop = true
-                }
+                })
                 turnFlashlight(on: true)
             }
             scheduleTimer()
@@ -161,10 +161,10 @@ class chapter6: UIViewController {
             return
         }
         else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            wait(time: 0.01, actions: {
                 self.impact(style: .medium)
                 self.impact()
-            }
+            })
         }
     }
     
@@ -195,7 +195,7 @@ class chapter6: UIViewController {
     
     @objc func cameBack() {
         game.setValue("chap6", forKey: "active")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        wait {
             if game.string(forKey: "active") == "chap6" {
                 self.restart()
             }
@@ -212,7 +212,7 @@ class chapter6: UIViewController {
             heder.flickerIn()
             stop()
             textStack.isUserInteractionEnabled = false
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            wait {
                 self.alert.showAlert(title: "Message from Victoria Lambson", message: "This is quite interesting. What does Neuschwanstein castle have to do with Project Mayhem? This was never reported in our security reports.", viewController: self, buttonPush: #selector(self.dismissMessageAlert))
                 self.view.bringSubviewToFront(self.toolbar)
             }

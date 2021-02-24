@@ -83,6 +83,7 @@ class chapter7: UIViewController {
     func checkOrder() {
         if orderString[current] == masterOrder[current] {
             let arr:[UIButton] = getData(string: "ordered")
+            impact(style: .light)
             arr[current].fadeOut()
             current += 1
             if current == 16 {
@@ -92,6 +93,7 @@ class chapter7: UIViewController {
             }
         }
         else {
+            vibrate(count: 3)
             orderString = []
             reform()
             current = 0

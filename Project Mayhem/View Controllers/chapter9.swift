@@ -11,13 +11,12 @@ import AudioToolbox
 class chapter9: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nextChap: UIButton!
     @IBOutlet weak var textField: nonPastableTextField!
-    @IBOutlet weak var firstStack: UIStackView!
     @IBOutlet weak var secondStack: UIStackView!
-    @IBOutlet weak var firstStackTop: NSLayoutConstraint!
     @IBOutlet weak var thirdStack: UIStackView!
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var toolbar: UIStackView!
     @IBOutlet weak var pass: UILabel!
+    @IBOutlet weak var stackCenter: NSLayoutConstraint!
     
     let customAlert = HintAlert()
     
@@ -29,8 +28,15 @@ class chapter9: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
            super.viewDidLoad()
         pass.text = codeToMatch
-        firstStack.flickerIn()
-        secondStack.flickerIn()
+        secondStack.alpha = 0.0
+        thirdStack.alpha = 0.0
+        wait {
+            self.secondStack.flickerIn()
+            wait(time: 0.5, actions: {
+                self.thirdStack.fadeIn()
+            })
+        }
+        
         
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
@@ -67,13 +73,13 @@ class chapter9: UIViewController, UITextFieldDelegate {
             let labelHeight = deviceHeight - thirdStack.frame.origin.y
             let add = keyboardHeight - labelHeight + 70
             keyboardAdded = add
-            firstStackTop.constant -= add
+            stackCenter.constant -= add
             open = true
             }
     }
     
     @objc func keyboardWillHide() {
-        firstStackTop.constant += keyboardAdded
+        stackCenter.constant += keyboardAdded
         open = false
     }
     
@@ -93,7 +99,12 @@ class chapter9: UIViewController, UITextFieldDelegate {
     @IBAction func submit(_ sender: Any) {
         if textField.text?.lowercased() == codeToMatch {
             view.endEditing(true)
-            complete()
+            vibrate(count: 5)
+            textField.textColor = .green
+            wait {
+                self.complete()
+            }
+            
         }
         else if textField.text != ""{
             textField.shake()
@@ -126,7 +137,7 @@ class chapter9: UIViewController, UITextFieldDelegate {
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "These are not just some random characters! Have you ever heard of Pigpen Cipher?", viewController: self, hintButton: hint)
+            customAlert.showAlert(message: "These are not just some random characters! Have you ever heard of 🐷🖊️ Cipher?", viewController: self, hintButton: hint)
             view.bringSubviewToFront(toolbar)
         }
         

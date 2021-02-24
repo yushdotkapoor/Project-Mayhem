@@ -64,9 +64,9 @@ class chapter5: UIViewController {
     func changeProgress() {
         progress.setProgress(progressVal/50, animated: true)
         if progressVal < 50 {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            wait(time: 0.1, actions: {
                 self.recurse()
-            }
+            })
         }
         else {
             let blue = UIColor.systemBlue

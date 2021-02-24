@@ -106,7 +106,7 @@ class chapter12: UIViewController {
             a1.tintColor = UIColor.systemTeal
             a2.tintColor = UIColor.systemTeal
             a3.tintColor = UIColor.systemTeal
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            wait {
                 self.complete()
             }
         }

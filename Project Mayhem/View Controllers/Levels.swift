@@ -7,6 +7,7 @@
 
 import UIKit
 import Speech
+import LocalAuthentication
 
 let game = UserDefaults.standard
 
@@ -123,19 +124,58 @@ class Levels: UIViewController {
         }
     }
     
+    @objc func visionTrailer() {
+        game.setValue(false, forKey: "apocalypse")
+        game.setValue(true, forKey: "postApocalypse")
+        performSegue(withIdentifier: "LevelsToProjectVenom", sender: nil)
+        
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        colorize()
+        let apocalypse = game.bool(forKey: "apocalypse")
+        let postApocalypse = game.bool(forKey: "postApocalypse")
+        
+        if apocalypse {
+            let button = CustomButtonOutline(frame: CGRect(x: -view.bounds.width, y: 200, width: 300, height: 40))
+            button.setupButton(color: UIColor.darkGray)
+            button.setTitle("PROJECT VENOM", for: .normal)
+            button.setTitleColor(.link, for: .normal)
+            button.addTarget(self, action: #selector(visionTrailer), for: .touchUpInside)
+            button.titleLabel?.font = UIFont(name: "Adonay", size: 25.0)
+            view.addSubview(button)
+            UIView.animate(withDuration: 0.5, delay: 1) {
+                button.frame.origin.x = (UIScreen.main.bounds.width - 300) / 2
+                self.view.layoutIfNeeded()
+            }
+
+        }
+        else {
+            if postApocalypse {
+                let button = CustomButtonOutline(frame: CGRect(x: -view.bounds.width, y: chap15.frame.origin.y + 60, width: 300, height: 40))
+                button.setupButton()
+                button.setTitle("PROJECT VENOM", for: .normal)
+                button.setTitleColor(.link, for: .normal)
+                button.addTarget(self, action: #selector(visionTrailer), for: .touchUpInside)
+                button.titleLabel?.font = UIFont(name: "Adonay", size: 25.0)
+                scrollView.addSubview(button)
+                UIView.animate(withDuration: 0.5, delay: 1.2) {
+                    button.frame.origin.x = (UIScreen.main.bounds.width - 300) / 2
+                    self.view.layoutIfNeeded()
+                }
+            }
+            colorize()
+            let centers = getData(string: "Center")
+            
+            for button in centers {
+                animate(constraint: button as! NSLayoutConstraint)
+            }
+        }
+        
         UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut, animations: {
             self.logoWidth.constant *= 0.25
             self.view.layoutIfNeeded()
-        }, completion: nil)
-        
-        let centers = getData(string: "Center")
-        
-        for button in centers {
-            animate(constraint: button as! NSLayoutConstraint)
-        }
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -206,7 +246,7 @@ class Levels: UIViewController {
         UIView.animate(withDuration: 0.5, delay: del, options: .curveEaseOut, animations: {
             constraint.constant += self.view.bounds.width
             self.view.layoutIfNeeded()
-        }, completion: nil)
+        })
         del += 0.05
     }
     
@@ -224,16 +264,17 @@ class Levels: UIViewController {
         }
     }
     
-}
-
-func requestNotificationAuthorization() {
-    let authOptions = UNAuthorizationOptions.init(arrayLiteral: .alert, .badge, .sound)
-    UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { (success, error) in
-        if let error = error {
-            print(error.localizedDescription)
+    func requestNotificationAuthorization() {
+        let authOptions = UNAuthorizationOptions.init(arrayLiteral: .alert, .badge, .sound)
+        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { (success, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
         }
     }
+    
 }
+
 
 
 

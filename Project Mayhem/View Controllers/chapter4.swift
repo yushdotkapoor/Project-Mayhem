@@ -84,9 +84,9 @@ let alert = MessageAlert()
             checkpt()
         }
         else {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            wait(time: 0.1, actions: {
                 self.oneCheck(first: first, second: second)
-            }
+            })
         }
     }
     
@@ -109,9 +109,9 @@ let alert = MessageAlert()
                 completion[i] = true
                 update()
                 if i < 5 {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+                    wait(time: 0.75, actions: {
                         self.oneCheck(first: self.compareArr1[i + 1], second: self.compareArr2[i + 1])
-                    }
+                    })
                 }
                 else {
                     finish()

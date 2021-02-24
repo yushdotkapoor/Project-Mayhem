@@ -234,11 +234,11 @@ let alert = MessageAlert()
         else {
             img = UIImage(named: "lvl15Normal")!
         }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+        wait {
             self.smartImage.image = img
             self.startImageSwitch()
         }
+        
     }
     
     @objc func inverted() {
@@ -281,17 +281,21 @@ let alert = MessageAlert()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        nextChap.alpha = 0.0
-        nextChap.isUserInteractionEnabled = false
+        let complete15 = game.bool(forKey: "preChap15")
+        let completePost = game.bool(forKey: "postChap15")
+        
+        if !(complete15 && !completePost) {
+            nextChap.alpha = 0.0
+            nextChap.isUserInteractionEnabled = false
+        }
     }
     
     
     func complete() {
-        game.setValue(true, forKey: "chap15")
+        game.setValue(true, forKey: "preChap15")
         game.setValue("none", forKey: "active")
         nextChap.isUserInteractionEnabled = true
         nextChap.fadeIn()
-        
     }
     
     @IBAction func goBack(_ sender: Any) {
@@ -299,7 +303,7 @@ let alert = MessageAlert()
     }
     
     @IBAction func goNext(_ sender: Any) {
-        //self.performSegue(withIdentifier: "chap15ToChap16", sender: nil)
+        self.performSegue(withIdentifier: "chap15ToSubPostChap15", sender: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

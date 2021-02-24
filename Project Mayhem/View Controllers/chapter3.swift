@@ -96,7 +96,7 @@ class chapter3: UIViewController {
                 
             }, completion: { _ in
                 self.stack.fadeIn()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                wait {
                     self.complete()
                 }
             })
@@ -225,11 +225,10 @@ let alert = MessageAlert()
 //function that gets called to dismiss the alertView
 @objc func dismissMessageAlert() {
     alert.dismissAlert()
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+    wait {
         self.createButtonsForPart2()
         self.createButtonsForPart1()
     }
-    
 }
     
     @IBAction func hint(_ sender: Any) {

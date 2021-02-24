@@ -101,20 +101,20 @@ class chapter10: UIViewController {
             
             if checkArr.count == 9 {
                 print("complete!")
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+                wait(time: 0.75, actions: {
                     self.nextPhase()
                     self.buttonView.flickerIn()
                     UIView.animate(withDuration: 1.0) {
                         self.buttonStackTop.constant -= 150
                         self.view.layoutIfNeeded()
                     }
-                }
+                })
             }
         }
     }
     
     func nextPhase() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        wait {
             self.view.bringSubviewToFront(self.textStack)
             self.textStack.fadeIn()
         }

@@ -53,6 +53,8 @@ class chapter14: UIViewController {
         tap.addGestureRecognizer(tapGesture)
         tap.addGestureRecognizer(longGesture)
         
+        bypassImg.alpha = 0.5
+        
         foregroundView.isUserInteractionEnabled = false
     }
 
@@ -110,10 +112,10 @@ let alert = MessageAlert()
         if game.string(forKey: "active") != "chap14" {
             return
         }
-        bypassImg.rotate(rotation: 0.499, duration: 0.1, option: [.curveLinear])
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+        bypassImg.rotate(rotation: 0.43, duration: 0.05, option: [.curveLinear])
+        wait(time: 0.05, actions: {
             self.startRotation()
-        }
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -166,9 +168,9 @@ let alert = MessageAlert()
         morseLabel.text?.append("·")
         impact(style: .medium)
         checkForCompletion()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+        wait(time: 0.25, actions: {
             self.short.backgroundColor = .clear
-        }
+        })
     }
     
     @objc func longPress(gesture: UILongPressGestureRecognizer) {
@@ -177,9 +179,9 @@ let alert = MessageAlert()
             morseLabel.text?.append("-")
             impact(style: .medium)
             checkForCompletion()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            wait(time: 0.25, actions: {
                 self.long.backgroundColor = .clear
-            }
+            })
         }
     }
     
@@ -193,9 +195,9 @@ let alert = MessageAlert()
         if levelCodeString == labelString {
             tap.isUserInteractionEnabled = false
             foregroundView.fadeOut()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            wait {
                 self.bypassImg.fadeOut()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                wait {
                     self.complete()
                 }
             }

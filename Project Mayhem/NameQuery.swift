@@ -13,9 +13,9 @@ class NameQuery: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+        wait(time: 0.75, actions: {
             self.stack.fadeIn()
-        }
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,7 +32,7 @@ class NameQuery: UIViewController {
         game.setValue(name, forKey: "name")
         impact(style: .heavy)
         stack.fadeOut()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        wait {
             self.performSegue(withIdentifier: "NameQueryToLevels", sender: nil)
         }
     }

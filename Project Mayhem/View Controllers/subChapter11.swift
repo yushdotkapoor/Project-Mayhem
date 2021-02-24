@@ -7,27 +7,34 @@
 
 import UIKit
 
-class subChapter11: UIViewController {
+class subChapter11: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var toolbar: UIStackView!
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var nextChap: UIButton!
     @IBOutlet weak var textField: nonPastableTextField!
     @IBOutlet weak var textStack: UIStackView!
     @IBOutlet weak var textFieldConstraint: NSLayoutConstraint!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     let customAlert = HintAlert()
     
     var keyboardAdded: CGFloat = 0.0
     var open = false
     
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
     override func viewDidLoad() {
            super.viewDidLoad()
-        
+        textField.alpha = 0.3
         //TODO: add hint
         //TODO: add image
         
         nextChap.isUserInteractionEnabled = false
-        nextChap.isHidden = true
+        nextChap.alpha = 0.0
         
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
@@ -42,6 +49,13 @@ class subChapter11: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        scrollView.delegate = self
+        scrollView.addSubview(imageView)
+        imageView.image = UIImage(named: "MtgTranscript")
+        scrollView.maximumZoomScale = 10
+        scrollView.minimumZoomScale = 1
+        view.bringSubviewToFront(toolbar)
     }
     
     @objc func doneClicked() {
@@ -56,6 +70,7 @@ class subChapter11: UIViewController {
         if open {
             return
         }
+        textField.alpha = 1.0
         let bounds = UIScreen.main.bounds
         let deviceHeight = bounds.size.height
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
@@ -69,6 +84,7 @@ class subChapter11: UIViewController {
     }
     
     @objc func keyboardWillHide() {
+        textField.alpha = 0.3
         textFieldConstraint.constant -= keyboardAdded
         open = false
     }
@@ -88,7 +104,43 @@ let alert = MessageAlert()
     alert.dismissAlert()
     //add code if needed
 }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        scrollView.frame = view.bounds
+        imageView.frame = scrollView.bounds
+    }
 
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+         return imageView
+     }
+ 
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+         if scrollView.zoomScale > 1 {
+            scrollView.isScrollEnabled = true
+            if let image = imageView.image {
+                let ratioW = imageView.frame.width / image.size.width
+                let ratioH = imageView.frame.height / image.size.height
+                let ratio = ratioW < ratioH ? ratioW : ratioH
+                let newWidth = image.size.width * ratio
+                let newHeight = image.size.height * ratio
+                let conditionLeft = newWidth*scrollView.zoomScale > imageView.frame.width
+                let left = 0.5 * (conditionLeft ? newWidth - imageView.frame.width : (scrollView.frame.width - scrollView.contentSize.width))
+                let conditioTop = newHeight*scrollView.zoomScale > imageView.frame.width
+                let top = 0.5 * (conditioTop ? newHeight - imageView.frame.height : (scrollView.frame.height - scrollView.contentSize.height))
+                  
+                scrollView.contentInset = UIEdgeInsets(top: top, left: left, bottom: top, right: left)
+                  
+              }
+          }
+        else {
+            scrollView.contentInset = .zero
+            scrollView.isScrollEnabled = false
+            imageView.frame = scrollView.bounds
+        }
+      }
+    
+    
     @IBAction func goBack(_ sender: Any) {
     self.performSegue(withIdentifier: "subChap11ToHome", sender: nil)
     }
@@ -105,10 +157,10 @@ let alert = MessageAlert()
             view.endEditing(true)
             textField.textColor = .green
             textStack.isUserInteractionEnabled = false
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            wait {
                 self.textStack.flickerOut()
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            wait {
                 self.performSegue(withIdentifier: "subChap11ToChap11", sender: nil)
             }
         }
@@ -136,7 +188,7 @@ let alert = MessageAlert()
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "", viewController: self, hintButton: hint)
+            customAlert.showAlert(message: "Those coordinates at the bottom could represent locations of certain characters", viewController: self, hintButton: hint)
             view.bringSubviewToFront(toolbar)
         }
         

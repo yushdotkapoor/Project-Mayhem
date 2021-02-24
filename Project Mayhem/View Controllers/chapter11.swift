@@ -117,7 +117,7 @@ class chapter11: UIViewController, SFSpeechRecognizerDelegate {
                     self.binaryText.fadeOut()
                     self.label.fadeIn()
                     self.stopRecording()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    wait {
                         self.complete()
                     }
                 }
@@ -131,7 +131,7 @@ class chapter11: UIViewController, SFSpeechRecognizerDelegate {
                 self.recognitionRequest = nil
                 self.recognitionTask = nil
                 if game.string(forKey: "active") == "chap11" {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    wait {
                         self.startRecording()
                     }
                 }

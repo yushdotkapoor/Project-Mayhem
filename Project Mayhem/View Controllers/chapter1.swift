@@ -60,25 +60,25 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     
     func part1() {
         leave.fadeIn()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        wait {
             self.now.fadeIn()
         }
     }
     
     func part2() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+        wait(time: 0.3, actions: {
             self.leave.fadeOut()
             self.now.fadeOut()
             
             game.setValue("chap1.2", forKey: "active")
             self.good.fadeIn()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            wait {
                 self.glad.fadeIn()
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            wait(time: 3, actions: {
                 self.nameStack.fadeIn()
-            }
-        }
+            })
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -148,23 +148,23 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
             nameField.text = ""
             welcome.text = "Welcome to Project Mayhem, \(name)"
             welcome.fadeIn()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            wait {
                 self.nameStack.fadeOut()
                 self.good.fadeOut()
                 self.glad.fadeOut()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                wait {
                     self.welcome.flickerIn(iterations: 10)
                     self.welcome.text = "Welcome to Project Mayhem, Branechild"
                     self.welcome.textColor = .red
                     self.vibrate(count: 5)
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+                    wait(time: 0.75, actions: {
                         self.vibrate(count: 5)
                         self.welcome.flickerIn(iterations: 10)
                         self.welcome.text = "Welcome to Project Mayhem, Brainchild"
                         self.welcome.textColor = .black
                         self.nextChap.isUserInteractionEnabled = true
                         self.nextChap.fadeIn()
-                    }
+                    })
                 }
             }
         }
