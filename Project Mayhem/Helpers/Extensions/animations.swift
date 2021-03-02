@@ -97,10 +97,19 @@ extension UIView {
     }
     
     
-    func ripple(view: UIView) {
+    func rippleChap11(thisView:UIView) {
+        let shapePosition = CGPoint(x: UIScreen.main.bounds.size.width / 2, y: UIScreen.main.bounds.size.height / 2)
+        ripple(view: thisView, position: shapePosition)
+    }
+    
+    func ripple() {
+        let shapePosition = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
+        ripple(view: self, position: shapePosition)
+    }
+    
+    func ripple(view:UIView, position: CGPoint) {
         let path = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: bounds.size.width, height: bounds.size.height))
         
-        let shapePosition = CGPoint(x: UIScreen.main.bounds.size.width / 2, y: UIScreen.main.bounds.size.height / 2)
         let rippleShape = CAShapeLayer()
         rippleShape.bounds = CGRect(x: 0, y: 0, width: bounds.size.width, height: bounds.size.height)
         rippleShape.path = path.cgPath
@@ -108,7 +117,7 @@ extension UIView {
         rippleShape.fillColor = UIColor.clear.cgColor
         rippleShape.strokeColor = UIColor.white.cgColor
         rippleShape.opacity = 0
-        rippleShape.position = shapePosition
+        rippleShape.position = position
         
         view.layer.addSublayer(rippleShape)
         

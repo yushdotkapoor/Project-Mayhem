@@ -30,8 +30,6 @@ class subChapter11: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
            super.viewDidLoad()
         textField.alpha = 0.3
-        //TODO: add hint
-        //TODO: add image
         
         nextChap.isUserInteractionEnabled = false
         nextChap.alpha = 0.0
@@ -142,7 +140,8 @@ let alert = MessageAlert()
     
     
     @IBAction func goBack(_ sender: Any) {
-    self.performSegue(withIdentifier: "subChap11ToHome", sender: nil)
+        NotificationCenter.default.removeObserver(self)
+        self.performSegue(withIdentifier: "subChap11ToHome", sender: nil)
     }
     
     @IBAction func submit(_ sender: Any) {
@@ -157,11 +156,12 @@ let alert = MessageAlert()
             view.endEditing(true)
             textField.textColor = .green
             textStack.isUserInteractionEnabled = false
+            NotificationCenter.default.removeObserver(self)
             wait {
                 self.textStack.flickerOut()
-            }
-            wait {
-                self.performSegue(withIdentifier: "subChap11ToChap11", sender: nil)
+                wait {
+                    self.performSegue(withIdentifier: "subChap11ToChap11", sender: nil)
+                }
             }
         }
         else {

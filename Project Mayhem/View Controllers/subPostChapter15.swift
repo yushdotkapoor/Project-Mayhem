@@ -7,6 +7,7 @@
 
 import UIKit
 import AVKit
+import Speech
 
 class subPostChapter15: UIViewController {
     @IBOutlet var playerView: PlayerView!
@@ -14,65 +15,268 @@ class subPostChapter15: UIViewController {
     @IBOutlet weak var nextChap: UIButton!
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var doubleTapInstructions: UILabel!
+    @IBOutlet weak var back: UIButton!
     
-    //subPostChap15ToPostChap15
+    let pauseArray:[Double] = [9, 15, 38.5, 62, 65, 70.2, 107]
     
-    let pauseArray:[Double] = []
+    var timeStamp:Double = 0.0
+    
+    var vidName:String = "subPostChapter15"
+    
+    var speakLabels:[CustomButtonOutline] = []
+    
+    var status = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         game.setValue("subPostChap15", forKey: "active")
-        //video = playLocalVideo(name: "Chap1Intro", type: "mov", playView: playerView, array: pauseArray)
+        ripplingView = back
+        
+        funcToPass = part1
+        video = VideoPlayer(urlAsset: vidToURL(name: vidName, type: "mov"), view: playerView, arr: pauseArray, startTime: 0)
+        talk = speechModule(activeCode: game.string(forKey: "active")!, rippleView: ripplingView!)
+        
         godThread = self
         
         flashInstructions()
         
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(background), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(reenter), name: UIApplication.willEnterForegroundNotification, object: nil)
+        
         let doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
         doubleTap.numberOfTapsRequired = 2
         view.addGestureRecognizer(doubleTap)
+    }
+    
+    func part1() {
+        wordToSearch = ["what are you doing here"]
+        let button = createLabel(text: "What are you doing here?", callBack: #selector(postPart1))
+        speakLabels = [button]
+        for i in speakLabels {
+            i.fadeIn()
+        }
+        funcToPass = postPart1
+        talk?.startRecording(target: wordToSearch!)
+    }
+    
+    @objc func postPart1() {
+        for i in speakLabels {
+            i.fadeOut()
+        }
+        wait {
+            self.speakLabels.removeAll()
+        }
+        talk?.pause()
+        funcToPass = part2
+        video?.play()
+        print("postPart1")
+    }
+    
+    func part2() {
+        print("part2")
+        let arr = ["what do you want"]
+        wordToSearch = arr
+        let button = createLabel(text: "What do you want?", callBack: #selector(postPart2))
+        speakLabels = [button]
+        for i in speakLabels {
+            i.fadeIn()
+        }
+        funcToPass = postPart2
+        talk?.startRecording(target: wordToSearch!)
+    }
+    
+    @objc func postPart2() {
+        print("postPart2")
+        for i in speakLabels {
+            i.fadeOut()
+        }
+        wait {
+            self.speakLabels.removeAll()
+        }
+        talk?.pause()
+        funcToPass = part3
+        video?.play()
+    }
+    
+    func part3() {
+        print("part3")
+        let arr = ["see for yourself"]
+        wordToSearch = arr
+        let button = createLabel(text: "See for yourself.", callBack: #selector(postPart3))
+        speakLabels = [button]
+        for i in speakLabels {
+            i.fadeIn()
+        }
+        funcToPass = postPart3
+        talk?.startRecording(target: wordToSearch!)
+    }
+    
+    @objc func postPart3() {
+        print("postPart3")
+        for i in speakLabels {
+            i.fadeOut()
+        }
+        wait {
+            self.speakLabels.removeAll()
+        }
+        talk?.pause()
+        funcToPass = part4
+        video?.play()
+    }
+    
+    func part4() {
+        print("part4")
+        let arr = ["what does it say", "how did you know that was there"]
+        wordToSearch = arr
+        let button = createLabel(text: "What does it say?", callBack: #selector(postPart4_1))
+        speakLabels = [button]
+        let button2 = createLabel(text: "How did you know that was there?", callBack: #selector(postPart4_2))
+        speakLabels.append(button2)
+        for i in speakLabels {
+            i.fadeIn()
+        }
+        funcToPass = postPart4_1
+        talk?.startRecording(target: wordToSearch!, arrayOfFunctions: [postPart4_1, postPart4_2])
+    }
+    
+    @objc func postPart4_1() {
+        print("postPart4_1")
+        for i in speakLabels {
+            i.fadeOut()
+        }
+        wait(time: 0.5, actions: {
+            self.speakLabels.removeAll()
+        })
+        talk?.pause()
+        funcToPass = bypass4
+        video?.play()
+    }
+    
+    func bypass4() {
+        print("bypass4")
+        funcToPass = part5
+        video?.seekToPosition(seconds: 70)
+        wait(time:0.1) {
+            video?.playBlock = false
+            video?.functionCalled = false
+        }
+    }
+    
+    @objc func postPart4_2() {
+        print("postPart4_2")
+        for i in speakLabels {
+            i.fadeOut()
+        }
+        wait {
+            self.speakLabels.removeAll()
+        }
+        talk?.pause()
+        funcToPass = part5
+        video?.seekToPosition(seconds: 65)
+    }
+    
+    func part5() {
+        print("part5")
+        let arr = ["why are you doing this"]
+        wordToSearch = arr
+        let button = createLabel(text: "Why are you doing this?", callBack: #selector(postPart5))
+        speakLabels = [button]
+        for i in speakLabels {
+            i.fadeIn()
+        }
+        funcToPass = postPart5
+        talk?.startRecording(target: wordToSearch!)
+    }
+    
+    @objc func postPart5() {
+        print("postPart5")
+        for i in speakLabels {
+            i.fadeOut()
+        }
+        wait {
+            self.speakLabels.removeAll()
+        }
+        talk?.pause()
+        funcToPass = end
+        video?.play()
+    }
+    
+    func end() {
+        print("end")
+        video?.cleanUp()
+        talk?.stopRecording()
+        NotificationCenter.default.removeObserver(godThread!)
+        game.setValue("none", forKey: "active")
+        MusicPlayer.shared.updateVolume()
+        godThread?.performSegue(withIdentifier: "subPostChap15ToPostChap15", sender: nil)
+    }
+    
+    func createLabel(text: String, callBack: Selector) -> CustomButtonOutline {
+        let frame = CGRect(x: 20, y: UIScreen.main.bounds.size.height - 175 - (CGFloat(speakLabels.count) * 60), width: UIScreen.main.bounds.size.width - 40, height: 40)
+        let button = CustomButtonOutline(frame: frame)
+        button.setupButton(color: .green)
+        button.setTitle(text, for: .normal)
+        button.setTitleColor(.green, for: .normal)
+        button.setTitleColor(.gray, for: .highlighted)
+        button.titleLabel?.minimumScaleFactor = 0.5
+        button.titleLabel?.font = UIFont(name: "Tomorrow Regular", size: 20)
+        button.alpha = 0.0
+        button.addTarget(self, action: callBack, for: .touchUpInside)
         
+        //Just for this specific implementation!
+        button.isUserInteractionEnabled = false
+        
+        view.addSubview(button)
+        
+        return button
     }
     
     func flashInstructions() {
-        let alpha = doubleTapInstructions.alpha
-        let active = game.string(forKey: "active")
-        
-        let passed = game.bool(forKey: "chap15")
-        if passed {
-            if (active == "subPostChap15") {
-                if alpha == 0.0 {
-                    doubleTapInstructions.fadeIn()
-                }
-                else {
-                    doubleTapInstructions.fadeOut()
-                }
-            }
-            else {
-                wait {
-                    self.flashInstructions()
-                }
-            }
-        }
-         
+       let t = game.bool(forKey: "chap15")
+       video?.startFlash(lbl: doubleTapInstructions, chap: ["subPostChap15"], willFlash: t)
     }
     
     @objc func doubleTapped() {
-        for pauseTime in pauseArray {
-            var time = 0.0
-            if let player = video?.assetPlayer {
-                time = CMTimeGetSeconds(player.currentTime())
-            }
-            
-            if pauseTime > time {
-                if pauseTime > time + 3 && video!.isPlaying(){
-                    video?.seekToPosition(seconds: pauseTime - 3)
-                }
-                else {
-                    impact(style: .light)
-                }
-                break
-            }
+        let t = game.bool(forKey: "chap15")
+        video?.viewDidDoubleTap(willPass: t)
+    }
+    
+    @objc func background() {
+        timeStamp = video!.currentTime
+        if video!.isPlaying() {
+            print("background video")
+            status = "video"
+            video?.pause()
         }
+        else {
+            print("background talk")
+            status = "talk"
+            talk?.pause()
+        }
+        game.setValue("none", forKey: "active")
+    }
+    
+    @objc func reenter() {
+        game.setValue("subPostChapter15", forKey: "active")
+        
+        if timeStamp - 2 < 0 {
+            timeStamp = 2
+        }
+        
+        if status == "talk" {
+            print("reenter talk")
+            talk?.play()
+            wait(time:0.1, actions: {
+                video?.pause()
+            })
+        }
+        else {
+            print("reenter background")
+            video?.play()
+        }
+        
+        flashInstructions()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,12 +285,19 @@ class subPostChapter15: UIViewController {
         nextChap.isUserInteractionEnabled = false
         hint.alpha = 0.0
         hint.isUserInteractionEnabled = false
+        doubleTapInstructions.alpha = 0.0
+    }
+    
+    func stop() {
+        video?.cleanUp()
+        talk?.stopRecording()
+        godThread = nil
+        game.setValue("none", forKey: "active")
     }
     
     @IBAction func back(_ sender: Any) {
-        video?.cleanUp()
-        godThread = nil
-        game.setValue("none", forKey: "active")
+        stop()
+        NotificationCenter.default.removeObserver(self)
         performSegue(withIdentifier: "subPostChap15ToHome", sender: self)
     }
     

@@ -22,7 +22,7 @@ class chapter8: UIViewController {
     
     override func viewDidLoad() {
            super.viewDidLoad()
-        settings.alpha = 0.15
+        settings.alpha = 0.1
         
         if !game.bool(forKey: "settingsValueChanged") {
             UserDefaults.standard.set(true, forKey: "enabled_preference")
@@ -101,6 +101,7 @@ class chapter8: UIViewController {
     
 
     @IBAction func goBack(_ sender: Any) {
+        NotificationCenter.default.removeObserver(self)
         self.performSegue(withIdentifier: "chap8ToHome", sender: nil)
     }
     

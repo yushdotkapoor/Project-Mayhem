@@ -9,8 +9,7 @@ import UIKit
 import AVKit
 import LocalAuthentication
 
-var video:VideoPlayer?
-var godThread:UIViewController?
+
 
 class subChapter1: UIViewController {
     @IBOutlet var playerView: PlayerView!
@@ -19,17 +18,25 @@ class subChapter1: UIViewController {
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var doubleTapInstructions: UILabel!
     
-    var stopFlash = false
     
     let pauseArray:[Double] = [31.4, 37.85]
+    
+    var timeStamp:Double = 0.0
+    
+    var vidName:String = "Chap1Intro"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         game.setValue("subChap1", forKey: "active")
-        video = playLocalVideo(name: "Chap1Intro", type: "mov", playView: playerView, array: pauseArray)
+        funcToPass = unlock
+        video = VideoPlayer(urlAsset: vidToURL(name: vidName, type: "mov"), view: playerView, arr: pauseArray, startTime: timeStamp)
         godThread = self
         
         flashInstructions()
+        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(background), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(reenter), name: UIApplication.willEnterForegroundNotification, object: nil)
         
         let doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
         doubleTap.numberOfTapsRequired = 2
@@ -41,32 +48,9 @@ class subChapter1: UIViewController {
         
     }
     
-    func flashInstructions() {
-        let alpha = doubleTapInstructions.alpha
-        let active = game.string(forKey: "active")
-        let passed = game.bool(forKey: "chap1")
-        if passed && !stopFlash {
-            if (active == "subChap1" || active == "subChap1.05") {
-                if alpha == 0.0 {
-                    doubleTapInstructions.fadeIn()
-                }
-                else {
-                    doubleTapInstructions.fadeOut()
-                }
-            }
-            else {
-                doubleTapInstructions.alpha = 0.0
-            }
-            wait {
-                self.flashInstructions()
-            }
-        }
-    }
-    
     func unlock() {
         let context = LAContext()
         var error: NSError?
-        print(self)
         game.setValue("subChap1.05", forKey: "active")
         
         if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
@@ -77,8 +61,9 @@ class subChapter1: UIViewController {
                 
                 DispatchQueue.main.async {
                     if success {
-                        self.impact(style: .rigid)
+                        impact(style: .rigid)
                         game.setValue("subChap1.1", forKey: "active")
+                        funcToPass = self.nextChapter
                         video?.play()
                     } else {
                         // error
@@ -95,28 +80,20 @@ class subChapter1: UIViewController {
     func nextChapter() {
         DispatchQueue.main.async { [self] in
             video?.cleanUp()
-            stopFlash = true
+            NotificationCenter.default.removeObserver(godThread!)
+            MusicPlayer.shared.updateVolume()
             godThread?.performSegue(withIdentifier: "subChap1ToChap1", sender: self)
         }
     }
     
+    func flashInstructions() {
+        let t = game.bool(forKey: "chap1")
+        video?.startFlash(lbl: doubleTapInstructions, chap: ["subChap1", "subChap1.05"], willFlash: t)
+    }
+    
     @objc func doubleTapped() {
-        for pauseTime in pauseArray {
-            var time = 0.0
-            if let player = video?.assetPlayer {
-                time = CMTimeGetSeconds(player.currentTime())
-            }
-            
-            if pauseTime > time {
-                if pauseTime > time + 2 && video!.isPlaying(){
-                    video?.seekToPosition(seconds: pauseTime - 2)
-                }
-                else {
-                    impact(style: .light)
-                }
-                break
-            }
-        }
+        let t = game.bool(forKey: "chap1")
+        video?.viewDidDoubleTap(willPass: t)
     }
     
     @objc func singleTapped() {
@@ -126,19 +103,37 @@ class subChapter1: UIViewController {
         }
     }
     
+    @objc func background() {
+        timeStamp = video!.currentTime
+        stop()
+    }
+    
+    @objc func reenter() {
+        if timeStamp - 2 < 0 {
+            timeStamp = 2
+        }
+        video = VideoPlayer(urlAsset: vidToURL(name: vidName, type: "mov"), view: playerView, arr: pauseArray, startTime: timeStamp - 2)
+        flashInstructions()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         nextChap.alpha = 0.0
         nextChap.isUserInteractionEnabled = false
         hint.alpha = 0.0
         hint.isUserInteractionEnabled = false
+        doubleTapInstructions.alpha = 0.0
+    }
+    
+    func stop() {
+        video?.cleanUp()
+        godThread = nil
+        game.setValue("none", forKey: "active")
     }
     
     @IBAction func back(_ sender: Any) {
-        video?.cleanUp()
-        godThread = nil
-        stopFlash = true
-        game.setValue("none", forKey: "active")
+        stop()
+        NotificationCenter.default.removeObserver(self)
         performSegue(withIdentifier: "subChap1ToHome", sender: self)
     }
     

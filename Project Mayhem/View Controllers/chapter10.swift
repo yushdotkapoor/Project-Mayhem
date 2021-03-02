@@ -34,6 +34,7 @@ class chapter10: UIViewController {
     
     override func viewDidLoad() {
            super.viewDidLoad()
+        buttonView.frame.size.width = UIScreen.main.bounds.size.width - 20
         textStack.alpha = 0.0
         let gradient = CAGradientLayer()
         gradient.frame = view.bounds
@@ -131,12 +132,14 @@ class chapter10: UIViewController {
     func complete() {
         game.setValue(true, forKey: "chap10")
         game.setValue("none", forKey: "active")
+        NotificationCenter.default.removeObserver(self)
         nextChap.isUserInteractionEnabled = true
         nextChap.fadeIn()
         
     }
 
     @IBAction func goBack(_ sender: Any) {
+        NotificationCenter.default.removeObserver(self)
         self.performSegue(withIdentifier: "chap10ToHome", sender: nil)
     }
     

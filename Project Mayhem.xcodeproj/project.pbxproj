@@ -16,7 +16,6 @@
 		9D0C544125C51AA7000EE579 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C544025C51AA7000EE579 /* UIViewControllerExtensions.swift */; };
 		9D18487D25D7A7B7007960C0 /* HintAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D18487C25D7A7B7007960C0 /* HintAlert.swift */; };
 		9D420EBB25DF02AF00A3A13D /* globalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D420EBA25DF02AF00A3A13D /* globalFunctions.swift */; };
-		9D438C9725E58D39005CC20A /* videoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D438C9625E58D39005CC20A /* videoDelegate.swift */; };
 		9D438CB125E5E201005CC20A /* Chap1Intro.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9D438CB025E5E201005CC20A /* Chap1Intro.mov */; };
 		9D438CB925E6015F005CC20A /* postChapter15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D438CB825E6015F005CC20A /* postChapter15.swift */; };
 		9D4BFC6925DE41260013D840 /* subChapter11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4BFC6825DE41260013D840 /* subChapter11.swift */; };
@@ -36,10 +35,15 @@
 		9D5614DE2592A00200F1695A /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5614DD2592A00200F1695A /* Levels.swift */; };
 		9D5614E32592FC5F00F1695A /* CustomButtonOutline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5614E22592FC5F00F1695A /* CustomButtonOutline.swift */; };
 		9D5614E82593153C00F1695A /* chapter1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5614E72593153C00F1695A /* chapter1.swift */; };
+		9D56338D25EE173900F123DC /* pp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9D56338C25EE173900F123DC /* pp.wav */; };
 		9D5B42BA259C858100A4F34A /* chapter4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B42B9259C858100A4F34A /* chapter4.swift */; };
 		9D5B42C5259C97FB00A4F34A /* animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B42C4259C97FB00A4F34A /* animations.swift */; };
 		9D6C28E725DCCC950039D12C /* MessageAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C28E625DCCC950039D12C /* MessageAlert.swift */; };
 		9D6C28EB25DCD8330039D12C /* messageTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C28EA25DCD8330039D12C /* messageTemplate.swift */; };
+		9D6C704925ECD47800E8CF6C /* speechModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C704825ECD47800E8CF6C /* speechModule.swift */; };
+		9D6C705725EE082400E8CF6C /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C705625EE082400E8CF6C /* Credits.swift */; };
+		9D6E493625EE12EF00B09E8A /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E493525EE12EF00B09E8A /* MusicPlayer.swift */; };
+		9D73428725ECBDD70003D563 /* subPostChapter15.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9D73428625ECBDD70003D563 /* subPostChapter15.mov */; };
 		9D74262425CA41F3008D9645 /* chapter14.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74261F25CA41F3008D9645 /* chapter14.swift */; };
 		9D74262525CA41F3008D9645 /* chapter15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74262025CA41F3008D9645 /* chapter15.swift */; };
 		9D74262625CA41F3008D9645 /* chapter11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74262125CA41F3008D9645 /* chapter11.swift */; };
@@ -69,6 +73,8 @@
 		9D74267525CA590D008D9645 /* Tomorrow-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74266325CA590C008D9645 /* Tomorrow-BlackItalic.ttf */; };
 		9D74267625CA590D008D9645 /* Tomorrow-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74266425CA590C008D9645 /* Tomorrow-ExtraLightItalic.ttf */; };
 		9D74267725CA590D008D9645 /* Tomorrow-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74266525CA590D008D9645 /* Tomorrow-ExtraBoldItalic.ttf */; };
+		9D7DE96025E786C200F80990 /* ProjectVenomTrailer.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9D7DE95F25E786C200F80990 /* ProjectVenomTrailer.mov */; };
+		9D7DE96425E78C4900F80990 /* VenomPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7DE96325E78C4900F80990 /* VenomPreview.swift */; };
 		9D8B292A25DC187D007750DF /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8B292925DC187D007750DF /* UIColorExtension.swift */; };
 		9D8B292E25DC189A007750DF /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8B292D25DC189A007750DF /* CALayerExtension.swift */; };
 		9D8C42AF25C7BE5C0039F857 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9D8C42AE25C7BE5C0039F857 /* Settings.bundle */; };
@@ -135,13 +141,12 @@
 		9D0C544025C51AA7000EE579 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		9D18487C25D7A7B7007960C0 /* HintAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintAlert.swift; sourceTree = "<group>"; };
 		9D420EBA25DF02AF00A3A13D /* globalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globalFunctions.swift; sourceTree = "<group>"; };
-		9D438C9625E58D39005CC20A /* videoDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoDelegate.swift; sourceTree = "<group>"; };
 		9D438CB025E5E201005CC20A /* Chap1Intro.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Chap1Intro.mov; sourceTree = "<group>"; };
 		9D438CB825E6015F005CC20A /* postChapter15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postChapter15.swift; sourceTree = "<group>"; };
 		9D4BFC6825DE41260013D840 /* subChapter11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subChapter11.swift; sourceTree = "<group>"; };
 		9D4BFC7425DE5FF00013D840 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		9D4BFC7825DE600C0013D840 /* VideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayer.swift; sourceTree = "<group>"; };
-		9D56137E259195E600F1695A /* Project Mayhem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Mayhem.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D56137E259195E600F1695A /* Project_Mayhem.swiftmodule */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Project_Mayhem.swiftmodule; path = "Project Mayhem.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D561383259195E600F1695A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9D561385259195E700F1695A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D561388259195E700F1695A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -161,10 +166,15 @@
 		9D5614DD2592A00200F1695A /* Levels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
 		9D5614E22592FC5F00F1695A /* CustomButtonOutline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonOutline.swift; sourceTree = "<group>"; };
 		9D5614E72593153C00F1695A /* chapter1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter1.swift; sourceTree = "<group>"; };
+		9D56338C25EE173900F123DC /* pp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = pp.wav; path = ../../pp.wav; sourceTree = "<group>"; };
 		9D5B42B9259C858100A4F34A /* chapter4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter4.swift; sourceTree = "<group>"; };
 		9D5B42C4259C97FB00A4F34A /* animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animations.swift; sourceTree = "<group>"; };
 		9D6C28E625DCCC950039D12C /* MessageAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAlert.swift; sourceTree = "<group>"; };
 		9D6C28EA25DCD8330039D12C /* messageTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageTemplate.swift; sourceTree = "<group>"; };
+		9D6C704825ECD47800E8CF6C /* speechModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = speechModule.swift; sourceTree = "<group>"; };
+		9D6C705625EE082400E8CF6C /* Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
+		9D6E493525EE12EF00B09E8A /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
+		9D73428625ECBDD70003D563 /* subPostChapter15.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = subPostChapter15.mov; sourceTree = "<group>"; };
 		9D74261F25CA41F3008D9645 /* chapter14.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chapter14.swift; sourceTree = "<group>"; };
 		9D74262025CA41F3008D9645 /* chapter15.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chapter15.swift; sourceTree = "<group>"; };
 		9D74262125CA41F3008D9645 /* chapter11.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chapter11.swift; sourceTree = "<group>"; };
@@ -194,6 +204,8 @@
 		9D74266325CA590C008D9645 /* Tomorrow-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-BlackItalic.ttf"; path = "../../../../../Downloads/tomorrow/Tomorrow-BlackItalic.ttf"; sourceTree = "<group>"; };
 		9D74266425CA590C008D9645 /* Tomorrow-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-ExtraLightItalic.ttf"; path = "../../../../../Downloads/tomorrow/Tomorrow-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		9D74266525CA590D008D9645 /* Tomorrow-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-ExtraBoldItalic.ttf"; path = "../../../../../Downloads/tomorrow/Tomorrow-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		9D7DE95F25E786C200F80990 /* ProjectVenomTrailer.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = ProjectVenomTrailer.mov; sourceTree = "<group>"; };
+		9D7DE96325E78C4900F80990 /* VenomPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenomPreview.swift; sourceTree = "<group>"; };
 		9D8B292925DC187D007750DF /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		9D8B292D25DC189A007750DF /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		9D8C42AE25C7BE5C0039F857 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -310,7 +322,9 @@
 				9D8C42BE25C7F9C30039F857 /* nonPastableTextField.swift */,
 				9D4BFC7425DE5FF00013D840 /* PlayerView.swift */,
 				9D4BFC7825DE600C0013D840 /* VideoPlayer.swift */,
+				9D6E493525EE12EF00B09E8A /* MusicPlayer.swift */,
 				9D0C543C25C50F97000EE579 /* audioKitHelpers.swift */,
+				9D6C704825ECD47800E8CF6C /* speechModule.swift */,
 			);
 			path = "Custom Classes";
 			sourceTree = "<group>";
@@ -319,6 +333,8 @@
 			isa = PBXGroup;
 			children = (
 				9D438CB025E5E201005CC20A /* Chap1Intro.mov */,
+				9D7DE95F25E786C200F80990 /* ProjectVenomTrailer.mov */,
+				9D73428625ECBDD70003D563 /* subPostChapter15.mov */,
 			);
 			path = Videos;
 			sourceTree = "<group>";
@@ -338,7 +354,7 @@
 		9D56137F259195E600F1695A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9D56137E259195E600F1695A /* Project Mayhem.app */,
+				9D56137E259195E600F1695A /* Project_Mayhem.swiftmodule */,
 				9D56138F259195E800F1695A /* Project MayhemTests.xctest */,
 				9D56139A259195E800F1695A /* Project MayhemUITests.xctest */,
 			);
@@ -354,8 +370,8 @@
 				9D561385259195E700F1695A /* Assets.xcassets */,
 				9D56142F2591DC5400F1695A /* AppDelegate.swift */,
 				9D5613BC259196DE00F1695A /* LaunchScreen.storyboard */,
+				9D56338C25EE173900F123DC /* pp.wav */,
 				9D56138A259195E700F1695A /* Info.plist */,
-				9D438C9625E58D39005CC20A /* videoDelegate.swift */,
 				9D8C42AE25C7BE5C0039F857 /* Settings.bundle */,
 				9D0C543B25C50F79000EE579 /* Helpers */,
 				9D5614242591D2DA00F1695A /* View Controllers */,
@@ -414,6 +430,7 @@
 			children = (
 				9D56141F2591D1C300F1695A /* MainScreen.swift */,
 				9DB0749A25DE156200515283 /* NameQuery.swift */,
+				9D6C705625EE082400E8CF6C /* Credits.swift */,
 				9D5614DD2592A00200F1695A /* Levels.swift */,
 				9DB074A525DE1E1700515283 /* subChapter1.swift */,
 				9D5614E72593153C00F1695A /* chapter1.swift */,
@@ -432,9 +449,10 @@
 				9D74262325CA41F3008D9645 /* chapter13.swift */,
 				9D74261F25CA41F3008D9645 /* chapter14.swift */,
 				9D74262025CA41F3008D9645 /* chapter15.swift */,
-				9D438CB825E6015F005CC20A /* postChapter15.swift */,
 				9DD618EE25E62EBC0036089B /* subPostChapter15.swift */,
+				9D438CB825E6015F005CC20A /* postChapter15.swift */,
 				9DD618E625E62BB20036089B /* ProjectVenomTrailer.swift */,
+				9D7DE96325E78C4900F80990 /* VenomPreview.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -498,7 +516,7 @@
 				9D0C53A725C4EE13000EE579 /* AudioKit */,
 			);
 			productName = "Project Mayhem";
-			productReference = 9D56137E259195E600F1695A /* Project Mayhem.app */;
+			productReference = 9D56137E259195E600F1695A /* Project_Mayhem.swiftmodule */;
 			productType = "com.apple.product-type.application";
 		};
 		9D56138E259195E800F1695A /* Project MayhemTests */ = {
@@ -591,7 +609,9 @@
 			files = (
 				9D74265025CA5797008D9645 /* astro.ttf in Resources */,
 				9D74267625CA590D008D9645 /* Tomorrow-ExtraLightItalic.ttf in Resources */,
+				9D56338D25EE173900F123DC /* pp.wav in Resources */,
 				9D74266B25CA590D008D9645 /* Tomorrow-Italic.ttf in Resources */,
+				9D73428725ECBDD70003D563 /* subPostChapter15.mov in Resources */,
 				9D74267125CA590D008D9645 /* Tomorrow-MediumItalic.ttf in Resources */,
 				9D74266F25CA590D008D9645 /* Tomorrow-Regular.ttf in Resources */,
 				9D74267325CA590D008D9645 /* Tomorrow-SemiBold.ttf in Resources */,
@@ -613,6 +633,7 @@
 				9D5614D525928E6300F1695A /* MYRIADPRO-REGULAR.OTF in Resources */,
 				9D74264C25CA572C008D9645 /* aAmbyarSobat.otf in Resources */,
 				9D74264425CA5718008D9645 /* screaming_neon.ttf in Resources */,
+				9D7DE96025E786C200F80990 /* ProjectVenomTrailer.mov in Resources */,
 				9D74264025CA570D008D9645 /* CoolKidFont-Regular.ttf in Resources */,
 				9D74267725CA590D008D9645 /* Tomorrow-ExtraBoldItalic.ttf in Resources */,
 				9D5613BD259196DE00F1695A /* LaunchScreen.storyboard in Resources */,
@@ -723,12 +744,12 @@
 				9DD618E725E62BB20036089B /* ProjectVenomTrailer.swift in Sources */,
 				9D6C28EB25DCD8330039D12C /* messageTemplate.swift in Sources */,
 				9DD618EF25E62EBC0036089B /* subPostChapter15.swift in Sources */,
+				9D6C705725EE082400E8CF6C /* Credits.swift in Sources */,
 				9DBBF73025C279310022FC63 /* chapter5.swift in Sources */,
 				9D5614E32592FC5F00F1695A /* CustomButtonOutline.swift in Sources */,
 				9D4BFC6925DE41260013D840 /* subChapter11.swift in Sources */,
 				9DEB282625C54C3A00E3F102 /* chapter6.swift in Sources */,
 				9D420EBB25DF02AF00A3A13D /* globalFunctions.swift in Sources */,
-				9D438C9725E58D39005CC20A /* videoDelegate.swift in Sources */,
 				9D74262525CA41F3008D9645 /* chapter15.swift in Sources */,
 				9D6C28E725DCCC950039D12C /* MessageAlert.swift in Sources */,
 				9DEA6A0625948BBA002A8739 /* chapter2.swift in Sources */,
@@ -740,9 +761,11 @@
 				9D561384259195E600F1695A /* ContentView.swift in Sources */,
 				9DB0749B25DE156200515283 /* NameQuery.swift in Sources */,
 				9D8B292E25DC189A007750DF /* CALayerExtension.swift in Sources */,
+				9D6E493625EE12EF00B09E8A /* MusicPlayer.swift in Sources */,
 				9DEA6A0C259515D8002A8739 /* keyboardTemplate.swift in Sources */,
 				9D5614302591DC5400F1695A /* AppDelegate.swift in Sources */,
 				9D8B292A25DC187D007750DF /* UIColorExtension.swift in Sources */,
+				9D6C704925ECD47800E8CF6C /* speechModule.swift in Sources */,
 				9DEB283F25C6095000E3F102 /* stringExtensions.swift in Sources */,
 				9DD618EB25E62BCE0036089B /* videoTemplate.swift in Sources */,
 				9D74262725CA41F3008D9645 /* chapter12.swift in Sources */,
@@ -754,6 +777,7 @@
 				9D5B42C5259C97FB00A4F34A /* animations.swift in Sources */,
 				9DEA6A1725951730002A8739 /* foregroundEventTemplate.swift in Sources */,
 				9DEB283025C5D7D000E3F102 /* chapter8.swift in Sources */,
+				9D7DE96425E78C4900F80990 /* VenomPreview.swift in Sources */,
 				9D0C543D25C50F97000EE579 /* audioKitHelpers.swift in Sources */,
 				9D8C42BF25C7F9C30039F857 /* nonPastableTextField.swift in Sources */,
 				9D5B42BA259C858100A4F34A /* chapter4.swift in Sources */,

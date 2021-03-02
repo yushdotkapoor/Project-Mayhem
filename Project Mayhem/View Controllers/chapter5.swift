@@ -88,6 +88,7 @@ class chapter5: UIViewController {
     
     @IBAction func goBack(_ sender: Any) {
         background()
+        NotificationCenter.default.removeObserver(self)
         self.performSegue(withIdentifier: "chap5ToHome", sender: nil)
     }
     

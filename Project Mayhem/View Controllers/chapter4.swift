@@ -136,6 +136,7 @@ let alert = MessageAlert()
     func complete() {
         game.setValue(true, forKey: "chap4")
         game.setValue("none", forKey: "active")
+        NotificationCenter.default.removeObserver(self)
         nextChap.isUserInteractionEnabled = true
         nextChap.fadeIn()
     }
@@ -172,6 +173,7 @@ let alert = MessageAlert()
     
     @IBAction func goBack(_ sender: Any) {
         motionStop()
+        NotificationCenter.default.removeObserver(self)
         self.performSegue(withIdentifier: "chap4ToHome", sender: nil)
     }
 

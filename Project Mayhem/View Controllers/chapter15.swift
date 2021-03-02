@@ -294,11 +294,13 @@ let alert = MessageAlert()
     func complete() {
         game.setValue(true, forKey: "preChap15")
         game.setValue("none", forKey: "active")
+        NotificationCenter.default.removeObserver(self)
         nextChap.isUserInteractionEnabled = true
         nextChap.fadeIn()
     }
     
     @IBAction func goBack(_ sender: Any) {
+        NotificationCenter.default.removeObserver(self)
         self.performSegue(withIdentifier: "chap15ToHome", sender: nil)
     }
     

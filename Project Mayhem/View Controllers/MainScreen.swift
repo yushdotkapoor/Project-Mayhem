@@ -12,9 +12,12 @@ class MainScreen: UIViewController {
     @IBOutlet weak var logoCenterConstraint: NSLayoutConstraint!
     @IBOutlet weak var enterCenterConstraint: NSLayoutConstraint!
     
+    var touched = 0
+    
     override func viewDidLoad() {
            super.viewDidLoad()
         enter.setupButton(color: UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.0), pressColor: UIColor.black)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -25,12 +28,45 @@ class MainScreen: UIViewController {
             self.logoCenterConstraint.constant += self.view.bounds.width
             self.view.layoutIfNeeded()
         }, completion: nil)
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         logoCenterConstraint.constant -= view.bounds.width
         enterCenterConstraint.constant -= view.bounds.width
+    }
+    
+    @IBAction func Credits(_ sender: Any) {
+        let completed = game.bool(forKey: "credits")
+        if completed {
+            self.performSegue(withIdentifier: "mainToCredits", sender: nil)
+        }
+        else {
+        switch touched {
+        case 0:
+            alert(title: "No", message: "Don't touch me.", actionTitle: "Ok")
+            touched += 1
+            break
+        case 1:
+            alert(title: "Ummmm", message: "Can't you read??? Do. Not. Touch. Me.", actionTitle: "Ok")
+            touched += 1
+            break
+        case 2:
+            alert(title: "😡", message: "I swear to heck, if you touch me one more time, I will find out where you live, \(game.string(forKey: "name")!)", actionTitle: "Ok")
+            touched += 1
+            break
+        case 3:
+            game.setValue(true, forKey: "credits")
+            alert(title: "Ugh", message: "Fine, I will let you through.", actionTitle: "Yay!") {
+                self.performSegue(withIdentifier: "mainToCredits", sender: nil)
+            }
+            break
+        default:
+            break
+        }
+        }
     }
     
     @IBAction func enter(_ sender: Any) {

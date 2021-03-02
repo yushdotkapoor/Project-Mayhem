@@ -92,6 +92,7 @@ class chapter9: UIViewController, UITextFieldDelegate {
     func complete() {
         game.setValue(true, forKey: "chap9")
         game.setValue("none", forKey: "active")
+        NotificationCenter.default.removeObserver(self)
         nextChap.isUserInteractionEnabled = true
         nextChap.fadeIn()
     }
@@ -113,17 +114,13 @@ class chapter9: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func goBack(_ sender: Any) {
+        NotificationCenter.default.removeObserver(self)
         self.performSegue(withIdentifier: "chap9ToHome", sender: nil)
     }
     
     @IBAction func goNext(_ sender: Any) {
         self.performSegue(withIdentifier: "chap9ToChap10", sender: nil)
     }
-
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
 
     @IBAction func hint(_ sender: Any) {
         if menuState {

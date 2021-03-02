@@ -101,6 +101,7 @@ class postChapter15: UIViewController {
     func complete() {
         game.setValue(true, forKey: "postChap15")
         game.setValue("none", forKey: "active")
+        NotificationCenter.default.removeObserver(self)
         nextChap.isUserInteractionEnabled = true
         nextChap.fadeIn()
     }
@@ -196,8 +197,9 @@ class postChapter15: UIViewController {
     
 
     @IBAction func goBack(_ sender: Any) {
-    game.setValue("none", forKey: "active")
-    self.performSegue(withIdentifier: "postChap15ToHome", sender: nil)
+        game.setValue("none", forKey: "active")
+        NotificationCenter.default.removeObserver(self)
+        self.performSegue(withIdentifier: "postChap15ToHome", sender: nil)
     }
     
     @IBAction func goNext(_ sender: Any) {

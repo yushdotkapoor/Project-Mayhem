@@ -13,39 +13,66 @@ class ProjectVenomTrailer: UIViewController {
     @IBOutlet weak var toolbar: UIStackView!
     @IBOutlet weak var nextChap: UIButton!
     @IBOutlet weak var hint: UIButton!
+    @IBOutlet weak var doubleTapInstructions: UILabel!
     
+    let pauseArray:[Double] = [45.4]
     
-    let pauseArray:[Double] = []
+    var player:AVPlayer!
+    
+    var timeStamp:Double = 0.0
+    
+    var vidName:String = "ProjectVenomTrailer"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        game.setValue("projectVenom", forKey: "active")
-        //video = playLocalVideo(name: "Chap1Intro", type: "mov", playView: playerView, array: pauseArray)
+        game.setValue("projectVenomTrailer", forKey: "active")
+        funcToPass = self.ended
+        video = VideoPlayer(urlAsset: vidToURL(name: vidName, type: "mov"), view: playerView, arr: pauseArray, startTime: timeStamp)
         godThread = self
+        
+        flashInstructions()
+        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(background), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(reenter), name: UIApplication.willEnterForegroundNotification, object: nil)
         
         let doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
         doubleTap.numberOfTapsRequired = 2
         view.addGestureRecognizer(doubleTap)
-        
+        view.bringSubviewToFront(toolbar)
+    }
+    
+    
+    func ended() {
+        video?.cleanUp()
+        NotificationCenter.default.removeObserver(godThread!)
+        game.setValue("none", forKey: "active")
+        godThread?.performSegue(withIdentifier: "venomToPreview", sender: nil)
+    }
+    
+    func flashInstructions() {
+       let t = game.bool(forKey: "projectVenom")
+       video?.startFlash(lbl: doubleTapInstructions, chap: ["projectVenomTrailer"], willFlash: t)
     }
     
     @objc func doubleTapped() {
-        for pauseTime in pauseArray {
-            var time = 0.0
-            if let player = video?.assetPlayer {
-                time = CMTimeGetSeconds(player.currentTime())
-            }
-            
-            if pauseTime > time {
-                if pauseTime > time + 3 && video!.isPlaying(){
-                    video?.seekToPosition(seconds: pauseTime - 3)
-                }
-                else {
-                    impact(style: .light)
-                }
-                break
-            }
+        let t = game.bool(forKey: "projectVenom")
+        video?.viewDidDoubleTap(willPass: t)
+    }
+    
+    @objc func background() {
+        timeStamp = video!.currentTime
+        stop()
+    }
+    
+    @objc func reenter() {
+        game.setValue("projectVenomTrailer", forKey: "active")
+        if timeStamp - 2 < 0 {
+            timeStamp = 2
         }
+        video = VideoPlayer(urlAsset: vidToURL(name: vidName, type: "mov"), view: playerView, arr: pauseArray, startTime: timeStamp - 2)
+        godThread = self
+        flashInstructions()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,12 +81,19 @@ class ProjectVenomTrailer: UIViewController {
         nextChap.isUserInteractionEnabled = false
         hint.alpha = 0.0
         hint.isUserInteractionEnabled = false
+        doubleTapInstructions.alpha = 0.0
     }
     
-    @IBAction func back(_ sender: Any) {
+    func stop() {
         video?.cleanUp()
         godThread = nil
         game.setValue("none", forKey: "active")
+    }
+    
+    @IBAction func back(_ sender: Any) {
+        stop()
+        MusicPlayer.shared.updateVolume()
+        NotificationCenter.default.removeObserver(self)
         performSegue(withIdentifier: "ProjectVenomToHome", sender: self)
     }
     

@@ -55,9 +55,10 @@ class chapter12: UIViewController {
     }
     
     @objc func batteryStateDidChange() {
-        let state = UIDevice.current.batteryState.rawValue
+        let state = UIDevice.current.batteryState
+        print(state.rawValue)
         
-        if state == 2 {
+        if state == .charging || state == .full {
             batteryImg.fadeOut()
             backView.fadeIn()
             p2Stack.fadeIn()
@@ -116,15 +117,13 @@ class chapter12: UIViewController {
     func complete() {
         game.setValue(true, forKey: "chap12")
         game.setValue("none", forKey: "active")
+        NotificationCenter.default.removeObserver(self)
         nextChap.isUserInteractionEnabled = true
         nextChap.fadeIn()
     }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
 
     @IBAction func goBack(_ sender: Any) {
+        NotificationCenter.default.removeObserver(self)
         self.performSegue(withIdentifier: "chap12ToHome", sender: nil)
     }
     

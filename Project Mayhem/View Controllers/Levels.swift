@@ -8,6 +8,7 @@
 import UIKit
 import Speech
 import LocalAuthentication
+import AVFoundation
 
 let game = UserDefaults.standard
 
@@ -53,6 +54,9 @@ class Levels: UIViewController {
         del = 0.5
         requestNotificationAuthorization()
         requestTranscribePermissions()
+        requestMicrophonePermissions()
+        requestCameraPermissions()
+        permissionsLord()
         
         let controllers = getData(string: "ViewController") as! [UIViewController]
         
@@ -61,6 +65,7 @@ class Levels: UIViewController {
         }
         //reset()
         //loadAll()
+        MusicPlayer.shared.updateVolume()
     }
     
     func reset() {
@@ -69,6 +74,8 @@ class Levels: UIViewController {
         for r in reset {
             game.setValue(false, forKey: r)
         }
+        game.setValue(false, forKey: "postApocalypse")
+        game.setValue(false, forKey: "apocalypse")
     }
     
     func loadAll() {
@@ -77,6 +84,8 @@ class Levels: UIViewController {
         for r in reset {
             game.setValue(true, forKey: r)
         }
+        game.setValue(true, forKey: "postApocalypse")
+        game.setValue(false, forKey: "apocalypse")
     }
     
     func getData(string: String) -> [Any] {
@@ -138,7 +147,7 @@ class Levels: UIViewController {
         
         if apocalypse {
             let button = CustomButtonOutline(frame: CGRect(x: -view.bounds.width, y: 200, width: 300, height: 40))
-            button.setupButton(color: UIColor.darkGray)
+            button.setupButton(color: UIColor.white)
             button.setTitle("PROJECT VENOM", for: .normal)
             button.setTitleColor(.link, for: .normal)
             button.addTarget(self, action: #selector(visionTrailer), for: .touchUpInside)
@@ -152,8 +161,14 @@ class Levels: UIViewController {
         }
         else {
             if postApocalypse {
+                let complete = game.bool(forKey: "projectVenom")
                 let button = CustomButtonOutline(frame: CGRect(x: -view.bounds.width, y: chap15.frame.origin.y + 60, width: 300, height: 40))
-                button.setupButton()
+                if complete {
+                    button.setupButton(color: UIColor.green)
+                }
+                else {
+                    button.setupButton()
+                }
                 button.setTitle("PROJECT VENOM", for: .normal)
                 button.setTitleColor(.link, for: .normal)
                 button.addTarget(self, action: #selector(visionTrailer), for: .touchUpInside)
@@ -189,58 +204,62 @@ class Levels: UIViewController {
         }
     }
     
-    @IBAction func chap1(_ sender: Any) {
+    func permissionsLord() {
+        let speechStatus = SFSpeechRecognizer.authorizationStatus()
         let current = UNUserNotificationCenter.current()
-        
-        current.getNotificationSettings(completionHandler: { (settings) in
-            switch settings.authorizationStatus {
-            case .authorized, .provisional:
-                DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "LevelsToChap1", sender: nil)
-                }
-                break
-            case .denied, .notDetermined:
-                DispatchQueue.main.async {
-                    self.alert(title: "Error", message: "You must agree to receive notifications from this app to continue. Go to Settings > Project Mayhem > Notifications > Turn on 'Allow Notifications'", actionTitle: "OK", actions: {
-                        UIApplication.shared.open(URL(string:"App-Prefs:root=NOTIFICATIONS_ID")!, options: [:], completionHandler: nil)
-                        })
-                    game.setValue("none", forKey: "active")
-                }
-                break
-            case .ephemeral:
-                DispatchQueue.main.async {
-                    self.alert(title: "Error", message: "Make sure you can receive notifications from this app at all times", actionTitle: "OK", actions: {
+        let microphoneStatus = AVAudioSession.sharedInstance().recordPermission
+        DispatchQueue.main.async {
+            if speechStatus != .authorized {
+                print("Transcription permission was declined.")
+                self.alert(title: "Uh-Oh", message: "You must enable Speech Transcription in the Settings tab to have full access to the app. Go to Settings > Project Mayhem > Notifications > Turn on 'Speech Recognition'", actionTitle: "Okay", actions: {
                     UIApplication.shared.open(URL(string:"App-Prefs:root=NOTIFICATIONS_ID")!, options: [:], completionHandler: nil)
                     })
-                    game.setValue("none", forKey: "active")
-                }
-                break
-            @unknown default:
-                DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "LevelsToChap1", sender: nil)
-                }
-                break
             }
-        })
-    }
-    
-    @IBAction func chap11(_ sender: Any) {
-        SFSpeechRecognizer.requestAuthorization { [unowned self] authStatus in
-            DispatchQueue.main.async {
-                if authStatus != .authorized {
-                    print("Transcription permission was declined.")
-                    alert(title: "Uh-Oh", message: "You must enable Speech Transcription in the Settings tab to have full access to the app. Go to Settings > Project Mayhem > Notifications > Turn on 'Speech Recognition'", actionTitle: "Okay", actions: {
+            current.getNotificationSettings(completionHandler: { (settings) in
+                switch settings.authorizationStatus {
+                case .denied, .notDetermined:
+                        self.alert(title: "Error", message: "You must agree to receive notifications from this app to continue. Go to Settings > Project Mayhem > Notifications > Turn on 'Allow Notifications'", actionTitle: "OK", actions: {
+                            UIApplication.shared.open(URL(string:"App-Prefs:root=NOTIFICATIONS_ID")!, options: [:], completionHandler: nil)
+                            })
+                    break
+                case .ephemeral:
+                        self.alert(title: "Error", message: "Make sure you can receive notifications from this app at all times", actionTitle: "OK", actions: {
                         UIApplication.shared.open(URL(string:"App-Prefs:root=NOTIFICATIONS_ID")!, options: [:], completionHandler: nil)
                         })
+                    break
+                case .authorized:
+                    break
+                case .provisional:
+                    break
+                @unknown default:
+                    break
                 }
-                else {
-                    DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "LevelsToSubChap11", sender: nil)
-                    }
-                }
+            })
+            if microphoneStatus == .denied {
+                self.alert(title: "Error", message: "You must agree to let Project Mayhem use your microphone for certain levels. Please go to Settings > Project Mayhem > Turn on 'Microphone'", actionTitle: "OK", actions: {
+                    UIApplication.shared.open(URL(string:"App-Prefs:root=NOTIFICATIONS_ID")!, options: [:], completionHandler: nil)
+                    })
+            }
+            else if microphoneStatus == .undetermined {
+                self.requestMicrophonePermissions()
+            }
+            switch AVCaptureDevice.authorizationStatus(for: .video) {
+                case .authorized: // The user has previously granted access to the camera.
+                break
+                case .notDetermined: // The user has not yet been asked for camera access.
+                    self.requestCameraPermissions()
+                break
+            case .denied, .restricted: // The user has previously denied access.
+                self.alert(title: "Error", message: "You must agree to let Project Mayhem use your camera for certain levels. Please go to Settings > Project Mayhem > Turn on 'Camera'", actionTitle: "OK", actions: {
+                    UIApplication.shared.open(URL(string:"App-Prefs:root=NOTIFICATIONS_ID")!, options: [:], completionHandler: nil)
+                    })
+                break
+            @unknown default:
+                break
             }
         }
     }
+    
     
     func animate(constraint: NSLayoutConstraint) {
         UIView.animate(withDuration: 0.5, delay: del, options: .curveEaseOut, animations: {
@@ -273,8 +292,23 @@ class Levels: UIViewController {
         }
     }
     
-}
+    func requestMicrophonePermissions() {
+        AVAudioSession.sharedInstance().requestRecordPermission { (granted) in
+            print("microphone access granted")
+        }
+    }
+    
+    
+    func requestCameraPermissions() {
+        AVCaptureDevice.requestAccess(for: .video) { granted in
+            if granted {
+               print("camera access granted")
+            }
+        }
+    }
 
+
+}
 
 
 

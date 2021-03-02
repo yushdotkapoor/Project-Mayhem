@@ -137,14 +137,14 @@ class chapter6: UIViewController {
                 turnFlashlight(on: false)
             }
             else if act == "-" {
-                impact()
+                impactInside()
                 wait(time: 0.35, actions: {
                     self.vibrateShouldStop = true
                 })
                 turnFlashlight(on: true)
             }
             else if act == "·" {
-                impact()
+                impactInside()
                 wait(time: 0.15, actions: {
                     self.vibrateShouldStop = true
                 })
@@ -155,15 +155,15 @@ class chapter6: UIViewController {
         index += 1
     }
     
-    func impact() {
+    func impactInside() {
         if vibrateShouldStop {
             vibrateShouldStop = false
             return
         }
         else {
             wait(time: 0.01, actions: {
-                self.impact(style: .medium)
-                self.impact()
+                impact(style: .medium)
+                self.impactInside()
             })
         }
     }
@@ -200,10 +200,6 @@ class chapter6: UIViewController {
                 self.restart()
             }
         }
-    }
-
-    deinit {
-        stop()
     }
     
     @IBAction func submit(_ sender: Any) {
@@ -271,6 +267,7 @@ let alert = MessageAlert()
 
     @IBAction func goBack(_ sender: Any) {
         stop()
+        NotificationCenter.default.removeObserver(self)
         self.performSegue(withIdentifier: "chap6ToHome", sender: nil)
     }
     

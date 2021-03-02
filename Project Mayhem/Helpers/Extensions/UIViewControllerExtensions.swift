@@ -27,15 +27,9 @@ extension UIViewController {
             self.present(alertController, animated: true, completion: nil)
     }
     
-    func impact(style: UIImpactFeedbackGenerator.FeedbackStyle) {
-        let generator = UIImpactFeedbackGenerator(style: style)
-        generator.impactOccurred()
-    }
-    
     func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat{
         let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
         label.numberOfLines = 0
-        //label.lineBreakMode = NSLineBreakMode.byWordWrapping
         label.font = font
         label.font = label.font.withSize(font.pointSize + 1)
         label.text = text
@@ -53,13 +47,11 @@ extension UIViewController {
         }
     }
     
-    func playLocalVideo(name: String, type: String, playView: PlayerView, array: [Double]) -> VideoPlayer {
+    func vidToURL(name: String, type: String) -> NSURL {
         if let filePath = Bundle.main.path(forResource: name, ofType: type) {
             let fileURL = NSURL(fileURLWithPath: filePath)
-            return VideoPlayer(urlAsset: fileURL, view: playView, arr: array)
+            return fileURL
         }
-        return VideoPlayer()
+        return NSURL()
     }
-    
-    
 }

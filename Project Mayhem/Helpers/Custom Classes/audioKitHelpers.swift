@@ -7,6 +7,7 @@
 
 import Foundation
 import AudioKit
+import AVKit
 
 class Tone {
     var engine = AudioEngine()
@@ -40,12 +41,12 @@ class Listen {
     var tappableNode1: Mixer
     var tracker: PitchTap!
     var silence: Fader
-
+    
     init() {
         guard let input = engine.input else {
             fatalError()
         }
-
+        
         mic = input
         tappableNode1 = Mixer(mic)
         silence = Fader(tappableNode1, gain: 0)
@@ -64,15 +65,15 @@ class Listen {
     
     func start() {
         Settings.audioInputEnabled = true
-
+        
         do {
             try engine.start()
             tracker.start()
-        } catch let err {
-            print("Error: \(err)")
+        } catch(let error) {
+            print(error.localizedDescription)
         }
     }
-        
+    
     func stop() {
         engine.stop()
         tracker.stop()
