@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 var menuState = false
 
@@ -28,9 +29,9 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
            super.viewDidLoad()
         menuState = false
         
-            notificationCenter.addObserver(self, selector: #selector(foreground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(foreground), name: UIApplication.willEnterForegroundNotification, object: nil)
         
-            notificationCenter.addObserver(self, selector: #selector(background), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(background), name: UIApplication.didEnterBackgroundNotification, object: nil)
         
         
         let toolBar = UIToolbar()

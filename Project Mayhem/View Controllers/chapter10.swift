@@ -174,47 +174,48 @@ let alert = MessageAlert()
     
     
     @IBAction func qr1_1(_ sender: Any) {
-        qr11.rotate(rotation: 0.25)
+        qr11.rotate(rotation: 0.25, duration: 0.4, option: [])
         checkFinish()
     }
     
     @IBAction func qr1_2(_ sender: Any) {
-        qr12.rotate(rotation: 0.25)
+        qr12.rotate(rotation: 0.25, duration: 0.4, option: [])
         checkFinish()
     }
     
     @IBAction func qr1_3(_ sender: Any) {
-        qr13.rotate(rotation: 0.25)
+        qr13.rotate(rotation: 0.25, duration: 0.4, option: [])
         checkFinish()
     }
     
     @IBAction func qr2_1(_ sender: Any) {
-        qr21.rotate(rotation: 0.25)
+        qr21.rotate(rotation: 0.25, duration: 0.4, option: [])
         checkFinish()
     }
     
     @IBAction func qr2_2(_ sender: Any) {
-        qr22.rotate(rotation: 0.25)
+        qr22.rotate(rotation: 0.25, duration: 0.4, option: [])
         checkFinish()
     }
     
     @IBAction func qr2_3(_ sender: Any) {
-        qr23.rotate(rotation: 0.25)
+        qr23.rotate(rotation: 0.25, duration: 0.4, option: [])
         checkFinish()
     }
     
     @IBAction func qr3_1(_ sender: Any) {
-        qr31.rotate(rotation: 0.25)
+        qr31.rotate(rotation: 0.25, duration: 0.4, option: [])
         checkFinish()
     }
     
     @IBAction func qr3_2(_ sender: Any) {
-        qr32.rotate(rotation: 0.25)
+        qr32.rotate(rotation: 0.25, duration: 0.4, option: [])
         checkFinish()
     }
     
     @IBAction func qr3_3(_ sender: Any) {
-        qr33.rotate(rotation: 0.25)
+        qr33.rotate(rotation: 0.25, duration: 0.4, option: [])
+        
         checkFinish()
     }
     

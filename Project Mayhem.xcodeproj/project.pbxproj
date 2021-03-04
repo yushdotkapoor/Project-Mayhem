@@ -31,7 +31,6 @@
 		9D56140F2591CFFD00F1695A /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56140E2591CFFD00F1695A /* CustomButton.swift */; };
 		9D5614202591D1C300F1695A /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56141F2591D1C300F1695A /* MainScreen.swift */; };
 		9D5614302591DC5400F1695A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D56142F2591DC5400F1695A /* AppDelegate.swift */; };
-		9D5614D525928E6300F1695A /* MYRIADPRO-REGULAR.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 9D5613CF2591C7FC00F1695A /* MYRIADPRO-REGULAR.OTF */; };
 		9D5614DE2592A00200F1695A /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5614DD2592A00200F1695A /* Levels.swift */; };
 		9D5614E32592FC5F00F1695A /* CustomButtonOutline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5614E22592FC5F00F1695A /* CustomButtonOutline.swift */; };
 		9D5614E82593153C00F1695A /* chapter1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5614E72593153C00F1695A /* chapter1.swift */; };
@@ -49,37 +48,38 @@
 		9D74262625CA41F3008D9645 /* chapter11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74262125CA41F3008D9645 /* chapter11.swift */; };
 		9D74262725CA41F3008D9645 /* chapter12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74262225CA41F3008D9645 /* chapter12.swift */; };
 		9D74262825CA41F3008D9645 /* chapter13.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74262325CA41F3008D9645 /* chapter13.swift */; };
-		9D74263C25CA5705008D9645 /* NoisyWalk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74263B25CA5705008D9645 /* NoisyWalk.ttf */; };
-		9D74264025CA570D008D9645 /* CoolKidFont-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74263F25CA570C008D9645 /* CoolKidFont-Regular.ttf */; };
-		9D74264425CA5718008D9645 /* screaming_neon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74264325CA5718008D9645 /* screaming_neon.ttf */; };
-		9D74264825CA5721008D9645 /* Adonay.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74264725CA5721008D9645 /* Adonay.otf */; };
-		9D74264C25CA572C008D9645 /* aAmbyarSobat.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74264B25CA572C008D9645 /* aAmbyarSobat.otf */; };
-		9D74265025CA5797008D9645 /* astro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74264F25CA5797008D9645 /* astro.ttf */; };
-		9D74266625CA590D008D9645 /* Tomorrow-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74265425CA590C008D9645 /* Tomorrow-ExtraLight.ttf */; };
-		9D74266725CA590D008D9645 /* Tomorrow-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74265525CA590C008D9645 /* Tomorrow-SemiBoldItalic.ttf */; };
-		9D74266825CA590D008D9645 /* Tomorrow-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74265625CA590C008D9645 /* Tomorrow-ThinItalic.ttf */; };
-		9D74266925CA590D008D9645 /* Tomorrow-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74265725CA590C008D9645 /* Tomorrow-Bold.ttf */; };
-		9D74266A25CA590D008D9645 /* Tomorrow-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74265825CA590C008D9645 /* Tomorrow-BoldItalic.ttf */; };
-		9D74266B25CA590D008D9645 /* Tomorrow-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74265925CA590C008D9645 /* Tomorrow-Italic.ttf */; };
-		9D74266C25CA590D008D9645 /* Tomorrow-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74265A25CA590C008D9645 /* Tomorrow-ExtraBold.ttf */; };
-		9D74266D25CA590D008D9645 /* Tomorrow-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74265B25CA590C008D9645 /* Tomorrow-LightItalic.ttf */; };
-		9D74266E25CA590D008D9645 /* Tomorrow-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74265C25CA590C008D9645 /* Tomorrow-Black.ttf */; };
-		9D74266F25CA590D008D9645 /* Tomorrow-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74265D25CA590C008D9645 /* Tomorrow-Regular.ttf */; };
-		9D74267025CA590D008D9645 /* Tomorrow-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74265E25CA590C008D9645 /* Tomorrow-Light.ttf */; };
-		9D74267125CA590D008D9645 /* Tomorrow-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74265F25CA590C008D9645 /* Tomorrow-MediumItalic.ttf */; };
-		9D74267225CA590D008D9645 /* Tomorrow-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74266025CA590C008D9645 /* Tomorrow-Medium.ttf */; };
-		9D74267325CA590D008D9645 /* Tomorrow-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74266125CA590C008D9645 /* Tomorrow-SemiBold.ttf */; };
-		9D74267425CA590D008D9645 /* Tomorrow-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74266225CA590C008D9645 /* Tomorrow-Thin.ttf */; };
-		9D74267525CA590D008D9645 /* Tomorrow-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74266325CA590C008D9645 /* Tomorrow-BlackItalic.ttf */; };
-		9D74267625CA590D008D9645 /* Tomorrow-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74266425CA590C008D9645 /* Tomorrow-ExtraLightItalic.ttf */; };
-		9D74267725CA590D008D9645 /* Tomorrow-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D74266525CA590D008D9645 /* Tomorrow-ExtraBoldItalic.ttf */; };
 		9D7DE96025E786C200F80990 /* ProjectVenomTrailer.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9D7DE95F25E786C200F80990 /* ProjectVenomTrailer.mov */; };
 		9D7DE96425E78C4900F80990 /* VenomPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7DE96325E78C4900F80990 /* VenomPreview.swift */; };
 		9D8B292A25DC187D007750DF /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8B292925DC187D007750DF /* UIColorExtension.swift */; };
 		9D8B292E25DC189A007750DF /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8B292D25DC189A007750DF /* CALayerExtension.swift */; };
 		9D8C42AF25C7BE5C0039F857 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9D8C42AE25C7BE5C0039F857 /* Settings.bundle */; };
-		9D8C42BB25C7EFB90039F857 /* PigpenCipher.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D8C42B825C7ECEC0039F857 /* PigpenCipher.otf */; };
 		9D8C42BF25C7F9C30039F857 /* nonPastableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C42BE25C7F9C30039F857 /* nonPastableTextField.swift */; };
+		9DA2E9BD25F0451600262638 /* audioExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2E9BC25F0451600262638 /* audioExtensions.swift */; };
+		9DA2E9D025F09C6000262638 /* NoisyWalk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2E9C825F09C6000262638 /* NoisyWalk.ttf */; };
+		9DA2E9D125F09C6000262638 /* PigpenCipher.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2E9C925F09C6000262638 /* PigpenCipher.otf */; };
+		9DA2E9D225F09C6000262638 /* CoolKidFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2E9CA25F09C6000262638 /* CoolKidFont.ttf */; };
+		9DA2E9D325F09C6000262638 /* aAmbyarSobat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2E9CB25F09C6000262638 /* aAmbyarSobat.ttf */; };
+		9DA2E9D525F09C6000262638 /* Adonay.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2E9CD25F09C6000262638 /* Adonay.ttf */; };
+		9DA2E9D625F09C6000262638 /* astro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2E9CE25F09C6000262638 /* astro.ttf */; };
+		9DA2E9D725F09C6000262638 /* screaming_neon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2E9CF25F09C6000262638 /* screaming_neon.ttf */; };
+		9DA2EA1525F09D9B00262638 /* Tomorrow-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2EA0325F09D9B00262638 /* Tomorrow-SemiBold.ttf */; };
+		9DA2EA1625F09D9B00262638 /* Tomorrow-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2EA0425F09D9B00262638 /* Tomorrow-Thin.ttf */; };
+		9DA2EA1725F09D9B00262638 /* Tomorrow-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2EA0525F09D9B00262638 /* Tomorrow-SemiBoldItalic.ttf */; };
+		9DA2EA1825F09D9B00262638 /* Tomorrow-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2EA0625F09D9B00262638 /* Tomorrow-BlackItalic.ttf */; };
+		9DA2EA1925F09D9B00262638 /* Tomorrow-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2EA0725F09D9B00262638 /* Tomorrow-Black.ttf */; };
+		9DA2EA1A25F09D9B00262638 /* Tomorrow-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2EA0825F09D9B00262638 /* Tomorrow-ExtraBoldItalic.ttf */; };
+		9DA2EA1B25F09D9B00262638 /* Tomorrow-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2EA0925F09D9B00262638 /* Tomorrow-Light.ttf */; };
+		9DA2EA1C25F09D9B00262638 /* Tomorrow-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2EA0A25F09D9B00262638 /* Tomorrow-LightItalic.ttf */; };
+		9DA2EA1D25F09D9B00262638 /* Tomorrow-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2EA0B25F09D9B00262638 /* Tomorrow-ExtraLightItalic.ttf */; };
+		9DA2EA1E25F09D9B00262638 /* Tomorrow-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2EA0C25F09D9B00262638 /* Tomorrow-Italic.ttf */; };
+		9DA2EA1F25F09D9B00262638 /* Tomorrow-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2EA0D25F09D9B00262638 /* Tomorrow-MediumItalic.ttf */; };
+		9DA2EA2025F09D9B00262638 /* Tomorrow-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2EA0E25F09D9B00262638 /* Tomorrow-BoldItalic.ttf */; };
+		9DA2EA2125F09D9B00262638 /* Tomorrow-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2EA0F25F09D9B00262638 /* Tomorrow-Bold.ttf */; };
+		9DA2EA2225F09D9B00262638 /* Tomorrow-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2EA1025F09D9B00262638 /* Tomorrow-ThinItalic.ttf */; };
+		9DA2EA2325F09D9B00262638 /* Tomorrow-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2EA1125F09D9B00262638 /* Tomorrow-Medium.ttf */; };
+		9DA2EA2425F09D9B00262638 /* Tomorrow-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2EA1225F09D9B00262638 /* Tomorrow-ExtraLight.ttf */; };
+		9DA2EA2525F09D9B00262638 /* Tomorrow-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2EA1325F09D9B00262638 /* Tomorrow-Regular.ttf */; };
+		9DA2EA2625F09D9B00262638 /* Tomorrow-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2EA1425F09D9B00262638 /* Tomorrow-ExtraBold.ttf */; };
 		9DB0749B25DE156200515283 /* NameQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0749A25DE156200515283 /* NameQuery.swift */; };
 		9DB074A625DE1E1700515283 /* subChapter1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB074A525DE1E1700515283 /* subChapter1.swift */; };
 		9DBBF73025C279310022FC63 /* chapter5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBBF72F25C279310022FC63 /* chapter5.swift */; };
@@ -146,7 +146,7 @@
 		9D4BFC6825DE41260013D840 /* subChapter11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subChapter11.swift; sourceTree = "<group>"; };
 		9D4BFC7425DE5FF00013D840 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		9D4BFC7825DE600C0013D840 /* VideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayer.swift; sourceTree = "<group>"; };
-		9D56137E259195E600F1695A /* Project_Mayhem.swiftmodule */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Project_Mayhem.swiftmodule; path = "Project Mayhem.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D56137E259195E600F1695A /* Project Mayhem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Mayhem.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D561383259195E600F1695A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9D561385259195E700F1695A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D561388259195E700F1695A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -159,7 +159,6 @@
 		9D5613A0259195E800F1695A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D5613B7259196CB00F1695A /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9D5613BC259196DE00F1695A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9D5613CF2591C7FC00F1695A /* MYRIADPRO-REGULAR.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MYRIADPRO-REGULAR.OTF"; sourceTree = "<group>"; };
 		9D56140E2591CFFD00F1695A /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		9D56141F2591D1C300F1695A /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		9D56142F2591DC5400F1695A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -180,37 +179,38 @@
 		9D74262125CA41F3008D9645 /* chapter11.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chapter11.swift; sourceTree = "<group>"; };
 		9D74262225CA41F3008D9645 /* chapter12.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chapter12.swift; sourceTree = "<group>"; };
 		9D74262325CA41F3008D9645 /* chapter13.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chapter13.swift; sourceTree = "<group>"; };
-		9D74263B25CA5705008D9645 /* NoisyWalk.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NoisyWalk.ttf; path = ../../../../Downloads/NoisyWalk.ttf; sourceTree = "<group>"; };
-		9D74263F25CA570C008D9645 /* CoolKidFont-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CoolKidFont-Regular.ttf"; path = "../../../../Downloads/CoolKidFont-Regular.ttf"; sourceTree = "<group>"; };
-		9D74264325CA5718008D9645 /* screaming_neon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = screaming_neon.ttf; path = "../../../../Downloads/screaming-neon/screaming_neon.ttf"; sourceTree = "<group>"; };
-		9D74264725CA5721008D9645 /* Adonay.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Adonay.otf; path = ../../../../Downloads/adonay/Adonay.otf; sourceTree = "<group>"; };
-		9D74264B25CA572C008D9645 /* aAmbyarSobat.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = aAmbyarSobat.otf; path = "../../../../Downloads/a-ambyar-sobat/aAmbyarSobat.otf"; sourceTree = "<group>"; };
-		9D74264F25CA5797008D9645 /* astro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = astro.ttf; path = ../../../../Downloads/astro.ttf; sourceTree = "<group>"; };
-		9D74265425CA590C008D9645 /* Tomorrow-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-ExtraLight.ttf"; path = "../../../../../Downloads/tomorrow/Tomorrow-ExtraLight.ttf"; sourceTree = "<group>"; };
-		9D74265525CA590C008D9645 /* Tomorrow-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-SemiBoldItalic.ttf"; path = "../../../../../Downloads/tomorrow/Tomorrow-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
-		9D74265625CA590C008D9645 /* Tomorrow-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-ThinItalic.ttf"; path = "../../../../../Downloads/tomorrow/Tomorrow-ThinItalic.ttf"; sourceTree = "<group>"; };
-		9D74265725CA590C008D9645 /* Tomorrow-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-Bold.ttf"; path = "../../../../../Downloads/tomorrow/Tomorrow-Bold.ttf"; sourceTree = "<group>"; };
-		9D74265825CA590C008D9645 /* Tomorrow-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-BoldItalic.ttf"; path = "../../../../../Downloads/tomorrow/Tomorrow-BoldItalic.ttf"; sourceTree = "<group>"; };
-		9D74265925CA590C008D9645 /* Tomorrow-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-Italic.ttf"; path = "../../../../../Downloads/tomorrow/Tomorrow-Italic.ttf"; sourceTree = "<group>"; };
-		9D74265A25CA590C008D9645 /* Tomorrow-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-ExtraBold.ttf"; path = "../../../../../Downloads/tomorrow/Tomorrow-ExtraBold.ttf"; sourceTree = "<group>"; };
-		9D74265B25CA590C008D9645 /* Tomorrow-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-LightItalic.ttf"; path = "../../../../../Downloads/tomorrow/Tomorrow-LightItalic.ttf"; sourceTree = "<group>"; };
-		9D74265C25CA590C008D9645 /* Tomorrow-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-Black.ttf"; path = "../../../../../Downloads/tomorrow/Tomorrow-Black.ttf"; sourceTree = "<group>"; };
-		9D74265D25CA590C008D9645 /* Tomorrow-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-Regular.ttf"; path = "../../../../../Downloads/tomorrow/Tomorrow-Regular.ttf"; sourceTree = "<group>"; };
-		9D74265E25CA590C008D9645 /* Tomorrow-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-Light.ttf"; path = "../../../../../Downloads/tomorrow/Tomorrow-Light.ttf"; sourceTree = "<group>"; };
-		9D74265F25CA590C008D9645 /* Tomorrow-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-MediumItalic.ttf"; path = "../../../../../Downloads/tomorrow/Tomorrow-MediumItalic.ttf"; sourceTree = "<group>"; };
-		9D74266025CA590C008D9645 /* Tomorrow-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-Medium.ttf"; path = "../../../../../Downloads/tomorrow/Tomorrow-Medium.ttf"; sourceTree = "<group>"; };
-		9D74266125CA590C008D9645 /* Tomorrow-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-SemiBold.ttf"; path = "../../../../../Downloads/tomorrow/Tomorrow-SemiBold.ttf"; sourceTree = "<group>"; };
-		9D74266225CA590C008D9645 /* Tomorrow-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-Thin.ttf"; path = "../../../../../Downloads/tomorrow/Tomorrow-Thin.ttf"; sourceTree = "<group>"; };
-		9D74266325CA590C008D9645 /* Tomorrow-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-BlackItalic.ttf"; path = "../../../../../Downloads/tomorrow/Tomorrow-BlackItalic.ttf"; sourceTree = "<group>"; };
-		9D74266425CA590C008D9645 /* Tomorrow-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-ExtraLightItalic.ttf"; path = "../../../../../Downloads/tomorrow/Tomorrow-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
-		9D74266525CA590D008D9645 /* Tomorrow-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-ExtraBoldItalic.ttf"; path = "../../../../../Downloads/tomorrow/Tomorrow-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		9D7DE95F25E786C200F80990 /* ProjectVenomTrailer.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = ProjectVenomTrailer.mov; sourceTree = "<group>"; };
 		9D7DE96325E78C4900F80990 /* VenomPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenomPreview.swift; sourceTree = "<group>"; };
 		9D8B292925DC187D007750DF /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		9D8B292D25DC189A007750DF /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		9D8C42AE25C7BE5C0039F857 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		9D8C42B825C7ECEC0039F857 /* PigpenCipher.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = PigpenCipher.otf; path = "../../../../Downloads/pigpen-cipher/PigpenCipher.otf"; sourceTree = "<group>"; };
 		9D8C42BE25C7F9C30039F857 /* nonPastableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nonPastableTextField.swift; sourceTree = "<group>"; };
+		9DA2E9BC25F0451600262638 /* audioExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audioExtensions.swift; sourceTree = "<group>"; };
+		9DA2E9C825F09C6000262638 /* NoisyWalk.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NoisyWalk.ttf; path = "Project Mayhem/Fonts/NoisyWalk.ttf"; sourceTree = SOURCE_ROOT; };
+		9DA2E9C925F09C6000262638 /* PigpenCipher.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = PigpenCipher.otf; path = "Project Mayhem/Fonts/PigpenCipher.otf"; sourceTree = SOURCE_ROOT; };
+		9DA2E9CA25F09C6000262638 /* CoolKidFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CoolKidFont.ttf; path = "Project Mayhem/Fonts/CoolKidFont.ttf"; sourceTree = SOURCE_ROOT; };
+		9DA2E9CB25F09C6000262638 /* aAmbyarSobat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = aAmbyarSobat.ttf; path = "Project Mayhem/Fonts/aAmbyarSobat.ttf"; sourceTree = SOURCE_ROOT; };
+		9DA2E9CD25F09C6000262638 /* Adonay.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Adonay.ttf; path = "Project Mayhem/Fonts/Adonay.ttf"; sourceTree = SOURCE_ROOT; };
+		9DA2E9CE25F09C6000262638 /* astro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = astro.ttf; path = "Project Mayhem/Fonts/astro.ttf"; sourceTree = SOURCE_ROOT; };
+		9DA2E9CF25F09C6000262638 /* screaming_neon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = screaming_neon.ttf; path = "Project Mayhem/Fonts/screaming_neon.ttf"; sourceTree = SOURCE_ROOT; };
+		9DA2EA0325F09D9B00262638 /* Tomorrow-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-SemiBold.ttf"; path = "Project Mayhem/Fonts/Tomorrow/Tomorrow-SemiBold.ttf"; sourceTree = SOURCE_ROOT; };
+		9DA2EA0425F09D9B00262638 /* Tomorrow-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-Thin.ttf"; path = "Project Mayhem/Fonts/Tomorrow/Tomorrow-Thin.ttf"; sourceTree = SOURCE_ROOT; };
+		9DA2EA0525F09D9B00262638 /* Tomorrow-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-SemiBoldItalic.ttf"; path = "Project Mayhem/Fonts/Tomorrow/Tomorrow-SemiBoldItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		9DA2EA0625F09D9B00262638 /* Tomorrow-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-BlackItalic.ttf"; path = "Project Mayhem/Fonts/Tomorrow/Tomorrow-BlackItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		9DA2EA0725F09D9B00262638 /* Tomorrow-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-Black.ttf"; path = "Project Mayhem/Fonts/Tomorrow/Tomorrow-Black.ttf"; sourceTree = SOURCE_ROOT; };
+		9DA2EA0825F09D9B00262638 /* Tomorrow-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-ExtraBoldItalic.ttf"; path = "Project Mayhem/Fonts/Tomorrow/Tomorrow-ExtraBoldItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		9DA2EA0925F09D9B00262638 /* Tomorrow-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-Light.ttf"; path = "Project Mayhem/Fonts/Tomorrow/Tomorrow-Light.ttf"; sourceTree = SOURCE_ROOT; };
+		9DA2EA0A25F09D9B00262638 /* Tomorrow-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-LightItalic.ttf"; path = "Project Mayhem/Fonts/Tomorrow/Tomorrow-LightItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		9DA2EA0B25F09D9B00262638 /* Tomorrow-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-ExtraLightItalic.ttf"; path = "Project Mayhem/Fonts/Tomorrow/Tomorrow-ExtraLightItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		9DA2EA0C25F09D9B00262638 /* Tomorrow-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-Italic.ttf"; path = "Project Mayhem/Fonts/Tomorrow/Tomorrow-Italic.ttf"; sourceTree = SOURCE_ROOT; };
+		9DA2EA0D25F09D9B00262638 /* Tomorrow-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-MediumItalic.ttf"; path = "Project Mayhem/Fonts/Tomorrow/Tomorrow-MediumItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		9DA2EA0E25F09D9B00262638 /* Tomorrow-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-BoldItalic.ttf"; path = "Project Mayhem/Fonts/Tomorrow/Tomorrow-BoldItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		9DA2EA0F25F09D9B00262638 /* Tomorrow-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-Bold.ttf"; path = "Project Mayhem/Fonts/Tomorrow/Tomorrow-Bold.ttf"; sourceTree = SOURCE_ROOT; };
+		9DA2EA1025F09D9B00262638 /* Tomorrow-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-ThinItalic.ttf"; path = "Project Mayhem/Fonts/Tomorrow/Tomorrow-ThinItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		9DA2EA1125F09D9B00262638 /* Tomorrow-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-Medium.ttf"; path = "Project Mayhem/Fonts/Tomorrow/Tomorrow-Medium.ttf"; sourceTree = SOURCE_ROOT; };
+		9DA2EA1225F09D9B00262638 /* Tomorrow-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-ExtraLight.ttf"; path = "Project Mayhem/Fonts/Tomorrow/Tomorrow-ExtraLight.ttf"; sourceTree = SOURCE_ROOT; };
+		9DA2EA1325F09D9B00262638 /* Tomorrow-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-Regular.ttf"; path = "Project Mayhem/Fonts/Tomorrow/Tomorrow-Regular.ttf"; sourceTree = SOURCE_ROOT; };
+		9DA2EA1425F09D9B00262638 /* Tomorrow-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-ExtraBold.ttf"; path = "Project Mayhem/Fonts/Tomorrow/Tomorrow-ExtraBold.ttf"; sourceTree = SOURCE_ROOT; };
 		9DB0749A25DE156200515283 /* NameQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NameQuery.swift; path = "Project Mayhem/NameQuery.swift"; sourceTree = SOURCE_ROOT; };
 		9DB074A525DE1E1700515283 /* subChapter1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subChapter1.swift; sourceTree = "<group>"; };
 		9DBBF72F25C279310022FC63 /* chapter5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter5.swift; sourceTree = "<group>"; };
@@ -307,6 +307,7 @@
 				9D0C544025C51AA7000EE579 /* UIViewControllerExtensions.swift */,
 				9D5B42C4259C97FB00A4F34A /* animations.swift */,
 				9DEB283E25C6095000E3F102 /* stringExtensions.swift */,
+				9DA2E9BC25F0451600262638 /* audioExtensions.swift */,
 				9D8B292D25DC189A007750DF /* CALayerExtension.swift */,
 			);
 			path = Extensions;
@@ -354,7 +355,7 @@
 		9D56137F259195E600F1695A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9D56137E259195E600F1695A /* Project_Mayhem.swiftmodule */,
+				9D56137E259195E600F1695A /* Project Mayhem.app */,
 				9D56138F259195E800F1695A /* Project MayhemTests.xctest */,
 				9D56139A259195E800F1695A /* Project MayhemUITests.xctest */,
 			);
@@ -376,7 +377,7 @@
 				9D0C543B25C50F79000EE579 /* Helpers */,
 				9D5614242591D2DA00F1695A /* View Controllers */,
 				9DEA6A0A259515B0002A8739 /* Templates */,
-				9D5613CB2591C7F200F1695A /* Fonts */,
+				9DA2E9C725F09C2E00262638 /* Fonts */,
 				9D4BFC6D25DE5E190013D840 /* Videos */,
 				9D561387259195E700F1695A /* Preview Content */,
 			);
@@ -407,22 +408,6 @@
 				9D5613A0259195E800F1695A /* Info.plist */,
 			);
 			path = "Project MayhemUITests";
-			sourceTree = "<group>";
-		};
-		9D5613CB2591C7F200F1695A /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				9D8C42B825C7ECEC0039F857 /* PigpenCipher.otf */,
-				9D74263F25CA570C008D9645 /* CoolKidFont-Regular.ttf */,
-				9D74264325CA5718008D9645 /* screaming_neon.ttf */,
-				9D74264B25CA572C008D9645 /* aAmbyarSobat.otf */,
-				9D74264F25CA5797008D9645 /* astro.ttf */,
-				9D74264725CA5721008D9645 /* Adonay.otf */,
-				9D74263B25CA5705008D9645 /* NoisyWalk.ttf */,
-				9D5613CF2591C7FC00F1695A /* MYRIADPRO-REGULAR.OTF */,
-				9D74265325CA58F3008D9645 /* Tomorrow */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		9D5614242591D2DA00F1695A /* View Controllers */ = {
@@ -457,27 +442,43 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		9D74265325CA58F3008D9645 /* Tomorrow */ = {
+		9DA2E9C725F09C2E00262638 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				9D74265C25CA590C008D9645 /* Tomorrow-Black.ttf */,
-				9D74266325CA590C008D9645 /* Tomorrow-BlackItalic.ttf */,
-				9D74265725CA590C008D9645 /* Tomorrow-Bold.ttf */,
-				9D74265825CA590C008D9645 /* Tomorrow-BoldItalic.ttf */,
-				9D74265A25CA590C008D9645 /* Tomorrow-ExtraBold.ttf */,
-				9D74266525CA590D008D9645 /* Tomorrow-ExtraBoldItalic.ttf */,
-				9D74265425CA590C008D9645 /* Tomorrow-ExtraLight.ttf */,
-				9D74266425CA590C008D9645 /* Tomorrow-ExtraLightItalic.ttf */,
-				9D74265925CA590C008D9645 /* Tomorrow-Italic.ttf */,
-				9D74265E25CA590C008D9645 /* Tomorrow-Light.ttf */,
-				9D74265B25CA590C008D9645 /* Tomorrow-LightItalic.ttf */,
-				9D74266025CA590C008D9645 /* Tomorrow-Medium.ttf */,
-				9D74265F25CA590C008D9645 /* Tomorrow-MediumItalic.ttf */,
-				9D74265D25CA590C008D9645 /* Tomorrow-Regular.ttf */,
-				9D74266125CA590C008D9645 /* Tomorrow-SemiBold.ttf */,
-				9D74265525CA590C008D9645 /* Tomorrow-SemiBoldItalic.ttf */,
-				9D74266225CA590C008D9645 /* Tomorrow-Thin.ttf */,
-				9D74265625CA590C008D9645 /* Tomorrow-ThinItalic.ttf */,
+				9DA2E9CB25F09C6000262638 /* aAmbyarSobat.ttf */,
+				9DA2E9CD25F09C6000262638 /* Adonay.ttf */,
+				9DA2E9CE25F09C6000262638 /* astro.ttf */,
+				9DA2E9CA25F09C6000262638 /* CoolKidFont.ttf */,
+				9DA2E9C825F09C6000262638 /* NoisyWalk.ttf */,
+				9DA2E9C925F09C6000262638 /* PigpenCipher.otf */,
+				9DA2E9CF25F09C6000262638 /* screaming_neon.ttf */,
+				9DA2E9DA25F09D3E00262638 /* Tomorrow */,
+			);
+			name = Fonts;
+			path = Videos/Fonts;
+			sourceTree = "<group>";
+		};
+		9DA2E9DA25F09D3E00262638 /* Tomorrow */ = {
+			isa = PBXGroup;
+			children = (
+				9DA2EA0725F09D9B00262638 /* Tomorrow-Black.ttf */,
+				9DA2EA0625F09D9B00262638 /* Tomorrow-BlackItalic.ttf */,
+				9DA2EA0F25F09D9B00262638 /* Tomorrow-Bold.ttf */,
+				9DA2EA0E25F09D9B00262638 /* Tomorrow-BoldItalic.ttf */,
+				9DA2EA1425F09D9B00262638 /* Tomorrow-ExtraBold.ttf */,
+				9DA2EA0825F09D9B00262638 /* Tomorrow-ExtraBoldItalic.ttf */,
+				9DA2EA1225F09D9B00262638 /* Tomorrow-ExtraLight.ttf */,
+				9DA2EA0B25F09D9B00262638 /* Tomorrow-ExtraLightItalic.ttf */,
+				9DA2EA0C25F09D9B00262638 /* Tomorrow-Italic.ttf */,
+				9DA2EA0925F09D9B00262638 /* Tomorrow-Light.ttf */,
+				9DA2EA0A25F09D9B00262638 /* Tomorrow-LightItalic.ttf */,
+				9DA2EA1125F09D9B00262638 /* Tomorrow-Medium.ttf */,
+				9DA2EA0D25F09D9B00262638 /* Tomorrow-MediumItalic.ttf */,
+				9DA2EA1325F09D9B00262638 /* Tomorrow-Regular.ttf */,
+				9DA2EA0325F09D9B00262638 /* Tomorrow-SemiBold.ttf */,
+				9DA2EA0525F09D9B00262638 /* Tomorrow-SemiBoldItalic.ttf */,
+				9DA2EA0425F09D9B00262638 /* Tomorrow-Thin.ttf */,
+				9DA2EA1025F09D9B00262638 /* Tomorrow-ThinItalic.ttf */,
 			);
 			path = Tomorrow;
 			sourceTree = "<group>";
@@ -516,7 +517,7 @@
 				9D0C53A725C4EE13000EE579 /* AudioKit */,
 			);
 			productName = "Project Mayhem";
-			productReference = 9D56137E259195E600F1695A /* Project_Mayhem.swiftmodule */;
+			productReference = 9D56137E259195E600F1695A /* Project Mayhem.app */;
 			productType = "com.apple.product-type.application";
 		};
 		9D56138E259195E800F1695A /* Project MayhemTests */ = {
@@ -607,40 +608,39 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D74265025CA5797008D9645 /* astro.ttf in Resources */,
-				9D74267625CA590D008D9645 /* Tomorrow-ExtraLightItalic.ttf in Resources */,
+				9DA2EA2225F09D9B00262638 /* Tomorrow-ThinItalic.ttf in Resources */,
 				9D56338D25EE173900F123DC /* pp.wav in Resources */,
-				9D74266B25CA590D008D9645 /* Tomorrow-Italic.ttf in Resources */,
 				9D73428725ECBDD70003D563 /* subPostChapter15.mov in Resources */,
-				9D74267125CA590D008D9645 /* Tomorrow-MediumItalic.ttf in Resources */,
-				9D74266F25CA590D008D9645 /* Tomorrow-Regular.ttf in Resources */,
-				9D74267325CA590D008D9645 /* Tomorrow-SemiBold.ttf in Resources */,
+				9DA2EA1F25F09D9B00262638 /* Tomorrow-MediumItalic.ttf in Resources */,
+				9DA2EA1625F09D9B00262638 /* Tomorrow-Thin.ttf in Resources */,
+				9DA2EA2425F09D9B00262638 /* Tomorrow-ExtraLight.ttf in Resources */,
 				9D561389259195E700F1695A /* Preview Assets.xcassets in Resources */,
-				9D74266825CA590D008D9645 /* Tomorrow-ThinItalic.ttf in Resources */,
-				9D74266925CA590D008D9645 /* Tomorrow-Bold.ttf in Resources */,
-				9D74266D25CA590D008D9645 /* Tomorrow-LightItalic.ttf in Resources */,
-				9D74264825CA5721008D9645 /* Adonay.otf in Resources */,
-				9D74267425CA590D008D9645 /* Tomorrow-Thin.ttf in Resources */,
-				9D74266625CA590D008D9645 /* Tomorrow-ExtraLight.ttf in Resources */,
-				9D74266725CA590D008D9645 /* Tomorrow-SemiBoldItalic.ttf in Resources */,
-				9D74266E25CA590D008D9645 /* Tomorrow-Black.ttf in Resources */,
-				9D74267225CA590D008D9645 /* Tomorrow-Medium.ttf in Resources */,
+				9DA2E9D225F09C6000262638 /* CoolKidFont.ttf in Resources */,
+				9DA2E9D725F09C6000262638 /* screaming_neon.ttf in Resources */,
 				9D561386259195E700F1695A /* Assets.xcassets in Resources */,
-				9D74267025CA590D008D9645 /* Tomorrow-Light.ttf in Resources */,
-				9D74266C25CA590D008D9645 /* Tomorrow-ExtraBold.ttf in Resources */,
-				9D74266A25CA590D008D9645 /* Tomorrow-BoldItalic.ttf in Resources */,
-				9D74263C25CA5705008D9645 /* NoisyWalk.ttf in Resources */,
-				9D5614D525928E6300F1695A /* MYRIADPRO-REGULAR.OTF in Resources */,
-				9D74264C25CA572C008D9645 /* aAmbyarSobat.otf in Resources */,
-				9D74264425CA5718008D9645 /* screaming_neon.ttf in Resources */,
+				9DA2EA1525F09D9B00262638 /* Tomorrow-SemiBold.ttf in Resources */,
+				9DA2EA1C25F09D9B00262638 /* Tomorrow-LightItalic.ttf in Resources */,
+				9DA2EA1B25F09D9B00262638 /* Tomorrow-Light.ttf in Resources */,
+				9DA2E9D325F09C6000262638 /* aAmbyarSobat.ttf in Resources */,
+				9DA2EA1E25F09D9B00262638 /* Tomorrow-Italic.ttf in Resources */,
+				9DA2EA2625F09D9B00262638 /* Tomorrow-ExtraBold.ttf in Resources */,
+				9DA2EA1725F09D9B00262638 /* Tomorrow-SemiBoldItalic.ttf in Resources */,
+				9DA2E9D125F09C6000262638 /* PigpenCipher.otf in Resources */,
+				9DA2EA1A25F09D9B00262638 /* Tomorrow-ExtraBoldItalic.ttf in Resources */,
 				9D7DE96025E786C200F80990 /* ProjectVenomTrailer.mov in Resources */,
-				9D74264025CA570D008D9645 /* CoolKidFont-Regular.ttf in Resources */,
-				9D74267725CA590D008D9645 /* Tomorrow-ExtraBoldItalic.ttf in Resources */,
+				9DA2EA2525F09D9B00262638 /* Tomorrow-Regular.ttf in Resources */,
+				9DA2E9D525F09C6000262638 /* Adonay.ttf in Resources */,
 				9D5613BD259196DE00F1695A /* LaunchScreen.storyboard in Resources */,
-				9D8C42BB25C7EFB90039F857 /* PigpenCipher.otf in Resources */,
-				9D74267525CA590D008D9645 /* Tomorrow-BlackItalic.ttf in Resources */,
+				9DA2EA2325F09D9B00262638 /* Tomorrow-Medium.ttf in Resources */,
 				9D438CB125E5E201005CC20A /* Chap1Intro.mov in Resources */,
 				9D8C42AF25C7BE5C0039F857 /* Settings.bundle in Resources */,
+				9DA2EA2125F09D9B00262638 /* Tomorrow-Bold.ttf in Resources */,
+				9DA2E9D025F09C6000262638 /* NoisyWalk.ttf in Resources */,
+				9DA2EA1925F09D9B00262638 /* Tomorrow-Black.ttf in Resources */,
+				9DA2EA1D25F09D9B00262638 /* Tomorrow-ExtraLightItalic.ttf in Resources */,
+				9DA2EA2025F09D9B00262638 /* Tomorrow-BoldItalic.ttf in Resources */,
+				9DA2EA1825F09D9B00262638 /* Tomorrow-BlackItalic.ttf in Resources */,
+				9DA2E9D625F09C6000262638 /* astro.ttf in Resources */,
 				9D5613B8259196CB00F1695A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -762,6 +762,7 @@
 				9DB0749B25DE156200515283 /* NameQuery.swift in Sources */,
 				9D8B292E25DC189A007750DF /* CALayerExtension.swift in Sources */,
 				9D6E493625EE12EF00B09E8A /* MusicPlayer.swift in Sources */,
+				9DA2E9BD25F0451600262638 /* audioExtensions.swift in Sources */,
 				9DEA6A0C259515D8002A8739 /* keyboardTemplate.swift in Sources */,
 				9D5614302591DC5400F1695A /* AppDelegate.swift in Sources */,
 				9D8B292A25DC187D007750DF /* UIColorExtension.swift in Sources */,
@@ -943,6 +944,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Project Mayhem/Project Mayhem.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Project Mayhem/Preview Content\"";
 				DEVELOPMENT_TEAM = 68L233566P;
 				ENABLE_PREVIEWS = YES;
@@ -969,6 +971,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Project Mayhem/Project Mayhem.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Project Mayhem/Preview Content\"";
 				DEVELOPMENT_TEAM = 68L233566P;
 				ENABLE_PREVIEWS = YES;

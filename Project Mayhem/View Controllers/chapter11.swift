@@ -32,7 +32,6 @@ class chapter11: UIViewController, SFSpeechRecognizerDelegate {
         morseText.text = morseText.text?.stringToMorse()
         game.setValue("chap11", forKey: "active")
         godThread = self
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,7 +75,6 @@ class chapter11: UIViewController, SFSpeechRecognizerDelegate {
     }
     
     func didComeBack() {
-        talk?.stopRecording()
         self.label.text = "William Shakespeare"
         self.pigpenCipherText.fadeOut()
         self.morseText.fadeOut()
@@ -101,10 +99,9 @@ class chapter11: UIViewController, SFSpeechRecognizerDelegate {
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "All the world’s a stage, and all the men and women merely players. They have their exits and their entrances; And one man in his time plays many parts.\n\nThis sure does sound like iambic pentameter! I wonder who LOVED iambic pentameter?", viewController: self, hintButton: hint)
+            customAlert.showAlert(message: "Great works from a great man, who indeed has a name!", viewController: self, hintButton: hint)
             view.bringSubviewToFront(toolbar)
         }
-        
     }
     
     func dismissAlert() {

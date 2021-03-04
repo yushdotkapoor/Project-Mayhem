@@ -188,7 +188,7 @@ let alert = MessageAlert()
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "Those coordinates at the bottom could represent locations of certain characters", viewController: self, hintButton: hint)
+            customAlert.showAlert(message: "Maybe the morse code at the top and the coordinates at the bottom have some sort of relationship.", viewController: self, hintButton: hint)
             view.bringSubviewToFront(toolbar)
         }
         

@@ -27,8 +27,14 @@ class chapter7: UIViewController {
     @IBOutlet weak var button16: UIButton!
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var toolbar: UIStackView!
+    @IBOutlet weak var talkingView: UIView!
     
     let customAlert = HintAlert()
+    
+    var vidName = "Chap1Intro"
+    var pauseArray:[Double] = [10]
+    var timeStamp:Double = 0.0
+    var vidView:PlayerView?
     
     var current = 0
     var orderString:[String] = []
@@ -40,19 +46,102 @@ class chapter7: UIViewController {
         current = 0
     }
 
-
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         nextChap.alpha = 0.0
         nextChap.isUserInteractionEnabled = false
+        talkingView.alpha = 0.0
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let name = game.string(forKey: "name")
-        alert.showAlert(title: "Message from Yush Kapoor", message: "Hello there, \(name!). I see you’re trying to access something you probably shouldn’t. That’s alright, you won’t get far. I know the Defenders very well and I've been keeping close tabs on you for the past few months. You have quite a reputation! I need you to understand that this company is trying to do good for the world. The sole purpose of Project Mayhem is to increase human efficiency. Let me show you.", viewController: self, buttonPush: #selector(dismissMessageAlert))
-        view.bringSubviewToFront(toolbar)
+        game.setValue("chap7", forKey: "active")
+        funcToPass = vid1Finish
+        vidName = "Chap1Intro"
+        pauseArray = [10]
+        vid()
+        godThread = self
+        
+        /*
+         let name = game.string(forKey: "name")
+         alert.showAlert(title: "Message from Yush Kapoor", message: "Hello there, \(name!). I see you’re trying to access something you probably shouldn’t. That’s alright, you won’t get far. I know the Defenders very well and I've been keeping close tabs on you for the past few months. You have quite a reputation! I need you to understand that this company is trying to do good for the world. The sole purpose of Project Mayhem is to increase human efficiency. Let me show you.", viewController: self, buttonPush: #selector(dismissMessageAlert))
+         view.bringSubviewToFront(toolbar)
+         */
+        
+    }
+    
+    func vid() {
+        createObservers()
+        print("creating observers")
+        
+        talkingView.layer.masksToBounds = true
+        talkingView.clipsToBounds = true
+        talkingView.layer.cornerRadius = 20
+        
+        let gradient = CAGradientLayer()
+        gradient.colors = [UIColor(red: 128/255, green: 0, blue: 128/255, alpha: 1.0).cgColor, UIColor(red: 216/255, green: 191/255, blue: 216/255, alpha: 1.0).cgColor]
+        
+        let title = "Message from Yush Raj Kapoor"
+        let lblwidth = talkingView.bounds.size.width - 10
+        let lblheight = heightForView(text: title, font: UIFont(name: "Helvetica", size: 25)!, width: lblwidth)
+        let label = UILabel(frame: CGRect(x: 5, y: 5, width: lblwidth, height: lblheight))
+        label.text = title
+        label.textAlignment = .center
+        label.font = UIFont(name: "Helvetica", size: 25)
+        label.numberOfLines = 0
+        label.textColor = .white
+        
+        vidView = PlayerView(frame: CGRect(x: 0, y: lblheight + 10, width: lblwidth + 10, height: talkingView.bounds.size.height - lblheight + 10))
+        
+        gradient.frame = CGRect(x: 0, y: 0, width: lblwidth + 5, height: lblheight + 20)
+        talkingView.layer.addSublayer(gradient)
+        talkingView.addSubview(label)
+        talkingView.addSubview(vidView!)
+        view.bringSubviewToFront(talkingView)
+        
+        video = VideoPlayer(urlAsset: vidToURL(name: vidName, type: "mov"), view: vidView!, arr: pauseArray, startTime: timeStamp)
+        
+        talkingView.fadeIn()
+        
+    }
+    
+    func vid1Finish() {
+        talkingView.fadeOut()
+        view.bringSubviewToFront(view)
+        NotificationCenter.default.removeObserver(self)
+        stop()
+    }
+    
+    func vid2Finish() {
+        print("create observers")
+        talkingView.fadeOut()
+        view.bringSubviewToFront(view)
+        NotificationCenter.default.removeObserver(self)
+        stop()
+        dismissMessageAlert2()
+    }
+    
+    func createObservers() {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(background), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(reenter), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+    
+    @objc func background() {
+        timeStamp = video!.currentTime
+        stop()
+    }
+    
+    @objc func reenter() {
+        if timeStamp - 2 < 0 {
+            timeStamp = 2
+        }
+        video = VideoPlayer(urlAsset: vidToURL(name: vidName, type: "mov"), view: vidView!, arr: pauseArray, startTime: timeStamp - 2)
+    }
+    
+    func stop() {
+        video?.cleanUp()
+        godThread = nil
     }
     
     func complete() {
@@ -87,9 +176,17 @@ class chapter7: UIViewController {
             arr[current].fadeOut()
             current += 1
             if current == 16 {
+                funcToPass = vid2Finish
+                vidName = "ProjectVenomTrailer"
+                pauseArray = [5]
+                timeStamp = 0
+                print("vid()")
+                vid()
+                
+                /*
                 alert2.showAlert(title: "Message from Yush Kapoor", message: "That took awhile for you to complete. See, if you had been enhanced, you could have done that in just a few seconds. Imagine a world where you could write a thirty-page thesis in just an hour, all while you drink coffee with friends. VIS can enable a world like that. Trust me, brainy — we are not the enemy. You can continue your investigation for your own peace of mind, but it’s just wasting your time.", viewController: self, buttonPush: #selector(dismissMessageAlert2))
                 view.bringSubviewToFront(toolbar)
-                
+ */
             }
         }
         else {

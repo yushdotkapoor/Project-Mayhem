@@ -166,6 +166,7 @@ class VideoPlayer : NSObject {
                 player.play()
                 player.rate = playerRate
             }
+            volumeCheck()
             playBlock = true
             wait {
                 self.playBlock = false
@@ -179,12 +180,14 @@ class VideoPlayer : NSObject {
             item.removeObserver(self, forKeyPath: "status")
             item.removeObserver(self, forKeyPath: "loadedTimeRanges")
         }
+        AVAudioSession.sharedInstance().removeObserver(self, forKeyPath: "outputVolume")
         NotificationCenter.default.removeObserver(self)
         pause()
         assetPlayer = nil
         playerItem = nil
         urlAsset = nil
         stopFlash = true
+        MusicPlayer.shared.updateVolume()
     }
     
     // MARK: - Private
@@ -211,6 +214,8 @@ class VideoPlayer : NSObject {
             let videoOutputOptions = [kCVPixelBufferPixelFormatTypeKey as String : Int(kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange)]
             videoOutput = AVPlayerItemVideoOutput(pixelBufferAttributes: videoOutputOptions)
             playerItem = AVPlayerItem(asset: asset)
+            
+            AVAudioSession.sharedInstance().addObserver(self, forKeyPath: "outputVolume", options: [.new], context: nil)
             
             if let item = playerItem {
                 item.addObserver(self, forKeyPath: "status", options: .initial, context: videoContext)
@@ -317,6 +322,17 @@ class VideoPlayer : NSObject {
         delegate?.downloadedProgress(progress: progress)
     }
     
+    func volumeCheck() {
+        let vol = AVAudioSession.sharedInstance().outputVolume
+        if vol < 0.15 {
+            video?.pause()
+            let alertController = UIAlertController(title: "Volume Error", message: "Certain elements of this level require audio. Please turn your volume up. The level will continue once the required volume is reached.", preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                alertController.addAction(defaultAction)
+            godThread!.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
     deinit {
         cleanUp()
     }
@@ -336,6 +352,18 @@ class VideoPlayer : NSObject {
                 } else if key == "loadedTimeRanges", let item = playerItem {
                     moviewPlayerLoadedTimeRangeDidUpdated(ranges: item.loadedTimeRanges)
                 }
+            }
+        }
+        if keyPath == "outputVolume"{
+            print(AVAudioSession.sharedInstance().outputVolume)
+            let audioSession = AVAudioSession.sharedInstance()
+            if !(video?.isPlaying())! && audioSession.outputVolume >= 0.15 {
+                impact(style: .medium)
+                wait(time: 0.1) {
+                    impact(style: .medium)
+                }
+                talk?.pause()
+                video?.play()
             }
         }
     }

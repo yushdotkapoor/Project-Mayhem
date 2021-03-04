@@ -18,6 +18,7 @@ class chapter13: UIViewController {
     @IBOutlet weak var Reset: CustomButtonOutline!
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var toolbar: UIStackView!
+    @IBOutlet weak var flashView: UIView!
     
     let customAlert = HintAlert()
     
@@ -133,6 +134,8 @@ let alert = MessageAlert()
         self.sceneView.session.pause()
     }
     
+    
+    
     func setupAR() {
         sceneView.session.run(config)
         
@@ -187,7 +190,7 @@ let alert = MessageAlert()
     func translateAll(xArr:[Float], zArr:[Float], xTrans:[Bool], nameArr:[SCNNode], limit:Int) {
         while (ct != limit) {
             let factorX:Float = 1.0
-            let factorZ:Float = 1.0
+            let factorZ:Float = -0.5
             let factorY:Float = 0.0
             if ct == 6 || ct == 16 {
                 // for the half line in e
@@ -214,11 +217,20 @@ let alert = MessageAlert()
             var lmt = 0
             for (j, i) in shakeOrder.enumerated() {
                 if j + 1 == shakeOrder.count {
+                    quakeLabel.textColor = .red
                     return
                 }
                 if ct == i {
                     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
-                    hintText = "Earthquake simulator? Look to your right :)"
+                    view.bringSubviewToFront(flashView)
+                    wait(time:0.1, actions: {
+                        self.view.bringSubviewToFront(self.sceneView)
+                        self.view.bringSubviewToFront(self.quakeLabel)
+                        self.view.bringSubviewToFront(self.toolbar)
+                        self.view.bringSubviewToFront(self.labelStack)
+                        self.view.bringSubviewToFront(self.Reset)
+                    })
+                    hintText = "Earthquake simulator? Look for the red :)"
                     lmt = shakeOrder[j + 1]
                     translateAll(xArr: xArr, zArr: zArr, xTrans: xTrans, nameArr: nameArr, limit:lmt)
                     return
@@ -235,6 +247,7 @@ let alert = MessageAlert()
             if textField.text?.lowercased() == "quake" {
                 quakeLabel.text = "Quake"
                 quakeLabel.shake()
+                reset(self)
                 quakeLabel.numberOfLines = 1
                 textField.text = ""
                 view.endEditing(true)
@@ -277,8 +290,7 @@ let alert = MessageAlert()
     
     @IBAction func reset(_ sender: Any) {
         sceneView.session.pause()
-        sceneView.session.run(config,
-                                  options: .resetTracking)
+        sceneView.session.run(config, options: .resetTracking)
     }
     
     

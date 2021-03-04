@@ -10,12 +10,16 @@ import UIKit
 class Credits: UIViewController {
     @IBOutlet weak var donateLabel: UILabel!
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var flashingSwitch: UISwitch!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let volume = game.float(forKey: "volume")
+        let sensitive = game.bool(forKey: "photosensitive")
+        flashingSwitch.setOn(sensitive, animated: false)
+        
         slider.value = volume
         
         donateLabel.isUserInteractionEnabled = true
@@ -35,4 +39,11 @@ class Credits: UIViewController {
         game.setValue(slider.value, forKey: "volume")
         MusicPlayer.shared.updateVolume()
     }
+    
+    @IBAction func switchChanged(_ sender: Any) {
+        let state = flashingSwitch.isOn
+        game.setValue(state, forKey: "photosensitive")
+    }
+    
+    
 }

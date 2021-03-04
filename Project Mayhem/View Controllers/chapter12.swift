@@ -62,7 +62,7 @@ class chapter12: UIViewController {
             batteryImg.fadeOut()
             backView.fadeIn()
             p2Stack.fadeIn()
-            hintText = "Roses are red, violets are blue, i'm pretty sure that this is a date"
+            hintText = "Roses are red, violets are blue, i'm pretty sure that this is a date. What are you supposed to do? \"Get in a blue box and get your timey wimey on.\""
             NotificationCenter.default.addObserver(self, selector: #selector(timeChanged), name:UIApplication.significantTimeChangeNotification, object: nil)
         }
     }

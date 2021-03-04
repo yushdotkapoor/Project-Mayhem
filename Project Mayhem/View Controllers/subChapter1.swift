@@ -81,7 +81,6 @@ class subChapter1: UIViewController {
         DispatchQueue.main.async { [self] in
             video?.cleanUp()
             NotificationCenter.default.removeObserver(godThread!)
-            MusicPlayer.shared.updateVolume()
             godThread?.performSegue(withIdentifier: "subChap1ToChap1", sender: self)
         }
     }

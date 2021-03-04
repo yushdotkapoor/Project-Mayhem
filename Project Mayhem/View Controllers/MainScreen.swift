@@ -17,14 +17,13 @@ class MainScreen: UIViewController {
     override func viewDidLoad() {
            super.viewDidLoad()
         enter.setupButton(color: UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.0), pressColor: UIColor.black)
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         UIView.animate(withDuration: 1.5, delay: 0.5, options: .curveEaseOut, animations: {
-            self.enterCenterConstraint.constant += self.view.bounds.width
+            self.enterCenterConstraint.constant -= self.view.bounds.width
             self.logoCenterConstraint.constant += self.view.bounds.width
             self.view.layoutIfNeeded()
         }, completion: nil)
@@ -34,13 +33,17 @@ class MainScreen: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        enterCenterConstraint.constant += view.bounds.width
         logoCenterConstraint.constant -= view.bounds.width
-        enterCenterConstraint.constant -= view.bounds.width
     }
     
     @IBAction func Credits(_ sender: Any) {
         let completed = game.bool(forKey: "credits")
-        if completed {
+        let name = game.string(forKey: "name")
+        if name == nil {
+            alert(title: "💧", message: "Come back later!", actionTitle: "Ok")
+        }
+        else if completed {
             self.performSegue(withIdentifier: "mainToCredits", sender: nil)
         }
         else {

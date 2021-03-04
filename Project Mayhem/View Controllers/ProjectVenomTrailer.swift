@@ -92,7 +92,6 @@ class ProjectVenomTrailer: UIViewController {
     
     @IBAction func back(_ sender: Any) {
         stop()
-        MusicPlayer.shared.updateVolume()
         NotificationCenter.default.removeObserver(self)
         performSegue(withIdentifier: "ProjectVenomToHome", sender: self)
     }

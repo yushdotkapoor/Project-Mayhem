@@ -20,6 +20,7 @@ class postChapter15: UIViewController {
     @IBOutlet weak var thanks: UILabel!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var sysReset: UILabel!
+    @IBOutlet weak var Q: UILabel!
     
     let customAlert = HintAlert()
     
@@ -29,7 +30,7 @@ class postChapter15: UIViewController {
     var open = false
     
     override func viewDidLoad() {
-           super.viewDidLoad()
+        super.viewDidLoad()
         
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
@@ -74,13 +75,13 @@ class postChapter15: UIViewController {
         let bounds = UIScreen.main.bounds
         let deviceHeight = bounds.size.height
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-                let keyboardHeight = keyboardSize.height
+            let keyboardHeight = keyboardSize.height
             let labelHeight = deviceHeight - stack.frame.origin.y
             let add = keyboardHeight - labelHeight + 70
             keyboardAdded = add
             stackToBottom.constant += add
             open = true
-            }
+        }
     }
     
     @objc func keyboardWillHide() {
@@ -95,6 +96,7 @@ class postChapter15: UIViewController {
         wellDone.alpha = 0.0
         thanks.alpha = 0.0
         sysReset.alpha = 0.0
+        Q.alpha = 0.0
     }
     
     
@@ -126,6 +128,7 @@ class postChapter15: UIViewController {
                 self.wellDone.flickerIn()
                 wait {
                     self.thanks.flickerIn()
+                    self.Q.flickerIn()
                     wait {
                         self.mainLabel.text = "Have fun living with what you just did ;)"
                         self.mainLabel.textColor = .systemBlue
@@ -165,6 +168,7 @@ class postChapter15: UIViewController {
     
     func randomBuzz() {
         let active = game.string(forKey: "active")
+        let sensitive = game.bool(forKey: "photosensitive")
         if active == "postChap15.1" {
             let randType = Int.random(in: 0...4)
             let randDuration = Float.random(in: 0...0.4)
@@ -172,10 +176,12 @@ class postChapter15: UIViewController {
             
             impact(style: buzzTypes[randType])
             
-            wait(time: randDuration2) {
-                self.view.backgroundColor = .white
-                wait(time: 0.1) {
-                    self.view.backgroundColor = UIColor.systemIndigo
+            if !sensitive {
+                wait(time: randDuration2) {
+                    self.view.backgroundColor = .white
+                    wait(time: 0.1) {
+                        self.view.backgroundColor = UIColor.systemIndigo
+                    }
                 }
             }
             
@@ -195,7 +201,7 @@ class postChapter15: UIViewController {
         }
     }
     
-
+    
     @IBAction func goBack(_ sender: Any) {
         game.setValue("none", forKey: "active")
         NotificationCenter.default.removeObserver(self)
@@ -203,7 +209,7 @@ class postChapter15: UIViewController {
     }
     
     @IBAction func goNext(_ sender: Any) {
-   // self.performSegue(withIdentifier: "chap1ToChap2", sender: nil)
+        // self.performSegue(withIdentifier: "chap1ToChap2", sender: nil)
     }
     
     
@@ -219,7 +225,7 @@ class postChapter15: UIViewController {
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "The answer is not in this level.", viewController: self, hintButton: hint)
+            customAlert.showAlert(message: "The answer is not in this level. There is one thing that every single level before this has in common. I spy with my little eye...", viewController: self, hintButton: hint)
             view.bringSubviewToFront(toolbar)
         }
         
@@ -228,6 +234,6 @@ class postChapter15: UIViewController {
     func dismissAlert() {
         customAlert.dismissAlert()
     }
-
-
+    
+    
 }

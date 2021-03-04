@@ -44,8 +44,6 @@ class speechModule:NSObject {
         targetStringArray = target
         functionArray = arrayOfFunctions
         
-        activateAVSession()
-        
         recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
         
         let inputNode = audioEngine.inputNode
@@ -107,23 +105,18 @@ class speechModule:NSObject {
     func stopRecording() {
         targetStringArray = []
         functionArray = []
-        audioEngine.inputNode.removeTap(onBus: 1)
-        audioEngine.stop()
+        pause()
         print("audioEngine stopped")
-        recognitionRequest?.endAudio()
-        self.recognitionRequest = nil
-        recognitionTask?.cancel()
-        recognitionTask = nil
     }
     
     func pause() {
         print("talk pause")
         audioEngine.inputNode.removeTap(onBus: 1)
-        audioEngine.stop()
         recognitionRequest?.endAudio()
         self.recognitionRequest = nil
         recognitionTask?.cancel()
         recognitionTask = nil
+        audioEngine.stop()
     }
     
     func play() {

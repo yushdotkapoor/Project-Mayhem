@@ -13,6 +13,7 @@ class MusicPlayer {
     var audioPlayer: AVAudioPlayer?
 
     func startBackgroundMusic() {
+        pause()
         if let bundle = Bundle.main.path(forResource: "pp", ofType: "wav") {
             let backgroundMusic = NSURL(fileURLWithPath: bundle)
             do {
@@ -25,6 +26,16 @@ class MusicPlayer {
                 print(error)
             }
         }
+    }
+    
+    func pause() {
+        guard let audioPlayer = audioPlayer else { return }
+        audioPlayer.pause()
+    }
+    
+    func play() {
+        guard let audioPlayer = audioPlayer else { return }
+        audioPlayer.play()
     }
     
     func updateVolume() {

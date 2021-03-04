@@ -20,6 +20,7 @@ class chapter5: UIViewController {
     
     let microphone = Listen()
     var progressVal:Float = 0.0
+    var eggVal:Float = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,9 +56,28 @@ class chapter5: UIViewController {
             self.progressVal += 1
             self.changeProgress()
         }
+        else if pitch >= 6968 && pitch <= 6970 {
+            self.eggVal += 1
+            self.eggProgress()
+        }
         else {
             self.progressVal = 0
+            self.eggVal = 0
             self.changeProgress()
+        }
+        
+    }
+    
+    func eggProgress() {
+        if eggVal > 20 {
+            alert(title: "Nice!", message: "You've found an easter egg! It's totally useless, just like me!", actionTitle: "Yay!",actions: {
+                self.recurse()
+            })
+        }
+        else {
+            wait(time: 0.1, actions: {
+                self.recurse()
+            })
         }
     }
     
@@ -110,7 +130,7 @@ class chapter5: UIViewController {
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.darkGray
             }
-            customAlert.showAlert(message: "do re mi fa so laaaaaaaaaaaaaaaaaaaaaaaaaaaaa", viewController: self, hintButton: hint)
+            customAlert.showAlert(message: "do re mi fa so laaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n\nNice!", viewController: self, hintButton: hint)
             view.bringSubviewToFront(toolbar)
         }
         

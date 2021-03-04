@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Adonay.otf">
+        <array key="Adonay.ttf">
             <string>Adonay</string>
         </array>
         <array key="NoisyWalk.ttf">
@@ -21,7 +21,7 @@
         <array key="Tomorrow-Regular.ttf">
             <string>Tomorrow-Regular</string>
         </array>
-        <array key="aAmbyarSobat.otf">
+        <array key="aAmbyarSobat.ttf">
             <string>aAmbyarSobat</string>
         </array>
         <array key="astro.ttf">
@@ -108,77 +108,108 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gfd-cY-Qhf">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="824"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfd-cY-Qhf">
+                                <rect key="frame" x="0.0" y="44" width="428" height="788"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="volume:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dT-PK-sRs">
-                                        <rect key="frame" x="40" y="150" width="348" height="20"/>
-                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOTE: this slider only controls the relative volume of the background music, and will not affect the videos" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4H-ff-fYz">
-                                        <rect key="frame" x="40" y="218" width="348" height="36"/>
-                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="79i-1e-J6k">
-                                        <rect key="frame" x="38" y="178" width="352" height="31"/>
-                                        <connections>
-                                            <action selector="sliderChanged:" destination="fkB-KW-fdR" eventType="valueChanged" id="Tys-3D-GXI"/>
-                                        </connections>
-                                    </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4I6-sB-xev">
-                                        <rect key="frame" x="40" y="503" width="348" height="20"/>
-                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Un-LG-qF5">
-                                        <rect key="frame" x="40" y="334" width="348" height="20"/>
-                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yush Raj Kapoor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ta-5q-lJ8">
-                                        <rect key="frame" x="40" y="369" width="348" height="15"/>
-                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="15"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donate for more! You've seen the video production quality, you know I need it :)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mL3-AZ-z8C">
-                                        <rect key="frame" x="40" y="399" width="348" height="24"/>
-                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
-                                        <color key="textColor" systemColor="linkColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="2aE-lW-wLG">
+                                        <rect key="frame" x="40" y="150" width="348" height="669"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SPS-3R-K7E">
+                                                <rect key="frame" x="0.0" y="0.0" width="348" height="89"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Un-LG-qF5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="348" height="20"/>
+                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yush Raj Kapoor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ta-5q-lJ8">
+                                                        <rect key="frame" x="0.0" y="35" width="348" height="15"/>
+                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="15"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donate for more! You've seen the video production quality, you know I need it :)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mL3-AZ-z8C">
+                                                        <rect key="frame" x="0.0" y="65" width="348" height="24"/>
+                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
+                                                        <color key="textColor" systemColor="linkColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4I6-sB-xev">
+                                                <rect key="frame" x="0.0" y="169" width="348" height="20"/>
+                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="KXW-16-S0F">
+                                                <rect key="frame" x="0.0" y="269" width="348" height="104"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="volume:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dT-PK-sRs">
+                                                        <rect key="frame" x="0.0" y="0.0" width="348" height="20"/>
+                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="79i-1e-J6k">
+                                                        <rect key="frame" x="-2" y="29" width="352" height="31"/>
+                                                        <connections>
+                                                            <action selector="sliderChanged:" destination="fkB-KW-fdR" eventType="valueChanged" id="Tys-3D-GXI"/>
+                                                        </connections>
+                                                    </slider>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOTE: this slider only controls the relative volume of the background music, and will not affect the videos" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4H-ff-fYz">
+                                                        <rect key="frame" x="0.0" y="68" width="348" height="36"/>
+                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For best experience, make sure haptics on your phone is on and that minimize flashing is turned off." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="elD-NK-I5e">
+                                                <rect key="frame" x="0.0" y="453" width="348" height="45"/>
+                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ge4-Hw-RIK">
+                                                <rect key="frame" x="0.0" y="578" width="348" height="91"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15G-9G-mUq">
+                                                        <rect key="frame" x="0.0" y="0.0" width="348" height="31"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimize flashing:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="M4s-Ft-2fo">
+                                                                <rect key="frame" x="0.0" y="0.0" width="299" height="31"/>
+                                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K22-SS-wCe">
+                                                                <rect key="frame" x="299" y="0.0" width="51" height="31"/>
+                                                                <connections>
+                                                                    <action selector="switchChanged:" destination="fkB-KW-fdR" eventType="valueChanged" id="CKn-zh-BUX"/>
+                                                                </connections>
+                                                            </switch>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This option is prefered for photosensitive users and will minimize sudden flashing colors or lights" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QFI-DI-Cei">
+                                                        <rect key="frame" x="0.0" y="46" width="348" height="45"/>
+                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="15"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="4I6-sB-xev" firstAttribute="top" secondItem="mL3-AZ-z8C" secondAttribute="bottom" constant="80" id="2ZV-bc-4wM"/>
-                                    <constraint firstItem="mL3-AZ-z8C" firstAttribute="top" secondItem="4Ta-5q-lJ8" secondAttribute="bottom" constant="15" id="2r6-Zd-Teb"/>
-                                    <constraint firstItem="4Ta-5q-lJ8" firstAttribute="leading" secondItem="Uff-7i-Mh4" secondAttribute="leading" constant="40" id="8NE-Ze-Xl3"/>
-                                    <constraint firstItem="Uff-7i-Mh4" firstAttribute="trailing" secondItem="4Ta-5q-lJ8" secondAttribute="trailing" constant="40" id="F4F-8h-AdR"/>
-                                    <constraint firstItem="5dT-PK-sRs" firstAttribute="leading" secondItem="Uff-7i-Mh4" secondAttribute="leading" constant="40" id="O3H-rP-Vs2"/>
-                                    <constraint firstItem="Uff-7i-Mh4" firstAttribute="trailing" secondItem="5dT-PK-sRs" secondAttribute="trailing" constant="40" id="QYs-ME-ufi"/>
-                                    <constraint firstItem="a4H-ff-fYz" firstAttribute="top" secondItem="79i-1e-J6k" secondAttribute="bottom" constant="10" id="Thd-TX-iMx"/>
-                                    <constraint firstItem="a4H-ff-fYz" firstAttribute="leading" secondItem="Uff-7i-Mh4" secondAttribute="leading" constant="40" id="YDC-yp-ThG"/>
-                                    <constraint firstItem="mL3-AZ-z8C" firstAttribute="leading" secondItem="Uff-7i-Mh4" secondAttribute="leading" constant="40" id="YNl-2M-ezq"/>
-                                    <constraint firstItem="Uff-7i-Mh4" firstAttribute="trailing" secondItem="8Un-LG-qF5" secondAttribute="trailing" constant="40" id="bFF-4s-1CB"/>
-                                    <constraint firstItem="Uff-7i-Mh4" firstAttribute="trailing" secondItem="4I6-sB-xev" secondAttribute="trailing" constant="40" id="blA-o8-rMx"/>
-                                    <constraint firstItem="79i-1e-J6k" firstAttribute="top" secondItem="5dT-PK-sRs" secondAttribute="bottom" constant="8" symbolic="YES" id="eYx-Aw-Qf5"/>
-                                    <constraint firstItem="5dT-PK-sRs" firstAttribute="top" secondItem="Uff-7i-Mh4" secondAttribute="top" constant="150" id="ksR-ys-TMu"/>
-                                    <constraint firstItem="4I6-sB-xev" firstAttribute="leading" secondItem="Uff-7i-Mh4" secondAttribute="leading" constant="40" id="lGS-si-sAb"/>
-                                    <constraint firstItem="79i-1e-J6k" firstAttribute="leading" secondItem="Uff-7i-Mh4" secondAttribute="leading" constant="40" id="oaA-Xh-CyU"/>
-                                    <constraint firstItem="Uff-7i-Mh4" firstAttribute="trailing" secondItem="a4H-ff-fYz" secondAttribute="trailing" constant="40" id="odQ-bn-RIj"/>
-                                    <constraint firstItem="4Ta-5q-lJ8" firstAttribute="top" secondItem="8Un-LG-qF5" secondAttribute="bottom" constant="15" id="owh-OQ-KSY"/>
-                                    <constraint firstItem="Uff-7i-Mh4" firstAttribute="trailing" secondItem="79i-1e-J6k" secondAttribute="trailing" constant="40" id="pfS-b8-2s3"/>
-                                    <constraint firstItem="8Un-LG-qF5" firstAttribute="top" secondItem="a4H-ff-fYz" secondAttribute="bottom" constant="80" id="tmM-8W-Nyg"/>
-                                    <constraint firstItem="Uff-7i-Mh4" firstAttribute="trailing" secondItem="mL3-AZ-z8C" secondAttribute="trailing" constant="40" id="usf-iR-xVT"/>
-                                    <constraint firstItem="8Un-LG-qF5" firstAttribute="leading" secondItem="Uff-7i-Mh4" secondAttribute="leading" constant="40" id="xcA-MZ-qdm"/>
+                                    <constraint firstItem="2aE-lW-wLG" firstAttribute="leading" secondItem="gfd-cY-Qhf" secondAttribute="leading" constant="40" id="Ayf-Y5-rrh"/>
+                                    <constraint firstAttribute="bottom" secondItem="2aE-lW-wLG" secondAttribute="bottom" constant="100" id="NFb-rI-oeM"/>
+                                    <constraint firstItem="2aE-lW-wLG" firstAttribute="centerX" secondItem="gfd-cY-Qhf" secondAttribute="centerX" id="Pie-ed-6p7"/>
+                                    <constraint firstAttribute="trailing" secondItem="2aE-lW-wLG" secondAttribute="trailing" constant="40" id="mAA-hL-Y1J"/>
+                                    <constraint firstItem="2aE-lW-wLG" firstAttribute="top" secondItem="gfd-cY-Qhf" secondAttribute="top" constant="150" id="rmg-pN-nOo"/>
                                 </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="TEs-Of-xgs"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="Uff-7i-Mh4"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kkb-mQ-DHs">
                                 <rect key="frame" x="189" y="833" width="50" height="48.666666666666629"/>
@@ -216,6 +247,7 @@
                     </view>
                     <connections>
                         <outlet property="donateLabel" destination="mL3-AZ-z8C" id="q4W-8y-enX"/>
+                        <outlet property="flashingSwitch" destination="K22-SS-wCe" id="36n-zI-j4q"/>
                         <outlet property="slider" destination="79i-1e-J6k" id="rsi-eZ-4OY"/>
                     </connections>
                 </viewController>
@@ -1145,7 +1177,7 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVi-ZT-csJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="388" height="404"/>
-                                                        <string key="text">Dear employees, I am pleased to announce that one week from today, we will revolutionize human nature with VIS. Our scientists have been working for decades developing ‘Brane’, our custom programming language and integrating it with a human mind. Vision Consolidated will become the pioneer in Brain-Computer Interfaces (BCIs) and have an incredible impact on the future! -Yush “the Developer” Kapoor"</string>
+                                                        <string key="text">Dear employees, I am pleased to announce that one week from today, we will revolutionize human nature with VIS. Our scientists have been working for decades developing ‘Brane’, our custom programming language and integrating it with a human mind. Vision Consolidated will become the pioneer in Brain-Computer Interfaces (BCIs) and have an incredible impact on the future! -Yush “King” Kapoor"</string>
                                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="25"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -1734,7 +1766,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="L" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kp-kP-ckU">
-                                <rect key="frame" x="30.000000000000004" y="812" width="5.6666666666666679" height="30"/>
+                                <rect key="frame" x="30.000000000000004" y="832" width="5.6666666666666679" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="aLf-46-tI7"/>
                                 </constraints>
@@ -1811,7 +1843,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="oVN-f5-HPp" firstAttribute="leading" secondItem="t4I-5E-jt0" secondAttribute="leading" constant="20" id="1pd-xJ-Laf"/>
-                            <constraint firstItem="t4I-5E-jt0" firstAttribute="bottom" secondItem="1kp-kP-ckU" secondAttribute="bottom" constant="50" id="6Qf-qC-RRc"/>
+                            <constraint firstItem="t4I-5E-jt0" firstAttribute="bottom" secondItem="1kp-kP-ckU" secondAttribute="bottom" constant="30" id="6Qf-qC-RRc"/>
                             <constraint firstItem="1kp-kP-ckU" firstAttribute="leading" secondItem="t4I-5E-jt0" secondAttribute="leading" constant="30" id="9he-hy-ckC"/>
                             <constraint firstItem="oVN-f5-HPp" firstAttribute="top" secondItem="VFO-kI-os7" secondAttribute="bottom" constant="50" id="Idf-aZ-Ewt"/>
                             <constraint firstItem="VFO-kI-os7" firstAttribute="leading" secondItem="t4I-5E-jt0" secondAttribute="leading" constant="20" id="MoK-p2-tom"/>
@@ -1987,6 +2019,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8im-zu-o9S">
+                                <rect key="frame" x="25" y="134" width="378" height="658"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="remote_Road" translatesAutoresizingMaskIntoConstraints="NO" id="Lcr-Ve-gqr">
                                 <rect key="frame" x="-136" y="-62" width="700" height="1050"/>
                                 <constraints>
@@ -2248,15 +2284,21 @@
                         <viewLayoutGuide key="safeArea" id="drI-D9-E9l"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="8im-zu-o9S" firstAttribute="centerX" secondItem="IPx-Ov-Emi" secondAttribute="centerX" id="7iz-3r-FwE"/>
                             <constraint firstItem="Lcr-Ve-gqr" firstAttribute="centerY" secondItem="IPx-Ov-Emi" secondAttribute="centerY" id="Djh-5E-lNI"/>
                             <constraint firstItem="drI-D9-E9l" firstAttribute="trailing" secondItem="0tW-Nq-ruj" secondAttribute="trailing" constant="20" id="EGO-Oq-lGE"/>
                             <constraint firstItem="aEP-35-QTA" firstAttribute="top" secondItem="drI-D9-E9l" secondAttribute="top" constant="50" id="FrT-tj-2zj"/>
+                            <constraint firstItem="8im-zu-o9S" firstAttribute="leading" secondItem="drI-D9-E9l" secondAttribute="leading" constant="25" id="Hl4-xN-wNj"/>
                             <constraint firstItem="5gG-aX-tiS" firstAttribute="leading" secondItem="drI-D9-E9l" secondAttribute="leading" constant="20" id="KJS-0c-SE4"/>
+                            <constraint firstItem="drI-D9-E9l" firstAttribute="trailing" secondItem="8im-zu-o9S" secondAttribute="trailing" constant="25" id="LDj-Ug-RDd"/>
                             <constraint firstItem="5gG-aX-tiS" firstAttribute="top" secondItem="Nbk-Rr-f6W" secondAttribute="bottom" constant="150" id="Om3-Rc-wlK"/>
+                            <constraint firstItem="8im-zu-o9S" firstAttribute="top" secondItem="drI-D9-E9l" secondAttribute="top" constant="90" id="Qsz-n8-gUX"/>
+                            <constraint firstItem="8im-zu-o9S" firstAttribute="centerY" secondItem="IPx-Ov-Emi" secondAttribute="centerY" id="VnU-q5-Q84"/>
                             <constraint firstItem="drI-D9-E9l" firstAttribute="trailing" secondItem="5gG-aX-tiS" secondAttribute="trailing" constant="20" id="eHV-vX-XxS"/>
                             <constraint firstItem="0tW-Nq-ruj" firstAttribute="centerY" secondItem="IPx-Ov-Emi" secondAttribute="centerY" id="iN4-RN-hIc"/>
                             <constraint firstItem="0tW-Nq-ruj" firstAttribute="centerX" secondItem="IPx-Ov-Emi" secondAttribute="centerX" id="kDR-4K-bgQ"/>
                             <constraint firstItem="drI-D9-E9l" firstAttribute="trailing" secondItem="aEP-35-QTA" secondAttribute="trailing" constant="10" id="kg9-1i-xkT"/>
+                            <constraint firstItem="drI-D9-E9l" firstAttribute="bottom" secondItem="8im-zu-o9S" secondAttribute="bottom" constant="100" id="lf7-vk-ptO"/>
                             <constraint firstItem="Lcr-Ve-gqr" firstAttribute="centerX" secondItem="IPx-Ov-Emi" secondAttribute="centerX" id="mTy-94-Ku4"/>
                             <constraint firstItem="Nbk-Rr-f6W" firstAttribute="leading" secondItem="drI-D9-E9l" secondAttribute="leading" constant="55" id="p4l-1z-gai"/>
                             <constraint firstItem="drI-D9-E9l" firstAttribute="bottom" secondItem="5gG-aX-tiS" secondAttribute="bottom" constant="10" id="pX7-Ub-Yq3"/>
@@ -2283,6 +2325,7 @@
                         <outlet property="button9" destination="57O-PU-cFO" id="ILx-al-1yy"/>
                         <outlet property="hint" destination="6JT-2m-LdE" id="VHB-gS-rn0"/>
                         <outlet property="nextChap" destination="fze-hA-2ya" id="q3y-kA-Dgk"/>
+                        <outlet property="talkingView" destination="8im-zu-o9S" id="DHU-Tr-mml"/>
                         <outlet property="toolbar" destination="5gG-aX-tiS" id="cfG-Ui-2UF"/>
                         <segue destination="GTF-CI-eye" kind="presentation" identifier="chap7ToHome" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="0tO-6i-RJe"/>
                         <segue destination="gwX-k8-aYX" kind="presentation" identifier="chap7ToChap8" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="RvQ-UE-tQi"/>
@@ -2618,6 +2661,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Boh-cI-eZN">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mdR-rb-hRX">
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                             </arscnView>
@@ -2726,6 +2774,7 @@
                     </view>
                     <connections>
                         <outlet property="Reset" destination="sU0-q4-aTq" id="1yC-0p-fMe"/>
+                        <outlet property="flashView" destination="Boh-cI-eZN" id="XiM-uU-M5V"/>
                         <outlet property="hint" destination="5fD-yy-MQf" id="Wtf-SX-KRz"/>
                         <outlet property="labelStack" destination="u3O-sL-5Q3" id="GCy-N6-eyy"/>
                         <outlet property="labelStackBottom" destination="lVS-rf-b7t" id="jUF-Bc-sbb"/>
@@ -2740,7 +2789,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Igf-ji-Snk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3300.0000000000005" y="1524.7767857142856"/>
+            <point key="canvasLocation" x="3300" y="1524.6220302375812"/>
         </scene>
         <!--Chapter14-->
         <scene sceneID="c4i-kj-84U">
@@ -3280,7 +3329,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SmU-jf-JgM">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SmU-jf-JgM">
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                             </scrollView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="xgH-RG-G7F">
@@ -3412,6 +3461,12 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-Q" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7P-4l-XIU">
+                                <rect key="frame" x="20" y="385" width="388" height="24"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoSCITCTT-Book" family="Bodoni 72 Smallcaps" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="QCw-hJ-xkS">
                                 <rect key="frame" x="20" y="716" width="388" height="36"/>
                                 <subviews>
@@ -3438,11 +3493,14 @@
                         <viewLayoutGuide key="safeArea" id="MTP-LX-ko9"/>
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                         <constraints>
+                            <constraint firstItem="MTP-LX-ko9" firstAttribute="trailing" secondItem="o7P-4l-XIU" secondAttribute="trailing" constant="20" id="1UO-18-3NJ"/>
                             <constraint firstItem="KBk-62-8NO" firstAttribute="leading" secondItem="MTP-LX-ko9" secondAttribute="leading" constant="20" id="2iK-gM-gU3"/>
                             <constraint firstItem="MTP-LX-ko9" firstAttribute="trailing" secondItem="QCw-hJ-xkS" secondAttribute="trailing" constant="20" id="6lU-7E-orA"/>
                             <constraint firstItem="Jb6-B2-f0c" firstAttribute="top" secondItem="pgQ-bW-FsR" secondAttribute="bottom" constant="70" id="7LC-Ga-Dlm"/>
+                            <constraint firstItem="o7P-4l-XIU" firstAttribute="top" secondItem="dhM-YW-5dP" secondAttribute="bottom" constant="5" id="C8C-bj-fIK"/>
                             <constraint firstItem="MTP-LX-ko9" firstAttribute="trailing" secondItem="Jb6-B2-f0c" secondAttribute="trailing" constant="20" id="Drn-1R-vmd"/>
                             <constraint firstItem="pgQ-bW-FsR" firstAttribute="leading" secondItem="MTP-LX-ko9" secondAttribute="leading" constant="20" id="KW0-BW-O1h"/>
+                            <constraint firstItem="o7P-4l-XIU" firstAttribute="leading" secondItem="MTP-LX-ko9" secondAttribute="leading" constant="20" id="L2a-LK-ZVA"/>
                             <constraint firstItem="KBk-62-8NO" firstAttribute="top" secondItem="QCw-hJ-xkS" secondAttribute="bottom" constant="60" id="QIk-DT-UQU"/>
                             <constraint firstItem="QCw-hJ-xkS" firstAttribute="leading" secondItem="MTP-LX-ko9" secondAttribute="leading" constant="20" id="QVf-5j-hAI"/>
                             <constraint firstAttribute="trailing" secondItem="pgQ-bW-FsR" secondAttribute="trailing" constant="20" id="T8k-Zg-kEi"/>
@@ -3459,6 +3517,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="Q" destination="o7P-4l-XIU" id="2od-2L-zYW"/>
                         <outlet property="backButton" destination="Hp1-9F-kaZ" id="Fpv-SW-iG0"/>
                         <outlet property="hint" destination="fl6-77-8iN" id="00Z-f9-qXg"/>
                         <outlet property="mainLabel" destination="pgQ-bW-FsR" id="g6g-0y-fNK"/>
@@ -3741,22 +3800,22 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8eE-Im-0TI"/>
-        <segue reference="AYo-vC-fRx"/>
-        <segue reference="dHH-0f-i87"/>
-        <segue reference="j8f-cg-Hji"/>
-        <segue reference="9I8-69-dGt"/>
-        <segue reference="8va-rm-XAP"/>
-        <segue reference="dbV-cl-syM"/>
-        <segue reference="9rP-sF-Yht"/>
-        <segue reference="o2i-uy-ToW"/>
-        <segue reference="3Az-ps-1h0"/>
-        <segue reference="WVd-jK-rxp"/>
+        <segue reference="YpZ-NR-fiI"/>
+        <segue reference="gzU-Ae-XQS"/>
+        <segue reference="Fs4-JY-ETg"/>
+        <segue reference="kju-Ul-nqJ"/>
+        <segue reference="7ds-ad-yt1"/>
+        <segue reference="pGP-Mq-ek9"/>
+        <segue reference="M5Z-aZ-g0d"/>
+        <segue reference="RvQ-UE-tQi"/>
+        <segue reference="xf8-3T-zHd"/>
+        <segue reference="suA-ve-50D"/>
+        <segue reference="3Rt-Ua-3z9"/>
         <segue reference="haB-wX-Ht8"/>
-        <segue reference="rPy-e3-cah"/>
+        <segue reference="C8e-VB-o7G"/>
         <segue reference="Fhg-H5-PTW"/>
-        <segue reference="J9s-s4-0U4"/>
-        <segue reference="yHp-47-Fj6"/>
+        <segue reference="lvv-Yn-sCd"/>
+        <segue reference="ohR-Mk-EQe"/>
         <segue reference="dKZ-mV-wuG"/>
     </inferredMetricsTieBreakers>
     <resources>

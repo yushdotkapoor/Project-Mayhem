@@ -54,7 +54,7 @@ class subPostChapter15: UIViewController {
         let button = createLabel(text: "What are you doing here?", callBack: #selector(postPart1))
         speakLabels = [button]
         for i in speakLabels {
-            i.fadeIn()
+           i.fadeIn()
         }
         funcToPass = postPart1
         talk?.startRecording(target: wordToSearch!)
@@ -208,18 +208,27 @@ class subPostChapter15: UIViewController {
         talk?.stopRecording()
         NotificationCenter.default.removeObserver(godThread!)
         game.setValue("none", forKey: "active")
-        MusicPlayer.shared.updateVolume()
         godThread?.performSegue(withIdentifier: "subPostChap15ToPostChap15", sender: nil)
     }
     
     func createLabel(text: String, callBack: Selector) -> CustomButtonOutline {
-        let frame = CGRect(x: 20, y: UIScreen.main.bounds.size.height - 175 - (CGFloat(speakLabels.count) * 60), width: UIScreen.main.bounds.size.width - 40, height: 40)
+        let labelWidth = UIScreen.main.bounds.size.width - 20
+        let titleLabelHeight = heightForView(text: text, font: UIFont(name: "Tomorrow Regular", size: 20)!, width: labelWidth)
+        var heightsBefore:CGFloat = 0
+        for i in speakLabels {
+            heightsBefore += i.frame.height + 20
+        }
+        
+        let frame = CGRect(x: 10, y: UIScreen.main.bounds.size.height - 125 - heightsBefore - titleLabelHeight, width: labelWidth, height: titleLabelHeight + 10)
+        
         let button = CustomButtonOutline(frame: frame)
         button.setupButton(color: .green)
         button.setTitle(text, for: .normal)
         button.setTitleColor(.green, for: .normal)
         button.setTitleColor(.gray, for: .highlighted)
         button.titleLabel?.minimumScaleFactor = 0.5
+        button.titleLabel?.numberOfLines = 0
+        button.titleLabel?.frame = CGRect(x: 15, y: 0, width: (button.titleLabel?.frame.size.width)! - 30, height: (button.titleLabel?.frame.size.height)!)
         button.titleLabel?.font = UIFont(name: "Tomorrow Regular", size: 20)
         button.alpha = 0.0
         button.addTarget(self, action: callBack, for: .touchUpInside)

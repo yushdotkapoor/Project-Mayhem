@@ -33,7 +33,18 @@ class NameQuery: UIViewController {
         impact(style: .heavy)
         stack.fadeOut()
         wait {
-            self.performSegue(withIdentifier: "NameQueryToLevels", sender: nil)
+            let alertController = UIAlertController(title: "Question", message: "Would you like to minimize flashing lights? The user experience will be diminished. This is a good option for photosensitive users and can always be changed in the settings tab.", preferredStyle: .alert)
+            let no = UIAlertAction(title: "No", style: .default, handler: {_ in
+                game.setValue(false, forKey: "photosensitive")
+                self.performSegue(withIdentifier: "NameQueryToLevels", sender: nil)
+            })
+            let yes = UIAlertAction(title: "Yes", style: .default, handler: {_ in
+                game.setValue(true, forKey: "photosensitive")
+                self.performSegue(withIdentifier: "NameQueryToLevels", sender: nil)
+            })
+                alertController.addAction(no)
+                alertController.addAction(yes)
+            self.present(alertController, animated: true, completion: nil)
         }
     }
     

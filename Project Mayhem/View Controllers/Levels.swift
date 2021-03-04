@@ -52,17 +52,8 @@ class Levels: UIViewController {
     override func viewDidLoad() {
            super.viewDidLoad()
         del = 0.5
-        requestNotificationAuthorization()
-        requestTranscribePermissions()
-        requestMicrophonePermissions()
-        requestCameraPermissions()
         permissionsLord()
-        
-        let controllers = getData(string: "ViewController") as! [UIViewController]
-        
-        for c in controllers {
-            NotificationCenter.default.removeObserver(c)
-        }
+ 
         //reset()
         //loadAll()
         MusicPlayer.shared.updateVolume()
@@ -94,9 +85,6 @@ class Levels: UIViewController {
         }
         else if string == "String" {
             return ["chap1", "chap2", "chap3", "chap4", "chap5", "chap6", "chap7", "chap8", "chap9", "chap10", "chap11", "chap12", "chap13", "chap14", "chap15"] as [String]
-        }
-        else if string == "ViewController" {
-            return [chapter1(), chapter2(), chapter3(), chapter4(), chapter5(), chapter6(), chapter7(), chapter8(), chapter9(), chapter10(), chapter11(), chapter12(), chapter13(), chapter14(), chapter15()] as [UIViewController]
         }
         else {
             return [chap1, chap2, chap3, chap4, chap5, chap6, chap7, chap8, chap9, chap10, chap11, chap12, chap13, chap14, chap15] as [CustomButtonOutline]
@@ -202,6 +190,7 @@ class Levels: UIViewController {
             let b = button as! NSLayoutConstraint
             b.constant -= view.bounds.width
         }
+ 
     }
     
     func permissionsLord() {
@@ -209,15 +198,23 @@ class Levels: UIViewController {
         let current = UNUserNotificationCenter.current()
         let microphoneStatus = AVAudioSession.sharedInstance().recordPermission
         DispatchQueue.main.async {
-            if speechStatus != .authorized {
+            switch speechStatus {
+            case .denied, .restricted:
                 print("Transcription permission was declined.")
                 self.alert(title: "Uh-Oh", message: "You must enable Speech Transcription in the Settings tab to have full access to the app. Go to Settings > Project Mayhem > Notifications > Turn on 'Speech Recognition'", actionTitle: "Okay", actions: {
                     UIApplication.shared.open(URL(string:"App-Prefs:root=NOTIFICATIONS_ID")!, options: [:], completionHandler: nil)
                     })
+                break
+            case .notDetermined:
+                self.requestNotificationAuthorization()
+                break
+            default:
+            break
+            
             }
             current.getNotificationSettings(completionHandler: { (settings) in
                 switch settings.authorizationStatus {
-                case .denied, .notDetermined:
+                case .denied:
                         self.alert(title: "Error", message: "You must agree to receive notifications from this app to continue. Go to Settings > Project Mayhem > Notifications > Turn on 'Allow Notifications'", actionTitle: "OK", actions: {
                             UIApplication.shared.open(URL(string:"App-Prefs:root=NOTIFICATIONS_ID")!, options: [:], completionHandler: nil)
                             })
@@ -227,9 +224,10 @@ class Levels: UIViewController {
                         UIApplication.shared.open(URL(string:"App-Prefs:root=NOTIFICATIONS_ID")!, options: [:], completionHandler: nil)
                         })
                     break
-                case .authorized:
+                case .notDetermined:
+                    self.requestNotificationAuthorization()
                     break
-                case .provisional:
+                case .authorized, .provisional:
                     break
                 @unknown default:
                     break
@@ -271,14 +269,9 @@ class Levels: UIViewController {
     
     
     func requestTranscribePermissions() {
-        SFSpeechRecognizer.requestAuthorization { [unowned self] authStatus in
-            DispatchQueue.main.async {
-                if authStatus != .authorized {
-                    print("Transcription permission was declined.")
-                    alert(title: "Uh-Oh", message: "You must enable Speech Transcription in the Settings tab to have full access to the app. Go to Settings > Project Mayhem > Notifications > Turn on 'Speech Recognition'", actionTitle: "Okay", actions: {
-                        UIApplication.shared.open(URL(string:"App-Prefs:root=NOTIFICATIONS_ID")!, options: [:], completionHandler: nil)
-                        })
-                }
+        SFSpeechRecognizer.requestAuthorization { (granted) in
+            if granted == .authorized {
+                print("Transcription access granted")
             }
         }
     }
@@ -294,7 +287,9 @@ class Levels: UIViewController {
     
     func requestMicrophonePermissions() {
         AVAudioSession.sharedInstance().requestRecordPermission { (granted) in
+            if granted {
             print("microphone access granted")
+            }
         }
     }
     

@@ -203,8 +203,9 @@ class chapter6: UIViewController {
     }
     
     @IBAction func submit(_ sender: Any) {
-        if textField.text?.lowercased() == morseString.lowercased() {
-            doneClicked()
+        let text = textField.text?.lowercased()
+        if text == morseString.lowercased() {
+            view.endEditing(true)
             heder.flickerIn()
             stop()
             textStack.isUserInteractionEnabled = false
@@ -213,7 +214,11 @@ class chapter6: UIViewController {
                 self.view.bringSubviewToFront(self.toolbar)
             }
         }
-        else if textField.text != "" {
+        else if text!.contains("bitch") || text!.contains("fuck") || text!.contains("shit") {
+            view.endEditing(true)
+            alert(title: "Dammnnnn", message: "Those are some inappropriate words you dumb fuck, go rinse your mouth with soap.", actionTitle: "lmao don't hurt me")
+        }
+        else if text != "" {
             textField.shake()
             textField.text = ""
         }
@@ -230,6 +235,8 @@ let alert = MessageAlert()
     
     
     func turnFlashlight(on: Bool) {
+        let sensitive = game.bool(forKey: "photosensitive")
+        if !sensitive {
         guard let device = AVCaptureDevice.default(for: AVMediaType.video) else { return }
         guard device.hasTorch else { print("Torch isn't available"); return }
 
@@ -247,6 +254,7 @@ let alert = MessageAlert()
             device.unlockForConfiguration()
         } catch {
             print("Torch can't be used")
+        }
         }
     }
     
@@ -289,7 +297,7 @@ let alert = MessageAlert()
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "Seems like this is a coded message!", viewController: self, hintButton: hint)
+            customAlert.showAlert(message: "Seems like this is a coded message!\n\nAlso, don't curse in a castle, it's bad for our reputation.", viewController: self, hintButton: hint)
             view.bringSubviewToFront(toolbar)
         }
         
