@@ -14,7 +14,7 @@ class MusicPlayer {
 
     func startBackgroundMusic() {
         pause()
-        if let bundle = Bundle.main.path(forResource: "pp", ofType: "wav") {
+        if let bundle = Bundle.main.path(forResource: "01", ofType: "wav") {
             let backgroundMusic = NSURL(fileURLWithPath: bundle)
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf:backgroundMusic as URL)
@@ -39,12 +39,12 @@ class MusicPlayer {
     }
     
     func updateVolume() {
-        let vol = game.float(forKey: "volume") * 0.5
+        let vol = game.float(forKey: "volume") * 0.4
         audioPlayer?.volume = vol
     }
     
     func updateVolumeLow() {
-        let vol = game.float(forKey: "volume") * 0.3
+        let vol = game.float(forKey: "volume") * 0.2
         audioPlayer?.volume = vol
     }
 }

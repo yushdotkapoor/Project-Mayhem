@@ -28,7 +28,7 @@ class chapter3: UIViewController {
     
     override func viewDidLoad() {
            super.viewDidLoad()
-        let text = "Dear employees, I am pleased to announce that one week from today, we will revolutionize human nature with VIS. Our scientists have been working for decades developing ‘Brane’, our custom programming language and integrating it with a human mind. Vision Consolidated will become the pioneer in Brain-Computer Interfaces (BCIs) and have an incredible impact on the future!\n\n-Yush “King” Kapoor"
+        let text = "Dear employees, I am pleased to announce that one week from today, we will revolutionize human nature with INTELLECT. Our scientists have been working for decades developing ‘Brane’, our custom programming language and integrating it with a human mind. Vision Consolidated will become the pioneer in Brain-Computer Interfaces (BCIs) and have an incredible impact on the future!\n\n-Yush “King” Kapoor"
         
         if let font = UIFont(name: "American Typewriter", size: 25) {
            let height = heightForView(text: text, font: font, width: UIScreen.main.bounds.size.width - 40)

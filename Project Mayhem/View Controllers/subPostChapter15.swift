@@ -17,7 +17,7 @@ class subPostChapter15: UIViewController {
     @IBOutlet weak var doubleTapInstructions: UILabel!
     @IBOutlet weak var back: UIButton!
     
-    let pauseArray:[Double] = [9, 15, 38.5, 62, 65, 70.2, 107]
+    let pauseArray:[Double] = [9, 15, 38.5, 61.9, 65, 70.3, 107]
     
     var timeStamp:Double = 0.0
     
@@ -26,6 +26,8 @@ class subPostChapter15: UIViewController {
     var speakLabels:[CustomButtonOutline] = []
     
     var status = ""
+    
+    var tomorrow = UIFont(name: "Tomorrow Regular", size: 20)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -156,11 +158,19 @@ class subPostChapter15: UIViewController {
     func bypass4() {
         print("bypass4")
         funcToPass = part5
-        video?.seekToPosition(seconds: 70)
+        if let player = video?.assetPlayer {
+        if let timeScale = player.currentItem?.asset.duration.timescale {
+            player.seek(to: CMTimeMakeWithSeconds(70.3, preferredTimescale: timeScale), completionHandler: { (complete) in
+                self.part5()
+            })
+        }
+        }
+        /*
         wait(time:0.1) {
             video?.playBlock = false
             video?.functionCalled = false
         }
+ */
     }
     
     @objc func postPart4_2() {
@@ -173,7 +183,13 @@ class subPostChapter15: UIViewController {
         }
         talk?.pause()
         funcToPass = part5
-        video?.seekToPosition(seconds: 65)
+        if let player = video?.assetPlayer {
+        if let timeScale = player.currentItem?.asset.duration.timescale {
+            player.seek(to: CMTimeMakeWithSeconds(65, preferredTimescale: timeScale), completionHandler: { (complete) in
+                video?.play()
+            })
+        }
+        }
     }
     
     func part5() {
@@ -213,7 +229,7 @@ class subPostChapter15: UIViewController {
     
     func createLabel(text: String, callBack: Selector) -> CustomButtonOutline {
         let labelWidth = UIScreen.main.bounds.size.width - 20
-        let titleLabelHeight = heightForView(text: text, font: UIFont(name: "Tomorrow Regular", size: 20)!, width: labelWidth)
+        let titleLabelHeight = heightForView(text: text, font: tomorrow ?? .systemFont(ofSize: 25) , width: labelWidth)
         var heightsBefore:CGFloat = 0
         for i in speakLabels {
             heightsBefore += i.frame.height + 20
@@ -229,7 +245,7 @@ class subPostChapter15: UIViewController {
         button.titleLabel?.minimumScaleFactor = 0.5
         button.titleLabel?.numberOfLines = 0
         button.titleLabel?.frame = CGRect(x: 15, y: 0, width: (button.titleLabel?.frame.size.width)! - 30, height: (button.titleLabel?.frame.size.height)!)
-        button.titleLabel?.font = UIFont(name: "Tomorrow Regular", size: 20)
+        button.titleLabel?.font = tomorrow
         button.alpha = 0.0
         button.addTarget(self, action: callBack, for: .touchUpInside)
         
@@ -261,13 +277,15 @@ class subPostChapter15: UIViewController {
         else {
             print("background talk")
             status = "talk"
+            video?.functionCalled = true
             talk?.pause()
         }
         game.setValue("none", forKey: "active")
+        video?.stopFlashing(lbl: doubleTapInstructions)
     }
     
     @objc func reenter() {
-        game.setValue("subPostChapter15", forKey: "active")
+        game.setValue("subPostChap15", forKey: "active")
         
         if timeStamp - 2 < 0 {
             timeStamp = 2
@@ -276,12 +294,10 @@ class subPostChapter15: UIViewController {
         if status == "talk" {
             print("reenter talk")
             talk?.play()
-            wait(time:0.1, actions: {
-                video?.pause()
-            })
+            video?.functionBlock()
         }
         else {
-            print("reenter background")
+            print("reenter video")
             video?.play()
         }
         

@@ -43,14 +43,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        }
     
     func audio() {
-        if AVAudioSession.isHeadphonesConnected {
-            activateAVSession(option: [.allowBluetooth, .allowAirPlay, .allowBluetoothA2DP])
-        }
-        else {
-            activateAVSession(option: [.allowBluetooth, .allowAirPlay, .allowBluetoothA2DP, .defaultToSpeaker])
-        }
+       audio2()
         MusicPlayer.shared.startBackgroundMusic()
         MusicPlayer.shared.updateVolume()
+    }
+    
+    func audio2() {
+        if AVAudioSession.isHeadphonesConnected {
+            activateAVSession(option: [.allowBluetooth, .allowAirPlay, .allowBluetoothA2DP, .duckOthers])
+        }
+        else {
+            activateAVSession(option: [.allowBluetooth, .allowAirPlay, .allowBluetoothA2DP, .defaultToSpeaker, .duckOthers])
+        }
     }
     
     
@@ -61,7 +65,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([])
     }
-    
     
     private func application(_ application: UIApplication, didReceive notification: UNNotificationRequest) {
         UIApplication.shared.applicationIconBadgeNumber = 0

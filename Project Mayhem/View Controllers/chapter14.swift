@@ -36,6 +36,9 @@ class chapter14: UIViewController {
         let gradient = CAGradientLayer()
         gradient.frame = view.bounds
         gradient.colors = [UIColor(red: 5/255, green: 70/255, blue: 5/255, alpha: 1.0).cgColor, UIColor(red: 5/255, green: 25/255, blue: 70/255, alpha: 1.0).cgColor]
+        
+        makeBorder(lbl: short)
+        makeBorder(lbl: long)
         view.layer.addSublayer(gradient)
         view.bringSubviewToFront(bypassImg)
         view.bringSubviewToFront(foregroundView)
@@ -56,6 +59,12 @@ class chapter14: UIViewController {
         bypassImg.alpha = 0.5
         
         foregroundView.isUserInteractionEnabled = false
+    }
+    
+    func makeBorder(lbl:UILabel) {
+        lbl.clipsToBounds = true
+        lbl.layer.masksToBounds = true
+        lbl.layer.cornerRadius = 15
     }
 
 // defines alert
@@ -153,7 +162,7 @@ let alert = MessageAlert()
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "Let's slow things down a bit, shall we?", viewController: self, hintButton: hint)
+            customAlert.showAlert(message: "\"As the Curtain Rose, the people cheered and the bootleggers took Pictures.\"", viewController: self, hintButton: hint)
             view.bringSubviewToFront(toolbar)
         }
         

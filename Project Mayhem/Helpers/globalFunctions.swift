@@ -34,7 +34,8 @@ func activateAVSession(option:AVAudioSession.CategoryOptions) {
         try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
         try AVAudioSession.sharedInstance().setMode(AVAudioSession.Mode.default)
         try AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSession.PortOverride.none)
-       } catch {
+        try AVAudioSession.sharedInstance().setAllowHapticsAndSystemSoundsDuringRecording(true)
+    } catch {
         print("FUCK")
     }
 }

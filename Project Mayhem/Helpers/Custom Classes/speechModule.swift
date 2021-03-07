@@ -80,8 +80,10 @@ class speechModule:NSObject {
                 inputNode.removeTap(onBus: 1)
                 self.recognitionRequest = nil
                 self.recognitionTask = nil
+                print("recog stopped")
                 wait(time: 0.4, actions: {
-                    if game.string(forKey: "active") == self.active && !(video?.isPlaying())! {
+                    if game.string(forKey: "active") == self.active && !(video?.isPlaying())! && !self.isActive() {
+                        print("round and round")
                     self.startRecording(target: target, arrayOfFunctions: arrayOfFunctions)
                     }
                 })
@@ -122,6 +124,11 @@ class speechModule:NSObject {
     func play() {
         print("talk play")
         startRecording(target: targetStringArray!, arrayOfFunctions: functionArray!)
+    }
+    
+    func isActive() -> Bool {
+        print(audioEngine.isRunning)
+        return audioEngine.isRunning
     }
     
     

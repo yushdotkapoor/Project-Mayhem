@@ -24,7 +24,7 @@ class chapter6: UIViewController {
     var window:UIWindow?
     
     let short: Double = 0.2
-    let long: Double = 0.6
+    let long: Double = 0.7
 
     var sequenceOfFlashes: [Double] = []
     var actionArray: [String] = []

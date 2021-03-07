@@ -41,6 +41,8 @@ class VideoPlayer : NSObject {
     var stopFlash = false
     var functionCalled = false
     
+    var volumeViolated = false
+    
     var playerRate:Float = 1 {
         didSet {
             if let player = assetPlayer {
@@ -126,6 +128,7 @@ class VideoPlayer : NSObject {
                 }
             }
             
+            
             if chap.contains(active!) && isPlaying() {
                 if alpha == 0.0 {
                     lbl.fadeIn()
@@ -143,12 +146,22 @@ class VideoPlayer : NSObject {
         }
     }
     
+    func stopFlashing(lbl:UILabel) {
+        stopFlash = true
+        lbl.fadeOut()
+    }
+    
     func seekToPosition(seconds:Float64) {
         if let player = assetPlayer {
             pause()
             if let timeScale = player.currentItem?.asset.duration.timescale {
                 player.seek(to: CMTimeMakeWithSeconds(seconds, preferredTimescale: timeScale), completionHandler: { (complete) in
-                    self.play()
+                    self.functionCalled = false
+                    self.playBlock = false
+                        if (player.currentItem?.status == .readyToPlay) {
+                            print("PLAY w/out options")
+                            player.play()
+                        }
                 })
             }
         }
@@ -161,16 +174,32 @@ class VideoPlayer : NSObject {
     }
     
     func play() {
+        if functionCalled {
+            return
+        }
+        if talk != nil {
+        if (talk?.isActive())! {
+            wait(time:0.1, actions: {
+                self.play()
+            })
+            return
+        }
+        }
         if let player = assetPlayer {
             if (player.currentItem?.status == .readyToPlay) {
                 player.play()
                 player.rate = playerRate
+                print("PLAY")
+                playingBlock()
             }
             volumeCheck()
-            playBlock = true
-            wait {
-                self.playBlock = false
-            }
+        }
+    }
+    
+    func playingBlock() {
+        playBlock = true
+        wait {
+            self.playBlock = false
         }
     }
     
@@ -272,12 +301,16 @@ class VideoPlayer : NSObject {
             if (reference + 0.04) > time && (reference - 0.04) < time && !functionCalled {
                 impact(style: .heavy)
                 pause()
-                functionCalled = true
+                functionBlock()
                 funcToPass!()
-                wait {
-                    self.functionCalled = false
-                }
             }
+        }
+    }
+    
+    func functionBlock() {
+        functionCalled = true
+        wait {
+            self.functionCalled = false
         }
     }
     
@@ -326,6 +359,7 @@ class VideoPlayer : NSObject {
         let vol = AVAudioSession.sharedInstance().outputVolume
         if vol < 0.15 {
             video?.pause()
+            volumeViolated = true
             let alertController = UIAlertController(title: "Volume Error", message: "Certain elements of this level require audio. Please turn your volume up. The level will continue once the required volume is reached.", preferredStyle: .alert)
                 let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
                 alertController.addAction(defaultAction)
@@ -355,15 +389,19 @@ class VideoPlayer : NSObject {
             }
         }
         if keyPath == "outputVolume"{
-            print(AVAudioSession.sharedInstance().outputVolume)
+            print("outputVolume \(AVAudioSession.sharedInstance().outputVolume)")
             let audioSession = AVAudioSession.sharedInstance()
             if !(video?.isPlaying())! && audioSession.outputVolume >= 0.15 {
                 impact(style: .medium)
                 wait(time: 0.1) {
                     impact(style: .medium)
                 }
-                talk?.pause()
-                video?.play()
+                if volumeViolated {
+                    print(volumeViolated)
+                    talk?.pause()
+                    video?.play()
+                    volumeViolated = false
+                }
             }
         }
     }

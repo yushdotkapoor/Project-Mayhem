@@ -64,6 +64,7 @@ class Listen {
     }
     
     func start() {
+        print("Audio kit start")
         Settings.audioInputEnabled = true
         
         do {
@@ -75,6 +76,7 @@ class Listen {
     }
     
     func stop() {
+        print("Audio kit stop")
         engine.stop()
         tracker.stop()
     }

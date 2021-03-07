@@ -267,6 +267,8 @@ let alert = MessageAlert()
         if textField.text?.lowercased() == "secret" {
             quakeLabel.text = "secret"
             textField.text = ""
+            quakeLabel.shake()
+            quakeLabel.textColor = .green
             view.endEditing(true)
             textField.isUserInteractionEnabled = false
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)

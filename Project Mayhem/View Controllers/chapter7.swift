@@ -40,6 +40,8 @@ class chapter7: UIViewController {
     var orderString:[String] = []
     var masterOrder = ["2", "14", "7", "3", "12", "9", "10", "1", "5", "16", "11", "6", "15", "4", "8", "13"]
     
+    var doubleTapInstructions:UILabel?
+    
     override func viewDidLoad() {
            super.viewDidLoad()
         orderString = []
@@ -57,22 +59,14 @@ class chapter7: UIViewController {
         super.viewDidAppear(animated)
         game.setValue("chap7", forKey: "active")
         funcToPass = vid1Finish
-        vidName = "Chap1Intro"
-        pauseArray = [10]
+        vidName = "lvl7Intro"
+        pauseArray = [39.5]
         vid()
         godThread = self
-        
-        /*
-         let name = game.string(forKey: "name")
-         alert.showAlert(title: "Message from Yush Kapoor", message: "Hello there, \(name!). I see you’re trying to access something you probably shouldn’t. That’s alright, you won’t get far. I know the Defenders very well and I've been keeping close tabs on you for the past few months. You have quite a reputation! I need you to understand that this company is trying to do good for the world. The sole purpose of Project Mayhem is to increase human efficiency. Let me show you.", viewController: self, buttonPush: #selector(dismissMessageAlert))
-         view.bringSubviewToFront(toolbar)
-         */
-        
     }
     
     func vid() {
         createObservers()
-        print("creating observers")
         
         talkingView.layer.masksToBounds = true
         talkingView.clipsToBounds = true
@@ -91,40 +85,64 @@ class chapter7: UIViewController {
         label.numberOfLines = 0
         label.textColor = .white
         
+        doubleTapInstructions = UILabel(frame: CGRect(x: talkingView.bounds.size.width - 220, y: talkingView.bounds.size.height - 40, width: 200, height: 20))
+        doubleTapInstructions?.text = "Double Tap to Skip"
+        doubleTapInstructions?.textAlignment = .center
+        doubleTapInstructions?.font = UIFont(name: "astro", size: 12)
+        doubleTapInstructions?.numberOfLines = 1
+        doubleTapInstructions?.textColor = .green
+        doubleTapInstructions?.alpha = 0.0
+        
         vidView = PlayerView(frame: CGRect(x: 0, y: lblheight + 10, width: lblwidth + 10, height: talkingView.bounds.size.height - lblheight + 10))
         
-        gradient.frame = CGRect(x: 0, y: 0, width: lblwidth + 5, height: lblheight + 20)
+        gradient.frame = CGRect(x: 0, y: 0, width: lblwidth + 10, height: lblheight + 20)
         talkingView.layer.addSublayer(gradient)
         talkingView.addSubview(label)
         talkingView.addSubview(vidView!)
+        talkingView.addSubview(doubleTapInstructions!)
         view.bringSubviewToFront(talkingView)
         
         video = VideoPlayer(urlAsset: vidToURL(name: vidName, type: "mov"), view: vidView!, arr: pauseArray, startTime: timeStamp)
         
         talkingView.fadeIn()
-        
+        flashInstructions()
     }
     
     func vid1Finish() {
         talkingView.fadeOut()
-        view.bringSubviewToFront(view)
-        NotificationCenter.default.removeObserver(self)
+        wait {
+            self.view.sendSubviewToBack(self.talkingView)
+        }
         stop()
     }
     
     func vid2Finish() {
-        print("create observers")
         talkingView.fadeOut()
-        view.bringSubviewToFront(view)
-        NotificationCenter.default.removeObserver(self)
+        wait {
+            self.view.sendSubviewToBack(self.talkingView)
+        }
         stop()
-        dismissMessageAlert2()
+        complete()
     }
     
     func createObservers() {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(background), name: UIApplication.didEnterBackgroundNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(reenter), name: UIApplication.willEnterForegroundNotification, object: nil)
+        
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
+        doubleTap.numberOfTapsRequired = 2
+        view.addGestureRecognizer(doubleTap)
+    }
+    
+    func flashInstructions() {
+       let t = game.bool(forKey: "chap7")
+        video?.startFlash(lbl: doubleTapInstructions!, chap: ["chap7"], willFlash: t)
+    }
+    
+    @objc func doubleTapped() {
+        let t = game.bool(forKey: "chap7")
+        video?.viewDidDoubleTap(willPass: t)
     }
     
     @objc func background() {
@@ -140,7 +158,9 @@ class chapter7: UIViewController {
     }
     
     func stop() {
+        NotificationCenter.default.removeObserver(self)
         video?.cleanUp()
+        video = nil
         godThread = nil
     }
     
@@ -153,6 +173,7 @@ class chapter7: UIViewController {
     }
 
     @IBAction func goBack(_ sender: Any) {
+        stop()
         self.performSegue(withIdentifier: "chap7ToHome", sender: nil)
     }
     
@@ -177,16 +198,11 @@ class chapter7: UIViewController {
             current += 1
             if current == 16 {
                 funcToPass = vid2Finish
-                vidName = "ProjectVenomTrailer"
-                pauseArray = [5]
+                vidName = "lvl7Outro"
+                pauseArray = [64.4]
                 timeStamp = 0
                 print("vid()")
                 vid()
-                
-                /*
-                alert2.showAlert(title: "Message from Yush Kapoor", message: "That took awhile for you to complete. See, if you had been enhanced, you could have done that in just a few seconds. Imagine a world where you could write a thirty-page thesis in just an hour, all while you drink coffee with friends. VIS can enable a world like that. Trust me, brainy — we are not the enemy. You can continue your investigation for your own peace of mind, but it’s just wasting your time.", viewController: self, buttonPush: #selector(dismissMessageAlert2))
-                view.bringSubviewToFront(toolbar)
- */
             }
         }
         else {
@@ -196,23 +212,6 @@ class chapter7: UIViewController {
             current = 0
         }
     }
-    
-    // defines alert
-    let alert = MessageAlert()
-
-    //function that gets called to dismiss the alertView
-    @objc func dismissMessageAlert() {
-        alert.dismissAlert()
-    }
-        
-        // defines alert
-        let alert2 = MessageAlert()
-
-        //function that gets called to dismiss the alertView
-        @objc func dismissMessageAlert2() {
-            alert2.dismissAlert()
-            complete()
-        }
     
     func reform() {
         let arr:[UIButton] = getData(string: "numerical")

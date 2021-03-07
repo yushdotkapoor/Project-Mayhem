@@ -64,6 +64,7 @@ class subChapter1: UIViewController {
                         impact(style: .rigid)
                         game.setValue("subChap1.1", forKey: "active")
                         funcToPass = self.nextChapter
+                        video?.functionCalled = false
                         video?.play()
                     } else {
                         // error

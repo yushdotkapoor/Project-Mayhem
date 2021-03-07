@@ -1161,7 +1161,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="YRL-IC-i13">
-                                        <rect key="frame" x="20" y="50" width="388" height="664"/>
+                                        <rect key="frame" x="20" y="50" width="388" height="693"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message From the CEO" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBD-ia-bKh">
                                                 <rect key="frame" x="0.0" y="0.0" width="388" height="40"/>
@@ -1173,17 +1173,17 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="Iey-n5-Pzv">
-                                                <rect key="frame" x="0.0" y="80" width="388" height="584"/>
+                                                <rect key="frame" x="0.0" y="80" width="388" height="613"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVi-ZT-csJ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="388" height="404"/>
-                                                        <string key="text">Dear employees, I am pleased to announce that one week from today, we will revolutionize human nature with VIS. Our scientists have been working for decades developing ‘Brane’, our custom programming language and integrating it with a human mind. Vision Consolidated will become the pioneer in Brain-Computer Interfaces (BCIs) and have an incredible impact on the future! -Yush “King” Kapoor"</string>
+                                                        <rect key="frame" x="0.0" y="0.0" width="388" height="433"/>
+                                                        <string key="text">Dear employees, I am pleased to announce that one week from today, we will revolutionize human nature with INTELLECT. Our scientists have been working for decades developing ‘Brane’, our custom programming language and integrating it with a human mind. Vision Consolidated will become the pioneer in Brain-Computer Interfaces (BCIs) and have an incredible impact on the future! -Yush “King” Kapoor"</string>
                                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="25"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xX1-h3-ig0">
-                                                        <rect key="frame" x="0.0" y="554" width="388" height="30"/>
+                                                        <rect key="frame" x="0.0" y="583" width="388" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="fnK-ns-Lhx"/>
                                                         </constraints>
@@ -1197,10 +1197,10 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="YRL-IC-i13" secondAttribute="bottom" constant="153" id="BNm-u0-192"/>
                                     <constraint firstAttribute="trailing" secondItem="YRL-IC-i13" secondAttribute="trailing" constant="20" id="Ldk-Gt-ZfC"/>
                                     <constraint firstItem="YRL-IC-i13" firstAttribute="leading" secondItem="zaE-TJ-Ije" secondAttribute="leading" constant="20" id="Otn-lY-tZn"/>
                                     <constraint firstItem="YRL-IC-i13" firstAttribute="top" secondItem="zaE-TJ-Ije" secondAttribute="top" constant="50" id="b8l-tL-PXY"/>
+                                    <constraint firstAttribute="bottom" secondItem="YRL-IC-i13" secondAttribute="bottom" constant="212" id="ja6-pJ-N6j"/>
                                     <constraint firstItem="YRL-IC-i13" firstAttribute="centerX" secondItem="zaE-TJ-Ije" secondAttribute="centerX" id="k5H-jM-buN"/>
                                 </constraints>
                             </scrollView>
@@ -1426,13 +1426,13 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From the darkness, comes the light" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XC-sK-4mn">
-                                <rect key="frame" x="20" y="94" width="388" height="100.33333333333331"/>
+                                <rect key="frame" x="20" y="94" width="388" height="101"/>
                                 <fontDescription key="fontDescription" name="aAmbyarSobat" family="a Ambyar Sobat" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="VTG-K4-2nW">
-                                <rect key="frame" x="20" y="224.33333333333334" width="388" height="36.000000000000028"/>
+                                <rect key="frame" x="20" y="225" width="388" height="36"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="X5L-HA-LGC">
                                         <rect key="frame" x="0.0" y="0.0" width="344" height="36"/>
@@ -2818,13 +2818,13 @@
                                         <state key="normal" title="TAP"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ng-Fw-5l3">
-                                        <rect key="frame" x="20" y="216" width="388" height="0.0"/>
+                                        <rect key="frame" x="20" y="210" width="388" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0t-Yb-B9I">
-                                        <rect key="frame" x="368" y="186.66666666666666" width="30" height="20"/>
+                                        <rect key="frame" x="368" y="180.66666666666666" width="30" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="23" id="bBn-Ms-qEW"/>
                                             <constraint firstAttribute="width" constant="30" id="mOL-hv-kV9"/>
@@ -2838,22 +2838,27 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="RNi-br-z21">
-                                        <rect key="frame" x="166.33333333333334" y="100" width="95.333333333333343" height="36"/>
+                                        <rect key="frame" x="159" y="100" width="110" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="·" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Udo-Sw-K19">
-                                                <rect key="frame" x="0.0" y="0.0" width="18.333333333333332" height="36"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="18.5" id="VTz-b4-dQI"/>
+                                                    <constraint firstAttribute="width" secondItem="Udo-Sw-K19" secondAttribute="height" multiplier="1:1" id="c4N-0k-2ua"/>
+                                                    <constraint firstAttribute="width" constant="30" id="nfS-hk-zlx"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="do9-KZ-0LX">
-                                                <rect key="frame" x="68.333333333333314" y="0.0" width="27" height="36"/>
+                                                <rect key="frame" x="80" y="0.0" width="30" height="30"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="—" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pha-zs-JpT">
-                                                        <rect key="frame" x="0.0" y="0.0" width="27" height="36"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="—" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pha-zs-JpT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="Pha-zs-JpT" secondAttribute="height" multiplier="1:1" id="Ds7-Gj-8ho"/>
+                                                            <constraint firstAttribute="width" constant="30" id="ctG-OY-Icb"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -3814,8 +3819,8 @@
         <segue reference="haB-wX-Ht8"/>
         <segue reference="C8e-VB-o7G"/>
         <segue reference="Fhg-H5-PTW"/>
-        <segue reference="lvv-Yn-sCd"/>
-        <segue reference="ohR-Mk-EQe"/>
+        <segue reference="J9s-s4-0U4"/>
+        <segue reference="oP5-Ck-yFJ"/>
         <segue reference="dKZ-mV-wuG"/>
     </inferredMetricsTieBreakers>
     <resources>
