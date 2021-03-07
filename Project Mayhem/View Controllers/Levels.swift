@@ -200,15 +200,18 @@ class Levels: UIViewController {
         DispatchQueue.main.async {
             switch speechStatus {
             case .denied, .restricted:
+                print("denied or restricted")
                 print("Transcription permission was declined.")
                 self.alert(title: "Uh-Oh", message: "You must enable Speech Transcription in the Settings tab to have full access to the app. Go to Settings > Project Mayhem > Notifications > Turn on 'Speech Recognition'", actionTitle: "Okay", actions: {
                     UIApplication.shared.open(URL(string:"App-Prefs:root=NOTIFICATIONS_ID")!, options: [:], completionHandler: nil)
                     })
                 break
             case .notDetermined:
-                self.requestNotificationAuthorization()
+                print("not determined")
+                self.requestTranscribePermissions()
                 break
             default:
+                print("default")
             break
             
             }

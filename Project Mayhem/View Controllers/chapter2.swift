@@ -60,7 +60,6 @@ class chapter2: UIViewController {
         volumeView.alpha = 0.5
         nextChap.alpha = 0.0
         nextChap.isUserInteractionEnabled = false
-        
     }
     
     func part1() {
@@ -98,7 +97,7 @@ class chapter2: UIViewController {
               audioLevel = audioSession.outputVolume
               
             viewHeight.constant = view.frame.size.height * CGFloat(audioLevel)
-            if audioLevel == 0.0 {
+            if audioLevel == 1.0 {
                 let name = game.string(forKey: "name")
                 alert.showAlert(title: "Message from Defender Command", message: "\(name!), I have an assignment for you. I know you’ve heard of Vision Consolidated’s new Intelligence Enhancement and Cognitive Treatment (INTELLECT). Internal sources say that the development of the service has been very shady. In fact, they called it ‘Project Mayhem’. Sounds pretty sinister to me. We need you to investigate the company and see if there is anything to worry about. This could be your biggest case as a Defender, if Vision Consolidated is not what we think it is. You’ve been given employee access to their facilities, but make sure to stay under the radar. Good luck, Brainchild.", viewController: self, buttonPush: #selector(dismissMessageAlert))
                 view.bringSubviewToFront(toolbar)
@@ -134,7 +133,7 @@ class chapter2: UIViewController {
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "What could people possibly overhear from you?", viewController: self, hintButton: hint)
+            customAlert.showAlert(message: "How could you make sure that you can hear everything?", viewController: self, hintButton: hint)
             view.bringSubviewToFront(toolbar)
         }
         

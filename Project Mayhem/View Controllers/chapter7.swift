@@ -161,7 +161,6 @@ class chapter7: UIViewController {
         NotificationCenter.default.removeObserver(self)
         video?.cleanUp()
         video = nil
-        godThread = nil
     }
     
     func complete() {
@@ -173,11 +172,15 @@ class chapter7: UIViewController {
     }
 
     @IBAction func goBack(_ sender: Any) {
+        if video != nil {
+            godThread = nil
+        }
         stop()
         self.performSegue(withIdentifier: "chap7ToHome", sender: nil)
     }
     
     @IBAction func goNext(_ sender: Any) {
+        godThread = nil
         self.performSegue(withIdentifier: "chap7ToChap8", sender: nil)
     }
     

@@ -9,6 +9,15 @@
           "revision": "fd316dd05f02e4ef7ff60f9be0a31b8a24053b1e",
           "version": null
         }
+      },
+      {
+        "package": "OneSignalXCFramework",
+        "repositoryURL": "https://github.com/OneSignal/OneSignal-XCFramework",
+        "state": {
+          "branch": null,
+          "revision": "925a35dfa8342f12931166efacde664879246539",
+          "version": "3.2.3"
+        }
       }
     ]
   },
