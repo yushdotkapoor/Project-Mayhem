@@ -4,22 +4,20 @@ import UIKit
 import UserNotifications
 import AVFoundation
 import OneSignal
+import CallKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate {
     
     var window: UIWindow?
     
+    let callObserver = CXCallObserver()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        // Remove this method to stop OneSignal Debugging
-         OneSignal.setLogLevel(.LL_VERBOSE, visualLevel: .LL_NONE)
-
-         // OneSignal initialization
+        
          OneSignal.initWithLaunchOptions(launchOptions)
          OneSignal.setAppId("12db9d9f-4c00-4d45-83e7-0cf7e40026cd")
-
-         // promptForPushNotifications will show the native iOS notification permission prompt.
-         // We recommend removing the following code and instead using an In-App Message to prompt for notification permission (See step 8)
+        
          OneSignal.promptForPushNotifications(userResponse: { accepted in
            print("User accepted notifications: \(accepted)")
          })
@@ -31,8 +29,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let theSession = AVAudioSession.sharedInstance()
         NotificationCenter.default.addObserver(self, selector: #selector(handleInterruption), name: AVAudioSession.interruptionNotification, object: theSession)
+        
+        callObserver.setDelegate(self, queue: nil)
 
-          return true
+        return true
+    }
+    
+    func callObserver(_ callObserver: CXCallObserver, callChanged call: CXCall) {
+        
+        if call.hasEnded {
+            print("call ended")
+            print(MusicPlayer.shared.audioPlayer!.isPlaying)
+            wait(time:3.0 ,actions: {
+                if !MusicPlayer.shared.audioPlayer!.isPlaying {
+                print("music restarted")
+                self.audio()
+                }
+                if video != nil {
+                    video?.functionCalled = false
+                    video?.play()
+                }
+            })
+        }
     }
     
     @objc func handleInterruption(notification: NSNotification) {
@@ -43,32 +61,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
            switch interruptionType {
            case .began:
-               print("began")
+               print("Interruption Began")
                // player is paused and session is inactive. need to update UI)
             MusicPlayer.shared.pause()
+            if video != nil {
+                video?.pause()
+            }
                print("audio paused")
             break
 
            default:
-                print("ended")
+                print("Interruption Ended")
             MusicPlayer.shared.play()
+            if video != nil {
+                video?.functionCalled = false
+                video?.play()
+            }
                 print("audio resumed")
                }
            }
        }
     
     func audio() {
-       audio2()
+        audio2()
         MusicPlayer.shared.startBackgroundMusic()
         MusicPlayer.shared.updateVolume()
     }
     
     func audio2() {
+        
         if AVAudioSession.isHeadphonesConnected {
-            activateAVSession(option: [.allowBluetooth, .allowAirPlay, .allowBluetoothA2DP, .duckOthers])
+            activateAVSession(option: [.allowAirPlay, .allowBluetoothA2DP, .duckOthers])
         }
         else {
-            activateAVSession(option: [.allowBluetooth, .allowAirPlay, .allowBluetoothA2DP, .defaultToSpeaker, .duckOthers])
+            activateAVSession(option: [.allowAirPlay, .allowBluetoothA2DP, .defaultToSpeaker, .duckOthers])
         }
     }
     
@@ -84,9 +110,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func application(_ application: UIApplication, didReceive notification: UNNotificationRequest) {
         UIApplication.shared.applicationIconBadgeNumber = 0
     }
-    
-   
-        
-    
 }
 

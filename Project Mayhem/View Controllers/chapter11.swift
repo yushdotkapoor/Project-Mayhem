@@ -59,8 +59,16 @@ class chapter11: UIViewController, SFSpeechRecognizerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        if isOnPhoneCall() {
+            let alertController = UIAlertController(title: "Error", message: "Functionality of the application will not work if you are in a call, please disconnect the call to continue playing", preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        else {
         alert.showAlert(title: "Message from Victoria Lambson", message: "I don’t remember there being a CEO before Yush, and there is also no historical record of this \"boss\" ever existing", viewController: self, buttonPush: #selector(dismissMessageAlert))
         view.bringSubviewToFront(toolbar)
+        }
     }
     
     // defines alert

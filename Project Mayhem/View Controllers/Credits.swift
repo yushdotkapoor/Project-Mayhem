@@ -12,9 +12,12 @@ class Credits: UIViewController {
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var flashingSwitch: UISwitch!
     @IBOutlet weak var dhruvSoundCloud: UIButton!
+    @IBOutlet weak var version: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        version.text = "Version \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] ?? "null")"
+        
         let volume = game.float(forKey: "volume")
         let sensitive = game.bool(forKey: "photosensitive")
         flashingSwitch.setOn(sensitive, animated: false)
@@ -24,6 +27,7 @@ class Credits: UIViewController {
         donateLabel.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(donate(tapGestureRecognizer:)))
         donateLabel.addGestureRecognizer(tapGesture)
+        
     }
     
     @IBAction func visionConsolidatedWebsite(_ sender: Any) {

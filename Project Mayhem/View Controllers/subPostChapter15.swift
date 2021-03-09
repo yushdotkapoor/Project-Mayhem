@@ -35,10 +35,11 @@ class subPostChapter15: UIViewController {
         ripplingView = back
         
         funcToPass = part1
+        godThread = self
         video = VideoPlayer(urlAsset: vidToURL(name: vidName, type: "mov"), view: playerView, arr: pauseArray, startTime: 0)
         talk = speechModule(activeCode: game.string(forKey: "active")!, rippleView: ripplingView!)
         
-        godThread = self
+       
         
         flashInstructions()
         

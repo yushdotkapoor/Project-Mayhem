@@ -6,7 +6,6 @@ target 'Project Mayhem' do
   use_frameworks!
 
   # Pods for Project Mayhem
-
   
   target 'Project MayhemTests' do
     inherit! :search_paths

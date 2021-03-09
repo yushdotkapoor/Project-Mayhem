@@ -43,6 +43,7 @@ class VideoPlayer : NSObject {
     
     var volumeViolated = false
     
+    
     var playerRate:Float = 1 {
         didSet {
             if let player = assetPlayer {
@@ -58,6 +59,7 @@ class VideoPlayer : NSObject {
             }
         }
     }
+    
     
     // MARK: - Init
     
@@ -75,6 +77,7 @@ class VideoPlayer : NSObject {
         
         initialSetupWithURL(url: urlAsset)
         prepareToPlay()
+        
     }
     
     override init() {
@@ -82,6 +85,7 @@ class VideoPlayer : NSObject {
     }
     
     // MARK: - Public
+    
     
     func isPlaying() -> Bool {
         if let player = assetPlayer {
@@ -168,6 +172,7 @@ class VideoPlayer : NSObject {
     }
     
     func pause() {
+        print("PAUSE")
         if let player = assetPlayer {
             player.pause()
         }
@@ -209,6 +214,7 @@ class VideoPlayer : NSObject {
             item.removeObserver(self, forKeyPath: "status")
             item.removeObserver(self, forKeyPath: "loadedTimeRanges")
         }
+        
         AVAudioSession.sharedInstance().removeObserver(self, forKeyPath: "outputVolume")
         NotificationCenter.default.removeObserver(self)
         pause()
@@ -266,11 +272,25 @@ class VideoPlayer : NSObject {
                     addPeriodicalObserver()
                     if let playView = playerView, let layer = playView.layer as? AVPlayerLayer {
                         layer.player = assetPlayer
+                        
                         print("player created at time \(currentTime)")
                         seekToPosition(seconds: currentTime)
+                        wait {
+                            self.phoneCallError()
+                        }
                     }
                 }
             }
+        }
+    }
+    
+    func phoneCallError() {
+        if isOnPhoneCall() {
+            pause()
+            let alertController = UIAlertController(title: "Error", message: "Functionality of the application will not work if you are in a call, please disconnect the call to continue playing", preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                alertController.addAction(defaultAction)
+            godThread!.present(alertController, animated: true, completion: nil)
         }
     }
     

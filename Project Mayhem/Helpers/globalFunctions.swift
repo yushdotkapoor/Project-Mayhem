@@ -7,6 +7,7 @@
 
 import UIKit
 import AVKit
+import CallKit
 
 var video:VideoPlayer?
 var godThread:UIViewController?
@@ -32,12 +33,23 @@ func activateAVSession(option:AVAudioSession.CategoryOptions) {
     do {
         try AVAudioSession.sharedInstance().setCategory(.playAndRecord, options: option)
         try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-        try AVAudioSession.sharedInstance().setMode(AVAudioSession.Mode.default)
-        try AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSession.PortOverride.none)
+        try AVAudioSession.sharedInstance().setMode(.default)
+        try AVAudioSession.sharedInstance().overrideOutputAudioPort(.none)
         try AVAudioSession.sharedInstance().setAllowHapticsAndSystemSoundsDuringRecording(true)
     } catch {
         print("FUCK")
     }
+}
+
+func isOnPhoneCall() -> Bool {
+    for call in CXCallObserver().calls {
+        if call.hasEnded == false {
+            print("on call")
+            return true
+        }
+    }
+    print("not on call")
+    return false
 }
 
 func impact(style: UIImpactFeedbackGenerator.FeedbackStyle) {

@@ -63,8 +63,16 @@ class chapter2: UIViewController {
     }
     
     func part1() {
+        if isOnPhoneCall() {
+            let alertController = UIAlertController(title: "Error", message: "Functionality of the application will not work if you are in a call, please disconnect the call to continue playing", preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        else {
         begin.fadeIn()
         game.setValue("chap2.1", forKey: "active")
+        }
     }
    
     
@@ -79,15 +87,9 @@ class chapter2: UIViewController {
     }
     
     func listenVolumeButton() {
-         let audioSession = AVAudioSession.sharedInstance()
-         do {
-              try audioSession.setActive(true, options: [])
-         audioSession.addObserver(self, forKeyPath: "outputVolume",
-                                  options: NSKeyValueObservingOptions.new, context: nil)
-              audioLevel = audioSession.outputVolume
-         } catch {
-              print("Error")
-         }
+        let audioSession = AVAudioSession.sharedInstance()
+        audioSession.addObserver(self, forKeyPath: "outputVolume", options: NSKeyValueObservingOptions.new, context: nil)
+        audioLevel = audioSession.outputVolume
     }
    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {

@@ -112,7 +112,7 @@
                                 <rect key="frame" x="0.0" y="44" width="428" height="788"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="2aE-lW-wLG">
-                                        <rect key="frame" x="40" y="100" width="348" height="884"/>
+                                        <rect key="frame" x="40" y="100" width="348" height="956"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SPS-3R-K7E">
                                                 <rect key="frame" x="0.0" y="0.0" width="348" height="154"/>
@@ -138,24 +138,24 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ckj-lj-yka">
                                                         <rect key="frame" x="0.0" y="104" width="348" height="50"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cux-sC-OfE">
-                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="Cux-sC-OfE" secondAttribute="height" multiplier="1:1" id="Wr3-vG-A8T"/>
-                                                                </constraints>
-                                                                <state key="normal" backgroundImage="instagram"/>
-                                                                <connections>
-                                                                    <action selector="instagram:" destination="fkB-KW-fdR" eventType="touchUpInside" id="h0k-pH-jyh"/>
-                                                                </connections>
-                                                            </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oey-JZ-9mB">
-                                                                <rect key="frame" x="65" y="0.0" width="50" height="50"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="oey-JZ-9mB" secondAttribute="height" multiplier="1:1" id="nFW-OQ-0jr"/>
                                                                 </constraints>
                                                                 <state key="normal" backgroundImage="paypal"/>
                                                                 <connections>
                                                                     <action selector="paypal:" destination="fkB-KW-fdR" eventType="touchUpInside" id="jNg-XQ-YrV"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cux-sC-OfE">
+                                                                <rect key="frame" x="65" y="0.0" width="50" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="Cux-sC-OfE" secondAttribute="height" multiplier="1:1" id="Wr3-vG-A8T"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="instagram"/>
+                                                                <connections>
+                                                                    <action selector="instagram:" destination="fkB-KW-fdR" eventType="touchUpInside" id="h0k-pH-jyh"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeG-qZ-Evt">
@@ -317,12 +317,18 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cPc-g0-tUH">
+                                                <rect key="frame" x="0.0" y="944" width="348" height="12"/>
+                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="2aE-lW-wLG" firstAttribute="leading" secondItem="gfd-cY-Qhf" secondAttribute="leading" constant="40" id="Ayf-Y5-rrh"/>
-                                    <constraint firstAttribute="bottom" secondItem="2aE-lW-wLG" secondAttribute="bottom" constant="100" id="NFb-rI-oeM"/>
+                                    <constraint firstAttribute="bottom" secondItem="2aE-lW-wLG" secondAttribute="bottom" constant="20" id="NFb-rI-oeM"/>
                                     <constraint firstItem="2aE-lW-wLG" firstAttribute="centerX" secondItem="gfd-cY-Qhf" secondAttribute="centerX" id="Pie-ed-6p7"/>
                                     <constraint firstAttribute="trailing" secondItem="2aE-lW-wLG" secondAttribute="trailing" constant="40" id="mAA-hL-Y1J"/>
                                     <constraint firstItem="2aE-lW-wLG" firstAttribute="top" secondItem="gfd-cY-Qhf" secondAttribute="top" constant="100" id="rmg-pN-nOo"/>
@@ -367,6 +373,7 @@
                         <outlet property="donateLabel" destination="mL3-AZ-z8C" id="q4W-8y-enX"/>
                         <outlet property="flashingSwitch" destination="K22-SS-wCe" id="36n-zI-j4q"/>
                         <outlet property="slider" destination="79i-1e-J6k" id="rsi-eZ-4OY"/>
+                        <outlet property="version" destination="cPc-g0-tUH" id="Q0v-A1-xZD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="knL-S3-gsb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1431,7 +1438,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiW-BS-5P7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiW-BS-5P7">
                                 <rect key="frame" x="40" y="261.66666666666669" width="348" height="77"/>
                                 <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="75"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3938,7 +3945,7 @@
         <segue reference="C8e-VB-o7G"/>
         <segue reference="Fhg-H5-PTW"/>
         <segue reference="J9s-s4-0U4"/>
-        <segue reference="ohR-Mk-EQe"/>
+        <segue reference="qpn-tc-Lza"/>
         <segue reference="Jbk-WL-IF2"/>
     </inferredMetricsTieBreakers>
     <resources>

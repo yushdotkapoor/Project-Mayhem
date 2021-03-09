@@ -38,6 +38,8 @@
 		9D38490C25F4B1E100B23F76 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D38490B25F4B1E100B23F76 /* NotificationService.swift */; };
 		9D38491025F4B1E100B23F76 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9D38490925F4B1E000B23F76 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9D38491A25F4B4C600B23F76 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = 9D38491925F4B4C600B23F76 /* OneSignal */; };
+		9D38493D25F53FC400B23F76 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D38493C25F53FC400B23F76 /* CloudKit.framework */; };
+		9D38495125F5482D00B23F76 /* GoogleService-Info-5.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D38495025F5482D00B23F76 /* GoogleService-Info-5.plist */; };
 		9D420EBB25DF02AF00A3A13D /* globalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D420EBA25DF02AF00A3A13D /* globalFunctions.swift */; };
 		9D438CB125E5E201005CC20A /* Chap1Intro.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9D438CB025E5E201005CC20A /* Chap1Intro.mov */; };
 		9D438CB925E6015F005CC20A /* postChapter15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D438CB825E6015F005CC20A /* postChapter15.swift */; };
@@ -166,27 +168,29 @@
 		9D18487C25D7A7B7007960C0 /* HintAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintAlert.swift; sourceTree = "<group>"; };
 		9D3848D525F46C4E00B23F76 /* lvl7Intro.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = lvl7Intro.mov; sourceTree = "<group>"; };
 		9D3848D625F46C4E00B23F76 /* lvl7Outro.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = lvl7Outro.mov; sourceTree = "<group>"; };
-		9D3848DF25F46DBA00B23F76 /* Tomorrow-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-ExtraLight.ttf"; path = "Tomorrow/Tomorrow-ExtraLight.ttf"; sourceTree = "<group>"; };
-		9D3848E025F46DBA00B23F76 /* Tomorrow-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-Italic.ttf"; path = "Tomorrow/Tomorrow-Italic.ttf"; sourceTree = "<group>"; };
-		9D3848E125F46DBA00B23F76 /* Tomorrow-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-Light.ttf"; path = "Tomorrow/Tomorrow-Light.ttf"; sourceTree = "<group>"; };
-		9D3848E225F46DBA00B23F76 /* Tomorrow-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-Black.ttf"; path = "Tomorrow/Tomorrow-Black.ttf"; sourceTree = "<group>"; };
-		9D3848E325F46DBA00B23F76 /* Tomorrow-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-ExtraLightItalic.ttf"; path = "Tomorrow/Tomorrow-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
-		9D3848E425F46DBA00B23F76 /* Tomorrow-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-Medium.ttf"; path = "Tomorrow/Tomorrow-Medium.ttf"; sourceTree = "<group>"; };
-		9D3848E525F46DBA00B23F76 /* Tomorrow-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-MediumItalic.ttf"; path = "Tomorrow/Tomorrow-MediumItalic.ttf"; sourceTree = "<group>"; };
-		9D3848E625F46DBA00B23F76 /* Tomorrow-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-ThinItalic.ttf"; path = "Tomorrow/Tomorrow-ThinItalic.ttf"; sourceTree = "<group>"; };
-		9D3848E725F46DBA00B23F76 /* Tomorrow-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-ExtraBold.ttf"; path = "Tomorrow/Tomorrow-ExtraBold.ttf"; sourceTree = "<group>"; };
-		9D3848E825F46DBA00B23F76 /* Tomorrow-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-BlackItalic.ttf"; path = "Tomorrow/Tomorrow-BlackItalic.ttf"; sourceTree = "<group>"; };
-		9D3848E925F46DBA00B23F76 /* Tomorrow-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-Regular.ttf"; path = "Tomorrow/Tomorrow-Regular.ttf"; sourceTree = "<group>"; };
-		9D3848EA25F46DBA00B23F76 /* Tomorrow-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-Thin.ttf"; path = "Tomorrow/Tomorrow-Thin.ttf"; sourceTree = "<group>"; };
-		9D3848EB25F46DBA00B23F76 /* Tomorrow-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-LightItalic.ttf"; path = "Tomorrow/Tomorrow-LightItalic.ttf"; sourceTree = "<group>"; };
-		9D3848EC25F46DBA00B23F76 /* Tomorrow-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-Bold.ttf"; path = "Tomorrow/Tomorrow-Bold.ttf"; sourceTree = "<group>"; };
-		9D3848ED25F46DBA00B23F76 /* Tomorrow-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-ExtraBoldItalic.ttf"; path = "Tomorrow/Tomorrow-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
-		9D3848EE25F46DBA00B23F76 /* Tomorrow-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-SemiBoldItalic.ttf"; path = "Tomorrow/Tomorrow-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
-		9D3848EF25F46DBA00B23F76 /* Tomorrow-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-SemiBold.ttf"; path = "Tomorrow/Tomorrow-SemiBold.ttf"; sourceTree = "<group>"; };
-		9D3848F025F46DBA00B23F76 /* Tomorrow-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tomorrow-BoldItalic.ttf"; path = "Tomorrow/Tomorrow-BoldItalic.ttf"; sourceTree = "<group>"; };
+		9D3848DF25F46DBA00B23F76 /* Tomorrow-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-ExtraLight.ttf"; sourceTree = "<group>"; };
+		9D3848E025F46DBA00B23F76 /* Tomorrow-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-Italic.ttf"; sourceTree = "<group>"; };
+		9D3848E125F46DBA00B23F76 /* Tomorrow-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-Light.ttf"; sourceTree = "<group>"; };
+		9D3848E225F46DBA00B23F76 /* Tomorrow-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-Black.ttf"; sourceTree = "<group>"; };
+		9D3848E325F46DBA00B23F76 /* Tomorrow-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		9D3848E425F46DBA00B23F76 /* Tomorrow-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-Medium.ttf"; sourceTree = "<group>"; };
+		9D3848E525F46DBA00B23F76 /* Tomorrow-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-MediumItalic.ttf"; sourceTree = "<group>"; };
+		9D3848E625F46DBA00B23F76 /* Tomorrow-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-ThinItalic.ttf"; sourceTree = "<group>"; };
+		9D3848E725F46DBA00B23F76 /* Tomorrow-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-ExtraBold.ttf"; sourceTree = "<group>"; };
+		9D3848E825F46DBA00B23F76 /* Tomorrow-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-BlackItalic.ttf"; sourceTree = "<group>"; };
+		9D3848E925F46DBA00B23F76 /* Tomorrow-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-Regular.ttf"; sourceTree = "<group>"; };
+		9D3848EA25F46DBA00B23F76 /* Tomorrow-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-Thin.ttf"; sourceTree = "<group>"; };
+		9D3848EB25F46DBA00B23F76 /* Tomorrow-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-LightItalic.ttf"; sourceTree = "<group>"; };
+		9D3848EC25F46DBA00B23F76 /* Tomorrow-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-Bold.ttf"; sourceTree = "<group>"; };
+		9D3848ED25F46DBA00B23F76 /* Tomorrow-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		9D3848EE25F46DBA00B23F76 /* Tomorrow-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		9D3848EF25F46DBA00B23F76 /* Tomorrow-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-SemiBold.ttf"; sourceTree = "<group>"; };
+		9D3848F025F46DBA00B23F76 /* Tomorrow-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-BoldItalic.ttf"; sourceTree = "<group>"; };
 		9D38490925F4B1E000B23F76 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D38490B25F4B1E100B23F76 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		9D38490D25F4B1E100B23F76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D38493C25F53FC400B23F76 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		9D38495025F5482D00B23F76 /* GoogleService-Info-5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info-5.plist"; path = "../../../../Downloads/GoogleService-Info-5.plist"; sourceTree = "<group>"; };
 		9D420EBA25DF02AF00A3A13D /* globalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globalFunctions.swift; sourceTree = "<group>"; };
 		9D438CB025E5E201005CC20A /* Chap1Intro.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Chap1Intro.mov; sourceTree = "<group>"; };
 		9D438CB825E6015F005CC20A /* postChapter15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postChapter15.swift; sourceTree = "<group>"; };
@@ -279,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D0C53A825C4EE13000EE579 /* AudioKit in Frameworks */,
+				9D38493D25F53FC400B23F76 /* CloudKit.framework in Frameworks */,
 				2E2C78F7A0FA24F44631CEEA /* Pods_Project_Mayhem.framework in Frameworks */,
 				9D38491A25F4B4C600B23F76 /* OneSignal in Frameworks */,
 			);
@@ -306,6 +311,7 @@
 		686C6C4E28FB66CABEEB59D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D38493C25F53FC400B23F76 /* CloudKit.framework */,
 				9D0C535B25C4DB39000EE579 /* AudioKit.framework */,
 				9D0C535A25C4DB21000EE579 /* AudioKit */,
 				3DD1F1D9679D55448FFC23C4 /* Pods_Project_Mayhem.framework */,
@@ -360,8 +366,7 @@
 				9D3848EA25F46DBA00B23F76 /* Tomorrow-Thin.ttf */,
 				9D3848E625F46DBA00B23F76 /* Tomorrow-ThinItalic.ttf */,
 			);
-			name = Tomorrow;
-			path = ../../Fonts;
+			path = Tomorrow;
 			sourceTree = "<group>";
 		};
 		9D38490A25F4B1E100B23F76 /* OneSignalNotificationServiceExtension */ = {
@@ -465,6 +470,7 @@
 		9D561387259195E700F1695A /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				9D38495025F5482D00B23F76 /* GoogleService-Info-5.plist */,
 				9D561388259195E700F1695A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -506,9 +512,9 @@
 				9DEB282F25C5D7D000E3F102 /* chapter8.swift */,
 				9DEB283325C5D7DF00E3F102 /* chapter9.swift */,
 				9DEB283725C5D7EE00E3F102 /* chapter10.swift */,
+				9D4BFC6825DE41260013D840 /* subChapter11.swift */,
 				9D74262125CA41F3008D9645 /* chapter11.swift */,
 				9D74262225CA41F3008D9645 /* chapter12.swift */,
-				9D4BFC6825DE41260013D840 /* subChapter11.swift */,
 				9D74262325CA41F3008D9645 /* chapter13.swift */,
 				9D74261F25CA41F3008D9645 /* chapter14.swift */,
 				9D74262025CA41F3008D9645 /* chapter15.swift */,
@@ -532,8 +538,7 @@
 				9DA2E9CF25F09C6000262638 /* screaming_neon.ttf */,
 				9D3848DC25F46C9C00B23F76 /* Tomorrow */,
 			);
-			name = Fonts;
-			path = Videos/Fonts;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		9DEA6A0A259515B0002A8739 /* Templates */ = {
@@ -710,6 +715,7 @@
 				9DA2E9D125F09C6000262638 /* PigpenCipher.otf in Resources */,
 				9D7DE96025E786C200F80990 /* ProjectVenomTrailer.mov in Resources */,
 				9D3848FC25F46DBA00B23F76 /* Tomorrow-Thin.ttf in Resources */,
+				9D38495125F5482D00B23F76 /* GoogleService-Info-5.plist in Resources */,
 				9DA2E9D525F09C6000262638 /* Adonay.ttf in Resources */,
 				9D5613BD259196DE00F1695A /* LaunchScreen.storyboard in Resources */,
 				9D3848D825F46C4E00B23F76 /* lvl7Outro.mov in Resources */,

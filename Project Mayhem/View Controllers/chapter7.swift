@@ -31,7 +31,7 @@ class chapter7: UIViewController {
     
     let customAlert = HintAlert()
     
-    var vidName = "Chap1Intro"
+    var vidName = "lvl7Intro"
     var pauseArray:[Double] = [10]
     var timeStamp:Double = 0.0
     var vidView:PlayerView?
@@ -59,10 +59,10 @@ class chapter7: UIViewController {
         super.viewDidAppear(animated)
         game.setValue("chap7", forKey: "active")
         funcToPass = vid1Finish
+        godThread = self
         vidName = "lvl7Intro"
         pauseArray = [39.5]
         vid()
-        godThread = self
     }
     
     func vid() {

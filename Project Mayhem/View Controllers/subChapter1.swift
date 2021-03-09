@@ -9,8 +9,6 @@ import UIKit
 import AVKit
 import LocalAuthentication
 
-
-
 class subChapter1: UIViewController {
     @IBOutlet var playerView: PlayerView!
     @IBOutlet weak var toolbar: UIStackView!
@@ -29,8 +27,10 @@ class subChapter1: UIViewController {
         super.viewDidLoad()
         game.setValue("subChap1", forKey: "active")
         funcToPass = unlock
-        video = VideoPlayer(urlAsset: vidToURL(name: vidName, type: "mov"), view: playerView, arr: pauseArray, startTime: timeStamp)
         godThread = self
+        
+        video = VideoPlayer(urlAsset: vidToURL(name: vidName, type: "mov"), view: playerView, arr: pauseArray, startTime: timeStamp)
+        
         
         flashInstructions()
         

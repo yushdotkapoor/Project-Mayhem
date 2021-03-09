@@ -28,8 +28,8 @@ class videoTemplate: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //game.setValue("subChap1", forKey: "active")
-        //video = playLocalVideo(name: "Chap1Intro", type: "mov", playView: playerView, array: pauseArray, startAt: Timestamp)
         godThread = self
+        //video = playLocalVideo(name: "Chap1Intro", type: "mov", playView: playerView, array: pauseArray, startAt: Timestamp)
         
         flashInstructions()
         

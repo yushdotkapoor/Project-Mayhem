@@ -24,6 +24,13 @@ class chapter5: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if isOnPhoneCall() {
+            let alertController = UIAlertController(title: "Error", message: "Functionality of the application will not work if you are in a call, please disconnect the call to continue playing", preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        else {
         microphone.start()
         Hz.text = ""
         progressVal = 0
@@ -33,6 +40,7 @@ class chapter5: UIViewController {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(background), name: UIApplication.willResignActiveNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(reenter), name: UIApplication.didBecomeActiveNotification, object: nil)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

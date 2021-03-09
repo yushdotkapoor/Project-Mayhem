@@ -27,8 +27,9 @@ class ProjectVenomTrailer: UIViewController {
         super.viewDidLoad()
         game.setValue("projectVenomTrailer", forKey: "active")
         funcToPass = self.ended
-        video = VideoPlayer(urlAsset: vidToURL(name: vidName, type: "mov"), view: playerView, arr: pauseArray, startTime: timeStamp)
         godThread = self
+        video = VideoPlayer(urlAsset: vidToURL(name: vidName, type: "mov"), view: playerView, arr: pauseArray, startTime: timeStamp)
+       
         
         flashInstructions()
         
