@@ -112,7 +112,7 @@
                                 <rect key="frame" x="0.0" y="44" width="428" height="788"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="2aE-lW-wLG">
-                                        <rect key="frame" x="40" y="100" width="348" height="956"/>
+                                        <rect key="frame" x="40" y="100" width="348" height="1048"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SPS-3R-K7E">
                                                 <rect key="frame" x="0.0" y="0.0" width="348" height="154"/>
@@ -174,7 +174,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Z5q-iU-wCM">
                                                 <rect key="frame" x="0.0" y="214" width="348" height="85"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vision Consolidated:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Iv-rj-1cv">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy Project Mayhem Merch" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Iv-rj-1cv">
                                                         <rect key="frame" x="0.0" y="0.0" width="348" height="20"/>
                                                         <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -188,7 +188,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="qa6-gI-VoD" secondAttribute="height" multiplier="1:1" id="0h9-xF-UMD"/>
                                                                 </constraints>
-                                                                <state key="normal" backgroundImage="website"/>
+                                                                <state key="normal" backgroundImage="shirt"/>
                                                                 <connections>
                                                                     <action selector="visionConsolidatedWebsite:" destination="fkB-KW-fdR" eventType="touchUpInside" id="TS8-nY-hWf"/>
                                                                 </connections>
@@ -317,21 +317,37 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPc-AB-s24">
+                                                <rect key="frame" x="0.0" y="944" width="348" height="32"/>
+                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                <state key="normal" title="Leave Feedback"/>
+                                                <connections>
+                                                    <action selector="feedback:" destination="fkB-KW-fdR" eventType="touchUpInside" id="tbb-IK-X2F"/>
+                                                </connections>
+                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cPc-g0-tUH">
-                                                <rect key="frame" x="0.0" y="944" width="348" height="12"/>
+                                                <rect key="frame" x="0.0" y="1036" width="348" height="12"/>
                                                 <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILS-fD-ilw">
+                                        <rect key="frame" x="136.33333333333331" y="30" width="155.33333333333331" height="35"/>
+                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="35"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="2aE-lW-wLG" firstAttribute="leading" secondItem="gfd-cY-Qhf" secondAttribute="leading" constant="40" id="Ayf-Y5-rrh"/>
+                                    <constraint firstItem="ILS-fD-ilw" firstAttribute="centerX" secondItem="gfd-cY-Qhf" secondAttribute="centerX" id="M36-aO-tPX"/>
                                     <constraint firstAttribute="bottom" secondItem="2aE-lW-wLG" secondAttribute="bottom" constant="20" id="NFb-rI-oeM"/>
+                                    <constraint firstItem="ILS-fD-ilw" firstAttribute="top" secondItem="gfd-cY-Qhf" secondAttribute="top" constant="30" id="Oab-mq-ny0"/>
                                     <constraint firstItem="2aE-lW-wLG" firstAttribute="centerX" secondItem="gfd-cY-Qhf" secondAttribute="centerX" id="Pie-ed-6p7"/>
+                                    <constraint firstItem="2aE-lW-wLG" firstAttribute="top" secondItem="ILS-fD-ilw" secondAttribute="bottom" constant="35" id="bxK-ac-bBb"/>
                                     <constraint firstAttribute="trailing" secondItem="2aE-lW-wLG" secondAttribute="trailing" constant="40" id="mAA-hL-Y1J"/>
-                                    <constraint firstItem="2aE-lW-wLG" firstAttribute="top" secondItem="gfd-cY-Qhf" secondAttribute="top" constant="100" id="rmg-pN-nOo"/>
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kkb-mQ-DHs">
@@ -346,23 +362,15 @@
                                     <segue destination="LOs-5Y-8Py" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Jbk-WL-IF2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILS-fD-ilw">
-                                <rect key="frame" x="136.33333333333331" y="64" width="155.33333333333331" height="35"/>
-                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="35"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hB1-1o-WEr"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Kkb-mQ-DHs" firstAttribute="width" secondItem="Kkb-mQ-DHs" secondAttribute="height" multiplier="1:1" id="01B-Um-90G"/>
                             <constraint firstItem="gfd-cY-Qhf" firstAttribute="top" secondItem="hB1-1o-WEr" secondAttribute="top" id="3xh-BG-1xn"/>
-                            <constraint firstItem="ILS-fD-ilw" firstAttribute="top" secondItem="hB1-1o-WEr" secondAttribute="top" constant="20" id="4CE-ZH-oqj"/>
                             <constraint firstItem="gfd-cY-Qhf" firstAttribute="centerX" secondItem="rJa-Id-L5F" secondAttribute="centerX" id="6hc-WI-IeU"/>
                             <constraint firstItem="Kkb-mQ-DHs" firstAttribute="top" secondItem="gfd-cY-Qhf" secondAttribute="bottom" id="Gn1-BD-UqL"/>
                             <constraint firstItem="hB1-1o-WEr" firstAttribute="trailing" secondItem="gfd-cY-Qhf" secondAttribute="trailing" id="SZn-oL-JwD"/>
-                            <constraint firstItem="ILS-fD-ilw" firstAttribute="centerX" secondItem="rJa-Id-L5F" secondAttribute="centerX" id="Vdd-a1-pqm"/>
                             <constraint firstItem="gfd-cY-Qhf" firstAttribute="leading" secondItem="hB1-1o-WEr" secondAttribute="leading" id="bNi-iG-9i8"/>
                             <constraint firstItem="hB1-1o-WEr" firstAttribute="bottom" secondItem="Kkb-mQ-DHs" secondAttribute="bottom" constant="10" id="eWQ-5H-Rha"/>
                             <constraint firstItem="Kkb-mQ-DHs" firstAttribute="centerX" secondItem="rJa-Id-L5F" secondAttribute="centerX" id="kvo-1I-7Uq"/>
@@ -1172,7 +1180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ClQ-Ea-NOj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2499" y="94"/>
+            <point key="canvasLocation" x="2497" y="94"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="OzT-PN-8eb">
@@ -2458,7 +2466,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ecq-3a-fG3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2498.5507246376815" y="809.59821428571422"/>
+            <point key="canvasLocation" x="2498" y="810"/>
         </scene>
         <!--Chapter11-->
         <scene sceneID="HF2-4f-MZg">
@@ -2776,7 +2784,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2O3-Xb-ab1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2498.5507246376815" y="1524.7767857142856"/>
+            <point key="canvasLocation" x="2498" y="1525"/>
         </scene>
         <!--Chapter13-->
         <scene sceneID="zW4-BG-Svb">
@@ -3886,9 +3894,6 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" backgroundImage="target" catalog="system"/>
-                                        <connections>
-                                            <action selector="goBack:" destination="NmR-ac-CpY" eventType="touchUpInside" id="Dkj-Ld-R4I"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Twd-Kc-Yg9">
                                         <rect key="frame" x="338" y="1.6666666666666643" width="50" height="47"/>
@@ -3898,6 +3903,9 @@
                                         </constraints>
                                         <color key="tintColor" systemColor="systemGreenColor"/>
                                         <state key="normal" backgroundImage="arrow.right.square.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="nextChap:" destination="NmR-ac-CpY" eventType="touchUpInside" id="SUv-gP-mek"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -3918,34 +3926,248 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="25N-mJ-aUv" id="Y3Q-Iw-AjN"/>
                         <outlet property="hint" destination="ljk-2V-0i8" id="VGC-mn-cDA"/>
                         <outlet property="nextChap" destination="Twd-Kc-Yg9" id="Ax8-n6-9Iz"/>
                         <outlet property="toolbar" destination="Y7F-J4-rOu" id="oSD-1g-I3T"/>
-                        <segue destination="GTF-CI-eye" kind="presentation" identifier="venomPreviewToHome" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="yHp-47-Fj6"/>
+                        <segue destination="evH-Ez-9ta" kind="presentation" identifier="venomPreviewToCredits" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="v8I-3t-qXH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VhZ-1A-AXW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1713" y="2267"/>
         </scene>
+        <!--Post Credits-->
+        <scene sceneID="ddF-2A-1PC">
+            <objects>
+                <viewController id="evH-Ez-9ta" customClass="postCredits" customModule="Project_Mayhem" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CGm-g9-CdZ">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCU-hK-n8E">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wYg-5p-OMd">
+                                        <rect key="frame" x="104.66666666666667" y="60" width="218.66666666666663" height="55"/>
+                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="55"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="jgJ-gE-921">
+                                        <rect key="frame" x="30" y="145" width="368" height="878"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="PIO-SP-oQC">
+                                                <rect key="frame" x="0.0" y="0.0" width="368" height="330"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vision Consolidated thanks you for playing Project Mayhem" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLP-5x-0uc">
+                                                        <rect key="frame" x="25.333333333333343" y="0.0" width="317.33333333333326" height="75"/>
+                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="25"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YhZ-Lg-mPl">
+                                                        <rect key="frame" x="82.666666666666671" y="125" width="202.66666666666663" height="90"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AUB-Ts-ds6">
+                                                                <rect key="frame" x="0.0" y="0.0" width="202.66666666666666" height="35"/>
+                                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="35"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ghi-jq-LxD">
+                                                                <rect key="frame" x="0.0" y="45" width="202.66666666666666" height="45"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ya boi," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nXS-5u-RJF">
+                                                                        <rect key="frame" x="66.666666666666657" y="0.0" width="69.666666666666657" height="20"/>
+                                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yush Raj Kapoor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5I8-24-zwh">
+                                                                        <rect key="frame" x="11.666666666666657" y="25" width="179.33333333333334" height="20"/>
+                                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="Ghi-jq-LxD" firstAttribute="centerX" secondItem="YhZ-Lg-mPl" secondAttribute="centerX" id="igd-g3-Mf6"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hPd-p0-KGE">
+                                                        <rect key="frame" x="104.66666666666667" y="265" width="158.66666666666663" height="65"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music By" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uKU-hh-zCb">
+                                                                <rect key="frame" x="0.0" y="0.0" width="158.66666666666666" height="35"/>
+                                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="35"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dhruv Goel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sPf-Ht-yvi">
+                                                                <rect key="frame" x="0.0" y="45" width="158.66666666666666" height="20"/>
+                                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="sPf-Ht-yvi" firstAttribute="centerX" secondItem="hPd-p0-KGE" secondAttribute="centerX" id="FPB-fR-qZM"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="jHL-sV-Dcf">
+                                                <rect key="frame" x="0.0" y="420" width="368" height="458"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oq9-hf-ZeE">
+                                                        <rect key="frame" x="14" y="0.0" width="340" height="105"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy Our Merch" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GZY-7c-rMH">
+                                                                <rect key="frame" x="28.666666666666686" y="0.0" width="283" height="35"/>
+                                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="35"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We have hoodies, shirts, masks, and more! Tap the picture to Check it out!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsU-gY-OFU">
+                                                                <rect key="frame" x="0.0" y="45" width="340" height="60"/>
+                                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFv-Qy-p9b">
+                                                        <rect key="frame" x="20" y="130" width="328" height="328"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="kFv-Qy-p9b" secondAttribute="height" multiplier="1:1" id="Mjz-T0-1Rz"/>
+                                                        </constraints>
+                                                        <state key="normal" backgroundImage="mayhemHat"/>
+                                                        <connections>
+                                                            <action selector="merchSite:" destination="evH-Ez-9ta" eventType="touchUpInside" id="tyx-us-9C8"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="kFv-Qy-p9b" firstAttribute="leading" secondItem="jHL-sV-Dcf" secondAttribute="leading" constant="20" id="Lhp-L7-Knq"/>
+                                                    <constraint firstAttribute="trailing" secondItem="kFv-Qy-p9b" secondAttribute="trailing" constant="20" id="sZu-nl-Wf9"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfb-Tv-4b5">
+                                        <rect key="frame" x="128.66666666666666" y="1263" width="170.99999999999997" height="32"/>
+                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                        <state key="normal" title="Leave Feedback"/>
+                                        <connections>
+                                            <action selector="feedback:" destination="evH-Ez-9ta" eventType="touchUpInside" id="sRb-E5-QzZ"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Those who thrive in Mayhem, are the silent rulers of all&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkW-qH-Ex9">
+                                        <rect key="frame" x="30" y="1123" width="368" height="40"/>
+                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="wYg-5p-OMd" firstAttribute="centerX" secondItem="wCU-hK-n8E" secondAttribute="centerX" id="0dV-QV-yQ8"/>
+                                    <constraint firstItem="pkW-qH-Ex9" firstAttribute="centerX" secondItem="wCU-hK-n8E" secondAttribute="centerX" id="4Xh-yq-amb"/>
+                                    <constraint firstAttribute="bottom" secondItem="jfb-Tv-4b5" secondAttribute="bottom" constant="129" id="6ka-iZ-YgG"/>
+                                    <constraint firstItem="jfb-Tv-4b5" firstAttribute="top" secondItem="pkW-qH-Ex9" secondAttribute="bottom" constant="100" id="71N-Wo-jAu"/>
+                                    <constraint firstItem="pkW-qH-Ex9" firstAttribute="leading" secondItem="wCU-hK-n8E" secondAttribute="leading" constant="30" id="WLW-e7-TgK"/>
+                                    <constraint firstItem="jgJ-gE-921" firstAttribute="top" secondItem="wYg-5p-OMd" secondAttribute="bottom" constant="30" id="cWc-6T-1mS"/>
+                                    <constraint firstItem="wYg-5p-OMd" firstAttribute="top" secondItem="wCU-hK-n8E" secondAttribute="top" constant="60" id="iBZ-5P-1Mc"/>
+                                    <constraint firstItem="jfb-Tv-4b5" firstAttribute="centerX" secondItem="wCU-hK-n8E" secondAttribute="centerX" id="iKp-4a-zcu"/>
+                                    <constraint firstItem="jgJ-gE-921" firstAttribute="leading" secondItem="wCU-hK-n8E" secondAttribute="leading" constant="30" id="kdz-qI-Kw3"/>
+                                    <constraint firstItem="pkW-qH-Ex9" firstAttribute="top" secondItem="jgJ-gE-921" secondAttribute="bottom" constant="100" id="kmr-ZH-Reo"/>
+                                    <constraint firstAttribute="trailing" secondItem="jgJ-gE-921" secondAttribute="trailing" constant="30" id="vG1-Ie-ITN"/>
+                                    <constraint firstAttribute="trailing" secondItem="pkW-qH-Ex9" secondAttribute="trailing" constant="30" id="wZN-Dz-QKM"/>
+                                </constraints>
+                            </scrollView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="SvG-vC-zAC">
+                                <rect key="frame" x="20" y="832" width="388" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQh-Ss-fxU">
+                                        <rect key="frame" x="0.0" y="-0.66666666666666785" width="50" height="51"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="bce-11-uOv"/>
+                                            <constraint firstAttribute="width" secondItem="RQh-Ss-fxU" secondAttribute="height" multiplier="1:1" id="kFn-Zi-4UP"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemYellowColor"/>
+                                        <state key="normal" backgroundImage="lightbulb.fill" catalog="system"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFE-ye-x7P">
+                                        <rect key="frame" x="169" y="1" width="50" height="48.666666666666671"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="fFE-ye-x7P" secondAttribute="height" multiplier="1:1" id="jSm-MX-Gd9"/>
+                                            <constraint firstAttribute="width" constant="50" id="u1n-Uh-WI8"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" backgroundImage="target" catalog="system"/>
+                                        <connections>
+                                            <action selector="goBack:" destination="evH-Ez-9ta" eventType="touchUpInside" id="MHL-Mr-pHN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wA-lt-XeQ">
+                                        <rect key="frame" x="338" y="1.6666666666666643" width="50" height="47"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="eZu-D8-oDy"/>
+                                            <constraint firstAttribute="width" secondItem="8wA-lt-XeQ" secondAttribute="height" multiplier="1:1" id="qM7-LD-ofI"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemGreenColor"/>
+                                        <state key="normal" backgroundImage="arrow.right.square.fill" catalog="system"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="8wA-lt-XeQ" firstAttribute="width" secondItem="8wA-lt-XeQ" secondAttribute="height" multiplier="1:1" id="916-j2-AKE"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ly0-PE-H9d"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wCU-hK-n8E" firstAttribute="trailing" secondItem="ly0-PE-H9d" secondAttribute="trailing" id="0oP-tM-SMH"/>
+                            <constraint firstItem="wCU-hK-n8E" firstAttribute="centerX" secondItem="CGm-g9-CdZ" secondAttribute="centerX" id="1SD-4L-czz"/>
+                            <constraint firstAttribute="bottom" secondItem="wCU-hK-n8E" secondAttribute="bottom" id="B1Z-a0-XRn"/>
+                            <constraint firstItem="wCU-hK-n8E" firstAttribute="top" secondItem="CGm-g9-CdZ" secondAttribute="top" id="T0j-Fe-cLB"/>
+                            <constraint firstItem="ly0-PE-H9d" firstAttribute="bottom" secondItem="SvG-vC-zAC" secondAttribute="bottom" constant="10" id="YgV-qK-DqV"/>
+                            <constraint firstItem="ly0-PE-H9d" firstAttribute="trailing" secondItem="SvG-vC-zAC" secondAttribute="trailing" constant="20" id="gc1-7b-9Dt"/>
+                            <constraint firstItem="SvG-vC-zAC" firstAttribute="leading" secondItem="ly0-PE-H9d" secondAttribute="leading" constant="20" id="r1C-2u-XHS"/>
+                            <constraint firstItem="wCU-hK-n8E" firstAttribute="leading" secondItem="ly0-PE-H9d" secondAttribute="leading" id="xf0-M6-hd1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="hint" destination="RQh-Ss-fxU" id="yCK-Mk-vPk"/>
+                        <outlet property="nextChap" destination="8wA-lt-XeQ" id="NVz-3R-ENB"/>
+                        <outlet property="toolbar" destination="SvG-vC-zAC" id="TZX-cy-xXq"/>
+                        <segue destination="GTF-CI-eye" kind="presentation" identifier="postCreditsToHome" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="RdG-kq-cY7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dzZ-6n-l1a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2495.3271028037384" y="2266.5226781857455"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YpZ-NR-fiI"/>
+        <segue reference="8eE-Im-0TI"/>
         <segue reference="gzU-Ae-XQS"/>
-        <segue reference="Fs4-JY-ETg"/>
-        <segue reference="kju-Ul-nqJ"/>
-        <segue reference="7ds-ad-yt1"/>
-        <segue reference="pGP-Mq-ek9"/>
-        <segue reference="M5Z-aZ-g0d"/>
-        <segue reference="RvQ-UE-tQi"/>
-        <segue reference="xf8-3T-zHd"/>
-        <segue reference="suA-ve-50D"/>
-        <segue reference="3Rt-Ua-3z9"/>
-        <segue reference="haB-wX-Ht8"/>
+        <segue reference="dHH-0f-i87"/>
+        <segue reference="j8f-cg-Hji"/>
+        <segue reference="9I8-69-dGt"/>
+        <segue reference="8va-rm-XAP"/>
+        <segue reference="dbV-cl-syM"/>
+        <segue reference="9rP-sF-Yht"/>
+        <segue reference="o2i-uy-ToW"/>
+        <segue reference="3Az-ps-1h0"/>
+        <segue reference="WVd-jK-rxp"/>
+        <segue reference="hHU-xE-2Nw"/>
         <segue reference="C8e-VB-o7G"/>
         <segue reference="Fhg-H5-PTW"/>
-        <segue reference="J9s-s4-0U4"/>
-        <segue reference="qpn-tc-Lza"/>
+        <segue reference="lvv-Yn-sCd"/>
+        <segue reference="ohR-Mk-EQe"/>
         <segue reference="Jbk-WL-IF2"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -3972,12 +4194,14 @@
         <image name="low_Tide" width="4096" height="2160"/>
         <image name="lvl15Normal" width="596" height="596"/>
         <image name="lvl4_0" width="1479" height="2500"/>
+        <image name="mayhemHat" width="1024" height="1024"/>
         <image name="music_Sheets" width="2333" height="3500"/>
         <image name="naushwenstein_castle" width="4000" height="6000"/>
         <image name="paypal" width="100" height="100"/>
         <image name="remote_Road" width="2048" height="3388"/>
         <image name="rose" width="4000" height="6000"/>
         <image name="settings_icon" width="256" height="256"/>
+        <image name="shirt" width="64" height="64"/>
         <image name="soundcloud" width="64" height="64"/>
         <image name="target" catalog="system" width="128" height="121"/>
         <image name="textformat.size.smaller" catalog="system" width="128" height="122"/>

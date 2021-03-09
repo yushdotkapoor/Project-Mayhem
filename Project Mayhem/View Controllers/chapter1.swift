@@ -23,6 +23,9 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var toolbar: UIStackView!
     
+    var skipVal = ["chap1", "chap2", "chap3", "chap4", "chap5", "chap6", "chap7", "chap8", "chap9", "chap10", "chap11", "chap12", "chap13", "chap14", "preChap15"]
+    var skippable = ["medulla", "frontalCortex", "cerebellum", "occipitalLobe", "opticChiasm", "lateralGeniculateNucleus", "supramarginalGyrus", "HerschlsGyrus", "amygdala", "thalamus", "hippocampus", "fusiformGyrus", "corpusCallosum", "lateralVentricle", "duraMater"]
+    
     let notificationCenter = NotificationCenter.default
     
     override func viewDidLoad() {
@@ -122,7 +125,8 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     
     @IBAction func submitName(_ sender: Any) {
         let name = nameField.text
-        let gameName = game.string(forKey: "name")
+        if !skip() {
+            let gameName = game.string(forKey: "name")
         if gameName != name {
             let alertController = UIAlertController(title: "Please advise", message: "This name conflicts with the name you gave before: \(gameName!). Would you like to change your name from \(gameName!) to \(name!)?", preferredStyle: .alert)
             let yes = UIAlertAction(title: "Yes", style: .default, handler: { action in
@@ -136,6 +140,7 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
         }
         else {
             setName(name: name!)
+        }
         }
     }
     
@@ -173,6 +178,17 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
             //alert the user that the field cannot be blank
             alert(title: "Error", message: "You must enter your name in the provided field. Otherwise, I cannot trust you.", actionTitle: "OK")
         }
+    }
+    
+    func skip() -> Bool {
+        for (index,val) in skippable.enumerated() {
+            if (val.lowercased() == nameField.text?.lowercased()) {
+                game.setValue(true, forKey: skipVal[index])
+                alert(title: "Level Skip Notification", message: "level code " + skipVal[index] + " has been skipped", actionTitle: "thx")
+            return true
+            }
+        }
+        return false
     }
     
     

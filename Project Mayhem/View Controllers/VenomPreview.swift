@@ -11,11 +11,12 @@ class VenomPreview: UIViewController {
 @IBOutlet weak var nextChap: UIButton!
 @IBOutlet weak var hint: UIButton!
 @IBOutlet weak var toolbar: UIStackView!
-
+    @IBOutlet weak var backButton: UIButton!
+    
 override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    nextChap.alpha = 0.0
-    nextChap.isUserInteractionEnabled = false
+    backButton.alpha = 0.0
+    backButton.isUserInteractionEnabled = false
     hint.alpha = 0.0
     hint.isUserInteractionEnabled = false
     game.setValue("projectVenom", forKey: "active")
@@ -26,10 +27,10 @@ override func viewDidAppear(_ animated: Bool) {
     game.setValue(true, forKey: "projectVenom")
 }
 
-
-@IBAction func goBack(_ sender: Any) {
-self.performSegue(withIdentifier: "venomPreviewToHome", sender: nil)
-}
+    @IBAction func nextChap(_ sender: Any) {
+        self.performSegue(withIdentifier: "venomPreviewToCredits", sender: nil)
+    }
+    
 
 }
 

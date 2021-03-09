@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class Credits: UIViewController {
+class Credits: UIViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var donateLabel: UILabel!
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var flashingSwitch: UISwitch!
@@ -29,10 +30,12 @@ class Credits: UIViewController {
         donateLabel.addGestureRecognizer(tapGesture)
         
     }
+    @IBAction func feedback(_ sender: Any) {
+        sendEmail()
+    }
     
     @IBAction func visionConsolidatedWebsite(_ sender: Any) {
-        openLink(st: "https://visionconsolidated.wixsite.com/website")
-    }
+        openLink(st: "https://visionconsolidated.wixsite.com/website/project-mayhem-shop")    }
     
     @IBAction func paypal(_ sender: Any) {
         openLink(st: "https://www.paypal.com/paypalme/yushkapoor")
@@ -70,6 +73,24 @@ class Credits: UIViewController {
         let state = flashingSwitch.isOn
         game.setValue(state, forKey: "photosensitive")
     }
+    
+    func sendEmail() {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["visionconsolidated@gmail.com"])
+            mail.setSubject("Project Mayhem Feedback")
+
+            present(mail, animated: true)
+        } else {
+            // show failure alert
+        }
+    }
+
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
+    
     
     
 }

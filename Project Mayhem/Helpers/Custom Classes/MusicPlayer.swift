@@ -44,7 +44,7 @@ class MusicPlayer {
     }
     
     func updateVolumeLow() {
-        let vol = game.float(forKey: "volume") * 0.2
+        let vol = game.float(forKey: "volume") * 0.1
         audioPlayer?.volume = vol
     }
 }
