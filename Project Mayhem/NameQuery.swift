@@ -33,7 +33,8 @@ class NameQuery: UIViewController {
         impact(style: .heavy)
         stack.fadeOut()
         game.setValue(false, forKey: "photosensitive")
-        self.performSegue(withIdentifier: "NameQueryToLevels", sender: nil)
+        alert(title: "Just a heads up...", message: "The app will soon prompt you for a lot of permissions including microphone, camera, notifications, etc. that will all be part of Project Mayhem. Project Mayhem will not use this information for any other purpose except for the game itself.", actionTitle: "Got it!") {
+            self.performSegue(withIdentifier: "NameQueryToLevels", sender: nil)
+        }
     }
-    
 }

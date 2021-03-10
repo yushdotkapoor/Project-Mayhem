@@ -65,7 +65,7 @@ class Listen {
     
     func start() {
         print("Audio kit start")
-        Settings.audioInputEnabled = true
+        //Settings.audioInputEnabled = true
         
         do {
             try engine.start()

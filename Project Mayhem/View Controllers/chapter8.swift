@@ -19,7 +19,6 @@ class chapter8: UIViewController {
     
     let customAlert = HintAlert()
     
-    
     override func viewDidLoad() {
            super.viewDidLoad()
         settings.alpha = 0.1
@@ -113,7 +112,6 @@ class chapter8: UIViewController {
         changed()
     }
     
-
     @IBAction func hint(_ sender: Any) {
         if menuState {
             //if menu open and want to close
@@ -129,7 +127,6 @@ class chapter8: UIViewController {
             customAlert.showAlert(message: "What's that on the top right?", viewController: self, hintButton: hint)
             view.bringSubviewToFront(toolbar)
         }
-        
     }
     
     func dismissAlert() {

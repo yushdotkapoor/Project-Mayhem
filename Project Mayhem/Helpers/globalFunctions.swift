@@ -15,6 +15,7 @@ var ripplingView:UIView?
 var talk:speechModule?
 var wordToSearch:[String]?
 var funcToPass:(() -> Void)?
+var tomorrow = UIFont(name: "Tomorrow Regular", size: 20)
 
 func wait(time: Float, actions: @escaping () -> Void) {
     let timeInterval = TimeInterval(time)

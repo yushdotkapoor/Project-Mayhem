@@ -7,28 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E2C78F7A0FA24F44631CEEA /* Pods_Project_Mayhem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD1F1D9679D55448FFC23C4 /* Pods_Project_Mayhem.framework */; };
-		76C8679125D64E40ADBCC9F7 /* Pods_Project_Mayhem_Project_MayhemUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85EE15C35486E22CC94021A /* Pods_Project_Mayhem_Project_MayhemUITests.framework */; };
-		996B405403970228E743082D /* Pods_Project_MayhemTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA19177C2993D8BC26D9AC75 /* Pods_Project_MayhemTests.framework */; };
-		9D0C536225C4DB3D000EE579 /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9D0C53A825C4EE13000EE579 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D0C53A725C4EE13000EE579 /* AudioKit */; };
 		9D0C543D25C50F97000EE579 /* audioKitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C543C25C50F97000EE579 /* audioKitHelpers.swift */; };
 		9D0C544125C51AA7000EE579 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C544025C51AA7000EE579 /* UIViewControllerExtensions.swift */; };
 		9D18487D25D7A7B7007960C0 /* HintAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D18487C25D7A7B7007960C0 /* HintAlert.swift */; };
+		9D2CF82725F866990038C8B7 /* 01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9D2CF82525F866990038C8B7 /* 01.wav */; };
 		9D3848D725F46C4E00B23F76 /* lvl7Intro.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9D3848D525F46C4E00B23F76 /* lvl7Intro.mov */; };
 		9D3848D825F46C4E00B23F76 /* lvl7Outro.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9D3848D625F46C4E00B23F76 /* lvl7Outro.mov */; };
-		9D38490C25F4B1E100B23F76 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D38490B25F4B1E100B23F76 /* NotificationService.swift */; };
-		9D38491025F4B1E100B23F76 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9D38490925F4B1E000B23F76 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		9D38491A25F4B4C600B23F76 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = 9D38491925F4B4C600B23F76 /* OneSignal */; };
-		9D38493D25F53FC400B23F76 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D38493C25F53FC400B23F76 /* CloudKit.framework */; };
-		9D38495125F5482D00B23F76 /* GoogleService-Info-5.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D38495025F5482D00B23F76 /* GoogleService-Info-5.plist */; };
 		9D420EBB25DF02AF00A3A13D /* globalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D420EBA25DF02AF00A3A13D /* globalFunctions.swift */; };
 		9D438CB125E5E201005CC20A /* Chap1Intro.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9D438CB025E5E201005CC20A /* Chap1Intro.mov */; };
 		9D438CB925E6015F005CC20A /* postChapter15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D438CB825E6015F005CC20A /* postChapter15.swift */; };
 		9D4BFC6925DE41260013D840 /* subChapter11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4BFC6825DE41260013D840 /* subChapter11.swift */; };
 		9D4BFC7525DE5FF00013D840 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4BFC7425DE5FF00013D840 /* PlayerView.swift */; };
 		9D4BFC7925DE600C0013D840 /* VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4BFC7825DE600C0013D840 /* VideoPlayer.swift */; };
-		9D4FBDED25F368E1005DB212 /* 01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9D4FBDEC25F368E1005DB212 /* 01.wav */; };
 		9D561384259195E600F1695A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D561383259195E600F1695A /* ContentView.swift */; };
 		9D561386259195E700F1695A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D561385259195E700F1695A /* Assets.xcassets */; };
 		9D561389259195E700F1695A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D561388259195E700F1695A /* Preview Assets.xcassets */; };
@@ -42,7 +32,6 @@
 		9D5614DE2592A00200F1695A /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5614DD2592A00200F1695A /* Levels.swift */; };
 		9D5614E32592FC5F00F1695A /* CustomButtonOutline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5614E22592FC5F00F1695A /* CustomButtonOutline.swift */; };
 		9D5614E82593153C00F1695A /* chapter1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5614E72593153C00F1695A /* chapter1.swift */; };
-		9D56338D25EE173900F123DC /* pp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9D56338C25EE173900F123DC /* pp.wav */; };
 		9D5B42BA259C858100A4F34A /* chapter4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B42B9259C858100A4F34A /* chapter4.swift */; };
 		9D5B42C5259C97FB00A4F34A /* animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B42C4259C97FB00A4F34A /* animations.swift */; };
 		9D6C28E725DCCC950039D12C /* MessageAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C28E625DCCC950039D12C /* MessageAlert.swift */; };
@@ -62,6 +51,10 @@
 		9D8B292E25DC189A007750DF /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8B292D25DC189A007750DF /* CALayerExtension.swift */; };
 		9D8C42AF25C7BE5C0039F857 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9D8C42AE25C7BE5C0039F857 /* Settings.bundle */; };
 		9D8C42BF25C7F9C30039F857 /* nonPastableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C42BE25C7F9C30039F857 /* nonPastableTextField.swift */; };
+		9D92875A25F86DD7005170A1 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D92875925F86DD7005170A1 /* AudioKit */; };
+		9D92877625F86F44005170A1 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = 9D92877525F86F44005170A1 /* OneSignal */; };
+		9D9287C025F8711F005170A1 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9287BF25F8711F005170A1 /* NotificationService.swift */; };
+		9D9287C425F8711F005170A1 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9D9287BD25F8711F005170A1 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9D9AA5B225F793D300C1493A /* Tomorrow-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D9AA5A025F793D200C1493A /* Tomorrow-Light.ttf */; };
 		9D9AA5B325F793D300C1493A /* Tomorrow-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D9AA5A125F793D200C1493A /* Tomorrow-SemiBoldItalic.ttf */; };
 		9D9AA5B425F793D300C1493A /* Tomorrow-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D9AA5A225F793D200C1493A /* Tomorrow-ExtraBoldItalic.ttf */; };
@@ -109,13 +102,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9D38490E25F4B1E100B23F76 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D561376259195E600F1695A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9D38490825F4B1E000B23F76;
-			remoteInfo = OneSignalNotificationServiceExtension;
-		};
 		9D561390259195E800F1695A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9D561376259195E600F1695A /* Project object */;
@@ -130,27 +116,23 @@
 			remoteGlobalIDString = 9D56137D259195E600F1695A;
 			remoteInfo = "Project Mayhem";
 		};
+		9D9287C225F8711F005170A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D561376259195E600F1695A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D9287BC25F8711F005170A1;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		9D0C535E25C4DB39000EE579 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				9D0C536225C4DB3D000EE579 /* (null) in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9D38491425F4B1E100B23F76 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				9D38491025F4B1E100B23F76 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
+				9D9287C425F8711F005170A1 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,29 +140,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3DD1F1D9679D55448FFC23C4 /* Pods_Project_Mayhem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_Mayhem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5DDC00304681805AA8BFE16B /* Pods-Project Mayhem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Mayhem.release.xcconfig"; path = "Target Support Files/Pods-Project Mayhem/Pods-Project Mayhem.release.xcconfig"; sourceTree = "<group>"; };
-		99C48B6A29085A842D6E6AF6 /* Pods-Project Mayhem-Project MayhemUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Mayhem-Project MayhemUITests.release.xcconfig"; path = "Target Support Files/Pods-Project Mayhem-Project MayhemUITests/Pods-Project Mayhem-Project MayhemUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9D0B057325C8B0DF00DB47CF /* Project Mayhem.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Project Mayhem.entitlements"; sourceTree = "<group>"; };
-		9D0C535A25C4DB21000EE579 /* AudioKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AudioKit; path = ../../Downloads/AudioKit; sourceTree = "<group>"; };
-		9D0C535B25C4DB39000EE579 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = "../../Downloads/AudioKit/AudioKit.xcframework/ios-arm64_armv7/AudioKit.framework"; sourceTree = "<group>"; };
 		9D0C543C25C50F97000EE579 /* audioKitHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audioKitHelpers.swift; sourceTree = "<group>"; };
 		9D0C544025C51AA7000EE579 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		9D18487C25D7A7B7007960C0 /* HintAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintAlert.swift; sourceTree = "<group>"; };
+		9D2CF82525F866990038C8B7 /* 01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = 01.wav; path = ../../../01.wav; sourceTree = "<group>"; };
 		9D3848D525F46C4E00B23F76 /* lvl7Intro.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = lvl7Intro.mov; sourceTree = "<group>"; };
 		9D3848D625F46C4E00B23F76 /* lvl7Outro.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = lvl7Outro.mov; sourceTree = "<group>"; };
-		9D38490925F4B1E000B23F76 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D38490B25F4B1E100B23F76 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
-		9D38490D25F4B1E100B23F76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9D38493C25F53FC400B23F76 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		9D38495025F5482D00B23F76 /* GoogleService-Info-5.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info-5.plist"; path = "../../../../Downloads/GoogleService-Info-5.plist"; sourceTree = "<group>"; };
 		9D420EBA25DF02AF00A3A13D /* globalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globalFunctions.swift; sourceTree = "<group>"; };
 		9D438CB025E5E201005CC20A /* Chap1Intro.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Chap1Intro.mov; sourceTree = "<group>"; };
 		9D438CB825E6015F005CC20A /* postChapter15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postChapter15.swift; sourceTree = "<group>"; };
 		9D4BFC6825DE41260013D840 /* subChapter11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subChapter11.swift; sourceTree = "<group>"; };
 		9D4BFC7425DE5FF00013D840 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		9D4BFC7825DE600C0013D840 /* VideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayer.swift; sourceTree = "<group>"; };
-		9D4FBDEC25F368E1005DB212 /* 01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = 01.wav; path = ../../01.wav; sourceTree = "<group>"; };
 		9D56137E259195E600F1695A /* Project Mayhem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Mayhem.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D561383259195E600F1695A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9D561385259195E700F1695A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -200,7 +172,6 @@
 		9D5614DD2592A00200F1695A /* Levels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
 		9D5614E22592FC5F00F1695A /* CustomButtonOutline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonOutline.swift; sourceTree = "<group>"; };
 		9D5614E72593153C00F1695A /* chapter1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter1.swift; sourceTree = "<group>"; };
-		9D56338C25EE173900F123DC /* pp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = pp.wav; path = ../../pp.wav; sourceTree = "<group>"; };
 		9D5B42B9259C858100A4F34A /* chapter4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter4.swift; sourceTree = "<group>"; };
 		9D5B42C4259C97FB00A4F34A /* animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animations.swift; sourceTree = "<group>"; };
 		9D6C28E625DCCC950039D12C /* MessageAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAlert.swift; sourceTree = "<group>"; };
@@ -220,6 +191,9 @@
 		9D8B292D25DC189A007750DF /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		9D8C42AE25C7BE5C0039F857 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9D8C42BE25C7F9C30039F857 /* nonPastableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nonPastableTextField.swift; sourceTree = "<group>"; };
+		9D9287BD25F8711F005170A1 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D9287BF25F8711F005170A1 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationService.swift; path = "/Users/yushrajkapoor/Desktop/Xcode/Project Mayhem/OneSignalNotificationServiceExtension/NotificationService.swift"; sourceTree = "<absolute>"; };
+		9D9287C125F8711F005170A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D9AA5A025F793D200C1493A /* Tomorrow-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-Light.ttf"; sourceTree = "<group>"; };
 		9D9AA5A125F793D200C1493A /* Tomorrow-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		9D9AA5A225F793D200C1493A /* Tomorrow-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
@@ -264,30 +238,15 @@
 		9DEB283725C5D7EE00E3F102 /* chapter10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter10.swift; sourceTree = "<group>"; };
 		9DEB283E25C6095000E3F102 /* stringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stringExtensions.swift; sourceTree = "<group>"; };
 		9DF618BE25F71F910057CFA6 /* postCredits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postCredits.swift; sourceTree = "<group>"; };
-		A85EE15C35486E22CC94021A /* Pods_Project_Mayhem_Project_MayhemUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_Mayhem_Project_MayhemUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ABED7CDB4229742E6FEF7134 /* Pods-Project MayhemTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project MayhemTests.release.xcconfig"; path = "Target Support Files/Pods-Project MayhemTests/Pods-Project MayhemTests.release.xcconfig"; sourceTree = "<group>"; };
-		BE26DA8EA970DBADE6E35441 /* Pods-Project MayhemTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project MayhemTests.debug.xcconfig"; path = "Target Support Files/Pods-Project MayhemTests/Pods-Project MayhemTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C406F0BE2B71DDB27F5FD965 /* Pods-Project Mayhem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Mayhem.debug.xcconfig"; path = "Target Support Files/Pods-Project Mayhem/Pods-Project Mayhem.debug.xcconfig"; sourceTree = "<group>"; };
-		E4628540A99DB5EC6AC5EDDB /* Pods-Project Mayhem-Project MayhemUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Mayhem-Project MayhemUITests.debug.xcconfig"; path = "Target Support Files/Pods-Project Mayhem-Project MayhemUITests/Pods-Project Mayhem-Project MayhemUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		FA19177C2993D8BC26D9AC75 /* Pods_Project_MayhemTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_MayhemTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9D38490625F4B1E000B23F76 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9D56137B259195E600F1695A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D0C53A825C4EE13000EE579 /* AudioKit in Frameworks */,
-				9D38493D25F53FC400B23F76 /* CloudKit.framework in Frameworks */,
-				2E2C78F7A0FA24F44631CEEA /* Pods_Project_Mayhem.framework in Frameworks */,
-				9D38491A25F4B4C600B23F76 /* OneSignal in Frameworks */,
+				9D92875A25F86DD7005170A1 /* AudioKit in Frameworks */,
+				9D92877625F86F44005170A1 /* OneSignal in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +254,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				996B405403970228E743082D /* Pods_Project_MayhemTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,39 +261,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76C8679125D64E40ADBCC9F7 /* Pods_Project_Mayhem_Project_MayhemUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D9287BA25F8711F005170A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		686C6C4E28FB66CABEEB59D1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9D38493C25F53FC400B23F76 /* CloudKit.framework */,
-				9D0C535B25C4DB39000EE579 /* AudioKit.framework */,
-				9D0C535A25C4DB21000EE579 /* AudioKit */,
-				3DD1F1D9679D55448FFC23C4 /* Pods_Project_Mayhem.framework */,
-				A85EE15C35486E22CC94021A /* Pods_Project_Mayhem_Project_MayhemUITests.framework */,
-				FA19177C2993D8BC26D9AC75 /* Pods_Project_MayhemTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		90E02D21C2433C4DDF373F30 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C406F0BE2B71DDB27F5FD965 /* Pods-Project Mayhem.debug.xcconfig */,
-				5DDC00304681805AA8BFE16B /* Pods-Project Mayhem.release.xcconfig */,
-				E4628540A99DB5EC6AC5EDDB /* Pods-Project Mayhem-Project MayhemUITests.debug.xcconfig */,
-				99C48B6A29085A842D6E6AF6 /* Pods-Project Mayhem-Project MayhemUITests.release.xcconfig */,
-				BE26DA8EA970DBADE6E35441 /* Pods-Project MayhemTests.debug.xcconfig */,
-				ABED7CDB4229742E6FEF7134 /* Pods-Project MayhemTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		9D0C543B25C50F79000EE579 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,15 +282,6 @@
 				9D420EBA25DF02AF00A3A13D /* globalFunctions.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		9D38490A25F4B1E100B23F76 /* OneSignalNotificationServiceExtension */ = {
-			isa = PBXGroup;
-			children = (
-				9D38490B25F4B1E100B23F76 /* NotificationService.swift */,
-				9D38490D25F4B1E100B23F76 /* Info.plist */,
-			);
-			path = OneSignalNotificationServiceExtension;
 			sourceTree = "<group>";
 		};
 		9D420EBE25DF02E500A3A13D /* Extensions */ = {
@@ -403,10 +332,8 @@
 				9D561380259195E600F1695A /* Project Mayhem */,
 				9D561392259195E800F1695A /* Project MayhemTests */,
 				9D56139D259195E800F1695A /* Project MayhemUITests */,
-				9D38490A25F4B1E100B23F76 /* OneSignalNotificationServiceExtension */,
+				9D9287BE25F8711F005170A1 /* OneSignalNotificationServiceExtension */,
 				9D56137F259195E600F1695A /* Products */,
-				90E02D21C2433C4DDF373F30 /* Pods */,
-				686C6C4E28FB66CABEEB59D1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -416,7 +343,7 @@
 				9D56137E259195E600F1695A /* Project Mayhem.app */,
 				9D56138F259195E800F1695A /* Project MayhemTests.xctest */,
 				9D56139A259195E800F1695A /* Project MayhemUITests.xctest */,
-				9D38490925F4B1E000B23F76 /* OneSignalNotificationServiceExtension.appex */,
+				9D9287BD25F8711F005170A1 /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -430,8 +357,7 @@
 				9D561385259195E700F1695A /* Assets.xcassets */,
 				9D56142F2591DC5400F1695A /* AppDelegate.swift */,
 				9D5613BC259196DE00F1695A /* LaunchScreen.storyboard */,
-				9D56338C25EE173900F123DC /* pp.wav */,
-				9D4FBDEC25F368E1005DB212 /* 01.wav */,
+				9D2CF82525F866990038C8B7 /* 01.wav */,
 				9D56138A259195E700F1695A /* Info.plist */,
 				9D8C42AE25C7BE5C0039F857 /* Settings.bundle */,
 				9D0C543B25C50F79000EE579 /* Helpers */,
@@ -447,7 +373,6 @@
 		9D561387259195E700F1695A /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				9D38495025F5482D00B23F76 /* GoogleService-Info-5.plist */,
 				9D561388259195E700F1695A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -504,6 +429,15 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		9D9287BE25F8711F005170A1 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				9D9287BF25F8711F005170A1 /* NotificationService.swift */,
+				9D9287C125F8711F005170A1 /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
 		9DA2E9C725F09C2E00262638 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -551,43 +485,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9D38490825F4B1E000B23F76 /* OneSignalNotificationServiceExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9D38491125F4B1E100B23F76 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
-			buildPhases = (
-				9D38490525F4B1E000B23F76 /* Sources */,
-				9D38490625F4B1E000B23F76 /* Frameworks */,
-				9D38490725F4B1E000B23F76 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = OneSignalNotificationServiceExtension;
-			productName = OneSignalNotificationServiceExtension;
-			productReference = 9D38490925F4B1E000B23F76 /* OneSignalNotificationServiceExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		9D56137D259195E600F1695A /* Project Mayhem */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D5613A3259195E800F1695A /* Build configuration list for PBXNativeTarget "Project Mayhem" */;
 			buildPhases = (
-				E49A3200C02911184E9E32CC /* [CP] Check Pods Manifest.lock */,
 				9D56137A259195E600F1695A /* Sources */,
 				9D56137B259195E600F1695A /* Frameworks */,
 				9D56137C259195E600F1695A /* Resources */,
-				9D0C535E25C4DB39000EE579 /* Embed Frameworks */,
 				9D38491425F4B1E100B23F76 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9D38490F25F4B1E100B23F76 /* PBXTargetDependency */,
+				9D9287C325F8711F005170A1 /* PBXTargetDependency */,
 			);
 			name = "Project Mayhem";
 			packageProductDependencies = (
-				9D0C53A725C4EE13000EE579 /* AudioKit */,
-				9D38491925F4B4C600B23F76 /* OneSignal */,
+				9D92875925F86DD7005170A1 /* AudioKit */,
+				9D92877525F86F44005170A1 /* OneSignal */,
 			);
 			productName = "Project Mayhem";
 			productReference = 9D56137E259195E600F1695A /* Project Mayhem.app */;
@@ -631,18 +546,32 @@
 			productReference = 9D56139A259195E800F1695A /* Project MayhemUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		9D9287BC25F8711F005170A1 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D9287C525F8711F005170A1 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				9D9287B925F8711F005170A1 /* Sources */,
+				9D9287BA25F8711F005170A1 /* Frameworks */,
+				9D9287BB25F8711F005170A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = 9D9287BD25F8711F005170A1 /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		9D561376259195E600F1695A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1230;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
-					9D38490825F4B1E000B23F76 = {
-						CreatedOnToolsVersion = 12.3;
-					};
 					9D56137D259195E600F1695A = {
 						CreatedOnToolsVersion = 12.3;
 					};
@@ -653,6 +582,9 @@
 					9D561399259195E800F1695A = {
 						CreatedOnToolsVersion = 12.3;
 						TestTargetID = 9D56137D259195E600F1695A;
+					};
+					9D9287BC25F8711F005170A1 = {
+						CreatedOnToolsVersion = 12.4;
 					};
 				};
 			};
@@ -666,8 +598,8 @@
 			);
 			mainGroup = 9D561375259195E600F1695A;
 			packageReferences = (
-				9D0C53A625C4EE13000EE579 /* XCRemoteSwiftPackageReference "AudioKit" */,
-				9D38491825F4B4C600B23F76 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
+				9D92875825F86DD7005170A1 /* XCRemoteSwiftPackageReference "AudioKit" */,
+				9D92877425F86F44005170A1 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
 			);
 			productRefGroup = 9D56137F259195E600F1695A /* Products */;
 			projectDirPath = "";
@@ -676,25 +608,17 @@
 				9D56137D259195E600F1695A /* Project Mayhem */,
 				9D56138E259195E800F1695A /* Project MayhemTests */,
 				9D561399259195E800F1695A /* Project MayhemUITests */,
-				9D38490825F4B1E000B23F76 /* OneSignalNotificationServiceExtension */,
+				9D9287BC25F8711F005170A1 /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9D38490725F4B1E000B23F76 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9D56137C259195E600F1695A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9D9AA5B725F793D300C1493A /* Tomorrow-BoldItalic.ttf in Resources */,
-				9D56338D25EE173900F123DC /* pp.wav in Resources */,
 				9D73428725ECBDD70003D563 /* subPostChapter15.mov in Resources */,
 				9D9AA5B325F793D300C1493A /* Tomorrow-SemiBoldItalic.ttf in Resources */,
 				9D9AA5B825F793D300C1493A /* Tomorrow-SemiBold.ttf in Resources */,
@@ -706,11 +630,11 @@
 				9D9AA5B625F793D300C1493A /* Tomorrow-BlackItalic.ttf in Resources */,
 				9DA2E9D325F09C6000262638 /* aAmbyarSobat.ttf in Resources */,
 				9D9AA5BC25F793D300C1493A /* Tomorrow-ExtraLight.ttf in Resources */,
+				9D2CF82725F866990038C8B7 /* 01.wav in Resources */,
 				9DA2E9D125F09C6000262638 /* PigpenCipher.otf in Resources */,
 				9D9AA5B925F793D300C1493A /* Tomorrow-LightItalic.ttf in Resources */,
 				9D9AA5BF25F793D300C1493A /* Tomorrow-MediumItalic.ttf in Resources */,
 				9D7DE96025E786C200F80990 /* ProjectVenomTrailer.mov in Resources */,
-				9D38495125F5482D00B23F76 /* GoogleService-Info-5.plist in Resources */,
 				9DA2E9D525F09C6000262638 /* Adonay.ttf in Resources */,
 				9D9AA5C325F793D300C1493A /* Tomorrow-Black.ttf in Resources */,
 				9D9AA5C225F793D300C1493A /* Tomorrow-ExtraBold.ttf in Resources */,
@@ -721,7 +645,6 @@
 				9D9AA5BA25F793D300C1493A /* Tomorrow-Medium.ttf in Resources */,
 				9D9AA5BB25F793D300C1493A /* Tomorrow-Bold.ttf in Resources */,
 				9D438CB125E5E201005CC20A /* Chap1Intro.mov in Resources */,
-				9D4FBDED25F368E1005DB212 /* 01.wav in Resources */,
 				9D9AA5BE25F793D300C1493A /* Tomorrow-Italic.ttf in Resources */,
 				9D9AA5C125F793D300C1493A /* Tomorrow-Regular.ttf in Resources */,
 				9D9AA5B225F793D300C1493A /* Tomorrow-Light.ttf in Resources */,
@@ -742,6 +665,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		9D561398259195E800F1695A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9D9287BB25F8711F005170A1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -795,39 +725,9 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E49A3200C02911184E9E32CC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Project Mayhem-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9D38490525F4B1E000B23F76 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9D38490C25F4B1E100B23F76 /* NotificationService.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9D56137A259195E600F1695A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -901,14 +801,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9D9287B925F8711F005170A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D9287C025F8711F005170A1 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9D38490F25F4B1E100B23F76 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9D38490825F4B1E000B23F76 /* OneSignalNotificationServiceExtension */;
-			targetProxy = 9D38490E25F4B1E100B23F76 /* PBXContainerItemProxy */;
-		};
 		9D561391259195E800F1695A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9D56137D259195E600F1695A /* Project Mayhem */;
@@ -919,51 +822,14 @@
 			target = 9D56137D259195E600F1695A /* Project Mayhem */;
 			targetProxy = 9D56139B259195E800F1695A /* PBXContainerItemProxy */;
 		};
+		9D9287C325F8711F005170A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9D9287BC25F8711F005170A1 /* OneSignalNotificationServiceExtension */;
+			targetProxy = 9D9287C225F8711F005170A1 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		9D38491225F4B1E100B23F76 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_TEAM = 68L233566P;
-				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem.OneSignalNotificationServiceExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		9D38491325F4B1E100B23F76 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_TEAM = 68L233566P;
-				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem.OneSignalNotificationServiceExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
 		9D5613A1259195E800F1695A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1082,7 +948,6 @@
 		};
 		9D5613A4259195E800F1695A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C406F0BE2B71DDB27F5FD965 /* Pods-Project Mayhem.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1090,7 +955,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Project Mayhem/Project Mayhem.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"Project Mayhem/Preview Content\"";
 				DEVELOPMENT_TEAM = 68L233566P;
 				ENABLE_PREVIEWS = YES;
@@ -1110,7 +975,6 @@
 		};
 		9D5613A5259195E800F1695A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5DDC00304681805AA8BFE16B /* Pods-Project Mayhem.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1118,7 +982,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Project Mayhem/Project Mayhem.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"Project Mayhem/Preview Content\"";
 				DEVELOPMENT_TEAM = 68L233566P;
 				ENABLE_PREVIEWS = YES;
@@ -1138,7 +1002,6 @@
 		};
 		9D5613A7259195E800F1695A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE26DA8EA970DBADE6E35441 /* Pods-Project MayhemTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1160,7 +1023,6 @@
 		};
 		9D5613A8259195E800F1695A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ABED7CDB4229742E6FEF7134 /* Pods-Project MayhemTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1182,7 +1044,6 @@
 		};
 		9D5613AA259195E800F1695A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4628540A99DB5EC6AC5EDDB /* Pods-Project Mayhem-Project MayhemUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1202,7 +1063,6 @@
 		};
 		9D5613AB259195E800F1695A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99C48B6A29085A842D6E6AF6 /* Pods-Project Mayhem-Project MayhemUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1220,18 +1080,53 @@
 			};
 			name = Release;
 		};
+		9D9287C625F8711F005170A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_TEAM = 68L233566P;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		9D9287C725F8711F005170A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_TEAM = 68L233566P;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9D38491125F4B1E100B23F76 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9D38491225F4B1E100B23F76 /* Debug */,
-				9D38491325F4B1E100B23F76 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		9D561379259195E600F1695A /* Build configuration list for PBXProject "Project Mayhem" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1268,10 +1163,19 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		9D9287C525F8711F005170A1 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D9287C625F8711F005170A1 /* Debug */,
+				9D9287C725F8711F005170A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9D0C53A625C4EE13000EE579 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+		9D92875825F86DD7005170A1 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AudioKit/AudioKit";
 			requirement = {
@@ -1279,7 +1183,7 @@
 				kind = branch;
 			};
 		};
-		9D38491825F4B4C600B23F76 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */ = {
+		9D92877425F86F44005170A1 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/OneSignal/OneSignal-XCFramework";
 			requirement = {
@@ -1290,14 +1194,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9D0C53A725C4EE13000EE579 /* AudioKit */ = {
+		9D92875925F86DD7005170A1 /* AudioKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9D0C53A625C4EE13000EE579 /* XCRemoteSwiftPackageReference "AudioKit" */;
+			package = 9D92875825F86DD7005170A1 /* XCRemoteSwiftPackageReference "AudioKit" */;
 			productName = AudioKit;
 		};
-		9D38491925F4B4C600B23F76 /* OneSignal */ = {
+		9D92877525F86F44005170A1 /* OneSignal */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9D38491825F4B4C600B23F76 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			package = 9D92877425F86F44005170A1 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
 			productName = OneSignal;
 		};
 /* End XCSwiftPackageProductDependency section */

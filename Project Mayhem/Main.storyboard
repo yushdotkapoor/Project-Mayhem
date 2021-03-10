@@ -333,8 +333,8 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILS-fD-ilw">
-                                        <rect key="frame" x="136.33333333333331" y="30" width="155.33333333333331" height="35"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILS-fD-ilw">
+                                        <rect key="frame" x="20" y="30" width="388" height="35"/>
                                         <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="35"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -345,9 +345,11 @@
                                     <constraint firstItem="ILS-fD-ilw" firstAttribute="centerX" secondItem="gfd-cY-Qhf" secondAttribute="centerX" id="M36-aO-tPX"/>
                                     <constraint firstAttribute="bottom" secondItem="2aE-lW-wLG" secondAttribute="bottom" constant="20" id="NFb-rI-oeM"/>
                                     <constraint firstItem="ILS-fD-ilw" firstAttribute="top" secondItem="gfd-cY-Qhf" secondAttribute="top" constant="30" id="Oab-mq-ny0"/>
+                                    <constraint firstItem="ILS-fD-ilw" firstAttribute="leading" secondItem="gfd-cY-Qhf" secondAttribute="leading" constant="20" id="PWD-LX-dHj"/>
                                     <constraint firstItem="2aE-lW-wLG" firstAttribute="centerX" secondItem="gfd-cY-Qhf" secondAttribute="centerX" id="Pie-ed-6p7"/>
                                     <constraint firstItem="2aE-lW-wLG" firstAttribute="top" secondItem="ILS-fD-ilw" secondAttribute="bottom" constant="35" id="bxK-ac-bBb"/>
                                     <constraint firstAttribute="trailing" secondItem="2aE-lW-wLG" secondAttribute="trailing" constant="40" id="mAA-hL-Y1J"/>
+                                    <constraint firstAttribute="trailing" secondItem="ILS-fD-ilw" secondAttribute="trailing" constant="20" id="rEx-OD-EBi"/>
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kkb-mQ-DHs">
@@ -4160,14 +4162,14 @@
         <segue reference="8va-rm-XAP"/>
         <segue reference="dbV-cl-syM"/>
         <segue reference="9rP-sF-Yht"/>
-        <segue reference="o2i-uy-ToW"/>
+        <segue reference="xf8-3T-zHd"/>
         <segue reference="3Az-ps-1h0"/>
         <segue reference="WVd-jK-rxp"/>
         <segue reference="hHU-xE-2Nw"/>
         <segue reference="C8e-VB-o7G"/>
         <segue reference="Fhg-H5-PTW"/>
         <segue reference="lvv-Yn-sCd"/>
-        <segue reference="ohR-Mk-EQe"/>
+        <segue reference="rCe-fQ-YQN"/>
         <segue reference="Jbk-WL-IF2"/>
     </inferredMetricsTieBreakers>
     <resources>

@@ -1,6 +1,0 @@
-framework module Pods_Project_Mayhem_Project_MayhemUITests {
-  umbrella header "Pods-Project Mayhem-Project MayhemUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -27,8 +27,6 @@ class subPostChapter15: UIViewController {
     
     var status = ""
     
-    var tomorrow = UIFont(name: "Tomorrow Regular", size: 20)
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         game.setValue("subPostChap15", forKey: "active")

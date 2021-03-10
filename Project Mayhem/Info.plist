@@ -24,6 +24,8 @@
 	<string>Project Mayhem would like to have access to the camera</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>This app would like to use Face ID</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Project Mayhem would like to have access to location when the app is in use</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Project Mayhem would like access to your microphone</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
