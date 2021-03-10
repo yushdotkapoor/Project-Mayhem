@@ -36,7 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate {
     }
     
     func callObserver(_ callObserver: CXCallObserver, callChanged call: CXCall) {
-        
         if call.hasEnded {
             print("call ended")
             print(MusicPlayer.shared.audioPlayer!.isPlaying)

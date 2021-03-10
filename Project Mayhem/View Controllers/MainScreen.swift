@@ -11,12 +11,16 @@ class MainScreen: UIViewController {
     @IBOutlet weak var enter: CustomButton!
     @IBOutlet weak var logoCenterConstraint: NSLayoutConstraint!
     @IBOutlet weak var enterCenterConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tearDrop: CustomButton!
+    @IBOutlet weak var dropTop: NSLayoutConstraint!
     
     var touched = 0
     
     override func viewDidLoad() {
            super.viewDidLoad()
-        enter.setupButton(color: UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.0), pressColor: UIColor.black)
+        let c = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.0)
+        tearDrop.setupButton(color: c, pressColor: UIColor.black)
+        enter.setupButton(color: c, pressColor: UIColor.black)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -25,6 +29,7 @@ class MainScreen: UIViewController {
         UIView.animate(withDuration: 1.5, delay: 0.5, options: .curveEaseOut, animations: {
             self.enterCenterConstraint.constant -= self.view.bounds.width
             self.logoCenterConstraint.constant += self.view.bounds.width
+            self.dropTop.constant -= self.view.bounds.height - self.tearDrop.bounds.origin.y + 30
             self.view.layoutIfNeeded()
         }, completion: nil)
         
@@ -35,6 +40,7 @@ class MainScreen: UIViewController {
         super.viewWillAppear(animated)
         enterCenterConstraint.constant += view.bounds.width
         logoCenterConstraint.constant -= view.bounds.width
+        dropTop.constant += view.bounds.height - tearDrop.bounds.origin.y + 30
     }
     
     @IBAction func Credits(_ sender: Any) {

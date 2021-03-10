@@ -216,7 +216,7 @@ class chapter6: UIViewController {
         }
         else if text!.contains("bitch") || text!.contains("fuck") || text!.contains("shit") {
             view.endEditing(true)
-            alert(title: "Dammnnnn", message: "Those are some inappropriate words you dumb fuck, go rinse your mouth with soap.", actionTitle: "lmao don't hurt me")
+            alert(title: "Dammnnnn", message: "Those are some inappropriate words you dumb fuck, go rinse your mouth with some soap.", actionTitle: "lmao don't hurt me")
         }
         else if text != "" {
             textField.shake()
@@ -297,7 +297,7 @@ let alert = MessageAlert()
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "Seems like this is a coded message!\n\nAlso, don't curse in a castle, it's bad for our reputation.", viewController: self, hintButton: hint)
+            customAlert.showAlert(message: "Seems like this is a coded message!\n\nNote: Make sure your system haptics are turned on.\n\nAlso, don't curse in a castle, it's bad for our reputation.", viewController: self, hintButton: hint)
             view.bringSubviewToFront(toolbar)
         }
         

@@ -78,7 +78,7 @@ let alert = MessageAlert()
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        alert.showAlert(title: "Message from Defender Command", message: "Good work brainchild. You look to be very close to gaining access to Project Mayhem’s private servers. When you do, make sure to upload everything to a secure cloud. Victoria tells me you noticed a secret message in a meeting transcript. Murder? What does it mean? Did you notice anything else related to this?", viewController: self, buttonPush: #selector(dismissMessageAlert))
+        alert.showAlert(title: "Message from Defender Command", message: "Good work, Brainchild. You look to be very close to gaining access to Project Mayhem’s private servers. When you do, make sure to upload everything to a secure cloud. Victoria tells me you noticed a secret message in a meeting transcript. Murder? What does it mean? Did you notice anything else related to this?", viewController: self, buttonPush: #selector(dismissMessageAlert))
         view.bringSubviewToFront(toolbar)
     }
     

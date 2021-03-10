@@ -46,6 +46,7 @@ class Levels: UIViewController {
     @IBOutlet weak var chap13Center: NSLayoutConstraint!
     @IBOutlet weak var chap14Center: NSLayoutConstraint!
     @IBOutlet weak var chap15Center: NSLayoutConstraint!
+    @IBOutlet weak var logo: UIImageView!
     
     var del = 0.5
     
@@ -57,6 +58,16 @@ class Levels: UIViewController {
         //reset()
         //loadAll()
         MusicPlayer.shared.updateVolume()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.backTapped(gesture:)))
+        logo.addGestureRecognizer(tapGesture)
+        logo.isUserInteractionEnabled = true
+        
+    }
+    
+    @objc func backTapped(gesture: UIGestureRecognizer) {
+        performSegue(withIdentifier: "levelsToMain", sender: nil)
+        
     }
     
     func reset() {

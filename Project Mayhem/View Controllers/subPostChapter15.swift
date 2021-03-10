@@ -17,7 +17,7 @@ class subPostChapter15: UIViewController {
     @IBOutlet weak var doubleTapInstructions: UILabel!
     @IBOutlet weak var back: UIButton!
     
-    let pauseArray:[Double] = [9, 15, 38.5, 61.9, 65, 70.3, 107]
+    let pauseArray:[Double] = [9, 15, 38.5, 61.9, 64.5, 70.3, 107]
     
     var timeStamp:Double = 0.0
     

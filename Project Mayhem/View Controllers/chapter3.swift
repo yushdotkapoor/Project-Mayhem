@@ -13,6 +13,7 @@ class chapter3: UIViewController {
     @IBOutlet weak var toolbar: UIStackView!
     @IBOutlet weak var stack: UIStackView!
     @IBOutlet weak var message: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     let customAlert = HintAlert()
     
@@ -95,6 +96,7 @@ class chapter3: UIViewController {
                 self.button4.frame.origin.x += self.view.bounds.width
                 
             }, completion: { _ in
+                self.scrollView.flashScrollIndicators()
                 self.stack.fadeIn()
                 wait {
                     self.complete()
