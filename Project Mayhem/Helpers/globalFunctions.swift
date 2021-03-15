@@ -20,7 +20,7 @@ var tomorrow = UIFont(name: "Tomorrow", size: 20)
 var videosCurrentlyDownloading = false
 
 let database = CKContainer.default().publicCloudDatabase
-let vidArr = ["Chap1Intro", "ProjectVenomTrailer", "lvl7Intro", "lvl7Outro", "subPostChapter15"]
+let vidArr = ["Chap1Intro", "lvl7Intro", "lvl7Outro", "subPostChapter15", "ProjectVenomTrailer"]
 var urlDict = [String: NSURL]()
 
 func wait(time: Float, actions: @escaping () -> Void) {
@@ -137,7 +137,7 @@ func downloadVideos() {
     }
 }
 
-func uploadVideo() {
+func uploadVideos() {
     for vid in vidArr {
         let url = vidToURL(name: vid, type: "mov")
         
@@ -150,7 +150,10 @@ func uploadVideo() {
         print("uploading \(vid)")
         database.save(videoRecord) { (record, error) -> Void in
             if error == nil {
-                print("\(vid) uploaded successful")
+                if urlDict.count == vidArr.count {
+                    print("\n\nVideo Uploads Complete\n\n")
+                }
+                print("\(vid) uploaded successfully")
             } else {
                 print(error!)
             }

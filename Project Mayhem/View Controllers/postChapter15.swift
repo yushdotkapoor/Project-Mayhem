@@ -225,7 +225,7 @@ class postChapter15: UIViewController {
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "The answer is not in this level. There is one thing that every single level before this has in common. I spy with my little eye...", viewController: self, hintButton: hint)
+            customAlert.showAlert(message: "The answer is not in this level. Look closely 👁️", viewController: self, hintButton: hint)
             view.bringSubviewToFront(toolbar)
         }
         

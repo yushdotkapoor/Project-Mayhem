@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9D03D82725F92E47008A2F33 /* Between0And1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9D03D82625F92E47008A2F33 /* Between0And1.wav */; };
 		9D0B0AD425FEBA3100C3B1F5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0B0AD325FEBA3100C3B1F5 /* CloudKit.framework */; };
+		9D0B0ADE25FEE3CD00C3B1F5 /* Between0And1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9D0B0ADD25FEE3CD00C3B1F5 /* Between0And1.m4a */; };
 		9D0C543D25C50F97000EE579 /* audioKitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C543C25C50F97000EE579 /* audioKitHelpers.swift */; };
 		9D0C544125C51AA7000EE579 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C544025C51AA7000EE579 /* UIViewControllerExtensions.swift */; };
 		9D18487D25D7A7B7007960C0 /* HintAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D18487C25D7A7B7007960C0 /* HintAlert.swift */; };
@@ -124,9 +124,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9D03D82625F92E47008A2F33 /* Between0And1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Between0And1.wav; sourceTree = "<group>"; };
 		9D0B057325C8B0DF00DB47CF /* Project Mayhem.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Project Mayhem.entitlements"; sourceTree = "<group>"; };
 		9D0B0AD325FEBA3100C3B1F5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		9D0B0ADD25FEE3CD00C3B1F5 /* Between0And1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Between0And1.m4a; sourceTree = "<group>"; };
 		9D0C543C25C50F97000EE579 /* audioKitHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audioKitHelpers.swift; sourceTree = "<group>"; };
 		9D0C544025C51AA7000EE579 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		9D18487C25D7A7B7007960C0 /* HintAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintAlert.swift; sourceTree = "<group>"; };
@@ -334,7 +334,7 @@
 				9D561383259195E600F1695A /* ContentView.swift */,
 				9D561385259195E700F1695A /* Assets.xcassets */,
 				9D56142F2591DC5400F1695A /* AppDelegate.swift */,
-				9D03D82625F92E47008A2F33 /* Between0And1.wav */,
+				9D0B0ADD25FEE3CD00C3B1F5 /* Between0And1.m4a */,
 				9D5613BC259196DE00F1695A /* LaunchScreen.storyboard */,
 				9D56138A259195E700F1695A /* Info.plist */,
 				9D8C42AE25C7BE5C0039F857 /* Settings.bundle */,
@@ -594,9 +594,9 @@
 				9D9AA5C125F793D300C1493A /* Tomorrow.ttf in Resources */,
 				9D8C42AF25C7BE5C0039F857 /* Settings.bundle in Resources */,
 				9D3848D725F46C4E00B23F76 /* lvl7IntroCompressed.mov in Resources */,
-				9D03D82725F92E47008A2F33 /* Between0And1.wav in Resources */,
 				9DA2E9D025F09C6000262638 /* NoisyWalk.ttf in Resources */,
 				9DA2E9D625F09C6000262638 /* astro.ttf in Resources */,
+				9D0B0ADE25FEE3CD00C3B1F5 /* Between0And1.m4a in Resources */,
 				9D5613B8259196CB00F1695A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

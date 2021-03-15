@@ -148,7 +148,7 @@ let alert = MessageAlert()
         
         sceneView.scene.rootNode.addChildNode(node)
         
-        let r = SCNText(string: "r", extrusionDepth: 5)
+        let r = SCNText(string: "t", extrusionDepth: 5)
         
         let rNode = SCNNode()
         rNode.position = SCNVector3(x:0, y:0, z:-0.5)

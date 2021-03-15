@@ -21,7 +21,7 @@ class MainScreen: UIViewController {
         let c = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.0)
         tearDrop.setupButton(color: c, pressColor: UIColor.black)
         enter.setupButton(color: c, pressColor: UIColor.black)
-        //uploadVideo()
+        //uploadVideos()
         if !videosCurrentlyDownloading {
             downloadVideos()
         }
@@ -36,8 +36,6 @@ class MainScreen: UIViewController {
             self.dropTop.constant -= self.view.bounds.height - self.tearDrop.bounds.origin.y + 30
             self.view.layoutIfNeeded()
         }, completion: nil)
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
