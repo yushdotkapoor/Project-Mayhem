@@ -34,15 +34,5 @@ extension UIViewController {
                 self.vibrate(count: count - 1)
             })
         }
-    }
-    
-    func vidToURL(name: String, type: String) -> NSURL {
-        if let filePath = Bundle.main.path(forResource: name, ofType: type) {
-            let fileURL = NSURL(fileURLWithPath: filePath)
-            return fileURL
-        }
-        return NSURL()
-    }
-    
-    
+    }    
 }

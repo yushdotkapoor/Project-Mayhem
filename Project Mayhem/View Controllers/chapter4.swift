@@ -49,7 +49,7 @@ class chapter4: UIViewController {
                     self.posY = position.y
                 }
                 if error != nil {
-                    print("\(error)")
+                    print(error!)
                 }
             }
         }

@@ -29,7 +29,7 @@ class subChapter1: UIViewController {
         funcToPass = unlock
         godThread = self
         
-        video = VideoPlayer(urlAsset: vidToURL(name: vidName, type: "mov"), view: playerView, arr: pauseArray, startTime: timeStamp)
+        video = VideoPlayer(urlAsset: vidName, view: playerView, arr: pauseArray, startTime: timeStamp)
         
         
         flashInstructions()
@@ -112,7 +112,7 @@ class subChapter1: UIViewController {
         if timeStamp - 2 < 0 {
             timeStamp = 2
         }
-        video = VideoPlayer(urlAsset: vidToURL(name: vidName, type: "mov"), view: playerView, arr: pauseArray, startTime: timeStamp - 2)
+        video = VideoPlayer(urlAsset: vidName, view: playerView, arr: pauseArray, startTime: timeStamp - 2)
         flashInstructions()
     }
     

@@ -102,7 +102,7 @@ class chapter7: UIViewController {
         talkingView.addSubview(doubleTapInstructions!)
         view.bringSubviewToFront(talkingView)
         
-        video = VideoPlayer(urlAsset: vidToURL(name: vidName, type: "mov"), view: vidView!, arr: pauseArray, startTime: timeStamp)
+        video = VideoPlayer(urlAsset: vidName, view: vidView!, arr: pauseArray, startTime: timeStamp)
         
         talkingView.fadeIn()
         flashInstructions()
@@ -154,7 +154,7 @@ class chapter7: UIViewController {
         if timeStamp - 2 < 0 {
             timeStamp = 2
         }
-        video = VideoPlayer(urlAsset: vidToURL(name: vidName, type: "mov"), view: vidView!, arr: pauseArray, startTime: timeStamp - 2)
+        video = VideoPlayer(urlAsset: vidName, view: vidView!, arr: pauseArray, startTime: timeStamp - 2)
     }
     
     func stop() {

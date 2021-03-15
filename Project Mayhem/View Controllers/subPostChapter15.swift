@@ -34,10 +34,10 @@ class subPostChapter15: UIViewController {
         
         funcToPass = part1
         godThread = self
-        video = VideoPlayer(urlAsset: vidToURL(name: vidName, type: "mov"), view: playerView, arr: pauseArray, startTime: 0)
+        video = VideoPlayer(urlAsset: vidName, view: playerView, arr: pauseArray, startTime: 0)
         talk = speechModule(activeCode: game.string(forKey: "active")!, rippleView: ripplingView!)
         
-       
+        tomorrow = UIFont(name: "Tomorrow", size: 20)
         
         flashInstructions()
         

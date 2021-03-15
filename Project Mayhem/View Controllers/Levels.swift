@@ -59,6 +59,8 @@ class Levels: UIViewController {
         //loadAll()
         MusicPlayer.shared.updateVolume()
         
+        print(urlDict)
+        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.backTapped(gesture:)))
         logo.addGestureRecognizer(tapGesture)
         logo.isUserInteractionEnabled = true

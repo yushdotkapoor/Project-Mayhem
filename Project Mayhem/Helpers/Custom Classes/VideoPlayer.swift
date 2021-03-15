@@ -63,7 +63,7 @@ class VideoPlayer : NSObject {
     
     // MARK: - Init
     
-    convenience init(urlAsset:NSURL, view:PlayerView, arr:[Double], startTime:Double) {
+    convenience init(urlAsset:String, view:PlayerView, arr:[Double], startTime:Double) {
         self.init()
         
         MusicPlayer.shared.updateVolumeLow()
@@ -75,9 +75,9 @@ class VideoPlayer : NSObject {
             playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         }
         
-        initialSetupWithURL(url: urlAsset)
-        prepareToPlay()
+        initialSetupWithURL(url: urlDict[urlAsset] ?? vidToURL(name: "\(urlAsset)Compressed", type: "mov"))
         
+        prepareToPlay()
     }
     
     override init() {
@@ -409,14 +409,10 @@ class VideoPlayer : NSObject {
             }
         }
         if keyPath == "outputVolume"{
-            print("outputVolume \(AVAudioSession.sharedInstance().outputVolume)")
             let audioSession = AVAudioSession.sharedInstance()
             if !(video?.isPlaying())! && audioSession.outputVolume >= 0.15 {
-                impact(style: .medium)
-                wait(time: 0.1) {
-                    impact(style: .medium)
-                }
                 if volumeViolated {
+                    impact(style: .medium)
                     print(volumeViolated)
                     talk?.pause()
                     video?.play()

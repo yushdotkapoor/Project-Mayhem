@@ -30,7 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate {
         let theSession = AVAudioSession.sharedInstance()
         NotificationCenter.default.addObserver(self, selector: #selector(handleInterruption), name: AVAudioSession.interruptionNotification, object: theSession)
         
-        callObserver.setDelegate(self, queue: nil)
+        
+        if isCallKitSupported() {
+            callObserver.setDelegate(self, queue: nil)
+        }
 
         return true
     }

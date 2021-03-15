@@ -21,6 +21,10 @@ class MainScreen: UIViewController {
         let c = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.0)
         tearDrop.setupButton(color: c, pressColor: UIColor.black)
         enter.setupButton(color: c, pressColor: UIColor.black)
+        //uploadVideo()
+        if !videosCurrentlyDownloading {
+            downloadVideos()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

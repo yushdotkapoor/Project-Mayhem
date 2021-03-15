@@ -8,6 +8,7 @@
 import UIKit
 import AVKit
 import CallKit
+import CloudKit
 
 var video:VideoPlayer?
 var godThread:UIViewController?
@@ -15,7 +16,12 @@ var ripplingView:UIView?
 var talk:speechModule?
 var wordToSearch:[String]?
 var funcToPass:(() -> Void)?
-var tomorrow = UIFont(name: "Tomorrow Regular", size: 20)
+var tomorrow = UIFont(name: "Tomorrow", size: 20)
+var videosCurrentlyDownloading = false
+
+let database = CKContainer.default().publicCloudDatabase
+let vidArr = ["Chap1Intro", "ProjectVenomTrailer", "lvl7Intro", "lvl7Outro", "subPostChapter15"]
+var urlDict = [String: NSURL]()
 
 func wait(time: Float, actions: @escaping () -> Void) {
     let timeInterval = TimeInterval(time)
@@ -43,6 +49,7 @@ func activateAVSession(option:AVAudioSession.CategoryOptions) {
 }
 
 func isOnPhoneCall() -> Bool {
+    if isCallKitSupported() {
     for call in CXCallObserver().calls {
         if call.hasEnded == false {
             print("on call")
@@ -51,6 +58,10 @@ func isOnPhoneCall() -> Bool {
     }
     print("not on call")
     return false
+    }
+    else {
+        return false
+    }
 }
 
 func impact(style: UIImpactFeedbackGenerator.FeedbackStyle) {
@@ -67,4 +78,82 @@ func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat{
 
     label.sizeToFit()
     return label.frame.height
+}
+
+func isCallKitSupported() -> Bool {
+    let userLocale = NSLocale.current
+    
+    guard let regionCode = userLocale.regionCode else { return false }
+    
+    if regionCode.contains("CN") ||
+        regionCode.contains("CHN") {
+        return false
+    } else {
+        return true
+    }
+}
+
+func vidToURL(name: String, type: String) -> NSURL {
+    if let filePath = Bundle.main.path(forResource: name, ofType: type) {
+        let fileURL = NSURL(fileURLWithPath: filePath)
+        return fileURL
+    }
+    return NSURL()
+}
+
+func downloadVideos() {
+    for vid in vidArr {
+    var videoURL:NSURL?
+    print("Started Download for \(vid)")
+    database.fetch(withRecordID: CKRecord.ID(recordName: vid)) { results, error in
+        videosCurrentlyDownloading = true
+            if error != nil {
+                    print(" Error Fetching Record  " + error!.localizedDescription)
+            } else {
+                if results != nil {
+                    let record = results! as CKRecord
+                    let videoFile = record.object(forKey: "video") as! CKAsset
+
+                    videoURL = videoFile.fileURL! as NSURL
+                    let videoData = NSData(contentsOf: videoURL! as URL)
+
+                    let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+                    let destinationPath = NSURL(fileURLWithPath: documentsPath).appendingPathComponent("\(vid).mov", isDirectory: false)
+
+                    FileManager.default.createFile(atPath: destinationPath!.path, contents:videoData as Data?, attributes:nil)
+
+                    videoURL = destinationPath! as NSURL
+                    urlDict[vid] = videoURL
+                    print("end download \(vid)")
+                    if urlDict.count == vidArr.count {
+                        videosCurrentlyDownloading = false
+                        print("\n\nVideo Downloads Completed\n\n")
+                    }
+                } else {
+                    print("results Empty")
+                }
+            }
+    }
+    }
+}
+
+func uploadVideo() {
+    for vid in vidArr {
+        let url = vidToURL(name: vid, type: "mov")
+        
+        let videoRecord = CKRecord(recordType: "Videos", recordID: CKRecord.ID(recordName: vid))
+        
+        videoRecord["title"] = vid
+        
+        let videoAsset = CKAsset(fileURL: url as URL)
+        videoRecord["video"] = videoAsset
+        print("uploading \(vid)")
+        database.save(videoRecord) { (record, error) -> Void in
+            if error == nil {
+                print("\(vid) uploaded successful")
+            } else {
+                print(error!)
+            }
+        }
+    }
 }

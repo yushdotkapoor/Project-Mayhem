@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		9D03D82725F92E47008A2F33 /* Between0And1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9D03D82625F92E47008A2F33 /* Between0And1.wav */; };
+		9D0B0AD425FEBA3100C3B1F5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0B0AD325FEBA3100C3B1F5 /* CloudKit.framework */; };
 		9D0C543D25C50F97000EE579 /* audioKitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C543C25C50F97000EE579 /* audioKitHelpers.swift */; };
 		9D0C544125C51AA7000EE579 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C544025C51AA7000EE579 /* UIViewControllerExtensions.swift */; };
 		9D18487D25D7A7B7007960C0 /* HintAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D18487C25D7A7B7007960C0 /* HintAlert.swift */; };
-		9D3848D725F46C4E00B23F76 /* lvl7Intro.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9D3848D525F46C4E00B23F76 /* lvl7Intro.mov */; };
-		9D3848D825F46C4E00B23F76 /* lvl7Outro.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9D3848D625F46C4E00B23F76 /* lvl7Outro.mov */; };
+		9D3848D725F46C4E00B23F76 /* lvl7IntroCompressed.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9D3848D525F46C4E00B23F76 /* lvl7IntroCompressed.mov */; };
+		9D3848D825F46C4E00B23F76 /* lvl7OutroCompressed.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9D3848D625F46C4E00B23F76 /* lvl7OutroCompressed.mov */; };
 		9D420EBB25DF02AF00A3A13D /* globalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D420EBA25DF02AF00A3A13D /* globalFunctions.swift */; };
-		9D438CB125E5E201005CC20A /* Chap1Intro.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9D438CB025E5E201005CC20A /* Chap1Intro.mov */; };
+		9D438CB125E5E201005CC20A /* Chap1IntroCompressed.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9D438CB025E5E201005CC20A /* Chap1IntroCompressed.mov */; };
 		9D438CB925E6015F005CC20A /* postChapter15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D438CB825E6015F005CC20A /* postChapter15.swift */; };
 		9D4BFC6925DE41260013D840 /* subChapter11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4BFC6825DE41260013D840 /* subChapter11.swift */; };
 		9D4BFC7525DE5FF00013D840 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4BFC7425DE5FF00013D840 /* PlayerView.swift */; };
@@ -39,13 +40,13 @@
 		9D6C704925ECD47800E8CF6C /* speechModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C704825ECD47800E8CF6C /* speechModule.swift */; };
 		9D6C705725EE082400E8CF6C /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C705625EE082400E8CF6C /* Credits.swift */; };
 		9D6E493625EE12EF00B09E8A /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E493525EE12EF00B09E8A /* MusicPlayer.swift */; };
-		9D73428725ECBDD70003D563 /* subPostChapter15.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9D73428625ECBDD70003D563 /* subPostChapter15.mov */; };
+		9D73428725ECBDD70003D563 /* subPostChapter15Compressed.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9D73428625ECBDD70003D563 /* subPostChapter15Compressed.mov */; };
 		9D74262425CA41F3008D9645 /* chapter14.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74261F25CA41F3008D9645 /* chapter14.swift */; };
 		9D74262525CA41F3008D9645 /* chapter15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74262025CA41F3008D9645 /* chapter15.swift */; };
 		9D74262625CA41F3008D9645 /* chapter11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74262125CA41F3008D9645 /* chapter11.swift */; };
 		9D74262725CA41F3008D9645 /* chapter12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74262225CA41F3008D9645 /* chapter12.swift */; };
 		9D74262825CA41F3008D9645 /* chapter13.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74262325CA41F3008D9645 /* chapter13.swift */; };
-		9D7DE96025E786C200F80990 /* ProjectVenomTrailer.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9D7DE95F25E786C200F80990 /* ProjectVenomTrailer.mov */; };
+		9D7DE96025E786C200F80990 /* ProjectVenomTrailerCompressed.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9D7DE95F25E786C200F80990 /* ProjectVenomTrailerCompressed.mov */; };
 		9D7DE96425E78C4900F80990 /* VenomPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7DE96325E78C4900F80990 /* VenomPreview.swift */; };
 		9D8B292A25DC187D007750DF /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8B292925DC187D007750DF /* UIColorExtension.swift */; };
 		9D8B292E25DC189A007750DF /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8B292D25DC189A007750DF /* CALayerExtension.swift */; };
@@ -55,24 +56,7 @@
 		9D92877625F86F44005170A1 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = 9D92877525F86F44005170A1 /* OneSignal */; };
 		9D9287C025F8711F005170A1 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9287BF25F8711F005170A1 /* NotificationService.swift */; };
 		9D9287C425F8711F005170A1 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9D9287BD25F8711F005170A1 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		9D9AA5B225F793D300C1493A /* Tomorrow-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D9AA5A025F793D200C1493A /* Tomorrow-Light.ttf */; };
-		9D9AA5B325F793D300C1493A /* Tomorrow-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D9AA5A125F793D200C1493A /* Tomorrow-SemiBoldItalic.ttf */; };
-		9D9AA5B425F793D300C1493A /* Tomorrow-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D9AA5A225F793D200C1493A /* Tomorrow-ExtraBoldItalic.ttf */; };
-		9D9AA5B525F793D300C1493A /* Tomorrow-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D9AA5A325F793D200C1493A /* Tomorrow-Thin.ttf */; };
-		9D9AA5B625F793D300C1493A /* Tomorrow-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D9AA5A425F793D200C1493A /* Tomorrow-BlackItalic.ttf */; };
-		9D9AA5B725F793D300C1493A /* Tomorrow-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D9AA5A525F793D200C1493A /* Tomorrow-BoldItalic.ttf */; };
-		9D9AA5B825F793D300C1493A /* Tomorrow-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D9AA5A625F793D200C1493A /* Tomorrow-SemiBold.ttf */; };
-		9D9AA5B925F793D300C1493A /* Tomorrow-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D9AA5A725F793D200C1493A /* Tomorrow-LightItalic.ttf */; };
-		9D9AA5BA25F793D300C1493A /* Tomorrow-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D9AA5A825F793D200C1493A /* Tomorrow-Medium.ttf */; };
-		9D9AA5BB25F793D300C1493A /* Tomorrow-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D9AA5A925F793D200C1493A /* Tomorrow-Bold.ttf */; };
-		9D9AA5BC25F793D300C1493A /* Tomorrow-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D9AA5AA25F793D200C1493A /* Tomorrow-ExtraLight.ttf */; };
-		9D9AA5BD25F793D300C1493A /* Tomorrow-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D9AA5AB25F793D200C1493A /* Tomorrow-ThinItalic.ttf */; };
-		9D9AA5BE25F793D300C1493A /* Tomorrow-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D9AA5AC25F793D200C1493A /* Tomorrow-Italic.ttf */; };
-		9D9AA5BF25F793D300C1493A /* Tomorrow-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D9AA5AD25F793D200C1493A /* Tomorrow-MediumItalic.ttf */; };
-		9D9AA5C025F793D300C1493A /* Tomorrow-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D9AA5AE25F793D200C1493A /* Tomorrow-ExtraLightItalic.ttf */; };
-		9D9AA5C125F793D300C1493A /* Tomorrow-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D9AA5AF25F793D200C1493A /* Tomorrow-Regular.ttf */; };
-		9D9AA5C225F793D300C1493A /* Tomorrow-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D9AA5B025F793D200C1493A /* Tomorrow-ExtraBold.ttf */; };
-		9D9AA5C325F793D300C1493A /* Tomorrow-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D9AA5B125F793D200C1493A /* Tomorrow-Black.ttf */; };
+		9D9AA5C125F793D300C1493A /* Tomorrow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D9AA5AF25F793D200C1493A /* Tomorrow.ttf */; };
 		9DA2E9BD25F0451600262638 /* audioExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2E9BC25F0451600262638 /* audioExtensions.swift */; };
 		9DA2E9D025F09C6000262638 /* NoisyWalk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2E9C825F09C6000262638 /* NoisyWalk.ttf */; };
 		9DA2E9D125F09C6000262638 /* PigpenCipher.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2E9C925F09C6000262638 /* PigpenCipher.otf */; };
@@ -128,7 +112,7 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		9D38491425F4B1E100B23F76 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
@@ -142,13 +126,14 @@
 /* Begin PBXFileReference section */
 		9D03D82625F92E47008A2F33 /* Between0And1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Between0And1.wav; sourceTree = "<group>"; };
 		9D0B057325C8B0DF00DB47CF /* Project Mayhem.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Project Mayhem.entitlements"; sourceTree = "<group>"; };
+		9D0B0AD325FEBA3100C3B1F5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		9D0C543C25C50F97000EE579 /* audioKitHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audioKitHelpers.swift; sourceTree = "<group>"; };
 		9D0C544025C51AA7000EE579 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		9D18487C25D7A7B7007960C0 /* HintAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintAlert.swift; sourceTree = "<group>"; };
-		9D3848D525F46C4E00B23F76 /* lvl7Intro.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = lvl7Intro.mov; sourceTree = "<group>"; };
-		9D3848D625F46C4E00B23F76 /* lvl7Outro.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = lvl7Outro.mov; sourceTree = "<group>"; };
+		9D3848D525F46C4E00B23F76 /* lvl7IntroCompressed.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = lvl7IntroCompressed.mov; sourceTree = "<group>"; };
+		9D3848D625F46C4E00B23F76 /* lvl7OutroCompressed.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = lvl7OutroCompressed.mov; sourceTree = "<group>"; };
 		9D420EBA25DF02AF00A3A13D /* globalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globalFunctions.swift; sourceTree = "<group>"; };
-		9D438CB025E5E201005CC20A /* Chap1Intro.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Chap1Intro.mov; sourceTree = "<group>"; };
+		9D438CB025E5E201005CC20A /* Chap1IntroCompressed.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Chap1IntroCompressed.mov; sourceTree = "<group>"; };
 		9D438CB825E6015F005CC20A /* postChapter15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postChapter15.swift; sourceTree = "<group>"; };
 		9D4BFC6825DE41260013D840 /* subChapter11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subChapter11.swift; sourceTree = "<group>"; };
 		9D4BFC7425DE5FF00013D840 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
@@ -179,13 +164,13 @@
 		9D6C704825ECD47800E8CF6C /* speechModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = speechModule.swift; sourceTree = "<group>"; };
 		9D6C705625EE082400E8CF6C /* Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
 		9D6E493525EE12EF00B09E8A /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
-		9D73428625ECBDD70003D563 /* subPostChapter15.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = subPostChapter15.mov; sourceTree = "<group>"; };
+		9D73428625ECBDD70003D563 /* subPostChapter15Compressed.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = subPostChapter15Compressed.mov; sourceTree = "<group>"; };
 		9D74261F25CA41F3008D9645 /* chapter14.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chapter14.swift; sourceTree = "<group>"; };
 		9D74262025CA41F3008D9645 /* chapter15.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chapter15.swift; sourceTree = "<group>"; };
 		9D74262125CA41F3008D9645 /* chapter11.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chapter11.swift; sourceTree = "<group>"; };
 		9D74262225CA41F3008D9645 /* chapter12.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chapter12.swift; sourceTree = "<group>"; };
 		9D74262325CA41F3008D9645 /* chapter13.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chapter13.swift; sourceTree = "<group>"; };
-		9D7DE95F25E786C200F80990 /* ProjectVenomTrailer.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = ProjectVenomTrailer.mov; sourceTree = "<group>"; };
+		9D7DE95F25E786C200F80990 /* ProjectVenomTrailerCompressed.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = ProjectVenomTrailerCompressed.mov; sourceTree = "<group>"; };
 		9D7DE96325E78C4900F80990 /* VenomPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenomPreview.swift; sourceTree = "<group>"; };
 		9D8B292925DC187D007750DF /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		9D8B292D25DC189A007750DF /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
@@ -194,24 +179,7 @@
 		9D9287BD25F8711F005170A1 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9287BF25F8711F005170A1 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationService.swift; path = "/Users/yushrajkapoor/Desktop/Xcode/Project Mayhem/OneSignalNotificationServiceExtension/NotificationService.swift"; sourceTree = "<absolute>"; };
 		9D9287C125F8711F005170A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9D9AA5A025F793D200C1493A /* Tomorrow-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-Light.ttf"; sourceTree = "<group>"; };
-		9D9AA5A125F793D200C1493A /* Tomorrow-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
-		9D9AA5A225F793D200C1493A /* Tomorrow-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
-		9D9AA5A325F793D200C1493A /* Tomorrow-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-Thin.ttf"; sourceTree = "<group>"; };
-		9D9AA5A425F793D200C1493A /* Tomorrow-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-BlackItalic.ttf"; sourceTree = "<group>"; };
-		9D9AA5A525F793D200C1493A /* Tomorrow-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-BoldItalic.ttf"; sourceTree = "<group>"; };
-		9D9AA5A625F793D200C1493A /* Tomorrow-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-SemiBold.ttf"; sourceTree = "<group>"; };
-		9D9AA5A725F793D200C1493A /* Tomorrow-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-LightItalic.ttf"; sourceTree = "<group>"; };
-		9D9AA5A825F793D200C1493A /* Tomorrow-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-Medium.ttf"; sourceTree = "<group>"; };
-		9D9AA5A925F793D200C1493A /* Tomorrow-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-Bold.ttf"; sourceTree = "<group>"; };
-		9D9AA5AA25F793D200C1493A /* Tomorrow-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-ExtraLight.ttf"; sourceTree = "<group>"; };
-		9D9AA5AB25F793D200C1493A /* Tomorrow-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-ThinItalic.ttf"; sourceTree = "<group>"; };
-		9D9AA5AC25F793D200C1493A /* Tomorrow-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-Italic.ttf"; sourceTree = "<group>"; };
-		9D9AA5AD25F793D200C1493A /* Tomorrow-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-MediumItalic.ttf"; sourceTree = "<group>"; };
-		9D9AA5AE25F793D200C1493A /* Tomorrow-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
-		9D9AA5AF25F793D200C1493A /* Tomorrow-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-Regular.ttf"; sourceTree = "<group>"; };
-		9D9AA5B025F793D200C1493A /* Tomorrow-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-ExtraBold.ttf"; sourceTree = "<group>"; };
-		9D9AA5B125F793D200C1493A /* Tomorrow-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tomorrow-Black.ttf"; sourceTree = "<group>"; };
+		9D9AA5AF25F793D200C1493A /* Tomorrow.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tomorrow.ttf; sourceTree = "<group>"; };
 		9DA2E9BC25F0451600262638 /* audioExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audioExtensions.swift; sourceTree = "<group>"; };
 		9DA2E9C825F09C6000262638 /* NoisyWalk.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NoisyWalk.ttf; path = "Project Mayhem/Fonts/NoisyWalk.ttf"; sourceTree = SOURCE_ROOT; };
 		9DA2E9C925F09C6000262638 /* PigpenCipher.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = PigpenCipher.otf; path = "Project Mayhem/Fonts/PigpenCipher.otf"; sourceTree = SOURCE_ROOT; };
@@ -245,6 +213,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D0B0AD425FEBA3100C3B1F5 /* CloudKit.framework in Frameworks */,
 				9D92875A25F86DD7005170A1 /* AudioKit in Frameworks */,
 				9D92877625F86F44005170A1 /* OneSignal in Frameworks */,
 			);
@@ -274,6 +243,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D0B0AD225FEBA3100C3B1F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D0B0AD325FEBA3100C3B1F5 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9D0C543B25C50F79000EE579 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,11 +294,11 @@
 		9D4BFC6D25DE5E190013D840 /* Videos */ = {
 			isa = PBXGroup;
 			children = (
-				9D438CB025E5E201005CC20A /* Chap1Intro.mov */,
-				9D7DE95F25E786C200F80990 /* ProjectVenomTrailer.mov */,
-				9D3848D525F46C4E00B23F76 /* lvl7Intro.mov */,
-				9D3848D625F46C4E00B23F76 /* lvl7Outro.mov */,
-				9D73428625ECBDD70003D563 /* subPostChapter15.mov */,
+				9D438CB025E5E201005CC20A /* Chap1IntroCompressed.mov */,
+				9D7DE95F25E786C200F80990 /* ProjectVenomTrailerCompressed.mov */,
+				9D3848D525F46C4E00B23F76 /* lvl7IntroCompressed.mov */,
+				9D3848D625F46C4E00B23F76 /* lvl7OutroCompressed.mov */,
+				9D73428625ECBDD70003D563 /* subPostChapter15Compressed.mov */,
 			);
 			path = Videos;
 			sourceTree = "<group>";
@@ -334,6 +311,7 @@
 				9D56139D259195E800F1695A /* Project MayhemUITests */,
 				9D9287BE25F8711F005170A1 /* OneSignalNotificationServiceExtension */,
 				9D56137F259195E600F1695A /* Products */,
+				9D0B0AD225FEBA3100C3B1F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -447,24 +425,7 @@
 				9DA2E9CA25F09C6000262638 /* CoolKidFont.ttf */,
 				9DA2E9C825F09C6000262638 /* NoisyWalk.ttf */,
 				9DA2E9C925F09C6000262638 /* PigpenCipher.otf */,
-				9D9AA5B125F793D200C1493A /* Tomorrow-Black.ttf */,
-				9D9AA5A425F793D200C1493A /* Tomorrow-BlackItalic.ttf */,
-				9D9AA5A925F793D200C1493A /* Tomorrow-Bold.ttf */,
-				9D9AA5A525F793D200C1493A /* Tomorrow-BoldItalic.ttf */,
-				9D9AA5B025F793D200C1493A /* Tomorrow-ExtraBold.ttf */,
-				9D9AA5A225F793D200C1493A /* Tomorrow-ExtraBoldItalic.ttf */,
-				9D9AA5AA25F793D200C1493A /* Tomorrow-ExtraLight.ttf */,
-				9D9AA5AE25F793D200C1493A /* Tomorrow-ExtraLightItalic.ttf */,
-				9D9AA5AC25F793D200C1493A /* Tomorrow-Italic.ttf */,
-				9D9AA5A025F793D200C1493A /* Tomorrow-Light.ttf */,
-				9D9AA5A725F793D200C1493A /* Tomorrow-LightItalic.ttf */,
-				9D9AA5A825F793D200C1493A /* Tomorrow-Medium.ttf */,
-				9D9AA5AD25F793D200C1493A /* Tomorrow-MediumItalic.ttf */,
-				9D9AA5AF25F793D200C1493A /* Tomorrow-Regular.ttf */,
-				9D9AA5A625F793D200C1493A /* Tomorrow-SemiBold.ttf */,
-				9D9AA5A125F793D200C1493A /* Tomorrow-SemiBoldItalic.ttf */,
-				9D9AA5A325F793D200C1493A /* Tomorrow-Thin.ttf */,
-				9D9AA5AB25F793D200C1493A /* Tomorrow-ThinItalic.ttf */,
+				9D9AA5AF25F793D200C1493A /* Tomorrow.ttf */,
 				9DA2E9CF25F09C6000262638 /* screaming_neon.ttf */,
 			);
 			path = Fonts;
@@ -618,38 +579,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D9AA5B725F793D300C1493A /* Tomorrow-BoldItalic.ttf in Resources */,
-				9D73428725ECBDD70003D563 /* subPostChapter15.mov in Resources */,
-				9D9AA5B325F793D300C1493A /* Tomorrow-SemiBoldItalic.ttf in Resources */,
-				9D9AA5B825F793D300C1493A /* Tomorrow-SemiBold.ttf in Resources */,
+				9D73428725ECBDD70003D563 /* subPostChapter15Compressed.mov in Resources */,
 				9D561389259195E700F1695A /* Preview Assets.xcassets in Resources */,
-				9D9AA5C025F793D300C1493A /* Tomorrow-ExtraLightItalic.ttf in Resources */,
 				9DA2E9D225F09C6000262638 /* CoolKidFont.ttf in Resources */,
 				9DA2E9D725F09C6000262638 /* screaming_neon.ttf in Resources */,
 				9D561386259195E700F1695A /* Assets.xcassets in Resources */,
-				9D9AA5B625F793D300C1493A /* Tomorrow-BlackItalic.ttf in Resources */,
 				9DA2E9D325F09C6000262638 /* aAmbyarSobat.ttf in Resources */,
-				9D9AA5BC25F793D300C1493A /* Tomorrow-ExtraLight.ttf in Resources */,
 				9DA2E9D125F09C6000262638 /* PigpenCipher.otf in Resources */,
-				9D9AA5B925F793D300C1493A /* Tomorrow-LightItalic.ttf in Resources */,
-				9D9AA5BF25F793D300C1493A /* Tomorrow-MediumItalic.ttf in Resources */,
-				9D7DE96025E786C200F80990 /* ProjectVenomTrailer.mov in Resources */,
+				9D7DE96025E786C200F80990 /* ProjectVenomTrailerCompressed.mov in Resources */,
 				9DA2E9D525F09C6000262638 /* Adonay.ttf in Resources */,
-				9D9AA5C325F793D300C1493A /* Tomorrow-Black.ttf in Resources */,
-				9D9AA5C225F793D300C1493A /* Tomorrow-ExtraBold.ttf in Resources */,
 				9D5613BD259196DE00F1695A /* LaunchScreen.storyboard in Resources */,
-				9D9AA5BD25F793D300C1493A /* Tomorrow-ThinItalic.ttf in Resources */,
-				9D3848D825F46C4E00B23F76 /* lvl7Outro.mov in Resources */,
-				9D9AA5B525F793D300C1493A /* Tomorrow-Thin.ttf in Resources */,
-				9D9AA5BA25F793D300C1493A /* Tomorrow-Medium.ttf in Resources */,
-				9D9AA5BB25F793D300C1493A /* Tomorrow-Bold.ttf in Resources */,
-				9D438CB125E5E201005CC20A /* Chap1Intro.mov in Resources */,
-				9D9AA5BE25F793D300C1493A /* Tomorrow-Italic.ttf in Resources */,
-				9D9AA5C125F793D300C1493A /* Tomorrow-Regular.ttf in Resources */,
-				9D9AA5B225F793D300C1493A /* Tomorrow-Light.ttf in Resources */,
+				9D3848D825F46C4E00B23F76 /* lvl7OutroCompressed.mov in Resources */,
+				9D438CB125E5E201005CC20A /* Chap1IntroCompressed.mov in Resources */,
+				9D9AA5C125F793D300C1493A /* Tomorrow.ttf in Resources */,
 				9D8C42AF25C7BE5C0039F857 /* Settings.bundle in Resources */,
-				9D3848D725F46C4E00B23F76 /* lvl7Intro.mov in Resources */,
-				9D9AA5B425F793D300C1493A /* Tomorrow-ExtraBoldItalic.ttf in Resources */,
+				9D3848D725F46C4E00B23F76 /* lvl7IntroCompressed.mov in Resources */,
 				9D03D82725F92E47008A2F33 /* Between0And1.wav in Resources */,
 				9DA2E9D025F09C6000262638 /* NoisyWalk.ttf in Resources */,
 				9DA2E9D625F09C6000262638 /* astro.ttf in Resources */,
@@ -955,7 +899,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Project Mayhem/Project Mayhem.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"Project Mayhem/Preview Content\"";
 				DEVELOPMENT_TEAM = 68L233566P;
 				ENABLE_PREVIEWS = YES;
@@ -982,7 +926,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Project Mayhem/Project Mayhem.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"Project Mayhem/Preview Content\"";
 				DEVELOPMENT_TEAM = 68L233566P;
 				ENABLE_PREVIEWS = YES;
@@ -1085,7 +1029,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 68L233566P;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -1107,7 +1051,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 68L233566P;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
