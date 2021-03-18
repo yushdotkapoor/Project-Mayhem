@@ -87,7 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate {
     func audio() {
         audio2()
         MusicPlayer.shared.startBackgroundMusic()
-        MusicPlayer.shared.updateVolume()
+        MusicPlayer.shared.volumeControl(factor: 0.4)
     }
     
     func audio2() {

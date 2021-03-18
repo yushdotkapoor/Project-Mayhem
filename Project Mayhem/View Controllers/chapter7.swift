@@ -27,7 +27,6 @@ class chapter7: UIViewController {
     @IBOutlet weak var button16: UIButton!
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var toolbar: UIStackView!
-    @IBOutlet weak var talkingView: UIView!
     
     let customAlert = HintAlert()
     
@@ -36,11 +35,15 @@ class chapter7: UIViewController {
     var timeStamp:Double = 0.0
     var vidView:PlayerView?
     
+    var talkingView:UIView?
+    
     var current = 0
     var orderString:[String] = []
     var masterOrder = ["2", "14", "7", "3", "12", "9", "10", "1", "5", "16", "11", "6", "15", "4", "8", "13"]
     
     var doubleTapInstructions:UILabel?
+    
+    var keyToCheck = ""
     
     override func viewDidLoad() {
            super.viewDidLoad()
@@ -52,7 +55,7 @@ class chapter7: UIViewController {
         super.viewWillAppear(animated)
         nextChap.alpha = 0.0
         nextChap.isUserInteractionEnabled = false
-        talkingView.alpha = 0.0
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -61,22 +64,25 @@ class chapter7: UIViewController {
         funcToPass = vid1Finish
         godThread = self
         vidName = "lvl7Intro"
-        pauseArray = [39.5]
+        pauseArray = [39.35]
+        keyToCheck = "chap7IntroWatched"
         vid()
     }
     
     func vid() {
         createObservers()
+        talkingView = UIView(frame: CGRect(x: 25, y: 90, width: UIScreen.main.bounds.width - 50, height: UIScreen.main.bounds.height - 200))
+        talkingView!.alpha = 0.0
         
-        talkingView.layer.masksToBounds = true
-        talkingView.clipsToBounds = true
-        talkingView.layer.cornerRadius = 20
+        talkingView!.layer.masksToBounds = true
+        talkingView!.clipsToBounds = true
+        talkingView!.layer.cornerRadius = 20
         
         let gradient = CAGradientLayer()
         gradient.colors = [UIColor(red: 128/255, green: 0, blue: 128/255, alpha: 1.0).cgColor, UIColor(red: 216/255, green: 191/255, blue: 216/255, alpha: 1.0).cgColor]
         
         let title = "Message from Yush Raj Kapoor"
-        let lblwidth = talkingView.bounds.size.width - 10
+        let lblwidth = talkingView!.bounds.size.width - 10
         let lblheight = heightForView(text: title, font: UIFont(name: "Helvetica", size: 25)!, width: lblwidth)
         let label = UILabel(frame: CGRect(x: 5, y: 5, width: lblwidth, height: lblheight))
         label.text = title
@@ -85,7 +91,7 @@ class chapter7: UIViewController {
         label.numberOfLines = 0
         label.textColor = .white
         
-        doubleTapInstructions = UILabel(frame: CGRect(x: talkingView.bounds.size.width - 220, y: talkingView.bounds.size.height - 40, width: 200, height: 20))
+        doubleTapInstructions = UILabel(frame: CGRect(x: talkingView!.bounds.size.width - 220, y: talkingView!.bounds.size.height - 40, width: 200, height: 20))
         doubleTapInstructions?.text = "Double Tap to Skip"
         doubleTapInstructions?.textAlignment = .center
         doubleTapInstructions?.font = UIFont(name: "astro", size: 12)
@@ -93,34 +99,38 @@ class chapter7: UIViewController {
         doubleTapInstructions?.textColor = .green
         doubleTapInstructions?.alpha = 0.0
         
-        vidView = PlayerView(frame: CGRect(x: 0, y: lblheight + 10, width: lblwidth + 10, height: talkingView.bounds.size.height - lblheight + 10))
+        vidView = PlayerView(frame: CGRect(x: 0, y: lblheight + 10, width: lblwidth + 10, height: talkingView!.bounds.size.height - lblheight + 10))
         
         gradient.frame = CGRect(x: 0, y: 0, width: lblwidth + 10, height: lblheight + 20)
-        talkingView.layer.addSublayer(gradient)
-        talkingView.addSubview(label)
-        talkingView.addSubview(vidView!)
-        talkingView.addSubview(doubleTapInstructions!)
-        view.bringSubviewToFront(talkingView)
+        talkingView!.layer.addSublayer(gradient)
+        talkingView!.addSubview(label)
+        talkingView!.addSubview(vidView!)
+        talkingView!.addSubview(doubleTapInstructions!)
+        view.addSubview(talkingView!)
+        view.bringSubviewToFront(talkingView!)
         
-        video = VideoPlayer(urlAsset: vidName, view: vidView!, arr: pauseArray, startTime: timeStamp)
+        video = VideoPlayer(urlAsset: vidName, view: vidView!, arr: pauseArray, startTime: timeStamp, volume: 0.2)
         
-        talkingView.fadeIn()
+        talkingView!.fadeIn()
         flashInstructions()
     }
     
     func vid1Finish() {
-        talkingView.fadeOut()
+        talkingView!.fadeOut()
         wait {
-            self.view.sendSubviewToBack(self.talkingView)
+            self.view.sendSubviewToBack(self.talkingView!)
         }
+        game.setValue(true, forKey: "chap7IntroWatched")
+        keyToCheck = "chap7OutroWatched"
         stop()
     }
     
     func vid2Finish() {
-        talkingView.fadeOut()
+        talkingView!.fadeOut()
         wait {
-            self.view.sendSubviewToBack(self.talkingView)
+            self.view.sendSubviewToBack(self.talkingView!)
         }
+        game.setValue(true, forKey: "chap7OutroWatched")
         stop()
         complete()
     }
@@ -136,12 +146,12 @@ class chapter7: UIViewController {
     }
     
     func flashInstructions() {
-       let t = game.bool(forKey: "chap7")
+       let t = game.bool(forKey: keyToCheck)
         video?.startFlash(lbl: doubleTapInstructions!, chap: ["chap7"], willFlash: t)
     }
     
     @objc func doubleTapped() {
-        let t = game.bool(forKey: "chap7")
+        let t = game.bool(forKey: keyToCheck)
         video?.viewDidDoubleTap(willPass: t)
     }
     
@@ -154,7 +164,7 @@ class chapter7: UIViewController {
         if timeStamp - 2 < 0 {
             timeStamp = 2
         }
-        video = VideoPlayer(urlAsset: vidName, view: vidView!, arr: pauseArray, startTime: timeStamp - 2)
+        video = VideoPlayer(urlAsset: vidName, view: vidView!, arr: pauseArray, startTime: timeStamp - 2, volume: 0.2)
     }
     
     func stop() {

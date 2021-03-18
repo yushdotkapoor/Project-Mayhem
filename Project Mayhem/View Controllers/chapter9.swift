@@ -27,6 +27,7 @@ class chapter9: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
            super.viewDidLoad()
+        game.setValue("chap9", forKey: "active")
         pass.text = codeToMatch
         secondStack.alpha = 0.0
         thirdStack.alpha = 0.0
@@ -35,6 +36,12 @@ class chapter9: UIViewController, UITextFieldDelegate {
             wait(time: 0.5, actions: {
                 self.thirdStack.fadeIn()
             })
+        }
+        
+        wait(time: 10) {
+            if game.string(forKey: "active") == "chap9" {
+                self.alert(title: "!", message: "It might do you some good to take a hint.", actionTitle: "Sure, I guess")
+            }
         }
         
         

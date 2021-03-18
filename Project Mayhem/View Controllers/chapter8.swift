@@ -21,6 +21,7 @@ class chapter8: UIViewController {
     
     override func viewDidLoad() {
            super.viewDidLoad()
+        game.setValue("chap8", forKey: "active")
         settings.alpha = 0.1
         
         if !game.bool(forKey: "settingsValueChanged") {

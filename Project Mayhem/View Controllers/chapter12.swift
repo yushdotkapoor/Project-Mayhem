@@ -45,7 +45,6 @@ class chapter12: UIViewController {
         UIDevice.current.isBatteryMonitoringEnabled = true
 
         NotificationCenter.default.addObserver(self, selector: #selector(batteryStateDidChange), name: UIDevice.batteryStateDidChangeNotification, object: nil)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,7 +61,8 @@ class chapter12: UIViewController {
             batteryImg.fadeOut()
             backView.fadeIn()
             p2Stack.fadeIn()
-            hintText = "Roses are red, violets are blue, i'm pretty sure that this is a date. What are you supposed to do? \"Get in a blue box and get your timey wimey on.\""
+            view.bringSubviewToFront(toolbar)
+            hintText = "Roses are red, violets are blue, I'm pretty sure that this is a date. What are you supposed to do? \"Get in a blue box and get your timey wimey on.\""
             NotificationCenter.default.addObserver(self, selector: #selector(timeChanged), name:UIApplication.significantTimeChangeNotification, object: nil)
         }
     }

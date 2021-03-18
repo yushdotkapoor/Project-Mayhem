@@ -28,7 +28,7 @@ class ProjectVenomTrailer: UIViewController {
         game.setValue("projectVenomTrailer", forKey: "active")
         funcToPass = self.ended
         godThread = self
-        video = VideoPlayer(urlAsset: vidName, view: playerView, arr: pauseArray, startTime: timeStamp)
+        video = VideoPlayer(urlAsset: vidName, view: playerView, arr: pauseArray, startTime: timeStamp, volume: 0.15)
        
         
         flashInstructions()
@@ -47,17 +47,18 @@ class ProjectVenomTrailer: UIViewController {
     func ended() {
         video?.cleanUp()
         NotificationCenter.default.removeObserver(godThread!)
+        game.setValue(true, forKey: "ProjectVenomTrailerWatched")
         game.setValue("none", forKey: "active")
         godThread?.performSegue(withIdentifier: "venomToPreview", sender: nil)
     }
     
     func flashInstructions() {
-       let t = game.bool(forKey: "projectVenom")
+       let t = game.bool(forKey: "ProjectVenomTrailerWatched")
        video?.startFlash(lbl: doubleTapInstructions, chap: ["projectVenomTrailer"], willFlash: t)
     }
     
     @objc func doubleTapped() {
-        let t = game.bool(forKey: "projectVenom")
+        let t = game.bool(forKey: "ProjectVenomTrailerWatched")
         video?.viewDidDoubleTap(willPass: t)
     }
     
@@ -71,7 +72,7 @@ class ProjectVenomTrailer: UIViewController {
         if timeStamp - 2 < 0 {
             timeStamp = 2
         }
-        video = VideoPlayer(urlAsset: vidName, view: playerView, arr: pauseArray, startTime: timeStamp - 2)
+        video = VideoPlayer(urlAsset: vidName, view: playerView, arr: pauseArray, startTime: timeStamp - 2, volume: 0.15)
         godThread = self
         flashInstructions()
     }

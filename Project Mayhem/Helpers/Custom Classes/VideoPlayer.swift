@@ -63,10 +63,10 @@ class VideoPlayer : NSObject {
     
     // MARK: - Init
     
-    convenience init(urlAsset:String, view:PlayerView, arr:[Double], startTime:Double) {
+    convenience init(urlAsset:String, view:PlayerView, arr:[Double], startTime:Double, volume: Float) {
         self.init()
         
-        MusicPlayer.shared.updateVolumeLow()
+        MusicPlayer.shared.volumeControl(factor: volume)
         pauseArray = arr
         playerView = view
         currentTime = startTime
@@ -107,7 +107,7 @@ class VideoPlayer : NSObject {
             }
             
             if pauseTime > time {
-                if pauseTime > time + 3 && video!.isPlaying(){
+                if pauseTime > time + 3.1 && video!.isPlaying(){
                     seekToPosition(seconds: pauseTime - 3)
                 }
                 else {
@@ -222,7 +222,7 @@ class VideoPlayer : NSObject {
         playerItem = nil
         urlAsset = nil
         stopFlash = true
-        MusicPlayer.shared.updateVolume()
+        MusicPlayer.shared.volumeControl(factor: 0.4)
     }
     
     // MARK: - Private

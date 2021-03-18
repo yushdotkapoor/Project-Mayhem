@@ -13,6 +13,7 @@ class MainScreen: UIViewController {
     @IBOutlet weak var enterCenterConstraint: NSLayoutConstraint!
     @IBOutlet weak var tearDrop: CustomButton!
     @IBOutlet weak var dropTop: NSLayoutConstraint!
+    @IBOutlet weak var lbl: UILabel!
     
     var touched = 0
     
@@ -21,14 +22,16 @@ class MainScreen: UIViewController {
         let c = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.0)
         tearDrop.setupButton(color: c, pressColor: UIColor.black)
         enter.setupButton(color: c, pressColor: UIColor.black)
-        //uploadVideos()
-        if !videosCurrentlyDownloading {
+        
+        if !videosCurrentlyDownloading && urlDict.isEmpty {
+            //uploadVideos()
             downloadVideos()
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        lbl.fadeIn()
         
         UIView.animate(withDuration: 1.5, delay: 0.5, options: .curveEaseOut, animations: {
             self.enterCenterConstraint.constant -= self.view.bounds.width
@@ -43,6 +46,7 @@ class MainScreen: UIViewController {
         enterCenterConstraint.constant += view.bounds.width
         logoCenterConstraint.constant -= view.bounds.width
         dropTop.constant += view.bounds.height - tearDrop.bounds.origin.y + 30
+        lbl.alpha = 0.0
     }
     
     @IBAction func Credits(_ sender: Any) {

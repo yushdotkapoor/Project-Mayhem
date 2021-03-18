@@ -36,6 +36,7 @@ class speechModule:NSObject {
     }
     
     func startRecording(target: [String], arrayOfFunctions: [() -> Void]) {
+        print("Speech Recognition Started")
         if recognitionTask != nil {
             recognitionTask?.cancel()
             recognitionTask = nil
@@ -80,10 +81,10 @@ class speechModule:NSObject {
                 inputNode.removeTap(onBus: 1)
                 self.recognitionRequest = nil
                 self.recognitionTask = nil
-                print("recog stopped")
+                print("Speech Recognition Stopped")
                 wait(time: 0.4, actions: {
                     if game.string(forKey: "active") == self.active && !(video?.isPlaying())! && !self.isActive() {
-                        print("round and round")
+                        print("Speech Recognition Activated again")
                     self.startRecording(target: target, arrayOfFunctions: arrayOfFunctions)
                     }
                 })

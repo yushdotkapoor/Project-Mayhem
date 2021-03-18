@@ -53,7 +53,7 @@ class Listen {
         engine.output = silence
         tracker = PitchTap(mic) { pitch, amp in
             DispatchQueue.main.async {
-                if amp[0] > 0.05 {
+                if amp[0] > 0.1 {
                     self.fq = pitch[0]
                 }
                 else {

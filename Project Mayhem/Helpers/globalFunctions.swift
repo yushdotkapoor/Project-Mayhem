@@ -104,11 +104,11 @@ func vidToURL(name: String, type: String) -> NSURL {
 func downloadVideos() {
     for vid in vidArr {
     var videoURL:NSURL?
-    print("Started Download for \(vid)")
+    print("Downloading \(vid)")
+    videosCurrentlyDownloading = true
     database.fetch(withRecordID: CKRecord.ID(recordName: vid)) { results, error in
-        videosCurrentlyDownloading = true
             if error != nil {
-                    print(" Error Fetching Record  " + error!.localizedDescription)
+                    print(" Error Downloading Record  " + error!.localizedDescription)
             } else {
                 if results != nil {
                     let record = results! as CKRecord
@@ -131,31 +131,35 @@ func downloadVideos() {
                     }
                 } else {
                     print("results Empty")
+                    videosCurrentlyDownloading = false
                 }
             }
-    }
+        }
     }
 }
 
 func uploadVideos() {
-    for vid in vidArr {
+    let thing = ["subPostChapter15"]
+    for vid in thing {
         let url = vidToURL(name: vid, type: "mov")
         
         let videoRecord = CKRecord(recordType: "Videos", recordID: CKRecord.ID(recordName: vid))
-        
         videoRecord["title"] = vid
         
         let videoAsset = CKAsset(fileURL: url as URL)
         videoRecord["video"] = videoAsset
         print("uploading \(vid)")
+        videosCurrentlyDownloading = true
         database.save(videoRecord) { (record, error) -> Void in
             if error == nil {
                 if urlDict.count == vidArr.count {
                     print("\n\nVideo Uploads Complete\n\n")
+                    videosCurrentlyDownloading = false
                 }
                 print("\(vid) uploaded successfully")
             } else {
-                print(error!)
+                print("upload error: \(error!)")
+                videosCurrentlyDownloading = false
             }
         }
     }

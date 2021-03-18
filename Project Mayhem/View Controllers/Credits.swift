@@ -30,6 +30,11 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
         donateLabel.addGestureRecognizer(tapGesture)
         
     }
+    @IBAction func stuck(_ sender: Any) {
+        sendEmail(subject: "Given the circumstances, it seems that I have encountered a rather dreary situation where I simply, and I am unable to stress this enough, CANNOT.")
+    }
+    
+    
     @IBAction func feedback(_ sender: Any) {
         sendEmail()
     }
@@ -66,7 +71,7 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
     @IBAction func sliderChanged(_ sender: Any) {
         print(slider.value)
         game.setValue(slider.value, forKey: "volume")
-        MusicPlayer.shared.updateVolume()
+        MusicPlayer.shared.volumeControl(factor: 0.4)
     }
     
     @IBAction func switchChanged(_ sender: Any) {
@@ -74,17 +79,21 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
         game.setValue(state, forKey: "photosensitive")
     }
     
-    func sendEmail() {
+    func sendEmail(subject: String) {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
             mail.setToRecipients(["visionconsolidated@gmail.com"])
-            mail.setSubject("Project Mayhem Feedback")
+            mail.setSubject(subject)
 
             present(mail, animated: true)
         } else {
             // show failure alert
         }
+    }
+    
+    func sendEmail() {
+        sendEmail(subject: "Project Mayhem Feedback")
     }
 
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {

@@ -57,9 +57,12 @@ class Levels: UIViewController {
  
         //reset()
         //loadAll()
-        MusicPlayer.shared.updateVolume()
+        MusicPlayer.shared.volumeControl(factor: 0.4)
         
-        print(urlDict)
+        if !videosCurrentlyDownloading && urlDict.isEmpty {
+            //uploadVideos()
+            downloadVideos()
+        }
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.backTapped(gesture:)))
         logo.addGestureRecognizer(tapGesture)

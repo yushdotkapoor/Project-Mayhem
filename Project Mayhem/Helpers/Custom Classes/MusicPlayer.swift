@@ -41,50 +41,9 @@ class MusicPlayer {
         audioPlayer.play()
     }
     
-    func updateVolume() {
-        volumeControl(factor: 0.4)
-       
-    }
-    
-    func updateVolumeLow() {
-        volumeControl(factor: 0.1)
-    }
-    
     func volumeControl(factor:Float) {
-        
         let target = game.float(forKey: "volume") * factor
         audioPlayer?.setVolume(target, fadeDuration: 1)
-        
-        /*
-        let currVol = audioPlayer?.volume ?? 0.0
-        let target = game.float(forKey: "volume") * factor
-        
-        if currVol > target {
-            turnVolumeDown(current: currVol, target: target)
-        }
-        else {
-            turnVolumeUp(current: currVol, target: target)
-        }
- */
     }
-    
-    func turnVolumeDown(current: Float, target: Float) {
-        audioPlayer?.volume -= 0.01
-        let inter:Float = audioPlayer!.volume
-        if inter > target {
-            wait(time:0.03, actions: {
-                self.turnVolumeDown(current: inter, target: target)
-            })
-        }
-    }
-    
-    func turnVolumeUp(current: Float, target: Float) {
-        audioPlayer?.volume += 0.005
-        let inter:Float = audioPlayer!.volume
-        if inter < target {
-            wait(time:0.025, actions: {
-                self.turnVolumeUp(current: inter, target: target)
-            })
-        }
-    }
+ 
 }

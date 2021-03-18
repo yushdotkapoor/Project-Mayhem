@@ -43,12 +43,10 @@ class chapter3: UIViewController {
         stack.alpha = 0.0
         nextChap.alpha = 0.0
         nextChap.isUserInteractionEnabled = false
+        scrollView.isUserInteractionEnabled = false
         
         alert.showAlert(title: "Message from Vision Consolidated", message: "Welcome to the Vision Consolidated Research and Development Division! We hope you have a pleasant experience working with us!", viewController: self, buttonPush: #selector(dismissMessageAlert))
         view.bringSubviewToFront(toolbar)
-        
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -97,16 +95,13 @@ class chapter3: UIViewController {
                 
             }, completion: { _ in
                 self.scrollView.flashScrollIndicators()
+                self.scrollView.isUserInteractionEnabled = true
                 self.stack.fadeIn()
                 wait {
                     self.complete()
                 }
             })
-            
         })
-        
-        
-        
     }
     
     func complete() {
@@ -134,7 +129,7 @@ class chapter3: UIViewController {
     }
     
     func createButtonsForPart1() {
-         button1 = UIButton(frame: CGRect(x: self.view.bounds.width - 161, y: self.message.frame.origin.y + 70.5, width: 100, height: 100))
+        button1 = UIButton(frame: CGRect(x: self.view.bounds.width - 161, y: self.message.frame.origin.y + 70.5, width: 100, height: 100))
         button1.setBackgroundImage(UIImage(systemName: "circle.fill"), for: .normal)
         button1.tintColor = UIColor.black
         button1.addTarget(self, action: #selector(button1TouchUpInside), for: .touchUpInside)

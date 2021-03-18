@@ -65,9 +65,9 @@ class HintAlert: NSObject {
         titleLabel.textColor = .white
         
         
-        let messageLabelHeight = heightForView(text: message, font: UIFont(name: "Helvetica", size: 16.0)!, width: alertViewFrame.width - 10)
+        let messageLabelHeight = heightForView(text: message, font: UIFont(name: "Helvetica", size: 16.0)!, width: alertViewFrame.width - 20)
         //create the message label
-        let messageLabel = UILabel(frame: CGRect(x: 5, y: titleFrame.size.height, width: alertViewFrame.width - 10, height: messageLabelHeight))
+        let messageLabel = UILabel(frame: CGRect(x: 10, y: titleFrame.size.height + 10, width: alertViewFrame.width - 20, height: messageLabelHeight))
         messageLabel.numberOfLines = 0
         messageLabel.text = message
         messageLabel.font = messageLabel.font.withSize(16)
@@ -76,7 +76,7 @@ class HintAlert: NSObject {
         
         //create Button with outline to close the alert
         let button = CustomButtonOutline()
-        button.frame = CGRect(x: alertView.frame.size.width / 2 - 37.5, y: messageLabel.frame.size.height + titleLabel.frame.size.height + 10, width: 75, height: 25)
+        button.frame = CGRect(x: alertView.frame.size.width / 2 - 37.5, y: messageLabel.frame.size.height + titleLabel.frame.size.height + 30, width: 75, height: 25)
         button.setupButton()
         button.setTitle("Close", for: .normal)
         button.setTitleColor(.white, for: .normal)
@@ -84,7 +84,7 @@ class HintAlert: NSObject {
         
         
         //resize alertView
-        alertView.frame = CGRect(x: 0, y: 0, width: targetView.frame.size.width-80, height: messageLabel.frame.size.height + titleFrame.height + 50)
+        alertView.frame = CGRect(x: 0, y: 0, width: targetView.frame.size.width-80, height: messageLabel.frame.size.height + titleFrame.height + 70)
         alertView.center = targetView.center
         gradient.frame = alertView.bounds
         alertView.layer.addSublayer(gradient)

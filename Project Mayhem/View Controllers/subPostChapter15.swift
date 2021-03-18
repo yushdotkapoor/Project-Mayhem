@@ -34,7 +34,7 @@ class subPostChapter15: UIViewController {
         
         funcToPass = part1
         godThread = self
-        video = VideoPlayer(urlAsset: vidName, view: playerView, arr: pauseArray, startTime: 0)
+        video = VideoPlayer(urlAsset: vidName, view: playerView, arr: pauseArray, startTime: 0, volume: 0.1)
         talk = speechModule(activeCode: game.string(forKey: "active")!, rippleView: ripplingView!)
         
         tomorrow = UIFont(name: "Tomorrow", size: 20)
@@ -159,17 +159,12 @@ class subPostChapter15: UIViewController {
         funcToPass = part5
         if let player = video?.assetPlayer {
         if let timeScale = player.currentItem?.asset.duration.timescale {
-            player.seek(to: CMTimeMakeWithSeconds(70.3, preferredTimescale: timeScale), completionHandler: { (complete) in
+            
+            player.seek(to: CMTimeMakeWithSeconds(70.25, preferredTimescale: timeScale), toleranceBefore: CMTimeMakeWithSeconds(0.05, preferredTimescale: timeScale), toleranceAfter: CMTimeMakeWithSeconds(0.05, preferredTimescale: timeScale), completionHandler: { (complete) in
                 self.part5()
             })
         }
         }
-        /*
-        wait(time:0.1) {
-            video?.playBlock = false
-            video?.functionCalled = false
-        }
- */
     }
     
     @objc func postPart4_2() {
@@ -222,6 +217,7 @@ class subPostChapter15: UIViewController {
         video?.cleanUp()
         talk?.stopRecording()
         NotificationCenter.default.removeObserver(godThread!)
+        game.setValue(true, forKey: "subPostChapter15Watched")
         game.setValue("none", forKey: "active")
         godThread?.performSegue(withIdentifier: "subPostChap15ToPostChap15", sender: nil)
     }
@@ -234,7 +230,7 @@ class subPostChapter15: UIViewController {
             heightsBefore += i.frame.height + 20
         }
         
-        let frame = CGRect(x: 10, y: UIScreen.main.bounds.size.height - 125 - heightsBefore - titleLabelHeight, width: labelWidth, height: titleLabelHeight + 10)
+        let frame = CGRect(x: 10, y: UIScreen.main.bounds.size.height - 150 - heightsBefore - titleLabelHeight, width: labelWidth, height: titleLabelHeight + 10)
         
         let button = CustomButtonOutline(frame: frame)
         button.setupButton(color: .green)
@@ -257,12 +253,12 @@ class subPostChapter15: UIViewController {
     }
     
     func flashInstructions() {
-       let t = game.bool(forKey: "chap15")
+       let t = game.bool(forKey: "subPostChapter15Watched")
        video?.startFlash(lbl: doubleTapInstructions, chap: ["subPostChap15"], willFlash: t)
     }
     
     @objc func doubleTapped() {
-        let t = game.bool(forKey: "chap15")
+        let t = game.bool(forKey: "subPostChapter15Watched")
         video?.viewDidDoubleTap(willPass: t)
     }
     
