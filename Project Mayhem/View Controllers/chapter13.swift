@@ -93,6 +93,8 @@ let alert = MessageAlert()
         hintText = "Dude c'mon. The text on the screen IS the hint"
         quakeLabel.numberOfLines = 3
         quakeLabel.text = "Sometimes we need to take a step back to get some perspective"
+        
+        flashView.backgroundColor = .white
        
         
         let toolBar = UIToolbar()
@@ -135,6 +137,19 @@ let alert = MessageAlert()
     }
     
     
+    func setTheTUp() {
+        let r = SCNText(string: "t", extrusionDepth: 5)
+        
+        let rNode = SCNNode()
+        rNode.position = SCNVector3(x:0, y:0, z:-0.5)
+        rNode.scale = SCNVector3(x:0.001, y:0.001, z:0.001)
+        rNode.geometry = r
+        rNode.geometry?.firstMaterial?.diffuse.contents = UIColor.systemBlue
+        
+        sceneView.scene.rootNode.addChildNode(rNode)
+    }
+    
+    
     
     func setupAR() {
         sceneView.session.run(config)
@@ -148,15 +163,7 @@ let alert = MessageAlert()
         
         sceneView.scene.rootNode.addChildNode(node)
         
-        let r = SCNText(string: "t", extrusionDepth: 5)
-        
-        let rNode = SCNNode()
-        rNode.position = SCNVector3(x:0, y:0, z:-0.5)
-        rNode.scale = SCNVector3(x:0.001, y:0.001, z:0.001)
-        rNode.geometry = r
-        rNode.geometry?.firstMaterial?.diffuse.contents = UIColor.systemBlue
-        
-        sceneView.scene.rootNode.addChildNode(rNode)
+        setTheTUp()
         
         sceneView.autoenablesDefaultLighting = true
         
@@ -255,6 +262,7 @@ let alert = MessageAlert()
                 sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
                     node.removeFromParentNode()
                 }
+                setTheTUp()
                 AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
                 game.setValue("chap13.1", forKey: "active")
             }

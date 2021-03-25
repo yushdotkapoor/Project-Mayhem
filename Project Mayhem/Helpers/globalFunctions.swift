@@ -48,6 +48,11 @@ func activateAVSession(option:AVAudioSession.CategoryOptions) {
     }
 }
 
+func openLink(st: String) {
+    guard let url = URL(string: st) else { return }
+    UIApplication.shared.open(url)
+}
+
 func isOnPhoneCall() -> Bool {
     if isCallKitSupported() {
     for call in CXCallObserver().calls {

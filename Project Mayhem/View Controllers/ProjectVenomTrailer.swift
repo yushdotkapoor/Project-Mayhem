@@ -64,7 +64,7 @@ class ProjectVenomTrailer: UIViewController {
     
     @objc func background() {
         timeStamp = video!.currentTime
-        stop()
+        video?.cleanUp()
     }
     
     @objc func reenter() {

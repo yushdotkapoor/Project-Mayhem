@@ -22,6 +22,7 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     @IBOutlet weak var nextChap: UIButton!
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var toolbar: UIStackView!
+    @IBOutlet weak var clickTheRick: UIButton!
     
     var skipVal = ["chap1", "chap2", "chap3", "chap4", "chap5", "chap6", "chap7", "chap8", "chap9", "chap10", "chap11", "chap12", "chap13", "chap14", "preChap15"]
     var skippable = ["medulla", "frontalCortex", "cerebellum", "occipitalLobe", "opticChiasm", "lateralGeniculateNucleus", "supramarginalGyrus", "HerschlsGyrus", "amygdala", "thalamus", "hippocampus", "fusiformGyrus", "corpusCallosum", "lateralVentricle", "duraMater"]
@@ -80,6 +81,9 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
                 self.glad.fadeIn()
             }
             wait(time: 3, actions: {
+                self.clickTheRick.fadeIn()
+            })
+            wait(time: 5, actions: {
                 self.nameStack.fadeIn()
             })
         })
@@ -97,6 +101,7 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
                 good.alpha = 0.0
                 glad.alpha = 0.0
                 nameStack.alpha = 0.0
+                clickTheRick.alpha = 0.0
                 break
             case "chap1.1":
                 leave.alpha = 1.0
@@ -104,6 +109,7 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
                 good.alpha = 0.0
                 glad.alpha = 0.0
                 nameStack.alpha = 0.0
+                clickTheRick.alpha = 0.0
                 break
             case "chap1.2":
                 leave.alpha = 0.0
@@ -111,6 +117,7 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
                 good.alpha = 1.0
                 glad.alpha = 1.0
                 nameStack.alpha = 1.0
+                clickTheRick.alpha = 1.0
                 break
             default:
                 game.setValue("none", forKey: "active")
@@ -230,6 +237,11 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
         
         game.setValue("chap1.1", forKey: "active")
     }
+    
+    @IBAction func rickyLink(_ sender: Any) {
+        openLink(st: "https://www.youtube.com/watch?v=oHg5SJYRHA0")
+    }
+    
     
     let customAlert = HintAlert()
     

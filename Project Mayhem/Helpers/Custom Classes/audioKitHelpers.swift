@@ -41,6 +41,7 @@ class Listen {
     var tappableNode1: Mixer
     var tracker: PitchTap!
     var silence: Fader
+    var memeBlock: Bool
     
     init() {
         guard let input = engine.input else {
@@ -51,6 +52,7 @@ class Listen {
         tappableNode1 = Mixer(mic)
         silence = Fader(tappableNode1, gain: 0)
         engine.output = silence
+        memeBlock = false
         tracker = PitchTap(mic) { pitch, amp in
             DispatchQueue.main.async {
                 if amp[0] > 0.1 {
@@ -59,14 +61,20 @@ class Listen {
                 else {
                     self.fq = 0.0
                 }
+                if amp[0] > 1 {
+                    if !self.memeBlock {
+                        self.memeBlock = true
+                        print("block active")
+                        openLink(st: "https://i.ibb.co/qYnmL23/images.jpg")
+                        print("gawddamnn das loud")
+                    }
+                }
             }
         }
     }
     
     func start() {
         print("Audio kit start")
-        //Settings.audioInputEnabled = true
-        
         do {
             try engine.start()
             tracker.start()

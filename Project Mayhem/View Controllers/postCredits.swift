@@ -28,8 +28,7 @@ class postCredits: UIViewController, MFMailComposeViewControllerDelegate {
         hint.isUserInteractionEnabled = false
     }
     @IBAction func merchSite(_ sender: Any) {
-        guard let url = URL(string: "https://visionconsolidated.wixsite.com/website/project-mayhem-shop") else { return }
-        UIApplication.shared.open(url)
+        openLink(st: "https://visionconsolidated.wixsite.com/website/project-mayhem-shop")
     }
     
     override func viewDidAppear(_ animated: Bool) {

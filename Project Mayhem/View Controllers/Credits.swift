@@ -47,7 +47,7 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
     }
     
     @IBAction func instagram(_ sender: Any) {
-        openLink(st: "https://www.instagram.com/yushrajkapoor/")
+        openLink(st: "https://www.instagram.com/vision_consolidated/")
     }
     
     @IBAction func dhruvGoelWebsite(_ sender: Any) {
@@ -60,11 +60,6 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
     
     @objc func donate(tapGestureRecognizer: UITapGestureRecognizer) {
         openLink(st: "https://www.paypal.com/paypalme/yushkapoor")
-    }
-    
-    func openLink(st: String) {
-        guard let url = URL(string: st) else { return }
-        UIApplication.shared.open(url)
     }
     
     

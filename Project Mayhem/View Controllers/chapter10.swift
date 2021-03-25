@@ -105,6 +105,7 @@ class chapter10: UIViewController {
                 wait(time: 0.75, actions: {
                     self.nextPhase()
                     self.buttonView.flickerIn()
+                    self.buttonView.isUserInteractionEnabled = false
                     UIView.animate(withDuration: 1.0) {
                         self.buttonStackTop.constant -= 150
                         self.view.layoutIfNeeded()

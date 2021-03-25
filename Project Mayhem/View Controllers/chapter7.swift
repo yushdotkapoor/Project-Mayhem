@@ -156,15 +156,19 @@ class chapter7: UIViewController {
     }
     
     @objc func background() {
+        print("background")
         timeStamp = video!.currentTime
-        stop()
+        video?.cleanUp()
+        video = nil
     }
     
     @objc func reenter() {
+        print("reenter")
         if timeStamp - 2 < 0 {
             timeStamp = 2
         }
         video = VideoPlayer(urlAsset: vidName, view: vidView!, arr: pauseArray, startTime: timeStamp - 2, volume: 0.2)
+        flashInstructions()
     }
     
     func stop() {
@@ -178,7 +182,6 @@ class chapter7: UIViewController {
         game.setValue("none", forKey: "active")
         nextChap.isUserInteractionEnabled = true
         nextChap.fadeIn()
-        
     }
 
     @IBAction func goBack(_ sender: Any) {

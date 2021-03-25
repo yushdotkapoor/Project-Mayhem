@@ -22,6 +22,8 @@ class chapter5: UIViewController {
     var progressVal:Float = 0.0
     var eggVal:Float = 0.0
     
+    var eggComplete = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if isOnPhoneCall() {
@@ -64,7 +66,7 @@ class chapter5: UIViewController {
             self.progressVal += 1
             self.changeProgress()
         }
-        else if pitch >= 6968 && pitch <= 6970 {
+        else if (pitch >= 6968 && pitch <= 6970 || pitch >= 68 && pitch <= 70) && !eggComplete {
             self.eggVal += 1
             self.eggProgress()
         }
@@ -78,6 +80,7 @@ class chapter5: UIViewController {
     
     func eggProgress() {
         if eggVal > 20 {
+            eggComplete = true
             alert(title: "Nice!", message: "You've found an easter egg! It's totally useless, just like me!", actionTitle: "Yay!",actions: {
                 self.recurse()
             })
@@ -138,7 +141,7 @@ class chapter5: UIViewController {
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.darkGray
             }
-            customAlert.showAlert(message: "do re mi fa so laaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n\nNice!", viewController: self, hintButton: hint)
+            customAlert.showAlert(message: "do re mi fa so laaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n\nAlso, Nice ;)", viewController: self, hintButton: hint)
             view.bringSubviewToFront(toolbar)
         }
         

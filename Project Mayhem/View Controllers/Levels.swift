@@ -231,12 +231,12 @@ class Levels: UIViewController {
             current.getNotificationSettings(completionHandler: { (settings) in
                 switch settings.authorizationStatus {
                 case .denied:
-                        self.alert(title: "Error", message: "You must agree to receive notifications from this app to continue. Go to Settings > Project Mayhem > Notifications > Turn on 'Allow Notifications'", actionTitle: "OK", actions: {
+                        self.alert(title: "Error", message: "For better game experience, you should agree to receive notifications from this app to continue. Go to Settings > Project Mayhem > Notifications > Turn on 'Allow Notifications'. This is not required.", actionTitle: "OK", actions: {
                             UIApplication.shared.open(URL(string:"App-Prefs:root=NOTIFICATIONS_ID")!, options: [:], completionHandler: nil)
                             })
                     break
                 case .ephemeral:
-                        self.alert(title: "Error", message: "Make sure you can receive notifications from this app at all times", actionTitle: "OK", actions: {
+                        self.alert(title: "Error", message: "Make sure you can receive notifications from this app", actionTitle: "OK", actions: {
                         UIApplication.shared.open(URL(string:"App-Prefs:root=NOTIFICATIONS_ID")!, options: [:], completionHandler: nil)
                         })
                     break

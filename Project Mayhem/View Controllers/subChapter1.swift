@@ -45,7 +45,6 @@ class subChapter1: UIViewController {
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(singleTapped))
         singleTap.numberOfTapsRequired = 1
         view.addGestureRecognizer(singleTap)
-        
     }
     
     func unlock() {
@@ -106,7 +105,7 @@ class subChapter1: UIViewController {
     
     @objc func background() {
         timeStamp = video!.currentTime
-        stop()
+        video?.cleanUp()
     }
     
     @objc func reenter() {
