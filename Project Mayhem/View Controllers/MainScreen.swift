@@ -8,6 +8,7 @@
 import UIKit
 
 class MainScreen: UIViewController {
+    
     @IBOutlet weak var enter: CustomButton!
     @IBOutlet weak var logoCenterConstraint: NSLayoutConstraint!
     @IBOutlet weak var enterCenterConstraint: NSLayoutConstraint!

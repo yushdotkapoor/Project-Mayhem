@@ -27,6 +27,7 @@ class postCredits: UIViewController, MFMailComposeViewControllerDelegate {
         hint.alpha = 0.0
         hint.isUserInteractionEnabled = false
     }
+    
     @IBAction func merchSite(_ sender: Any) {
         openLink(st: "https://visionconsolidated.wixsite.com/website/project-mayhem-shop")
     }

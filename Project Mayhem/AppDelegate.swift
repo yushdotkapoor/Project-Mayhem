@@ -34,6 +34,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate {
         if isCallKitSupported() {
             callObserver.setDelegate(self, queue: nil)
         }
+        
+        ProjectMayhemProducts.store.requestProducts{ [weak self] success, products in
+            guard self != nil else { return }
+            if success {
+               IAPs = products!
+                print(IAPs)
+            }
+            else {
+                print("IAP import unsuccessful")
+            }
+        }
 
         return true
     }

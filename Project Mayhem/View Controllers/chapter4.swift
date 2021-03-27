@@ -28,6 +28,7 @@ class chapter4: UIViewController {
     var compareArr2:[String] = [">", "", "<", "<", "", ">"]
     var new = 0
         
+    var unlocker:unlockAllLevels?
         
     override func viewDidLoad() {
     super.viewDidLoad()
@@ -178,10 +179,14 @@ let alert = MessageAlert()
     }
 
     @IBAction func goNext(_ sender: Any) {
-        self.performSegue(withIdentifier: "chap4ToChap5", sender: nil)
+        unlocker = unlockAllLevels.init(scrnview: self, key: "chap4ToChap5")
+        unlocker?.purchase()
     }
     
-
+    func goToPurchase() {
+        unlocker?.goToPurchase()
+    }
+    
     
     @IBAction func hint(_ sender: Any) {
         if menuState {

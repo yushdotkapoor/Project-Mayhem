@@ -9,6 +9,7 @@ import UIKit
 import Speech
 import LocalAuthentication
 import AVFoundation
+import StoreKit
 
 let game = UserDefaults.standard
 
@@ -49,6 +50,8 @@ class Levels: UIViewController {
     @IBOutlet weak var logo: UIImageView!
     
     var del = 0.5
+    
+    var unlocker:unlockAllLevels?
     
     override func viewDidLoad() {
            super.viewDidLoad()
@@ -207,6 +210,15 @@ class Levels: UIViewController {
             b.constant -= view.bounds.width
         }
  
+    }
+    
+    @IBAction func chapter5PurchaseBlock(_ sender: Any) {
+        unlocker = unlockAllLevels.init(scrnview: self, key: "levelsToChap5")
+        unlocker?.purchase()
+    }
+    
+    func goToPurchase() {
+        unlocker?.goToPurchase()
     }
     
     func permissionsLord() {

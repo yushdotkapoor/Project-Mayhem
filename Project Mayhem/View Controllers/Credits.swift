@@ -7,6 +7,7 @@
 
 import UIKit
 import MessageUI
+import StoreKit
 
 class Credits: UIViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var donateLabel: UILabel!
@@ -72,6 +73,10 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
     @IBAction func switchChanged(_ sender: Any) {
         let state = flashingSwitch.isOn
         game.setValue(state, forKey: "photosensitive")
+    }
+    
+    @IBAction func restorePurchases(_ sender: Any) {
+        ProjectMayhemProducts.store.restorePurchases()
     }
     
     func sendEmail(subject: String) {

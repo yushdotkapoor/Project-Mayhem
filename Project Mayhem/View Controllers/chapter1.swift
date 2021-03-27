@@ -26,6 +26,7 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     
     var skipVal = ["chap1", "chap2", "chap3", "chap4", "chap5", "chap6", "chap7", "chap8", "chap9", "chap10", "chap11", "chap12", "chap13", "chap14", "preChap15"]
     var skippable = ["medulla", "frontalCortex", "cerebellum", "occipitalLobe", "opticChiasm", "lateralGeniculateNucleus", "supramarginalGyrus", "HerschlsGyrus", "amygdala", "thalamus", "hippocampus", "fusiformGyrus", "corpusCallosum", "lateralVentricle", "duraMater"]
+    var skippableFree = ["medulla", "frontalCortex", "cerebellum", "occipitalLobe"]
     
     let notificationCenter = NotificationCenter.default
     
@@ -165,6 +166,7 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
                 self.nameStack.fadeOut()
                 self.good.fadeOut()
                 self.glad.fadeOut()
+                self.clickTheRick.fadeOut()
                 wait {
                     self.welcome.flickerIn(iterations: 10)
                     self.welcome.text = "Welcome to Project Mayhem, Branechild"
@@ -188,7 +190,15 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     func skip() -> Bool {
-        for (index,val) in skippable.enumerated() {
+        var arr:[String] = []
+        if ProjectMayhemProducts.store.isProductPurchased(ProjectMayhemProducts.unlocker) {
+            arr = skippable
+        }
+        else {
+            arr = skippableFree
+        }
+        
+        for (index,val) in arr.enumerated() {
             if (val.lowercased() == nameField.text?.lowercased()) {
                 game.setValue(true, forKey: skipVal[index])
                 alert(title: "Level Skip Notification", message: "level code " + skipVal[index] + " has been skipped", actionTitle: "thx")

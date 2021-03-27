@@ -9,6 +9,7 @@ import UIKit
 import AVKit
 import CallKit
 import CloudKit
+import StoreKit
 
 var video:VideoPlayer?
 var godThread:UIViewController?
@@ -18,6 +19,8 @@ var wordToSearch:[String]?
 var funcToPass:(() -> Void)?
 var tomorrow = UIFont(name: "Tomorrow", size: 20)
 var videosCurrentlyDownloading = false
+var IAPs:[SKProduct]?
+
 
 let database = CKContainer.default().publicCloudDatabase
 let vidArr = ["Chap1Intro", "lvl7Intro", "lvl7Outro", "subPostChapter15", "ProjectVenomTrailer"]

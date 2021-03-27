@@ -11,6 +11,11 @@
 		9D0B0ADE25FEE3CD00C3B1F5 /* Between0And1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9D0B0ADD25FEE3CD00C3B1F5 /* Between0And1.m4a */; };
 		9D0C543D25C50F97000EE579 /* audioKitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C543C25C50F97000EE579 /* audioKitHelpers.swift */; };
 		9D0C544125C51AA7000EE579 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C544025C51AA7000EE579 /* UIViewControllerExtensions.swift */; };
+		9D150276260EDF7700A767C3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D150275260EDF7700A767C3 /* StoreKit.framework */; };
+		9D15027A260EE08200A767C3 /* ProjectMayhemProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D150279260EE08200A767C3 /* ProjectMayhemProducts.swift */; };
+		9D150280260EE0A700A767C3 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D15027F260EE0A700A767C3 /* IAPHelper.swift */; };
+		9D150287260EF5FB00A767C3 /* unlockAllLevels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D150286260EF5FB00A767C3 /* unlockAllLevels.swift */; };
+		9D1502AF260F0BB300A767C3 /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1502AE260F0BB300A767C3 /* CheckInternet.swift */; };
 		9D18487D25D7A7B7007960C0 /* HintAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D18487C25D7A7B7007960C0 /* HintAlert.swift */; };
 		9D3848D725F46C4E00B23F76 /* lvl7IntroCompressed.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9D3848D525F46C4E00B23F76 /* lvl7IntroCompressed.mov */; };
 		9D3848D825F46C4E00B23F76 /* lvl7OutroCompressed.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9D3848D625F46C4E00B23F76 /* lvl7OutroCompressed.mov */; };
@@ -129,6 +134,11 @@
 		9D0B0ADD25FEE3CD00C3B1F5 /* Between0And1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Between0And1.m4a; sourceTree = "<group>"; };
 		9D0C543C25C50F97000EE579 /* audioKitHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audioKitHelpers.swift; sourceTree = "<group>"; };
 		9D0C544025C51AA7000EE579 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		9D150275260EDF7700A767C3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		9D150279260EE08200A767C3 /* ProjectMayhemProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMayhemProducts.swift; sourceTree = "<group>"; };
+		9D15027F260EE0A700A767C3 /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
+		9D150286260EF5FB00A767C3 /* unlockAllLevels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unlockAllLevels.swift; sourceTree = "<group>"; };
+		9D1502AE260F0BB300A767C3 /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
 		9D18487C25D7A7B7007960C0 /* HintAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintAlert.swift; sourceTree = "<group>"; };
 		9D3848D525F46C4E00B23F76 /* lvl7IntroCompressed.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = lvl7IntroCompressed.mov; sourceTree = "<group>"; };
 		9D3848D625F46C4E00B23F76 /* lvl7OutroCompressed.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = lvl7OutroCompressed.mov; sourceTree = "<group>"; };
@@ -216,6 +226,7 @@
 				9D0B0AD425FEBA3100C3B1F5 /* CloudKit.framework in Frameworks */,
 				9D92875A25F86DD7005170A1 /* AudioKit in Frameworks */,
 				9D92877625F86F44005170A1 /* OneSignal in Frameworks */,
+				9D150276260EDF7700A767C3 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +257,7 @@
 		9D0B0AD225FEBA3100C3B1F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D150275260EDF7700A767C3 /* StoreKit.framework */,
 				9D0B0AD325FEBA3100C3B1F5 /* CloudKit.framework */,
 			);
 			name = Frameworks;
@@ -256,9 +268,20 @@
 			children = (
 				9D420EBF25DF032000A3A13D /* Custom Classes */,
 				9D420EBE25DF02E500A3A13D /* Extensions */,
+				9D150278260EE06F00A767C3 /* IAP */,
 				9D420EBA25DF02AF00A3A13D /* globalFunctions.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9D150278260EE06F00A767C3 /* IAP */ = {
+			isa = PBXGroup;
+			children = (
+				9D150279260EE08200A767C3 /* ProjectMayhemProducts.swift */,
+				9D15027F260EE0A700A767C3 /* IAPHelper.swift */,
+				9D150286260EF5FB00A767C3 /* unlockAllLevels.swift */,
+			);
+			path = IAP;
 			sourceTree = "<group>";
 		};
 		9D420EBE25DF02E500A3A13D /* Extensions */ = {
@@ -284,6 +307,7 @@
 				9D8C42BE25C7F9C30039F857 /* nonPastableTextField.swift */,
 				9D4BFC7425DE5FF00013D840 /* PlayerView.swift */,
 				9D4BFC7825DE600C0013D840 /* VideoPlayer.swift */,
+				9D1502AE260F0BB300A767C3 /* CheckInternet.swift */,
 				9D6E493525EE12EF00B09E8A /* MusicPlayer.swift */,
 				9D0C543C25C50F97000EE579 /* audioKitHelpers.swift */,
 				9D6C704825ECD47800E8CF6C /* speechModule.swift */,
@@ -690,6 +714,7 @@
 				9D6C705725EE082400E8CF6C /* Credits.swift in Sources */,
 				9DBBF73025C279310022FC63 /* chapter5.swift in Sources */,
 				9D5614E32592FC5F00F1695A /* CustomButtonOutline.swift in Sources */,
+				9D15027A260EE08200A767C3 /* ProjectMayhemProducts.swift in Sources */,
 				9D4BFC6925DE41260013D840 /* subChapter11.swift in Sources */,
 				9DEB282625C54C3A00E3F102 /* chapter6.swift in Sources */,
 				9D420EBB25DF02AF00A3A13D /* globalFunctions.swift in Sources */,
@@ -713,9 +738,12 @@
 				9DEB283F25C6095000E3F102 /* stringExtensions.swift in Sources */,
 				9DD618EB25E62BCE0036089B /* videoTemplate.swift in Sources */,
 				9D74262725CA41F3008D9645 /* chapter12.swift in Sources */,
+				9D1502AF260F0BB300A767C3 /* CheckInternet.swift in Sources */,
 				9DEA6A3825972495002A8739 /* chapter3.swift in Sources */,
+				9D150287260EF5FB00A767C3 /* unlockAllLevels.swift in Sources */,
 				9DEA6A112595162B002A8739 /* chapterTemplate.swift in Sources */,
 				9DEB283825C5D7EE00E3F102 /* chapter10.swift in Sources */,
+				9D150280260EE0A700A767C3 /* IAPHelper.swift in Sources */,
 				9D4BFC7925DE600C0013D840 /* VideoPlayer.swift in Sources */,
 				9D56140F2591CFFD00F1695A /* CustomButton.swift in Sources */,
 				9D5B42C5259C97FB00A4F34A /* animations.swift in Sources */,
@@ -900,7 +928,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Project Mayhem/Project Mayhem.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_ASSET_PATHS = "\"Project Mayhem/Preview Content\"";
 				DEVELOPMENT_TEAM = 68L233566P;
 				ENABLE_PREVIEWS = YES;
@@ -927,7 +955,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Project Mayhem/Project Mayhem.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_ASSET_PATHS = "\"Project Mayhem/Preview Content\"";
 				DEVELOPMENT_TEAM = 68L233566P;
 				ENABLE_PREVIEWS = YES;
@@ -1030,7 +1058,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 68L233566P;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -1052,7 +1080,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 68L233566P;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
