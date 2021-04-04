@@ -136,7 +136,7 @@ class chapter15: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate 
                     self.view.layoutIfNeeded()
                 }, completion: {
                     action in
-                    self.alert.showAlert(title: "Message from Yush Kapoor", message: "We need to talk.", viewController: self, buttonPush: #selector(self.dismissMessageAlert))
+                    self.alert.showAlert(title: "Message from Yush Raj Kapoor", message: "We need to talk.", viewController: self, buttonPush: #selector(self.dismissMessageAlert))
                     self.view.bringSubviewToFront(self.toolbar)
                 })
             }

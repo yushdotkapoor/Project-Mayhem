@@ -43,6 +43,8 @@ class VideoPlayer : NSObject {
     
     var volumeViolated = false
     
+    var requiresVolume = true
+    
     
     var playerRate:Float = 1 {
         didSet {
@@ -64,12 +66,17 @@ class VideoPlayer : NSObject {
     // MARK: - Init
     
     convenience init(urlAsset:String, view:PlayerView, arr:[Double], startTime:Double, volume: Float) {
+        self.init(urlAsset: urlAsset, view: view, arr: arr, startTime: startTime, volume: volume, needVolume: true)
+    }
+    
+    convenience init(urlAsset:String, view:PlayerView, arr:[Double], startTime:Double, volume: Float, needVolume: Bool) {
         self.init()
         
         MusicPlayer.shared.volumeControl(factor: volume)
         pauseArray = arr
         playerView = view
         currentTime = startTime
+        requiresVolume = needVolume
         
         if let playView = playerView, let playerLayer = playView.layer as? AVPlayerLayer {
             playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
@@ -377,7 +384,7 @@ class VideoPlayer : NSObject {
     
     func volumeCheck() {
         let vol = AVAudioSession.sharedInstance().outputVolume
-        if vol < 0.15 {
+        if vol < 0.15 && requiresVolume {
             video?.pause()
             volumeViolated = true
             let alertController = UIAlertController(title: "Volume Error", message: "Certain elements of this level require audio. Please turn your volume up. The level will continue once the required volume is reached.", preferredStyle: .alert)

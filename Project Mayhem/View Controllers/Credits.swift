@@ -15,6 +15,7 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var flashingSwitch: UISwitch!
     @IBOutlet weak var dhruvSoundCloud: UIButton!
     @IBOutlet weak var version: UILabel!
+    @IBOutlet weak var cellularSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,10 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
         
         let volume = game.float(forKey: "volume")
         let sensitive = game.bool(forKey: "photosensitive")
+        let cell = game.bool(forKey: "useCellular")
+        
         flashingSwitch.setOn(sensitive, animated: false)
+        cellularSwitch.setOn(cell, animated: false)
         
         slider.value = volume
         
@@ -74,6 +78,12 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
         let state = flashingSwitch.isOn
         game.setValue(state, forKey: "photosensitive")
     }
+    
+    @IBAction func cellularSwitchChanged(_ sender: Any) {
+        let state = cellularSwitch.isOn
+        game.setValue(state, forKey: "useCellular")
+    }
+    
     
     @IBAction func restorePurchases(_ sender: Any) {
         ProjectMayhemProducts.store.restorePurchases()

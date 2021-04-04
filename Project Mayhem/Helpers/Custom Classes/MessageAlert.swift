@@ -20,6 +20,34 @@ class MessageAlert: NSObject {
         return alert
     }()
     
+    func getGradientBasedOnTitle(title: String) -> CAGradientLayer {
+        let grad = CAGradientLayer()
+        
+        switch title {
+        case "Message from Vision Consolidated":
+            //purple gradient
+            grad.colors = [UIColor(red: 128/255, green: 0, blue: 128/255, alpha: 1.0).cgColor, UIColor(red: 216/255, green: 191/255, blue: 216/255, alpha: 1.0).cgColor]
+            break
+        case "Message from Victoria Lambson":
+            //red
+            grad.colors = [UIColor(red: 220/255, green: 28/255, blue: 19/255, alpha: 1.0).cgColor, UIColor(red: 246/255, green: 189/255, blue: 192/255, alpha: 1.0).cgColor]
+            break
+        case "Message from Yush Raj Kapoor":
+            //green
+            grad.colors = [UIColor(red: 0, green: 86/255, blue: 62/255, alpha: 1.0).cgColor, UIColor(red: 0, green: 180/255, blue: 134/255, alpha: 1.0).cgColor]
+            break
+        case "Message from Defender Command":
+            //orange
+            grad.colors = [UIColor(red: 255/255, green: 128/255, blue: 0/255, alpha: 1.0).cgColor, UIColor(red: 249/255, green: 192/255, blue: 136/255, alpha: 1.0).cgColor]
+            break
+        default:
+            break
+        }
+        
+        return grad
+        
+    }
+    
     func showAlert(title: String, message: String, viewController: UIViewController, buttonPush: Selector) {
         guard let targetView = viewController.view else {
             return
@@ -30,8 +58,7 @@ class MessageAlert: NSObject {
         
         alertView.isUserInteractionEnabled = true
         alertView.frame = CGRect(x: 0, y: 0, width: targetView.frame.size.width-80, height: 100)
-        let gradient = CAGradientLayer()
-        gradient.colors = [UIColor(red: 128/255, green: 0, blue: 128/255, alpha: 1.0).cgColor, UIColor(red: 216/255, green: 191/255, blue: 216/255, alpha: 1.0).cgColor]
+        let gradient = getGradientBasedOnTitle(title: title)
         alertView.isHidden = true
         alertView.alpha = 0.0
         

@@ -79,7 +79,7 @@ class chapter7: UIViewController {
         talkingView!.layer.cornerRadius = 20
         
         let gradient = CAGradientLayer()
-        gradient.colors = [UIColor(red: 128/255, green: 0, blue: 128/255, alpha: 1.0).cgColor, UIColor(red: 216/255, green: 191/255, blue: 216/255, alpha: 1.0).cgColor]
+        gradient.colors = [UIColor(red: 0, green: 86/255, blue: 62/255, alpha: 1.0).cgColor, UIColor(red: 0, green: 180/255, blue: 134/255, alpha: 1.0).cgColor]
         
         let title = "Message from Yush Raj Kapoor"
         let lblwidth = talkingView!.bounds.size.width - 10

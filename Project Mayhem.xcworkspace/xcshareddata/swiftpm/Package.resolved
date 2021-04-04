@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "AudioKit",
+        "repositoryURL": "https://github.com/AudioKit/AudioKit",
+        "state": {
+          "branch": "v5-main",
+          "revision": "b1099859f6654c98f0f28e9fb1ed388ae96cb7d6",
+          "version": null
+        }
+      },
+      {
+        "package": "OneSignalXCFramework",
+        "repositoryURL": "https://github.com/OneSignal/OneSignal-XCFramework",
+        "state": {
+          "branch": null,
+          "revision": "bcfcfd4612e2f22e308f9c68117008ee4faf2170",
+          "version": "3.3.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

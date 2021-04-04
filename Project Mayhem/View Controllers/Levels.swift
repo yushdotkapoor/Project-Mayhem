@@ -48,10 +48,14 @@ class Levels: UIViewController {
     @IBOutlet weak var chap14Center: NSLayoutConstraint!
     @IBOutlet weak var chap15Center: NSLayoutConstraint!
     @IBOutlet weak var logo: UIImageView!
+    @IBOutlet weak var quality: UILabel!
+    @IBOutlet weak var qualityInfo: UIButton!
     
     var del = 0.5
     
     var unlocker:unlockAllLevels?
+    
+    var timer:Timer?
     
     override func viewDidLoad() {
            super.viewDidLoad()
@@ -67,15 +71,39 @@ class Levels: UIViewController {
             downloadVideos()
         }
         
+        checkQuality()
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            self.checkQuality()
+        }
+        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.backTapped(gesture:)))
         logo.addGestureRecognizer(tapGesture)
         logo.isUserInteractionEnabled = true
-        
+    }
+    
+   
+    
+    @objc func checkQuality() {
+        if videosCurrentlyDownloading {
+            quality.text = "LQ"
+            quality.textColor = .red
+            qualityInfo.tintColor = .red
+        }
+        else {
+            quality.text = "HQ"
+            quality.textColor = .green
+            qualityInfo.tintColor = .green
+            timer?.invalidate()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        timer?.invalidate()
     }
     
     @objc func backTapped(gesture: UIGestureRecognizer) {
         performSegue(withIdentifier: "levelsToMain", sender: nil)
-        
     }
     
     func reset() {
@@ -220,6 +248,12 @@ class Levels: UIViewController {
     func goToPurchase() {
         unlocker?.goToPurchase()
     }
+    
+    
+    @IBAction func qualityInfoTapped(_ sender: Any) {
+        alert(title: "Information", message: "This is an indicator for what quality parts of the game will be displayed as. LQ means \"low-quality\", indicating that not all elements of the game have been downloaded just yet. If you wait, the indicator will turn green and display HQ, or \"high-quality\". Sometimes it can take a few minutes to download fully.", actionTitle: "Okay")
+    }
+    
     
     func permissionsLord() {
         let speechStatus = SFSpeechRecognizer.authorizationStatus()

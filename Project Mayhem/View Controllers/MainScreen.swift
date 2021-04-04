@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AppTrackingTransparency
+import OneSignal
 
 class MainScreen: UIViewController {
     
@@ -19,14 +21,22 @@ class MainScreen: UIViewController {
     var touched = 0
     
     override func viewDidLoad() {
-           super.viewDidLoad()
+        super.viewDidLoad()
+        ATTrackingManager.requestTrackingAuthorization { (status) in }
         let c = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.0)
         tearDrop.setupButton(color: c, pressColor: UIColor.black)
         enter.setupButton(color: c, pressColor: UIColor.black)
         
         if !videosCurrentlyDownloading && urlDict.isEmpty {
-            //uploadVideos()
-            downloadVideos()
+            if !game.bool(forKey: "useCellular") && game.bool(forKey: "onCellular")  {
+                print("first node")
+                return
+            }
+            else {
+                print("second node")
+                //uploadVideos()
+                downloadVideos()
+            }
         }
     }
     

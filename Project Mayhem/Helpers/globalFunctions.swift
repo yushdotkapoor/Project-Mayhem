@@ -113,6 +113,7 @@ func downloadVideos() {
     for vid in vidArr {
     var videoURL:NSURL?
     print("Downloading \(vid)")
+        game.setValue(false, forKey: "downloaded")
     videosCurrentlyDownloading = true
     database.fetch(withRecordID: CKRecord.ID(recordName: vid)) { results, error in
             if error != nil {
@@ -136,6 +137,7 @@ func downloadVideos() {
                     if urlDict.count == vidArr.count {
                         videosCurrentlyDownloading = false
                         print("\n\nVideo Downloads Completed\n\n")
+                        game.setValue(true, forKey: "downloaded")
                     }
                 } else {
                     print("results Empty")

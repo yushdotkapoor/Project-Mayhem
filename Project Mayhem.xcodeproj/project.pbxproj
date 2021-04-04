@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19F1993079BC97855BD836DC /* Pods_Project_Mayhem_Project_MayhemUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0242F01F7E6A02F86D5841CC /* Pods_Project_Mayhem_Project_MayhemUITests.framework */; };
+		263FC3A458154C34A38D1B60 /* Pods_Project_MayhemTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DD489C64146A8EBCA6C780 /* Pods_Project_MayhemTests.framework */; };
 		9D0B0AD425FEBA3100C3B1F5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0B0AD325FEBA3100C3B1F5 /* CloudKit.framework */; };
 		9D0B0ADE25FEE3CD00C3B1F5 /* Between0And1.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9D0B0ADD25FEE3CD00C3B1F5 /* Between0And1.m4a */; };
 		9D0C543D25C50F97000EE579 /* audioKitHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C543C25C50F97000EE579 /* audioKitHelpers.swift */; };
@@ -40,6 +42,7 @@
 		9D5614E82593153C00F1695A /* chapter1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5614E72593153C00F1695A /* chapter1.swift */; };
 		9D5B42BA259C858100A4F34A /* chapter4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B42B9259C858100A4F34A /* chapter4.swift */; };
 		9D5B42C5259C97FB00A4F34A /* animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B42C4259C97FB00A4F34A /* animations.swift */; };
+		9D6762FA2618534D005E9346 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D6762F92618534D005E9346 /* GoogleService-Info.plist */; };
 		9D6C28E725DCCC950039D12C /* MessageAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C28E625DCCC950039D12C /* MessageAlert.swift */; };
 		9D6C28EB25DCD8330039D12C /* messageTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C28EA25DCD8330039D12C /* messageTemplate.swift */; };
 		9D6C704925ECD47800E8CF6C /* speechModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C704825ECD47800E8CF6C /* speechModule.swift */; };
@@ -88,6 +91,8 @@
 		9DEB283825C5D7EE00E3F102 /* chapter10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB283725C5D7EE00E3F102 /* chapter10.swift */; };
 		9DEB283F25C6095000E3F102 /* stringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB283E25C6095000E3F102 /* stringExtensions.swift */; };
 		9DF618BF25F71F910057CFA6 /* postCredits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF618BE25F71F910057CFA6 /* postCredits.swift */; };
+		E2505288EFF76A1DDA749D72 /* Pods_Project_Mayhem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5958026C5D2F6C3DC84AFE66 /* Pods_Project_Mayhem.framework */; };
+		FD47823D2D08F490D7F4789D /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AA473EAB9A9BD82678A69E9 /* Pods_OneSignalNotificationServiceExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +134,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0242F01F7E6A02F86D5841CC /* Pods_Project_Mayhem_Project_MayhemUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_Mayhem_Project_MayhemUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C97B9B4B38A9709728AA51A /* Pods-Project Mayhem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Mayhem.release.xcconfig"; path = "Target Support Files/Pods-Project Mayhem/Pods-Project Mayhem.release.xcconfig"; sourceTree = "<group>"; };
+		2AA473EAB9A9BD82678A69E9 /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5958026C5D2F6C3DC84AFE66 /* Pods_Project_Mayhem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_Mayhem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		674BF2874D4771AFD821F011 /* Pods-Project Mayhem-Project MayhemUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Mayhem-Project MayhemUITests.debug.xcconfig"; path = "Target Support Files/Pods-Project Mayhem-Project MayhemUITests/Pods-Project Mayhem-Project MayhemUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		69DCB3ABA5F8A93C3B7816A5 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		8651C7C4598121AB353B4AFD /* Pods-Project Mayhem-Project MayhemUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Mayhem-Project MayhemUITests.release.xcconfig"; path = "Target Support Files/Pods-Project Mayhem-Project MayhemUITests/Pods-Project Mayhem-Project MayhemUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8DA48B1D6AE8DCFB2B38AEBA /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
+		982AFC4E8D04CDD115E37879 /* Pods-Project MayhemTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project MayhemTests.debug.xcconfig"; path = "Target Support Files/Pods-Project MayhemTests/Pods-Project MayhemTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9D0B057325C8B0DF00DB47CF /* Project Mayhem.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Project Mayhem.entitlements"; sourceTree = "<group>"; };
 		9D0B0AD325FEBA3100C3B1F5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		9D0B0ADD25FEE3CD00C3B1F5 /* Between0And1.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Between0And1.m4a; sourceTree = "<group>"; };
@@ -139,6 +153,8 @@
 		9D15027F260EE0A700A767C3 /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		9D150286260EF5FB00A767C3 /* unlockAllLevels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unlockAllLevels.swift; sourceTree = "<group>"; };
 		9D1502AE260F0BB300A767C3 /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
+		9D1502F02611107100A767C3 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		9D1502F22611108D00A767C3 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		9D18487C25D7A7B7007960C0 /* HintAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintAlert.swift; sourceTree = "<group>"; };
 		9D3848D525F46C4E00B23F76 /* lvl7IntroCompressed.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = lvl7IntroCompressed.mov; sourceTree = "<group>"; };
 		9D3848D625F46C4E00B23F76 /* lvl7OutroCompressed.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = lvl7OutroCompressed.mov; sourceTree = "<group>"; };
@@ -169,6 +185,7 @@
 		9D5614E72593153C00F1695A /* chapter1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter1.swift; sourceTree = "<group>"; };
 		9D5B42B9259C858100A4F34A /* chapter4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter4.swift; sourceTree = "<group>"; };
 		9D5B42C4259C97FB00A4F34A /* animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animations.swift; sourceTree = "<group>"; };
+		9D6762F92618534D005E9346 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9D6C28E625DCCC950039D12C /* MessageAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAlert.swift; sourceTree = "<group>"; };
 		9D6C28EA25DCD8330039D12C /* messageTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageTemplate.swift; sourceTree = "<group>"; };
 		9D6C704825ECD47800E8CF6C /* speechModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = speechModule.swift; sourceTree = "<group>"; };
@@ -216,6 +233,9 @@
 		9DEB283725C5D7EE00E3F102 /* chapter10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter10.swift; sourceTree = "<group>"; };
 		9DEB283E25C6095000E3F102 /* stringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stringExtensions.swift; sourceTree = "<group>"; };
 		9DF618BE25F71F910057CFA6 /* postCredits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postCredits.swift; sourceTree = "<group>"; };
+		C2DD489C64146A8EBCA6C780 /* Pods_Project_MayhemTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_MayhemTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF162265924FF94C3A9C98C1 /* Pods-Project Mayhem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Mayhem.debug.xcconfig"; path = "Target Support Files/Pods-Project Mayhem/Pods-Project Mayhem.debug.xcconfig"; sourceTree = "<group>"; };
+		EFB84C86541564CF533AF088 /* Pods-Project MayhemTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project MayhemTests.release.xcconfig"; path = "Target Support Files/Pods-Project MayhemTests/Pods-Project MayhemTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +247,7 @@
 				9D92875A25F86DD7005170A1 /* AudioKit in Frameworks */,
 				9D92877625F86F44005170A1 /* OneSignal in Frameworks */,
 				9D150276260EDF7700A767C3 /* StoreKit.framework in Frameworks */,
+				E2505288EFF76A1DDA749D72 /* Pods_Project_Mayhem.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +255,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				263FC3A458154C34A38D1B60 /* Pods_Project_MayhemTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +263,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19F1993079BC97855BD836DC /* Pods_Project_Mayhem_Project_MayhemUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +271,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD47823D2D08F490D7F4789D /* Pods_OneSignalNotificationServiceExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +281,14 @@
 		9D0B0AD225FEBA3100C3B1F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D1502F22611108D00A767C3 /* iAd.framework */,
+				9D1502F02611107100A767C3 /* AdSupport.framework */,
 				9D150275260EDF7700A767C3 /* StoreKit.framework */,
 				9D0B0AD325FEBA3100C3B1F5 /* CloudKit.framework */,
+				2AA473EAB9A9BD82678A69E9 /* Pods_OneSignalNotificationServiceExtension.framework */,
+				5958026C5D2F6C3DC84AFE66 /* Pods_Project_Mayhem.framework */,
+				0242F01F7E6A02F86D5841CC /* Pods_Project_Mayhem_Project_MayhemUITests.framework */,
+				C2DD489C64146A8EBCA6C780 /* Pods_Project_MayhemTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -336,6 +366,7 @@
 				9D9287BE25F8711F005170A1 /* OneSignalNotificationServiceExtension */,
 				9D56137F259195E600F1695A /* Products */,
 				9D0B0AD225FEBA3100C3B1F5 /* Frameworks */,
+				D89047F1C2E1B8A419E10A47 /* Pods */,
 			);
 			sourceTree = "<group>";
 			usesTabs = 0;
@@ -361,6 +392,7 @@
 				9D56142F2591DC5400F1695A /* AppDelegate.swift */,
 				9D0B0ADD25FEE3CD00C3B1F5 /* Between0And1.m4a */,
 				9D5613BC259196DE00F1695A /* LaunchScreen.storyboard */,
+				9D6762F92618534D005E9346 /* GoogleService-Info.plist */,
 				9D56138A259195E700F1695A /* Info.plist */,
 				9D8C42AE25C7BE5C0039F857 /* Settings.bundle */,
 				9D0C543B25C50F79000EE579 /* Helpers */,
@@ -468,6 +500,21 @@
 			path = Templates;
 			sourceTree = "<group>";
 		};
+		D89047F1C2E1B8A419E10A47 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				69DCB3ABA5F8A93C3B7816A5 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */,
+				8DA48B1D6AE8DCFB2B38AEBA /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */,
+				DF162265924FF94C3A9C98C1 /* Pods-Project Mayhem.debug.xcconfig */,
+				0C97B9B4B38A9709728AA51A /* Pods-Project Mayhem.release.xcconfig */,
+				674BF2874D4771AFD821F011 /* Pods-Project Mayhem-Project MayhemUITests.debug.xcconfig */,
+				8651C7C4598121AB353B4AFD /* Pods-Project Mayhem-Project MayhemUITests.release.xcconfig */,
+				982AFC4E8D04CDD115E37879 /* Pods-Project MayhemTests.debug.xcconfig */,
+				EFB84C86541564CF533AF088 /* Pods-Project MayhemTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -475,10 +522,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D5613A3259195E800F1695A /* Build configuration list for PBXNativeTarget "Project Mayhem" */;
 			buildPhases = (
+				C8AE985D10D08DEDF5FB5085 /* [CP] Check Pods Manifest.lock */,
 				9D56137A259195E600F1695A /* Sources */,
 				9D56137B259195E600F1695A /* Frameworks */,
 				9D56137C259195E600F1695A /* Resources */,
 				9D38491425F4B1E100B23F76 /* Embed App Extensions */,
+				EF74EE505762F2D653F8DD2D /* [CP] Embed Pods Frameworks */,
+				9D6763072618F3B4005E9346 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -521,6 +571,7 @@
 				9D561396259195E800F1695A /* Sources */,
 				9D561397259195E800F1695A /* Frameworks */,
 				9D561398259195E800F1695A /* Resources */,
+				F8A9A396305AB210C8D89D6A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -536,6 +587,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D9287C525F8711F005170A1 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
 			buildPhases = (
+				561ABAA99FEE21301755EE32 /* [CP] Check Pods Manifest.lock */,
 				9D9287B925F8711F005170A1 /* Sources */,
 				9D9287BA25F8711F005170A1 /* Frameworks */,
 				9D9287BB25F8711F005170A1 /* Resources */,
@@ -621,6 +673,7 @@
 				9D3848D725F46C4E00B23F76 /* lvl7IntroCompressed.mov in Resources */,
 				9DA2E9D025F09C6000262638 /* NoisyWalk.ttf in Resources */,
 				9DA2E9D625F09C6000262638 /* astro.ttf in Resources */,
+				9D6762FA2618534D005E9346 /* GoogleService-Info.plist in Resources */,
 				9D0B0ADE25FEE3CD00C3B1F5 /* Between0And1.m4a in Resources */,
 				9D5613B8259196CB00F1695A /* Main.storyboard in Resources */,
 			);
@@ -672,6 +725,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		561ABAA99FEE21301755EE32 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OneSignalNotificationServiceExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		82AE2A8FFC8CB361BA2742DC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -692,6 +767,81 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D6763072618F3B4005E9346 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
+		C8AE985D10D08DEDF5FB5085 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Project Mayhem-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF74EE505762F2D653F8DD2D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Project Mayhem/Pods-Project Mayhem-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Project Mayhem/Pods-Project Mayhem-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Project Mayhem/Pods-Project Mayhem-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8A9A396305AB210C8D89D6A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Project Mayhem-Project MayhemUITests/Pods-Project Mayhem-Project MayhemUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Project Mayhem-Project MayhemUITests/Pods-Project Mayhem-Project MayhemUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Project Mayhem-Project MayhemUITests/Pods-Project Mayhem-Project MayhemUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -921,6 +1071,7 @@
 		};
 		9D5613A4259195E800F1695A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF162265924FF94C3A9C98C1 /* Pods-Project Mayhem.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -928,7 +1079,8 @@
 				CODE_SIGN_ENTITLEMENTS = "Project Mayhem/Project Mayhem.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 2;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Project Mayhem/Preview Content\"";
 				DEVELOPMENT_TEAM = 68L233566P;
 				ENABLE_PREVIEWS = YES;
@@ -938,6 +1090,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -948,6 +1101,7 @@
 		};
 		9D5613A5259195E800F1695A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C97B9B4B38A9709728AA51A /* Pods-Project Mayhem.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -955,7 +1109,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Project Mayhem/Project Mayhem.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Project Mayhem/Preview Content\"";
 				DEVELOPMENT_TEAM = 68L233566P;
 				ENABLE_PREVIEWS = YES;
@@ -965,6 +1119,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -975,6 +1130,7 @@
 		};
 		9D5613A7259195E800F1695A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 982AFC4E8D04CDD115E37879 /* Pods-Project MayhemTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -996,6 +1152,7 @@
 		};
 		9D5613A8259195E800F1695A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EFB84C86541564CF533AF088 /* Pods-Project MayhemTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1017,6 +1174,7 @@
 		};
 		9D5613AA259195E800F1695A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 674BF2874D4771AFD821F011 /* Pods-Project Mayhem-Project MayhemUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1036,6 +1194,7 @@
 		};
 		9D5613AB259195E800F1695A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8651C7C4598121AB353B4AFD /* Pods-Project Mayhem-Project MayhemUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1055,10 +1214,11 @@
 		};
 		9D9287C625F8711F005170A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69DCB3ABA5F8A93C3B7816A5 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 68L233566P;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -1067,6 +1227,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1077,10 +1238,11 @@
 		};
 		9D9287C725F8711F005170A1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DA48B1D6AE8DCFB2B38AEBA /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 68L233566P;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -1089,6 +1251,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

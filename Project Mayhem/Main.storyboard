@@ -113,7 +113,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="2aE-lW-wLG">
-                                        <rect key="frame" x="40" y="144" width="348" height="1247"/>
+                                        <rect key="frame" x="40" y="144" width="348" height="1392"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SPS-3R-K7E">
                                                 <rect key="frame" x="0.0" y="0.0" width="348" height="154"/>
@@ -130,7 +130,7 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donate for more! You've seen the video production quality, you know I need it :)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mL3-AZ-z8C">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donate for more Apps like these! You've seen the video production quality, you know I need it :)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mL3-AZ-z8C">
                                                         <rect key="frame" x="0.0" y="65" width="348" height="24"/>
                                                         <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
                                                         <color key="textColor" systemColor="linkColor"/>
@@ -255,14 +255,8 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For best experience, make sure haptics on your phone is on and that minimize flashing is turned off." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="elD-NK-I5e">
-                                                <rect key="frame" x="0.0" y="611" width="348" height="24"/>
-                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="KXW-16-S0F">
-                                                <rect key="frame" x="0.0" y="710" width="348" height="104"/>
+                                                <rect key="frame" x="0.0" y="611" width="348" height="104"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="volume:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dT-PK-sRs">
                                                         <rect key="frame" x="0.0" y="0.0" width="348" height="20"/>
@@ -285,7 +279,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ge4-Hw-RIK">
-                                                <rect key="frame" x="0.0" y="889" width="348" height="70"/>
+                                                <rect key="frame" x="0.0" y="790" width="348" height="70"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15G-9G-mUq">
                                                         <rect key="frame" x="0.0" y="0.0" width="348" height="31"/>
@@ -312,8 +306,42 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="M7k-QA-edX">
+                                                <rect key="frame" x="0.0" y="935" width="348" height="70"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lfP-dS-Q5A">
+                                                        <rect key="frame" x="0.0" y="0.0" width="348" height="31"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Cellular:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9lT-eE-WbH">
+                                                                <rect key="frame" x="0.0" y="0.0" width="299" height="31"/>
+                                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UBd-a9-wpx">
+                                                                <rect key="frame" x="299" y="0.0" width="51" height="31"/>
+                                                                <connections>
+                                                                    <action selector="cellularSwitchChanged:" destination="fkB-KW-fdR" eventType="valueChanged" id="Sg1-6W-vx3"/>
+                                                                </connections>
+                                                            </switch>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When on, this option will use Cellular data to download some content of the app" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DSD-4x-KQR">
+                                                        <rect key="frame" x="0.0" y="46" width="348" height="24"/>
+                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For best experience, make sure haptics on your phone is on and that minimize flashing is turned off." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="elD-NK-I5e">
+                                                <rect key="frame" x="0.0" y="1080" width="348" height="24"/>
+                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Xwn-Qs-dJJ">
-                                                <rect key="frame" x="0.0" y="1034" width="348" height="126"/>
+                                                <rect key="frame" x="0.0" y="1179" width="348" height="126"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1U-pc-kGe">
                                                         <rect key="frame" x="0.0" y="0.0" width="348" height="32"/>
@@ -342,7 +370,7 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cPc-g0-tUH">
-                                                <rect key="frame" x="0.0" y="1235" width="348" height="12"/>
+                                                <rect key="frame" x="0.0" y="1380" width="348" height="12"/>
                                                 <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -395,6 +423,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cellularSwitch" destination="UBd-a9-wpx" id="uJG-DY-g32"/>
                         <outlet property="dhruvSoundCloud" destination="2tg-RS-6vw" id="KtY-cB-Fb2"/>
                         <outlet property="donateLabel" destination="mL3-AZ-z8C" id="q4W-8y-enX"/>
                         <outlet property="flashingSwitch" destination="K22-SS-wCe" id="36n-zI-j4q"/>
@@ -503,10 +532,10 @@
                                 </constraints>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foj-Fg-5BA">
-                                <rect key="frame" x="0.0" y="206" width="428" height="720"/>
+                                <rect key="frame" x="0.0" y="256" width="428" height="670"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0i-mT-hys" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
-                                        <rect key="frame" x="64" y="30" width="300" height="40"/>
+                                        <rect key="frame" x="64" y="0.0" width="300" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="cNa-br-cIK"/>
                                             <constraint firstAttribute="height" constant="40" id="mwY-8g-ApI"/>
@@ -518,7 +547,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rp7-WW-Pqb" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
-                                        <rect key="frame" x="64" y="90" width="300" height="40"/>
+                                        <rect key="frame" x="64" y="60" width="300" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="3x6-P5-jW6"/>
                                             <constraint firstAttribute="height" constant="40" id="5r9-mC-RJ8"/>
@@ -530,7 +559,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJb-Iw-IEW" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
-                                        <rect key="frame" x="64" y="150" width="300" height="40"/>
+                                        <rect key="frame" x="64" y="120" width="300" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="SoT-fB-1jh"/>
                                             <constraint firstAttribute="height" constant="40" id="dYd-od-2uV"/>
@@ -542,7 +571,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vnY-pv-gGx" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
-                                        <rect key="frame" x="64" y="210" width="300" height="40"/>
+                                        <rect key="frame" x="64" y="180" width="300" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="C1Z-Q8-Pd8"/>
                                             <constraint firstAttribute="height" constant="40" id="pD7-K6-dee"/>
@@ -554,7 +583,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tU8-Z0-VTg" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
-                                        <rect key="frame" x="64" y="270" width="300" height="40"/>
+                                        <rect key="frame" x="64" y="240" width="300" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="R5i-LB-9L4"/>
                                             <constraint firstAttribute="width" constant="300" id="fyl-Fn-pdn"/>
@@ -566,7 +595,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFf-QQ-fSm" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
-                                        <rect key="frame" x="64" y="330" width="300" height="40"/>
+                                        <rect key="frame" x="64" y="300" width="300" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="bg7-dM-hYy"/>
                                             <constraint firstAttribute="height" constant="40" id="zGu-Wy-QH9"/>
@@ -578,7 +607,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X07-99-JZq" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
-                                        <rect key="frame" x="64" y="390" width="300" height="40"/>
+                                        <rect key="frame" x="64" y="360" width="300" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Cpr-YQ-mb8"/>
                                             <constraint firstAttribute="width" constant="300" id="MuE-KH-MR5"/>
@@ -590,7 +619,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C18-yO-hFJ" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
-                                        <rect key="frame" x="64" y="450" width="300" height="40"/>
+                                        <rect key="frame" x="64" y="420" width="300" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="0Qm-gZ-hu9"/>
                                             <constraint firstAttribute="width" constant="300" id="4Tj-RN-V2o"/>
@@ -602,7 +631,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJP-qI-SIG" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
-                                        <rect key="frame" x="64" y="510" width="300" height="40"/>
+                                        <rect key="frame" x="64" y="480" width="300" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="gWo-FQ-1FT"/>
                                             <constraint firstAttribute="width" constant="300" id="nkM-zW-OlD"/>
@@ -614,7 +643,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmF-jC-pye" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
-                                        <rect key="frame" x="64" y="570" width="300" height="40"/>
+                                        <rect key="frame" x="64" y="540" width="300" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Iif-mg-o8M"/>
                                             <constraint firstAttribute="width" constant="300" id="Ix3-gR-Y1z"/>
@@ -626,7 +655,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Quf-iA-lmu" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
-                                        <rect key="frame" x="64" y="630" width="300" height="40"/>
+                                        <rect key="frame" x="64" y="600" width="300" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="pID-i6-c7j"/>
                                             <constraint firstAttribute="width" constant="300" id="zaD-8J-EIO"/>
@@ -638,7 +667,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ono-9o-3sR" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
-                                        <rect key="frame" x="64" y="690" width="300" height="40"/>
+                                        <rect key="frame" x="64" y="660" width="300" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="1NJ-kM-vKc"/>
                                             <constraint firstAttribute="width" constant="300" id="rXf-Vs-GF1"/>
@@ -650,7 +679,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qX-b0-c1W" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
-                                        <rect key="frame" x="64" y="810" width="300" height="40"/>
+                                        <rect key="frame" x="64" y="780" width="300" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="3GL-VI-MxH"/>
                                             <constraint firstAttribute="height" constant="40" id="7Bh-Qa-riC"/>
@@ -662,7 +691,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZC-bR-h82" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
-                                        <rect key="frame" x="64" y="870" width="300" height="40"/>
+                                        <rect key="frame" x="64" y="840" width="300" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="1ZJ-3f-n9d"/>
                                             <constraint firstAttribute="width" constant="300" id="I9X-se-cbL"/>
@@ -674,7 +703,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTs-gQ-qQD" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
-                                        <rect key="frame" x="64" y="750" width="300" height="40"/>
+                                        <rect key="frame" x="64" y="720" width="300" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="0o1-nN-e8L"/>
                                             <constraint firstAttribute="height" constant="40" id="QMg-gr-et6"/>
@@ -696,7 +725,7 @@
                                     <constraint firstItem="Rp7-WW-Pqb" firstAttribute="top" secondItem="p0i-mT-hys" secondAttribute="bottom" constant="20" id="7hI-n2-XC8"/>
                                     <constraint firstItem="X07-99-JZq" firstAttribute="top" secondItem="bFf-QQ-fSm" secondAttribute="bottom" constant="20" id="9fd-c5-T1v"/>
                                     <constraint firstItem="Ono-9o-3sR" firstAttribute="centerX" secondItem="foj-Fg-5BA" secondAttribute="centerX" id="Dnx-pE-2bB"/>
-                                    <constraint firstItem="p0i-mT-hys" firstAttribute="top" secondItem="foj-Fg-5BA" secondAttribute="top" constant="30" id="E9b-TZ-yCq"/>
+                                    <constraint firstItem="p0i-mT-hys" firstAttribute="top" secondItem="foj-Fg-5BA" secondAttribute="top" id="E9b-TZ-yCq"/>
                                     <constraint firstItem="tU8-Z0-VTg" firstAttribute="top" secondItem="vnY-pv-gGx" secondAttribute="bottom" constant="20" id="EGM-ZF-AzY"/>
                                     <constraint firstItem="FTs-gQ-qQD" firstAttribute="top" secondItem="Ono-9o-3sR" secondAttribute="bottom" constant="20" id="Ezg-Ie-Ccg"/>
                                     <constraint firstItem="vnY-pv-gGx" firstAttribute="top" secondItem="BJb-Iw-IEW" secondAttribute="bottom" constant="20" id="FGf-RP-MCN"/>
@@ -720,13 +749,43 @@
                                     <constraint firstItem="Ono-9o-3sR" firstAttribute="top" secondItem="Quf-iA-lmu" secondAttribute="bottom" constant="20" id="zh2-2f-caI"/>
                                 </constraints>
                             </scrollView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bd1-xI-yZK">
+                                <rect key="frame" x="20" y="59" width="30" height="35"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rv6-kE-qLI">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="15" id="tFE-is-v5X"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IS6-T6-Hld">
+                                        <rect key="frame" x="7.6666666666666679" y="21" width="15" height="13.666666666666671"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="IS6-T6-Hld" secondAttribute="height" multiplier="1:1" id="QKK-lz-hnF"/>
+                                            <constraint firstAttribute="height" constant="15" id="T52-TI-dfu"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="info.circle" catalog="system"/>
+                                        <connections>
+                                            <action selector="qualityInfoTapped:" destination="GTF-CI-eye" eventType="touchUpInside" id="vgh-bm-DAc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="0St-3R-IuT"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HCA-o4-tA2"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="bd1-xI-yZK" firstAttribute="top" secondItem="HCA-o4-tA2" secondAttribute="top" constant="15" id="40I-aN-Mhc"/>
                             <constraint firstItem="zcX-1U-kxc" firstAttribute="centerX" secondItem="KEg-JP-djo" secondAttribute="centerX" id="86h-SY-jCM"/>
                             <constraint firstItem="zcX-1U-kxc" firstAttribute="top" secondItem="KEg-JP-djo" secondAttribute="top" constant="78" id="DxR-BT-lkV"/>
-                            <constraint firstItem="foj-Fg-5BA" firstAttribute="top" secondItem="zcX-1U-kxc" secondAttribute="bottom" id="E0D-hU-jGA"/>
+                            <constraint firstItem="foj-Fg-5BA" firstAttribute="top" secondItem="zcX-1U-kxc" secondAttribute="bottom" constant="50" id="E0D-hU-jGA"/>
+                            <constraint firstItem="bd1-xI-yZK" firstAttribute="leading" secondItem="HCA-o4-tA2" secondAttribute="leading" constant="20" id="Kb5-J9-ZjX"/>
                             <constraint firstItem="foj-Fg-5BA" firstAttribute="trailing" secondItem="KEg-JP-djo" secondAttribute="trailing" id="i6e-6G-viY"/>
                             <constraint firstItem="foj-Fg-5BA" firstAttribute="leading" secondItem="KEg-JP-djo" secondAttribute="leading" id="k93-rg-BPj"/>
                             <constraint firstAttribute="bottom" secondItem="foj-Fg-5BA" secondAttribute="bottom" id="uDh-gc-ucc"/>
@@ -766,6 +825,8 @@
                         <outlet property="chap9Center" destination="bcf-Y3-O5G" id="WeK-iF-h8S"/>
                         <outlet property="logo" destination="zcX-1U-kxc" id="pS5-YB-eNn"/>
                         <outlet property="logoWidth" destination="6bv-hy-ikq" id="ZwG-Zk-GN0"/>
+                        <outlet property="quality" destination="rv6-kE-qLI" id="Ksl-4L-fcG"/>
+                        <outlet property="qualityInfo" destination="IS6-T6-Hld" id="DW1-nB-73h"/>
                         <outlet property="scrollView" destination="foj-Fg-5BA" id="FNU-W4-BLP"/>
                         <segue destination="F4e-Zn-CZO" kind="presentation" identifier="LevelsToChap1" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="lvv-Yn-sCd"/>
                         <segue destination="Eqn-dd-f4S" kind="presentation" identifier="LevelsToProjectVenom" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="7wN-44-fSu"/>
@@ -2391,7 +2452,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Navigate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aEP-35-QTA">
-                                <rect key="frame" x="10" y="94" width="408" height="63"/>
+                                <rect key="frame" x="10" y="94" width="408" height="52.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="45"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -4146,7 +4207,7 @@
         <segue reference="rPy-e3-cah"/>
         <segue reference="4Jn-Pi-K9C"/>
         <segue reference="lvv-Yn-sCd"/>
-        <segue reference="qpn-tc-Lza"/>
+        <segue reference="UJg-12-gS4"/>
         <segue reference="Jbk-WL-IF2"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -4168,6 +4229,7 @@
         <image name="delete.left" catalog="system" width="128" height="104"/>
         <image name="drop.fill" catalog="system" width="101" height="128"/>
         <image name="gemini" width="100" height="100"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="instagram" width="60" height="60"/>
         <image name="lightbulb.fill" catalog="system" width="113" height="128"/>
         <image name="low_Tide" width="4096" height="2160"/>

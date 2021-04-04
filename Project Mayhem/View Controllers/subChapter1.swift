@@ -16,9 +16,10 @@ class subChapter1: UIViewController {
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var doubleTapInstructions: UILabel!
     
+    //with faceID
+    //let pauseArray:[Double] = [31.4, 37.85]
     
-    let pauseArray:[Double] = [31.4, 37.85]
-    
+    let pauseArray:[Double] = [37.85]
     var timeStamp:Double = 0.0
     
     var vidName:String = "Chap1Intro"
@@ -26,10 +27,10 @@ class subChapter1: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         game.setValue("subChap1", forKey: "active")
-        funcToPass = unlock
+        funcToPass = self.nextChapter
         godThread = self
         
-        video = VideoPlayer(urlAsset: vidName, view: playerView, arr: pauseArray, startTime: timeStamp, volume: 0.3)
+        video = VideoPlayer(urlAsset: vidName, view: playerView, arr: pauseArray, startTime: timeStamp, volume: 0.3, needVolume: false)
         
         
         flashInstructions()
@@ -65,7 +66,6 @@ class subChapter1: UIViewController {
                         funcToPass = self.nextChapter
                         video?.functionCalled = false
                         video?.play()
-                        game.setValue(true, forKey: "chap1IntroWatched")
                     } else {
                         // error
                     }
@@ -80,6 +80,7 @@ class subChapter1: UIViewController {
     
     func nextChapter() {
         DispatchQueue.main.async { [self] in
+            game.setValue(true, forKey: "chap1IntroWatched")
             video?.cleanUp()
             NotificationCenter.default.removeObserver(godThread!)
             godThread?.performSegue(withIdentifier: "subChap1ToChap1", sender: self)
@@ -112,7 +113,7 @@ class subChapter1: UIViewController {
         if timeStamp - 2 < 0 {
             timeStamp = 2
         }
-        video = VideoPlayer(urlAsset: vidName, view: playerView, arr: pauseArray, startTime: timeStamp - 2, volume: 0.3)
+        video = VideoPlayer(urlAsset: vidName, view: playerView, arr: pauseArray, startTime: timeStamp - 2, volume: 0.3, needVolume: false)
         flashInstructions()
     }
     
