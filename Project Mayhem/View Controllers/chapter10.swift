@@ -27,7 +27,7 @@ class chapter10: UIViewController {
     @IBOutlet weak var toolbar: UIStackView!
     @IBOutlet weak var i: UILabel!
     
-    let customAlert = HintAlert()
+    var customAlert = HintAlert()
     
     var tiles:[UIButton] = []
     var keyboardAdded: CGFloat = 0.0
@@ -257,8 +257,8 @@ let alert = MessageAlert()
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "I wonder what I could do with a QR code, once it is aligned", viewController: self, hintButton: hint)
-            view.bringSubviewToFront(toolbar)
+            customAlert = HintAlert()
+            customAlert.showAlert(message: "10", viewController: self, hintButton: hint, toolbar: toolbar)
         }
         
     }

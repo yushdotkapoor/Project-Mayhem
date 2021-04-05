@@ -18,7 +18,7 @@ class chapter11: UIViewController, SFSpeechRecognizerDelegate {
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var toolbar: UIStackView!
     
-    let customAlert = HintAlert()
+    var customAlert = HintAlert()
     
     var resetInProgress = false
     var currentString = ""
@@ -107,8 +107,8 @@ class chapter11: UIViewController, SFSpeechRecognizerDelegate {
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "Great works from a great man, who indeed has a name!", viewController: self, hintButton: hint)
-            view.bringSubviewToFront(toolbar)
+            customAlert = HintAlert()
+            customAlert.showAlert(message: "11.2", viewController: self, hintButton: hint, toolbar: toolbar)
         }
     }
     

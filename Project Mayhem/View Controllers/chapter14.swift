@@ -21,7 +21,7 @@ class chapter14: UIViewController {
     @IBOutlet weak var rightBypass: NSLayoutConstraint!
     @IBOutlet weak var leftBypass: NSLayoutConstraint!
     
-    let customAlert = HintAlert()
+    var customAlert = HintAlert()
     
     var translated = CGPoint.zero
     var bounceDown = false
@@ -162,8 +162,8 @@ let alert = MessageAlert()
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "\"As the Curtain Rose, the people cheered and the bootleggers took Pictures.\"", viewController: self, hintButton: hint)
-            view.bringSubviewToFront(toolbar)
+            customAlert = HintAlert()
+            customAlert.showAlert(message: "14", viewController: self, hintButton: hint, toolbar: toolbar)
         }
         
     }

@@ -31,6 +31,21 @@ class MusicPlayer {
         }
     }
     
+    func playGlitch() {
+        guard let url = Bundle.main.url(forResource: "Glitch", withExtension: "wav") else { return }
+
+        do {
+               audioPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            
+               guard let player = audioPlayer else { return }
+
+               player.play()
+
+           } catch let error {
+               print(error.localizedDescription)
+           }
+    }
+    
     func pause() {
         guard let audioPlayer = audioPlayer else { return }
         audioPlayer.pause()

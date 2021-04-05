@@ -21,7 +21,7 @@ class chapter12: UIViewController {
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var toolbar: UIStackView!
     
-    let customAlert = HintAlert()
+    var customAlert = HintAlert()
     
     var hintText = ""
     
@@ -36,7 +36,8 @@ class chapter12: UIViewController {
         p2Stack.alpha = 0
         aStack.alpha = 0
         year.text = year.text?.stringToBinary()
-        hintText = "Battery, battery, battery. It bugs me that the battery isn't completely full"
+        //12.1
+        hintText = "12.1"
         
         one = false
         two = false
@@ -62,7 +63,8 @@ class chapter12: UIViewController {
             backView.fadeIn()
             p2Stack.fadeIn()
             view.bringSubviewToFront(toolbar)
-            hintText = "Roses are red, violets are blue, I'm pretty sure that this is a date. What are you supposed to do? \"Get in a blue box and get your timey wimey on.\""
+            //12.2
+            hintText = "12.2"
             NotificationCenter.default.addObserver(self, selector: #selector(timeChanged), name:UIApplication.significantTimeChangeNotification, object: nil)
         }
     }
@@ -78,7 +80,7 @@ class chapter12: UIViewController {
         if currentDate > may29 && currentDate < may30 {
             backView.fadeOut()
             aStack.fadeIn()
-            hintText = "Is there a way to change the size of text?"
+            hintText = "12.3"
             NotificationCenter.default.addObserver(self, selector: #selector(sizeChanged), name:UIContentSizeCategory.didChangeNotification, object: nil)
             
         }
@@ -144,8 +146,8 @@ class chapter12: UIViewController {
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: hintText, viewController: self, hintButton: hint)
-            view.bringSubviewToFront(toolbar)
+            customAlert = HintAlert()
+            customAlert.showAlert(message: hintText, viewController: self, hintButton: hint, toolbar: toolbar)
         }
         
     }

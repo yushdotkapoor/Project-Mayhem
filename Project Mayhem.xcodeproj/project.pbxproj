@@ -76,6 +76,8 @@
 		9DB0749B25DE156200515283 /* NameQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB0749A25DE156200515283 /* NameQuery.swift */; };
 		9DB074A625DE1E1700515283 /* subChapter1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB074A525DE1E1700515283 /* subChapter1.swift */; };
 		9DBBF73025C279310022FC63 /* chapter5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBBF72F25C279310022FC63 /* chapter5.swift */; };
+		9DBEB540261996E000EFF309 /* betterHints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBEB53F261996DF00EFF309 /* betterHints.swift */; };
+		9DBEB54A261AE91B00EFF309 /* Glitch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9DBEB549261AE91B00EFF309 /* Glitch.wav */; };
 		9DD618E725E62BB20036089B /* ProjectVenomTrailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD618E625E62BB20036089B /* ProjectVenomTrailer.swift */; };
 		9DD618EB25E62BCE0036089B /* videoTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD618EA25E62BCE0036089B /* videoTemplate.swift */; };
 		9DD618EF25E62EBC0036089B /* subPostChapter15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD618EE25E62EBC0036089B /* subPostChapter15.swift */; };
@@ -218,6 +220,8 @@
 		9DB0749A25DE156200515283 /* NameQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NameQuery.swift; path = "Project Mayhem/NameQuery.swift"; sourceTree = SOURCE_ROOT; };
 		9DB074A525DE1E1700515283 /* subChapter1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subChapter1.swift; sourceTree = "<group>"; };
 		9DBBF72F25C279310022FC63 /* chapter5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter5.swift; sourceTree = "<group>"; };
+		9DBEB53F261996DF00EFF309 /* betterHints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = betterHints.swift; sourceTree = "<group>"; };
+		9DBEB549261AE91B00EFF309 /* Glitch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Glitch.wav; path = "../../../../Downloads/10 Glitch Sound Effects/Glitch.wav"; sourceTree = "<group>"; };
 		9DD618E625E62BB20036089B /* ProjectVenomTrailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectVenomTrailer.swift; sourceTree = "<group>"; };
 		9DD618EA25E62BCE0036089B /* videoTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoTemplate.swift; sourceTree = "<group>"; };
 		9DD618EE25E62EBC0036089B /* subPostChapter15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subPostChapter15.swift; sourceTree = "<group>"; };
@@ -310,6 +314,7 @@
 				9D150279260EE08200A767C3 /* ProjectMayhemProducts.swift */,
 				9D15027F260EE0A700A767C3 /* IAPHelper.swift */,
 				9D150286260EF5FB00A767C3 /* unlockAllLevels.swift */,
+				9DBEB53F261996DF00EFF309 /* betterHints.swift */,
 			);
 			path = IAP;
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 				9D561385259195E700F1695A /* Assets.xcassets */,
 				9D56142F2591DC5400F1695A /* AppDelegate.swift */,
 				9D0B0ADD25FEE3CD00C3B1F5 /* Between0And1.m4a */,
+				9DBEB549261AE91B00EFF309 /* Glitch.wav */,
 				9D5613BC259196DE00F1695A /* LaunchScreen.storyboard */,
 				9D6762F92618534D005E9346 /* GoogleService-Info.plist */,
 				9D56138A259195E700F1695A /* Info.plist */,
@@ -671,6 +677,7 @@
 				9D9AA5C125F793D300C1493A /* Tomorrow.ttf in Resources */,
 				9D8C42AF25C7BE5C0039F857 /* Settings.bundle in Resources */,
 				9D3848D725F46C4E00B23F76 /* lvl7IntroCompressed.mov in Resources */,
+				9DBEB54A261AE91B00EFF309 /* Glitch.wav in Resources */,
 				9DA2E9D025F09C6000262638 /* NoisyWalk.ttf in Resources */,
 				9DA2E9D625F09C6000262638 /* astro.ttf in Resources */,
 				9D6762FA2618534D005E9346 /* GoogleService-Info.plist in Resources */,
@@ -894,6 +901,7 @@
 				9DEA6A112595162B002A8739 /* chapterTemplate.swift in Sources */,
 				9DEB283825C5D7EE00E3F102 /* chapter10.swift in Sources */,
 				9D150280260EE0A700A767C3 /* IAPHelper.swift in Sources */,
+				9DBEB540261996E000EFF309 /* betterHints.swift in Sources */,
 				9D4BFC7925DE600C0013D840 /* VideoPlayer.swift in Sources */,
 				9D56140F2591CFFD00F1695A /* CustomButton.swift in Sources */,
 				9D5B42C5259C97FB00A4F34A /* animations.swift in Sources */,

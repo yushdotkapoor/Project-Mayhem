@@ -1,15 +1,15 @@
 //
-//  unlockAllLevels.swift
+//  betterHints.swift
 //  Project Mayhem
 //
-//  Created by Yush Raj Kapoor on 3/27/21.
+//  Created by Yush Raj Kapoor on 4/4/21.
 //
 
 import Foundation
 import UIKit
 import StoreKit
 
-class unlockAllLevels {
+class betterHints {
     
     var backView:UIView?
     var theScreenView:UIView?
@@ -57,10 +57,11 @@ class unlockAllLevels {
     }
     
     func purchase() {
-        if ProjectMayhemProducts.store.isProductPurchased(ProjectMayhemProducts.unlocker) {
+        if ProjectMayhemProducts.store.isProductPurchased(ProjectMayhemProducts.hints) {
             theScreen?.performSegue(withIdentifier: segueKey!, sender: nil)
             print("already purchased")
         } else if IAPHelper.canMakePayments() {
+            
             
             if !CheckInternet.Connection() {
                 alert(title: "Error", message: "Make sure your internet connection is secure.", actionTitle: "Okay", actions: {
@@ -97,14 +98,8 @@ class unlockAllLevels {
             label.numberOfLines = 0
             label.textColor = .white
             
-            var pr:NSDecimalNumber = 0
-            for i in IAPs ?? [] {
-                if i.productIdentifier == "com.YushRajKapoor.ProjectMayhem.unlockAllLevels"{
-                    pr = i.price
-                }
-            }
             
-            let content = "If you liked what you see so far, please support me and my future projects by purchasing the rest of the levels for $\(pr)! After all, the game has only started :)\n\n -Yush"
+            let content = "If you liked what you see so far, please support me and my future projects by purchasing the rest of the levels for $\(IAPs![0].price)! After all, the game has only started :)\n\n -Yush"
             let contentWidth = backView!.bounds.size.width - 20
             let contentHeight:CGFloat = 150
             let contentLabel = UILabel(frame: CGRect(x: 10, y: lblheight + 10, width: contentWidth, height: contentHeight))
@@ -161,7 +156,7 @@ class unlockAllLevels {
     
     @objc func goToPurchase() {
         for i in IAPs ?? [] {
-            if i.productIdentifier == "com.YushRajKapoor.ProjectMayhem.unlockAllLevels"{
+            if i.productIdentifier == "com.YushRajKapoor.ProjectMayhem.betterHints"{
                 ProjectMayhemProducts.store.buyProduct(i)
             }
         }

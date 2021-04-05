@@ -19,7 +19,7 @@ class chapter6: UIViewController {
     @IBOutlet weak var toolbar: UIStackView!
     @IBOutlet weak var textStack: UIStackView!
     
-    let customAlert = HintAlert()
+    var customAlert = HintAlert()
     
     var window:UIWindow?
     
@@ -297,8 +297,8 @@ let alert = MessageAlert()
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "Seems like this is a coded message!\n\nNote: Make sure your system haptics are turned on.\n\nAlso, don't curse in a castle, it's bad for our reputation.", viewController: self, hintButton: hint)
-            view.bringSubviewToFront(toolbar)
+            customAlert = HintAlert()
+            customAlert.showAlert(message: "6", viewController: self, hintButton: hint, toolbar: toolbar)
         }
         
     }

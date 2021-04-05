@@ -17,7 +17,7 @@ class chapter2: UIViewController {
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var toolbar: UIStackView!
     
-    let customAlert = HintAlert()
+    var customAlert = HintAlert()
     
     private var audioLevel : Float = 0.0
     
@@ -135,8 +135,8 @@ class chapter2: UIViewController {
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "How could you make sure that you can hear everything?", viewController: self, hintButton: hint)
-            view.bringSubviewToFront(toolbar)
+            customAlert = HintAlert()
+            customAlert.showAlert(message: "2", viewController: self, hintButton: hint, toolbar: toolbar)
         }
         
     }

@@ -16,6 +16,8 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var dhruvSoundCloud: UIButton!
     @IBOutlet weak var version: UILabel!
     @IBOutlet weak var cellularSwitch: UISwitch!
+    @IBOutlet weak var purchaseprice: UILabel!
+    @IBOutlet weak var betterHintButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,14 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
         cellularSwitch.setOn(cell, animated: false)
         
         slider.value = volume
+        
+        if ProjectMayhemProducts.store.isProductPurchased(ProjectMayhemProducts.hints) {
+            purchaseprice.text = "Purchased"
+            purchaseprice.font = purchaseprice.font.withSize(14)
+            purchaseprice.minimumScaleFactor = 0.4
+            betterHintButton.tintColor = .gray
+            betterHintButton.isUserInteractionEnabled = false
+        }
         
         donateLabel.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(donate(tapGestureRecognizer:)))
@@ -67,6 +77,15 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
         openLink(st: "https://www.paypal.com/paypalme/yushkapoor")
     }
     
+    
+    @IBAction func betterHints(_ sender: Any) {
+        print(IAPs![0].productIdentifier)
+        for i in IAPs ?? [] {
+            if i.productIdentifier == "com.YushRajKapoor.ProjectMayhem.betterHints"{
+                ProjectMayhemProducts.store.buyProduct(i)
+            }
+        }
+    }
     
     @IBAction func sliderChanged(_ sender: Any) {
         print(slider.value)

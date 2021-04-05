@@ -20,7 +20,7 @@ class chapter13: UIViewController {
     @IBOutlet weak var toolbar: UIStackView!
     @IBOutlet weak var flashView: UIView!
     
-    let customAlert = HintAlert()
+    var customAlert = HintAlert()
     
     var hintText = ""
     
@@ -90,7 +90,8 @@ let alert = MessageAlert()
         Reset.setupButton()
         Reset.alpha = 0.5
         textField.alpha = 0.2
-        hintText = "Dude c'mon. The text on the screen IS the hint"
+        //13.1
+        hintText = "13.1"
         quakeLabel.numberOfLines = 3
         quakeLabel.text = "Sometimes we need to take a step back to get some perspective"
         
@@ -237,7 +238,7 @@ let alert = MessageAlert()
                         self.view.bringSubviewToFront(self.labelStack)
                         self.view.bringSubviewToFront(self.Reset)
                     })
-                    hintText = "Earthquake simulator? Look for the red :)"
+                    hintText = "13.3"
                     lmt = shakeOrder[j + 1]
                     translateAll(xArr: xArr, zArr: zArr, xTrans: xTrans, nameArr: nameArr, limit:lmt)
                     return
@@ -258,7 +259,7 @@ let alert = MessageAlert()
                 quakeLabel.numberOfLines = 1
                 textField.text = ""
                 view.endEditing(true)
-                hintText = "Earthquake simulator?"
+                hintText = "13.2"
                 sceneView.scene.rootNode.enumerateChildNodes { (node, stop) in
                     node.removeFromParentNode()
                 }
@@ -326,8 +327,8 @@ let alert = MessageAlert()
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: hintText, viewController: self, hintButton: hint)
-            view.bringSubviewToFront(toolbar)
+            customAlert = HintAlert()
+            customAlert.showAlert(message: hintText, viewController: self, hintButton: hint, toolbar: toolbar)
         }
         
     }

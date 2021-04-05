@@ -18,7 +18,7 @@ class chapter9: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var pass: UILabel!
     @IBOutlet weak var stackCenter: NSLayoutConstraint!
     
-    let customAlert = HintAlert()
+    var customAlert = HintAlert()
     
     let codeToMatch = "kapoor is lying"
     
@@ -147,8 +147,8 @@ class chapter9: UIViewController, UITextFieldDelegate {
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "These are not just some random characters! Have you ever heard of 🐷🖊️ Cipher?", viewController: self, hintButton: hint)
-            view.bringSubviewToFront(toolbar)
+            customAlert = HintAlert()
+            customAlert.showAlert(message: "9", viewController: self, hintButton: hint, toolbar: toolbar)
         }
         
     }

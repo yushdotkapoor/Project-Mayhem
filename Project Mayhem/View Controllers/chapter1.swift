@@ -253,7 +253,7 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     
-    let customAlert = HintAlert()
+    var customAlert = HintAlert()
     
     @IBAction func hint(_ sender: Any) {
         if menuState {
@@ -267,8 +267,8 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "Leave what?", viewController: self, hintButton: hint)
-            view.bringSubviewToFront(toolbar)
+            customAlert = HintAlert()
+            customAlert.showAlert(message: "1", viewController: self, hintButton: hint, toolbar: toolbar)
         }
         
     }

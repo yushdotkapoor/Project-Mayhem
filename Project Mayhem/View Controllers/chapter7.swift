@@ -28,7 +28,7 @@ class chapter7: UIViewController {
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var toolbar: UIStackView!
     
-    let customAlert = HintAlert()
+    var customAlert = HintAlert()
     
     var vidName = "lvl7Intro"
     var pauseArray:[Double] = [10]
@@ -330,8 +330,8 @@ class chapter7: UIViewController {
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "Rule number 1: have patience. Rule number 2: have good memory skills. Rule number 3: see what happens when you tap (r1,c2).", viewController: self, hintButton: hint)
-            view.bringSubviewToFront(toolbar)
+            customAlert = HintAlert()
+            customAlert.showAlert(message: "7", viewController: self, hintButton: hint, toolbar: toolbar)
         }
         
     }

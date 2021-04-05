@@ -16,7 +16,7 @@ class chapter5: UIViewController {
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var toolbar: UIStackView!
     
-    let customAlert = HintAlert()
+    var customAlert = HintAlert()
     
     let microphone = Listen()
     var progressVal:Float = 0.0
@@ -141,8 +141,8 @@ class chapter5: UIViewController {
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.darkGray
             }
-            customAlert.showAlert(message: "do re mi fa so laaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n\nAlso, Nice ;)", viewController: self, hintButton: hint)
-            view.bringSubviewToFront(toolbar)
+            customAlert = HintAlert()
+            customAlert.showAlert(message: "5", viewController: self, hintButton: hint, toolbar: toolbar)
         }
         
     }

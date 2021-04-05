@@ -21,8 +21,9 @@ class postChapter15: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var sysReset: UILabel!
     @IBOutlet weak var Q: UILabel!
+    @IBOutlet weak var blckView: UIView!
     
-    let customAlert = HintAlert()
+    var customAlert = HintAlert()
     
     let buzzTypes:[UIImpactFeedbackGenerator.FeedbackStyle] = [.heavy, .light, .medium, .soft, .rigid]
     
@@ -77,15 +78,15 @@ class postChapter15: UIViewController {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             let keyboardHeight = keyboardSize.height
             let labelHeight = deviceHeight - stack.frame.origin.y
-            let add = keyboardHeight - labelHeight + 70
+            let add = keyboardHeight - labelHeight
             keyboardAdded = add
-            stackToBottom.constant += add
+            stackToBottom.constant -= add
             open = true
         }
     }
     
     @objc func keyboardWillHide() {
-        stackToBottom.constant -= keyboardAdded
+        stackToBottom.constant += keyboardAdded
         open = false
     }
     
@@ -148,7 +149,13 @@ class postChapter15: UIViewController {
                                                 game.setValue("none", forKey: "active")
                                                 game.setValue(true, forKey: "apocalypse")
                                                 game.setValue(true, forKey: "chap15")
-                                                self.performSegue(withIdentifier: "postChap15ToMain", sender: nil)
+                                                self.view.bringSubviewToFront(self.blckView)
+                                                MusicPlayer.shared.playGlitch()
+                                                
+                                                wait(time:4, actions: {
+                                                    MusicPlayer.shared.startBackgroundMusic()
+                                                    self.performSegue(withIdentifier: "postChap15ToMain", sender: nil)
+                                                })
                                             })
                                         }
                                     }
@@ -225,8 +232,8 @@ class postChapter15: UIViewController {
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "The answer is not in this level. Look closely 👁️", viewController: self, hintButton: hint)
-            view.bringSubviewToFront(toolbar)
+            customAlert = HintAlert()
+            customAlert.showAlert(message: "15.2", viewController: self, hintButton: hint, toolbar: toolbar)
         }
         
     }

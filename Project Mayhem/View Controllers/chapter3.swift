@@ -15,7 +15,7 @@ class chapter3: UIViewController {
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    let customAlert = HintAlert()
+    var customAlert = HintAlert()
     
     var tapped1 = false
     var tapped2 = false
@@ -240,8 +240,8 @@ let alert = MessageAlert()
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "Tappity tap", viewController: self, hintButton: hint)
-            view.bringSubviewToFront(toolbar)
+            customAlert = HintAlert()
+            customAlert.showAlert(message: "3", viewController: self, hintButton: hint, toolbar: toolbar)
         }
         
     }

@@ -16,7 +16,7 @@ class subChapter11: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var textFieldConstraint: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    let customAlert = HintAlert()
+    var customAlert = HintAlert()
     
     var keyboardAdded: CGFloat = 0.0
     var open = false
@@ -188,8 +188,8 @@ let alert = MessageAlert()
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "Maybe the morse code at the top and the coordinates at the bottom have some sort of relationship.", viewController: self, hintButton: hint)
-            view.bringSubviewToFront(toolbar)
+            customAlert = HintAlert()
+            customAlert.showAlert(message: "11.1", viewController: self, hintButton: hint, toolbar: toolbar)
         }
         
     }

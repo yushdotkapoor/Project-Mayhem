@@ -59,8 +59,7 @@ class chapterTemplate: UIViewController {
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "", viewController: self, hintButton: hint)
-            view.bringSubviewToFront(toolbar)
+            customAlert.showAlert(message: "", viewController: self, hintButton: hint, toolbar: toolbar)
         }
         
     }

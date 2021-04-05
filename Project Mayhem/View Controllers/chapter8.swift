@@ -17,7 +17,7 @@ class chapter8: UIViewController {
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var toolbar: UIStackView!
     
-    let customAlert = HintAlert()
+    var customAlert = HintAlert()
     
     override func viewDidLoad() {
            super.viewDidLoad()
@@ -125,8 +125,8 @@ class chapter8: UIViewController {
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "What's that on the top right?", viewController: self, hintButton: hint)
-            view.bringSubviewToFront(toolbar)
+            customAlert = HintAlert()
+            customAlert.showAlert(message: "8", viewController: self, hintButton: hint, toolbar: toolbar)
         }
     }
     

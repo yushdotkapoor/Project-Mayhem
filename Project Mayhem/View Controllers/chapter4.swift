@@ -16,7 +16,7 @@ class chapter4: UIViewController {
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var toolbar: UIStackView!
     
-    let customAlert = HintAlert()
+    var customAlert = HintAlert()
     
     let motionManager = CMMotionManager()
     
@@ -200,8 +200,8 @@ let alert = MessageAlert()
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "Move your phone a bit. Just kidding, a lot.", viewController: self, hintButton: hint)
-            view.bringSubviewToFront(toolbar)
+            customAlert = HintAlert()
+            customAlert.showAlert(message: "4", viewController: self, hintButton: hint, toolbar: toolbar)
         }
         
     }

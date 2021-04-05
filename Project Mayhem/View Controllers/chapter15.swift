@@ -23,7 +23,7 @@ class chapter15: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate 
     @IBOutlet weak var sixHeight: NSLayoutConstraint!
     @IBOutlet weak var smartImage: UIImageView!
     
-    let customAlert = HintAlert()
+    var customAlert = HintAlert()
     
     let WIDTH = UIScreen.main.bounds.width
     let HEIGHT = UIScreen.main.bounds.height
@@ -325,8 +325,8 @@ let alert = MessageAlert()
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.lightGray
             }
-            customAlert.showAlert(message: "The color white is the --- of the color black. That's pretty smart.", viewController: self, hintButton: hint)
-            view.bringSubviewToFront(toolbar)
+            customAlert = HintAlert()
+            customAlert.showAlert(message: "15.1", viewController: self, hintButton: hint, toolbar: toolbar)
         }
         
     }
