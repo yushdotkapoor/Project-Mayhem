@@ -78,15 +78,15 @@ class postChapter15: UIViewController {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             let keyboardHeight = keyboardSize.height
             let labelHeight = deviceHeight - stack.frame.origin.y
-            let add = keyboardHeight - labelHeight
+            let add = keyboardHeight - labelHeight + 70
             keyboardAdded = add
-            stackToBottom.constant -= add
+            stackToBottom.constant += add
             open = true
         }
     }
     
     @objc func keyboardWillHide() {
-        stackToBottom.constant += keyboardAdded
+        stackToBottom.constant -= keyboardAdded
         open = false
     }
     

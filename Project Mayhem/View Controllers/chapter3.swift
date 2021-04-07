@@ -44,7 +44,6 @@ class chapter3: UIViewController {
         nextChap.alpha = 0.0
         nextChap.isUserInteractionEnabled = false
         scrollView.isUserInteractionEnabled = false
-        
         alert.showAlert(title: "Message from Vision Consolidated", message: "Welcome to the Vision Consolidated Research and Development Division! We hope you have a pleasant experience working with us!", viewController: self, buttonPush: #selector(dismissMessageAlert))
         view.bringSubviewToFront(toolbar)
     }

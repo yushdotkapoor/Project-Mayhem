@@ -150,8 +150,6 @@ let alert = MessageAlert()
         sceneView.scene.rootNode.addChildNode(rNode)
     }
     
-    
-    
     func setupAR() {
         sceneView.session.run(config)
         

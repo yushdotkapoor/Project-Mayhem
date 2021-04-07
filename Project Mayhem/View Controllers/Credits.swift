@@ -18,6 +18,10 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var cellularSwitch: UISwitch!
     @IBOutlet weak var purchaseprice: UILabel!
     @IBOutlet weak var betterHintButton: UIButton!
+    @IBOutlet weak var purchaseRestore: CustomButtonOutline!
+    @IBOutlet weak var welcStatementButton: CustomButtonOutline!
+    @IBOutlet weak var feedbackButton: CustomButtonOutline!
+    @IBOutlet weak var stuckButton: CustomButtonOutline!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +36,11 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
         
         slider.value = volume
         
+        purchaseRestore.setupButton()
+        welcStatementButton.setupButton()
+        feedbackButton.setupButton()
+        stuckButton.setupButton()
+        
         if ProjectMayhemProducts.store.isProductPurchased(ProjectMayhemProducts.hints) {
             purchaseprice.text = "Purchased"
             purchaseprice.font = purchaseprice.font.withSize(14)
@@ -45,6 +54,8 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
         donateLabel.addGestureRecognizer(tapGesture)
         
     }
+    
+    
     @IBAction func stuck(_ sender: Any) {
         sendEmail(subject: "Given the circumstances, it seems that I have encountered a rather dreary situation where I simply, and I am unable to stress this enough, CANNOT.")
     }
@@ -106,7 +117,19 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
     
     @IBAction func restorePurchases(_ sender: Any) {
         ProjectMayhemProducts.store.restorePurchases()
+        let alertController = UIAlertController(title: "Restore", message: "Purchase Restore Complete.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+        wait {
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
+    
+    @IBAction func statement(_ sender: Any) {
+        game.setValue("settings", forKey: "active")
+        performSegue(withIdentifier: "settingsToIntroduction", sender: self)
+    }
+    
     
     func sendEmail(subject: String) {
         if MFMailComposeViewController.canSendMail() {

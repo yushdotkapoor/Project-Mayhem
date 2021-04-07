@@ -39,6 +39,22 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
         notificationCenter.addObserver(self, selector: #selector(background), name: UIApplication.didEnterBackgroundNotification, object: nil)
         
         
+        UNUserNotificationCenter.current().getNotificationSettings(completionHandler: { (settings) in
+            DispatchQueue.main.async {
+            switch settings.authorizationStatus {
+            case .denied, .ephemeral, .notDetermined:
+                self.now.text = "Come back soon"
+                break
+            case .authorized, .provisional:
+                self.now.text = "Don't come back until I tell you to"
+                break
+            @unknown default:
+                break
+            }
+            }
+        })
+        
+        
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
@@ -135,7 +151,7 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
         let name = nameField.text
         if !skip() {
             let gameName = game.string(forKey: "name")
-        if gameName != name {
+        if gameName != name && gameName != nil {
             let alertController = UIAlertController(title: "Please advise", message: "This name conflicts with the name you gave before: \(gameName!). Would you like to change your name from \(gameName!) to \(name!)?", preferredStyle: .alert)
             let yes = UIAlertAction(title: "Yes", style: .default, handler: { action in
                 self.setName(name: name!)

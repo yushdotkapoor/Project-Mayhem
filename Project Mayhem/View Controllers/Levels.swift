@@ -7,7 +7,6 @@
 
 import UIKit
 import Speech
-import LocalAuthentication
 import AVFoundation
 import StoreKit
 
@@ -60,7 +59,7 @@ class Levels: UIViewController {
     override func viewDidLoad() {
            super.viewDidLoad()
         del = 0.5
-        permissionsLord()
+        //permissionsLord()
  
         //reset()
         //loadAll()
@@ -117,7 +116,7 @@ class Levels: UIViewController {
     }
     
     func loadAll() {
-        let reset = getData(string: "String") as! [String]
+        let reset = getData(string: "Bypass") as! [String]
         
         for r in reset {
             game.setValue(true, forKey: r)
@@ -132,6 +131,9 @@ class Levels: UIViewController {
         }
         else if string == "String" {
             return ["chap1", "chap2", "chap3", "chap4", "chap5", "chap6", "chap7", "chap8", "chap9", "chap10", "chap11", "chap12", "chap13", "chap14", "chap15"] as [String]
+        }
+        else if string == "Bypass" {
+            return ["chap1IntroWatched", "chap1", "chap2", "chap3", "chap4", "chap5", "chap6","chap7IntroWatched", "chap7", "chap7OutroWatched","chap8", "chap9", "chap10", "chap11", "chap12", "chap13", "chap14", "preChap15", "subPostChapter15Watched", "chap15"] as [String]
         }
         else {
             return [chap1, chap2, chap3, chap4, chap5, chap6, chap7, chap8, chap9, chap10, chap11, chap12, chap13, chap14, chap15] as [CustomButtonOutline]

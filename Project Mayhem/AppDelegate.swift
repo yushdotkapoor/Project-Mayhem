@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate {
         AppsFlyerLib.shared().appleAppID = "1551711683"
         AppsFlyerLib.shared().delegate = self
         AppsFlyerLib.shared().isDebug = false
-        AppsFlyerLib.shared().waitForATTUserAuthorization(timeoutInterval: 60)
+        AppsFlyerLib.shared().waitForATTUserAuthorization(timeoutInterval: 120)
         UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .alert, .sound]) { _, _ in }
         application.registerForRemoteNotifications()
         
