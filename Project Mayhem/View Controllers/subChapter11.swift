@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import  AVKit
 
 class subChapter11: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var toolbar: UIStackView!

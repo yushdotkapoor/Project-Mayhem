@@ -32,7 +32,6 @@ class postChapter15: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)

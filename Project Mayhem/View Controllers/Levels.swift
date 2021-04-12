@@ -69,7 +69,6 @@ class Levels: UIViewController {
             //uploadVideos()
             downloadVideos()
         }
-        
         checkQuality()
         
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
@@ -241,10 +240,18 @@ class Levels: UIViewController {
         }
  
     }
+
     
     @IBAction func chapter5PurchaseBlock(_ sender: Any) {
-        unlocker = unlockAllLevels.init(scrnview: self, key: "levelsToChap5")
-        unlocker?.purchase()
+        if (freeVersions.contains(game.string(forKey: "originalVersion") ?? "")) {
+            print("contains \(game.string(forKey: "originalVersion") ?? "")")
+            unlocker = unlockAllLevels.init(scrnview: self, key: "levelsToChap5")
+            unlocker?.purchase()
+        }
+        else {
+            print("no contain \(game.string(forKey: "originalVersion") ?? "")")
+            performSegue(withIdentifier: "levelsToChap5", sender: nil)
+        }
     }
     
     func goToPurchase() {

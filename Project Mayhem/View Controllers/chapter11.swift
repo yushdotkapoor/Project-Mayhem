@@ -25,6 +25,8 @@ class chapter11: UIViewController, SFSpeechRecognizerDelegate {
     
     override func viewDidLoad() {
            super.viewDidLoad()
+        
+        
         resetInProgress = false
         currentString = ""
         label.alpha = 0.0

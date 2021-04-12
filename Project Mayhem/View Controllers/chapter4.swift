@@ -179,6 +179,8 @@ let alert = MessageAlert()
     }
 
     @IBAction func goNext(_ sender: Any) {
+        let receipt = getReceipt()
+        print(receipt)
         unlocker = unlockAllLevels.init(scrnview: self, key: "chap4ToChap5")
         unlocker?.purchase()
     }
