@@ -179,10 +179,15 @@ let alert = MessageAlert()
     }
 
     @IBAction func goNext(_ sender: Any) {
-        let receipt = getReceipt()
-        print(receipt)
-        unlocker = unlockAllLevels.init(scrnview: self, key: "chap4ToChap5")
-        unlocker?.purchase()
+        if (freeVersions.contains(game.string(forKey: "originalVersion") ?? "")) {
+            print("contains \(game.string(forKey: "originalVersion") ?? "")")
+            unlocker = unlockAllLevels.init(scrnview: self, key: "levelsToChap5")
+            unlocker?.purchase()
+        }
+        else {
+            print("no contain \(game.string(forKey: "originalVersion") ?? "")")
+            performSegue(withIdentifier: "levelsToChap5", sender: nil)
+        }
     }
     
     func goToPurchase() {

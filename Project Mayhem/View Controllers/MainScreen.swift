@@ -7,9 +7,8 @@
 
 import UIKit
 import OneSignal
-import StoreKit
 
-class MainScreen: UIViewController, SKRequestDelegate {
+class MainScreen: UIViewController {
     
     @IBOutlet weak var enter: CustomButton!
     @IBOutlet weak var logoCenterConstraint: NSLayoutConstraint!
@@ -36,21 +35,8 @@ class MainScreen: UIViewController, SKRequestDelegate {
             }
         }
         
-        // If a receipt is present validate it, otherwise request to refresh it
-        if Receipt.isReceiptPresent() {
-            validateReceipt()
-        } else {
-          refreshReceipt()
-        }
     }
     
-    
-    func refreshReceipt() {
-      print("Requesting refresh of receipt.")
-      let refreshRequest = SKReceiptRefreshRequest()
-      refreshRequest.delegate = self
-      refreshRequest.start()
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

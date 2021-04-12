@@ -8,9 +8,10 @@ import CallKit
 import AppsFlyerLib
 import Firebase
 import Network
+import StoreKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, SKRequestDelegate {
     
     var window: UIWindow?
     
@@ -78,9 +79,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate {
         
         let queue = DispatchQueue(label: "Monitor")
         monitor.start(queue: queue)
-
-
+        
+        
+        if Receipt.isReceiptPresent() {
+            validateReceipt()
+        } else {
+          refreshReceipt()
+        }
+        
+        
         return true
+    }
+    
+    func refreshReceipt() {
+      print("Requesting refresh of receipt.")
+      let refreshRequest = SKReceiptRefreshRequest()
+      refreshRequest.delegate = self
+      refreshRequest.start()
     }
              
        func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -111,7 +126,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate {
                var intValue: UInt = 0
                (info[AVAudioSessionInterruptionTypeKey] as! NSValue).getValue(&intValue)
         if let interruptionType = AVAudioSession.InterruptionType(rawValue: intValue) {
-
+            
            switch interruptionType {
            case .began:
                print("Interruption Began")
@@ -125,6 +140,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate {
 
            default:
                 print("Interruption Ended")
+            activateAVSession(option: [.allowAirPlay, .allowBluetoothA2DP, .defaultToSpeaker, .duckOthers])
             MusicPlayer.shared.play()
             if video != nil {
                 video?.functionCalled = false
@@ -166,7 +182,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate {
         func applicationDidBecomeActive(_ application: UIApplication) {
             // Start the SDK (start the IDFA timeout set above, for iOS 14 or later)
             AppsFlyerLib.shared().start()
+            print("did become active")
         }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        print("background")
+        MusicPlayer.shared.pause()
+    }
+    
         // Open Univerasal Links
         // For Swift version < 4.2 replace function signature with the commented out code:
         // func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {

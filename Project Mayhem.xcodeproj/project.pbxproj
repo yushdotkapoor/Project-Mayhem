@@ -60,7 +60,6 @@
 		9D8B292E25DC189A007750DF /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8B292D25DC189A007750DF /* CALayerExtension.swift */; };
 		9D8C42AF25C7BE5C0039F857 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9D8C42AE25C7BE5C0039F857 /* Settings.bundle */; };
 		9D8C42BF25C7F9C30039F857 /* nonPastableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C42BE25C7F9C30039F857 /* nonPastableTextField.swift */; };
-		9D8EE7F926241701007D86A8 /* OpenSSL in Resources */ = {isa = PBXBuildFile; fileRef = 9D8EE7F826241701007D86A8 /* OpenSSL */; };
 		9D8EE80226241750007D86A8 /* IAPReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8EE7FF26241750007D86A8 /* IAPReceipt.swift */; };
 		9D8EE80326241750007D86A8 /* ASN1Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8EE80026241750007D86A8 /* ASN1Helpers.swift */; };
 		9D8EE80426241750007D86A8 /* Receipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8EE80126241750007D86A8 /* Receipt.swift */; };
@@ -703,7 +702,6 @@
 				9D9AA5C125F793D300C1493A /* Tomorrow.ttf in Resources */,
 				9D8C42AF25C7BE5C0039F857 /* Settings.bundle in Resources */,
 				9D3848D725F46C4E00B23F76 /* lvl7IntroCompressed.mov in Resources */,
-				9D8EE7F926241701007D86A8 /* OpenSSL in Resources */,
 				9DA2E9D025F09C6000262638 /* NoisyWalk.ttf in Resources */,
 				9DBEB558261BC69A00EFF309 /* Glitch.wav in Resources */,
 				9DA2E9D625F09C6000262638 /* astro.ttf in Resources */,

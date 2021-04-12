@@ -175,27 +175,6 @@ func uploadVideos() {
     }
 }
 
-func getReceipt() -> Data? {
-    if Bundle.main.appStoreReceiptURL != nil {
-        print("app receipt: \(Bundle.main.appStoreReceiptURL)")
-        do {
-            let receiptData = try Data(contentsOf: Bundle.main.appStoreReceiptURL!)
-            let jsonResult = try JSONSerialization.jsonObject(with: receiptData, options: .mutableLeaves)
-                     if let jsonResult = jsonResult as? Dictionary<String, AnyObject> {
-                        
-                        print(jsonResult)
-                        
-                     }
-            return receiptData
-        } catch {
-            print("error converting receipt to Data: \(error.localizedDescription)")
-        }
-    }
-    return nil
-}
-
-
-
 func formatDateForUI(_ date: Date) -> String {
   let formatter = DateFormatter()
   formatter.dateStyle = .medium

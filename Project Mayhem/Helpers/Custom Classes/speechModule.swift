@@ -128,7 +128,6 @@ class speechModule:NSObject {
     }
     
     func isActive() -> Bool {
-        print(audioEngine.isRunning)
         return audioEngine.isRunning
     }
     
