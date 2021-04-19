@@ -25,7 +25,7 @@ class chapter6: UIViewController {
     
     let short: Double = 0.2
     let long: Double = 0.7
-
+    
     var sequenceOfFlashes: [Double] = []
     var actionArray: [String] = []
     var vibrateShouldStop = false
@@ -33,7 +33,7 @@ class chapter6: UIViewController {
     let morseString = "Neuschwanstein"
     
     var index: Int = 0
-
+    
     weak var timer: Timer?
     
     override func viewDidLoad() {
@@ -52,7 +52,7 @@ class chapter6: UIViewController {
         index = 0
         vibrateShouldStop = false
         chap6Timer = false
-    
+        
         let notificationCenter = NotificationCenter.default
         notificationCenter.removeObserver(self)
         notificationCenter.addObserver(self, selector: #selector(stop), name: UIApplication.willResignActiveNotification, object: nil)
@@ -78,7 +78,7 @@ class chapter6: UIViewController {
         nextChap.alpha = 0.0
         nextChap.isUserInteractionEnabled = false
     }
-
+    
     func setupMorseFlashesSequence() {
         var translatedArray = morseString.stringToMorse()
         
@@ -109,7 +109,7 @@ class chapter6: UIViewController {
             scheduleTimer()
         }
     }
- 
+    
     @objc func scheduleTimer() {
         if index == 1000 || !chap6Timer {
             return
@@ -118,8 +118,8 @@ class chapter6: UIViewController {
         game.setValue("chap6", forKey: "active")
         timer = Timer.scheduledTimer(timeInterval: sequenceOfFlashes[index], target: self, selector: #selector(timerTick), userInfo: nil, repeats: false)
     }
-
-     @objc func timerTick() {
+    
+    @objc func timerTick() {
         if index == 1000 || !chap6Timer {
             return
         }
@@ -184,7 +184,7 @@ class chapter6: UIViewController {
             scheduleTimer()
         }
     }
-
+    
     @objc func stop() {
         game.setValue("none", forKey: "active")
         timer?.invalidate()
@@ -211,7 +211,6 @@ class chapter6: UIViewController {
             textStack.isUserInteractionEnabled = false
             wait {
                 self.alert.showAlert(title: "Message from Victoria Lambson", message: "This is quite interesting. What does Neuschwanstein castle have to do with Project Mayhem? This was never reported in our security reports.", viewController: self, buttonPush: #selector(self.dismissMessageAlert))
-                self.view.bringSubviewToFront(self.toolbar)
             }
         }
         else if text!.contains("bitch") || text!.contains("fuck") || text!.contains("shit") {
@@ -223,38 +222,38 @@ class chapter6: UIViewController {
             textField.text = ""
         }
     }
-
-// defines alert
-let alert = MessageAlert()
-
-//function that gets called to dismiss the alertView
-@objc func dismissMessageAlert() {
-    alert.dismissAlert()
-    complete()
-}
+    
+    // defines alert
+    let alert = MessageAlert()
+    
+    //function that gets called to dismiss the alertView
+    @objc func dismissMessageAlert() {
+        alert.dismissAlert()
+        complete()
+    }
     
     
     func turnFlashlight(on: Bool) {
         let sensitive = game.bool(forKey: "photosensitive")
         if !sensitive {
-        guard let device = AVCaptureDevice.default(for: AVMediaType.video) else { return }
-        guard device.hasTorch else { print("Torch isn't available"); return }
-
-        do {
-            try device.lockForConfiguration()
+            guard let device = AVCaptureDevice.default(for: AVMediaType.video) else { return }
+            guard device.hasTorch else { print("Torch isn't available"); return }
             
-            if on {
-                device.torchMode = .on
-                try device.setTorchModeOn(level: 0.5)
+            do {
+                try device.lockForConfiguration()
+                
+                if on {
+                    device.torchMode = .on
+                    try device.setTorchModeOn(level: 0.5)
+                }
+                else {
+                    device.torchMode = .off
+                }
+                
+                device.unlockForConfiguration()
+            } catch {
+                print("Torch can't be used")
             }
-            else {
-                device.torchMode = .off
-            }
-            
-            device.unlockForConfiguration()
-        } catch {
-            print("Torch can't be used")
-        }
         }
     }
     
@@ -272,7 +271,7 @@ let alert = MessageAlert()
     @objc func viewTapped(gesture: UIGestureRecognizer) {
         view.endEditing(true)
     }
-
+    
     @IBAction func goBack(_ sender: Any) {
         stop()
         NotificationCenter.default.removeObserver(self)
@@ -283,7 +282,7 @@ let alert = MessageAlert()
         self.performSegue(withIdentifier: "chap6ToChap7", sender: nil)
     }
     
-
+    
     
     @IBAction func hint(_ sender: Any) {
         if menuState {
@@ -306,6 +305,6 @@ let alert = MessageAlert()
     func dismissAlert() {
         customAlert.dismissAlert()
     }
-
-
+    
+    
 }

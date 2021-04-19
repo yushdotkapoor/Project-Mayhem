@@ -31,7 +31,7 @@ class chapter12: UIViewController {
     var three = false
     
     override func viewDidLoad() {
-           super.viewDidLoad()
+        super.viewDidLoad()
         backView.alpha = 0
         p2Stack.alpha = 0
         aStack.alpha = 0
@@ -44,7 +44,7 @@ class chapter12: UIViewController {
         three = false
         
         UIDevice.current.isBatteryMonitoringEnabled = true
-
+        
         NotificationCenter.default.addObserver(self, selector: #selector(batteryStateDidChange), name: UIDevice.batteryStateDidChangeNotification, object: nil)
     }
     
@@ -123,7 +123,7 @@ class chapter12: UIViewController {
         nextChap.isUserInteractionEnabled = true
         nextChap.fadeIn()
     }
-
+    
     @IBAction func goBack(_ sender: Any) {
         NotificationCenter.default.removeObserver(self)
         self.performSegue(withIdentifier: "chap12ToHome", sender: nil)
@@ -132,8 +132,8 @@ class chapter12: UIViewController {
     @IBAction func goNext(_ sender: Any) {
         self.performSegue(withIdentifier: "chap12ToChap13", sender: nil)
     }
-
-
+    
+    
     @IBAction func hint(_ sender: Any) {
         if menuState {
             //if menu open and want to close
@@ -155,6 +155,6 @@ class chapter12: UIViewController {
     func dismissAlert() {
         customAlert.dismissAlert()
     }
-
+    
 }
 

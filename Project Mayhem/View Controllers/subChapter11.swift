@@ -29,7 +29,7 @@ class subChapter11: UIViewController, UIScrollViewDelegate {
     }()
     
     override func viewDidLoad() {
-           super.viewDidLoad()
+        super.viewDidLoad()
         textField.alpha = 0.3
         
         nextChap.isUserInteractionEnabled = false
@@ -40,7 +40,7 @@ class subChapter11: UIViewController, UIScrollViewDelegate {
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneClicked))
         toolBar.setItems([flexibleSpace, doneButton], animated: false)
-       textField.inputAccessoryView = toolBar
+        textField.inputAccessoryView = toolBar
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.viewTapped(gesture:)))
         view.addGestureRecognizer(tapGesture)
@@ -73,13 +73,13 @@ class subChapter11: UIViewController, UIScrollViewDelegate {
         let bounds = UIScreen.main.bounds
         let deviceHeight = bounds.size.height
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-                let keyboardHeight = keyboardSize.height
+            let keyboardHeight = keyboardSize.height
             let labelHeight = deviceHeight - textStack.frame.origin.y
             let add = keyboardHeight - labelHeight + 70
             keyboardAdded = add
             textFieldConstraint.constant += add
             open = true
-            }
+        }
     }
     
     @objc func keyboardWillHide() {
@@ -91,31 +91,30 @@ class subChapter11: UIViewController, UIScrollViewDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         alert.showAlert(title: "Message from Victoria Lambson", message: "You might want to see this.", viewController: self, buttonPush: #selector(dismissMessageAlert))
-       view.bringSubviewToFront(toolbar)
     }
-
-
-// defines alert
-let alert = MessageAlert()
-
-//function that gets called to dismiss the alertView
-@objc func dismissMessageAlert() {
-    alert.dismissAlert()
-    //add code if needed
-}
+    
+    
+    // defines alert
+    let alert = MessageAlert()
+    
+    //function that gets called to dismiss the alertView
+    @objc func dismissMessageAlert() {
+        alert.dismissAlert()
+        //add code if needed
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         scrollView.frame = view.bounds
         imageView.frame = scrollView.bounds
     }
-
+    
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-         return imageView
-     }
- 
+        return imageView
+    }
+    
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
-         if scrollView.zoomScale > 1 {
+        if scrollView.zoomScale > 1 {
             scrollView.isScrollEnabled = true
             if let image = imageView.image {
                 let ratioW = imageView.frame.width / image.size.width
@@ -127,17 +126,17 @@ let alert = MessageAlert()
                 let left = 0.5 * (conditionLeft ? newWidth - imageView.frame.width : (scrollView.frame.width - scrollView.contentSize.width))
                 let conditioTop = newHeight*scrollView.zoomScale > imageView.frame.width
                 let top = 0.5 * (conditioTop ? newHeight - imageView.frame.height : (scrollView.frame.height - scrollView.contentSize.height))
-                  
+                
                 scrollView.contentInset = UIEdgeInsets(top: top, left: left, bottom: top, right: left)
-                  
-              }
-          }
+                
+            }
+        }
         else {
             scrollView.contentInset = .zero
             scrollView.isScrollEnabled = false
             imageView.frame = scrollView.bounds
         }
-      }
+    }
     
     
     @IBAction func goBack(_ sender: Any) {
@@ -176,7 +175,7 @@ let alert = MessageAlert()
     }
     
     
- 
+    
     @IBAction func hint(_ sender: Any) {
         if menuState {
             //if menu open and want to close
@@ -198,5 +197,5 @@ let alert = MessageAlert()
     func dismissAlert() {
         customAlert.dismissAlert()
     }
-
+    
 }

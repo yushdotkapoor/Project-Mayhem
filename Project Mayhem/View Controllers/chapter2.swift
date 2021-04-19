@@ -37,7 +37,7 @@ class chapter2: UIViewController {
         default:
             break
         }
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,25 +65,25 @@ class chapter2: UIViewController {
     func part1() {
         if isOnPhoneCall() {
             let alertController = UIAlertController(title: "Error", message: "Functionality of the application will not work if you are in a call, please disconnect the call to continue playing", preferredStyle: .alert)
-                let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-                alertController.addAction(defaultAction)
+            let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
         }
         else {
-        begin.fadeIn()
-        game.setValue("chap2.1", forKey: "active")
+            begin.fadeIn()
+            game.setValue("chap2.1", forKey: "active")
         }
     }
-   
+    
     
     @IBAction func goBack(_ sender: Any) {
         AVAudioSession.sharedInstance().removeObserver(self, forKeyPath: "outputVolume")
-    self.performSegue(withIdentifier: "chap2ToHome", sender: nil)
+        self.performSegue(withIdentifier: "chap2ToHome", sender: nil)
     }
     
     @IBAction func goNext(_ sender: Any) {
         AVAudioSession.sharedInstance().removeObserver(self, forKeyPath: "outputVolume")
-    self.performSegue(withIdentifier: "chap2ToChap3", sender: nil)
+        self.performSegue(withIdentifier: "chap2ToChap3", sender: nil)
     }
     
     func listenVolumeButton() {
@@ -91,20 +91,19 @@ class chapter2: UIViewController {
         audioSession.addObserver(self, forKeyPath: "outputVolume", options: NSKeyValueObservingOptions.new, context: nil)
         audioLevel = audioSession.outputVolume
     }
-   
+    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-         if keyPath == "outputVolume"{
-              let audioSession = AVAudioSession.sharedInstance()
+        if keyPath == "outputVolume"{
+            let audioSession = AVAudioSession.sharedInstance()
             
-              audioLevel = audioSession.outputVolume
-              
+            audioLevel = audioSession.outputVolume
+            
             viewHeight.constant = view.frame.size.height * CGFloat(audioLevel)
             if audioLevel == 1.0 {
                 let name = game.string(forKey: "name")
                 alert.showAlert(title: "Message from Defender Command", message: "\(name!), I have an assignment for you. I know you’ve heard of Vision Consolidated’s new Intelligence Enhancement and Cognitive Treatment (INTELLECT). Internal sources say that the development of the service has been very unregulated. In fact, they called it ‘Project Mayhem’. Sounds pretty sinister to me. We need you to investigate the company and see if there is anything to worry about. This could be your biggest case as a Defender, if Vision Consolidated is not what we think it is. You’ve been given employee access to their facilities, but make sure to stay under the radar. Good luck, Brainchild.", viewController: self, buttonPush: #selector(dismissMessageAlert))
-                view.bringSubviewToFront(toolbar)
             }
-         }
+        }
     }
     
     func complete() {
@@ -113,10 +112,10 @@ class chapter2: UIViewController {
         nextChap.isUserInteractionEnabled = true
         nextChap.fadeIn()
     }
-
+    
     // defines alert
     let alert = MessageAlert()
-
+    
     //function that gets called to dismiss the alertView
     @objc func dismissMessageAlert() {
         alert.dismissAlert()

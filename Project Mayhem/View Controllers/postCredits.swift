@@ -16,7 +16,7 @@ class postCredits: UIViewController, MFMailComposeViewControllerDelegate {
     let customAlert = HintAlert()
     
     override func viewDidLoad() {
-           super.viewDidLoad()
+        super.viewDidLoad()
         
     }
     
@@ -39,7 +39,7 @@ class postCredits: UIViewController, MFMailComposeViewControllerDelegate {
     
     
     @IBAction func feedback(_ sender: Any) {
-       sendEmail()
+        sendEmail()
     }
     
     func sendEmail() {
@@ -48,21 +48,21 @@ class postCredits: UIViewController, MFMailComposeViewControllerDelegate {
             mail.mailComposeDelegate = self
             mail.setToRecipients(["visionconsolidated@gmail.com"])
             mail.setSubject("Project Mayhem Feedback")
-
+            
             present(mail, animated: true)
         } else {
             // show failure alert
         }
     }
-
+    
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
     }
     
-
+    
     @IBAction func goBack(_ sender: Any) {
-    self.performSegue(withIdentifier: "postCreditsToHome", sender: nil)
+        self.performSegue(withIdentifier: "postCreditsToHome", sender: nil)
     }
-
-
+    
+    
 }

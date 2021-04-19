@@ -24,7 +24,7 @@ class chapter11: UIViewController, SFSpeechRecognizerDelegate {
     var currentString = ""
     
     override func viewDidLoad() {
-           super.viewDidLoad()
+        super.viewDidLoad()
         
         
         resetInProgress = false
@@ -48,7 +48,7 @@ class chapter11: UIViewController, SFSpeechRecognizerDelegate {
         nextChap.isUserInteractionEnabled = true
         nextChap.fadeIn()
     }
-
+    
     @IBAction func goBack(_ sender: Any) {
         talk?.stopRecording()
         game.setValue("none", forKey: "active")
@@ -63,13 +63,12 @@ class chapter11: UIViewController, SFSpeechRecognizerDelegate {
         super.viewDidAppear(animated)
         if isOnPhoneCall() {
             let alertController = UIAlertController(title: "Error", message: "Functionality of the application will not work if you are in a call, please disconnect the call to continue playing", preferredStyle: .alert)
-                let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-                alertController.addAction(defaultAction)
+            let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
         }
         else {
-        alert.showAlert(title: "Message from Victoria Lambson", message: "I don’t remember there being a CEO before Yush, and there is also no historical record of this \"boss\" ever existing", viewController: self, buttonPush: #selector(dismissMessageAlert))
-        view.bringSubviewToFront(toolbar)
+            alert.showAlert(title: "Message from Victoria Lambson", message: "I don’t remember there being a CEO before Yush, and there is also no historical record of this \"boss\" ever existing", viewController: self, buttonPush: #selector(dismissMessageAlert))
         }
     }
     

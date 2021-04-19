@@ -22,6 +22,7 @@ class postChapter15: UIViewController {
     @IBOutlet weak var sysReset: UILabel!
     @IBOutlet weak var Q: UILabel!
     @IBOutlet weak var blckView: UIView!
+    @IBOutlet weak var frontView: UIView!
     
     var customAlert = HintAlert()
     
@@ -184,13 +185,12 @@ class postChapter15: UIViewController {
             
             if !sensitive {
                 wait(time: randDuration2) {
-                    self.view.backgroundColor = .white
+                    self.frontView.backgroundColor = .white
                     wait(time: 0.1) {
-                        self.view.backgroundColor = UIColor.systemIndigo
+                        self.frontView.backgroundColor = UIColor.systemIndigo
                     }
                 }
             }
-            
             wait(time: randDuration) {
                 self.randomBuzz()
             }

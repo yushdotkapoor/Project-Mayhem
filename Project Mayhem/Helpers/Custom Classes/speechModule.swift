@@ -56,7 +56,7 @@ class speechModule:NSObject {
         recognitionRequest.shouldReportPartialResults = true
         
         recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest, resultHandler: { (result, error) in
-           
+            
             var isFinal = false
             
             if result != nil {
@@ -85,7 +85,7 @@ class speechModule:NSObject {
                 wait(time: 0.4, actions: {
                     if game.string(forKey: "active") == self.active && !(video?.isPlaying())! && !self.isActive() {
                         print("Speech Recognition Activated again")
-                    self.startRecording(target: target, arrayOfFunctions: arrayOfFunctions)
+                        self.startRecording(target: target, arrayOfFunctions: arrayOfFunctions)
                     }
                 })
             }

@@ -46,11 +46,11 @@ class chapter7: UIViewController {
     var keyToCheck = ""
     
     override func viewDidLoad() {
-           super.viewDidLoad()
+        super.viewDidLoad()
         orderString = []
         current = 0
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         nextChap.alpha = 0.0
@@ -146,7 +146,7 @@ class chapter7: UIViewController {
     }
     
     func flashInstructions() {
-       let t = game.bool(forKey: keyToCheck)
+        let t = game.bool(forKey: keyToCheck)
         video?.startFlash(lbl: doubleTapInstructions!, chap: ["chap7"], willFlash: t)
     }
     
@@ -183,7 +183,7 @@ class chapter7: UIViewController {
         nextChap.isUserInteractionEnabled = true
         nextChap.fadeIn()
     }
-
+    
     @IBAction func goBack(_ sender: Any) {
         if video != nil {
             godThread = nil
@@ -316,7 +316,7 @@ class chapter7: UIViewController {
         checkOrder()
     }
     
-
+    
     
     @IBAction func hint(_ sender: Any) {
         if menuState {
@@ -341,5 +341,5 @@ class chapter7: UIViewController {
     }
     
     
-
+    
 }

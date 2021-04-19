@@ -16,14 +16,14 @@ class keyboardTemplate: UIViewController {
     var open = false
     
     override func viewDidLoad() {
-           super.viewDidLoad()
+        super.viewDidLoad()
         
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneClicked))
         toolBar.setItems([flexibleSpace, doneButton], animated: false)
-       // nameField.inputAccessoryView = toolBar
+        // nameField.inputAccessoryView = toolBar
         
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.viewTapped(gesture:)))
@@ -49,13 +49,13 @@ class keyboardTemplate: UIViewController {
         let bounds = UIScreen.main.bounds
         let deviceHeight = bounds.size.height
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-                let keyboardHeight = keyboardSize.height
+            let keyboardHeight = keyboardSize.height
             let labelHeight = deviceHeight //- LABELORSTACK.frame.origin.y
             let add = keyboardHeight - labelHeight + 70
             keyboardAdded = add
-           // CONSTRAINT.constant -= add
+            // CONSTRAINT.constant -= add
             open = true
-            }
+        }
     }
     
     @objc func keyboardWillHide() {

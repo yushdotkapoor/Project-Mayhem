@@ -39,24 +39,23 @@ class chapter13: UIViewController {
     
     
     override func viewDidLoad() {
-           super.viewDidLoad()
+        super.viewDidLoad()
         sceneView.isHidden = true
-
+        
     }
     
-// defines alert
-let alert = MessageAlert()
-
-//function that gets called to dismiss the alertView
-@objc func dismissMessageAlert() {
-    alert.dismissAlert()
-    startUp()
-}
+    // defines alert
+    let alert = MessageAlert()
+    
+    //function that gets called to dismiss the alertView
+    @objc func dismissMessageAlert() {
+        alert.dismissAlert()
+        startUp()
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         alert.showAlert(title: "Message from Victoria Lambson", message: "We are detecting harsh radio waves around you. See if you have a device to visualize them. In regards to your health, you should be fine, I think, but be careful, we don’t know what is being transmitted.", viewController: self, buttonPush: #selector(dismissMessageAlert))
-        view.bringSubviewToFront(toolbar)
     }
     
     @objc func doneClicked() {
@@ -75,13 +74,13 @@ let alert = MessageAlert()
         let bounds = UIScreen.main.bounds
         let deviceHeight = bounds.size.height
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-                let keyboardHeight = keyboardSize.height
+            let keyboardHeight = keyboardSize.height
             let labelHeight = deviceHeight - labelStack.frame.origin.y
             let add = keyboardHeight - labelHeight + 70
             keyboardAdded = add
             labelStackBottom.constant += add
             open = true
-            }
+        }
     }
     
     func startUp() {
@@ -96,7 +95,7 @@ let alert = MessageAlert()
         quakeLabel.text = "Sometimes we need to take a step back to get some perspective"
         
         flashView.backgroundColor = .white
-       
+        
         
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
@@ -219,30 +218,30 @@ let alert = MessageAlert()
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         let active = game.string(forKey: "active")
         if active == "chap13.1" {
-        if motion == .motionShake {
-            var lmt = 0
-            for (j, i) in shakeOrder.enumerated() {
-                if j + 1 == shakeOrder.count {
-                    quakeLabel.textColor = .red
-                    return
-                }
-                if ct == i {
-                    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
-                    view.bringSubviewToFront(flashView)
-                    wait(time:0.1, actions: {
-                        self.view.bringSubviewToFront(self.sceneView)
-                        self.view.bringSubviewToFront(self.quakeLabel)
-                        self.view.bringSubviewToFront(self.toolbar)
-                        self.view.bringSubviewToFront(self.labelStack)
-                        self.view.bringSubviewToFront(self.Reset)
-                    })
-                    hintText = "13.3"
-                    lmt = shakeOrder[j + 1]
-                    translateAll(xArr: xArr, zArr: zArr, xTrans: xTrans, nameArr: nameArr, limit:lmt)
-                    return
+            if motion == .motionShake {
+                var lmt = 0
+                for (j, i) in shakeOrder.enumerated() {
+                    if j + 1 == shakeOrder.count {
+                        quakeLabel.textColor = .red
+                        return
+                    }
+                    if ct == i {
+                        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+                        view.bringSubviewToFront(flashView)
+                        wait(time:0.1, actions: {
+                            self.view.bringSubviewToFront(self.sceneView)
+                            self.view.bringSubviewToFront(self.quakeLabel)
+                            self.view.bringSubviewToFront(self.toolbar)
+                            self.view.bringSubviewToFront(self.labelStack)
+                            self.view.bringSubviewToFront(self.Reset)
+                        })
+                        hintText = "13.3"
+                        lmt = shakeOrder[j + 1]
+                        translateAll(xArr: xArr, zArr: zArr, xTrans: xTrans, nameArr: nameArr, limit:lmt)
+                        return
+                    }
                 }
             }
-        }
         }
     }
     
@@ -271,20 +270,20 @@ let alert = MessageAlert()
             }
         }
         else {
-        if textField.text?.lowercased() == "secret" {
-            quakeLabel.text = "secret"
-            textField.text = ""
-            quakeLabel.shake()
-            quakeLabel.textColor = .green
-            view.endEditing(true)
-            textField.isUserInteractionEnabled = false
-            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
-            complete()
-        }
-        else if textField.text != "" {
-            textField.shake()
-            textField.text = ""
-        }
+            if textField.text?.lowercased() == "secret" {
+                quakeLabel.text = "secret"
+                textField.text = ""
+                quakeLabel.shake()
+                quakeLabel.textColor = .green
+                view.endEditing(true)
+                textField.isUserInteractionEnabled = false
+                AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+                complete()
+            }
+            else if textField.text != "" {
+                textField.shake()
+                textField.text = ""
+            }
         }
     }
     
@@ -312,7 +311,7 @@ let alert = MessageAlert()
         self.performSegue(withIdentifier: "chap13ToChap14", sender: nil)
     }
     
-
+    
     @IBAction func hint(_ sender: Any) {
         if menuState {
             //if menu open and want to close
@@ -334,7 +333,7 @@ let alert = MessageAlert()
     func dismissAlert() {
         customAlert.dismissAlert()
     }
-
-
+    
+    
 }
 

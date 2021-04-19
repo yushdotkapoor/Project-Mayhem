@@ -90,7 +90,6 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
     
     
     @IBAction func betterHints(_ sender: Any) {
-        print(IAPs![0].productIdentifier)
         for i in IAPs ?? [] {
             if i.productIdentifier == "com.YushRajKapoor.ProjectMayhem.betterHints"{
                 ProjectMayhemProducts.store.buyProduct(i)
@@ -118,8 +117,8 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
     @IBAction func restorePurchases(_ sender: Any) {
         ProjectMayhemProducts.store.restorePurchases()
         let alertController = UIAlertController(title: "Restore", message: "Purchase Restore Complete.", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
+        let defaultAction = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
+        alertController.addAction(defaultAction)
         wait {
             self.present(alertController, animated: true, completion: nil)
         }
@@ -137,7 +136,7 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
             mail.mailComposeDelegate = self
             mail.setToRecipients(["visionconsolidated@gmail.com"])
             mail.setSubject(subject)
-
+            
             present(mail, animated: true)
         } else {
             // show failure alert
@@ -147,7 +146,7 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
     func sendEmail() {
         sendEmail(subject: "Project Mayhem Feedback")
     }
-
+    
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
     }

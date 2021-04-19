@@ -29,7 +29,7 @@ class ProjectVenomTrailer: UIViewController {
         funcToPass = self.ended
         godThread = self
         video = VideoPlayer(urlAsset: vidName, view: playerView, arr: pauseArray, startTime: timeStamp, volume: 0.15)
-       
+        
         
         flashInstructions()
         
@@ -53,8 +53,8 @@ class ProjectVenomTrailer: UIViewController {
     }
     
     func flashInstructions() {
-       let t = game.bool(forKey: "ProjectVenomTrailerWatched")
-       video?.startFlash(lbl: doubleTapInstructions, chap: ["projectVenomTrailer"], willFlash: t)
+        let t = game.bool(forKey: "ProjectVenomTrailerWatched")
+        video?.startFlash(lbl: doubleTapInstructions, chap: ["projectVenomTrailer"], willFlash: t)
     }
     
     @objc func doubleTapped() {

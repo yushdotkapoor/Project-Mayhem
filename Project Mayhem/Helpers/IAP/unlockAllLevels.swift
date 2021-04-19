@@ -48,7 +48,7 @@ class unlockAllLevels {
         ProjectMayhemProducts.store.requestProducts{ [weak self] success, products in
             guard self != nil else { return }
             if success {
-               IAPs = products!
+                IAPs = products!
             }
             else {
                 print("IAP import unsuccessful")
@@ -135,20 +135,20 @@ class unlockAllLevels {
             
         } else {
             print("Cannot Make Payments")
-          
+            
             alert(title: "Oh No!", message: "This device cannot make payments! Make sure you are signed into your Apple ID and that parental controls allow you to make a purchase.", actionTitle: "Okay!")
         }
     }
     
     func alert(title: String, message: String, actionTitle: String) {
-    let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: actionTitle, style: .cancel, handler: nil)
         alertController.addAction(defaultAction)
         theScreen!.present(alertController, animated: true, completion: nil)
     }
     
     func alert(title: String, message: String, actionTitle: String, actions: @escaping () -> Void) {
-    let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: actionTitle, style: .cancel, handler: { action in actions()})
         
         alertController.addAction(defaultAction)

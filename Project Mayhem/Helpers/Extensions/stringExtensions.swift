@@ -54,7 +54,7 @@ extension String {
             case "n":
                 morse.append("-· ")
                 break
-            
+                
             case "o":
                 morse.append("--- ")
                 break

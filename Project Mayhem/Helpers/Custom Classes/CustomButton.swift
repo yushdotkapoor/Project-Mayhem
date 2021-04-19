@@ -31,7 +31,7 @@ class CustomButton: UIButton {
                 backgroundColor = UIColor.white
             }
         } else {
-             backgroundColor = UIColor.white
+            backgroundColor = UIColor.white
         }
         layer.cornerRadius = height/2
     }
@@ -46,7 +46,7 @@ class CustomButton: UIButton {
                 backgroundColor = color
             }
         } else {
-             backgroundColor = color
+            backgroundColor = color
         }
         layer.cornerRadius = height/2
     }

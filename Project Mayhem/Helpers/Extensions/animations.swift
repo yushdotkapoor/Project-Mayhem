@@ -16,7 +16,7 @@ extension UIView {
         blurEffectView.frame = bounds
         addSubview(blurEffectView)
     }
-  
+    
     func removeBlur() {
         for view in self.subviews {
             if let view = view as? UIVisualEffectView {
@@ -30,7 +30,7 @@ extension UIView {
             self.alpha = 1.0
         }
     }
-
+    
     func fadeOut() {
         UIView.animate(withDuration: 1.0) {
             self.alpha = 0.0

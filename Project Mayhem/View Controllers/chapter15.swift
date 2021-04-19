@@ -80,7 +80,7 @@ class chapter15: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate 
             self.colorFixate(c:color!)
         }
     }
-   
+    
     func colorFixate(c: UIColor) {
         let rgbColor = CIColor(color: c)
         let red:Int = Int(rgbColor.red * 255)
@@ -137,21 +137,20 @@ class chapter15: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate 
                 }, completion: {
                     action in
                     self.alert.showAlert(title: "Message from Yush Raj Kapoor", message: "We need to talk.", viewController: self, buttonPush: #selector(self.dismissMessageAlert))
-                    self.view.bringSubviewToFront(self.toolbar)
                 })
             }
         }
         
     }
     
-// defines alert
-let alert = MessageAlert()
-
-//function that gets called to dismiss the alertView
-@objc func dismissMessageAlert() {
-    alert.dismissAlert()
-    complete()
-}
+    // defines alert
+    let alert = MessageAlert()
+    
+    //function that gets called to dismiss the alertView
+    @objc func dismissMessageAlert() {
+        alert.dismissAlert()
+        complete()
+    }
     
     func isClose(num:Int, compareTo: Int, delta: Int) -> Bool {
         if num <= (compareTo + delta) && num >= (compareTo - delta) {

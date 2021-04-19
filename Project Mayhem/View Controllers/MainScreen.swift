@@ -25,11 +25,9 @@ class MainScreen: UIViewController {
         
         if !videosCurrentlyDownloading && urlDict.isEmpty {
             if !game.bool(forKey: "useCellular") && game.bool(forKey: "onCellular")  {
-                print("first node")
                 return
             }
             else {
-                print("second node")
                 //uploadVideos()
                 downloadVideos()
             }
@@ -73,4 +71,4 @@ class MainScreen: UIViewController {
         self.performSegue(withIdentifier: "MainScreenToLevels", sender: nil)
     }
 }
- 
+

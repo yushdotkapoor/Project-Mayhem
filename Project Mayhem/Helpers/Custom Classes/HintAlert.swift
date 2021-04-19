@@ -36,7 +36,7 @@ class HintAlert: NSObject, UIScrollViewDelegate {
     }()
     
     private let titleLabel:UILabel = {
-       let lbl = UILabel()
+        let lbl = UILabel()
         lbl.numberOfLines = 0
         lbl.text = "Hint"
         lbl.font = lbl.font.withSize(25)
@@ -61,13 +61,29 @@ class HintAlert: NSObject, UIScrollViewDelegate {
     
     var tb:UIStackView?
     
-     
+    
+    @objc func tapExit(touch: UITapGestureRecognizer) {
+        let touchPoint = touch.location(in: backgroundView)
+        let location:CGPoint = CGPoint(x: touchPoint.x, y: touchPoint.y)
+        
+        if !alertView.frame.contains(location) {
+            cancel()
+            dismissAlert()
+        }
+    }
+    
+    func cancel() {
+        backgroundView.gestureRecognizers?.forEach(backgroundView.removeGestureRecognizer)
+    }
+    
+    
     func showAlert(message: String, viewController: UIViewController, hintButton: UIButton, toolbar: UIStackView) {
         hint = hintButton
         controller = viewController
         reqProducts()
         dictRef = message
         tb = toolbar
+        
         let alertController = UIAlertController(title: "Are you sure?", message: "Are you sure you would like to see a hint?", preferredStyle: .alert)
         let no = UIAlertAction(title: "No", style: .default, handler: {_ in
             self.dismissAlert()
@@ -85,7 +101,7 @@ class HintAlert: NSObject, UIScrollViewDelegate {
             return
         }
         msgCt = 0
-        backgroundView.frame = targetView.bounds
+        backgroundView.frame = targetView.frame
         targetView.addSubview(backgroundView)
         
         alertView.isUserInteractionEnabled = true
@@ -99,13 +115,10 @@ class HintAlert: NSObject, UIScrollViewDelegate {
         let titleLabelHeight = heightForView(text: "Hint", font: UIFont(name: "Helvetica", size: 25.0)!, width: alertView.frame.size.width - 10)
         //create a title label
         titleLabel.frame = CGRect(x: 5, y: 5, width: alertView.frame.size.width - 10, height: titleLabelHeight)
-
         
         //set up scrollView
-        scrollView.frame = CGRect(x: 0, y: titleLabel.frame.size.height + 10, width: alertView.frame.size.width, height: message1Height! + 20)
-        scrollView.contentSize = CGSize(width: alertView.frame.size.width*2, height: message1Height! + 20)
+        scrollView.contentSize = CGSize(width: alertView.frame.size.width*2, height: alertView.frame.size.height)
         scrollView.delegate = self
-        
         
         //set up button
         button.frame = CGRect(x: alertView.frame.size.width / 2 - 37.5, y: message1Height! + titleLabelHeight + 55, width: 75, height: 25)
@@ -119,7 +132,7 @@ class HintAlert: NSObject, UIScrollViewDelegate {
         d1.layer.cornerRadius = 4
         d2 = UIView(frame: CGRect(x: alertView.frame.size.width / 2 + 5, y: message1Height! + titleLabelHeight + 15, width: 8, height: 8))
         d2.layer.cornerRadius = 4
-    
+        
         
         //resize alertView
         alertView.frame = CGRect(x: 0, y: 0, width: targetView.frame.size.width-80, height: message1Height! + titleLabel.frame.size.height + 95)
@@ -133,6 +146,8 @@ class HintAlert: NSObject, UIScrollViewDelegate {
         alertView.addSubview(d1)
         alertView.addSubview(d2)
         
+        //update up scrollView
+        scrollView.frame = alertView.bounds
         
         showTheMeat(xRef: 0)
         
@@ -143,18 +158,21 @@ class HintAlert: NSObject, UIScrollViewDelegate {
             self.alertView.alpha = 1.0
         })
         bouncer(num: 0)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapExit))
+        tap.numberOfTapsRequired = 1
+        backgroundView.addGestureRecognizer(tap)
     }
     
     func showTheMeat(xRef:CGFloat) {
         var text = tier1Hint[dictRef]
         var msgHt:CGFloat = 0
-
+        
         if msgCt == 0 {
             msgHt = message1Height!
-           
             alertView.addSubview(scrollView)
             alertView.addSubview(button)
-
+            
         }
         else if msgCt == 1 {
             text = tier2Hint[dictRef]
@@ -162,7 +180,7 @@ class HintAlert: NSObject, UIScrollViewDelegate {
         }
         
         //create the message label
-        let messageLabel = UILabel(frame: CGRect(x: xRef + 10, y: 0, width: alertView.frame.size.width - 20, height: msgHt))
+        let messageLabel = UILabel(frame: CGRect(x: xRef + 10, y: titleLabel.frame.size.height + 5, width: alertView.frame.size.width - 20, height: msgHt))
         messageLabel.numberOfLines = 0
         messageLabel.text = text
         messageLabel.font = messageLabel.font.withSize(16)
@@ -191,7 +209,7 @@ class HintAlert: NSObject, UIScrollViewDelegate {
             
             message2Height = heightForView(text: buttontext, font: UIFont(name: "Helvetica", size: 16.0)!, width: alertView.frame.size.width - 20)
             
-            let btn = UIButton(frame: CGRect(x: xRef + 10, y: 0, width: alertView.frame.size.width - 20, height: message2Height!))
+            let btn = UIButton(frame: CGRect(x: xRef + 10, y: titleLabel.frame.size.height + 5, width: alertView.frame.size.width - 20, height: message2Height!))
             btn.setTitle(buttontext, for: .normal)
             btn.titleLabel?.numberOfLines = 0
             btn.titleLabel?.font = UIFont(name: "Helvetica", size: 16.0)
@@ -217,7 +235,7 @@ class HintAlert: NSObject, UIScrollViewDelegate {
         ProjectMayhemProducts.store.requestProducts{ [weak self] success, products in
             guard self != nil else { return }
             if success {
-               IAPs = products!
+                IAPs = products!
             }
             else {
                 print("IAP import unsuccessful")

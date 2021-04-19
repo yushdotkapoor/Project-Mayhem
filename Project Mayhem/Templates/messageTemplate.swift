@@ -16,7 +16,7 @@ class messageTemplate: UIViewController {
     func REMOVEME() {
         
         alert.showAlert(title: "", message: "", viewController: self, buttonPush: #selector(dismissMessageAlert))
-        view.bringSubviewToFront(toolbar)
+        
     }
     
     // defines alert

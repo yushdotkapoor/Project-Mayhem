@@ -33,7 +33,7 @@ class chapter10: UIViewController {
     var keyboardAdded: CGFloat = 0.0
     
     override func viewDidLoad() {
-           super.viewDidLoad()
+        super.viewDidLoad()
         buttonView.frame.size.width = UIScreen.main.bounds.size.width - 20
         textStack.alpha = 0.0
         let gradient = CAGradientLayer()
@@ -63,7 +63,7 @@ class chapter10: UIViewController {
     }
     
     func getTiles() -> [UIButton] {
-       return [qr11, qr12, qr13, qr21, qr22, qr23, qr31, qr32, qr33]
+        return [qr11, qr12, qr13, qr21, qr22, qr23, qr31, qr32, qr33]
     }
     
     func randomRotate() {
@@ -138,7 +138,7 @@ class chapter10: UIViewController {
         nextChap.fadeIn()
         
     }
-
+    
     @IBAction func goBack(_ sender: Any) {
         NotificationCenter.default.removeObserver(self)
         self.performSegue(withIdentifier: "chap10ToHome", sender: nil)
@@ -154,7 +154,6 @@ class chapter10: UIViewController {
             buttonView.fadeOut()
             view.endEditing(true)
             alert.showAlert(title: "Message from Victoria Lambson", message: "Again, another location. First Neuschwanstein castle and now Burj Khalifa?", viewController: self, buttonPush: #selector(dismissMessageAlert))
-            view.bringSubviewToFront(toolbar)
             
         }
         else {
@@ -164,14 +163,14 @@ class chapter10: UIViewController {
     }
     
     
-// defines alert
-let alert = MessageAlert()
-
-//function that gets called to dismiss the alertView
-@objc func dismissMessageAlert() {
-    alert.dismissAlert()
-    complete()
-}
+    // defines alert
+    let alert = MessageAlert()
+    
+    //function that gets called to dismiss the alertView
+    @objc func dismissMessageAlert() {
+        alert.dismissAlert()
+        complete()
+    }
     
     
     @IBAction func qr1_1(_ sender: Any) {
@@ -224,12 +223,12 @@ let alert = MessageAlert()
         let bounds = UIScreen.main.bounds
         let deviceHeight = bounds.size.height
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-                let keyboardHeight = keyboardSize.height
+            let keyboardHeight = keyboardSize.height
             let labelHeight = deviceHeight - textStack.frame.origin.y
             let add = keyboardHeight - labelHeight + 70
             keyboardAdded = add
             buttonStackTop.constant -= add
-            }
+        }
     }
     
     @objc func keyboardWillHide() {
@@ -244,7 +243,7 @@ let alert = MessageAlert()
         view.endEditing(true)
     }
     
-
+    
     @IBAction func hint(_ sender: Any) {
         if menuState {
             //if menu open and want to close
@@ -266,5 +265,5 @@ let alert = MessageAlert()
     func dismissAlert() {
         customAlert.dismissAlert()
     }
-
+    
 }

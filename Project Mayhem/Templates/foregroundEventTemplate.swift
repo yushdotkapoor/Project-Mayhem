@@ -10,9 +10,9 @@ import UIKit
 class foregroundEventTemplate: UIViewController {
     
     override func viewDidLoad() {
-           super.viewDidLoad()
+        super.viewDidLoad()
         let notificationCenter = NotificationCenter.default
-            notificationCenter.addObserver(self, selector: #selector(foreground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(foreground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     @objc func foreground() {

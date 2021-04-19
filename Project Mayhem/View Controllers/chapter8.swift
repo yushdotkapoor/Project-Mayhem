@@ -20,7 +20,7 @@ class chapter8: UIViewController {
     var customAlert = HintAlert()
     
     override func viewDidLoad() {
-           super.viewDidLoad()
+        super.viewDidLoad()
         game.setValue("chap8", forKey: "active")
         settings.alpha = 0.1
         
@@ -99,7 +99,7 @@ class chapter8: UIViewController {
         }
     }
     
-
+    
     @IBAction func goBack(_ sender: Any) {
         NotificationCenter.default.removeObserver(self)
         self.performSegue(withIdentifier: "chap8ToHome", sender: nil)
@@ -133,6 +133,6 @@ class chapter8: UIViewController {
     func dismissAlert() {
         customAlert.dismissAlert()
     }
-
-
+    
+    
 }

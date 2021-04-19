@@ -15,7 +15,7 @@ class chapterTemplate: UIViewController {
     let customAlert = HintAlert()
     
     override func viewDidLoad() {
-           super.viewDidLoad()
+        super.viewDidLoad()
         
     }
     
@@ -37,13 +37,13 @@ class chapterTemplate: UIViewController {
         nextChap.fadeIn()
         
     }
-
+    
     @IBAction func goBack(_ sender: Any) {
-    //self.performSegue(withIdentifier: "chap1ToHome", sender: nil)
+        //self.performSegue(withIdentifier: "chap1ToHome", sender: nil)
     }
     
     @IBAction func goNext(_ sender: Any) {
-   // self.performSegue(withIdentifier: "chap1ToChap2", sender: nil)
+        // self.performSegue(withIdentifier: "chap1ToChap2", sender: nil)
     }
     
     
@@ -67,5 +67,5 @@ class chapterTemplate: UIViewController {
     func dismissAlert() {
         customAlert.dismissAlert()
     }
-
+    
 }

@@ -169,10 +169,10 @@ class VideoPlayer : NSObject {
                 player.seek(to: CMTimeMakeWithSeconds(seconds, preferredTimescale: timeScale), completionHandler: { (complete) in
                     self.functionCalled = false
                     self.playBlock = false
-                        if (player.currentItem?.status == .readyToPlay) {
-                            print("PLAY w/out options")
-                            player.play()
-                        }
+                    if (player.currentItem?.status == .readyToPlay) {
+                        print("PLAY w/out options")
+                        player.play()
+                    }
                 })
             }
         }
@@ -190,12 +190,12 @@ class VideoPlayer : NSObject {
             return
         }
         if talk != nil {
-        if (talk?.isActive())! {
-            wait(time:0.1, actions: {
-                self.play()
-            })
-            return
-        }
+            if (talk?.isActive())! {
+                wait(time:0.1, actions: {
+                    self.play()
+                })
+                return
+            }
         }
         if let player = assetPlayer {
             if (player.currentItem?.status == .readyToPlay) {
@@ -222,7 +222,14 @@ class VideoPlayer : NSObject {
             item.removeObserver(self, forKeyPath: "loadedTimeRanges")
         }
         
-        AVAudioSession.sharedInstance().removeObserver(self, forKeyPath: "outputVolume")
+        print(AVAudioSession.sharedInstance().observationInfo)
+        
+        
+        if AVAudioSession.sharedInstance().observationInfo != nil {
+            AVAudioSession.sharedInstance().removeObserver(self, forKeyPath: "outputVolume")
+        }
+        
+        
         NotificationCenter.default.removeObserver(self)
         pause()
         assetPlayer = nil
@@ -257,7 +264,8 @@ class VideoPlayer : NSObject {
             videoOutput = AVPlayerItemVideoOutput(pixelBufferAttributes: videoOutputOptions)
             playerItem = AVPlayerItem(asset: asset)
             
-            AVAudioSession.sharedInstance().addObserver(self, forKeyPath: "outputVolume", options: [.new], context: nil)
+           
+            //try AVAudioSession.sharedInstance().addObserver(self, forKeyPath: "outputVolume", options: [.new], context: nil)
             
             if let item = playerItem {
                 item.addObserver(self, forKeyPath: "status", options: .initial, context: videoContext)
@@ -295,8 +303,8 @@ class VideoPlayer : NSObject {
         if isOnPhoneCall() {
             pause()
             let alertController = UIAlertController(title: "Error", message: "Functionality of the application will not work if you are in a call, please disconnect the call to continue playing", preferredStyle: .alert)
-                let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-                alertController.addAction(defaultAction)
+            let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
             godThread!.present(alertController, animated: true, completion: nil)
         }
     }
@@ -384,12 +392,12 @@ class VideoPlayer : NSObject {
     
     func volumeCheck() {
         let vol = AVAudioSession.sharedInstance().outputVolume
-        if vol < 0.15 && requiresVolume {
+        if vol < 0.15 && requiresVolume && AVAudioSession.sharedInstance().observationInfo != nil {
             video?.pause()
             volumeViolated = true
             let alertController = UIAlertController(title: "Volume Error", message: "Certain elements of this level require audio. Please turn your volume up. The level will continue once the required volume is reached.", preferredStyle: .alert)
-                let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-                alertController.addAction(defaultAction)
+            let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
             godThread!.present(alertController, animated: true, completion: nil)
         }
     }
@@ -405,7 +413,6 @@ class VideoPlayer : NSObject {
     
     // MARK: - Observations
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        
         if context == videoContext {
             if let key = keyPath {
                 if key == "status", let player = assetPlayer {

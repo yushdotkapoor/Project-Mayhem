@@ -28,11 +28,11 @@ class chapter3: UIViewController {
     var button4: UIButton! = nil
     
     override func viewDidLoad() {
-           super.viewDidLoad()
+        super.viewDidLoad()
         let text = "Dear employees, I am pleased to announce that one week from today, we will revolutionize human nature with INTELLECT. Our scientists have been working for decades developing ‘Brane’, our custom programming language and integrating it with a human mind. Vision Consolidated will become the pioneer in Brain-Computer Interfaces (BCIs) and have an incredible impact on the future!\n\n-Yush “King” Kapoor"
         
         if let font = UIFont(name: "American Typewriter", size: 25) {
-           let height = heightForView(text: text, font: font, width: UIScreen.main.bounds.size.width - 40)
+            let height = heightForView(text: text, font: font, width: UIScreen.main.bounds.size.width - 40)
             message.frame.size.height = height
             message.text = text
         }
@@ -45,7 +45,6 @@ class chapter3: UIViewController {
         nextChap.isUserInteractionEnabled = false
         scrollView.isUserInteractionEnabled = false
         alert.showAlert(title: "Message from Vision Consolidated", message: "Welcome to the Vision Consolidated Research and Development Division! We hope you have a pleasant experience working with us!", viewController: self, buttonPush: #selector(dismissMessageAlert))
-        view.bringSubviewToFront(toolbar)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,8 +54,16 @@ class chapter3: UIViewController {
         
     }
     
+    func buttonStatus(userEnabled: Bool) {
+        let b = [button1, button2, button3, button4]
+        for i in b {
+            i?.isUserInteractionEnabled = userEnabled
+        }
+    }
+    
     func part1() {
         game.setValue("chap2.1", forKey: "active")
+        buttonStatus(userEnabled: false)
         UIView.animate(withDuration: 1.0, delay: 0, animations: {
             self.button1.frame.origin = CGPoint(x: 50, y: self.message.frame.origin.y + 210.5)
             
@@ -67,17 +74,18 @@ class chapter3: UIViewController {
             self.button3.tintColor = UIColor.black
             self.button4.tintColor = UIColor.black
             
-                UIView.animate(withDuration: 1.0) {
-                    self.button3.frame.origin.y += 140
-                    self.button4.frame.origin.y -= 140
-                
-                }
+            UIView.animate(withDuration: 1.0) {
+                self.button3.frame.origin.y += 140
+                self.button4.frame.origin.y -= 140
+                self.buttonStatus(userEnabled: true)
+            }
         })
         
     }
     
     func part2() {
         game.setValue("chap2.2", forKey: "active")
+        buttonStatus(userEnabled: false)
         UIView.animate(withDuration: 1.0, delay: 0, animations: {
             self.button1.frame.origin.x = (self.view.bounds.width / 2) - 50
             self.button2.frame.origin.x = (self.view.bounds.width / 2) - 50
@@ -111,7 +119,7 @@ class chapter3: UIViewController {
     }
     
     func createButtonsForPart2() {
-         button3 = UIButton(frame: CGRect(x: self.view.bounds.width - 161, y: self.message.frame.origin.y + 70.5, width: 100, height: 100))
+        button3 = UIButton(frame: CGRect(x: self.view.bounds.width - 161, y: self.message.frame.origin.y + 70.5, width: 100, height: 100))
         button3.setBackgroundImage(UIImage(systemName: "circle.fill"), for: .normal)
         button3.tintColor = UIColor.white
         button3.addTarget(self, action: #selector(button3TouchUpInside), for: .touchUpInside)
@@ -122,7 +130,7 @@ class chapter3: UIViewController {
         button4.tintColor = UIColor.white
         button4.addTarget(self, action: #selector(button4TouchUpInside), for: .touchUpInside)
         button4.addTarget(self, action: #selector(button4TouchDown), for: .touchDown)
-
+        
         self.view.addSubview(button3)
         self.view.addSubview(button4)
     }
@@ -141,7 +149,7 @@ class chapter3: UIViewController {
         button2.addTarget(self, action: #selector(button2TouchUpInside), for: .touchUpInside)
         button2.addTarget(self, action: #selector(button2TouchDown), for: .touchDown)
         button2.alpha = 0.0
-
+        
         self.view.addSubview(button1)
         self.view.addSubview(button2)
         button1.fadeIn()
@@ -214,18 +222,18 @@ class chapter3: UIViewController {
         tapped4 = false
     }
     
-
-// defines alert
-let alert = MessageAlert()
-
-//function that gets called to dismiss the alertView
-@objc func dismissMessageAlert() {
-    alert.dismissAlert()
-    wait {
-        self.createButtonsForPart2()
-        self.createButtonsForPart1()
+    
+    // defines alert
+    let alert = MessageAlert()
+    
+    //function that gets called to dismiss the alertView
+    @objc func dismissMessageAlert() {
+        alert.dismissAlert()
+        wait {
+            self.createButtonsForPart2()
+            self.createButtonsForPart1()
+        }
     }
-}
     
     @IBAction func hint(_ sender: Any) {
         if menuState {
@@ -248,6 +256,6 @@ let alert = MessageAlert()
     func dismissAlert() {
         customAlert.dismissAlert()
     }
-
-
+    
+    
 }

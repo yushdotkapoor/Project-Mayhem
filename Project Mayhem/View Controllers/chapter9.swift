@@ -26,7 +26,7 @@ class chapter9: UIViewController, UITextFieldDelegate {
     var open = false
     
     override func viewDidLoad() {
-           super.viewDidLoad()
+        super.viewDidLoad()
         game.setValue("chap9", forKey: "active")
         pass.text = codeToMatch
         secondStack.alpha = 0.0
@@ -80,13 +80,13 @@ class chapter9: UIViewController, UITextFieldDelegate {
         let bounds = UIScreen.main.bounds
         let deviceHeight = bounds.size.height
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-                let keyboardHeight = keyboardSize.height
+            let keyboardHeight = keyboardSize.height
             let labelHeight = deviceHeight - thirdStack.frame.origin.y
             let add = keyboardHeight - labelHeight + 70
             keyboardAdded = add
             stackCenter.constant -= add
             open = true
-            }
+        }
     }
     
     @objc func keyboardWillHide() {
@@ -109,7 +109,7 @@ class chapter9: UIViewController, UITextFieldDelegate {
         nextChap.isUserInteractionEnabled = true
         nextChap.fadeIn()
     }
-
+    
     @IBAction func submit(_ sender: Any) {
         if textField.text?.lowercased() == codeToMatch {
             view.endEditing(true)
@@ -134,7 +134,7 @@ class chapter9: UIViewController, UITextFieldDelegate {
     @IBAction func goNext(_ sender: Any) {
         self.performSegue(withIdentifier: "chap9ToChap10", sender: nil)
     }
-
+    
     @IBAction func hint(_ sender: Any) {
         if menuState {
             //if menu open and want to close

@@ -42,40 +42,6 @@ class subChapter1: UIViewController {
         let doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
         doubleTap.numberOfTapsRequired = 2
         view.addGestureRecognizer(doubleTap)
-        
-        let singleTap = UITapGestureRecognizer(target: self, action: #selector(singleTapped))
-        singleTap.numberOfTapsRequired = 1
-        view.addGestureRecognizer(singleTap)
-    }
-    
-    func unlock() {
-        let context = LAContext()
-        var error: NSError?
-        game.setValue("subChap1.05", forKey: "active")
-        
-        if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
-            let reason = "Unlock Phone shown in video"
-            
-            context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) {
-                success, authenticationError in
-                
-                DispatchQueue.main.async {
-                    if success {
-                        impact(style: .rigid)
-                        game.setValue("subChap1.1", forKey: "active")
-                        funcToPass = self.nextChapter
-                        video?.functionCalled = false
-                        video?.play()
-                    } else {
-                        // error
-                    }
-                }
-            }
-        } else {
-            game.setValue("subChap1.1", forKey: "active")
-            video?.play()
-        }
-        
     }
     
     func nextChapter() {
@@ -89,19 +55,12 @@ class subChapter1: UIViewController {
     
     func flashInstructions() {
         let t = game.bool(forKey: "chap1IntroWatched")
-        video?.startFlash(lbl: doubleTapInstructions, chap: ["subChap1", "subChap1.05"], willFlash: t)
+        video?.startFlash(lbl: doubleTapInstructions, chap: ["subChap1"], willFlash: t)
     }
     
     @objc func doubleTapped() {
         let t = game.bool(forKey: "chap1IntroWatched")
         video?.viewDidDoubleTap(willPass: t)
-    }
-    
-    @objc func singleTapped() {
-        let active = game.string(forKey: "active")
-        if active == "subChap1.05" {
-            unlock()
-        }
     }
     
     @objc func background() {

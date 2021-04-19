@@ -31,7 +31,7 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     let notificationCenter = NotificationCenter.default
     
     override func viewDidLoad() {
-           super.viewDidLoad()
+        super.viewDidLoad()
         menuState = false
         
         notificationCenter.addObserver(self, selector: #selector(foreground), name: UIApplication.willEnterForegroundNotification, object: nil)
@@ -41,16 +41,16 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
         
         UNUserNotificationCenter.current().getNotificationSettings(completionHandler: { (settings) in
             DispatchQueue.main.async {
-            switch settings.authorizationStatus {
-            case .denied, .ephemeral, .notDetermined:
-                self.now.text = "Come back soon"
-                break
-            case .authorized, .provisional:
-                self.now.text = "Don't come back until I tell you to"
-                break
-            @unknown default:
-                break
-            }
+                switch settings.authorizationStatus {
+                case .denied, .ephemeral, .notDetermined:
+                    self.now.text = "Come back soon"
+                    break
+                case .authorized, .provisional:
+                    self.now.text = "Don't come back until I tell you to"
+                    break
+                @unknown default:
+                    break
+                }
             }
         })
         
@@ -61,22 +61,22 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
         let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneClicked))
         toolBar.setItems([flexibleSpace, doneButton], animated: false)
         nameField.inputAccessoryView = toolBar
-       
+        
     }
-  
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let active = game.string(forKey: "active")
         switch active! {
-            case "chap1":
-                part1()
-                break
-            case "chap1.1":
-                part2()
-                break
-            default:
-                break
+        case "chap1":
+            part1()
+            break
+        case "chap1.1":
+            part2()
+            break
+        default:
+            break
         }
     }
     
@@ -111,37 +111,37 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
         
         let active = game.string(forKey: "active") ?? "none"
         switch active {
-            case "none":
-                game.setValue("chap1", forKey: "active")
-                leave.alpha = 0.0
-                now.alpha = 0.0
-                good.alpha = 0.0
-                glad.alpha = 0.0
-                nameStack.alpha = 0.0
-                clickTheRick.alpha = 0.0
-                break
-            case "chap1.1":
-                leave.alpha = 1.0
-                now.alpha = 1.0
-                good.alpha = 0.0
-                glad.alpha = 0.0
-                nameStack.alpha = 0.0
-                clickTheRick.alpha = 0.0
-                break
-            case "chap1.2":
-                leave.alpha = 0.0
-                now.alpha = 0.0
-                good.alpha = 1.0
-                glad.alpha = 1.0
-                nameStack.alpha = 1.0
-                clickTheRick.alpha = 1.0
-                break
-            default:
-                game.setValue("none", forKey: "active")
-                viewWillAppear(true)
-                break
+        case "none":
+            game.setValue("chap1", forKey: "active")
+            leave.alpha = 0.0
+            now.alpha = 0.0
+            good.alpha = 0.0
+            glad.alpha = 0.0
+            nameStack.alpha = 0.0
+            clickTheRick.alpha = 0.0
+            break
+        case "chap1.1":
+            leave.alpha = 1.0
+            now.alpha = 1.0
+            good.alpha = 0.0
+            glad.alpha = 0.0
+            nameStack.alpha = 0.0
+            clickTheRick.alpha = 0.0
+            break
+        case "chap1.2":
+            leave.alpha = 0.0
+            now.alpha = 0.0
+            good.alpha = 1.0
+            glad.alpha = 1.0
+            nameStack.alpha = 1.0
+            clickTheRick.alpha = 1.0
+            break
+        default:
+            game.setValue("none", forKey: "active")
+            viewWillAppear(true)
+            break
         }
- 
+        
         welcome.alpha = 0.0
         nextChap.alpha = 0.0
         nextChap.isUserInteractionEnabled = false
@@ -151,20 +151,20 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
         let name = nameField.text
         if !skip() {
             let gameName = game.string(forKey: "name")
-        if gameName != name && gameName != nil {
-            let alertController = UIAlertController(title: "Please advise", message: "This name conflicts with the name you gave before: \(gameName!). Would you like to change your name from \(gameName!) to \(name!)?", preferredStyle: .alert)
-            let yes = UIAlertAction(title: "Yes", style: .default, handler: { action in
-                self.setName(name: name!)
+            if gameName != name && gameName != nil {
+                let alertController = UIAlertController(title: "Please advise", message: "This name conflicts with the name you gave before: \(gameName!). Would you like to change your name from \(gameName!) to \(name!)?", preferredStyle: .alert)
+                let yes = UIAlertAction(title: "Yes", style: .default, handler: { action in
+                    self.setName(name: name!)
                 })
-            let no = UIAlertAction(title: "No", style: .cancel, handler: nil)
+                let no = UIAlertAction(title: "No", style: .cancel, handler: nil)
                 
                 alertController.addAction(yes)
                 alertController.addAction(no)
                 self.present(alertController, animated: true, completion: nil)
-        }
-        else {
-            setName(name: name!)
-        }
+            }
+            else {
+                setName(name: name!)
+            }
         }
     }
     
@@ -211,14 +211,15 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
             arr = skippable
         }
         else {
-            arr = skippableFree
+            //arr = skippableFree
+            arr = skippable
         }
         
         for (index,val) in arr.enumerated() {
             if (val.lowercased() == nameField.text?.lowercased()) {
                 game.setValue(true, forKey: skipVal[index])
                 alert(title: "Level Skip Notification", message: "level code " + skipVal[index] + " has been skipped", actionTitle: "thx")
-            return true
+                return true
             }
         }
         return false
@@ -251,13 +252,13 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
         cont.body = "Now Come Back"
         cont.badge = NSNumber(value: 1)
         cont.sound = UNNotificationSound.default
-
+        
         // show this notification one second from now
         let trig = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-
+        
         // choose a random identifier
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: cont, trigger: trig)
-
+        
         // add our notification request
         UNUserNotificationCenter.current().add(request)
         
@@ -296,6 +297,6 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     @objc func doneClicked() {
         view.endEditing(true)
     }
-   
+    
 }
 

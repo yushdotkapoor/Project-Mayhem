@@ -55,7 +55,7 @@ class subPostChapter15: UIViewController {
         let button = createLabel(text: "What are you doing here?", callBack: #selector(postPart1))
         speakLabels = [button]
         for i in speakLabels {
-           i.fadeIn()
+            i.fadeIn()
         }
         funcToPass = postPart1
         talk?.startRecording(target: wordToSearch!)
@@ -158,12 +158,12 @@ class subPostChapter15: UIViewController {
         print("bypass4")
         funcToPass = part5
         if let player = video?.assetPlayer {
-        if let timeScale = player.currentItem?.asset.duration.timescale {
-            
-            player.seek(to: CMTimeMakeWithSeconds(70.25, preferredTimescale: timeScale), toleranceBefore: CMTimeMakeWithSeconds(0.05, preferredTimescale: timeScale), toleranceAfter: CMTimeMakeWithSeconds(0.05, preferredTimescale: timeScale), completionHandler: { (complete) in
-                self.part5()
-            })
-        }
+            if let timeScale = player.currentItem?.asset.duration.timescale {
+                
+                player.seek(to: CMTimeMakeWithSeconds(70.25, preferredTimescale: timeScale), toleranceBefore: CMTimeMakeWithSeconds(0.05, preferredTimescale: timeScale), toleranceAfter: CMTimeMakeWithSeconds(0.05, preferredTimescale: timeScale), completionHandler: { (complete) in
+                    self.part5()
+                })
+            }
         }
     }
     
@@ -178,11 +178,11 @@ class subPostChapter15: UIViewController {
         talk?.pause()
         funcToPass = part5
         if let player = video?.assetPlayer {
-        if let timeScale = player.currentItem?.asset.duration.timescale {
-            player.seek(to: CMTimeMakeWithSeconds(65, preferredTimescale: timeScale), completionHandler: { (complete) in
-                video?.play()
-            })
-        }
+            if let timeScale = player.currentItem?.asset.duration.timescale {
+                player.seek(to: CMTimeMakeWithSeconds(65, preferredTimescale: timeScale), completionHandler: { (complete) in
+                    video?.play()
+                })
+            }
         }
     }
     
@@ -253,8 +253,8 @@ class subPostChapter15: UIViewController {
     }
     
     func flashInstructions() {
-       let t = game.bool(forKey: "subPostChapter15Watched")
-       video?.startFlash(lbl: doubleTapInstructions, chap: ["subPostChap15"], willFlash: t)
+        let t = game.bool(forKey: "subPostChapter15Watched")
+        video?.startFlash(lbl: doubleTapInstructions, chap: ["subPostChap15"], willFlash: t)
     }
     
     @objc func doubleTapped() {

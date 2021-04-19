@@ -27,12 +27,12 @@ class chapter4: UIViewController {
     var compareArr1:[String] = [">", "<", ">", "<", ">", "<"]
     var compareArr2:[String] = [">", "", "<", "<", "", ">"]
     var new = 0
-        
+    
     var unlocker:unlockAllLevels?
-        
+    
     override func viewDidLoad() {
-    super.viewDidLoad()
-      
+        super.viewDidLoad()
+        
         
     }
     
@@ -40,11 +40,11 @@ class chapter4: UIViewController {
         if motionManager.isAccelerometerAvailable {
             motionManager.deviceMotionUpdateInterval = 0.1;
             motionManager.startDeviceMotionUpdates()
-
+            
             motionManager.accelerometerUpdateInterval = 0.1
             guard let currentQueue = OperationQueue.current else { return }
             motionManager.startAccelerometerUpdates(to: currentQueue) { (data, error) in
-                    
+                
                 if let position = data?.acceleration {
                     self.posX = position.x
                     self.posY = position.y
@@ -56,16 +56,16 @@ class chapter4: UIViewController {
         }
         self.oneCheck(first: compareArr1[0], second: compareArr2[0])
     }
-
-
-// defines alert
-let alert = MessageAlert()
-
-//function that gets called to dismiss the alertView
-@objc func dismissMessageAlert() {
-    alert.dismissAlert()
-    startLevel()
-}
+    
+    
+    // defines alert
+    let alert = MessageAlert()
+    
+    //function that gets called to dismiss the alertView
+    @objc func dismissMessageAlert() {
+        alert.dismissAlert()
+        startLevel()
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -74,7 +74,6 @@ let alert = MessageAlert()
         notificationCenter.addObserver(self, selector: #selector(reenter), name: UIApplication.didBecomeActiveNotification, object: nil)
         
         alert.showAlert(title: "Message from Victoria Lambson", message: "Great work getting access within Vision! My name is Vickie and I am also a Defender. I will try to guide you through Vision’s systems to aid in your investigation. Vision has better security than most U.S. government agencies, but we have insider knowledge on how to bypass those hurdles. The director has briefed me on who you are and I must say, I'm quite a fan of yours, Brainchild. Anyway, I’ll let you get back to your mission. Just know that I will be monitoring you all the way through!", viewController: self, buttonPush: #selector(dismissMessageAlert))
-        view.bringSubviewToFront(toolbar)
     }
     
     func oneCheck(first: String, second: String) {
@@ -157,14 +156,14 @@ let alert = MessageAlert()
         
     }
     
-@objc func background() {
-    motionStop()
-}
+    @objc func background() {
+        motionStop()
+    }
     
-@objc func reenter() {
-    posX = 0.0
-    startLevel()
-}
+    @objc func reenter() {
+        posX = 0.0
+        startLevel()
+    }
     
     func motionStop() {
         posX = 10000
@@ -177,8 +176,9 @@ let alert = MessageAlert()
         NotificationCenter.default.removeObserver(self)
         self.performSegue(withIdentifier: "chap4ToHome", sender: nil)
     }
-
+    
     @IBAction func goNext(_ sender: Any) {
+        /*
         if (freeVersions.contains(game.string(forKey: "originalVersion") ?? "")) {
             print("contains \(game.string(forKey: "originalVersion") ?? "")")
             unlocker = unlockAllLevels.init(scrnview: self, key: "levelsToChap5")
@@ -188,6 +188,8 @@ let alert = MessageAlert()
             print("no contain \(game.string(forKey: "originalVersion") ?? "")")
             performSegue(withIdentifier: "levelsToChap5", sender: nil)
         }
+        */
+        performSegue(withIdentifier: "chap4ToChap5", sender: nil)
     }
     
     func goToPurchase() {

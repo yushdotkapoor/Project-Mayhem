@@ -58,14 +58,14 @@ func openLink(st: String) {
 
 func isOnPhoneCall() -> Bool {
     if isCallKitSupported() {
-    for call in CXCallObserver().calls {
-        if call.hasEnded == false {
-            print("on call")
-            return true
+        for call in CXCallObserver().calls {
+            if call.hasEnded == false {
+                print("on call")
+                return true
+            }
         }
-    }
-    print("not on call")
-    return false
+        print("not on call")
+        return false
     }
     else {
         return false
@@ -77,13 +77,25 @@ func impact(style: UIImpactFeedbackGenerator.FeedbackStyle) {
     generator.impactOccurred()
 }
 
+func countLines(of label: UILabel, maxHeight: CGFloat) -> Int {
+        // viewDidLayoutSubviews() in ViewController or layoutIfNeeded() in view subclass
+        guard let labelText = label.text else {
+            return 0
+        }
+        
+        let rect = CGSize(width: label.bounds.width, height: maxHeight)
+        let labelSize = labelText.boundingRect(with: rect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: label.font!], context: nil)
+        
+        return Int(ceil(CGFloat(labelSize.height) / label.font.lineHeight))
+   }
+
 func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat{
     let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
     label.numberOfLines = 0
     label.font = font
     label.font = label.font.withSize(font.pointSize + 1)
     label.text = text
-
+    
     label.sizeToFit()
     return label.frame.height
 }
@@ -111,26 +123,26 @@ func vidToURL(name: String, type: String) -> NSURL {
 
 func downloadVideos() {
     for vid in vidArr {
-    var videoURL:NSURL?
-    print("Downloading \(vid)")
+        var videoURL:NSURL?
+        print("Downloading \(vid)")
         game.setValue(false, forKey: "downloaded")
-    videosCurrentlyDownloading = true
-    database.fetch(withRecordID: CKRecord.ID(recordName: vid)) { results, error in
+        videosCurrentlyDownloading = true
+        database.fetch(withRecordID: CKRecord.ID(recordName: vid)) { results, error in
             if error != nil {
-                    print(" Error Downloading Record  " + error!.localizedDescription)
+                print(" Error Downloading Record  " + error!.localizedDescription)
             } else {
                 if results != nil {
                     let record = results! as CKRecord
                     let videoFile = record.object(forKey: "video") as! CKAsset
-
+                    
                     videoURL = videoFile.fileURL! as NSURL
                     let videoData = NSData(contentsOf: videoURL! as URL)
-
+                    
                     let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
                     let destinationPath = NSURL(fileURLWithPath: documentsPath).appendingPathComponent("\(vid).mov", isDirectory: false)
-
+                    
                     FileManager.default.createFile(atPath: destinationPath!.path, contents:videoData as Data?, attributes:nil)
-
+                    
                     videoURL = destinationPath! as NSURL
                     urlDict[vid] = videoURL
                     print("end download \(vid)")
@@ -176,47 +188,46 @@ func uploadVideos() {
 }
 
 func formatDateForUI(_ date: Date) -> String {
-  let formatter = DateFormatter()
-  formatter.dateStyle = .medium
-  formatter.timeStyle = .none
-  return formatter.string(from: date)
+    let formatter = DateFormatter()
+    formatter.dateStyle = .medium
+    formatter.timeStyle = .none
+    return formatter.string(from: date)
 }
 
 func validateReceipt() {
     print("Validating Receipt...")
     receipt = Receipt()
     if let receiptStatus = receipt?.receiptStatus {
-    print("receipt status \(receiptStatus.rawValue)")
-    guard receiptStatus == .validationSuccess else {
-      // If verification didn't succeed, then show status in red and clear other fields
-        print("verification did not succeed")
-      return
-    }
-    
-    // If verification succeed, we show information contained in the receipt
+        print("receipt status \(receiptStatus.rawValue)")
+        guard receiptStatus == .validationSuccess else {
+            // If verification didn't succeed, then show status in red and clear other fields
+            print("verification did not succeed")
+            return
+        }
+        
+        // If verification succeed, we show information contained in the receipt
         print("Bundle Identifier: \(receipt?.bundleIdString!)")
-    print("Bundle Version: \(receipt?.bundleVersionString!)")
-    
+        print("Bundle Version: \(receipt?.bundleVersionString!)")
+        
         if let originalVersion = receipt?.originalAppVersion {
-     print("Original Version: \(originalVersion)")
+            print("Original Version: \(originalVersion)")
             game.setValue(originalVersion, forKey: "originalVersion")
-    } else {
-    print("Version Not Provided")
-    }
-    
+        } else {
+            print("Version Not Provided")
+        }
+        
         if let receiptExpirationDate = receipt?.expirationDate {
-        print("Expiration Date: \(formatDateForUI(receiptExpirationDate))")
-    } else {
-        print("Not Provided.")
-    }
-    
+            print("Expiration Date: \(formatDateForUI(receiptExpirationDate))")
+        } else {
+            print("Not Provided.")
+        }
+        
         if let receiptCreation = receipt?.receiptCreationDate {
-        print("Receipt Creation Date: \(formatDateForUI(receiptCreation))")
-    } else {
-        print("Not Provided.")
+            print("Receipt Creation Date: \(formatDateForUI(receiptCreation))")
+        } else {
+            print("Not Provided.")
+        }
+        
     }
-    
-  }
 }
-
 

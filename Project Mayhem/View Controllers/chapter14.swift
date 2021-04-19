@@ -66,20 +66,19 @@ class chapter14: UIViewController {
         lbl.layer.masksToBounds = true
         lbl.layer.cornerRadius = 15
     }
-
-// defines alert
-let alert = MessageAlert()
-
-//function that gets called to dismiss the alertView
-@objc func dismissMessageAlert() {
-    alert.dismissAlert()
-    foregroundView.isUserInteractionEnabled = true
-}
+    
+    // defines alert
+    let alert = MessageAlert()
+    
+    //function that gets called to dismiss the alertView
+    @objc func dismissMessageAlert() {
+        alert.dismissAlert()
+        foregroundView.isUserInteractionEnabled = true
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         alert.showAlert(title: "Message from Defender Command", message: "Good work, Brainchild. You look to be very close to gaining access to Project Mayhem’s private servers. When you do, make sure to upload everything to a secure cloud. Victoria tells me you noticed a secret message in a meeting transcript. Murder? What does it mean? Did you notice anything else related to this?", viewController: self, buttonPush: #selector(dismissMessageAlert))
-        view.bringSubviewToFront(toolbar)
     }
     
     @objc func handlePanGesture(gesture: UIPanGestureRecognizer) {
@@ -194,7 +193,7 @@ let alert = MessageAlert()
         }
     }
     
-  
+    
     
     func checkForCompletion() {
         var labelString = morseLabel.text

@@ -12,19 +12,19 @@ extension UIViewController {
     
     func alert(title: String, message: String, actionTitle: String) {
         
-    let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: actionTitle, style: .cancel, handler: nil)
         alertController.addAction(defaultAction)
-            present(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
     }
-
+    
     func alert(title: String, message: String, actionTitle: String, actions: @escaping () -> Void) {
         
-    let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: actionTitle, style: .cancel, handler: { action in actions()})
         
         alertController.addAction(defaultAction)
-            present(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
     }
     
     func vibrate(count: Int) {

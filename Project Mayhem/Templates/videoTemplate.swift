@@ -45,13 +45,13 @@ class videoTemplate: UIViewController {
     
     func flashInstructions() {
         //chap1 is the next main level
-       //let t = game.bool(forKey: "chap1")
+        //let t = game.bool(forKey: "chap1")
         //chap represents all the active states that need flash instructions
-       //video?.startFlash(lbl: doubleTapInstructions, chap: ["subChap1", "subChap1.05"], willFlash: t)
+        //video?.startFlash(lbl: doubleTapInstructions, chap: ["subChap1", "subChap1.05"], willFlash: t)
     }
     
     @objc func doubleTapped() {
-         //chap1 is the next main level
+        //chap1 is the next main level
         //let t = game.bool(forKey: "chap1")
         //video?.viewDidDoubleTap(willPass: t)
     }
@@ -65,7 +65,7 @@ class videoTemplate: UIViewController {
         if timeStamp - 2 < 0 {
             timeStamp = 2
         }
-       // video = playLocalVideo(name: vidName, type: "mov", playView: playerView, array: pauseArray, startAt: timeStamp - 2)
+        // video = playLocalVideo(name: vidName, type: "mov", playView: playerView, array: pauseArray, startAt: timeStamp - 2)
         flashInstructions()
     }
     

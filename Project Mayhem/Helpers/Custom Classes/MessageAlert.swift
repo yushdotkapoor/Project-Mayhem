@@ -20,6 +20,21 @@ class MessageAlert: NSObject {
         return alert
     }()
     
+    
+    @objc func tapExit(touch: CustomTapGestureRecognizer) {
+        let touchPoint = touch.location(in: backgroundView)
+        let location:CGPoint = CGPoint(x: touchPoint.x, y: touchPoint.y)
+        
+        if !alertView.frame.contains(location) {
+            cancel()
+            touch.button?.sendActions(for: .touchUpInside)
+        }
+    }
+    
+    func cancel() {
+        backgroundView.gestureRecognizers?.forEach(backgroundView.removeGestureRecognizer)
+    }
+    
     func getGradientBasedOnTitle(title: String) -> CAGradientLayer {
         let grad = CAGradientLayer()
         
@@ -52,12 +67,11 @@ class MessageAlert: NSObject {
         guard let targetView = viewController.view else {
             return
         }
-        
-        backgroundView.frame = targetView.bounds
+        backgroundView.frame = targetView.frame
         targetView.addSubview(backgroundView)
         
         alertView.isUserInteractionEnabled = true
-        alertView.frame = CGRect(x: 0, y: 0, width: targetView.frame.size.width-80, height: 100)
+        alertView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: 100)
         let gradient = getGradientBasedOnTitle(title: title)
         alertView.isHidden = true
         alertView.alpha = 0.0
@@ -75,40 +89,62 @@ class MessageAlert: NSObject {
         let titleFrame = titleLabel.frame
         titleLabel.textColor = .white
         
-        
-        let messageLabelHeight = heightForView(text: message, font: UIFont(name: "Helvetica", size: 16.0)!, width: alertViewFrame.width - 10)
-        //create the message label
-        let messageLabel = UILabel(frame: CGRect(x: 5, y: titleFrame.size.height + 10, width: alertViewFrame.width - 10, height: messageLabelHeight))
-        messageLabel.numberOfLines = 0
-        messageLabel.text = message
-        messageLabel.font = messageLabel.font.withSize(16)
-        messageLabel.textAlignment = .center
-        messageLabel.textColor = .white
-        
-        //create Button with outline to close the alert
-        let button = CustomButtonOutline()
-        button.frame = CGRect(x: alertView.frame.size.width / 2 - 37.5, y: messageLabel.frame.size.height + titleLabel.frame.size.height + 30, width: 75, height: 25)
-        button.setupButton()
-        button.setTitle("Close", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.addTarget(viewController, action: buttonPush, for: .touchUpInside)
-        
+        var msgbtn = messageAndButton(message: message, viewController: viewController, buttonPush: buttonPush, titleHeight: titleLabelHeight, smallFont: false)
         
         //resize alertView
-        alertView.frame = CGRect(x: 0, y: 0, width: targetView.frame.size.width-80, height: messageLabel.frame.size.height + titleFrame.height + 70)
+        alertView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: msgbtn.messageLabel.frame.size.height + titleFrame.height + 60)
+        
+        if (alertView.frame.size.height > UIScreen.main.bounds.height-210) {
+            msgbtn = messageAndButton(message: message, viewController: viewController, buttonPush: buttonPush, titleHeight: titleLabelHeight, smallFont: true)
+            
+            alertView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: msgbtn.messageLabel.frame.size.height + titleFrame.height + 60)
+        }
+        
         alertView.center = targetView.center
         gradient.frame = alertView.bounds
         alertView.layer.addSublayer(gradient)
         targetView.addSubview(alertView)
         alertView.addSubview(titleLabel)
-        alertView.addSubview(messageLabel)
-        alertView.addSubview(button)
+        alertView.addSubview(msgbtn.messageLabel)
+        alertView.addSubview(msgbtn.button)
         
         //animate alertView in
         UIView.animate(withDuration: 0.5, animations: {
             self.alertView.isHidden = false
             self.alertView.alpha = 1.0
         })
+        
+        let tap = CustomTapGestureRecognizer(target: self, action: #selector(tapExit))
+        tap.button = msgbtn.button
+        backgroundView.addGestureRecognizer(tap)
+    }
+    
+    
+    func messageAndButton(message: String, viewController: UIViewController, buttonPush: Selector, titleHeight: CGFloat, smallFont: Bool) -> (messageLabel: UILabel, button: UIButton) {
+        var msgFontSize:CGFloat = 16
+        if smallFont {
+            msgFontSize = 13
+        }
+        
+        
+        let messageLabelHeight = heightForView(text: message, font: UIFont(name: "Helvetica", size: msgFontSize)!, width: alertView.frame.size.width - 10)
+        //create the message label
+        let messageLabel = UILabel(frame: CGRect(x: 5, y: titleHeight + 10, width: alertView.frame.size.width - 10, height: messageLabelHeight))
+        messageLabel.text = message
+        messageLabel.numberOfLines = 0
+        messageLabel.font = messageLabel.font.withSize(msgFontSize)
+        messageLabel.textAlignment = .center
+        messageLabel.textColor = .white
+        
+        //create Button with outline to close the alert
+        let button = CustomButtonOutline()
+        button.frame = CGRect(x: alertView.frame.size.width / 2 - 37.5, y: messageLabel.frame.size.height + titleHeight + 20, width: 75, height: 25)
+        button.setupButton()
+        button.setTitle("Close", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(viewController, action: buttonPush, for: .touchUpInside)
+        
+        return (messageLabel, button)
     }
     
     
@@ -122,5 +158,10 @@ class MessageAlert: NSObject {
             }
         })
     }
+}
+
+
+class CustomTapGestureRecognizer: UITapGestureRecognizer {
+   var button: UIButton?
 }
 
