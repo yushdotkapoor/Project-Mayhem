@@ -43,7 +43,7 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
             DispatchQueue.main.async {
                 switch settings.authorizationStatus {
                 case .denied, .ephemeral, .notDetermined:
-                    self.now.text = "Come back soon"
+                    self.now.text = "Come back ASAP"
                     break
                 case .authorized, .provisional:
                     self.now.text = "Don't come back until I tell you to"
@@ -85,9 +85,11 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
         wait {
             self.now.fadeIn()
         }
+        game.setValue(true, forKey: "chapter1Bypass")
     }
     
     func part2() {
+        game.setValue(false, forKey: "chapter1Bypass")
         wait(time: 0.3, actions: {
             self.leave.fadeOut()
             self.now.fadeOut()
@@ -232,11 +234,10 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     @IBAction func goBack(_ sender: Any) {
+        game.setValue(false, forKey: "chapter1Bypass")
         notificationCenter.removeObserver(self, name: UIApplication.didEnterBackgroundNotification, object: nil)
         self.performSegue(withIdentifier: "chap1ToHome", sender: nil)
     }
-    
-    
     
     @objc func foreground() {
         notificationCenter.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)

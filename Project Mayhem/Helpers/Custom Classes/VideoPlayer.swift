@@ -222,9 +222,6 @@ class VideoPlayer : NSObject {
             item.removeObserver(self, forKeyPath: "loadedTimeRanges")
         }
         
-        print(AVAudioSession.sharedInstance().observationInfo)
-        
-        
         if AVAudioSession.sharedInstance().observationInfo != nil {
             AVAudioSession.sharedInstance().removeObserver(self, forKeyPath: "outputVolume")
         }
@@ -265,7 +262,7 @@ class VideoPlayer : NSObject {
             playerItem = AVPlayerItem(asset: asset)
             
            
-            //try AVAudioSession.sharedInstance().addObserver(self, forKeyPath: "outputVolume", options: [.new], context: nil)
+            AVAudioSession.sharedInstance().addObserver(self, forKeyPath: "outputVolume", options: [.new], context: nil)
             
             if let item = playerItem {
                 item.addObserver(self, forKeyPath: "status", options: .initial, context: videoContext)

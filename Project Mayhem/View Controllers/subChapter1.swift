@@ -26,22 +26,32 @@ class subChapter1: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        game.setValue("subChap1", forKey: "active")
-        funcToPass = self.nextChapter
-        godThread = self
-        
-        video = VideoPlayer(urlAsset: vidName, view: playerView, arr: pauseArray, startTime: timeStamp, volume: 0.3, needVolume: false)
-        
-        
-        flashInstructions()
-        
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(background), name: UIApplication.didEnterBackgroundNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(reenter), name: UIApplication.willEnterForegroundNotification, object: nil)
-        
-        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
-        doubleTap.numberOfTapsRequired = 2
-        view.addGestureRecognizer(doubleTap)
+        let b = game.bool(forKey: "chapter1Bypass")
+        if !b {
+            game.setValue("subChap1", forKey: "active")
+            funcToPass = self.nextChapter
+            godThread = self
+            
+            video = VideoPlayer(urlAsset: vidName, view: playerView, arr: pauseArray, startTime: timeStamp, volume: 0.3, needVolume: false)
+            
+            
+            flashInstructions()
+            
+            let notificationCenter = NotificationCenter.default
+            notificationCenter.addObserver(self, selector: #selector(background), name: UIApplication.didEnterBackgroundNotification, object: nil)
+            notificationCenter.addObserver(self, selector: #selector(reenter), name: UIApplication.willEnterForegroundNotification, object: nil)
+            
+            let doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
+            doubleTap.numberOfTapsRequired = 2
+            view.addGestureRecognizer(doubleTap)
+        }
+        else {
+            game.setValue("chap1.1", forKey: "active")
+            game.setValue(false, forKey: "chapter1Bypass")
+            wait {
+                self.performSegue(withIdentifier: "subChap1ToChap1", sender: nil)
+            }
+        }
     }
     
     func nextChapter() {

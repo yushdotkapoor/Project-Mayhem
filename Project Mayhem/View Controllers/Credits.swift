@@ -49,10 +49,11 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
             betterHintButton.isUserInteractionEnabled = false
         }
         
+        /*
         donateLabel.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(donate(tapGestureRecognizer:)))
         donateLabel.addGestureRecognizer(tapGesture)
-        
+        */
     }
     
     
