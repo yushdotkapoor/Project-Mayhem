@@ -20,6 +20,7 @@ class chapter12: UIViewController {
     @IBOutlet weak var a3: UIImageView!
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var toolbar: UIStackView!
+    @IBOutlet weak var gemini: UIImageView!
     
     var customAlert = HintAlert()
     
@@ -46,6 +47,8 @@ class chapter12: UIViewController {
         UIDevice.current.isBatteryMonitoringEnabled = true
         
         NotificationCenter.default.addObserver(self, selector: #selector(batteryStateDidChange), name: UIDevice.batteryStateDidChangeNotification, object: nil)
+        
+        gemini.layer.cornerRadius = gemini.frame.size.height / 2
     }
     
     override func viewWillAppear(_ animated: Bool) {

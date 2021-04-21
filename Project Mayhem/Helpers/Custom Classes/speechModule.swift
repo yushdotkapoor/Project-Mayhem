@@ -83,7 +83,7 @@ class speechModule:NSObject {
                 self.recognitionTask = nil
                 print("Speech Recognition Stopped")
                 wait(time: 0.4, actions: {
-                    if game.string(forKey: "active") == self.active && !(video?.isPlaying())! && !self.isActive() {
+                    if game.string(forKey: "active") == self.active && !(video?.isPlaying() ?? video?.isPlaying() != nil) && !self.isActive() {
                         print("Speech Recognition Activated again")
                         self.startRecording(target: target, arrayOfFunctions: arrayOfFunctions)
                     }

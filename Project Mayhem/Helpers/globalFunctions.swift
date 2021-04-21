@@ -20,7 +20,6 @@ var funcToPass:(() -> Void)?
 var tomorrow = UIFont(name: "Tomorrow", size: 20)
 var videosCurrentlyDownloading = false
 var IAPs:[SKProduct]?
-var receipt: Receipt?
 let database = CKContainer.default().publicCloudDatabase
 let vidArr = ["Chap1Intro", "lvl7Intro", "lvl7Outro", "subPostChapter15", "ProjectVenomTrailer"]
 var urlDict = [String: NSURL]()
@@ -184,50 +183,6 @@ func uploadVideos() {
                 videosCurrentlyDownloading = false
             }
         }
-    }
-}
-
-func formatDateForUI(_ date: Date) -> String {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .medium
-    formatter.timeStyle = .none
-    return formatter.string(from: date)
-}
-
-func validateReceipt() {
-    print("Validating Receipt...")
-    receipt = Receipt()
-    if let receiptStatus = receipt?.receiptStatus {
-        print("receipt status \(receiptStatus.rawValue)")
-        guard receiptStatus == .validationSuccess else {
-            // If verification didn't succeed, then show status in red and clear other fields
-            print("verification did not succeed")
-            return
-        }
-        
-        // If verification succeed, we show information contained in the receipt
-        print("Bundle Identifier: \(receipt?.bundleIdString!)")
-        print("Bundle Version: \(receipt?.bundleVersionString!)")
-        
-        if let originalVersion = receipt?.originalAppVersion {
-            print("Original Version: \(originalVersion)")
-            game.setValue(originalVersion, forKey: "originalVersion")
-        } else {
-            print("Version Not Provided")
-        }
-        
-        if let receiptExpirationDate = receipt?.expirationDate {
-            print("Expiration Date: \(formatDateForUI(receiptExpirationDate))")
-        } else {
-            print("Not Provided.")
-        }
-        
-        if let receiptCreation = receipt?.receiptCreationDate {
-            print("Receipt Creation Date: \(formatDateForUI(receiptCreation))")
-        } else {
-            print("Not Provided.")
-        }
-        
     }
 }
 

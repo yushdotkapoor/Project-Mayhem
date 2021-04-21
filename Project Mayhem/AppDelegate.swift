@@ -26,17 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, S
         AppsFlyerLib.shared().delegate = self
         AppsFlyerLib.shared().isDebug = false
         AppsFlyerLib.shared().waitForATTUserAuthorization(timeoutInterval: 120)
-        UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .alert, .sound]) { _, _ in }
-        application.registerForRemoteNotifications()
         
         FirebaseApp.configure()
         
         OneSignal.initWithLaunchOptions(launchOptions)
         OneSignal.setAppId("12db9d9f-4c00-4d45-83e7-0cf7e40026cd")
-        
-        OneSignal.promptForPushNotifications(userResponse: { accepted in
-            print("User accepted notifications: \(accepted)")
-        })
         
         
         //default values for the start of the game
@@ -79,14 +73,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, S
         
         let queue = DispatchQueue(label: "Monitor")
         monitor.start(queue: queue)
-        
-        
-        if Receipt.isReceiptPresent() {
-            validateReceipt()
-        } else {
-            refreshReceipt()
-        }
-        
         
         return true
     }

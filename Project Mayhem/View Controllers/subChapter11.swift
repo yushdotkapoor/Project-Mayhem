@@ -157,6 +157,7 @@ class subChapter11: UIViewController, UIScrollViewDelegate {
             textField.textColor = .green
             textStack.isUserInteractionEnabled = false
             NotificationCenter.default.removeObserver(self)
+            hint.isUserInteractionEnabled = false
             wait {
                 self.textStack.flickerOut()
                 wait {

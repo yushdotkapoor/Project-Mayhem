@@ -208,14 +208,7 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     func skip() -> Bool {
-        var arr:[String] = []
-        if ProjectMayhemProducts.store.isProductPurchased(ProjectMayhemProducts.unlocker) {
-            arr = skippable
-        }
-        else {
-            //arr = skippableFree
-            arr = skippable
-        }
+        var arr:[String] = skippable
         
         for (index,val) in arr.enumerated() {
             if (val.lowercased() == nameField.text?.lowercased()) {

@@ -28,7 +28,6 @@ class chapter4: UIViewController {
     var compareArr2:[String] = [">", "", "<", "<", "", ">"]
     var new = 0
     
-    var unlocker:unlockAllLevels?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -178,23 +177,9 @@ class chapter4: UIViewController {
     }
     
     @IBAction func goNext(_ sender: Any) {
-        /*
-        if (freeVersions.contains(game.string(forKey: "originalVersion") ?? "")) {
-            print("contains \(game.string(forKey: "originalVersion") ?? "")")
-            unlocker = unlockAllLevels.init(scrnview: self, key: "levelsToChap5")
-            unlocker?.purchase()
-        }
-        else {
-            print("no contain \(game.string(forKey: "originalVersion") ?? "")")
-            performSegue(withIdentifier: "levelsToChap5", sender: nil)
-        }
-        */
         performSegue(withIdentifier: "chap4ToChap5", sender: nil)
     }
     
-    func goToPurchase() {
-        unlocker?.goToPurchase()
-    }
     
     
     @IBAction func hint(_ sender: Any) {

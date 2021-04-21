@@ -16,7 +16,6 @@
 		9D150276260EDF7700A767C3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D150275260EDF7700A767C3 /* StoreKit.framework */; };
 		9D15027A260EE08200A767C3 /* ProjectMayhemProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D150279260EE08200A767C3 /* ProjectMayhemProducts.swift */; };
 		9D150280260EE0A700A767C3 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D15027F260EE0A700A767C3 /* IAPHelper.swift */; };
-		9D150287260EF5FB00A767C3 /* unlockAllLevels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D150286260EF5FB00A767C3 /* unlockAllLevels.swift */; };
 		9D1502AF260F0BB300A767C3 /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1502AE260F0BB300A767C3 /* CheckInternet.swift */; };
 		9D18487D25D7A7B7007960C0 /* HintAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D18487C25D7A7B7007960C0 /* HintAlert.swift */; };
 		9D3848D725F46C4E00B23F76 /* lvl7IntroCompressed.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9D3848D525F46C4E00B23F76 /* lvl7IntroCompressed.mov */; };
@@ -60,12 +59,6 @@
 		9D8B292E25DC189A007750DF /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8B292D25DC189A007750DF /* CALayerExtension.swift */; };
 		9D8C42AF25C7BE5C0039F857 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9D8C42AE25C7BE5C0039F857 /* Settings.bundle */; };
 		9D8C42BF25C7F9C30039F857 /* nonPastableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C42BE25C7F9C30039F857 /* nonPastableTextField.swift */; };
-		9D8EE80226241750007D86A8 /* IAPReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8EE7FF26241750007D86A8 /* IAPReceipt.swift */; };
-		9D8EE80326241750007D86A8 /* ASN1Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8EE80026241750007D86A8 /* ASN1Helpers.swift */; };
-		9D8EE80426241750007D86A8 /* Receipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8EE80126241750007D86A8 /* Receipt.swift */; };
-		9D8EE86726242DA0007D86A8 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8EE86526242DA0007D86A8 /* libcrypto.a */; };
-		9D8EE86826242DA0007D86A8 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8EE86626242DA0007D86A8 /* libssl.a */; };
-		9D8EE89D26243C4F007D86A8 /* AppleIncRootCertificate.cer in Resources */ = {isa = PBXBuildFile; fileRef = 9D8EE809262417B1007D86A8 /* AppleIncRootCertificate.cer */; };
 		9D92875A25F86DD7005170A1 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D92875925F86DD7005170A1 /* AudioKit */; };
 		9D92877625F86F44005170A1 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = 9D92877525F86F44005170A1 /* OneSignal */; };
 		9D9287C025F8711F005170A1 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9287BF25F8711F005170A1 /* NotificationService.swift */; };
@@ -159,7 +152,6 @@
 		9D150275260EDF7700A767C3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9D150279260EE08200A767C3 /* ProjectMayhemProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMayhemProducts.swift; sourceTree = "<group>"; };
 		9D15027F260EE0A700A767C3 /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
-		9D150286260EF5FB00A767C3 /* unlockAllLevels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unlockAllLevels.swift; sourceTree = "<group>"; };
 		9D1502AE260F0BB300A767C3 /* CheckInternet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInternet.swift; sourceTree = "<group>"; };
 		9D1502F02611107100A767C3 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		9D1502F22611108D00A767C3 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
@@ -211,12 +203,6 @@
 		9D8B292D25DC189A007750DF /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		9D8C42AE25C7BE5C0039F857 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9D8C42BE25C7F9C30039F857 /* nonPastableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nonPastableTextField.swift; sourceTree = "<group>"; };
-		9D8EE7F826241701007D86A8 /* OpenSSL */ = {isa = PBXFileReference; lastKnownFileType = folder; path = OpenSSL; sourceTree = "<group>"; };
-		9D8EE7FF26241750007D86A8 /* IAPReceipt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPReceipt.swift; sourceTree = "<group>"; };
-		9D8EE80026241750007D86A8 /* ASN1Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASN1Helpers.swift; sourceTree = "<group>"; };
-		9D8EE80126241750007D86A8 /* Receipt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Receipt.swift; sourceTree = "<group>"; };
-		9D8EE809262417B1007D86A8 /* AppleIncRootCertificate.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleIncRootCertificate.cer; sourceTree = "<group>"; };
-		9D8EE85626241C5F007D86A8 /* ProjectMayhem-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProjectMayhem-Bridging-Header.h"; sourceTree = "<group>"; };
 		9D8EE86526242DA0007D86A8 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = OpenSSL/lib/libcrypto.a; sourceTree = "<group>"; };
 		9D8EE86626242DA0007D86A8 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = OpenSSL/lib/libssl.a; sourceTree = "<group>"; };
 		9D9287BD25F8711F005170A1 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,8 +247,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D8EE86726242DA0007D86A8 /* libcrypto.a in Frameworks */,
-				9D8EE86826242DA0007D86A8 /* libssl.a in Frameworks */,
 				9D0B0AD425FEBA3100C3B1F5 /* CloudKit.framework in Frameworks */,
 				9D92875A25F86DD7005170A1 /* AudioKit in Frameworks */,
 				9D92877625F86F44005170A1 /* OneSignal in Frameworks */,
@@ -331,10 +315,6 @@
 			children = (
 				9D150279260EE08200A767C3 /* ProjectMayhemProducts.swift */,
 				9D15027F260EE0A700A767C3 /* IAPHelper.swift */,
-				9D150286260EF5FB00A767C3 /* unlockAllLevels.swift */,
-				9D8EE80026241750007D86A8 /* ASN1Helpers.swift */,
-				9D8EE7FF26241750007D86A8 /* IAPReceipt.swift */,
-				9D8EE80126241750007D86A8 /* Receipt.swift */,
 				9DBEB53F261996DF00EFF309 /* betterHints.swift */,
 			);
 			path = IAP;
@@ -386,9 +366,6 @@
 		9D561375259195E600F1695A = {
 			isa = PBXGroup;
 			children = (
-				9D8EE85626241C5F007D86A8 /* ProjectMayhem-Bridging-Header.h */,
-				9D8EE809262417B1007D86A8 /* AppleIncRootCertificate.cer */,
-				9D8EE7F826241701007D86A8 /* OpenSSL */,
 				9D561380259195E600F1695A /* Project Mayhem */,
 				9D561392259195E800F1695A /* Project MayhemTests */,
 				9D56139D259195E800F1695A /* Project MayhemUITests */,
@@ -686,7 +663,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D8EE89D26243C4F007D86A8 /* AppleIncRootCertificate.cer in Resources */,
 				9D73428725ECBDD70003D563 /* subPostChapter15Compressed.mov in Resources */,
 				9D561389259195E700F1695A /* Preview Assets.xcassets in Resources */,
 				9DA2E9D225F09C6000262638 /* CoolKidFont.ttf in Resources */,
@@ -884,8 +860,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D5614DE2592A00200F1695A /* Levels.swift in Sources */,
-				9D8EE80226241750007D86A8 /* IAPReceipt.swift in Sources */,
-				9D8EE80326241750007D86A8 /* ASN1Helpers.swift in Sources */,
 				9D18487D25D7A7B7007960C0 /* HintAlert.swift in Sources */,
 				9DF618BF25F71F910057CFA6 /* postCredits.swift in Sources */,
 				9D74262425CA41F3008D9645 /* chapter14.swift in Sources */,
@@ -923,13 +897,11 @@
 				9D74262725CA41F3008D9645 /* chapter12.swift in Sources */,
 				9D1502AF260F0BB300A767C3 /* CheckInternet.swift in Sources */,
 				9DEA6A3825972495002A8739 /* chapter3.swift in Sources */,
-				9D150287260EF5FB00A767C3 /* unlockAllLevels.swift in Sources */,
 				9DEA6A112595162B002A8739 /* chapterTemplate.swift in Sources */,
 				9DEB283825C5D7EE00E3F102 /* chapter10.swift in Sources */,
 				9D150280260EE0A700A767C3 /* IAPHelper.swift in Sources */,
 				9DBEB540261996E000EFF309 /* betterHints.swift in Sources */,
 				9D4BFC7925DE600C0013D840 /* VideoPlayer.swift in Sources */,
-				9D8EE80426241750007D86A8 /* Receipt.swift in Sources */,
 				9D56140F2591CFFD00F1695A /* CustomButton.swift in Sources */,
 				9D5B42C5259C97FB00A4F34A /* animations.swift in Sources */,
 				9DED07D3261D588800ACBE2B /* Introduction.swift in Sources */,
@@ -1115,7 +1087,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Project Mayhem/Project Mayhem.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Project Mayhem/Preview Content\"";
 				DEVELOPMENT_TEAM = 68L233566P;
@@ -1139,7 +1111,6 @@
 					"$(inherited)",
 					"${PODS_ROOT}/Firebase/CoreOnly/Sources",
 					"\"${PODS_TARGET_SRCROOT}/Sources/FBLPromises/include\"",
-					"$(PROJECT_DIR)/OpenSSL/include",
 				);
 				INFOPLIST_FILE = "Project Mayhem/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1147,16 +1118,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/OpenSSL/include",
-					"$(PROJECT_DIR)/OpenSSL/lib",
-				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "ProjectMayhem-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1172,7 +1137,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Project Mayhem/Project Mayhem.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_ASSET_PATHS = "\"Project Mayhem/Preview Content\"";
 				DEVELOPMENT_TEAM = 68L233566P;
 				ENABLE_PREVIEWS = YES;
@@ -1195,7 +1160,6 @@
 					"$(inherited)",
 					"${PODS_ROOT}/Firebase/CoreOnly/Sources",
 					"\"${PODS_TARGET_SRCROOT}/Sources/FBLPromises/include\"",
-					"$(PROJECT_DIR)/OpenSSL/include",
 				);
 				INFOPLIST_FILE = "Project Mayhem/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1203,16 +1167,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/OpenSSL/include",
-					"$(PROJECT_DIR)/OpenSSL/lib",
-				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "ProjectMayhem-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1308,7 +1266,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 68L233566P;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -1317,7 +1275,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1332,7 +1290,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 68L233566P;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -1341,7 +1299,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

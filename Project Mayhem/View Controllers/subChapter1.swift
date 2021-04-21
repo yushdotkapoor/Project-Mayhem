@@ -8,6 +8,7 @@
 import UIKit
 import AVKit
 import LocalAuthentication
+import OneSignal
 
 class subChapter1: UIViewController {
     @IBOutlet var playerView: PlayerView!
@@ -26,6 +27,10 @@ class subChapter1: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        OneSignal.promptForPushNotifications(userResponse: { accepted in
+            print("User accepted notifications: \(accepted)")
+        })
+        
         let b = game.bool(forKey: "chapter1Bypass")
         if !b {
             game.setValue("subChap1", forKey: "active")

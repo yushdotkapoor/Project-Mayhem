@@ -52,8 +52,6 @@ class Levels: UIViewController {
     
     var del = 0.5
     
-    var unlocker:unlockAllLevels?
-    
     var timer:Timer?
     
     override func viewDidLoad() {
@@ -242,24 +240,9 @@ class Levels: UIViewController {
     
     
     @IBAction func chapter5PurchaseBlock(_ sender: Any) {
-        /*
-        if (freeVersions.contains(game.string(forKey: "originalVersion") ?? "")) {
-            print("contains \(game.string(forKey: "originalVersion") ?? "")")
-            unlocker = unlockAllLevels.init(scrnview: self, key: "levelsToChap5")
-            unlocker?.purchase()
-        }
-        else {
-            print("no contain \(game.string(forKey: "originalVersion") ?? "")")
-            performSegue(withIdentifier: "levelsToChap5", sender: nil)
-        }
- */
-        
         performSegue(withIdentifier: "levelsToChap5", sender: nil)
     }
     
-    func goToPurchase() {
-        unlocker?.goToPurchase()
-    }
     
     
     @IBAction func qualityInfoTapped(_ sender: Any) {
