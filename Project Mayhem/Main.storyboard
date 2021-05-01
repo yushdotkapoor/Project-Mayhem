@@ -1758,7 +1758,7 @@
                                             <constraint firstAttribute="width" constant="50" id="4Oe-n8-hWE"/>
                                             <constraint firstAttribute="width" secondItem="HWv-3X-JfI" secondAttribute="height" multiplier="1:1" id="f5G-RK-5qe"/>
                                         </constraints>
-                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" backgroundImage="target" catalog="system"/>
                                         <connections>
                                             <action selector="goBack:" destination="3GX-UM-rT4" eventType="touchUpInside" id="1om-q5-R4K"/>
@@ -1830,6 +1830,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="back" destination="HWv-3X-JfI" id="oac-Z6-cmQ"/>
                         <outlet property="heder" destination="2XC-sK-4mn" id="c8v-Ma-B37"/>
                         <outlet property="hint" destination="RDX-JJ-Na7" id="Wt2-KY-ITv"/>
                         <outlet property="label" destination="2XC-sK-4mn" id="71b-Eq-fe6"/>
@@ -4424,14 +4425,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7wN-44-fSu"/>
         <segue reference="8eE-Im-0TI"/>
         <segue reference="AYo-vC-fRx"/>
         <segue reference="dHH-0f-i87"/>
         <segue reference="j8f-cg-Hji"/>
         <segue reference="9I8-69-dGt"/>
         <segue reference="8va-rm-XAP"/>
-        <segue reference="dbV-cl-syM"/>
+        <segue reference="M5Z-aZ-g0d"/>
         <segue reference="9rP-sF-Yht"/>
         <segue reference="o2i-uy-ToW"/>
         <segue reference="3Az-ps-1h0"/>
@@ -4440,7 +4440,7 @@
         <segue reference="rPy-e3-cah"/>
         <segue reference="4Jn-Pi-K9C"/>
         <segue reference="lvv-Yn-sCd"/>
-        <segue reference="RdG-kq-cY7"/>
+        <segue reference="8hU-um-kpA"/>
         <segue reference="6nd-wb-BDU"/>
         <segue reference="tG0-fy-sbd"/>
         <segue reference="TbV-l9-R97"/>

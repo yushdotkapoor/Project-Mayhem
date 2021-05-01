@@ -18,6 +18,7 @@ class chapter6: UIViewController {
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var toolbar: UIStackView!
     @IBOutlet weak var textStack: UIStackView!
+    @IBOutlet weak var back: UIButton!
     
     var customAlert = HintAlert()
     
@@ -35,6 +36,8 @@ class chapter6: UIViewController {
     var index: Int = 0
     
     weak var timer: Timer?
+    
+    var pad: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +72,12 @@ class chapter6: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.viewTapped(gesture:)))
         view.addGestureRecognizer(tapGesture)
         view.isUserInteractionEnabled = true
+        
+        //to check if iPad or other device, this will cause the back button to flash in morse
+        // rather than vibrate and flash
+        if UIDevice.current.userInterfaceIdiom != .phone {
+            pad = true
+        }
         
     }
     
@@ -138,6 +147,9 @@ class chapter6: UIViewController {
             }
             else if act == "-" {
                 impactInside()
+                if pad {
+                    back.tintColor = .white
+                }
                 wait(time: 0.35, actions: {
                     self.vibrateShouldStop = true
                 })
@@ -145,6 +157,9 @@ class chapter6: UIViewController {
             }
             else if act == "·" {
                 impactInside()
+                if pad {
+                    back.tintColor = .white
+                }
                 wait(time: 0.15, actions: {
                     self.vibrateShouldStop = true
                 })
@@ -158,6 +173,7 @@ class chapter6: UIViewController {
     func impactInside() {
         if vibrateShouldStop {
             vibrateShouldStop = false
+            back.tintColor = .darkGray
             return
         }
         else {

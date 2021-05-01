@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, S
     
     let monitor = NWPathMonitor(requiredInterfaceType: .wifi)
     
+    let gcmMessageIDKey = "gcm.message_id"
+    
     let callObserver = CXCallObserver()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
@@ -168,7 +170,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, S
     private func application(_ application: UIApplication, didReceive notification: UNNotificationRequest) {
         UIApplication.shared.applicationIconBadgeNumber = 1
     }
-    
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Start the SDK (start the IDFA timeout set above, for iOS 14 or later)
