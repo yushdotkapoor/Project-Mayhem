@@ -28,6 +28,8 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     var skippable = ["medulla", "frontalCortex", "cerebellum", "occipitalLobe", "opticChiasm", "lateralGeniculateNucleus", "supramarginalGyrus", "HerschlsGyrus", "amygdala", "thalamus", "hippocampus", "fusiformGyrus", "corpusCallosum", "lateralVentricle", "duraMater"]
     var skippableFree = ["medulla", "frontalCortex", "cerebellum", "occipitalLobe"]
     
+    var setAdmin = "ventralTegmentalArea"
+    
     let notificationCenter = NotificationCenter.default
     
     override func viewDidLoad() {
@@ -150,8 +152,9 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     @IBAction func submitName(_ sender: Any) {
-        let name = nameField.text
-        if !skip() {
+        let name = nameField.text?.removeLastSpace()
+        print(name)
+        if !skip() && !admin() {
             let gameName = game.string(forKey: "name")
             if gameName != name && gameName != nil {
                 let alertController = UIAlertController(title: "Please advise", message: "This name conflicts with the name you gave before: \(gameName!). Would you like to change your name from \(gameName!) to \(name!)?", preferredStyle: .alert)
@@ -208,10 +211,11 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     func skip() -> Bool {
-        var arr:[String] = skippable
+        let arr:[String] = skippable
         
         for (index,val) in arr.enumerated() {
-            if (val.lowercased() == nameField.text?.lowercased()) {
+            print(val.lowercased())
+            if (val.lowercased() == nameField.text?.removeLastSpace().lowercased()) {
                 game.setValue(true, forKey: skipVal[index])
                 alert(title: "Level Skip Notification", message: "level code " + skipVal[index] + " has been skipped", actionTitle: "thx")
                 return true
@@ -220,6 +224,15 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
         return false
     }
     
+    func admin() -> Bool {
+        if setAdmin.lowercased() == nameField.text?.removeLastSpace().lowercased() {
+            game.setValue(true, forKey: "isAdmin")
+            game.setValue("ADMIN", forKey: "key")
+            alert(title: "Admin Access", message: "granted", actionTitle: "Okay")
+            return true
+        }
+        return false
+    }
     
     @IBAction func goNext(_ sender: Any) {
         notificationCenter.removeObserver(self, name: UIApplication.didEnterBackgroundNotification, object: nil)

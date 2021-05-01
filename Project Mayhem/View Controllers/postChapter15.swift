@@ -110,7 +110,7 @@ class postChapter15: UIViewController {
     }
     
     @IBAction func submit(_ sender: Any) {
-        let text = textField.text
+        let text = textField.text?.removeLastSpace()
         
         if text == "" {
             return

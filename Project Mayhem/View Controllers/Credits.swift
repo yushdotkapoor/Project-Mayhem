@@ -21,7 +21,6 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var purchaseRestore: CustomButtonOutline!
     @IBOutlet weak var welcStatementButton: CustomButtonOutline!
     @IBOutlet weak var feedbackButton: CustomButtonOutline!
-    @IBOutlet weak var stuckButton: CustomButtonOutline!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +38,6 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
         purchaseRestore.setupButton()
         welcStatementButton.setupButton()
         feedbackButton.setupButton()
-        stuckButton.setupButton()
         
         if ProjectMayhemProducts.store.isProductPurchased(ProjectMayhemProducts.hints) {
             purchaseprice.text = "Purchased"
@@ -57,13 +55,20 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
     }
     
     
-    @IBAction func stuck(_ sender: Any) {
-        sendEmail(subject: "Given the circumstances, it seems that I have encountered a rather dreary situation where I simply, and I am unable to stress this enough, CANNOT.")
-    }
-    
     
     @IBAction func feedback(_ sender: Any) {
-        sendEmail()
+        //sendEmail()
+        rList.removeAll()
+        
+        var selectNavigation = "MessagesNavigation"
+        
+        if (game.string(forKey: "key") == "ADMIN") {
+            selectNavigation = "AdminNavigation"
+        }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: selectNavigation)
+        self.present(controller, animated: true, completion: nil)
     }
     
     @IBAction func visionConsolidatedWebsite(_ sender: Any) {

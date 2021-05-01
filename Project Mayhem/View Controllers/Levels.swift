@@ -9,6 +9,8 @@ import UIKit
 import Speech
 import AVFoundation
 import StoreKit
+import Firebase
+
 
 let game = UserDefaults.standard
 
@@ -49,14 +51,30 @@ class Levels: UIViewController {
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var quality: UILabel!
     @IBOutlet weak var qualityInfo: UIButton!
+    @IBOutlet weak var messagesIcon: MIBadgeButton!
+    
     
     var del = 0.5
     
-    var timer:Timer?
+    var qualityTimer:Timer?
+    var notificationTimer:Timer?
+    
+    var hasNotification:notificationInfo = notificationInfo()
+    
+    class notificationInfo {
+        var shows:Bool
+        var needsToShow:Bool
+        
+        init() {
+            shows = false
+            needsToShow = false
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         del = 0.5
+        
         
         //reset()
         //loadAll()
@@ -68,15 +86,78 @@ class Levels: UIViewController {
         }
         checkQuality()
         
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+        qualityTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             self.checkQuality()
+        }
+        
+        notificationTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            self.checkNotification()
         }
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.backTapped(gesture:)))
         logo.addGestureRecognizer(tapGesture)
         logo.isUserInteractionEnabled = true
+        
+        notificationListener(type: .childAdded)
+        notificationListener(type: .childChanged)
+        
+        messagesIcon.setImage(UIImage(systemName: "message.fill")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        messagesIcon.badgeEdgeInsets = UIEdgeInsets(top: 13, left: 0, bottom: 0, right: 0)
+        messagesIcon.badge = ""
+        removeNotification()
     }
     
+    func notificationListener(type: DataEventType) {
+        let key = game.string(forKey: "key")
+        
+        ref.child("users/\(key!)/threads").observe(type, with: { (snapshot) in
+            self.hasNotification.needsToShow = false
+            let value = snapshot.value as! NSDictionary
+            let threadID = snapshot.key
+            let read = value["recipients"] as? [String:String] ?? [:]
+            
+            for n in read {
+                let ke = n.key
+                let val = n.value
+                
+                if ke == key && threadID != "0"  {
+                    if isView(selfView: self, checkView: MessageView.self) {
+                        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+                    }
+                    if val == "Y" {
+                        self.hasNotification.needsToShow = true
+                    }
+                }
+            }
+        })
+    }
+    
+    @objc func checkNotification() {
+        if hasNotification.shows {
+            UIApplication.shared.applicationIconBadgeNumber = 1
+        } else {
+            UIApplication.shared.applicationIconBadgeNumber = 0
+        }
+        if hasNotification.needsToShow && !hasNotification.shows {
+            addNotification()
+        } else if hasNotification.shows && !hasNotification.needsToShow {
+            removeNotification()
+        }
+    }
+    
+    func addNotification() {
+        hasNotification.shows = true
+        messagesIcon.tintColor = .white
+        messagesIcon.alpha = 1
+        messagesIcon.reactivateBadge()
+    }
+    
+    func removeNotification() {
+        hasNotification.shows = false
+        messagesIcon.tintColor = UIColor(named: "MayhemGray")
+        messagesIcon.alpha = 0.5
+        messagesIcon.removeBadge()
+    }
     
     
     @objc func checkQuality() {
@@ -89,12 +170,13 @@ class Levels: UIViewController {
             quality.text = "HQ"
             quality.textColor = .green
             qualityInfo.tintColor = .green
-            timer?.invalidate()
+            qualityTimer?.invalidate()
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        timer?.invalidate()
+        qualityTimer?.invalidate()
+        notificationTimer?.invalidate()
     }
     
     @objc func backTapped(gesture: UIGestureRecognizer) {
@@ -257,6 +339,32 @@ class Levels: UIViewController {
         })
         del += 0.05
     }
+    
+    
+    @IBAction func chat(_ sender: Any) {
+        rList.removeAll()
+        
+        var selectNavigation = "MessagesNavigation"
+        
+        if (game.string(forKey: "key") == "ADMIN") {
+            selectNavigation = "AdminNavigation"
+        }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: selectNavigation)
+        self.present(controller, animated: true, completion: nil)
+
+        // Safe Present
+        /*
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MessagesNavigation") as? ChatViewController
+        {
+            present(vc, animated: true, completion: nil)
+        }
+        
+        */
+        
+    }
+    
     
 }
 

@@ -11,7 +11,7 @@ import Network
 import StoreKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, SKRequestDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, SKRequestDelegate, MessagingDelegate {
     
     var window: UIWindow?
     
@@ -73,6 +73,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, S
         
         let queue = DispatchQueue(label: "Monitor")
         monitor.start(queue: queue)
+        
+        
+        Messaging.messaging().delegate = self
+        
+        game.setValue("\(Messaging.messaging().fcmToken ?? "")", forKey: "token")
         
         return true
     }
@@ -161,7 +166,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, S
     }
     
     private func application(_ application: UIApplication, didReceive notification: UNNotificationRequest) {
-        UIApplication.shared.applicationIconBadgeNumber = 0
+        UIApplication.shared.applicationIconBadgeNumber = 1
     }
     
     

@@ -203,7 +203,7 @@ class chapter6: UIViewController {
     }
     
     @IBAction func submit(_ sender: Any) {
-        let text = textField.text?.lowercased()
+        let text = textField.text?.removeLastSpace().lowercased()
         if text == morseString.lowercased() {
             view.endEditing(true)
             heder.flickerIn()

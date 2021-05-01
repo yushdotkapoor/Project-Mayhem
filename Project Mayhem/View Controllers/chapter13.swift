@@ -249,7 +249,7 @@ class chapter13: UIViewController {
     @IBAction func submit(_ sender: Any) {
         let active = game.string(forKey: "active")
         if active == "chap13" {
-            if textField.text?.lowercased() == "quake" {
+            if textField.text?.removeLastSpace().lowercased() == "quake" {
                 quakeLabel.text = "Quake"
                 quakeLabel.shake()
                 reset(self)
@@ -270,7 +270,7 @@ class chapter13: UIViewController {
             }
         }
         else {
-            if textField.text?.lowercased() == "secret" {
+            if textField.text?.removeLastSpace().lowercased() == "secret" {
                 quakeLabel.text = "secret"
                 textField.text = ""
                 quakeLabel.shake()

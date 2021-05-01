@@ -7,6 +7,9 @@
 
 import UIKit
 import OneSignal
+import Firebase
+
+let ref = Database.database().reference()
 
 class MainScreen: UIViewController {
     
@@ -32,9 +35,43 @@ class MainScreen: UIViewController {
                 downloadVideos()
             }
         }
-        
+        Auth.auth().signInAnonymously()
+        setupChat()
     }
     
+    func setupChat() {
+        let key = UIDevice.current.identifierForVendor?.uuidString
+        let admin = "ADMIN"
+        let token = game.string(forKey: "token")
+        let isAdmin = game.bool(forKey: "isAdmin")
+        
+        
+        game.setValue("\(Messaging.messaging().fcmToken ?? "")", forKey: "token")
+        
+        if isAdmin {
+            game.setValue(admin, forKey: "key")
+        } else {
+            game.setValue(key, forKey: "key")
+            game.setValue(admin, forKey: "selectedUser")
+        }
+        
+        let chatPgViewed = game.bool(forKey: "chatViewed")
+        if chatPgViewed == false {
+            
+        let id = "\(key!) - \(admin)"
+            game.setValue(id, forKey: "chatID")
+            let array = ["recipients":[admin: "D", key: "Y"], "messages":["01": ["type":"text", "sender":"ADMIN", "date":"1970-02-01 01:01:01 +0000", "data":"Comments? Questions? Message me here!", "id":"01"]], "last":"1970-02-01 01:01:01 +0000"] as [String : Any]
+            let data = ["key": key!, "threads":["\(id)":array], "token":"\(token ?? "")", "Q": "Y"] as [String : Any]
+            
+            //let array = ["recipients":["0": "N"], "messages":["0": ["type":"", "sender":"", "date":0, "data":"", "id":""]], "last":"1970-02-01 01:01:01 +0000"] as [String : Any]
+            //let data = ["key": key, "threads":["0":array], "Notifcations":["token":"\(token ?? "")", "sender":"N", "body":"N"], "Q": "Y"] as [String : Any]
+            ref.child("users/\(key!)").setValue(data)
+            
+            //create thread for admin
+            ref.child("users/\(admin)/threads/\(id)").setValue(array)
+        }
+        
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

@@ -18,6 +18,12 @@
 		9D150280260EE0A700A767C3 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D15027F260EE0A700A767C3 /* IAPHelper.swift */; };
 		9D1502AF260F0BB300A767C3 /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1502AE260F0BB300A767C3 /* CheckInternet.swift */; };
 		9D18487D25D7A7B7007960C0 /* HintAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D18487C25D7A7B7007960C0 /* HintAlert.swift */; };
+		9D1A40BB263B680300F6DF9B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A40BA263B680300F6DF9B /* ChatViewController.swift */; };
+		9D1A40BD263B6B3D00F6DF9B /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A40BC263B6B3D00F6DF9B /* Notifications.swift */; };
+		9D1A40BF263B8E5000F6DF9B /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A40BE263B8E5000F6DF9B /* StorageManager.swift */; };
+		9D1A40C2263B8EE100F6DF9B /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A40C1263B8EE100F6DF9B /* PhotoViewerViewController.swift */; };
+		9D1A40C6263BA8EF00F6DF9B /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A40C5263BA8EF00F6DF9B /* MessageView.swift */; };
+		9D1A40C8263BBB2300F6DF9B /* MessageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A40C7263BBB2300F6DF9B /* MessageViewCell.swift */; };
 		9D3848D725F46C4E00B23F76 /* lvl7IntroCompressed.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9D3848D525F46C4E00B23F76 /* lvl7IntroCompressed.mov */; };
 		9D3848D825F46C4E00B23F76 /* lvl7OutroCompressed.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9D3848D625F46C4E00B23F76 /* lvl7OutroCompressed.mov */; };
 		9D420EBB25DF02AF00A3A13D /* globalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D420EBA25DF02AF00A3A13D /* globalFunctions.swift */; };
@@ -41,6 +47,8 @@
 		9D5614E82593153C00F1695A /* chapter1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5614E72593153C00F1695A /* chapter1.swift */; };
 		9D5B42BA259C858100A4F34A /* chapter4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B42B9259C858100A4F34A /* chapter4.swift */; };
 		9D5B42C5259C97FB00A4F34A /* animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B42C4259C97FB00A4F34A /* animations.swift */; };
+		9D5FFA81263CC1B9005AC98A /* BadgeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5FFA80263CC1B9005AC98A /* BadgeButton.swift */; };
+		9D5FFA89263CE186005AC98A /* skibbity.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D5FFA88263CE186005AC98A /* skibbity.mp3 */; };
 		9D6762FA2618534D005E9346 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D6762F92618534D005E9346 /* GoogleService-Info.plist */; };
 		9D6C28E725DCCC950039D12C /* MessageAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C28E625DCCC950039D12C /* MessageAlert.swift */; };
 		9D6C28EB25DCD8330039D12C /* messageTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C28EA25DCD8330039D12C /* messageTemplate.swift */; };
@@ -156,6 +164,12 @@
 		9D1502F02611107100A767C3 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		9D1502F22611108D00A767C3 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		9D18487C25D7A7B7007960C0 /* HintAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintAlert.swift; sourceTree = "<group>"; };
+		9D1A40BA263B680300F6DF9B /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		9D1A40BC263B6B3D00F6DF9B /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		9D1A40BE263B8E5000F6DF9B /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		9D1A40C1263B8EE100F6DF9B /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
+		9D1A40C5263BA8EF00F6DF9B /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		9D1A40C7263BBB2300F6DF9B /* MessageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewCell.swift; sourceTree = "<group>"; };
 		9D3848D525F46C4E00B23F76 /* lvl7IntroCompressed.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = lvl7IntroCompressed.mov; sourceTree = "<group>"; };
 		9D3848D625F46C4E00B23F76 /* lvl7OutroCompressed.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = lvl7OutroCompressed.mov; sourceTree = "<group>"; };
 		9D420EBA25DF02AF00A3A13D /* globalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globalFunctions.swift; sourceTree = "<group>"; };
@@ -185,6 +199,8 @@
 		9D5614E72593153C00F1695A /* chapter1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter1.swift; sourceTree = "<group>"; };
 		9D5B42B9259C858100A4F34A /* chapter4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter4.swift; sourceTree = "<group>"; };
 		9D5B42C4259C97FB00A4F34A /* animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animations.swift; sourceTree = "<group>"; };
+		9D5FFA80263CC1B9005AC98A /* BadgeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeButton.swift; sourceTree = "<group>"; };
+		9D5FFA88263CE186005AC98A /* skibbity.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = skibbity.mp3; sourceTree = "<group>"; };
 		9D6762F92618534D005E9346 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9D6C28E625DCCC950039D12C /* MessageAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAlert.swift; sourceTree = "<group>"; };
 		9D6C28EA25DCD8330039D12C /* messageTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageTemplate.swift; sourceTree = "<group>"; };
@@ -305,6 +321,7 @@
 				9D420EBF25DF032000A3A13D /* Custom Classes */,
 				9D420EBE25DF02E500A3A13D /* Extensions */,
 				9D150278260EE06F00A767C3 /* IAP */,
+				9D1A40C0263B8EC400F6DF9B /* Chat */,
 				9D420EBA25DF02AF00A3A13D /* globalFunctions.swift */,
 			);
 			path = Helpers;
@@ -318,6 +335,19 @@
 				9DBEB53F261996DF00EFF309 /* betterHints.swift */,
 			);
 			path = IAP;
+			sourceTree = "<group>";
+		};
+		9D1A40C0263B8EC400F6DF9B /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				9D1A40BA263B680300F6DF9B /* ChatViewController.swift */,
+				9D1A40C1263B8EE100F6DF9B /* PhotoViewerViewController.swift */,
+				9D1A40BE263B8E5000F6DF9B /* StorageManager.swift */,
+				9D1A40C5263BA8EF00F6DF9B /* MessageView.swift */,
+				9D1A40BC263B6B3D00F6DF9B /* Notifications.swift */,
+				9D1A40C7263BBB2300F6DF9B /* MessageViewCell.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		9D420EBE25DF02E500A3A13D /* Extensions */ = {
@@ -340,6 +370,7 @@
 				9D18487C25D7A7B7007960C0 /* HintAlert.swift */,
 				9D5614E22592FC5F00F1695A /* CustomButtonOutline.swift */,
 				9D56140E2591CFFD00F1695A /* CustomButton.swift */,
+				9D5FFA80263CC1B9005AC98A /* BadgeButton.swift */,
 				9D8C42BE25C7F9C30039F857 /* nonPastableTextField.swift */,
 				9D4BFC7425DE5FF00013D840 /* PlayerView.swift */,
 				9D4BFC7825DE600C0013D840 /* VideoPlayer.swift */,
@@ -398,6 +429,7 @@
 				9D56142F2591DC5400F1695A /* AppDelegate.swift */,
 				9D0B0ADD25FEE3CD00C3B1F5 /* Between0And1.m4a */,
 				9DBEB557261BC69A00EFF309 /* Glitch.wav */,
+				9D5FFA88263CE186005AC98A /* skibbity.mp3 */,
 				9D5613BC259196DE00F1695A /* LaunchScreen.storyboard */,
 				9D6762F92618534D005E9346 /* GoogleService-Info.plist */,
 				9D56138A259195E700F1695A /* Info.plist */,
@@ -674,6 +706,7 @@
 				9DA2E9D525F09C6000262638 /* Adonay.ttf in Resources */,
 				9D5613BD259196DE00F1695A /* LaunchScreen.storyboard in Resources */,
 				9D3848D825F46C4E00B23F76 /* lvl7OutroCompressed.mov in Resources */,
+				9D5FFA89263CE186005AC98A /* skibbity.mp3 in Resources */,
 				9D438CB125E5E201005CC20A /* Chap1IntroCompressed.mov in Resources */,
 				9D9AA5C125F793D300C1493A /* Tomorrow.ttf in Resources */,
 				9D8C42AF25C7BE5C0039F857 /* Settings.bundle in Resources */,
@@ -867,16 +900,21 @@
 				9DEB283425C5D7DF00E3F102 /* chapter9.swift in Sources */,
 				9D0C544125C51AA7000EE579 /* UIViewControllerExtensions.swift in Sources */,
 				9DD618E725E62BB20036089B /* ProjectVenomTrailer.swift in Sources */,
+				9D1A40BD263B6B3D00F6DF9B /* Notifications.swift in Sources */,
+				9D1A40BF263B8E5000F6DF9B /* StorageManager.swift in Sources */,
 				9D6C28EB25DCD8330039D12C /* messageTemplate.swift in Sources */,
 				9DD618EF25E62EBC0036089B /* subPostChapter15.swift in Sources */,
+				9D1A40C8263BBB2300F6DF9B /* MessageViewCell.swift in Sources */,
 				9D6C705725EE082400E8CF6C /* Credits.swift in Sources */,
 				9DBBF73025C279310022FC63 /* chapter5.swift in Sources */,
 				9D5614E32592FC5F00F1695A /* CustomButtonOutline.swift in Sources */,
+				9D1A40BB263B680300F6DF9B /* ChatViewController.swift in Sources */,
 				9D15027A260EE08200A767C3 /* ProjectMayhemProducts.swift in Sources */,
 				9D4BFC6925DE41260013D840 /* subChapter11.swift in Sources */,
 				9DEB282625C54C3A00E3F102 /* chapter6.swift in Sources */,
 				9D420EBB25DF02AF00A3A13D /* globalFunctions.swift in Sources */,
 				9D74262525CA41F3008D9645 /* chapter15.swift in Sources */,
+				9D1A40C2263B8EE100F6DF9B /* PhotoViewerViewController.swift in Sources */,
 				9D6C28E725DCCC950039D12C /* MessageAlert.swift in Sources */,
 				9DEA6A0625948BBA002A8739 /* chapter2.swift in Sources */,
 				9D74262625CA41F3008D9645 /* chapter11.swift in Sources */,
@@ -884,6 +922,7 @@
 				9D74262825CA41F3008D9645 /* chapter13.swift in Sources */,
 				9D5614202591D1C300F1695A /* MainScreen.swift in Sources */,
 				9D4BFC7525DE5FF00013D840 /* PlayerView.swift in Sources */,
+				9D1A40C6263BA8EF00F6DF9B /* MessageView.swift in Sources */,
 				9D561384259195E600F1695A /* ContentView.swift in Sources */,
 				9D8B292E25DC189A007750DF /* CALayerExtension.swift in Sources */,
 				9D6E493625EE12EF00B09E8A /* MusicPlayer.swift in Sources */,
@@ -898,6 +937,7 @@
 				9D1502AF260F0BB300A767C3 /* CheckInternet.swift in Sources */,
 				9DEA6A3825972495002A8739 /* chapter3.swift in Sources */,
 				9DEA6A112595162B002A8739 /* chapterTemplate.swift in Sources */,
+				9D5FFA81263CC1B9005AC98A /* BadgeButton.swift in Sources */,
 				9DEB283825C5D7EE00E3F102 /* chapter10.swift in Sources */,
 				9D150280260EE0A700A767C3 /* IAPHelper.swift in Sources */,
 				9DBEB540261996E000EFF309 /* betterHints.swift in Sources */,
@@ -1087,7 +1127,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Project Mayhem/Project Mayhem.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Project Mayhem/Preview Content\"";
 				DEVELOPMENT_TEAM = 68L233566P;
@@ -1118,7 +1158,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1137,7 +1177,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Project Mayhem/Project Mayhem.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"Project Mayhem/Preview Content\"";
 				DEVELOPMENT_TEAM = 68L233566P;
 				ENABLE_PREVIEWS = YES;
@@ -1167,7 +1207,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1266,7 +1306,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = 68L233566P;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -1275,7 +1315,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1290,7 +1330,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = 68L233566P;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -1299,7 +1339,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

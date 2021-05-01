@@ -150,7 +150,7 @@ class chapter10: UIViewController {
     
     
     @IBAction func submit(_ sender: Any) {
-        if textField.text?.lowercased() == "burj khalifa" {
+        if textField.text?.removeLastSpace().lowercased() == "burj khalifa" {
             buttonView.fadeOut()
             view.endEditing(true)
             alert.showAlert(title: "Message from Victoria Lambson", message: "Again, another location. First Neuschwanstein castle and now Burj Khalifa?", viewController: self, buttonPush: #selector(dismissMessageAlert))

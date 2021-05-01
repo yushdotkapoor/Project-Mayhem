@@ -15,9 +15,15 @@ target 'Project Mayhem' do
 
   # Pods for Project Mayhem
   pod 'AppsFlyerFramework'
-  pod 'Firebase/Analytics'
   pod 'Firebase/Crashlytics'
+  pod 'MessageKit'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Analytics'
   pod 'Firebase/Performance'
+  pod 'SDWebImage'
+  pod 'Firebase/Messaging'
   
   target 'Project MayhemTests' do
     inherit! :search_paths

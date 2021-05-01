@@ -111,7 +111,7 @@ class chapter9: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func submit(_ sender: Any) {
-        if textField.text?.lowercased() == codeToMatch {
+        if textField.text?.removeLastSpace().lowercased() == codeToMatch {
             view.endEditing(true)
             vibrate(count: 5)
             textField.textColor = .green

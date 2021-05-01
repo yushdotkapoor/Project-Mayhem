@@ -93,7 +93,19 @@ class chapter15: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate 
         let blueNext:Int = 255 - Int(rgbColorNext.blue * 255)
         let delta = 20
         
-        colorLabel.text = "(\(redNext), \(greenNext), \(blueNext))"
+        
+        let string = "(\(redNext), \(greenNext), \(blueNext))"
+        
+        let redRange = (string as NSString).range(of: "\(redNext)")
+        let greenRange = (string as NSString).range(of: "\(greenNext)")
+        let blueRange = (string as NSString).range(of: "\(blueNext)")
+
+        let mutableAttributedString = NSMutableAttributedString.init(string: string)
+        mutableAttributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 255/255, green: 0, blue: 0, alpha: 1.0) , range: redRange)
+        mutableAttributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.green, range: greenRange)
+        mutableAttributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.blue, range: blueRange)
+        
+        colorLabel.attributedText = mutableAttributedString
         
         if isInverted {
             colorLabel.isHidden = false

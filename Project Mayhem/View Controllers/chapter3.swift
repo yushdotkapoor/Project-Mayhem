@@ -104,6 +104,7 @@ class chapter3: UIViewController {
                 self.scrollView.flashScrollIndicators()
                 self.scrollView.isUserInteractionEnabled = true
                 self.stack.fadeIn()
+                self.view.bringSubviewToFront(self.toolbar)
                 wait {
                     self.complete()
                 }

@@ -38,8 +38,32 @@ class postCredits: UIViewController, MFMailComposeViewControllerDelegate {
     }
     
     
+    @IBAction func review(_ sender: Any) {
+        var components = URLComponents(url: URL(string: "https://itunes.apple.com/app/id1551711683")!, resolvingAgainstBaseURL: false)
+        components?.queryItems = [URLQueryItem(name: "action", value: "write-review")]
+        
+        guard let writeReviewURL = components?.url else {
+          return
+        }
+        
+        UIApplication.shared.open(writeReviewURL)
+    }
+    
+    
     @IBAction func feedback(_ sender: Any) {
-        sendEmail()
+        //sendEmail()
+        
+        rList.removeAll()
+        
+        var selectNavigation = "MessagesNavigation"
+        
+        if (game.string(forKey: "key") == "ADMIN") {
+            selectNavigation = "AdminNavigation"
+        }
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: selectNavigation)
+        self.present(controller, animated: true, completion: nil)
     }
     
     func sendEmail() {
