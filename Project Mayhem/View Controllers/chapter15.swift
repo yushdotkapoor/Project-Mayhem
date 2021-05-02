@@ -108,7 +108,7 @@ class chapter15: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate 
         colorLabel.attributedText = mutableAttributedString
         
         if isInverted {
-            colorLabel.isHidden = false
+            //colorLabel.isHidden = false
             centerCircle.tintColor = c.inverted()
             for (i,cap) in captures.enumerated() {
                 if cap {
@@ -117,7 +117,9 @@ class chapter15: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate 
             }
         }
         else {
-            colorLabel.isHidden = true
+            //colorLabel.isHidden = true
+            colorLabel.text = "evtnIr"
+            colorLabel.textColor = c
             centerCircle.tintColor = c
             for (i,cap) in captures.enumerated() {
                 if cap {

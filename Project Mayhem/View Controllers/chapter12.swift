@@ -77,10 +77,10 @@ class chapter12: UIViewController {
         let timezoneOffset =  TimeZone.current.secondsFromGMT() * 1000
         let currentDate = Int(date) + Int(timezoneOffset)
         
-        let may29 = 1022630400000
-        let may30 = 1022716799999
+        let jun29 = 1025308800000
+        let jun30 = 1025395200000
         
-        if currentDate > may29 && currentDate < may30 {
+        if currentDate > jun29 && currentDate < jun30 {
             backView.fadeOut()
             aStack.fadeIn()
             hintText = "12.3"
