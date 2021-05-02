@@ -105,6 +105,8 @@ class Levels: UIViewController {
         messagesIcon.badgeEdgeInsets = UIEdgeInsets(top: 13, left: 0, bottom: 0, right: 0)
         messagesIcon.badge = ""
         removeNotification()
+        
+        ref.child("users/\(game.string(forKey: "key")!)/token").setValue(game.string(forKey: "token"))
     }
     
     func notificationListener(type: DataEventType) {

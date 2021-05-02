@@ -65,7 +65,7 @@ class MainScreen: UIViewController {
             
         let id = "\(key!) - \(admin)"
             game.setValue(id, forKey: "chatID")
-            let array = ["recipients":[admin: "D", key: "Y"], "messages":["01": ["type":"text", "sender":"ADMIN", "date":"\(convertedDate)", "data":"Comments? Questions? Message me here!", "id":"01"]], "last":"\(convertedDate)"] as [String : Any]
+            let array = ["recipients":[admin: "D", key: "Y"], "messages":["01": ["type":"text", "sender":"ADMIN", "date":"\(convertedDate)", "data":"Comments? Questions? Message me here!", "id":"01"], "0": ["type":"", "sender":"", "date":0, "data":"", "id":""]], "last":"\(convertedDate)"] as [String : Any]
             let data = ["key": key!, "threads":["\(id)":array], "token":"\(token ?? "")", "Q": "Y"] as [String : Any]
             
             ref.child("users/\(key!)").setValue(data)
@@ -73,9 +73,6 @@ class MainScreen: UIViewController {
             //create thread for admin
             ref.child("users/\(admin)/threads/\(id)").setValue(array)
         }
-        
-        ref.child("users/\(key!)/token").setValue(token)
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {

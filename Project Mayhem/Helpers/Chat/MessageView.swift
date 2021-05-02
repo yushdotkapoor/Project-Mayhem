@@ -15,11 +15,13 @@ struct messageStruct {
     var date:Double
     var notification:Bool
     var user:String
+    var preview:String
     
     init() {
         user = ""
         date = 0.0
         notification = false
+        preview = ""
     }
 }
 
@@ -41,7 +43,7 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
         myTable.register(UITableViewCell.self, forCellReuseIdentifier: "shell")
         myTable.delegate = self
         myTable.dataSource = self
-        myTable.estimatedRowHeight = 40
+        myTable.estimatedRowHeight = 70
         
         if !CheckInternet.Connection() {
             self.alert(title: "Uh-Oh", message: "Please check your internet connection! You will not be able to send or recieve messages without internet.", actionTitle: "Okay")
@@ -50,26 +52,49 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
         self.navigationController?.navigationBar.backgroundColor = UIColor.black
     }
     
+    func getCurrentMessage(threadID:String) {
+        ref.child("users/\(myKey!)/threads/\(threadID)/messages").observe(.childAdded, with: { (snapshot) in
+            let messages = snapshot.value as! NSDictionary
+            let data = messages["data"] as? String
+            let type = messages["type"] as? String
+            if type == "text" {
+                rList[threadID]!.preview = data ?? ""
+            } else if type == "photo" {
+                rList[threadID]!.preview = "Photo Message"
+            } else if type == "video" {
+                rList[threadID]!.preview = "Video Message"
+            } else if type == "linkPreview" {
+                rList[threadID]!.preview = "URL Message"
+            }
+            self.sortReload()
+        })
+    }
+    
     func notificationListener() {
         ref.child("users/\(myKey!)/threads").observe(.childChanged, with: { (snapshot) in
             let value = snapshot.value as! NSDictionary
             let threadID = snapshot.key
             let read = value["recipients"] as? [String:String] ?? [:]
+            let messages = value["messages"] as! NSDictionary
             
-            for n in read {
-                let ke = n.key
-                let val = n.value
+            if messages.count > 1 {
                 
-                if ke == self.myKey && threadID != "0"  {
-                    if isView(selfView: self, checkView: MessageView.self) {
-                        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-                    }
-                    rList[threadID]?.notification = false;
-                    if val == "Y" {
-                        rList[threadID]?.notification = true;
+                for n in read {
+                    let ke = n.key
+                    let val = n.value
+                    
+                    if ke == self.myKey && threadID != "0"  {
+                        if isView(selfView: self, checkView: MessageView.self) {
+                            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+                        }
+                        rList[threadID]?.notification = false;
+                        if val == "Y" {
+                            rList[threadID]?.notification = true;
+                        }
                     }
                     self.sortReload()
                 }
+                self.getCurrentMessage(threadID: threadID)
             }
         })
     }
@@ -81,32 +106,40 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
             let value = snapshot.value as! NSDictionary
             let threadID = snapshot.key
             let read = value["recipients"] as? [String:String] ?? [:]
-            let last = value["last"] as? String ?? ""
-            var temp:messageStruct = messageStruct()
-            
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd' 'HH:mm:ss' 'Z"
-            let convertedDate = dateFormatter.date(from: last)
-            
-            let newDate = convertedDate?.betterDate()
-            temp.date = Double(newDate!)!
-            
-            if threadID != "0" {
-                let noteVal = read["\(key!)"]!
-                if noteVal == "Y" {
-                    temp.notification = true;
-                }
-                for n in read {
-                    let ke = n.key
-                    if threadID != "0" {
-                        if ke != key {
-                            temp.user = ke
+            let messages = value["messages"] as! NSDictionary
+            if messages.count > 1 {
+                
+                let last = value["last"] as? String ?? ""
+                var temp:messageStruct = messageStruct()
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd' 'HH:mm:ss' 'Z"
+                let convertedDate = dateFormatter.date(from: last)
+                
+                let newDate = convertedDate?.betterDate()
+                temp.date = Double(newDate!)!
+                
+                self.getCurrentMessage(threadID: threadID)
+                
+                if threadID != "0" {
+                    let noteVal = read["\(key!)"]!
+                    if noteVal == "Y" {
+                        temp.notification = true;
+                    }
+                    for n in read {
+                        let ke = n.key
+                        if threadID != "0" {
+                            if ke != key {
+                                temp.user = ke
+                            }
                         }
                     }
+                    
+                        rList[threadID] = temp
+                        self.sortReload()
                 }
-                rList[threadID] = temp
-                self.sortReload()
             }
+            
         })
     }
     
@@ -127,21 +160,8 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
         super.viewWillAppear(animated)
         
         if (rList.count == 0) {
-           initialize()
-        }
-        
-        /*
-        if (myKey != "ADMIN") {
-            let vc = ChatViewController()
-            vc.title = "Yush"
-            vc.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "",style: .done, target: self, action: nil)
-            
-            navigationController?.pushViewController(vc, animated: true)
-            
-        } else if (rList.count == 0) {
             initialize()
         }
- */
     }
     
     // MARK: - Table view data source
@@ -156,6 +176,7 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
         let messStruct = actualStruct[indexPath.row]
         
         cell.label.text = messStruct.user
+        cell.contentLbl.text = messStruct.preview
         
         if messStruct.notification {
             cell.img.image = UIImage(systemName: "circle.fill")
@@ -183,6 +204,6 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
         game.setValue(thread, forKey: "chatID")
         navigationController?.pushViewController(vc, animated: true)
     }
-     
+    
     
 }
