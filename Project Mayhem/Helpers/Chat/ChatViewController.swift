@@ -71,7 +71,7 @@ class ChatViewController: MessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        game.setValue(true, forKey: "chatViewed")
+        game.setValue(true, forKey: "chatPageViewed")
         
         selectedUser = game.string(forKey: "selectedUser")!
         selectedThread = game.string(forKey: "chatID")!
@@ -90,6 +90,7 @@ class ChatViewController: MessagesViewController {
             let val = snapshot.value as? String ?? ""
             self.otherUserToken = val
         })
+        
         
         removeAvatar()
         listen()
@@ -128,16 +129,20 @@ class ChatViewController: MessagesViewController {
                                             preferredStyle: .actionSheet)
         
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default) { action in
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
             imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = .camera
-            imagePicker.allowsEditing = true
+            imagePicker.allowsEditing = false
             imagePicker.mediaTypes = ["public.movie", "public.image"]
             imagePicker.videoQuality = .typeHigh
             imagePicker.showsCameraControls = true
             
             
             self.present(imagePicker, animated: true, completion: nil)
+            } else {
+                self.alert(title: "Oh no!", message: "It seems that this device cannot access the camera", actionTitle: "Okay")
+            }
         })
         actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default) { action in
             imagePicker = UIImagePickerController()
@@ -146,6 +151,7 @@ class ChatViewController: MessagesViewController {
             imagePicker.allowsEditing = true
             imagePicker.mediaTypes = ["public.movie", "public.image"]
             imagePicker.videoQuality = .typeHigh
+            
             
             self.present(imagePicker, animated: true, completion: nil)
         })
@@ -353,10 +359,13 @@ class ChatViewController: MessagesViewController {
         if let url = URL(string: "https://www.\(webpage)") {
             do {
                 let contents = try String(contentsOf: url)
-                let range = contents.endIndex(of: "<title>")
-                let range2 = contents.index(of: "</title>")
-                
-                return String(contents[range!..<range2!])
+                if contents.contains("<title>") {
+                    let range = contents.endIndex(of: "<title>")
+                    let range2 = contents.index(of: "</title>")
+                    return String(contents[range!..<range2!])
+                } else {
+                    return "\(url)"
+                }
             } catch {
                 // contents could not be loaded
                 return "\(url)"
@@ -505,8 +514,8 @@ class ChatViewController: MessagesViewController {
                     
                     notification.sendPushNotification(to: self.otherUserToken, title: titl, body: body)
                     
-                    self.messagesCollectionView.scrollToLastItem()
                     
+                    self.messagesCollectionView.scrollToLastItem()
                 }
                 else {
                     if v == "before" {
@@ -746,7 +755,7 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
         
         let messageID = "\(newDate)-\(UUID().uuidString)"
         
-        if let image = info[.editedImage] as? UIImage, let imageData =  image.pngData() {
+        if let image = info[.originalImage] as? UIImage, let imageData =  image.pngData() {
             let fileName = "photo_message_" + mID.replacingOccurrences(of: " ", with: "——") + ".png"
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
                 let tempMessage = Message(sender: self.currentUser,

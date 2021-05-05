@@ -71,7 +71,14 @@ class MessageAlert: NSObject {
         targetView.addSubview(backgroundView)
         
         alertView.isUserInteractionEnabled = true
-        alertView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: 100)
+        
+        var width = UIScreen.main.bounds.width-40
+        if width > 500 {
+            width = 500
+        }
+        
+        
+        alertView.frame = CGRect(x: 0, y: 0, width: width, height: 100)
         let gradient = getGradientBasedOnTitle(title: title)
         alertView.isHidden = true
         alertView.alpha = 0.0
@@ -92,12 +99,12 @@ class MessageAlert: NSObject {
         var msgbtn = messageAndButton(message: message, viewController: viewController, buttonPush: buttonPush, titleHeight: titleLabelHeight, smallFont: false)
         
         //resize alertView
-        alertView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: msgbtn.messageLabel.frame.size.height + titleFrame.height + 60)
+        alertView.frame = CGRect(x: 0, y: 0, width: width, height: msgbtn.messageLabel.frame.size.height + titleFrame.height + 60)
         
         if (alertView.frame.size.height > UIScreen.main.bounds.height-210) {
             msgbtn = messageAndButton(message: message, viewController: viewController, buttonPush: buttonPush, titleHeight: titleLabelHeight, smallFont: true)
             
-            alertView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: msgbtn.messageLabel.frame.size.height + titleFrame.height + 60)
+            alertView.frame = CGRect(x: 0, y: 0, width: width, height: msgbtn.messageLabel.frame.size.height + titleFrame.height + 60)
         }
         
         alertView.center = targetView.center

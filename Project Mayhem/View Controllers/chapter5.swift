@@ -7,6 +7,7 @@
 
 import UIKit
 import AudioKit
+import AVKit
 
 class chapter5: UIViewController {
     @IBOutlet weak var nextChap: UIButton!
@@ -141,8 +142,15 @@ class chapter5: UIViewController {
             UIView.animate(withDuration: 0.5) {
                 self.hint.tintColor = UIColor.darkGray
             }
+            let permission = AVAudioSession.sharedInstance().recordPermission
+            var hintType = "5"
+            
+            if permission != .granted {
+                hintType = "5Perm"
+            }
+            
             customAlert = HintAlert()
-            customAlert.showAlert(message: "5", viewController: self, hintButton: hint, toolbar: toolbar)
+            customAlert.showAlert(message: hintType, viewController: self, hintButton: hint, toolbar: toolbar)
         }
         
     }

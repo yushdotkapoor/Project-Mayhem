@@ -95,6 +95,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, S
         AppsFlyerLib.shared().handleOpen(url, options: options)
         return true
     }
+ 
     
     
     func callObserver(_ callObserver: CXCallObserver, callChanged call: CXCall) {
@@ -252,5 +253,6 @@ extension AppDelegate: AppsFlyerLibDelegate{
     func onAppOpenAttributionFailure(_ error: Error) {
         print(error)
     }
+    
 }
 

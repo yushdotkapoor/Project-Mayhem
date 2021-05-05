@@ -71,12 +71,24 @@ class chapter7: UIViewController {
     
     func vid() {
         createObservers()
-        talkingView = UIView(frame: CGRect(x: 25, y: 90, width: UIScreen.main.bounds.width - 50, height: UIScreen.main.bounds.height - 200))
-        talkingView!.alpha = 0.0
         
+        var width = UIScreen.main.bounds.width - 50
+        if width > 500 {
+            width = 500
+        }
+        
+        talkingView = UIView(frame: CGRect(x: 25, y: 90, width: width, height: UIScreen.main.bounds.height - 200))
+        talkingView!.alpha = 0.0
+        talkingView!.center = view.center
         talkingView!.layer.masksToBounds = true
         talkingView!.clipsToBounds = true
         talkingView!.layer.cornerRadius = 20
+        
+        
+        if (talkingView!.frame.size.height > UIScreen.main.bounds.height-210) {
+            talkingView!.frame = CGRect(x: 0, y: 0, width: width, height: UIScreen.main.bounds.height-210)
+        }
+        
         
         let gradient = CAGradientLayer()
         gradient.colors = [UIColor(red: 0, green: 86/255, blue: 62/255, alpha: 1.0).cgColor, UIColor(red: 0, green: 180/255, blue: 134/255, alpha: 1.0).cgColor]
@@ -105,6 +117,7 @@ class chapter7: UIViewController {
         talkingView!.layer.addSublayer(gradient)
         talkingView!.addSubview(label)
         talkingView!.addSubview(vidView!)
+        talkingView!.center = view.center
         talkingView!.addSubview(doubleTapInstructions!)
         view.addSubview(talkingView!)
         view.bringSubviewToFront(talkingView!)

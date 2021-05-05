@@ -109,7 +109,15 @@ class chapter11: UIViewController, SFSpeechRecognizerDelegate {
                 self.hint.tintColor = UIColor.lightGray
             }
             customAlert = HintAlert()
-            customAlert.showAlert(message: "11.2", viewController: self, hintButton: hint, toolbar: toolbar)
+            let MicPermission = AVAudioSession.sharedInstance().recordPermission
+            let SpeechPermission = SFSpeechRecognizer.authorizationStatus()
+            var hintType = "11.2"
+            
+            if MicPermission != .granted || SpeechPermission != .authorized  {
+                hintType = "11.2Perm"
+            }
+            
+            customAlert.showAlert(message: hintType, viewController: self, hintButton: hint, toolbar: toolbar)
         }
     }
     

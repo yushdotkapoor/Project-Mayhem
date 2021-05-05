@@ -63,11 +63,11 @@ class Levels: UIViewController {
     
     class notificationInfo {
         var shows:Bool
-        var needsToShow:Bool
+        var arr:[String]
         
         init() {
             shows = false
-            needsToShow = false
+            arr = []
         }
     }
     
@@ -111,24 +111,23 @@ class Levels: UIViewController {
     
     func notificationListener(type: DataEventType) {
         let key = game.string(forKey: "key")
+        var count = 0
         
         ref.child("users/\(key!)/threads").observe(type, with: { (snapshot) in
-            self.hasNotification.needsToShow = false
             let value = snapshot.value as! NSDictionary
             let threadID = snapshot.key
             let read = value["recipients"] as? [String:String] ?? [:]
-            
             for n in read {
                 let ke = n.key
                 let val = n.value
                 
-                if ke == key && threadID != "0"  {
+                count += 1
+                
+                if ke == key! && threadID != "0"  {
                     if isView(selfView: self, checkView: MessageView.self) {
                         AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
                     }
-                    if val == "Y" {
-                        self.hasNotification.needsToShow = true
-                    }
+                    self.hasNotification.arr.append(val)
                 }
             }
         })
@@ -140,14 +139,18 @@ class Levels: UIViewController {
         } else {
             UIApplication.shared.applicationIconBadgeNumber = 0
         }
-        if hasNotification.needsToShow && !hasNotification.shows {
-            addNotification()
-        } else if hasNotification.shows && !hasNotification.needsToShow {
-            removeNotification()
+        
+        if hasNotification.arr.isNotEmpty {
+            if hasNotification.arr.contains("Y") && !hasNotification.shows {
+                addNotification()
+            } else if hasNotification.shows && !hasNotification.arr.contains("Y") {
+                removeNotification()
+            }
         }
     }
     
     func addNotification() {
+        hasNotification.arr = []
         hasNotification.shows = true
         messagesIcon.tintColor = .white
         messagesIcon.alpha = 1
@@ -155,6 +158,7 @@ class Levels: UIViewController {
     }
     
     func removeNotification() {
+        hasNotification.arr = []
         hasNotification.shows = false
         messagesIcon.tintColor = UIColor(named: "MayhemGray")
         messagesIcon.alpha = 0.5

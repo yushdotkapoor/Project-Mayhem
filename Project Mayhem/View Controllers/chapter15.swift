@@ -118,7 +118,7 @@ class chapter15: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate 
         }
         else {
             //colorLabel.isHidden = true
-            colorLabel.text = "evtnIr"
+            colorLabel.text = "evtnir"
             colorLabel.textColor = c
             centerCircle.tintColor = c
             for (i,cap) in captures.enumerated() {

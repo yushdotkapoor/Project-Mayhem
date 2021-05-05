@@ -39,6 +39,8 @@ class chapter6: UIViewController {
     
     var pad: Bool = false
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         game.setValue("chap6", forKey: "active")
@@ -75,7 +77,8 @@ class chapter6: UIViewController {
         
         //to check if iPad or other device, this will cause the back button to flash in morse
         // rather than vibrate and flash
-        if UIDevice.current.userInterfaceIdiom != .phone {
+        
+        if UIDevice.current.model != "iPhone" && UIDevice.current.model != "iPod" {
             pad = true
         }
         
@@ -146,6 +149,7 @@ class chapter6: UIViewController {
                 turnFlashlight(on: false)
             }
             else if act == "-" {
+                turnFlashlight(on: true)
                 impactInside()
                 if pad {
                     back.tintColor = .white
@@ -153,9 +157,9 @@ class chapter6: UIViewController {
                 wait(time: 0.35, actions: {
                     self.vibrateShouldStop = true
                 })
-                turnFlashlight(on: true)
             }
             else if act == "·" {
+                turnFlashlight(on: true)
                 impactInside()
                 if pad {
                     back.tintColor = .white
@@ -163,7 +167,6 @@ class chapter6: UIViewController {
                 wait(time: 0.15, actions: {
                     self.vibrateShouldStop = true
                 })
-                turnFlashlight(on: true)
             }
             scheduleTimer()
         }
@@ -253,7 +256,11 @@ class chapter6: UIViewController {
         let sensitive = game.bool(forKey: "photosensitive")
         if !sensitive {
             guard let device = AVCaptureDevice.default(for: AVMediaType.video) else { return }
-            guard device.hasTorch else { print("Torch isn't available"); return }
+            guard device.hasTorch else {
+                pad = true
+                print("Torch isn't available")
+                return
+            }
             
             do {
                 try device.lockForConfiguration()
@@ -268,6 +275,7 @@ class chapter6: UIViewController {
                 
                 device.unlockForConfiguration()
             } catch {
+                pad = true
                 print("Torch can't be used")
             }
         }
@@ -297,8 +305,6 @@ class chapter6: UIViewController {
     @IBAction func goNext(_ sender: Any) {
         self.performSegue(withIdentifier: "chap6ToChap7", sender: nil)
     }
-    
-    
     
     @IBAction func hint(_ sender: Any) {
         if menuState {

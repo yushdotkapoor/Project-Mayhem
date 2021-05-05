@@ -92,6 +92,7 @@ class speechModule:NSObject {
         })
         
         let recordingFormat = inputNode.outputFormat(forBus: 1)
+        
         inputNode.installTap(onBus: 1, bufferSize: 1024, format: recordingFormat) { (buffer, when) in
             self.recognitionRequest?.append(buffer)
         }

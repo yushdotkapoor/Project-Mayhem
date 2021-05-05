@@ -31,8 +31,9 @@ class subChapter1: UIViewController {
             print("User accepted notifications: \(accepted)")
         })
         
-        let b = game.bool(forKey: "chapter1Bypass")
-        if !b {
+        
+        let b = game.string(forKey: "active")
+        if b != "chap1.1"{
             game.setValue("subChap1", forKey: "active")
             funcToPass = self.nextChapter
             godThread = self
@@ -52,7 +53,6 @@ class subChapter1: UIViewController {
         }
         else {
             game.setValue("chap1.1", forKey: "active")
-            game.setValue(false, forKey: "chapter1Bypass")
             wait {
                 self.performSegue(withIdentifier: "subChap1ToChap1", sender: nil)
             }

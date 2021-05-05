@@ -64,6 +64,8 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
         toolBar.setItems([flexibleSpace, doneButton], animated: false)
         nameField.inputAccessoryView = toolBar
         
+        view.bringSubviewToFront(toolbar)
+        
     }
     
     
@@ -87,11 +89,9 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
         wait {
             self.now.fadeIn()
         }
-        game.setValue(true, forKey: "chapter1Bypass")
     }
     
     func part2() {
-        game.setValue(false, forKey: "chapter1Bypass")
         wait(time: 0.3, actions: {
             self.leave.fadeOut()
             self.now.fadeOut()
@@ -240,7 +240,6 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     @IBAction func goBack(_ sender: Any) {
-        game.setValue(false, forKey: "chapter1Bypass")
         notificationCenter.removeObserver(self, name: UIApplication.didEnterBackgroundNotification, object: nil)
         self.performSegue(withIdentifier: "chap1ToHome", sender: nil)
     }
@@ -273,9 +272,9 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     @IBAction func rickyLink(_ sender: Any) {
+        ref.child("users/\(game.string(forKey: "key")!)/RickRolled)").setValue("Y")
         openLink(st: "https://www.youtube.com/watch?v=oHg5SJYRHA0")
     }
-    
     
     var customAlert = HintAlert()
     
@@ -294,7 +293,6 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
             customAlert = HintAlert()
             customAlert.showAlert(message: "1", viewController: self, hintButton: hint, toolbar: toolbar)
         }
-        
     }
     
     func dismissAlert() {

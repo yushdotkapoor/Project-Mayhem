@@ -11,10 +11,10 @@ import CoreMotion
 class chapter4: UIViewController {
     @IBOutlet weak var nextChap: UIButton!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var imageWidth: NSLayoutConstraint!
     @IBOutlet weak var one: UILabel!
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var toolbar: UIStackView!
+    @IBOutlet weak var imageBottom: NSLayoutConstraint!
     
     var customAlert = HintAlert()
     
@@ -144,7 +144,7 @@ class chapter4: UIViewController {
         motionStop()
         self.one.fadeOut()
         UIView.animate(withDuration: 2, delay: 0, options: .curveEaseOut, animations: {
-            self.imageWidth.constant *= 0.001
+            self.imageBottom.constant *= 100
             self.view.layoutIfNeeded()
         }, completion: {
             action in

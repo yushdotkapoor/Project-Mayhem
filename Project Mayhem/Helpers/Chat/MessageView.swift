@@ -51,6 +51,7 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         self.navigationController?.navigationBar.backgroundColor = UIColor.black
     }
+  
     
     func getCurrentMessage(threadID:String) {
         ref.child("users/\(myKey!)/threads/\(threadID)/messages").observe(.childAdded, with: { (snapshot) in
@@ -77,11 +78,14 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
             let read = value["recipients"] as? [String:String] ?? [:]
             let messages = value["messages"] as! NSDictionary
             
-            if messages.count > 1 {
+            if messages.count > 2 {
+                
+                var count = 0
                 
                 for n in read {
                     let ke = n.key
                     let val = n.value
+                    count += 1
                     
                     if ke == self.myKey && threadID != "0"  {
                         if isView(selfView: self, checkView: MessageView.self) {
@@ -92,9 +96,14 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
                             rList[threadID]?.notification = true;
                         }
                     }
-                    self.sortReload()
+                    
+                    
+                    if count == 2 {
+                        self.getCurrentMessage(threadID: threadID)
+                        self.sortReload()
+                    }
                 }
-                self.getCurrentMessage(threadID: threadID)
+                
             }
         })
     }
@@ -107,7 +116,10 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
             let threadID = snapshot.key
             let read = value["recipients"] as? [String:String] ?? [:]
             let messages = value["messages"] as! NSDictionary
-            if messages.count > 1 {
+            
+            if messages.count > 2 {
+                
+                self.getCurrentMessage(threadID: threadID)
                 
                 let last = value["last"] as? String ?? ""
                 var temp:messageStruct = messageStruct()
@@ -119,7 +131,6 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 let newDate = convertedDate?.betterDate()
                 temp.date = Double(newDate!)!
                 
-                self.getCurrentMessage(threadID: threadID)
                 
                 if threadID != "0" {
                     let noteVal = read["\(key!)"]!
@@ -135,8 +146,10 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
                         }
                     }
                     
-                        rList[threadID] = temp
-                        self.sortReload()
+                    rList[threadID] = temp
+                    
+                    self.sortReload()
+                   
                 }
             }
             
