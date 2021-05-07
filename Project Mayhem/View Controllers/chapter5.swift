@@ -57,6 +57,7 @@ class chapter5: UIViewController {
         game.setValue(true, forKey: "chap5")
         game.setValue("none", forKey: "active")
         nextChap.isUserInteractionEnabled = true
+        impact(style: .success)
         nextChap.fadeIn()
     }
     

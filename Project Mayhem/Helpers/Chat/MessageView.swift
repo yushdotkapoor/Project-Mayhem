@@ -129,7 +129,7 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
                 let convertedDate = dateFormatter.date(from: last)
                 
                 let newDate = convertedDate?.betterDate()
-                temp.date = Double(newDate!)!
+                temp.date = Double(newDate ?? "00")!
                 
                 
                 if threadID != "0" {

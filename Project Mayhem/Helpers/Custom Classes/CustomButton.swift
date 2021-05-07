@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class CustomButton: UIButton {
     
@@ -34,6 +35,7 @@ class CustomButton: UIButton {
             backgroundColor = UIColor.white
         }
         layer.cornerRadius = height/2
+        addHaptic()
     }
     
     func setupButton(color: UIColor, pressColor: UIColor) {
@@ -49,6 +51,17 @@ class CustomButton: UIButton {
             backgroundColor = color
         }
         layer.cornerRadius = height/2
+        addHaptic()
+    }
+    
+    func addHaptic() {
+        addAction(UIAction(handler: {_ in
+            impact(style: .medium)
+        }), for: .touchDown)
+        
+        addAction(UIAction(handler: {_ in
+            impact(style: .light)
+        }), for: .touchUpInside)
     }
     
     

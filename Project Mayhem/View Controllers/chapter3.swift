@@ -116,6 +116,7 @@ class chapter3: UIViewController {
         game.setValue(true, forKey: "chap3")
         game.setValue("none", forKey: "active")
         nextChap.isUserInteractionEnabled = true
+        impact(style: .success)
         nextChap.fadeIn()
     }
     
@@ -171,6 +172,7 @@ class chapter3: UIViewController {
     }
     
     @objc func button1TouchDown(_ sender: Any) {
+        impact(style: .medium)
         tapped1 = true
         tapCheck()
     }
@@ -180,6 +182,7 @@ class chapter3: UIViewController {
     }
     
     @objc func button2TouchDown(_ sender: Any) {
+        impact(style: .medium)
         tapped2 = true
         tapCheck()
     }
@@ -189,6 +192,7 @@ class chapter3: UIViewController {
     }
     
     @objc func button3TouchDown(sender: UIButton!) {
+        impact(style: .medium)
         tapped3 = true
         tapCheck2()
     }
@@ -198,6 +202,7 @@ class chapter3: UIViewController {
     }
     
     @objc func button4TouchDown(sender: UIButton!) {
+        impact(style: .medium)
         tapped4 = true
         tapCheck2()
     }

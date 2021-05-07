@@ -199,6 +199,7 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
                         self.welcome.text = "Welcome to Project Mayhem, Brainchild"
                         self.welcome.textColor = .black
                         self.nextChap.isUserInteractionEnabled = true
+                        impact(style: .success)
                         self.nextChap.fadeIn()
                     })
                 }

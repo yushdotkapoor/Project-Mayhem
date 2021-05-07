@@ -137,22 +137,25 @@ class chapter4: UIViewController {
         game.setValue("none", forKey: "active")
         NotificationCenter.default.removeObserver(self)
         nextChap.isUserInteractionEnabled = true
+        impact(style: .success)
         nextChap.fadeIn()
     }
     
     func finish() {
         motionStop()
         self.one.fadeOut()
+        /*
         UIView.animate(withDuration: 2, delay: 0, options: .curveEaseOut, animations: {
             self.imageBottom.constant *= 100
             self.view.layoutIfNeeded()
         }, completion: {
             action in
-            //TODO: add story
-            
             self.complete()
         })
-        
+ */
+        wait {
+            self.complete()
+        }
     }
     
     @objc func background() {

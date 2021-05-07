@@ -76,6 +76,11 @@ func impact(style: UIImpactFeedbackGenerator.FeedbackStyle) {
     generator.impactOccurred()
 }
 
+func impact(style: UINotificationFeedbackGenerator.FeedbackType) {
+    let generator = UINotificationFeedbackGenerator()
+    generator.notificationOccurred(style)
+}
+
 func countLines(of label: UILabel, maxHeight: CGFloat) -> Int {
         // viewDidLayoutSubviews() in ViewController or layoutIfNeeded() in view subclass
         guard let labelText = label.text else {

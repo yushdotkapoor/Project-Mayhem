@@ -292,6 +292,7 @@ class chapter13: UIViewController {
         game.setValue("none", forKey: "active")
         NotificationCenter.default.removeObserver(self)
         nextChap.isUserInteractionEnabled = true
+        impact(style: .success)
         nextChap.fadeIn()
     }
     

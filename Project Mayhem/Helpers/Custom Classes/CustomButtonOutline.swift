@@ -11,12 +11,10 @@ class CustomButtonOutline: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame:frame)
-        setupButton()
     }
     
     required init?(coder aDecoder:NSCoder) {
         super.init(coder: aDecoder)
-        setupButton()
     }
     
     
@@ -26,9 +24,15 @@ class CustomButtonOutline: UIButton {
         layer.borderWidth = 1
         layer.borderColor = UIColor.white.cgColor
         layer.cornerRadius = height/2
+        addHaptic()
     }
     
     func setupButton(color: UIColor) {
+       setupButtonWithoutHaptic(color: color)
+        addHaptic()
+    }
+    
+    func setupButtonWithoutHaptic(color: UIColor) {
         let height = frame.size.height
         
         layer.borderWidth = 1
@@ -42,8 +46,14 @@ class CustomButtonOutline: UIButton {
         layer.borderWidth = 1
         layer.borderColor = color.cgColor
         layer.cornerRadius = height/2
+        addHaptic()
     }
     
+    func addHaptic() {
+        addAction(UIAction(handler: {_ in
+            impact(style: .medium)
+        }), for: .touchDown)
+    }
     
 }
 

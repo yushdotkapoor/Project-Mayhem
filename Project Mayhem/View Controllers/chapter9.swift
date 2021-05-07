@@ -107,6 +107,7 @@ class chapter9: UIViewController, UITextFieldDelegate {
         game.setValue("none", forKey: "active")
         NotificationCenter.default.removeObserver(self)
         nextChap.isUserInteractionEnabled = true
+        impact(style: .success)
         nextChap.fadeIn()
     }
     
@@ -122,6 +123,7 @@ class chapter9: UIViewController, UITextFieldDelegate {
         }
         else if textField.text != ""{
             textField.shake()
+            impact(style: .error)
             textField.text = ""
         }
     }

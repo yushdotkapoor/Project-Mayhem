@@ -46,6 +46,7 @@ class chapter11: UIViewController, SFSpeechRecognizerDelegate {
         game.setValue(true, forKey: "chap11")
         game.setValue("none", forKey: "active")
         nextChap.isUserInteractionEnabled = true
+        impact(style: .success)
         nextChap.fadeIn()
     }
     

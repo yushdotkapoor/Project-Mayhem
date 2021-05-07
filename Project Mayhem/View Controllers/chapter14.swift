@@ -44,8 +44,8 @@ class chapter14: UIViewController {
         view.bringSubviewToFront(foregroundView)
         view.bringSubviewToFront(toolbar)
         game.setValue("chap14", forKey: "active")
-        tap.setupButton(color: .link)
-        slash.setupButton(color: .link)
+        tap.setupButtonWithoutHaptic(color: .link)
+        slash.setupButtonWithoutHaptic(color: .link)
         self.startRotation()
         
         foregroundView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture)))
@@ -135,6 +135,7 @@ class chapter14: UIViewController {
     func complete() {
         game.setValue(true, forKey: "chap14")
         nextChap.isUserInteractionEnabled = true
+        impact(style: .success)
         nextChap.fadeIn()
     }
     

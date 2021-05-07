@@ -167,9 +167,8 @@ class subChapter11: UIViewController, UIScrollViewDelegate {
         }
         else {
             textField.shake()
+            impact(style: .error)
             textField.text = ""
-            impact(style: .light)
-            
         }
         
         

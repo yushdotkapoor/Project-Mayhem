@@ -309,6 +309,7 @@ class chapter15: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate 
         game.setValue("none", forKey: "active")
         NotificationCenter.default.removeObserver(self)
         nextChap.isUserInteractionEnabled = true
+        impact(style: .success)
         nextChap.fadeIn()
     }
     

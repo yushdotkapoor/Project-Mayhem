@@ -106,6 +106,7 @@ class postChapter15: UIViewController {
         game.setValue("none", forKey: "active")
         NotificationCenter.default.removeObserver(self)
         nextChap.isUserInteractionEnabled = true
+        impact(style: .success)
         nextChap.fadeIn()
     }
     
@@ -168,8 +169,8 @@ class postChapter15: UIViewController {
         }
         else {
             textField.shake()
+            impact(style: .error)
             textField.text = ""
-            impact(style: .light)
         }
     }
     

@@ -98,6 +98,18 @@ class chapter2: UIViewController {
             
             audioLevel = audioSession.outputVolume
             
+            if audioLevel < 0.20 {
+                impact(style: .soft)
+            } else if audioLevel < 0.4 {
+                impact(style: .light)
+            } else if audioLevel < 0.6 {
+                impact(style: .medium)
+            } else if audioLevel < 0.8 {
+                impact(style: .heavy)
+            } else {
+                impact(style: .rigid)
+            }
+            
             viewHeight.constant = view.frame.size.height * CGFloat(audioLevel)
             if audioLevel == 1.0 {
                 let name = game.string(forKey: "name")
@@ -110,6 +122,7 @@ class chapter2: UIViewController {
         game.setValue("none", forKey: "active")
         game.setValue(true, forKey: "chap2")
         nextChap.isUserInteractionEnabled = true
+        impact(style: .success)
         nextChap.fadeIn()
     }
     
