@@ -82,16 +82,16 @@ func impact(style: UINotificationFeedbackGenerator.FeedbackType) {
 }
 
 func countLines(of label: UILabel, maxHeight: CGFloat) -> Int {
-        // viewDidLayoutSubviews() in ViewController or layoutIfNeeded() in view subclass
-        guard let labelText = label.text else {
-            return 0
-        }
-        
-        let rect = CGSize(width: label.bounds.width, height: maxHeight)
-        let labelSize = labelText.boundingRect(with: rect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: label.font!], context: nil)
-        
-        return Int(ceil(CGFloat(labelSize.height) / label.font.lineHeight))
-   }
+    // viewDidLayoutSubviews() in ViewController or layoutIfNeeded() in view subclass
+    guard let labelText = label.text else {
+        return 0
+    }
+    
+    let rect = CGSize(width: label.bounds.width, height: maxHeight)
+    let labelSize = labelText.boundingRect(with: rect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: label.font!], context: nil)
+    
+    return Int(ceil(CGFloat(labelSize.height) / label.font.lineHeight))
+}
 
 func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat{
     let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
@@ -205,17 +205,17 @@ extension String {
     func index(from: Int) -> Index {
         return self.index(startIndex, offsetBy: from)
     }
-
+    
     func substring(from: Int) -> String {
         let fromIndex = index(from: from)
         return String(self[fromIndex...])
     }
-
+    
     func substring(to: Int) -> String {
         let toIndex = index(from: to)
         return String(self[..<toIndex])
     }
-
+    
     func substring(with r: Range<Int>) -> String {
         let startIndex = index(from: r.lowerBound)
         let endIndex = index(from: r.upperBound)
@@ -245,13 +245,29 @@ extension StringProtocol {
         var result: [Range<Index>] = []
         var startIndex = self.startIndex
         while startIndex < endIndex,
-            let range = self[startIndex...]
+              let range = self[startIndex...]
                 .range(of: string, options: options) {
-                result.append(range)
-                startIndex = range.lowerBound < range.upperBound ? range.upperBound :
-                    index(range.lowerBound, offsetBy: 1, limitedBy: endIndex) ?? endIndex
+            result.append(range)
+            startIndex = range.lowerBound < range.upperBound ? range.upperBound :
+                index(range.lowerBound, offsetBy: 1, limitedBy: endIndex) ?? endIndex
         }
         return result
+    }
+}
+
+
+func getIAP(productIdentifier: String) -> SKProduct {
+    for i in IAPs ?? [] {
+        if i.productIdentifier == productIdentifier {
+            return i
+        }
+    }
+    return SKProduct()
+}
+
+extension Int {
+    static func parse(from string: String) -> Int? {
+        return Int(string.components(separatedBy: CharacterSet.decimalDigits.inverted).joined())
     }
 }
 

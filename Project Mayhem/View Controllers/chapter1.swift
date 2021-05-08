@@ -273,7 +273,7 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     @IBAction func rickyLink(_ sender: Any) {
-        ref.child("users/\(game.string(forKey: "key")!)/RickRolled)").setValue("Y")
+        ref.child("users/\(game.string(forKey: "key")!)/RickRolled").setValue("Y")
         openLink(st: "https://www.youtube.com/watch?v=oHg5SJYRHA0")
     }
     

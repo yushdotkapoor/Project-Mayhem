@@ -9,6 +9,7 @@ import StoreKit
 
 public typealias ProductIdentifier = String
 public typealias ProductsRequestCompletionHandler = (_ success: Bool, _ products: [SKProduct]?) -> Void
+var funcToReturn:(() -> Void)?
 
 extension Notification.Name {
     static let IAPHelperPurchaseNotification = Notification.Name("IAPHelperPurchaseNotification")
@@ -50,7 +51,8 @@ extension IAPHelper {
         productsRequest!.start()
     }
     
-    public func buyProduct(_ product: SKProduct) {
+    public func buyProduct(_ product: SKProduct, funcTo: @escaping (() -> Void)) {
+        funcToReturn = funcTo
         print("Buying \(product.productIdentifier)...")
         let payment = SKPayment(product: product)
         SKPaymentQueue.default().add(payment)
@@ -129,6 +131,7 @@ extension IAPHelper: SKPaymentTransactionObserver {
         print("complete...")
         deliverPurchaseNotificationFor(identifier: transaction.payment.productIdentifier)
         SKPaymentQueue.default().finishTransaction(transaction)
+        funcToReturn!()
     }
     
     private func restore(transaction: SKPaymentTransaction) {
@@ -154,8 +157,20 @@ extension IAPHelper: SKPaymentTransactionObserver {
         guard let identifier = identifier else { return }
         
         purchasedProductIdentifiers.insert(identifier)
-        UserDefaults.standard.set(true, forKey: identifier)
         NotificationCenter.default.post(name: .IAPHelperPurchaseNotification, object: identifier)
+        
+        if identifier == ProjectMayhemProducts.fiveHints {
+            var currentValue = game.integer(forKey: identifier)
+            currentValue += 5
+            game.setValue(currentValue, forKey: identifier)
+            var val = game.integer(forKey: "fivePackPurchaseCount")
+            val += 1
+            game.setValue(val, forKey: "fivePackPurchaseCount")
+        } else {
+            game.setValue(true, forKey: identifier)
+        }
+        
+        
     }
 }
 

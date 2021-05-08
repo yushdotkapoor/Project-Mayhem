@@ -28,7 +28,7 @@ class CustomButtonOutline: UIButton {
     }
     
     func setupButton(color: UIColor) {
-       setupButtonWithoutHaptic(color: color)
+        setupButtonWithoutHaptic(color: color)
         addHaptic()
     }
     
@@ -51,8 +51,8 @@ class CustomButtonOutline: UIButton {
     
     func addHaptic() {
         addAction(UIAction(handler: {_ in
-            impact(style: .medium)
-        }), for: .touchDown)
+            impact(style: .soft)
+        }), for: .touchUpInside)
     }
     
 }

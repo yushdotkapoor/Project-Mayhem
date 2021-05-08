@@ -51,7 +51,7 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         self.navigationController?.navigationBar.backgroundColor = UIColor.black
     }
-  
+    
     
     func getCurrentMessage(threadID:String) {
         ref.child("users/\(myKey!)/threads/\(threadID)/messages").observe(.childAdded, with: { (snapshot) in
@@ -149,7 +149,7 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
                     rList[threadID] = temp
                     
                     self.sortReload()
-                   
+                    
                 }
             }
             

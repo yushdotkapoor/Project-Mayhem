@@ -10,8 +10,9 @@ import Foundation
 public struct ProjectMayhemProducts {
     
     public static let hints = "com.YushRajKapoor.ProjectMayhem.betterHints"
+    public static let fiveHints = "com.YushRajKapoor.ProjectMayhem.FiveHints"
     
-    private static let productIdentifiers: Set<ProductIdentifier> = [ProjectMayhemProducts.hints]
+    private static let productIdentifiers: Set<ProductIdentifier> = [ProjectMayhemProducts.hints, ProjectMayhemProducts.fiveHints]
     
     public static let store = IAPHelper(productIds: ProjectMayhemProducts.productIdentifiers)
 }

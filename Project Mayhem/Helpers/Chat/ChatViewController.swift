@@ -130,16 +130,16 @@ class ChatViewController: MessagesViewController {
         
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default) { action in
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = .camera
-            imagePicker.allowsEditing = false
-            imagePicker.mediaTypes = ["public.movie", "public.image"]
-            imagePicker.videoQuality = .typeHigh
-            imagePicker.showsCameraControls = true
-            
-            
-            self.present(imagePicker, animated: true, completion: nil)
+                imagePicker = UIImagePickerController()
+                imagePicker.delegate = self
+                imagePicker.sourceType = .camera
+                imagePicker.allowsEditing = false
+                imagePicker.mediaTypes = ["public.movie", "public.image"]
+                imagePicker.videoQuality = .typeHigh
+                imagePicker.showsCameraControls = true
+                
+                
+                self.present(imagePicker, animated: true, completion: nil)
             } else {
                 self.alert(title: "Oh no!", message: "It seems that this device cannot access the camera", actionTitle: "Okay")
             }
@@ -577,23 +577,23 @@ class ChatViewController: MessagesViewController {
             }
             
             ref.child("users/\(otraKey)/threads/\(selectedThread)/recipients/\(otraKey)").setValue("Y")
-           
+            
             var titl = "Message from Yush"
             var body = "Your calculation is complete"
             
             
-                if sub == "photo"{
-                    body = "Photo Message"
-                }
-                else if sub == "video" {
-                    body = "Video Message"
-                }
-                else if sub == "linkPreview" {
-                    body = "URL"
-                }
-                else {
-                    body = "\(message.data)"
-                }
+            if sub == "photo"{
+                body = "Photo Message"
+            }
+            else if sub == "video" {
+                body = "Video Message"
+            }
+            else if sub == "linkPreview" {
+                body = "URL"
+            }
+            else {
+                body = "\(message.data)"
+            }
             
             if otraKey == "ADMIN" {
                 //titl = myKey
@@ -616,7 +616,7 @@ class ChatViewController: MessagesViewController {
                     return false
                 }
                 else {
-                return true
+                    return true
                 }
             default:
                 return super.collectionView(collectionView, canPerformAction: action, forItemAt: indexPath, withSender: sender)
@@ -628,7 +628,7 @@ class ChatViewController: MessagesViewController {
                     return false
                 }
                 else {
-                return true
+                    return true
                 }
             default:
                 return super.collectionView(collectionView, canPerformAction: action, forItemAt: indexPath, withSender: sender)

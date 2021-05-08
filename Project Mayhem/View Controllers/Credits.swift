@@ -21,6 +21,9 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var purchaseRestore: CustomButtonOutline!
     @IBOutlet weak var welcStatementButton: CustomButtonOutline!
     @IBOutlet weak var feedbackButton: CustomButtonOutline!
+    @IBOutlet weak var fiveHintsButton: UIButton!
+    @IBOutlet weak var fiveHintPurchasePrice: UILabel!
+    @IBOutlet weak var fiveHintsDescription: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,19 +42,63 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
         welcStatementButton.setupButton()
         feedbackButton.setupButton()
         
-        if ProjectMayhemProducts.store.isProductPurchased(ProjectMayhemProducts.hints) {
+        checkIfPurchased()
+        
+        /*
+         donateLabel.isUserInteractionEnabled = true
+         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(donate(tapGestureRecognizer:)))
+         donateLabel.addGestureRecognizer(tapGesture)
+         */
+    }
+    
+    func checkIfPurchased() {
+        
+        let numPurchase = game.integer(forKey: "fivePackPurchaseCount")
+        let numHints = game.integer(forKey: ProjectMayhemProducts.fiveHints)
+        //let lvlsToUnlock = 15 - (((numPurchase) * 5) - numHints)
+        
+        if numPurchase > 0 && numHints > 0 {
+            fiveHintsDescription.text = "Purchase an Extra Five Hints\nUnlockable Hints: \(numHints)/15"
+        } else {
+            fiveHintsDescription.text = "Purchase Extra Hints For Five Levels"
+        }
+        
+        
+        let allHintsUnlocked = ProjectMayhemProducts.store.isProductPurchased(ProjectMayhemProducts.hints)
+        if allHintsUnlocked {
             purchaseprice.text = "Purchased"
             purchaseprice.font = purchaseprice.font.withSize(14)
             purchaseprice.minimumScaleFactor = 0.4
             betterHintButton.tintColor = .gray
             betterHintButton.isUserInteractionEnabled = false
+            
+            fiveHintPurchasePrice.text = "All Hints Unlocked"
+            fiveHintPurchasePrice.font = fiveHintPurchasePrice.font.withSize(14)
+            fiveHintPurchasePrice.minimumScaleFactor = 0.4
+            fiveHintsButton.tintColor = .gray
+            fiveHintsButton.isUserInteractionEnabled = false
+            fiveHintsDescription.text = "All hints have been unlocked."
+            return
+        } else {
+            purchaseprice.text = "$\(getIAP(productIdentifier: ProjectMayhemProducts.hints).price)"
         }
         
-        /*
-        donateLabel.isUserInteractionEnabled = true
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(donate(tapGestureRecognizer:)))
-        donateLabel.addGestureRecognizer(tapGesture)
-        */
+        if game.integer(forKey: "fivePackPurchaseCount") >= 3 {
+            purchaseprice.text = "All Hints Unlocked"
+            purchaseprice.font = purchaseprice.font.withSize(14)
+            purchaseprice.minimumScaleFactor = 0.4
+            betterHintButton.tintColor = .gray
+            betterHintButton.isUserInteractionEnabled = false
+            
+            fiveHintPurchasePrice.text = "Max Purchased"
+            fiveHintPurchasePrice.font = purchaseprice.font.withSize(14)
+            fiveHintPurchasePrice.minimumScaleFactor = 0.4
+            fiveHintsButton.tintColor = .gray
+            fiveHintsButton.isUserInteractionEnabled = false
+            return
+        } else {
+            fiveHintPurchasePrice.text = "$\(getIAP(productIdentifier: ProjectMayhemProducts.fiveHints).price)"
+        }
     }
     
     
@@ -96,12 +143,16 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
     
     
     @IBAction func betterHints(_ sender: Any) {
-        for i in IAPs ?? [] {
-            if i.productIdentifier == "com.YushRajKapoor.ProjectMayhem.betterHints"{
-                ProjectMayhemProducts.store.buyProduct(i)
-            }
-        }
+        let product = getIAP(productIdentifier: ProjectMayhemProducts.hints)
+        ProjectMayhemProducts.store.buyProduct(product, funcTo: checkIfPurchased)
     }
+    
+    
+    @IBAction func fiveHints(_ sender: Any) {
+        let product = getIAP(productIdentifier: ProjectMayhemProducts.fiveHints)
+        ProjectMayhemProducts.store.buyProduct(product, funcTo: checkIfPurchased)
+    }
+    
     
     @IBAction func sliderChanged(_ sender: Any) {
         print(slider.value)

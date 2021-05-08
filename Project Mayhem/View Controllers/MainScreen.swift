@@ -63,7 +63,7 @@ class MainScreen: UIViewController {
         let chatPgViewed = game.bool(forKey: "chatPageViewed")
         if chatPgViewed == false {
             
-        let id = "\(key!) - \(admin)"
+            let id = "\(key!) - \(admin)"
             game.setValue(id, forKey: "chatID")
             let array = ["recipients":[admin: "N", key: "Y"], "messages":["01": ["type":"text", "sender":"ADMIN", "date":"\(convertedDate)", "data":"Comments? Questions? Message me here! Make sure you have push notifications enabled to get notifications for replies.", "id":"01"], "0": ["type":"", "sender":"", "date":0, "data":"", "id":""]], "last":"\(convertedDate)"] as [String : Any]
             let data = ["key": key!, "threads":["\(id)":array], "token":"\(token ?? "")", "Q": "Y"] as [String : Any]

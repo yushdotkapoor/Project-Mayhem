@@ -9,20 +9,20 @@
 import UIKit
 
 final class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognizerDelegate {
-
+    
     private let url: URL
     
     var hidden = false
-
+    
     init(with url: URL) {
         self.url = url
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -34,7 +34,7 @@ final class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, U
         scrollView.contentMode = .scaleAspectFit
         return scrollView
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,7 +54,7 @@ final class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, U
         self.tabBarController?.tabBar.isHidden = true
         
     }
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         scrollView.frame = view.bounds
@@ -68,11 +68,11 @@ final class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, U
     }
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-         return imageView
-     }
- 
+        return imageView
+    }
+    
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
-         if scrollView.zoomScale > 1 {
+        if scrollView.zoomScale > 1 {
             scrollView.isScrollEnabled = true
             if let image = imageView.image {
                 let ratioW = imageView.frame.width / image.size.width
@@ -84,29 +84,29 @@ final class PhotoViewerViewController: UIViewController, UIScrollViewDelegate, U
                 let left = 0.5 * (conditionLeft ? newWidth - imageView.frame.width : (scrollView.frame.width - scrollView.contentSize.width))
                 let conditioTop = newHeight*scrollView.zoomScale > imageView.frame.width
                 let top = 0.5 * (conditioTop ? newHeight - imageView.frame.height : (scrollView.frame.height - scrollView.contentSize.height))
-                  
+                
                 scrollView.contentInset = UIEdgeInsets(top: top, left: left, bottom: top, right: left)
-                  
-              }
-          }
+                
+            }
+        }
         else {
             scrollView.contentInset = .zero
             scrollView.isScrollEnabled = false
             imageView.frame = scrollView.bounds
         }
-      }
+    }
     
     @objc func share() {
         // image to share
         let image = imageView.image
-
-              // set up activity view controller
+        
+        // set up activity view controller
         let imageToShare = [ image! ]
-              let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
-              activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
-
-              // present the view controller
-              self.present(activityViewController, animated: true, completion: nil)
+        let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        
+        // present the view controller
+        self.present(activityViewController, animated: true, completion: nil)
     }
     
 }

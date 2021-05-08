@@ -78,10 +78,10 @@ class chapter6: UIViewController {
         //to check if iPad or other device, this will cause the back button to flash in morse
         // rather than vibrate and flash
         
-        if UIDevice.current.model != "iPhone" && UIDevice.current.model != "iPod" {
+        let sensitive = game.bool(forKey: "photosensitive")
+        if (UIDevice.current.model != "iPhone" && UIDevice.current.model != "iPod") || sensitive {
             pad = true
         }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

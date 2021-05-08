@@ -75,7 +75,6 @@ class Levels: UIViewController {
         super.viewDidLoad()
         del = 0.5
         
-        
         //reset()
         //loadAll()
         MusicPlayer.shared.volumeControl(factor: 0.4)
@@ -237,6 +236,8 @@ class Levels: UIViewController {
             }
         }
         
+        arrayButtons[0].setupButton(color: UIColor.white)
+        
         for chapter in array {
             let completion = game.bool(forKey: chapter)
             if completion {
@@ -359,15 +360,15 @@ class Levels: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: selectNavigation)
         self.present(controller, animated: true, completion: nil)
-
+        
         // Safe Present
         /*
-        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MessagesNavigation") as? ChatViewController
-        {
-            present(vc, animated: true, completion: nil)
-        }
-        
-        */
+         if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MessagesNavigation") as? ChatViewController
+         {
+         present(vc, animated: true, completion: nil)
+         }
+         
+         */
         
     }
     

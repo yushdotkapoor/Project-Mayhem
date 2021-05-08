@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class HintAlert: NSObject, UIScrollViewDelegate {
     
@@ -15,7 +16,7 @@ class HintAlert: NSObject, UIScrollViewDelegate {
     
     private var msgCt = 0
     
-    var tier1Hint = ["1":"Leave what?", "2":"How could you make sure that you can hear everything?","3":"Tappity tap","4":"Move your phone a bit. Just kidding, a lot.","5":"do re mi fa so laaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n\nAlso, Nice ;)","5Perm":"do re mi fa so laaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n\nIt seems that you have Microphone permissions turned off. This level requires the microphone to pass. However, if you're adamant or if this does not apply to you, then contact me and I will sort things out.","6":"Seems like this is a coded message!\n\nNote: Make sure your system haptics are turned on.\n\nAlso, don't curse in a castle, it's bad for our reputation.","7":"Rule number 1: have patience. Rule number 2: have good memory skills. Rule number 3: see what happens when you tap (r1,c2).","8":"What's that on the top right?","9":"These are not just some random characters! Have you ever heard of 🐷🖊️ Cipher?","10":"I wonder what I could do with a QR code, once it is aligned","11.1":"Maybe the morse code at the top and the coordinates at the bottom have some sort of relationship.","11.2":"Great works from a great man, who indeed has a name!","11.2Perm":"Great works from a great man, who indeed has a name!\n\nIt seems that you have Microphone or Speech Recognition permissions turned off. This level requires Speech Recognition to pass. However, if you're adamant or if this does not apply to you, then contact me and I will sort things out.","12.1": "Battery, battery, battery. It bugs me that the battery isn't completely full", "12.2":"Roses are red, violets are blue, I'm pretty sure that this is a date. What are you supposed to do? \"Get in a blue box and get your timey wimey on.\"","12.3":"Is there a way to change the size of text?","13.1":"Dude c'mon. The text on the screen IS the hint","13.2":"Earthquake simulator?","13.3":"Earthquake simulator?: Look for the red","14": "\"As the Curtain Rose, the people cheered and the bootleggers took Pictures.\"","15.1":"When I am black, I am actually white. When I am white, I am actually black. What am I?","15.2":"The answer is not in this level. Look closely 👁️"]
+    var tier1Hint = ["1":"Leave what?", "2":"How could you make sure that you can hear everything?","3":"Tappity tap","4":"Move your phone a bit. Just kidding, a lot.","5":"do re mi fa so laaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n\nAlso, Nice ;)","5Perm":"do re mi fa so laaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n\nIt seems that you have Microphone permissions turned off. This level requires the microphone to pass. However, if you're adamant or if this does not apply to you, then contact me and I will sort things out.","6":"Seems like this is a coded message!\n\nAlso, don't curse in a castle, it's bad for our reputation.","7":"Rule number 1: have patience. Rule number 2: have good memory skills. Rule number 3: see what happens when you tap (r1,c2).","8":"What's that on the top right?","9":"These are not just some random characters! Have you ever heard of 🐷🖊️ Cipher?","10":"I wonder what I could do with a QR code, once it is aligned","11.1":"Maybe the morse code at the top and the coordinates at the bottom have some sort of relationship.","11.2":"Great works from a great man, who indeed has a name!","11.2Perm":"Great works from a great man, who indeed has a name!\n\nIt seems that you have Microphone or Speech Recognition permissions turned off. This level requires Speech Recognition to pass. However, if you're adamant or if this does not apply to you, then contact me and I will sort things out.","12.1": "Battery, battery, battery. It bugs me that the battery isn't completely full", "12.2":"Roses are red, violets are blue, I'm pretty sure that this is a date. What are you supposed to do? \"Get in a blue box and get your timey wimey on.\"","12.3":"Is there a way to change the size of text?","13.1":"Dude c'mon. The text on the screen IS the hint","13.2":"Earthquake simulator?","13.3":"Earthquake simulator?: Look for the red","14": "\"As the Curtain Rose, the people cheered and the bootleggers took Pictures.\"","15.1":"When I am black, I am actually white. When I am white, I am actually black. What am I?","15.2":"The answer is not in this level. Look closely 👁️"]
     
     var tier2Hint = ["1":"Maybe it's best if you go home.", "2":"If you were on the phone and could not hear the other person on speaker, what would you do?","3":"Tap the little circles simultaneously.","4":"Stright lines, fast movements, phone flat.","5":"\"A\" is known as a musical note and has different pitches. Remember, nothing is off limits!","5Perm":"\"A\" is known as a musical note and has different pitches. Remember, nothing is off limits!","6":"Morse code, isn't it? Let's see what the internet can do for you.","7":"I suggest writing down a grid and tapping around to see what happens.","8":"I wonder what happens if we look for the app settings?","9":"Use your resources to decode this message","10":"Scan the QR code and see what pops up.","11.1":"The coordinates at the bottom correspond to the location of a character in the letter. The second part to the morse code is as follows: ----graph, ----ence, ----acter.\n","11.2":"Say the name of the playright!","11.2Perm":"Say the name of the playright!","12.1": "Let's fill that battery.", "12.2":"Maybe we can travel back in time.","12.3":"It's possible that there is a setting to change the general size of fonts?","13.1":"You gotta physically move back","13.2":"Let's undo.","13.3":"Let's keep undoing and see what the red letters spell out.","14": "a=swipe\nb=right\nc=down\n-(a*(-b)*c)/b","15.1":"Make sure you make the SMART move.","15.2":"There are 15 hidden letters in the levels prior."]
     
@@ -44,6 +45,8 @@ class HintAlert: NSObject, UIScrollViewDelegate {
         lbl.textColor = .white
         return lbl
     }()
+    
+    var btn = UIButton()
     
     private var d1 = UIView()
     private var d2 = UIView()
@@ -187,9 +190,7 @@ class HintAlert: NSObject, UIScrollViewDelegate {
             alertView.addSubview(scrollView)
             alertView.addSubview(button)
             alertView.addSubview(stuck)
-            
-        }
-        else if msgCt == 1 {
+        } else if msgCt == 1 {
             text = tier2Hint[dictRef]
             msgHt = message2Height!
         }
@@ -208,43 +209,105 @@ class HintAlert: NSObject, UIScrollViewDelegate {
         
         if msgCt == 1 {
             checkIfPaywallRequired()
-        }
-        else if msgCt == 2 {
+        } else if msgCt == 2 {
+            bouncer(num: 1)
             controller?.view.bringSubviewToFront(tb!)
         }
     }
     
     func checkIfPaywallRequired() {
         let xRef = alertView.frame.size.width
-        if ProjectMayhemProducts.store.isProductPurchased(ProjectMayhemProducts.hints) {
-            showTheMeat(xRef: xRef)
+        let hintNum = game.integer(forKey: ProjectMayhemProducts.fiveHints)
+        var ref = Int.parse(from: dictRef)!
+        if ref > 50 {
+            ref = ref / 10
         }
-        else {
-            let buttontext = "Tap here to unlock a second and more helpful hint for every level."
-            
-            message2Height = heightForView(text: buttontext, font: UIFont(name: "Helvetica", size: 16.0)!, width: alertView.frame.size.width - 20)
-            
-            let btn = UIButton(frame: CGRect(x: xRef + 10, y: titleLabel.frame.size.height + 5, width: alertView.frame.size.width - 20, height: message2Height!))
-            btn.setTitle(buttontext, for: .normal)
-            btn.titleLabel?.numberOfLines = 0
-            btn.titleLabel?.font = UIFont(name: "Helvetica", size: 16.0)
-            btn.titleLabel?.textAlignment = .center
-            btn.setTitleColor(.blue, for: .normal)
-            btn.addTarget(self, action: #selector(makePurchase), for: .touchUpInside)
-            
+        
+        if ProjectMayhemProducts.store.isProductPurchased(ProjectMayhemProducts.hints) || game.bool(forKey: "hint\(ref)") {
+            message2Height = heightForView(text: tier2Hint[dictRef]!, font: UIFont(name: "Helvetica", size: 16.0)!, width: alertView.frame.size.width - 20)
+            showTheMeat(xRef: xRef)
+        } else {
+            if hintNum > 0 {
+                //ask to use hint
+                // display hints remaining
+                let buttontext = "Tap here if you would like to use one of your remaining hints\nHints remaining: \(hintNum)"
+                
+                message2Height = heightForView(text: buttontext, font: UIFont(name: "Helvetica", size: 16.0)!, width: alertView.frame.size.width - 20)
+                
+                btn = UIButton(frame: CGRect(x: xRef + 10, y: titleLabel.frame.size.height + 5, width: alertView.frame.size.width - 20, height: message2Height!))
+                btn.setTitle(buttontext, for: .normal)
+                btn.titleLabel?.numberOfLines = 0
+                btn.titleLabel?.font = UIFont(name: "Helvetica", size: 16.0)
+                btn.titleLabel?.textAlignment = .center
+                btn.setTitleColor(.blue, for: .normal)
+                btn.addTarget(self, action: #selector(useHint), for: .touchUpInside)
+            } else {
+                //Purchase action
+                let buttontext = "Tap here to unlock a second and more helpful hint."
+                
+                message2Height = heightForView(text: buttontext, font: UIFont(name: "Helvetica", size: 16.0)!, width: alertView.frame.size.width - 20)
+                
+                btn = UIButton(frame: CGRect(x: xRef + 10, y: titleLabel.frame.size.height + 5, width: alertView.frame.size.width - 20, height: message2Height!))
+                btn.setTitle(buttontext, for: .normal)
+                btn.titleLabel?.numberOfLines = 0
+                btn.titleLabel?.font = UIFont(name: "Helvetica", size: 16.0)
+                btn.titleLabel?.textAlignment = .center
+                btn.setTitleColor(.blue, for: .normal)
+                btn.addTarget(self, action: #selector(actionSheetForPurchase), for: .touchUpInside)
+            }
             scrollView.addSubview(btn)
             controller?.view.bringSubviewToFront(tb!)
         }
     }
     
-    @objc func makePurchase() {
-        for i in IAPs ?? [] {
-            if i.productIdentifier == "com.YushRajKapoor.ProjectMayhem.betterHints"{
-                ProjectMayhemProducts.store.buyProduct(i)
-            }
+    @objc func useHint() {
+        let identifier = ProjectMayhemProducts.fiveHints
+        var currentValue = game.integer(forKey: identifier)
+        currentValue -= 1
+        game.setValue(currentValue, forKey: identifier)
+        btn.removeFromSuperview()
+        var ref = Int.parse(from: dictRef)!
+        if ref > 50 {
+            ref = ref / 10
+        }
+        game.setValue(true, forKey: "hint\(ref)")
+        checkIfPaywallRequired()
+    }
+    
+    @objc func actionSheetForPurchase() {
+        let bH = getIAP(productIdentifier: "com.YushRajKapoor.ProjectMayhem.betterHints")
+        let fH = getIAP(productIdentifier: "com.YushRajKapoor.ProjectMayhem.FiveHints")
+        let allPrice = bH.price
+        let fivePrice = fH.price
+        
+        let actionSheet = UIAlertController(title: "Purchase hints",
+                                            message: "Choose which hints you would like to purchase",
+                                            preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "All Hints ($\(allPrice))", style: .default) { action in
+            ProjectMayhemProducts.store.buyProduct(bH, funcTo: self.afterHint)
+        })
+        actionSheet.addAction(UIAlertAction(title: "Five Hints ($\(fivePrice))", style: .default) { action in
+            ProjectMayhemProducts.store.buyProduct(fH, funcTo: self.afterHint)
+        })
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        if game.integer(forKey: "fivePackPurchaseCount") >= 3 {
+            let alertController = UIAlertController(title: "Error", message: "If you are seeing this, message me. This message should not appear.\nError: Max Purchase Count", preferredStyle: .alert)
+            let okay = UIAlertAction(title: "Okay", style: .default, handler: {_ in
+                self.chat()
+            })
+            alertController.addAction(okay)
+            self.controller!.present(alertController, animated: true, completion: nil)
+        } else {
+            controller!.present(actionSheet, animated: true)
         }
     }
     
+    func afterHint() {
+        btn.removeFromSuperview()
+        checkIfPaywallRequired()
+        bouncer(num: 1)
+    }
     
     func reqProducts() {
         ProjectMayhemProducts.store.requestProducts{ [weak self] success, products in
@@ -274,22 +337,24 @@ class HintAlert: NSObject, UIScrollViewDelegate {
     }
     
     @objc func dismissAlert() {
-        menuState = false
-        guard let hintButt = hint else {
-            return
-        }
-        
-        hintButt.rotate(rotation: -0.49999, duration: 0.5, option: [])
-        UIView.animate(withDuration: 0.5, animations: {
-            self.alertView.alpha = 0.0
-            hintButt.tintColor = UIColor.systemYellow
-            
-        }, completion: { done in
-            if done {
-                self.alertView.removeFromSuperview()
-                self.backgroundView.removeFromSuperview()
+        if menuState {
+            menuState = false
+            guard let hintButt = hint else {
+                return
             }
-        })
+            
+            hintButt.rotate(rotation: -0.49999, duration: 0.5, option: [])
+            UIView.animate(withDuration: 0.5, animations: {
+                self.alertView.alpha = 0.0
+                hintButt.tintColor = UIColor.systemYellow
+                
+            }, completion: { done in
+                if done {
+                    self.alertView.removeFromSuperview()
+                    self.backgroundView.removeFromSuperview()
+                }
+            })
+        }
     }
     
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {

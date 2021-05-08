@@ -47,7 +47,7 @@ class chapter2: UIViewController {
         
         let active = game.string(forKey: "active")
         
-        switch active! {
+        switch active ?? "none" {
         case "none":
             game.setValue("chap2", forKey: "active")
             begin.alpha = 0.0

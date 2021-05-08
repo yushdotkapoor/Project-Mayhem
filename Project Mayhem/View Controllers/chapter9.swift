@@ -38,16 +38,6 @@ class chapter9: UIViewController, UITextFieldDelegate {
             })
         }
         
-        wait(time: 15) {
-            if game.string(forKey: "active") == "chap9" {
-                if self.open {
-                    self.stackCenter.constant += self.keyboardAdded
-                    self.open = false
-                }
-                self.alert(title: "!", message: "It might do you some good to take a hint.", actionTitle: "Sure, I guess")
-            }
-        }
-        
         
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
