@@ -22,8 +22,7 @@ var videosCurrentlyDownloading = false
 var IAPs:[SKProduct]?
 let database = CKContainer.default().publicCloudDatabase
 let vidArr = ["Chap1Intro", "lvl7Intro", "lvl7Outro", "subPostChapter15", "ProjectVenomTrailer"]
-var urlDict = [String: NSURL]()
-var freeVersions = ["2", "11"]
+var mediaCount = 0
 
 func wait(time: Float, actions: @escaping () -> Void) {
     let timeInterval = TimeInterval(time)
@@ -126,6 +125,7 @@ func vidToURL(name: String, type: String) -> NSURL {
 }
 
 func downloadVideos() {
+    mediaCount = 0
     for vid in vidArr {
         var videoURL:NSURL?
         print("Downloading \(vid)")
@@ -142,17 +142,24 @@ func downloadVideos() {
                     videoURL = videoFile.fileURL! as NSURL
                     let videoData = NSData(contentsOf: videoURL! as URL)
                     
-                    let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-                    let destinationPath = NSURL(fileURLWithPath: documentsPath).appendingPathComponent("\(vid).mov", isDirectory: false)
+                    let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                    let fileURL = documentsDirectory.appendingPathComponent("\(vid).mov")
                     
-                    FileManager.default.createFile(atPath: destinationPath!.path, contents:videoData as Data?, attributes:nil)
+                    do {
+                        try videoData!.write(to: fileURL)
+                        print("\(vid) saved @ \(fileURL)")
+                    } catch {
+                        print("error saving file:", error)
+                    }
                     
-                    videoURL = destinationPath! as NSURL
-                    urlDict[vid] = videoURL
+                    mediaCount += 1
+                    
                     print("end download \(vid)")
-                    if urlDict.count == vidArr.count {
+                    if mediaCount == vidArr.count {
                         videosCurrentlyDownloading = false
                         print("\n\nVideo Downloads Completed\n\n")
+                        let date = Date().timeIntervalSince1970 + 604800
+                        game.setValue(Double(date), forKey: "weekDate")
                         game.setValue(true, forKey: "downloaded")
                     }
                 } else {
@@ -163,6 +170,36 @@ func downloadVideos() {
         }
     }
 }
+
+func weekTimer() -> Bool {
+    let date = Date().timeIntervalSince1970
+    let dateToCheck = game.double(forKey: "weekDate")
+    
+    if date > dateToCheck {
+        return true
+    }
+    
+    return false
+}
+
+func getDirectoryPath() -> String {
+    let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+    let documentsDirectory = paths[0]
+    return documentsDirectory
+}
+
+func retrieveVideo(name: String) -> String {
+    let fileManager = FileManager.default
+    let path = (getDirectoryPath() as NSString).appendingPathComponent("\(name).mov")
+    print("Pathfinder \(path)")
+    if fileManager.fileExists(atPath: path) {
+        return path
+    } else{
+        print("No Video Exists")
+        return ""
+    }
+}
+
 
 func uploadVideos() {
     let thing = ["subPostChapter15"]
@@ -178,7 +215,7 @@ func uploadVideos() {
         videosCurrentlyDownloading = true
         database.save(videoRecord) { (record, error) -> Void in
             if error == nil {
-                if urlDict.count == vidArr.count {
+                if mediaCount == vidArr.count {
                     print("\n\nVideo Uploads Complete\n\n")
                     videosCurrentlyDownloading = false
                 }

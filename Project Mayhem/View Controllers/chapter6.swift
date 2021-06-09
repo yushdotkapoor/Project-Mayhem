@@ -19,6 +19,7 @@ class chapter6: UIViewController {
     @IBOutlet weak var toolbar: UIStackView!
     @IBOutlet weak var textStack: UIStackView!
     @IBOutlet weak var back: UIButton!
+    @IBOutlet weak var circleView: CircularProgressBarView!
     
     var customAlert = HintAlert()
     
@@ -39,10 +40,13 @@ class chapter6: UIViewController {
     
     var pad: Bool = false
     
-
+    var motherCount:Double = 0
+    
+    let circleViewProgress:TimeInterval = 30
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         game.setValue("chap6", forKey: "active")
         wait {
             self.label.fadeIn()
@@ -55,6 +59,7 @@ class chapter6: UIViewController {
         sequenceOfFlashes.removeAll()
         actionArray.removeAll()
         index = 0
+        motherCount = 0
         vibrateShouldStop = false
         chap6Timer = false
         
@@ -82,6 +87,8 @@ class chapter6: UIViewController {
         if (UIDevice.current.model != "iPhone" && UIDevice.current.model != "iPod") || sensitive {
             pad = true
         }
+        
+        circleView.createCircularPath(radius: 10)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -92,6 +99,7 @@ class chapter6: UIViewController {
     }
     
     func setupMorseFlashesSequence() {
+        circleView.progressAnimation(duration: circleViewProgress)
         var translatedArray = morseString.stringToMorse()
         
         translatedArray.append("   ")
@@ -103,11 +111,13 @@ class chapter6: UIViewController {
                 sequenceOfFlashes.append(short)
                 actionArray.append("·")
                 actionArray.append("/")
+                motherCount += 1
             case "-":
                 sequenceOfFlashes.append(long)
                 sequenceOfFlashes.append(short)
                 actionArray.append("-")
                 actionArray.append("/")
+                motherCount += 1
             case " ":
                 sequenceOfFlashes.append(long)
                 actionArray.append(" ")
@@ -201,6 +211,8 @@ class chapter6: UIViewController {
             checkArrayFilled()
             index = 0
             scheduleTimer()
+            
+            circleView.progressAnimation(duration: circleViewProgress)
         }
     }
     
@@ -253,6 +265,8 @@ class chapter6: UIViewController {
     
     
     func turnFlashlight(on: Bool) {
+        //let amount:CGFloat = CGFloat(2.0 * Double.pi / motherCount)
+        //circleView.grow(amount: amount)
         let sensitive = game.bool(forKey: "photosensitive")
         if !sensitive {
             guard let device = AVCaptureDevice.default(for: AVMediaType.video) else { return }

@@ -51,6 +51,7 @@ class chapter9: UIViewController, UITextFieldDelegate {
         view.addGestureRecognizer(tapGesture)
         view.isUserInteractionEnabled = true
         
+        
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
     }

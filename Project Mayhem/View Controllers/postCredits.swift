@@ -7,6 +7,7 @@
 
 import UIKit
 import MessageUI
+import StoreKit
 
 class postCredits: UIViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var nextChap: UIButton!
@@ -26,6 +27,10 @@ class postCredits: UIViewController, MFMailComposeViewControllerDelegate {
         nextChap.isUserInteractionEnabled = false
         hint.alpha = 0.0
         hint.isUserInteractionEnabled = false
+        
+        wait {
+            self.actionForRating()
+        }
     }
     
     @IBAction func merchSite(_ sender: Any) {
@@ -37,8 +42,31 @@ class postCredits: UIViewController, MFMailComposeViewControllerDelegate {
         
     }
     
+    func actionForRating() {
+        let alert = UIAlertController(title: "Did you Enjoy Project Mayhem?", message: "Please consider leaving a rating or review!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Leave Star Rating on App Store", style: .default, handler: { [weak self]_ in
+            guard let scene = self?.view.window?.windowScene else {
+                print("no scene")
+                return
+            }
+            SKStoreReviewController.requestReview(in: scene)
+        }))
+        alert.addAction(UIAlertAction(title: "Leave Review on App Store", style: .default, handler: { _ in
+            self.writeReview()
+        }))
+        alert.addAction(UIAlertAction(title: "Leave Feedback to Developer", style: .default, handler: { _ in
+            self.leaveTheFeedback()
+        }))
+        present(alert, animated: true)
+    }
+    
     
     @IBAction func review(_ sender: Any) {
+      writeReview()
+    }
+    
+    func writeReview() {
         var components = URLComponents(url: URL(string: "https://itunes.apple.com/app/id1551711683")!, resolvingAgainstBaseURL: false)
         components?.queryItems = [URLQueryItem(name: "action", value: "write-review")]
         
@@ -52,7 +80,10 @@ class postCredits: UIViewController, MFMailComposeViewControllerDelegate {
     
     @IBAction func feedback(_ sender: Any) {
         //sendEmail()
-        
+        leaveTheFeedback()
+    }
+    
+    func leaveTheFeedback() {
         rList.removeAll()
         
         var selectNavigation = "MessagesNavigation"

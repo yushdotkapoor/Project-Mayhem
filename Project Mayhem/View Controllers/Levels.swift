@@ -49,14 +49,11 @@ class Levels: UIViewController {
     @IBOutlet weak var chap14Center: NSLayoutConstraint!
     @IBOutlet weak var chap15Center: NSLayoutConstraint!
     @IBOutlet weak var logo: UIImageView!
-    @IBOutlet weak var quality: UILabel!
-    @IBOutlet weak var qualityInfo: UIButton!
     @IBOutlet weak var messagesIcon: MIBadgeButton!
     
     
     var del = 0.5
     
-    var qualityTimer:Timer?
     var notificationTimer:Timer?
     
     var hasNotification:notificationInfo = notificationInfo()
@@ -79,14 +76,9 @@ class Levels: UIViewController {
         //loadAll()
         MusicPlayer.shared.volumeControl(factor: 0.4)
         
-        if !videosCurrentlyDownloading && urlDict.isEmpty {
+        if (!videosCurrentlyDownloading && !game.bool(forKey: "downloaded")) || weekTimer() {
             //uploadVideos()
             downloadVideos()
-        }
-        checkQuality()
-        
-        qualityTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            self.checkQuality()
         }
         
         notificationTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
@@ -165,22 +157,9 @@ class Levels: UIViewController {
     }
     
     
-    @objc func checkQuality() {
-        if videosCurrentlyDownloading {
-            quality.text = "LQ"
-            quality.textColor = .red
-            qualityInfo.tintColor = .red
-        }
-        else {
-            quality.text = "HQ"
-            quality.textColor = .green
-            qualityInfo.tintColor = .green
-            qualityTimer?.invalidate()
-        }
-    }
+  
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        qualityTimer?.invalidate()
         notificationTimer?.invalidate()
     }
     
@@ -332,12 +311,7 @@ class Levels: UIViewController {
         performSegue(withIdentifier: "levelsToChap5", sender: nil)
     }
     
-    
-    
-    @IBAction func qualityInfoTapped(_ sender: Any) {
-        alert(title: "Information", message: "This is an indicator for what quality parts of the game will be displayed as. LQ means \"low-quality\", indicating that not all elements of the game have been downloaded just yet. If you wait, the indicator will turn green and display HQ, or \"high-quality\". Sometimes it can take a few minutes to download fully.", actionTitle: "Okay")
-    }
-    
+   
     
     func animate(constraint: NSLayoutConstraint) {
         UIView.animate(withDuration: 0.5, delay: del, options: .curveEaseOut, animations: {
@@ -360,15 +334,6 @@ class Levels: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: selectNavigation)
         self.present(controller, animated: true, completion: nil)
-        
-        // Safe Present
-        /*
-         if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MessagesNavigation") as? ChatViewController
-         {
-         present(vc, animated: true, completion: nil)
-         }
-         
-         */
         
     }
     

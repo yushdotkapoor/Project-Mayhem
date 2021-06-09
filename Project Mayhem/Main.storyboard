@@ -31,6 +31,52 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Downloader-->
+        <scene sceneID="cmj-mU-2cl">
+            <objects>
+                <viewController id="Lzw-hF-nwv" customClass="Downloader" customModule="Project_Mayhem" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Kp-M9-s18">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downloading Content" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QB6-xz-HdJ">
+                                <rect key="frame" x="114" y="441" width="200" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="KQZ-zg-J1f"/>
+                                    <constraint firstAttribute="height" constant="44" id="og6-vm-yaW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="84Q-gX-k9f" customClass="CircularProgressBarView" customModule="Project_Mayhem" customModuleProvider="target">
+                                <rect key="frame" x="89" y="338" width="250" height="250"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="L00-yb-CEj"/>
+                                    <constraint firstAttribute="width" secondItem="84Q-gX-k9f" secondAttribute="height" multiplier="1:1" id="f3g-zF-CVJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Z0g-cF-c5J"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QB6-xz-HdJ" firstAttribute="centerX" secondItem="6Kp-M9-s18" secondAttribute="centerX" id="P6I-yD-KIP"/>
+                            <constraint firstItem="84Q-gX-k9f" firstAttribute="centerX" secondItem="6Kp-M9-s18" secondAttribute="centerX" id="Tpt-2t-UPK"/>
+                            <constraint firstItem="QB6-xz-HdJ" firstAttribute="centerY" secondItem="6Kp-M9-s18" secondAttribute="centerY" id="WGW-dF-Hpd"/>
+                            <constraint firstItem="84Q-gX-k9f" firstAttribute="centerY" secondItem="6Kp-M9-s18" secondAttribute="centerY" id="xcD-zi-kNg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="circleView" destination="84Q-gX-k9f" id="1uf-r6-eKj"/>
+                        <outlet property="label" destination="QB6-xz-HdJ" id="yuL-sJ-cci"/>
+                        <segue destination="LOs-5Y-8Py" kind="presentation" identifier="DownloadToMain" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="QSc-TT-MC7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DhM-07-zim" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="73" y="-1313"/>
+        </scene>
         <!--Introduction-->
         <scene sceneID="Qkb-WU-Bj2">
             <objects>
@@ -118,8 +164,8 @@
                     </view>
                     <connections>
                         <outlet property="notes" destination="aa7-Nx-wur" id="GkN-8J-Dvr"/>
-                        <segue destination="LOs-5Y-8Py" kind="presentation" identifier="IntroductionToMain" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="6nd-wb-BDU"/>
                         <segue destination="fkB-KW-fdR" kind="presentation" identifier="introductionToSettings" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="tG0-fy-sbd"/>
+                        <segue destination="Lzw-hF-nwv" kind="presentation" identifier="IntroToDownloads" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="VoU-WP-h31"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2LO-22-Fyz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -138,7 +184,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="2aE-lW-wLG">
-                                        <rect key="frame" x="40" y="144" width="348" height="1596"/>
+                                        <rect key="frame" x="40" y="144" width="348" height="1451"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SPS-3R-K7E">
                                                 <rect key="frame" x="0.0" y="0.0" width="348" height="115"/>
@@ -380,42 +426,14 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="M7k-QA-edX">
-                                                <rect key="frame" x="0.0" y="1139" width="348" height="70"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lfP-dS-Q5A">
-                                                        <rect key="frame" x="0.0" y="0.0" width="348" height="31"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Cellular:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9lT-eE-WbH">
-                                                                <rect key="frame" x="0.0" y="0.0" width="299" height="31"/>
-                                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
-                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UBd-a9-wpx">
-                                                                <rect key="frame" x="299" y="0.0" width="51" height="31"/>
-                                                                <connections>
-                                                                    <action selector="cellularSwitchChanged:" destination="fkB-KW-fdR" eventType="valueChanged" id="Sg1-6W-vx3"/>
-                                                                </connections>
-                                                            </switch>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When on, this option will use Cellular data to download some content of the app" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DSD-4x-KQR">
-                                                        <rect key="frame" x="0.0" y="46" width="348" height="24"/>
-                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For best experience, make sure haptics(Settings) Are on and that minimize flashing(above) is turned off." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="elD-NK-I5e">
-                                                <rect key="frame" x="0.0" y="1284" width="348" height="24"/>
+                                                <rect key="frame" x="0.0" y="1139" width="348" height="24"/>
                                                 <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Xwn-Qs-dJJ">
-                                                <rect key="frame" x="0.0" y="1383" width="348" height="126"/>
+                                                <rect key="frame" x="0.0" y="1238" width="348" height="126"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1U-pc-kGe" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="348" height="32"/>
@@ -444,7 +462,7 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cPc-g0-tUH">
-                                                <rect key="frame" x="0.0" y="1584" width="348" height="12"/>
+                                                <rect key="frame" x="0.0" y="1439" width="348" height="12"/>
                                                 <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -498,7 +516,6 @@
                     </view>
                     <connections>
                         <outlet property="betterHintButton" destination="FNa-Iy-kxb" id="12M-gb-G37"/>
-                        <outlet property="cellularSwitch" destination="UBd-a9-wpx" id="uJG-DY-g32"/>
                         <outlet property="dhruvSoundCloud" destination="2tg-RS-6vw" id="KtY-cB-Fb2"/>
                         <outlet property="feedbackButton" destination="qPc-AB-s24" id="GRb-SI-3lg"/>
                         <outlet property="fiveHintPurchasePrice" destination="XGI-2G-MJW" id="lZ6-R6-Mzg"/>
@@ -612,35 +629,6 @@
                                     <constraint firstAttribute="width" secondItem="zcX-1U-kxc" secondAttribute="height" multiplier="75:32" id="vwZ-Jl-Hkk"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bd1-xI-yZK">
-                                <rect key="frame" x="20" y="59" width="30" height="35"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rv6-kE-qLI">
-                                        <rect key="frame" x="0.0" y="0.0" width="30" height="15"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="15" id="tFE-is-v5X"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="12"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IS6-T6-Hld">
-                                        <rect key="frame" x="0.0" y="21" width="15" height="13.666666666666671"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="IS6-T6-Hld" secondAttribute="height" multiplier="1:1" id="QKK-lz-hnF"/>
-                                            <constraint firstAttribute="height" constant="15" id="T52-TI-dfu"/>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="info.circle" catalog="system"/>
-                                        <connections>
-                                            <action selector="qualityInfoTapped:" destination="GTF-CI-eye" eventType="touchUpInside" id="vgh-bm-DAc"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="0St-3R-IuT"/>
-                                    <constraint firstItem="rv6-kE-qLI" firstAttribute="leading" secondItem="bd1-xI-yZK" secondAttribute="leadingMargin" id="mG2-VU-gfv"/>
-                                </constraints>
-                            </stackView>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Kp-CN-3lt" customClass="MIBadgeButton" customModule="Project_Mayhem" customModuleProvider="target">
                                 <rect key="frame" x="388" y="64" width="25" height="25"/>
                                 <constraints>
@@ -877,12 +865,10 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="HCA-o4-tA2" firstAttribute="trailing" secondItem="0Kp-CN-3lt" secondAttribute="trailing" constant="15" id="2rP-wy-SO5"/>
-                            <constraint firstItem="bd1-xI-yZK" firstAttribute="top" secondItem="HCA-o4-tA2" secondAttribute="top" constant="15" id="40I-aN-Mhc"/>
                             <constraint firstItem="0Kp-CN-3lt" firstAttribute="top" secondItem="HCA-o4-tA2" secondAttribute="top" constant="20" id="5C8-x9-JhA"/>
                             <constraint firstItem="zcX-1U-kxc" firstAttribute="centerX" secondItem="KEg-JP-djo" secondAttribute="centerX" id="86h-SY-jCM"/>
                             <constraint firstItem="zcX-1U-kxc" firstAttribute="top" secondItem="KEg-JP-djo" secondAttribute="top" constant="78" id="DxR-BT-lkV"/>
                             <constraint firstItem="foj-Fg-5BA" firstAttribute="top" secondItem="zcX-1U-kxc" secondAttribute="bottom" constant="50" id="E0D-hU-jGA"/>
-                            <constraint firstItem="bd1-xI-yZK" firstAttribute="leading" secondItem="HCA-o4-tA2" secondAttribute="leading" constant="20" id="Kb5-J9-ZjX"/>
                             <constraint firstItem="foj-Fg-5BA" firstAttribute="centerX" secondItem="KEg-JP-djo" secondAttribute="centerX" id="aBP-pc-FKD"/>
                             <constraint firstItem="foj-Fg-5BA" firstAttribute="trailing" secondItem="KEg-JP-djo" secondAttribute="trailing" id="i6e-6G-viY"/>
                             <constraint firstItem="foj-Fg-5BA" firstAttribute="leading" secondItem="KEg-JP-djo" secondAttribute="leading" id="k93-rg-BPj"/>
@@ -924,8 +910,6 @@
                         <outlet property="logo" destination="zcX-1U-kxc" id="pS5-YB-eNn"/>
                         <outlet property="logoWidth" destination="6bv-hy-ikq" id="ZwG-Zk-GN0"/>
                         <outlet property="messagesIcon" destination="0Kp-CN-3lt" id="Y1u-dH-1N6"/>
-                        <outlet property="quality" destination="rv6-kE-qLI" id="Ksl-4L-fcG"/>
-                        <outlet property="qualityInfo" destination="IS6-T6-Hld" id="DW1-nB-73h"/>
                         <outlet property="scrollView" destination="foj-Fg-5BA" id="FNU-W4-BLP"/>
                         <segue destination="F4e-Zn-CZO" kind="presentation" identifier="LevelsToChap1" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="lvv-Yn-sCd"/>
                         <segue destination="Eqn-dd-f4S" kind="presentation" identifier="LevelsToProjectVenom" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="7wN-44-fSu"/>
@@ -1521,6 +1505,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LhD-ZY-WNW">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vision" translatesAutoresizingMaskIntoConstraints="NO" id="iSI-51-N9G">
+                                        <rect key="frame" x="-30" y="219" width="488" height="488"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="iSI-51-N9G" secondAttribute="height" multiplier="1:1" id="0Jw-3H-vxs"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="iSI-51-N9G" firstAttribute="centerX" secondItem="LhD-ZY-WNW" secondAttribute="centerX" id="DIh-RM-NbB"/>
+                                    <constraint firstItem="iSI-51-N9G" firstAttribute="leading" secondItem="LhD-ZY-WNW" secondAttribute="leading" constant="-30" id="RZh-P1-rEy"/>
+                                    <constraint firstItem="iSI-51-N9G" firstAttribute="centerY" secondItem="LhD-ZY-WNW" secondAttribute="centerY" id="fob-sU-4nn"/>
+                                    <constraint firstAttribute="trailing" secondItem="iSI-51-N9G" secondAttribute="trailing" constant="-30" id="ihM-8o-fo4"/>
+                                </constraints>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tyW-gm-Hlo">
                                 <rect key="frame" x="20" y="832" width="388" height="50"/>
                                 <subviews>
@@ -1573,7 +1575,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message From the CEO" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBD-ia-bKh">
                                                 <rect key="frame" x="0.0" y="0.0" width="388" height="34.666666666666664"/>
                                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="30"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="Iey-n5-Pzv">
@@ -1583,7 +1585,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="388" height="433"/>
                                                         <string key="text">Dear employees, I am pleased to announce that one week from today, we will revolutionize human nature with INTELLECT. Our scientists have been working for decades developing ‘Brane’, our custom programming language and integrating it with a human mind. Vision Consolidated will become the pioneer in Brain-Computer Interfaces (BCIs) and have an incredible impact on the future! -Yush “King” Kapoor"</string>
                                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="25"/>
-                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="e" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xX1-h3-ig0">
@@ -1592,7 +1594,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="fnK-ns-Lhx"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="10"/>
-                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -1614,12 +1616,16 @@
                         <constraints>
                             <constraint firstItem="tyW-gm-Hlo" firstAttribute="leading" secondItem="6R1-ME-AS5" secondAttribute="leading" constant="20" id="BwW-eF-4Bw"/>
                             <constraint firstItem="6R1-ME-AS5" firstAttribute="trailing" secondItem="zaE-TJ-Ije" secondAttribute="trailing" id="FFn-du-Ikd"/>
+                            <constraint firstAttribute="bottom" secondItem="LhD-ZY-WNW" secondAttribute="bottom" id="Qau-0b-jyZ"/>
                             <constraint firstItem="zaE-TJ-Ije" firstAttribute="leading" secondItem="6R1-ME-AS5" secondAttribute="leading" id="VYG-4R-HiV"/>
                             <constraint firstItem="zaE-TJ-Ije" firstAttribute="centerX" secondItem="Mal-6o-Czp" secondAttribute="centerX" id="Xg0-F6-n3R"/>
                             <constraint firstItem="6R1-ME-AS5" firstAttribute="trailing" secondItem="tyW-gm-Hlo" secondAttribute="trailing" constant="20" id="aLc-DZ-xK9"/>
                             <constraint firstItem="6R1-ME-AS5" firstAttribute="bottom" secondItem="tyW-gm-Hlo" secondAttribute="bottom" constant="10" id="axS-Tb-8Hp"/>
                             <constraint firstItem="zaE-TJ-Ije" firstAttribute="top" secondItem="Mal-6o-Czp" secondAttribute="top" id="gem-d5-8Ad"/>
                             <constraint firstAttribute="bottom" secondItem="zaE-TJ-Ije" secondAttribute="bottom" id="i3f-4H-7ec"/>
+                            <constraint firstItem="LhD-ZY-WNW" firstAttribute="leading" secondItem="6R1-ME-AS5" secondAttribute="leading" id="inn-34-9Ib"/>
+                            <constraint firstItem="LhD-ZY-WNW" firstAttribute="top" secondItem="Mal-6o-Czp" secondAttribute="top" id="jUU-8w-FRK"/>
+                            <constraint firstItem="6R1-ME-AS5" firstAttribute="trailing" secondItem="LhD-ZY-WNW" secondAttribute="trailing" id="lIS-rk-EMq"/>
                             <constraint firstAttribute="bottom" secondItem="zaE-TJ-Ije" secondAttribute="bottom" id="wH0-QI-8ZJ"/>
                         </constraints>
                         <variation key="default">
@@ -1629,19 +1635,21 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="background" destination="LhD-ZY-WNW" id="Dwl-CQ-6rr"/>
                         <outlet property="hint" destination="HXW-Qq-Nrm" id="hFD-MD-TAa"/>
                         <outlet property="message" destination="RVi-ZT-csJ" id="CZw-qZ-Q3s"/>
                         <outlet property="nextChap" destination="LUK-Ld-zl8" id="2f9-uZ-SU5"/>
                         <outlet property="scrollView" destination="zaE-TJ-Ije" id="ItJ-l0-RZt"/>
                         <outlet property="stack" destination="YRL-IC-i13" id="XOh-Ck-WoH"/>
                         <outlet property="toolbar" destination="tyW-gm-Hlo" id="xGL-SC-d60"/>
+                        <outlet property="visionLogo" destination="iSI-51-N9G" id="rzW-l6-gqK"/>
                         <segue destination="GTF-CI-eye" kind="presentation" identifier="chap3ToHome" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="ymq-VI-4W6"/>
                         <segue destination="3iP-v0-bga" kind="presentation" identifier="chap3ToChap4" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="gzU-Ae-XQS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Voj-zI-4Nb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3300.0000000000005" y="93.75"/>
+            <point key="canvasLocation" x="3300" y="93.30453563714903"/>
         </scene>
         <!--Chapter5-->
         <scene sceneID="USc-yr-FI2">
@@ -1861,6 +1869,14 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kWG-da-nN3" customClass="CircularProgressBarView" customModule="Project_Mayhem" customModuleProvider="target">
+                                <rect key="frame" x="363" y="44" width="45" height="45"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="kWG-da-nN3" secondAttribute="height" multiplier="1:1" id="ewL-zf-rXi"/>
+                                    <constraint firstAttribute="height" constant="45" id="zFq-Ff-cIQ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MEh-9R-0Av"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1868,6 +1884,7 @@
                             <constraint firstItem="VxA-d7-cEp" firstAttribute="leading" secondItem="MEh-9R-0Av" secondAttribute="leading" constant="20" id="6zM-VB-Ort"/>
                             <constraint firstItem="rCI-rh-wJB" firstAttribute="centerY" secondItem="7I3-mT-2B5" secondAttribute="centerY" id="9aW-TP-3PO"/>
                             <constraint firstItem="MEh-9R-0Av" firstAttribute="bottom" secondItem="VxA-d7-cEp" secondAttribute="bottom" constant="10" id="FO9-pH-Wa1"/>
+                            <constraint firstItem="kWG-da-nN3" firstAttribute="top" secondItem="MEh-9R-0Av" secondAttribute="top" id="GNe-cu-1Xo"/>
                             <constraint firstItem="2XC-sK-4mn" firstAttribute="top" secondItem="MEh-9R-0Av" secondAttribute="top" constant="50" id="HNt-fq-uhw"/>
                             <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="rCI-rh-wJB" secondAttribute="bottom" id="HyQ-oP-uaw"/>
                             <constraint firstItem="2XC-sK-4mn" firstAttribute="leading" secondItem="MEh-9R-0Av" secondAttribute="leading" constant="20" id="JaX-Hd-zUQ"/>
@@ -1876,6 +1893,7 @@
                             <constraint firstItem="rCI-rh-wJB" firstAttribute="leading" secondItem="7I3-mT-2B5" secondAttribute="leading" priority="900" id="WPm-2K-KmR"/>
                             <constraint firstItem="VTG-K4-2nW" firstAttribute="top" secondItem="2XC-sK-4mn" secondAttribute="bottom" constant="30" id="Yvr-T4-dWR"/>
                             <constraint firstItem="rCI-rh-wJB" firstAttribute="centerX" secondItem="7I3-mT-2B5" secondAttribute="centerX" id="aQc-nh-dpw"/>
+                            <constraint firstItem="MEh-9R-0Av" firstAttribute="trailing" secondItem="kWG-da-nN3" secondAttribute="trailing" constant="20" id="efh-Zy-VRo"/>
                             <constraint firstItem="cdf-fC-1aw" firstAttribute="leading" secondItem="MEh-9R-0Av" secondAttribute="leading" constant="50" id="fSd-UQ-GcI"/>
                             <constraint firstItem="cdf-fC-1aw" firstAttribute="centerY" secondItem="7I3-mT-2B5" secondAttribute="centerY" id="gqw-pv-IU5"/>
                             <constraint firstAttribute="trailing" secondItem="rCI-rh-wJB" secondAttribute="trailing" priority="900" id="ohu-S4-Ksd"/>
@@ -1886,6 +1904,7 @@
                     </view>
                     <connections>
                         <outlet property="back" destination="HWv-3X-JfI" id="oac-Z6-cmQ"/>
+                        <outlet property="circleView" destination="kWG-da-nN3" id="RCv-FD-IaI"/>
                         <outlet property="heder" destination="2XC-sK-4mn" id="c8v-Ma-B37"/>
                         <outlet property="hint" destination="RDX-JJ-Na7" id="Wt2-KY-ITv"/>
                         <outlet property="label" destination="2XC-sK-4mn" id="71b-Eq-fe6"/>
@@ -1899,7 +1918,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qes-32-v9h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1711.5942028985507" y="809.59821428571422"/>
+            <point key="canvasLocation" x="1710.2803738317757" y="809.28725701943847"/>
         </scene>
         <!--Chapter10-->
         <scene sceneID="pKr-SN-Y9L">
@@ -4491,7 +4510,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="8eE-Im-0TI"/>
-        <segue reference="AYo-vC-fRx"/>
+        <segue reference="gzU-Ae-XQS"/>
         <segue reference="dHH-0f-i87"/>
         <segue reference="j8f-cg-Hji"/>
         <segue reference="9I8-69-dGt"/>
@@ -4501,14 +4520,14 @@
         <segue reference="o2i-uy-ToW"/>
         <segue reference="3Az-ps-1h0"/>
         <segue reference="WVd-jK-rxp"/>
-        <segue reference="9vb-rW-7Ne"/>
+        <segue reference="hHU-xE-2Nw"/>
         <segue reference="rPy-e3-cah"/>
         <segue reference="4Jn-Pi-K9C"/>
         <segue reference="lvv-Yn-sCd"/>
-        <segue reference="UJg-12-gS4"/>
-        <segue reference="Jbk-WL-IF2"/>
+        <segue reference="ymq-VI-4W6"/>
+        <segue reference="DBI-6g-87H"/>
         <segue reference="DOc-8U-B4Z"/>
-        <segue reference="TbV-l9-R97"/>
+        <segue reference="MZk-YQ-gFo"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Bypass" width="2500" height="2500"/>
@@ -4523,13 +4542,13 @@
         <image name="QR3_2" width="80" height="80"/>
         <image name="QR3_3" width="80" height="80"/>
         <image name="Venom-3" width="4000" height="3000"/>
+        <image name="Vision" width="2500" height="2500"/>
         <image name="arrow.right.square.fill" catalog="system" width="128" height="114"/>
         <image name="battery.25" catalog="system" width="128" height="61"/>
         <image name="cancer" width="500" height="500"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="delete.left" catalog="system" width="128" height="104"/>
         <image name="drop.fill" catalog="system" width="101" height="128"/>
-        <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="instagram" width="60" height="60"/>
         <image name="lightbulb.fill" catalog="system" width="113" height="128"/>
         <image name="low_Tide" width="4096" height="2160"/>

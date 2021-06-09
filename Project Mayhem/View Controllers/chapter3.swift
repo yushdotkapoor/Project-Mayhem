@@ -14,6 +14,8 @@ class chapter3: UIViewController {
     @IBOutlet weak var stack: UIStackView!
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var background: UIView!
+    @IBOutlet weak var visionLogo: UIImageView!
     
     var customAlert = HintAlert()
     
@@ -44,6 +46,8 @@ class chapter3: UIViewController {
         nextChap.alpha = 0.0
         nextChap.isUserInteractionEnabled = false
         scrollView.isUserInteractionEnabled = false
+        background.alpha = 0
+        visionLogo.alpha = 0.5
         alert.showAlert(title: "Message from Vision Consolidated", message: "Welcome to the Vision Consolidated Research and Development Division! We hope you have a pleasant experience working with us!", viewController: self, buttonPush: #selector(dismissMessageAlert))
     }
     
@@ -103,6 +107,7 @@ class chapter3: UIViewController {
             }, completion: { _ in
                 self.scrollView.flashScrollIndicators()
                 self.scrollView.isUserInteractionEnabled = true
+                self.background.fadeIn()
                 self.stack.fadeIn()
                 self.view.bringSubviewToFront(self.toolbar)
                 wait {

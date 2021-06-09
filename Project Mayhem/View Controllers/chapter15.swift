@@ -38,7 +38,7 @@ class chapter15: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate 
     let threeColor = UIColor(red: 54/255, green: 37/255, blue: 180/255, alpha: 1.0)
     let fourColor = UIColor(red: 191/255, green: 134/255, blue: 160/255, alpha: 1.0)
     let fiveColor = UIColor(red: 169/255, green: 217/255, blue: 142/255, alpha: 1.0)
-    let sixColor = UIColor(red: 35/255, green: 214/255, blue: 41/255, alpha: 1.0)
+    let sixColor = UIColor(red: 100/255, green: 76/255, blue:127/255, alpha: 1.0)
     
     var captures:[Bool] = [false, false, false, false, false, false]
     var nextIndex:Int = 0

@@ -9,13 +9,12 @@ import AppsFlyerLib
 import Firebase
 import Network
 import StoreKit
+import Siren
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, SKRequestDelegate, MessagingDelegate {
     
     var window: UIWindow?
-    
-    let monitor = NWPathMonitor(requiredInterfaceType: .wifi)
     
     let gcmMessageIDKey = "gcm.message_id"
     
@@ -31,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, S
         
         FirebaseApp.configure()
         
+        Siren.shared.wail()
+            
         OneSignal.initWithLaunchOptions(launchOptions)
         OneSignal.setAppId("12db9d9f-4c00-4d45-83e7-0cf7e40026cd")
         
@@ -38,7 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, S
         //default values for the start of the game
         if game.string(forKey: "name") == nil {
             game.setValue(1.0, forKey: "volume")
-            game.setValue(true, forKey: "useCellular")
             game.setValue(false, forKey: "photosensitive")
         }
         
@@ -59,22 +59,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, S
                 print(IAPs as Any)
             }
         }
-        
-        
-        monitor.pathUpdateHandler = { path in
-            if path.status == .satisfied {
-                game.setValue(false, forKey: "onCellular")
-                //connected to wifi
-            } else {
-                game.setValue(true, forKey: "onCellular")
-                // not connected to wifi
-            }
-            
-            print(path.isExpensive)
-        }
-        
-        let queue = DispatchQueue(label: "Monitor")
-        monitor.start(queue: queue)
         
         
         Messaging.messaging().delegate = self

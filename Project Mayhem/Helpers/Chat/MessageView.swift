@@ -117,6 +117,13 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
             let read = value["recipients"] as? [String:String] ?? [:]
             let messages = value["messages"] as! NSDictionary
             
+            
+            
+            if threadID == "A5CEBB87-665D-4F0F-B307-E324FBA0B9A7 - ADMIN" {
+                print("Bazinga \(messages)")
+                print(messages.count)
+            }
+            
             if messages.count > 2 {
                 
                 self.getCurrentMessage(threadID: threadID)

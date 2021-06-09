@@ -82,7 +82,7 @@ class VideoPlayer : NSObject {
             playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         }
         
-        initialSetupWithURL(url: urlDict[urlAsset] ?? vidToURL(name: "\(urlAsset)Compressed", type: "mov"))
+        initialSetupWithURL(url: URL(string: "file://\(retrieveVideo(name: urlAsset))")!)
         
         prepareToPlay()
     }
@@ -261,7 +261,7 @@ class VideoPlayer : NSObject {
             videoOutput = AVPlayerItemVideoOutput(pixelBufferAttributes: videoOutputOptions)
             playerItem = AVPlayerItem(asset: asset)
             
-           
+            
             AVAudioSession.sharedInstance().addObserver(self, forKeyPath: "outputVolume", options: [.new], context: nil)
             
             if let item = playerItem {
@@ -403,9 +403,9 @@ class VideoPlayer : NSObject {
         cleanUp()
     }
     
-    private func initialSetupWithURL(url:NSURL) {
+    private func initialSetupWithURL(url:URL) {
         let options = [AVURLAssetPreferPreciseDurationAndTimingKey : true]
-        urlAsset = AVURLAsset(url: url as URL, options: options)
+        urlAsset = AVURLAsset(url: url, options: options)
     }
     
     // MARK: - Observations
