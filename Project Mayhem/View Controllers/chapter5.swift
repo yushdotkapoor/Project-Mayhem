@@ -28,8 +28,8 @@ class chapter5: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if isOnPhoneCall() {
-            let alertController = UIAlertController(title: "Error", message: "Functionality of the application will not work if you are in a call, please disconnect the call to continue playing", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            let alertController = UIAlertController(title: "Error".localized(), message: "Functionality of the application will not work if you are in a call, please disconnect the call to continue playing".localized(), preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "Okay".localized(), style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
         }
@@ -83,7 +83,7 @@ class chapter5: UIViewController {
     func eggProgress() {
         if eggVal > 20 {
             eggComplete = true
-            alert(title: "Nice!", message: "You've found an easter egg! It's totally useless, just like me!", actionTitle: "Yay!",actions: {
+            alert(title: "Nice!".localized(), message: "You've found an easter egg! It's totally useless, just like me!".localized(), actionTitle: "Yay!".localized(),actions: {
                 self.recurse()
             })
         }

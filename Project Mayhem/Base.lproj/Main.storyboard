@@ -163,7 +163,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="greet" destination="x8Q-rY-YcY" id="kVO-xB-9gF"/>
+                        <outlet property="hope" destination="asA-G8-kij" id="NOB-Hm-szT"/>
                         <outlet property="notes" destination="aa7-Nx-wur" id="GkN-8J-Dvr"/>
+                        <outlet property="t2n" destination="m3J-LF-pCd" id="JxZ-CM-OPR"/>
+                        <outlet property="welc" destination="uoZ-3Q-km2" id="t09-fe-zMX"/>
                         <segue destination="fkB-KW-fdR" kind="presentation" identifier="introductionToSettings" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="tG0-fy-sbd"/>
                         <segue destination="Lzw-hF-nwv" kind="presentation" identifier="IntroToDownloads" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="VoU-WP-h31"/>
                     </connections>
@@ -515,17 +519,27 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bestExp" destination="elD-NK-I5e" id="uwQ-Sa-brd"/>
                         <outlet property="betterHintButton" destination="FNa-Iy-kxb" id="12M-gb-G37"/>
+                        <outlet property="betterHintDescription" destination="MOF-1K-Suq" id="nNR-X8-pAu"/>
+                        <outlet property="buy" destination="3Iv-rj-1cv" id="Gte-H5-ux1"/>
+                        <outlet property="dev" destination="8Un-LG-qF5" id="fd1-e6-Kai"/>
                         <outlet property="dhruvSoundCloud" destination="2tg-RS-6vw" id="KtY-cB-Fb2"/>
                         <outlet property="feedbackButton" destination="qPc-AB-s24" id="GRb-SI-3lg"/>
                         <outlet property="fiveHintPurchasePrice" destination="XGI-2G-MJW" id="lZ6-R6-Mzg"/>
                         <outlet property="fiveHintsButton" destination="0yI-ra-ehQ" id="xci-HP-4uS"/>
                         <outlet property="fiveHintsDescription" destination="2Bg-FR-pHl" id="Ecc-CN-ObG"/>
                         <outlet property="flashingSwitch" destination="K22-SS-wCe" id="36n-zI-j4q"/>
+                        <outlet property="minFlash" destination="M4s-Ft-2fo" id="HIG-dB-bwL"/>
+                        <outlet property="minFlashDescription" destination="QFI-DI-Cei" id="0bf-Sc-7zO"/>
+                        <outlet property="mus" destination="4I6-sB-xev" id="PKi-zJ-omk"/>
                         <outlet property="purchaseRestore" destination="I1U-pc-kGe" id="MTI-Zu-lhh"/>
                         <outlet property="purchaseprice" destination="AUm-Sy-6Pl" id="1s1-EZ-AEd"/>
                         <outlet property="slider" destination="79i-1e-J6k" id="rsi-eZ-4OY"/>
+                        <outlet property="titl" destination="ILS-fD-ilw" id="uc6-03-8bh"/>
                         <outlet property="version" destination="cPc-g0-tUH" id="Q0v-A1-xZD"/>
+                        <outlet property="vol" destination="5dT-PK-sRs" id="UPA-mN-Xuz"/>
+                        <outlet property="volumeDescription" destination="a4H-ff-fYz" id="sXA-j6-b1L"/>
                         <outlet property="welcStatementButton" destination="hdP-6N-tL3" id="1s6-Gr-Tx2"/>
                         <segue destination="X6o-mc-4xf" kind="presentation" identifier="settingsToIntroduction" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="TbV-l9-R97"/>
                     </connections>
@@ -1083,7 +1097,7 @@
                                         <color key="tintColor" systemColor="systemYellowColor"/>
                                         <state key="normal" backgroundImage="lightbulb.fill" catalog="system"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AnK-pj-jk6">
+                                    <button opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AnK-pj-jk6">
                                         <rect key="frame" x="169" y="1" width="50" height="48.666666666666671"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="AnK-pj-jk6" secondAttribute="height" multiplier="1:1" id="rvZ-gA-Fbv"/>
@@ -1107,7 +1121,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double tap to skip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKR-ca-6ep">
-                                <rect key="frame" x="204.33333333333337" y="795" width="193.66666666666663" height="17"/>
+                                <rect key="frame" x="204.33333333333337" y="84" width="193.66666666666663" height="17"/>
                                 <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="12"/>
                                 <color key="textColor" systemColor="systemGreenColor"/>
                                 <nil key="highlightedColor"/>
@@ -1117,8 +1131,8 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="auQ-5y-yfw" firstAttribute="leading" secondItem="cFm-6Y-RvH" secondAttribute="leading" constant="20" id="GuJ-Gh-q2L"/>
-                            <constraint firstItem="auQ-5y-yfw" firstAttribute="top" secondItem="CKR-ca-6ep" secondAttribute="bottom" constant="20" id="YbQ-yT-sRC"/>
                             <constraint firstItem="cFm-6Y-RvH" firstAttribute="trailing" secondItem="auQ-5y-yfw" secondAttribute="trailing" constant="20" id="aNb-fy-ZBh"/>
+                            <constraint firstItem="CKR-ca-6ep" firstAttribute="top" secondItem="cFm-6Y-RvH" secondAttribute="top" constant="40" id="adO-BS-KOs"/>
                             <constraint firstAttribute="trailing" secondItem="CKR-ca-6ep" secondAttribute="trailing" constant="30" id="fja-Ve-Zyi"/>
                             <constraint firstItem="cFm-6Y-RvH" firstAttribute="bottom" secondItem="auQ-5y-yfw" secondAttribute="bottom" constant="10" id="gBP-fu-N0k"/>
                         </constraints>
@@ -1347,6 +1361,7 @@
                     <connections>
                         <outlet property="ScrollView" destination="6xm-nQ-ogQ" id="txQ-on-EsZ"/>
                         <outlet property="clickTheRick" destination="8LH-as-vwV" id="tBt-C1-nte"/>
+                        <outlet property="enterName" destination="wgr-lI-HgB" id="rPo-mv-BR8"/>
                         <outlet property="glad" destination="ix0-xW-b5f" id="xlR-oF-0zg"/>
                         <outlet property="good" destination="Kv9-c2-Nts" id="ejD-48-Zv0"/>
                         <outlet property="hint" destination="feB-6j-pce" id="Lon-Sy-gfz"/>
@@ -1355,6 +1370,7 @@
                         <outlet property="nameStack" destination="eWy-Ls-Vdf" id="M6b-YF-xBz"/>
                         <outlet property="nextChap" destination="67a-h0-9FW" id="ZU9-gw-shE"/>
                         <outlet property="now" destination="Rk6-6p-Y5z" id="dFF-ia-2qS"/>
+                        <outlet property="submissionButton" destination="r3m-h7-wzm" id="huv-La-gQ9"/>
                         <outlet property="toolbar" destination="nf1-kC-2cG" id="ZCc-ji-QyR"/>
                         <outlet property="welcome" destination="xkP-PB-AW0" id="h2S-xM-WC1"/>
                         <segue destination="GTF-CI-eye" kind="presentation" identifier="chap1ToHome" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="os8-UG-WDH"/>
@@ -1485,6 +1501,9 @@
                     <connections>
                         <outlet property="begin" destination="s0j-pf-Dpx" id="OPV-tW-X6g"/>
                         <outlet property="hint" destination="mqW-gL-CC0" id="AO7-rT-Gyq"/>
+                        <outlet property="l1" destination="Fay-Kj-Tmb" id="WQZ-bV-HIj"/>
+                        <outlet property="l2" destination="79N-T7-HQ8" id="iHh-aO-1pR"/>
+                        <outlet property="l3" destination="Sht-t6-CAj" id="VNa-W7-OgK"/>
                         <outlet property="nextChap" destination="9Rv-9m-s0t" id="2he-Wj-OiK"/>
                         <outlet property="toolbar" destination="d9W-15-ftp" id="aeE-9U-NpB"/>
                         <outlet property="viewHeight" destination="UwD-Ef-Ya0" id="xxL-Bw-u3N"/>
@@ -1638,6 +1657,7 @@
                         <outlet property="background" destination="LhD-ZY-WNW" id="Dwl-CQ-6rr"/>
                         <outlet property="hint" destination="HXW-Qq-Nrm" id="hFD-MD-TAa"/>
                         <outlet property="message" destination="RVi-ZT-csJ" id="CZw-qZ-Q3s"/>
+                        <outlet property="msgfrmceo" destination="XBD-ia-bKh" id="PTN-U8-Bvx"/>
                         <outlet property="nextChap" destination="LUK-Ld-zl8" id="2f9-uZ-SU5"/>
                         <outlet property="scrollView" destination="zaE-TJ-Ije" id="ItJ-l0-RZt"/>
                         <outlet property="stack" destination="YRL-IC-i13" id="XOh-Ck-WoH"/>
@@ -1911,6 +1931,7 @@
                         <outlet property="nextChap" destination="kx6-Y0-EW8" id="61d-6X-JOB"/>
                         <outlet property="textField" destination="X5L-HA-LGC" id="v3S-Ub-MSc"/>
                         <outlet property="textStack" destination="VTG-K4-2nW" id="Kdy-GF-aj3"/>
+                        <outlet property="titl" destination="2XC-sK-4mn" id="tej-yA-boR"/>
                         <outlet property="toolbar" destination="VxA-d7-cEp" id="8TA-wu-qBY"/>
                         <segue destination="GTF-CI-eye" kind="presentation" identifier="chap6ToHome" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="8hU-um-kpA"/>
                         <segue destination="eN9-01-vdi" kind="presentation" identifier="chap6ToChap7" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="M5Z-aZ-g0d"/>
@@ -2761,6 +2782,7 @@
                         <outlet property="button9" destination="57O-PU-cFO" id="ILx-al-1yy"/>
                         <outlet property="hint" destination="6JT-2m-LdE" id="VHB-gS-rn0"/>
                         <outlet property="nextChap" destination="fze-hA-2ya" id="q3y-kA-Dgk"/>
+                        <outlet property="titl" destination="aEP-35-QTA" id="gAR-pO-D0x"/>
                         <outlet property="toolbar" destination="5gG-aX-tiS" id="cfG-Ui-2UF"/>
                         <segue destination="GTF-CI-eye" kind="presentation" identifier="chap7ToHome" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="0tO-6i-RJe"/>
                         <segue destination="gwX-k8-aYX" kind="presentation" identifier="chap7ToChap8" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="RvQ-UE-tQi"/>
@@ -4043,7 +4065,7 @@
                                         <color key="tintColor" systemColor="systemYellowColor"/>
                                         <state key="normal" backgroundImage="lightbulb.fill" catalog="system"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNx-bN-YnK">
+                                    <button opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNx-bN-YnK">
                                         <rect key="frame" x="169" y="1" width="50" height="48.666666666666671"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="HwG-Gv-0ny"/>
@@ -4070,7 +4092,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double tap to skip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REP-Xj-Vv3">
-                                <rect key="frame" x="204.33333333333337" y="795" width="193.66666666666663" height="17"/>
+                                <rect key="frame" x="204.33333333333337" y="84" width="193.66666666666663" height="17"/>
                                 <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="12"/>
                                 <color key="textColor" systemColor="systemGreenColor"/>
                                 <nil key="highlightedColor"/>
@@ -4080,9 +4102,9 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ye0-oy-Aun" firstAttribute="trailing" secondItem="REP-Xj-Vv3" secondAttribute="trailing" constant="30" id="Kst-Dk-RJt"/>
+                            <constraint firstItem="REP-Xj-Vv3" firstAttribute="top" secondItem="Ye0-oy-Aun" secondAttribute="top" constant="40" id="NGG-Gx-7ZC"/>
                             <constraint firstItem="Do4-cG-6zh" firstAttribute="leading" secondItem="Ye0-oy-Aun" secondAttribute="leading" constant="20" id="OlG-Pq-Hjh"/>
                             <constraint firstItem="Ye0-oy-Aun" firstAttribute="trailing" secondItem="Do4-cG-6zh" secondAttribute="trailing" constant="20" id="Rtm-l3-w6Y"/>
-                            <constraint firstItem="Do4-cG-6zh" firstAttribute="top" secondItem="REP-Xj-Vv3" secondAttribute="bottom" constant="20" id="hqO-Zf-0rD"/>
                             <constraint firstItem="Ye0-oy-Aun" firstAttribute="bottom" secondItem="Do4-cG-6zh" secondAttribute="bottom" constant="10" id="mLf-sa-CsP"/>
                         </constraints>
                     </view>
@@ -4120,7 +4142,7 @@
                                         <color key="tintColor" systemColor="systemYellowColor"/>
                                         <state key="normal" backgroundImage="lightbulb.fill" catalog="system"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWc-Ur-nfn">
+                                    <button opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWc-Ur-nfn">
                                         <rect key="frame" x="169" y="1" width="50" height="48.666666666666671"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="YyC-gc-XbC"/>
@@ -4147,7 +4169,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double tap to skip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRc-zj-426">
-                                <rect key="frame" x="204.33333333333337" y="795" width="193.66666666666663" height="17"/>
+                                <rect key="frame" x="204.33333333333337" y="84" width="193.66666666666663" height="17"/>
                                 <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="12"/>
                                 <color key="textColor" systemColor="systemGreenColor"/>
                                 <nil key="highlightedColor"/>
@@ -4157,8 +4179,8 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="oxO-TB-Lad" firstAttribute="trailing" secondItem="yOH-He-BiU" secondAttribute="trailing" constant="20" id="5J4-xS-UQe"/>
-                            <constraint firstItem="yOH-He-BiU" firstAttribute="top" secondItem="PRc-zj-426" secondAttribute="bottom" constant="20" id="Gae-En-tFp"/>
                             <constraint firstItem="oxO-TB-Lad" firstAttribute="trailing" secondItem="PRc-zj-426" secondAttribute="trailing" constant="30" id="P85-ra-jcj"/>
+                            <constraint firstItem="PRc-zj-426" firstAttribute="top" secondItem="oxO-TB-Lad" secondAttribute="top" constant="40" id="Qi4-Pt-smS"/>
                             <constraint firstItem="yOH-He-BiU" firstAttribute="leading" secondItem="oxO-TB-Lad" secondAttribute="leading" constant="20" id="l2e-gT-7Gq"/>
                             <constraint firstItem="oxO-TB-Lad" firstAttribute="bottom" secondItem="yOH-He-BiU" secondAttribute="bottom" constant="10" id="sbH-V9-VNl"/>
                         </constraints>
@@ -4275,6 +4297,7 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="25N-mJ-aUv" id="Y3Q-Iw-AjN"/>
+                        <outlet property="comingSoon" destination="lad-fN-uUj" id="UNY-tQ-yWW"/>
                         <outlet property="hint" destination="ljk-2V-0i8" id="VGC-mn-cDA"/>
                         <outlet property="nextChap" destination="Twd-Kc-Yg9" id="Ax8-n6-9Iz"/>
                         <outlet property="toolbar" destination="Y7F-J4-rOu" id="oSD-1g-I3T"/>
@@ -4497,8 +4520,17 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dev" destination="AUB-Ts-ds6" id="8yS-Hf-Bsc"/>
                         <outlet property="hint" destination="RQh-Ss-fxU" id="yCK-Mk-vPk"/>
+                        <outlet property="leave" destination="jfb-Tv-4b5" id="3vA-5K-L0t"/>
+                        <outlet property="merch" destination="GZY-7c-rMH" id="DbR-P3-XSN"/>
+                        <outlet property="merchDescription" destination="JsU-gY-OFU" id="rM8-Xm-rnk"/>
+                        <outlet property="music" destination="uKU-hh-zCb" id="hI1-Y8-se0"/>
                         <outlet property="nextChap" destination="8wA-lt-XeQ" id="NVz-3R-ENB"/>
+                        <outlet property="quote" destination="pkW-qH-Ex9" id="nwm-xs-Gez"/>
+                        <outlet property="review" destination="Nf9-ya-NGz" id="sIG-4D-XC3"/>
+                        <outlet property="thx" destination="hLP-5x-0uc" id="JHR-k2-yPL"/>
+                        <outlet property="titl" destination="wYg-5p-OMd" id="Yzl-qx-8Rp"/>
                         <outlet property="toolbar" destination="SvG-vC-zAC" id="TZX-cy-xXq"/>
                         <segue destination="GTF-CI-eye" kind="presentation" identifier="postCreditsToHome" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="RdG-kq-cY7"/>
                     </connections>
@@ -4509,25 +4541,25 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8eE-Im-0TI"/>
+        <segue reference="YpZ-NR-fiI"/>
         <segue reference="gzU-Ae-XQS"/>
-        <segue reference="dHH-0f-i87"/>
-        <segue reference="j8f-cg-Hji"/>
-        <segue reference="9I8-69-dGt"/>
-        <segue reference="8va-rm-XAP"/>
-        <segue reference="dbV-cl-syM"/>
-        <segue reference="9rP-sF-Yht"/>
-        <segue reference="o2i-uy-ToW"/>
-        <segue reference="3Az-ps-1h0"/>
-        <segue reference="WVd-jK-rxp"/>
+        <segue reference="Fs4-JY-ETg"/>
+        <segue reference="kju-Ul-nqJ"/>
+        <segue reference="7ds-ad-yt1"/>
+        <segue reference="pGP-Mq-ek9"/>
+        <segue reference="M5Z-aZ-g0d"/>
+        <segue reference="RvQ-UE-tQi"/>
+        <segue reference="xf8-3T-zHd"/>
+        <segue reference="suA-ve-50D"/>
+        <segue reference="3Rt-Ua-3z9"/>
         <segue reference="hHU-xE-2Nw"/>
-        <segue reference="rPy-e3-cah"/>
-        <segue reference="4Jn-Pi-K9C"/>
-        <segue reference="lvv-Yn-sCd"/>
-        <segue reference="ymq-VI-4W6"/>
-        <segue reference="DBI-6g-87H"/>
-        <segue reference="DOc-8U-B4Z"/>
-        <segue reference="MZk-YQ-gFo"/>
+        <segue reference="C8e-VB-o7G"/>
+        <segue reference="Fhg-H5-PTW"/>
+        <segue reference="J9s-s4-0U4"/>
+        <segue reference="RdG-kq-cY7"/>
+        <segue reference="dKZ-mV-wuG"/>
+        <segue reference="tG0-fy-sbd"/>
+        <segue reference="TbV-l9-R97"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Bypass" width="2500" height="2500"/>

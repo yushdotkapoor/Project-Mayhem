@@ -23,6 +23,8 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var toolbar: UIStackView!
     @IBOutlet weak var clickTheRick: UIButton!
+    @IBOutlet weak var submissionButton: UIButton!
+    @IBOutlet weak var enterName: UILabel!
     
     var skipVal = ["chap1", "chap2", "chap3", "chap4", "chap5", "chap6", "chap7", "chap8", "chap9", "chap10", "chap11", "chap12", "chap13", "chap14", "preChap15"]
     var skippable = ["medulla", "frontalCortex", "cerebellum", "occipitalLobe", "opticChiasm", "lateralGeniculateNucleus", "supramarginalGyrus", "HerschlsGyrus", "amygdala", "thalamus", "hippocampus", "fusiformGyrus", "corpusCallosum", "lateralVentricle", "duraMater"]
@@ -35,6 +37,13 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         menuState = false
+        welcome.text = "Welcome".localized()
+        leave.text = "Leave".localized().uppercased()
+        good.text = "good".localized()
+        glad.text = "i'm glad you can follow commands".localized()
+        enterName.text = "now enter your name below".localized()
+        clickTheRick.setTitle("Click here if you dare".localized(), for: .normal)
+        submissionButton.setTitle("Submit".localized(), for: .normal)
         
         notificationCenter.addObserver(self, selector: #selector(foreground), name: UIApplication.willEnterForegroundNotification, object: nil)
         
@@ -45,10 +54,10 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
             DispatchQueue.main.async {
                 switch settings.authorizationStatus {
                 case .denied, .ephemeral, .notDetermined:
-                    self.now.text = "Come back ASAP"
+                    self.now.text = "Come back ASAP".localized()
                     break
                 case .authorized, .provisional:
-                    self.now.text = "Don't come back until I tell you to"
+                    self.now.text = "Don't come back until I tell you to".localized()
                     break
                 @unknown default:
                     break
@@ -157,11 +166,15 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
         if !skip() && !admin() {
             let gameName = game.string(forKey: "name")
             if gameName != name && gameName != nil {
-                let alertController = UIAlertController(title: "Please advise", message: "This name conflicts with the name you gave before: \(gameName!). Would you like to change your name from \(gameName!) to \(name!)?", preferredStyle: .alert)
-                let yes = UIAlertAction(title: "Yes", style: .default, handler: { action in
+                let l1 = "This name conflicts with the name you gave before:".localized()
+                let l2 = "Would you like to change your name from".localized()
+                let l3 = "to".localized()
+                
+                let alertController = UIAlertController(title: "Please advise".localized(), message: "\(l1) \(gameName!). \(l2) \(gameName!) \(l3) \(name!)?", preferredStyle: .alert)
+                let yes = UIAlertAction(title: "Yes".localized(), style: .default, handler: { action in
                     self.setName(name: name!)
                 })
-                let no = UIAlertAction(title: "No", style: .cancel, handler: nil)
+                let no = UIAlertAction(title: "No".localized(), style: .cancel, handler: nil)
                 
                 alertController.addAction(yes)
                 alertController.addAction(no)
@@ -181,7 +194,8 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
             game.setValue("none", forKey: "active")
             view.endEditing(true)
             nameField.text = ""
-            welcome.text = "Welcome to Project Mayhem, \(name)"
+            let m1 = "Welcome to Project Mayhem,".localized()
+            welcome.text = "\(m1) \(name)"
             welcome.fadeIn()
             wait {
                 self.nameStack.fadeOut()
@@ -190,13 +204,13 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
                 self.clickTheRick.fadeOut()
                 wait {
                     self.welcome.flickerIn(iterations: 10)
-                    self.welcome.text = "Welcome to Project Mayhem, Branechild"
+                    self.welcome.text = "\(m1) Branechild"
                     self.welcome.textColor = .red
                     self.vibrate(count: 5)
                     wait(time: 0.75, actions: {
                         self.vibrate(count: 5)
                         self.welcome.flickerIn(iterations: 10)
-                        self.welcome.text = "Welcome to Project Mayhem, Brainchild"
+                        self.welcome.text = "\(m1) Brainchild"
                         self.welcome.textColor = .black
                         self.nextChap.isUserInteractionEnabled = true
                         impact(style: .success)
@@ -207,7 +221,7 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
         }
         else {
             //alert the user that the field cannot be blank
-            alert(title: "Error", message: "You must enter your name in the provided field. Otherwise, I cannot trust you.", actionTitle: "OK")
+            alert(title: "Error".localized(), message: "You must enter your name in the provided field. Otherwise, I cannot trust you.".localized(), actionTitle: "Okay".localized())
         }
     }
     
@@ -218,7 +232,7 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
             print(val.lowercased())
             if (val.lowercased() == nameField.text?.removeLastSpace().lowercased()) {
                 game.setValue(true, forKey: skipVal[index])
-                alert(title: "Level Skip Notification", message: "level code " + skipVal[index] + " has been skipped", actionTitle: "thx")
+                alert(title: "Level Skip Notification".localized(), message: "level code " + skipVal[index] + " has been skipped", actionTitle: "thx")
                 return true
             }
         }
@@ -256,7 +270,7 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
         notificationCenter.removeObserver(self, name: UIApplication.didEnterBackgroundNotification, object: nil)
         let cont = UNMutableNotificationContent()
         cont.title = "Project Mayhem"
-        cont.body = "Now Come Back"
+        cont.body = "Now Come Back".localized()
         cont.badge = NSNumber(value: 1)
         cont.sound = UNNotificationSound.default
         

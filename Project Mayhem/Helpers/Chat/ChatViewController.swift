@@ -115,8 +115,8 @@ class ChatViewController: MessagesViewController {
         messageInputBar.setLeftStackViewWidthConstant(to: 36, animated: false)
         messageInputBar.setStackViewItems([button], forStack: .left, animated: false)
         
-        let saveItem = UIMenuItem(title: "Save", action: #selector(MessageCollectionViewCell.saveMedia(_:)))
-        let shareItem = UIMenuItem(title: "Share", action: #selector(MessageCollectionViewCell.shareMedia(_:)))
+        let saveItem = UIMenuItem(title: "Save".localized(), action: #selector(MessageCollectionViewCell.saveMedia(_:)))
+        let shareItem = UIMenuItem(title: "Share".localized(), action: #selector(MessageCollectionViewCell.shareMedia(_:)))
         UIMenuController.shared.menuItems = [saveItem, shareItem]
         
         messagesCollectionView.backgroundColor = .black
@@ -124,11 +124,11 @@ class ChatViewController: MessagesViewController {
     }
     
     @objc private func presentInputActionSheet() {
-        let actionSheet = UIAlertController(title: "Attach Media",
-                                            message: "What would you like to attach?",
+        let actionSheet = UIAlertController(title: "Attach Media".localized(),
+                                            message: "What would you like to attach?".localized(),
                                             preferredStyle: .actionSheet)
         
-        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default) { action in
+        actionSheet.addAction(UIAlertAction(title: "Camera".localized(), style: .default) { action in
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
                 imagePicker = UIImagePickerController()
                 imagePicker.delegate = self
@@ -141,10 +141,10 @@ class ChatViewController: MessagesViewController {
                 
                 self.present(imagePicker, animated: true, completion: nil)
             } else {
-                self.alert(title: "Oh no!", message: "It seems that this device cannot access the camera", actionTitle: "Okay")
+                self.alert(title: "Oh no!".localized(), message: "It seems that this device cannot access the camera".localized(), actionTitle: "Okay".localized())
             }
         })
-        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default) { action in
+        actionSheet.addAction(UIAlertAction(title: "Photo Library".localized(), style: .default) { action in
             imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = .photoLibrary
@@ -155,7 +155,7 @@ class ChatViewController: MessagesViewController {
             
             self.present(imagePicker, animated: true, completion: nil)
         })
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Cancel".localized(), style: .cancel, handler: nil))
         
         present(actionSheet, animated: true)
     }
@@ -503,8 +503,8 @@ class ChatViewController: MessagesViewController {
                     
                     ref.child("users/\(otraKey)/threads/\(selectedThread)/recipients/\(otraKey)").setValue("Y")
                     
-                    var titl = "Message from Yush"
-                    let body = "URL message"
+                    var titl = "\(messageFrom) Yush"
+                    let body = "URL message".localized()
                     
                     if otraKey == "ADMIN" {
                         //titl = myKey
@@ -578,18 +578,18 @@ class ChatViewController: MessagesViewController {
             
             ref.child("users/\(otraKey)/threads/\(selectedThread)/recipients/\(otraKey)").setValue("Y")
             
-            var titl = "Message from Yush"
+            var titl = "\(messageFrom) Yush"
             var body = "Your calculation is complete"
             
             
             if sub == "photo"{
-                body = "Photo Message"
+                body = "Photo Message".localized()
             }
             else if sub == "video" {
-                body = "Video Message"
+                body = "Video Message".localized()
             }
             else if sub == "linkPreview" {
-                body = "URL"
+                body = "URL".localized()
             }
             else {
                 body = "\(message.data)"
@@ -660,7 +660,8 @@ class ChatViewController: MessagesViewController {
                                 if success {
                                     print("Succesfully Saved")
                                 } else {
-                                    self.alert(title: "Error", message: "Could not save video : \(error!.localizedDescription)", actionTitle: "Okay")
+                                    let l1 = "Could not save video:".localized()
+                                    self.alert(title: "Error".localized(), message: "\(l1) \(error!.localizedDescription)", actionTitle: "Okay".localized())
                                 }
                             }
                         }
@@ -794,7 +795,7 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
                     
                 case .failure(let error):
                     print("message photo upload error: \(error)")
-                    self?.alert(title: "Error", message: "The photo was unable to be sent. The problem could be your network connection.", actionTitle: "Okay")
+                    self?.alert(title: "Error".localized(), message: "The photo was unable to be sent. The problem could be your network connection.".localized(), actionTitle: "Okay".localized())
                 }
             })
         }
@@ -837,7 +838,7 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
                     
                 case .failure(let error):
                     print("message photo upload error: \(error)")
-                    self?.alert(title: "Error", message: "The video was unable to be sent. The problem could be your network connection.", actionTitle: "Okay")
+                    self?.alert(title: "Error".localized(), message: "The video was unable to be sent. The problem could be your network connection.".localized(), actionTitle: "Okay".localized())
                 }
             })
         }

@@ -29,6 +29,9 @@ class subPostChapter15: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        doubleTapInstructions.text = "Double Tap to Skip".localized()
+        
         game.setValue("subPostChap15", forKey: "active")
         ripplingView = back
         

@@ -5,7 +5,7 @@
 //  Created by Yush Raj Kapoor on 2/18/21.
 //
 
-import AVFoundation
+import AVKit
 import Foundation
 import UIKit
 
@@ -26,6 +26,7 @@ class VideoPlayer : NSObject {
     private var urlAsset:AVURLAsset?
     private var videoOutput:AVPlayerItemVideoOutput?
     
+    
     var assetDuration:Double = 0
     private var playerView:PlayerView?
     var currentTime:Double = 0
@@ -40,11 +41,6 @@ class VideoPlayer : NSObject {
     var playBlock = false
     var stopFlash = false
     var functionCalled = false
-    
-    var volumeViolated = false
-    
-    var requiresVolume = true
-    
     
     var playerRate:Float = 1 {
         didSet {
@@ -65,24 +61,25 @@ class VideoPlayer : NSObject {
     
     // MARK: - Init
     
-    convenience init(urlAsset:String, view:PlayerView, arr:[Double], startTime:Double, volume: Float) {
-        self.init(urlAsset: urlAsset, view: view, arr: arr, startTime: startTime, volume: volume, needVolume: true)
-    }
     
-    convenience init(urlAsset:String, view:PlayerView, arr:[Double], startTime:Double, volume: Float, needVolume: Bool) {
+    convenience init(urlAsset:String, view:PlayerView, arr:[Double], startTime:Double, volume: Float) {
         self.init()
         
         MusicPlayer.shared.volumeControl(factor: volume)
         pauseArray = arr
         playerView = view
         currentTime = startTime
-        requiresVolume = needVolume
         
         if let playView = playerView, let playerLayer = playView.layer as? AVPlayerLayer {
             playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         }
         
-        initialSetupWithURL(url: URL(string: "file://\(retrieveVideo(name: urlAsset))")!)
+        initialSetupWithURL(url: vidToURL(name: "\(urlAsset)", type: "mov") as URL)
+        
+
+      
+        
+        //initialSetupWithURL(url: URL(string: "file://\(retrieveVideo(name: urlAsset))")!)
         
         prepareToPlay()
     }
@@ -204,7 +201,6 @@ class VideoPlayer : NSObject {
                 print("PLAY")
                 playingBlock()
             }
-            volumeCheck()
         }
     }
     
@@ -220,10 +216,6 @@ class VideoPlayer : NSObject {
         if let item = playerItem {
             item.removeObserver(self, forKeyPath: "status")
             item.removeObserver(self, forKeyPath: "loadedTimeRanges")
-        }
-        
-        if AVAudioSession.sharedInstance().observationInfo != nil {
-            AVAudioSession.sharedInstance().removeObserver(self, forKeyPath: "outputVolume")
         }
         
         
@@ -261,9 +253,6 @@ class VideoPlayer : NSObject {
             videoOutput = AVPlayerItemVideoOutput(pixelBufferAttributes: videoOutputOptions)
             playerItem = AVPlayerItem(asset: asset)
             
-            
-            AVAudioSession.sharedInstance().addObserver(self, forKeyPath: "outputVolume", options: [.new], context: nil)
-            
             if let item = playerItem {
                 item.addObserver(self, forKeyPath: "status", options: .initial, context: videoContext)
                 item.addObserver(self, forKeyPath: "loadedTimeRanges", options: [.new, .old], context: videoContext)
@@ -285,6 +274,26 @@ class VideoPlayer : NSObject {
                     if let playView = playerView, let layer = playView.layer as? AVPlayerLayer {
                         layer.player = assetPlayer
                         
+                     
+                        if let group = asset.mediaSelectionGroup(forMediaCharacteristic: AVMediaCharacteristic.legible) {
+                            
+                            let code = Locale.preferredLanguages.first
+                            let locale = Locale(identifier: code ?? "en-US")
+                            print("Locale: \(locale)")
+                            
+                            let options =
+                                AVMediaSelectionGroup.mediaSelectionOptions(from: group.options, with: locale)
+                            print("options \(options)")
+                            if let option = options.first {
+                                print("option \(option)")
+                                playerItem?.select(option, in: group)
+                            }
+                        }
+
+                        
+                        assetPlayer?.currentItem?.textStyleRules = [AVTextStyleRule(textMarkupAttributes: [kCMTextMarkupAttribute_OrthogonalLinePositionPercentageRelativeToWritingDirection as String: 50])!]
+                         
+                        
                         print("player created at time \(currentTime)")
                         seekToPosition(seconds: currentTime)
                         wait {
@@ -299,8 +308,8 @@ class VideoPlayer : NSObject {
     func phoneCallError() {
         if isOnPhoneCall() {
             pause()
-            let alertController = UIAlertController(title: "Error", message: "Functionality of the application will not work if you are in a call, please disconnect the call to continue playing", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            let alertController = UIAlertController(title: "Error".localized(), message: "Functionality of the application will not work if you are in a call, please disconnect the call to continue playing".localized(), preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "Okay".localized(), style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             godThread!.present(alertController, animated: true, completion: nil)
         }
@@ -387,18 +396,6 @@ class VideoPlayer : NSObject {
         delegate?.downloadedProgress(progress: progress)
     }
     
-    func volumeCheck() {
-        let vol = AVAudioSession.sharedInstance().outputVolume
-        if vol < 0.15 && requiresVolume && AVAudioSession.sharedInstance().observationInfo != nil {
-            video?.pause()
-            volumeViolated = true
-            let alertController = UIAlertController(title: "Volume Error", message: "Certain elements of this level require audio. Please turn your volume up. The level will continue once the required volume is reached.", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            godThread!.present(alertController, animated: true, completion: nil)
-        }
-    }
-    
     deinit {
         cleanUp()
     }
@@ -406,6 +403,7 @@ class VideoPlayer : NSObject {
     private func initialSetupWithURL(url:URL) {
         let options = [AVURLAssetPreferPreciseDurationAndTimingKey : true]
         urlAsset = AVURLAsset(url: url, options: options)
+    
     }
     
     // MARK: - Observations
@@ -416,18 +414,6 @@ class VideoPlayer : NSObject {
                     playerDidChangeStatus(status: player.status)
                 } else if key == "loadedTimeRanges", let item = playerItem {
                     moviewPlayerLoadedTimeRangeDidUpdated(ranges: item.loadedTimeRanges)
-                }
-            }
-        }
-        if keyPath == "outputVolume"{
-            let audioSession = AVAudioSession.sharedInstance()
-            if !(video?.isPlaying())! && audioSession.outputVolume >= 0.15 {
-                if volumeViolated {
-                    impact(style: .medium)
-                    print(volumeViolated)
-                    talk?.pause()
-                    video?.play()
-                    volumeViolated = false
                 }
             }
         }

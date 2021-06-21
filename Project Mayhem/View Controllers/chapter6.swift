@@ -20,6 +20,7 @@ class chapter6: UIViewController {
     @IBOutlet weak var textStack: UIStackView!
     @IBOutlet weak var back: UIButton!
     @IBOutlet weak var circleView: CircularProgressBarView!
+    @IBOutlet weak var titl: UILabel!
     
     var customAlert = HintAlert()
     
@@ -46,6 +47,8 @@ class chapter6: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titl.text = "From the darkness, comes the light".localized()
         
         game.setValue("chap6", forKey: "active")
         wait {
@@ -241,7 +244,7 @@ class chapter6: UIViewController {
             stop()
             textStack.isUserInteractionEnabled = false
             wait {
-                self.alert.showAlert(title: "Message from Victoria Lambson", message: "This is quite interesting. What does Neuschwanstein castle have to do with Project Mayhem? This was never reported in our security reports.", viewController: self, buttonPush: #selector(self.dismissMessageAlert))
+                self.alert.showAlert(title: "\(messageFrom) Victoria Lambson", message: "This is quite interesting. What does Neuschwanstein castle have to do with Project Mayhem? This was never reported in our security reports.".localized(), viewController: self, buttonPush: #selector(self.dismissMessageAlert))
             }
         }
         else if text!.contains("bitch") || text!.contains("fuck") || text!.contains("shit") {
@@ -265,8 +268,6 @@ class chapter6: UIViewController {
     
     
     func turnFlashlight(on: Bool) {
-        //let amount:CGFloat = CGFloat(2.0 * Double.pi / motherCount)
-        //circleView.grow(amount: amount)
         let sensitive = game.bool(forKey: "photosensitive")
         if !sensitive {
             guard let device = AVCaptureDevice.default(for: AVMediaType.video) else { return }

@@ -33,6 +33,11 @@ class postChapter15: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainLabel.text = "Tell me where the third location is".localized()
+        wellDone.text = "Well Done".localized()
+        thanks.text = "Thanks for making my life easier".localized()
+        
+        
         let toolBar = UIToolbar()
         toolBar.sizeToFit()
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
@@ -132,20 +137,21 @@ class postChapter15: UIViewController {
                     self.thanks.flickerIn()
                     self.Q.flickerIn()
                     wait {
-                        self.mainLabel.text = "Have fun living with what you just did ;)"
+                        self.mainLabel.text = "Have fun living with what you just did ;)".localized()
                         self.mainLabel.textColor = .systemBlue
                         self.mainLabel.textAlignment = .center
                         wait(time: 3, actions: {
                             self.sysReset.fadeIn()
-                            self.sysReset.text = "System Reset in 3"
+                            let l1 = "System Reset in".localized()
+                            self.sysReset.text = "\(l1) 3"
                             wait {
-                                self.sysReset.text = "System Reset in 2"
+                                self.sysReset.text = "\(l1) 2"
                                 wait {
-                                    self.sysReset.text = "System Reset in 1"
+                                    self.sysReset.text = "\(l1) 1"
                                     wait {
-                                        self.sysReset.text = "System Reset in 0"
+                                        self.sysReset.text = "\(l1) 0"
                                         wait {
-                                            self.sysReset.text = "Happy death day"
+                                            self.sysReset.text = "Happy death day".localized()
                                             wait(time: 2, actions: {
                                                 game.setValue("none", forKey: "active")
                                                 game.setValue(true, forKey: "apocalypse")

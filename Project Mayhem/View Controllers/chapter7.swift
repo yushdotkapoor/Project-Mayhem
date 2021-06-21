@@ -27,6 +27,7 @@ class chapter7: UIViewController {
     @IBOutlet weak var button16: UIButton!
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var toolbar: UIStackView!
+    @IBOutlet weak var titl: UILabel!
     
     var customAlert = HintAlert()
     
@@ -47,6 +48,8 @@ class chapter7: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titl.text = "Navigate".localized()
         orderString = []
         current = 0
     }
@@ -93,7 +96,7 @@ class chapter7: UIViewController {
         let gradient = CAGradientLayer()
         gradient.colors = [UIColor(red: 0, green: 86/255, blue: 62/255, alpha: 1.0).cgColor, UIColor(red: 0, green: 180/255, blue: 134/255, alpha: 1.0).cgColor]
         
-        let title = "Message from Yush Raj Kapoor"
+        let title = "\(messageFrom) Yush Raj Kapoor"
         let lblwidth = talkingView!.bounds.size.width - 10
         let lblheight = heightForView(text: title, font: UIFont(name: "Helvetica", size: 25)!, width: lblwidth)
         let label = UILabel(frame: CGRect(x: 5, y: 5, width: lblwidth, height: lblheight))
@@ -103,8 +106,8 @@ class chapter7: UIViewController {
         label.numberOfLines = 0
         label.textColor = .white
         
-        doubleTapInstructions = UILabel(frame: CGRect(x: talkingView!.bounds.size.width - 220, y: talkingView!.bounds.size.height - 40, width: 200, height: 20))
-        doubleTapInstructions?.text = "Double Tap to Skip"
+        doubleTapInstructions = UILabel(frame: CGRect(x: talkingView!.bounds.size.width - 220, y: lblheight + 20, width: 200, height: 20))
+        doubleTapInstructions?.text = "Double Tap to Skip".localized()
         doubleTapInstructions?.textAlignment = .center
         doubleTapInstructions?.font = UIFont(name: "astro", size: 12)
         doubleTapInstructions?.numberOfLines = 1

@@ -39,19 +39,19 @@ class MessageAlert: NSObject {
         let grad = CAGradientLayer()
         
         switch title {
-        case "Message from Vision Consolidated":
+        case "\(messageFrom) Vision Consolidated":
             //purple gradient
             grad.colors = [UIColor(red: 128/255, green: 0, blue: 128/255, alpha: 1.0).cgColor, UIColor(red: 216/255, green: 191/255, blue: 216/255, alpha: 1.0).cgColor]
             break
-        case "Message from Victoria Lambson":
+        case "\(messageFrom) Victoria Lambson":
             //red
             grad.colors = [UIColor(red: 220/255, green: 28/255, blue: 19/255, alpha: 1.0).cgColor, UIColor(red: 246/255, green: 189/255, blue: 192/255, alpha: 1.0).cgColor]
             break
-        case "Message from Yush Raj Kapoor":
+        case "\(messageFrom) Yush Raj Kapoor":
             //green
             grad.colors = [UIColor(red: 0, green: 86/255, blue: 62/255, alpha: 1.0).cgColor, UIColor(red: 0, green: 180/255, blue: 134/255, alpha: 1.0).cgColor]
             break
-        case "Message from Defender Command":
+        case "\(messageFrom) Defender Command":
             //orange
             grad.colors = [UIColor(red: 255/255, green: 128/255, blue: 0/255, alpha: 1.0).cgColor, UIColor(red: 249/255, green: 192/255, blue: 136/255, alpha: 1.0).cgColor]
             break
@@ -147,7 +147,7 @@ class MessageAlert: NSObject {
         let button = CustomButtonOutline()
         button.frame = CGRect(x: alertView.frame.size.width / 2 - 37.5, y: messageLabel.frame.size.height + titleHeight + 20, width: 75, height: 25)
         button.setupButton()
-        button.setTitle("Close", for: .normal)
+        button.setTitle("Close".localized(), for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(viewController, action: buttonPush, for: .touchUpInside)
         

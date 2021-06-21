@@ -90,7 +90,7 @@ class subChapter11: UIViewController, UIScrollViewDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        alert.showAlert(title: "Message from Victoria Lambson", message: "You might want to see this.", viewController: self, buttonPush: #selector(dismissMessageAlert))
+        alert.showAlert(title: "\(messageFrom) Victoria Lambson", message: "You might want to see this.".localized(), viewController: self, buttonPush: #selector(dismissMessageAlert))
     }
     
     

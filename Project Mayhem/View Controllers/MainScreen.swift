@@ -25,6 +25,7 @@ class MainScreen: UIViewController {
         let c = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.0)
         tearDrop.setupButton(color: c, pressColor: UIColor.black)
         enter.setupButton(color: c, pressColor: UIColor.black)
+        enter.setTitle("Enter".localized(), for: .normal)
         
         if (!videosCurrentlyDownloading && !game.bool(forKey: "downloaded")) || weekTimer() {
             //uploadVideos()
@@ -63,7 +64,7 @@ class MainScreen: UIViewController {
             
             let id = "\(key!) - \(admin)"
             game.setValue(id, forKey: "chatID")
-            let array = ["recipients":[admin: "N", key: "Y"], "messages":["01": ["type":"text", "sender":"ADMIN", "date":"\(convertedDate)", "data":"Comments? Questions? Message me here!", "id":"01"], "02": ["type":"text", "sender":"ADMIN", "date":"\(convertedDate)", "data":"Make sure you have push notifications enabled to get notifications for replies!", "id":"02"]], "last":"\(convertedDate)"] as [String : Any]
+            let array = ["recipients":[admin: "N", key: "Y"], "messages":["01": ["type":"text", "sender":"ADMIN", "date":"\(convertedDate)", "data":"Comments? Questions? Message me here!".localized(), "id":"01"], "02": ["type":"text", "sender":"ADMIN", "date":"\(convertedDate)", "data":"Make sure you have push notifications enabled to get notifications for replies!".localized(), "id":"02"]], "last":"\(convertedDate)"] as [String : Any]
             let data = ["key": key!, "threads":["\(id)":array], "token":"\(token ?? "")", "Q": "Y"] as [String : Any]
             
             ref.child("users/\(key!)").setValue(data)

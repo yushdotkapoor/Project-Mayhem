@@ -46,7 +46,7 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
         myTable.estimatedRowHeight = 70
         
         if !CheckInternet.Connection() {
-            self.alert(title: "Uh-Oh", message: "Please check your internet connection! You will not be able to send or recieve messages without internet.", actionTitle: "Okay")
+            self.alert(title: "Uh-Oh", message: "Please check your internet connection! You will not be able to send or recieve messages without internet.".localized(), actionTitle: "Okay".localized())
         }
         
         self.navigationController?.navigationBar.backgroundColor = UIColor.black
@@ -61,11 +61,11 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
             if type == "text" {
                 rList[threadID]!.preview = data ?? ""
             } else if type == "photo" {
-                rList[threadID]!.preview = "Photo Message"
+                rList[threadID]!.preview = "Photo Message".localized()
             } else if type == "video" {
-                rList[threadID]!.preview = "Video Message"
+                rList[threadID]!.preview = "Video Message".localized()
             } else if type == "linkPreview" {
-                rList[threadID]!.preview = "URL Message"
+                rList[threadID]!.preview = "URL Message".localized()
             }
             self.sortReload()
         })
@@ -116,13 +116,6 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
             let threadID = snapshot.key
             let read = value["recipients"] as? [String:String] ?? [:]
             let messages = value["messages"] as! NSDictionary
-            
-            
-            
-            if threadID == "A5CEBB87-665D-4F0F-B307-E324FBA0B9A7 - ADMIN" {
-                print("Bazinga \(messages)")
-                print(messages.count)
-            }
             
             if messages.count > 2 {
                 
@@ -211,7 +204,7 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if !CheckInternet.Connection() {
-            self.alert(title: "Uh-Oh", message: "Please check your internet connection! You will not be able to send or recieve messages without internet.", actionTitle: "Okay")
+            self.alert(title: "Uh-Oh", message: "Please check your internet connection! You will not be able to send or recieve messages without internet.".localized(), actionTitle: "Okay".localized())
             return
         }
         

@@ -19,6 +19,8 @@ class Downloader: UIViewController {
         
         circleView.createCircularPath(radius: 120)
         
+        label.text = "Downloading Content".localized()
+        
         notificationTimer = Timer.scheduledTimer(withTimeInterval: 1.1, repeats: true) { timer in
             self.checkNotification()
         }

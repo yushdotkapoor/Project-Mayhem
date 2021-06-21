@@ -13,11 +13,31 @@ class postCredits: UIViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var nextChap: UIButton!
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var toolbar: UIStackView!
+    @IBOutlet weak var titl: UILabel!
+    @IBOutlet weak var dev: UILabel!
+    @IBOutlet weak var thx: UILabel!
+    @IBOutlet weak var music: UILabel!
+    @IBOutlet weak var quote: UILabel!
+    @IBOutlet weak var leave: UIButton!
+    @IBOutlet weak var review: UIButton!
+    @IBOutlet weak var merch: UILabel!
+    @IBOutlet weak var merchDescription: UILabel!
     
     let customAlert = HintAlert()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        titl.text = "Credits".localized()
+        dev.text = "Developer".localized()
+        thx.text = "Vision Consolidated thanks you for playing Project Mayhem".localized()
+        music.text = "Music By".localized()
+        let j1 = "Those who thrive in Mayhem, are the silent rulers of all".localized()
+        quote.text = "\"\(j1)\"".localized()
+        leave.setTitle("Leave Feedback".localized(), for: .normal)
+        review.setTitle("Review on App Store".localized(), for: .normal)
+        merch.text = "Buy Our Merchandise".localized()
+        merchDescription.text = "We have Project Mayhem hoodies, shirts, masks, and more! Tap the picture below to Check it out!".localized()
+        
         
     }
     
@@ -43,19 +63,20 @@ class postCredits: UIViewController, MFMailComposeViewControllerDelegate {
     }
     
     func actionForRating() {
-        let alert = UIAlertController(title: "Did you Enjoy Project Mayhem?", message: "Please consider leaving a rating or review!", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Leave Star Rating on App Store", style: .default, handler: { [weak self]_ in
+        let l1 = "Did you Enjoy".localized()
+        let alert = UIAlertController(title: "\(l1) Project Mayhem?", message: "Please consider leaving a rating or review!".localized(), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss".localized(), style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Leave Star Rating on App Store".localized(), style: .default, handler: { [weak self]_ in
             guard let scene = self?.view.window?.windowScene else {
                 print("no scene")
                 return
             }
             SKStoreReviewController.requestReview(in: scene)
         }))
-        alert.addAction(UIAlertAction(title: "Leave Review on App Store", style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: "Leave Review on App Store".localized(), style: .default, handler: { _ in
             self.writeReview()
         }))
-        alert.addAction(UIAlertAction(title: "Leave Feedback to Developer", style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: "Leave Feedback to Developer".localized(), style: .default, handler: { _ in
             self.leaveTheFeedback()
         }))
         present(alert, animated: true)
@@ -79,7 +100,6 @@ class postCredits: UIViewController, MFMailComposeViewControllerDelegate {
     
     
     @IBAction func feedback(_ sender: Any) {
-        //sendEmail()
         leaveTheFeedback()
     }
     
@@ -96,24 +116,7 @@ class postCredits: UIViewController, MFMailComposeViewControllerDelegate {
         let controller = storyboard.instantiateViewController(withIdentifier: selectNavigation)
         self.present(controller, animated: true, completion: nil)
     }
-    
-    func sendEmail() {
-        if MFMailComposeViewController.canSendMail() {
-            let mail = MFMailComposeViewController()
-            mail.mailComposeDelegate = self
-            mail.setToRecipients(["visionconsolidated@gmail.com"])
-            mail.setSubject("Project Mayhem Feedback")
-            
-            present(mail, animated: true)
-        } else {
-            // show failure alert
-        }
-    }
-    
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        controller.dismiss(animated: true)
-    }
-    
+   
     
     @IBAction func goBack(_ sender: Any) {
         self.performSegue(withIdentifier: "postCreditsToHome", sender: nil)

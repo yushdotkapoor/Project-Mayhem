@@ -16,6 +16,9 @@ class chapter2: UIViewController {
     @IBOutlet weak var volumeView: UIView!
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var toolbar: UIStackView!
+    @IBOutlet weak var l1: UILabel!
+    @IBOutlet weak var l2: UILabel!
+    @IBOutlet weak var l3: UILabel!
     
     var customAlert = HintAlert()
     
@@ -29,6 +32,11 @@ class chapter2: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let active = game.string(forKey: "active")
+        l1.text = "Before I begin briefing you,".localized()
+        l2.text = "make sure you can".localized()
+        l3.text = "hear me".localized()
+        
+        
         
         switch active! {
         case "chap2":
@@ -64,8 +72,8 @@ class chapter2: UIViewController {
     
     func part1() {
         if isOnPhoneCall() {
-            let alertController = UIAlertController(title: "Error", message: "Functionality of the application will not work if you are in a call, please disconnect the call to continue playing", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            let alertController = UIAlertController(title: "Error".localized(), message: "Functionality of the application will not work if you are in a call, please disconnect the call to continue playing".localized(), preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             self.present(alertController, animated: true, completion: nil)
         }
@@ -113,7 +121,11 @@ class chapter2: UIViewController {
             viewHeight.constant = view.frame.size.height * CGFloat(audioLevel)
             if audioLevel == 1.0 {
                 let name = game.string(forKey: "name")
-                alert.showAlert(title: "Message from Defender Command", message: "\(name!), I have an assignment for you. I know you’ve heard of Vision Consolidated’s new Intelligence Enhancement and Cognitive Treatment (INTELLECT). Internal sources say that the development of the service has been very unregulated. In fact, they called it ‘Project Mayhem’. Sounds pretty sinister to me. We need you to investigate the company and see if there is anything to worry about. This could be your biggest case as a Defender, if Vision Consolidated is not what we think it is. You’ve been given employee access to their facilities, but make sure to stay under the radar. Good luck, Brainchild.", viewController: self, buttonPush: #selector(dismissMessageAlert))
+                let j1 = ", I have an assignment for you. I know you’ve heard of Vision Consolidated’s new Intelligence Enhancement and Cognitive Treatment (INTELLECT). Internal sources say that the development of the service has been very unregulated. In fact, they called it".localized()
+                let j2 = "Sounds pretty sinister to me. We need you to investigate the company and see if there is anything to worry about. This could be your biggest case as a Defender, if Vision Consolidated is not what we think it is. You’ve been given employee access to their facilities, but make sure to stay under the radar. Good luck, Brainchild.".localized()
+                
+                let content = "\(j1) \"Project Mayhem\". \(j2)".localized()
+                alert.showAlert(title: "\(messageFrom) Defender Command", message: "\(name!)\(content)", viewController: self, buttonPush: #selector(dismissMessageAlert))
             }
         }
     }

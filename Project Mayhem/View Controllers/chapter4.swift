@@ -72,7 +72,7 @@ class chapter4: UIViewController {
         notificationCenter.addObserver(self, selector: #selector(background), name: UIApplication.willResignActiveNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(reenter), name: UIApplication.didBecomeActiveNotification, object: nil)
         
-        alert.showAlert(title: "Message from Victoria Lambson", message: "Great work getting access within Vision! My name is Vickie and I am also a Defender. I will try to guide you through Vision’s systems to aid in your investigation. Vision has better security than most U.S. government agencies, but we have insider knowledge on how to bypass those hurdles. The director has briefed me on who you are and I must say, I'm quite a fan of yours, Brainchild. Anyway, I’ll let you get back to your mission. Just know that I will be monitoring you all the way through!", viewController: self, buttonPush: #selector(dismissMessageAlert))
+        alert.showAlert(title: "\(messageFrom) Victoria Lambson", message: "Great work getting access within Vision! My name is Vickie and I am also a Defender. I will try to guide you through Vision’s systems to aid in your investigation. Vision has better security than most U.S. government agencies, but we have insider knowledge on how to bypass those hurdles. The director has briefed me on who you are and I must say, I'm quite a fan of yours, Brainchild. Anyway, I’ll let you get back to your mission. Just know that I will be monitoring you all the way through!".localized(), viewController: self, buttonPush: #selector(dismissMessageAlert))
     }
     
     func oneCheck(first: String, second: String) {
@@ -144,15 +144,6 @@ class chapter4: UIViewController {
     func finish() {
         motionStop()
         self.one.fadeOut()
-        /*
-        UIView.animate(withDuration: 2, delay: 0, options: .curveEaseOut, animations: {
-            self.imageBottom.constant *= 100
-            self.view.layoutIfNeeded()
-        }, completion: {
-            action in
-            self.complete()
-        })
- */
         wait {
             self.complete()
         }

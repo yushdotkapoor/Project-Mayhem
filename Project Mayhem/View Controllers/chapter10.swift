@@ -154,7 +154,7 @@ class chapter10: UIViewController {
         if textField.text?.removeLastSpace().lowercased() == "burj khalifa" {
             buttonView.fadeOut()
             view.endEditing(true)
-            alert.showAlert(title: "Message from Victoria Lambson", message: "Again, another location. First Neuschwanstein castle and now Burj Khalifa?", viewController: self, buttonPush: #selector(dismissMessageAlert))
+            alert.showAlert(title: "\(messageFrom) Victoria Lambson", message: "Again, another location. First Neuschwanstein castle and now Burj Khalifa?".localized(), viewController: self, buttonPush: #selector(dismissMessageAlert))
             
         }
         else {

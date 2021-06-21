@@ -23,6 +23,7 @@ var IAPs:[SKProduct]?
 let database = CKContainer.default().publicCloudDatabase
 let vidArr = ["Chap1Intro", "lvl7Intro", "lvl7Outro", "subPostChapter15", "ProjectVenomTrailer"]
 var mediaCount = 0
+let messageFrom = "Message From".localized()
 
 func wait(time: Float, actions: @escaping () -> Void) {
     let timeInterval = TimeInterval(time)
@@ -202,7 +203,7 @@ func retrieveVideo(name: String) -> String {
 
 
 func uploadVideos() {
-    let thing = ["subPostChapter15"]
+    let thing = ["subPostChapter15", ]
     for vid in thing {
         let url = vidToURL(name: vid, type: "mov")
         
@@ -239,6 +240,10 @@ func isView(selfView: UIViewController, checkView: AnyClass) -> Bool {
 }
 
 extension String {
+    func localized() -> String {
+        return NSLocalizedString(self, tableName: "Localizable", bundle: .main, value: self, comment: self)
+    }
+    
     func index(from: Int) -> Index {
         return self.index(startIndex, offsetBy: from)
     }

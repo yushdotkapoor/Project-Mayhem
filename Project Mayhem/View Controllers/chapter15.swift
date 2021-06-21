@@ -117,7 +117,6 @@ class chapter15: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate 
             }
         }
         else {
-            //colorLabel.isHidden = true
             colorLabel.text = "evtnir"
             colorLabel.textColor = c
             centerCircle.tintColor = c
@@ -150,7 +149,7 @@ class chapter15: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate 
                     self.view.layoutIfNeeded()
                 }, completion: {
                     action in
-                    self.alert.showAlert(title: "Message from Yush Raj Kapoor", message: "We need to talk.", viewController: self, buttonPush: #selector(self.dismissMessageAlert))
+                    self.alert.showAlert(title: "\(messageFrom) Yush Raj Kapoor", message: "We need to talk.".localized(), viewController: self, buttonPush: #selector(self.dismissMessageAlert))
                 })
             }
         }

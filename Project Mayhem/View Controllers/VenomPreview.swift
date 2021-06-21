@@ -12,6 +12,7 @@ class VenomPreview: UIViewController {
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var toolbar: UIStackView!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var comingSoon: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -20,6 +21,7 @@ class VenomPreview: UIViewController {
         hint.alpha = 0.0
         hint.isUserInteractionEnabled = false
         game.setValue("projectVenom", forKey: "active")
+        comingSoon.text = "Coming Soon".localized()
     }
     
     override func viewDidAppear(_ animated: Bool) {

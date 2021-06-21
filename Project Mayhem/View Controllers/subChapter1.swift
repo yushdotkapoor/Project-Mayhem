@@ -17,9 +17,6 @@ class subChapter1: UIViewController {
     @IBOutlet weak var hint: UIButton!
     @IBOutlet weak var doubleTapInstructions: UILabel!
     
-    //with faceID
-    //let pauseArray:[Double] = [31.4, 37.85]
-    
     let pauseArray:[Double] = [37.85]
     var timeStamp:Double = 0.0
     
@@ -31,6 +28,8 @@ class subChapter1: UIViewController {
             print("User accepted notifications: \(accepted)")
         })
         
+        doubleTapInstructions.text = "Double Tap to Skip".localized()
+        
         
         let b = game.string(forKey: "active")
         if b != "chap1.1"{
@@ -38,8 +37,7 @@ class subChapter1: UIViewController {
             funcToPass = self.nextChapter
             godThread = self
             
-            video = VideoPlayer(urlAsset: vidName, view: playerView, arr: pauseArray, startTime: timeStamp, volume: 0.3, needVolume: false)
-            
+            video = VideoPlayer(urlAsset: vidName, view: playerView, arr: pauseArray, startTime: timeStamp, volume: 0.3)
             
             flashInstructions()
             
@@ -87,7 +85,7 @@ class subChapter1: UIViewController {
         if timeStamp - 2 < 0 {
             timeStamp = 2
         }
-        video = VideoPlayer(urlAsset: vidName, view: playerView, arr: pauseArray, startTime: timeStamp - 2, volume: 0.3, needVolume: false)
+        video = VideoPlayer(urlAsset: vidName, view: playerView, arr: pauseArray, startTime: timeStamp - 2, volume: 0.3)
         flashInstructions()
     }
     

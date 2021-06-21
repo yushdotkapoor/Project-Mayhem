@@ -55,7 +55,7 @@ class chapter13: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        alert.showAlert(title: "Message from Victoria Lambson", message: "We are detecting harsh radio waves around you. See if you have a device to visualize them. In regards to your health, you should be fine, I think, but be careful, we don’t know what is being transmitted.", viewController: self, buttonPush: #selector(dismissMessageAlert))
+        alert.showAlert(title: "\(messageFrom) Victoria Lambson", message: "We are detecting harsh radio waves around you. See if you have a device to visualize them. In regards to your health, you should be fine, I think, but be careful, we don’t know what is being transmitted.".localized(), viewController: self, buttonPush: #selector(dismissMessageAlert))
     }
     
     @objc func doneClicked() {
@@ -92,7 +92,7 @@ class chapter13: UIViewController {
         //13.1
         hintText = "13.1"
         quakeLabel.numberOfLines = 3
-        quakeLabel.text = "Sometimes we need to take a step back to get some perspective"
+        quakeLabel.text = "Sometimes we need to take a step back to get some perspective".localized()
         
         flashView.backgroundColor = .white
         

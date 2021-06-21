@@ -25,6 +25,9 @@ class ProjectVenomTrailer: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        doubleTapInstructions.text = "Double Tap to Skip".localized()
+        
         game.setValue("projectVenomTrailer", forKey: "active")
         funcToPass = self.ended
         godThread = self

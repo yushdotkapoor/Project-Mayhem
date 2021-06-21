@@ -16,9 +16,13 @@ class HintAlert: NSObject, UIScrollViewDelegate {
     
     private var msgCt = 0
     
-    var tier1Hint = ["1":"Leave what?", "2":"How could you make sure that you can hear everything?","3":"Tappity tap","4":"Move your phone a bit. Just kidding, a lot.","5":"do re mi fa so laaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n\nAlso, Nice ;)","5Perm":"do re mi fa so laaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n\nIt seems that you have Microphone permissions turned off. This level requires the microphone to pass. However, if you're adamant or if this does not apply to you, then contact me and I will sort things out.","6":"Seems like this is a coded message!\n\nAlso, don't curse in a castle, it's bad for our reputation.","7":"Rule number 1: have patience. Rule number 2: have good memory skills. Rule number 3: see what happens when you tap (r1,c2).","8":"What's that on the top right?","9":"These are not just some random characters! Have you ever heard of 🐷🖊️ Cipher?","10":"I wonder what I could do with a QR code, once it is aligned","11.1":"Maybe the morse code at the top and the coordinates at the bottom have some sort of relationship.","11.2":"Great works from a great man, who indeed has a name!","11.2Perm":"Great works from a great man, who indeed has a name!\n\nIt seems that you have Microphone or Speech Recognition permissions turned off. This level requires Speech Recognition to pass. However, if you're adamant or if this does not apply to you, then contact me and I will sort things out.","12.1": "Battery, battery, battery. It bugs me that the battery isn't completely full", "12.2":"Roses are red, violets are blue, I'm pretty sure that this is a date. What are you supposed to do? \"Get in a blue box and get your timey wimey on.\"","12.3":"Is there a way to change the size of text?","13.1":"Dude c'mon. The text on the screen IS the hint","13.2":"Earthquake simulator?","13.3":"Earthquake simulator?: Look for the red","14": "\"As the Curtain Rose, the people cheered and the bootleggers took Pictures.\"","15.1":"When I am black, I am actually white. When I am white, I am actually black. What am I?","15.2":"The answer is not in this level. Look closely 👁️"]
     
-    var tier2Hint = ["1":"Maybe it's best if you go home.", "2":"If you were on the phone and could not hear the other person on speaker, what would you do?","3":"Tap the little circles simultaneously.","4":"Stright lines, fast movements, phone flat.","5":"\"A\" is known as a musical note and has different pitches. Remember, nothing is off limits!","5Perm":"\"A\" is known as a musical note and has different pitches. Remember, nothing is off limits!","6":"Morse code, isn't it? Let's see what the internet can do for you.","7":"I suggest writing down a grid and tapping around to see what happens.","8":"I wonder what happens if we look for the app settings?","9":"Use your resources to decode this message","10":"Scan the QR code and see what pops up.","11.1":"The coordinates at the bottom correspond to the location of a character in the letter. The second part to the morse code is as follows: ----graph, ----ence, ----acter.\n","11.2":"Say the name of the playright!","11.2Perm":"Say the name of the playright!","12.1": "Let's fill that battery.", "12.2":"Maybe we can travel back in time.","12.3":"It's possible that there is a setting to change the general size of fonts?","13.1":"You gotta physically move back","13.2":"Let's undo.","13.3":"Let's keep undoing and see what the red letters spell out.","14": "a=swipe\nb=right\nc=down\n-(a*(-b)*c)/b","15.1":"Make sure you make the SMART move.","15.2":"There are 15 hidden letters in the levels prior."]
+    
+    var tier1Hint = ["1":"Leave what?".localized(), "2":"How could you make sure that you can hear everything?".localized(),"3":"Tappity tap".localized(),"4":"Move your phone a bit. Just kidding, a lot.".localized(),"5":"","5Perm":"","6":"","7":"Rule number 1: have patience. Rule number 2: have good memory skills. Rule number 3: see what happens when you tap (r1,c2).".localized(),"8":"What's that on the top right?".localized(),"9":"These are not just some random characters! Have you ever heard of 🐷🖊️ Cipher?".localized(),"10":"I wonder what I could do with a QR code, once it is aligned".localized(),"11.1":"Maybe the morse code at the top and the coordinates at the bottom have some sort of relationship.".localized(),"11.2":"Great works from a great man, who indeed has a name!".localized(),"11.2Perm":"","12.1": "Battery, battery, battery. It bugs me that the battery isn't completely full".localized(), "12.2":"Roses are red, violets are blue, I'm pretty sure that this is a date. What are you supposed to do? \"Get in a blue box and get your timey wimey on.\"".localized(),"12.3":"Is there a way to change the size of text?".localized(),"13.1":"Dude c'mon. The text on the screen IS the hint".localized(),"13.2":"Earthquake simulator?".localized(),"13.3":"Earthquake simulator?: Look for the red".localized(),"14": "a=swipe\nb=right\nc=down\n-(a*(-b)*c)/b","15.1":"When I am black, I am actually white. When I am white, I am actually black. What am I?".localized(),"15.2":"The answer is not in this level. Look closely 👁️".localized()]
+    
+    var tier2Hint = ["1":"Maybe it's best if you go home.".localized(), "2":"If you were on the phone and could not hear the other person on speaker, what would you do?".localized(),"3":"Tap the little circles simultaneously.".localized(),"4":"Stright lines, fast movements, phone flat.".localized(),"5":"\"A\" is known as a musical note and has different pitches. Remember, nothing is off limits!".localized(),"5Perm":"\"A\" is known as a musical note and has different pitches. Remember, nothing is off limits!".localized(),"6":"Morse code, isn't it? Let's see what the internet can do for you.".localized(),"7":"I suggest writing down a grid and tapping around to see what happens.".localized(),"8":"I wonder what happens if we look for the app settings?".localized(),"9":"Use your resources to decode this message".localized(),"10":"Scan the QR code and see what pops up.".localized(),"11.1":"","11.2":"Say the name of the playright!".localized(),"11.2Perm":"Say the name of the playright!".localized(),"12.1": "Let's fill that battery.".localized(), "12.2":"Maybe we can travel back in time.".localized(),"12.3":"It's possible that there is a setting to change the general size of fonts?".localized(),"13.1":"You gotta physically move back".localized(),"13.2":"Let's undo.".localized(),"13.3":"Let's keep undoing and see what the red letters spell out.".localized(),"14":  "As the Curtain Rose, the people cheered and the bootleggers took Pictures.".localized(),"15.1":"Make sure you make the SMART move.".localized(),"15.2":"There are 15 hidden letters in the levels prior.".localized()]
+    
+   
     
     private let alertView: UIView = {
         let alert = UIView()
@@ -39,7 +43,7 @@ class HintAlert: NSObject, UIScrollViewDelegate {
     private let titleLabel:UILabel = {
         let lbl = UILabel()
         lbl.numberOfLines = 0
-        lbl.text = "Hint"
+        lbl.text = "Hint".localized()
         lbl.font = lbl.font.withSize(25)
         lbl.textAlignment = .center
         lbl.textColor = .white
@@ -80,19 +84,44 @@ class HintAlert: NSObject, UIScrollViewDelegate {
         backgroundView.gestureRecognizers?.forEach(backgroundView.removeGestureRecognizer)
     }
     
+    let m1 = "do re mi fa so laaaaaaaaaaaaaaaaaaaaaaaaaaaaa".localized()
+    let m2  = "Also, Nice ;)".localized()
+    let m3 = "It seems that you have Microphone permissions turned off. This level requires the microphone to pass. However, if you're adamant or if this does not apply to you, then contact me and I will sort things out.".localized()
+    let m4 = "Seems like this is a coded message!".localized()
+    let m5 = "Also, don't curse in a castle, it's bad for our reputation.".localized()
+    let m6 = "Great works from a great man, who indeed has a name!".localized()
+    let m7 = "It seems that you have Microphone or Speech Recognition permissions turned off. This level requires Speech Recognition to pass. However, if you're adamant or if this does not apply to you, then contact me and I will sort things out.".localized()
+    let m8 = "a=swipe".localized()
+    let m9 = "b=right".localized()
+    let m10 = "c=down".localized()
+    let m11 = "-(a*(-b)*c)/b".localized()
+    let m12 = "Roses are red, violets are blue, I'm pretty sure that this is a date. What are you supposed to do?".localized()
+    let m13 = "Get in a blue box and get your timey wimey on.".localized()
+    let m14 = "is known as a musical note and has different pitches. Remember, nothing is off limits!".localized()
+    let m15 = "The coordinates at the bottom correspond to the location of a character in the letter. The second part to the morse code is as follows:".localized()
     
     func showAlert(message: String, viewController: UIViewController, hintButton: UIButton, toolbar: UIStackView) {
+        tier1Hint["5"] = "\(m1)\n\n\(m2)"
+        tier1Hint["5Perm"] = "\(m1)\n\n\(m3)"
+        tier1Hint["6"] = "\(m4)\n\n\(m5)"
+        tier1Hint["11.2Perm"] = "\(m6)\n\n\(m7)"
+        tier1Hint["14"] = "\(m8)\n\(m9)\n\(m10)\n\(m11)"
+        tier1Hint["12.2"] = "\(m12) \"\(m13)\""
+        tier2Hint["5"] = "\"A\" \(m14)"
+        tier2Hint["5Perm"] = "\"A\" \(m14)"
+        tier2Hint["11.2"] = "\(m15) ----graph, ----ence, ----acter."
+        
         hint = hintButton
         controller = viewController
         reqProducts()
         dictRef = message
         tb = toolbar
         
-        let alertController = UIAlertController(title: "Are you sure?", message: "Are you sure you would like to see a hint?", preferredStyle: .alert)
-        let no = UIAlertAction(title: "No", style: .default, handler: {_ in
+        let alertController = UIAlertController(title: "Are you sure?".localized(), message: "Are you sure you would like to see a hint?".localized(), preferredStyle: .alert)
+        let no = UIAlertAction(title: "No".localized(), style: .default, handler: {_ in
             self.dismissAlert()
         })
-        let yes = UIAlertAction(title: "Yes", style: .default, handler: {_ in
+        let yes = UIAlertAction(title: "Yes".localized(), style: .default, handler: {_ in
             self.okActuallyShowTheHint(hintButton: hintButton)
         })
         alertController.addAction(no)
@@ -122,7 +151,7 @@ class HintAlert: NSObject, UIScrollViewDelegate {
         message1Height = heightForView(text: self.tier1Hint[dictRef]!, font: UIFont(name: "Helvetica", size: 16.0)!, width: alertView.frame.size.width - 20)
         message2Height = heightForView(text: self.tier2Hint[dictRef]!, font: UIFont(name: "Helvetica", size: 16.0)!, width: alertView.frame.size.width - 20)
         
-        let titleLabelHeight = heightForView(text: "Hint", font: UIFont(name: "Helvetica", size: 25.0)!, width: alertView.frame.size.width - 10)
+        let titleLabelHeight = heightForView(text: "Hint".localized(), font: UIFont(name: "Helvetica", size: 25.0)!, width: alertView.frame.size.width - 10)
         //create a title label
         titleLabel.frame = CGRect(x: 5, y: 5, width: alertView.frame.size.width - 10, height: titleLabelHeight)
         
@@ -133,14 +162,14 @@ class HintAlert: NSObject, UIScrollViewDelegate {
         //set up button
         button.frame = CGRect(x: alertView.frame.size.width / 2 - 37.5, y: message1Height! + titleLabelHeight + 55, width: 75, height: 25)
         button.setupButton()
-        button.setTitle("Close", for: .normal)
+        button.setTitle("Close".localized(), for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(dismissAlert), for: .touchUpInside)
         
         //set up stuck button
         stuck.frame = CGRect(x: alertView.frame.size.width / 2 - 37.5, y: message1Height! + titleLabelHeight + 55, width: 75, height: 25)
         stuck.setupButton()
-        stuck.setTitle("Stuck?", for: .normal)
+        stuck.setTitle("Stuck?".localized(), for: .normal)
         stuck.setTitleColor(.white, for: .normal)
         stuck.addTarget(self, action: #selector(chat), for: .touchUpInside)
         
@@ -230,7 +259,9 @@ class HintAlert: NSObject, UIScrollViewDelegate {
             if hintNum > 0 {
                 //ask to use hint
                 // display hints remaining
-                let buttontext = "Tap here if you would like to use one of your remaining hints\nHints remaining: \(hintNum)"
+                let t1 = "Tap here if you would like to use one of your remaining hints".localized()
+                let t2 = "Hints remaining:".localized()
+                let buttontext = "\(t1)\n\(t2) \(hintNum)"
                 
                 message2Height = heightForView(text: buttontext, font: UIFont(name: "Helvetica", size: 16.0)!, width: alertView.frame.size.width - 20)
                 
@@ -243,7 +274,7 @@ class HintAlert: NSObject, UIScrollViewDelegate {
                 btn.addTarget(self, action: #selector(useHint), for: .touchUpInside)
             } else {
                 //Purchase action
-                let buttontext = "Tap here to unlock a second and more helpful hint."
+                let buttontext = "Tap here to unlock a second and more helpful hint.".localized()
                 
                 message2Height = heightForView(text: buttontext, font: UIFont(name: "Helvetica", size: 16.0)!, width: alertView.frame.size.width - 20)
                 
@@ -280,20 +311,25 @@ class HintAlert: NSObject, UIScrollViewDelegate {
         let allPrice = bH.price
         let fivePrice = fH.price
         
-        let actionSheet = UIAlertController(title: "Purchase hints",
-                                            message: "Choose which hints you would like to purchase",
+        let actionSheet = UIAlertController(title: "Purchase hints".localized(),
+                                            message: "Choose which hints you would like to purchase".localized(),
                                             preferredStyle: .actionSheet)
         
-        actionSheet.addAction(UIAlertAction(title: "All Hints ($\(allPrice))", style: .default) { action in
+        let l1 = "All Hints".localized()
+        let l2 = "Five Hints".localized()
+        
+        actionSheet.addAction(UIAlertAction(title: "\(l1) ($\(allPrice))", style: .default) { action in
             ProjectMayhemProducts.store.buyProduct(bH, funcTo: self.afterHint)
         })
-        actionSheet.addAction(UIAlertAction(title: "Five Hints ($\(fivePrice))", style: .default) { action in
+        actionSheet.addAction(UIAlertAction(title: "\(l2) ($\(fivePrice))", style: .default) { action in
             ProjectMayhemProducts.store.buyProduct(fH, funcTo: self.afterHint)
         })
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Cancel".localized(), style: .cancel, handler: nil))
         if game.integer(forKey: "fivePackPurchaseCount") >= 3 {
-            let alertController = UIAlertController(title: "Error", message: "If you are seeing this, message me. This message should not appear.\nError: Max Purchase Count", preferredStyle: .alert)
-            let okay = UIAlertAction(title: "Okay", style: .default, handler: {_ in
+            let p1 = "If you are seeing this, message me. This message should not appear.".localized()
+            let p2 = "Error: Max Purchase Count".localized()
+            let alertController = UIAlertController(title: "Error".localized(), message: "\(p1)\n\(p2)", preferredStyle: .alert)
+            let okay = UIAlertAction(title: "Okay".localized(), style: .default, handler: {_ in
                 self.chat()
             })
             alertController.addAction(okay)
