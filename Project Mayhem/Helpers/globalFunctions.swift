@@ -203,7 +203,7 @@ func retrieveVideo(name: String) -> String {
 
 
 func uploadVideos() {
-    let thing = ["subPostChapter15", ]
+    let thing = ["subPostChapter15", "lvl7Intro", "lvl7Outro", "ProjectVenomTrailer", "Chap1Intro"]
     for vid in thing {
         let url = vidToURL(name: vid, type: "mov")
         
@@ -214,6 +214,7 @@ func uploadVideos() {
         videoRecord["video"] = videoAsset
         print("uploading \(vid)")
         videosCurrentlyDownloading = true
+        
         database.save(videoRecord) { (record, error) -> Void in
             if error == nil {
                 if mediaCount == vidArr.count {

@@ -74,12 +74,12 @@ class VideoPlayer : NSObject {
             playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         }
         
-        initialSetupWithURL(url: vidToURL(name: "\(urlAsset)", type: "mov") as URL)
+        //initialSetupWithURL(url: vidToURL(name: "\(urlAsset)", type: "mov") as URL)
         
 
       
         
-        //initialSetupWithURL(url: URL(string: "file://\(retrieveVideo(name: urlAsset))")!)
+        initialSetupWithURL(url: URL(string: "file://\(retrieveVideo(name: urlAsset))")!)
         
         prepareToPlay()
     }

@@ -85,11 +85,6 @@
 		9DA2E9D725F09C6000262638 /* screaming_neon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2E9CF25F09C6000262638 /* screaming_neon.ttf */; };
 		9DAE47C42680568D0090177A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DAE47C62680568D0090177A /* Main.storyboard */; };
 		9DAE47CB268056F50090177A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9DAE47CD268056F50090177A /* Localizable.strings */; };
-		9DAE4857268097920090177A /* subPostChapter15.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9DAE4852268097920090177A /* subPostChapter15.mov */; };
-		9DAE4858268097920090177A /* ProjectVenomTrailer.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9DAE4853268097920090177A /* ProjectVenomTrailer.mov */; };
-		9DAE4859268097920090177A /* lvl7Intro.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9DAE4854268097920090177A /* lvl7Intro.mov */; };
-		9DAE485A268097920090177A /* Chap1Intro.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9DAE4855268097920090177A /* Chap1Intro.mov */; };
-		9DAE485B268097920090177A /* lvl7Outro.mov in Resources */ = {isa = PBXBuildFile; fileRef = 9DAE4856268097920090177A /* lvl7Outro.mov */; };
 		9DB074A625DE1E1700515283 /* subChapter1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB074A525DE1E1700515283 /* subChapter1.swift */; };
 		9DBBF73025C279310022FC63 /* chapter5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBBF72F25C279310022FC63 /* chapter5.swift */; };
 		9DBEB558261BC69A00EFF309 /* Glitch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9DBEB557261BC69A00EFF309 /* Glitch.wav */; };
@@ -294,11 +289,6 @@
 		9DAE484D26806EF70090177A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9DAE484E26806EF70090177A /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9DAE484F26806EF80090177A /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
-		9DAE4852268097920090177A /* subPostChapter15.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = subPostChapter15.mov; path = ../../../../subPostChapter15.mov; sourceTree = "<group>"; };
-		9DAE4853268097920090177A /* ProjectVenomTrailer.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = ProjectVenomTrailer.mov; path = ../../../../ProjectVenomTrailer.mov; sourceTree = "<group>"; };
-		9DAE4854268097920090177A /* lvl7Intro.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = lvl7Intro.mov; path = ../../../../lvl7Intro.mov; sourceTree = "<group>"; };
-		9DAE4855268097920090177A /* Chap1Intro.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Chap1Intro.mov; path = ../../../../Chap1Intro.mov; sourceTree = "<group>"; };
-		9DAE4856268097920090177A /* lvl7Outro.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = lvl7Outro.mov; path = ../../../../lvl7Outro.mov; sourceTree = "<group>"; };
 		9DB074A525DE1E1700515283 /* subChapter1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subChapter1.swift; sourceTree = "<group>"; };
 		9DBBF72F25C279310022FC63 /* chapter5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter5.swift; sourceTree = "<group>"; };
 		9DBEB557261BC69A00EFF309 /* Glitch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Glitch.wav; sourceTree = "<group>"; };
@@ -487,7 +477,6 @@
 				9D0C543B25C50F79000EE579 /* Helpers */,
 				9D5614242591D2DA00F1695A /* View Controllers */,
 				9DEA6A0A259515B0002A8739 /* Templates */,
-				9DAE47BB268052D70090177A /* Videos */,
 				9DA2E9C725F09C2E00262638 /* Fonts */,
 				9D561387259195E700F1695A /* Preview Content */,
 			);
@@ -577,18 +566,6 @@
 				9DA2E9CF25F09C6000262638 /* screaming_neon.ttf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		9DAE47BB268052D70090177A /* Videos */ = {
-			isa = PBXGroup;
-			children = (
-				9DAE4855268097920090177A /* Chap1Intro.mov */,
-				9DAE4854268097920090177A /* lvl7Intro.mov */,
-				9DAE4856268097920090177A /* lvl7Outro.mov */,
-				9DAE4853268097920090177A /* ProjectVenomTrailer.mov */,
-				9DAE4852268097920090177A /* subPostChapter15.mov */,
-			);
-			path = Videos;
 			sourceTree = "<group>";
 		};
 		9DEA6A0A259515B0002A8739 /* Templates */ = {
@@ -786,27 +763,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D561389259195E700F1695A /* Preview Assets.xcassets in Resources */,
-				9DAE4857268097920090177A /* subPostChapter15.mov in Resources */,
 				9DA2E9D225F09C6000262638 /* CoolKidFont.ttf in Resources */,
 				9DA2E9D725F09C6000262638 /* screaming_neon.ttf in Resources */,
 				9D561386259195E700F1695A /* Assets.xcassets in Resources */,
 				9DA2E9D325F09C6000262638 /* aAmbyarSobat.ttf in Resources */,
 				9DA2E9D125F09C6000262638 /* PigpenCipher.otf in Resources */,
-				9DAE4859268097920090177A /* lvl7Intro.mov in Resources */,
 				9DA2E9D525F09C6000262638 /* Adonay.ttf in Resources */,
 				9D5613BD259196DE00F1695A /* LaunchScreen.storyboard in Resources */,
 				9D5FFA89263CE186005AC98A /* skibbity.mp3 in Resources */,
 				9D9AA5C125F793D300C1493A /* Tomorrow.ttf in Resources */,
 				9D8C42AF25C7BE5C0039F857 /* Settings.bundle in Resources */,
 				9DAE47CB268056F50090177A /* Localizable.strings in Resources */,
-				9DAE485B268097920090177A /* lvl7Outro.mov in Resources */,
 				9DA2E9D025F09C6000262638 /* NoisyWalk.ttf in Resources */,
 				9DBEB558261BC69A00EFF309 /* Glitch.wav in Resources */,
 				9DA2E9D625F09C6000262638 /* astro.ttf in Resources */,
 				9D6762FA2618534D005E9346 /* GoogleService-Info.plist in Resources */,
 				9D0B0ADE25FEE3CD00C3B1F5 /* Between0And1.m4a in Resources */,
-				9DAE485A268097920090177A /* Chap1Intro.mov in Resources */,
-				9DAE4858268097920090177A /* ProjectVenomTrailer.mov in Resources */,
 				9DAE47C42680568D0090177A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
