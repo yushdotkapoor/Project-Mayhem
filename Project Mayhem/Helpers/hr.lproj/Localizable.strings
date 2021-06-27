@@ -185,3 +185,7 @@
 "Sounds pretty sinister to me. We need you to investigate the company and see if there is anything to worry about. This could be your biggest case as a Defender, if Vision Consolidated is not what we think it is. You’ve been given employee access to their facilities, but make sure to stay under the radar. Good luck, Brainchild." = "Zvuči prilično mračne meni. Trebamo li istražiti tvrtku i vidjeti ako postoji nešto zbog čega brinuti. To može biti vaš najveći slučaj kao branitelj, ako Vision Konsolidirani nije ono što mi mislimo da jest. Ste dobili pristup zaposlenika svojim objektima, ali budite sigurni da ostanu ispod radara. Sretno, zamisao.";
 "boss" = "šef";
 "ever existing" = "sve postojeće";
+"Reduce Motion:" = "Smanjite kretanje:";
+"This option will reduce any gyroscopic motion animations" = "Ova opcija će smanjiti sve žiroskopske animacije pokreta";
+"Reduce Motion:" = "Snižte pohyb:";
+"This option will reduce any gyroscopic motion animations" = "Tato volba sníží nějaké gyroskopické animace pohybu";

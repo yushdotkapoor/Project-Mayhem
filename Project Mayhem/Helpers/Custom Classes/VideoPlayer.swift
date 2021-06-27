@@ -76,9 +76,6 @@ class VideoPlayer : NSObject {
         
         //initialSetupWithURL(url: vidToURL(name: "\(urlAsset)", type: "mov") as URL)
         
-
-      
-        
         initialSetupWithURL(url: URL(string: "file://\(retrieveVideo(name: urlAsset))")!)
         
         prepareToPlay()
@@ -113,9 +110,10 @@ class VideoPlayer : NSObject {
             if pauseTime > time {
                 if pauseTime > time + 3.1 && video!.isPlaying(){
                     seekToPosition(seconds: pauseTime - 3)
+                    impact(style: .light)
                 }
                 else {
-                    impact(style: .light)
+                    impact(style: .error)
                 }
                 break
             }
@@ -274,7 +272,7 @@ class VideoPlayer : NSObject {
                     if let playView = playerView, let layer = playView.layer as? AVPlayerLayer {
                         layer.player = assetPlayer
                         
-                     
+                        
                         if let group = asset.mediaSelectionGroup(forMediaCharacteristic: AVMediaCharacteristic.legible) {
                             
                             let code = Locale.preferredLanguages.first
@@ -289,10 +287,10 @@ class VideoPlayer : NSObject {
                                 playerItem?.select(option, in: group)
                             }
                         }
-
+                        
                         
                         assetPlayer?.currentItem?.textStyleRules = [AVTextStyleRule(textMarkupAttributes: [kCMTextMarkupAttribute_OrthogonalLinePositionPercentageRelativeToWritingDirection as String: 50])!]
-                         
+                        
                         
                         print("player created at time \(currentTime)")
                         seekToPosition(seconds: currentTime)
@@ -403,7 +401,7 @@ class VideoPlayer : NSObject {
     private func initialSetupWithURL(url:URL) {
         let options = [AVURLAssetPreferPreciseDurationAndTimingKey : true]
         urlAsset = AVURLAsset(url: url, options: options)
-    
+        
     }
     
     // MARK: - Observations

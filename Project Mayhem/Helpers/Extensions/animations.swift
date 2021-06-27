@@ -147,6 +147,83 @@ extension UIView {
     }
     
     
+    func add3DMotionShadow(maxOffset: CGFloat, color: CGColor, opacity: Float, startingOffset: CGFloat) {
+        let mot = game.bool(forKey: "reduceMotion")
+        if mot {
+            return
+        }
+        layer.shadowOffset = CGSize(width: 0, height: startingOffset)
+        layer.shadowColor = color
+        layer.shadowOpacity = opacity
+        add3DMotionShadow(maxOffset: maxOffset)
+    }
+    
+    func add3DMotionShadow(maxOffset: CGFloat) {
+        let mot = game.bool(forKey: "reduceMotion")
+        if mot {
+            return
+        }
+        clipsToBounds = false
+        let horizontalEffect = UIInterpolatingMotionEffect(
+            keyPath: "layer.shadowOffset.width",
+            type: .tiltAlongHorizontalAxis)
+        horizontalEffect.minimumRelativeValue = maxOffset
+        horizontalEffect.maximumRelativeValue = -maxOffset
+        
+        let verticalEffect = UIInterpolatingMotionEffect(
+            keyPath: "layer.shadowOffset.height",
+            type: .tiltAlongVerticalAxis)
+        verticalEffect.minimumRelativeValue = maxOffset
+        verticalEffect.maximumRelativeValue = -maxOffset
+        
+        let effectGroup = UIMotionEffectGroup()
+        effectGroup.motionEffects = [ horizontalEffect,
+                                      verticalEffect ]
+        
+        addMotionEffect(effectGroup)
+    }
+    
+    
+    func add3DTileMotion() {
+        let mot = game.bool(forKey: "reduceMotion")
+        if mot {
+            return
+        }
+        var identity = CATransform3DIdentity
+        identity.m34 = -1 / 500.0
+        
+        let factor = 30 - ((frame.height - 120)/23.0)
+        print(factor)
+        
+        
+        let vmaximum = CATransform3DRotate(identity, (factor * .pi) / 180.0, 1.0, 0.0, 0.0)
+        let vminimum = CATransform3DRotate(identity, ((365 - factor) * .pi) / 180.0, 1.0, 0.0, 0.0)
+        let hmaximum = CATransform3DRotate(identity, (330 * .pi) / 180.0, 0.0, 1.0, 0.0)
+        let hminimum = CATransform3DRotate(identity, (30 * .pi) / 180.0, 0.0, 1.0, 0.0)
+        
+        
+        layer.transform = identity
+        let horizontalEffect = UIInterpolatingMotionEffect(
+            keyPath: "layer.transform",
+            type: .tiltAlongHorizontalAxis)
+        horizontalEffect.minimumRelativeValue = hminimum
+        horizontalEffect.maximumRelativeValue = hmaximum
+        
+        let verticalEffect = UIInterpolatingMotionEffect(
+            keyPath: "layer.transform",
+            type: .tiltAlongVerticalAxis)
+        verticalEffect.minimumRelativeValue = vminimum
+        verticalEffect.maximumRelativeValue = vmaximum
+        
+        let effectGroup = UIMotionEffectGroup()
+        effectGroup.motionEffects = [ horizontalEffect,
+                                      verticalEffect ]
+        
+        
+        
+        addMotionEffect(effectGroup)
+    }
+    
     
 }
 

@@ -84,7 +84,7 @@ class postCredits: UIViewController, MFMailComposeViewControllerDelegate {
     
     
     @IBAction func review(_ sender: Any) {
-      writeReview()
+        writeReview()
     }
     
     func writeReview() {
@@ -92,7 +92,7 @@ class postCredits: UIViewController, MFMailComposeViewControllerDelegate {
         components?.queryItems = [URLQueryItem(name: "action", value: "write-review")]
         
         guard let writeReviewURL = components?.url else {
-          return
+            return
         }
         
         UIApplication.shared.open(writeReviewURL)
@@ -116,7 +116,7 @@ class postCredits: UIViewController, MFMailComposeViewControllerDelegate {
         let controller = storyboard.instantiateViewController(withIdentifier: selectNavigation)
         self.present(controller, animated: true, completion: nil)
     }
-   
+    
     
     @IBAction func goBack(_ sender: Any) {
         self.performSegue(withIdentifier: "postCreditsToHome", sender: nil)

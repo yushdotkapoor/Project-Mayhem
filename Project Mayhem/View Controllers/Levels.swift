@@ -157,7 +157,7 @@ class Levels: UIViewController {
     }
     
     
-  
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         notificationTimer?.invalidate()
@@ -311,7 +311,7 @@ class Levels: UIViewController {
         performSegue(withIdentifier: "levelsToChap5", sender: nil)
     }
     
-   
+    
     
     func animate(constraint: NSLayoutConstraint) {
         UIView.animate(withDuration: 0.5, delay: del, options: .curveEaseOut, animations: {

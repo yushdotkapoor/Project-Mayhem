@@ -54,6 +54,11 @@ class CustomButton: UIButton {
         addHaptic()
     }
     
+    func addOutline(color: CGColor) {
+        layer.borderWidth = 2
+        layer.borderColor = color
+    }
+    
     func addHaptic() {
         addAction(UIAction(handler: {_ in
             impact(style: .medium)

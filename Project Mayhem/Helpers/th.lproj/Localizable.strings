@@ -185,3 +185,5 @@
 "Sounds pretty sinister to me. We need you to investigate the company and see if there is anything to worry about. This could be your biggest case as a Defender, if Vision Consolidated is not what we think it is. You’ve been given employee access to their facilities, but make sure to stay under the radar. Good luck, Brainchild." = "เสียงน่ากลัวสวยกับผม เราต้องการให้คุณตรวจสอบ บริษัท และดูว่ามีอะไรที่จะต้องกังวลเกี่ยวกับ ซึ่งอาจเป็นกรณีที่ใหญ่ที่สุดของคุณในฐานะผู้พิทักษ์ถ้าวิสัยทัศน์รวมของ บริษัท ย่อยไม่ได้เป็นสิ่งที่เราคิดว่ามันเป็น คุณได้รับการเข้าถึงพนักงานสิ่งอำนวยความสะดวกของพวกเขา แต่ให้แน่ใจว่าการเข้าพักภายใต้เรดาร์ โชคดีสมรภูมิไอเดีย";
 "boss" = "นาย";
 "ever existing" = "ที่เคยมีอยู่";
+"Reduce Motion:" = "ลดการเคลื่อนไหว:";
+"This option will reduce any gyroscopic motion animations" = "ตัวเลือกนี้จะลดภาพเคลื่อนไหวการเคลื่อนที่ของไจโรสโคป";

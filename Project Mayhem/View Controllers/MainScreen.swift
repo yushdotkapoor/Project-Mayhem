@@ -8,6 +8,7 @@
 import UIKit
 import OneSignal
 import Firebase
+import CoreMotion
 
 let ref = Database.database().reference()
 
@@ -19,6 +20,7 @@ class MainScreen: UIViewController {
     @IBOutlet weak var tearDrop: CustomButton!
     @IBOutlet weak var dropTop: NSLayoutConstraint!
     @IBOutlet weak var lbl: UILabel!
+    @IBOutlet weak var logo: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,9 @@ class MainScreen: UIViewController {
         enter.setupButton(color: c, pressColor: UIColor.black)
         enter.setTitle("Enter".localized(), for: .normal)
         
+        //COMMENT LINE BELOW BEFORE DEPLOYMENT
+        //game.setValue(true, forKey: "isAdmin")
+        
         if (!videosCurrentlyDownloading && !game.bool(forKey: "downloaded")) || weekTimer() {
             //uploadVideos()
             downloadVideos()
@@ -34,6 +39,15 @@ class MainScreen: UIViewController {
         
         Auth.auth().signInAnonymously()
         setupChat()
+        
+        lbl.add3DMotionShadow(maxOffset: 20, color: UIColor.white.cgColor, opacity: 0.5, startingOffset: 0)
+        enter.add3DMotionShadow(maxOffset: 20, color: UIColor.gray.cgColor, opacity: 0.5, startingOffset: 0)
+        tearDrop.add3DMotionShadow(maxOffset: 20, color: UIColor.gray.cgColor, opacity: 0.5, startingOffset: 0)
+        logo.add3DMotionShadow(maxOffset: 20, color: UIColor.gray.cgColor, opacity: 0.75, startingOffset: 0)
+        
+        enter.addOutline(color: UIColor.gray.cgColor)
+        tearDrop.addOutline(color: UIColor.gray.cgColor)
+        
     }
     
     

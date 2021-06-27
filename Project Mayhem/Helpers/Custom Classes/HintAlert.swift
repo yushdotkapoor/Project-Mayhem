@@ -22,7 +22,7 @@ class HintAlert: NSObject, UIScrollViewDelegate {
     
     var tier2Hint = ["1":"Maybe it's best if you go home.".localized(), "2":"If you were on the phone and could not hear the other person on speaker, what would you do?".localized(),"3":"Tap the little circles simultaneously.".localized(),"4":"Stright lines, fast movements, phone flat.".localized(),"5":"\"A\" is known as a musical note and has different pitches. Remember, nothing is off limits!".localized(),"5Perm":"\"A\" is known as a musical note and has different pitches. Remember, nothing is off limits!".localized(),"6":"Morse code, isn't it? Let's see what the internet can do for you.".localized(),"7":"I suggest writing down a grid and tapping around to see what happens.".localized(),"8":"I wonder what happens if we look for the app settings?".localized(),"9":"Use your resources to decode this message".localized(),"10":"Scan the QR code and see what pops up.".localized(),"11.1":"","11.2":"Say the name of the playright!".localized(),"11.2Perm":"Say the name of the playright!".localized(),"12.1": "Let's fill that battery.".localized(), "12.2":"Maybe we can travel back in time.".localized(),"12.3":"It's possible that there is a setting to change the general size of fonts?".localized(),"13.1":"You gotta physically move back".localized(),"13.2":"Let's undo.".localized(),"13.3":"Let's keep undoing and see what the red letters spell out.".localized(),"14":  "As the Curtain Rose, the people cheered and the bootleggers took Pictures.".localized(),"15.1":"Make sure you make the SMART move.".localized(),"15.2":"There are 15 hidden letters in the levels prior.".localized()]
     
-   
+    
     
     private let alertView: UIView = {
         let alert = UIView()
@@ -186,7 +186,7 @@ class HintAlert: NSObject, UIScrollViewDelegate {
         gradient.colors = [UIColor(named: "MayhemBlue")!.cgColor, UIColor(named: "MayhemGray")!.cgColor]
         gradient.frame = alertView.bounds
         alertView.layer.addSublayer(gradient)
-        targetView.addSubview(alertView)
+        backgroundView.addSubview(alertView)
         
         alertView.addSubview(titleLabel)
         alertView.addSubview(d1)
@@ -204,6 +204,7 @@ class HintAlert: NSObject, UIScrollViewDelegate {
             self.alertView.alpha = 1.0
         })
         bouncer(num: 0)
+        alertView.add3DTileMotion()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapExit))
         tap.numberOfTapsRequired = 1
@@ -231,6 +232,8 @@ class HintAlert: NSObject, UIScrollViewDelegate {
         messageLabel.font = messageLabel.font.withSize(16)
         messageLabel.textAlignment = .center
         messageLabel.textColor = .white
+        
+        
         
         scrollView.addSubview(messageLabel)
         
@@ -386,7 +389,6 @@ class HintAlert: NSObject, UIScrollViewDelegate {
                 
             }, completion: { done in
                 if done {
-                    self.alertView.removeFromSuperview()
                     self.backgroundView.removeFromSuperview()
                 }
             })

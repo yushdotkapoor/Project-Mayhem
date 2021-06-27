@@ -185,3 +185,5 @@
 "Sounds pretty sinister to me. We need you to investigate the company and see if there is anything to worry about. This could be your biggest case as a Defender, if Vision Consolidated is not what we think it is. You’ve been given employee access to their facilities, but make sure to stay under the radar. Good luck, Brainchild." = "きれいな私には不吉なサウンド。私たちは、会社を調査し、心配することは何があるかどうかを確認するためにあなたを必要としています。ビジョン連結は、我々はそれが何を考えていない場合、これは、ディフェンダーとしてあなたの最大のケースである可能性があります。あなたはそれらの施設への従業員のアクセスを与えられたが、レーダーの下に滞在することを確認してきました。幸運、ブレインチャイルド。";
 "boss" = "ボス";
 "ever existing" = "これまでに、既存の";
+"Reduce Motion:" = "動きを減らす：";
+"This option will reduce any gyroscopic motion animations" = "このオプションは、ジャイロスコープモーションアニメーションを削減します";

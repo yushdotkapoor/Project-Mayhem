@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, S
         FirebaseApp.configure()
         
         Siren.shared.wail()
-            
+        
         OneSignal.initWithLaunchOptions(launchOptions)
         OneSignal.setAppId("12db9d9f-4c00-4d45-83e7-0cf7e40026cd")
         
@@ -79,7 +79,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, S
         AppsFlyerLib.shared().handleOpen(url, options: options)
         return true
     }
- 
+    
     
     
     func callObserver(_ callObserver: CXCallObserver, callChanged call: CXCall) {

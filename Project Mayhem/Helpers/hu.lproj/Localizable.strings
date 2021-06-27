@@ -185,3 +185,5 @@
 "Sounds pretty sinister to me. We need you to investigate the company and see if there is anything to worry about. This could be your biggest case as a Defender, if Vision Consolidated is not what we think it is. You’ve been given employee access to their facilities, but make sure to stay under the radar. Good luck, Brainchild." = "Hangok elég baljós számomra. Meg kell, hogy vizsgálja meg a cég, és hátha van valami aggódni. Ez lehet a legnagyobb esetet, mint a Defender, ha Vision konszolidált nem az, amit gondolunk van. Kaptál alkalmazottja való hozzáférést lehetőség, de ügyeljen arra, hogy felfüggeszti a radar. Sok szerencsét, Brainchild.";
 "boss" = "főnök";
 "ever existing" = "valaha létező";
+"Reduce Motion:" = "A mozgás csökkentése:";
+"This option will reduce any gyroscopic motion animations" = "Ez az opció csökkenti a giroszkópikus mozgás animációt";

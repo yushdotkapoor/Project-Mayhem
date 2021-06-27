@@ -185,3 +185,5 @@
 "Sounds pretty sinister to me. We need you to investigate the company and see if there is anything to worry about. This could be your biggest case as a Defender, if Vision Consolidated is not what we think it is. You’ve been given employee access to their facilities, but make sure to stay under the radar. Good luck, Brainchild." = "ध्वनि सुंदर मेरे लिए भयावह। हम आपको कंपनी की जाँच करेगा और वहाँ के बारे में चिंता करने के लिए कुछ है देखने के लिए की जरूरत है। यह एक डिफेंडर के रूप में अपने सबसे बड़े मामले में हो सकता है अगर विजन समेकित हम क्या लगता है कि यह है नहीं है। आप उनकी सुविधाओं के लिए कर्मचारी पहुंच प्रदान किया है, लेकिन रडार के नीचे रहने के लिए सुनिश्चित करें। गुड लक, दिमाग की उपज।";
 "boss" = "मालिक";
 "ever existing" = "कभी मौजूदा";
+"Reduce Motion:" = "मोशन घटाएं:";
+"This option will reduce any gyroscopic motion animations" = "यह विकल्प किसी भी जीरोस्कोपिक गति एनिमेशन को कम करेगा";

@@ -185,3 +185,5 @@
 "Sounds pretty sinister to me. We need you to investigate the company and see if there is anything to worry about. This could be your biggest case as a Defender, if Vision Consolidated is not what we think it is. You’ve been given employee access to their facilities, but make sure to stay under the radar. Good luck, Brainchild." = "Suena bastante siniestros para mí. Necesitamos que investigue la empresa y ver si hay algo de qué preocuparse. Esto podría ser el caso más importante como defensor, si la visión consolidada no es lo que pensamos que es. Se te ha dado acceso de los empleados a sus instalaciones, pero asegúrese de permanecer bajo el radar. Buena suerte, una creación.";
 "boss" = "jefe";
 "ever existing" = "siempre existente";
+"Reduce Motion:" = "Reducir el movimiento:";
+"This option will reduce any gyroscopic motion animations" = "Esta opción reducirá cualquier animación de movimiento giroscópico.";

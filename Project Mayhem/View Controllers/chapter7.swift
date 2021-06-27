@@ -37,6 +37,7 @@ class chapter7: UIViewController {
     var vidView:PlayerView?
     
     var talkingView:UIView?
+    var backgroundView:UIView?
     
     var current = 0
     var orderString:[String] = []
@@ -80,6 +81,10 @@ class chapter7: UIViewController {
             width = 500
         }
         
+        backgroundView = UIView()
+        backgroundView?.frame = view.frame
+        view.addSubview(backgroundView!)
+        
         talkingView = UIView(frame: CGRect(x: 25, y: 90, width: width, height: UIScreen.main.bounds.height - 200))
         talkingView!.alpha = 0.0
         talkingView!.center = view.center
@@ -120,21 +125,25 @@ class chapter7: UIViewController {
         talkingView!.layer.addSublayer(gradient)
         talkingView!.addSubview(label)
         talkingView!.addSubview(vidView!)
-        talkingView!.center = view.center
+        talkingView!.center.x = view.center.x
+        talkingView!.center.y = view.center.y - 20
         talkingView!.addSubview(doubleTapInstructions!)
-        view.addSubview(talkingView!)
-        view.bringSubviewToFront(talkingView!)
+        backgroundView!.addSubview(talkingView!)
+        backgroundView!.bringSubviewToFront(talkingView!)
+        view.bringSubviewToFront(toolbar)
         
         video = VideoPlayer(urlAsset: vidName, view: vidView!, arr: pauseArray, startTime: timeStamp, volume: 0.2)
         
         talkingView!.fadeIn()
+        talkingView?.add3DTileMotion()
+        
         flashInstructions()
     }
     
     func vid1Finish() {
-        talkingView!.fadeOut()
+        backgroundView!.fadeOut()
         wait {
-            self.view.sendSubviewToBack(self.talkingView!)
+            self.view.sendSubviewToBack(self.backgroundView!)
         }
         game.setValue(true, forKey: "chap7IntroWatched")
         keyToCheck = "chap7OutroWatched"
@@ -142,9 +151,9 @@ class chapter7: UIViewController {
     }
     
     func vid2Finish() {
-        talkingView!.fadeOut()
+        backgroundView!.fadeOut()
         wait {
-            self.view.sendSubviewToBack(self.talkingView!)
+            self.view.sendSubviewToBack(self.backgroundView!)
         }
         game.setValue(true, forKey: "chap7OutroWatched")
         stop()

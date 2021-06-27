@@ -185,3 +185,5 @@
 "Sounds pretty sinister to me. We need you to investigate the company and see if there is anything to worry about. This could be your biggest case as a Defender, if Vision Consolidated is not what we think it is. You’ve been given employee access to their facilities, but make sure to stay under the radar. Good luck, Brainchild." = "Låter ganska olycksbådande för mig. Vi behöver dig att undersöka företaget och se om det finns något att oroa sig för. Detta kan vara din största fallet som försvarare, om Vision Consolidated är inte vad vi tror att det är. Du har fått anställd tillgång till sina anläggningar, men se till att hålla sig under radarn. Lycka till, Idé.";
 "boss" = "chef";
 "ever existing" = "någonsin existerande";
+"Reduce Motion:" = "Reducera Motion:";
+"This option will reduce any gyroscopic motion animations" = "Det här alternativet kommer att minska alla gyroskopiska rörelseimationer";

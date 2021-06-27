@@ -229,11 +229,7 @@ class chapter13: UIViewController {
                         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
                         view.bringSubviewToFront(flashView)
                         wait(time:0.1, actions: {
-                            self.view.bringSubviewToFront(self.sceneView)
-                            self.view.bringSubviewToFront(self.quakeLabel)
-                            self.view.bringSubviewToFront(self.toolbar)
-                            self.view.bringSubviewToFront(self.labelStack)
-                            self.view.bringSubviewToFront(self.Reset)
+                            self.view.sendSubviewToBack(self.flashView)
                         })
                         hintText = "13.3"
                         lmt = shakeOrder[j + 1]
@@ -288,6 +284,7 @@ class chapter13: UIViewController {
     }
     
     func complete() {
+        sceneView.stop(self)
         game.setValue(true, forKey: "chap13")
         game.setValue("none", forKey: "active")
         NotificationCenter.default.removeObserver(self)
@@ -304,6 +301,7 @@ class chapter13: UIViewController {
     
     
     @IBAction func goBack(_ sender: Any) {
+        sceneView.stop(self)
         NotificationCenter.default.removeObserver(self)
         self.performSegue(withIdentifier: "chap13ToHome", sender: nil)
     }
@@ -333,6 +331,10 @@ class chapter13: UIViewController {
     
     func dismissAlert() {
         customAlert.dismissAlert()
+    }
+    
+    deinit {
+        print("fuck")
     }
     
     

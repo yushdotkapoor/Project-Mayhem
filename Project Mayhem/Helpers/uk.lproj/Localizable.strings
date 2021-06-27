@@ -185,3 +185,5 @@
 "Sounds pretty sinister to me. We need you to investigate the company and see if there is anything to worry about. This could be your biggest case as a Defender, if Vision Consolidated is not what we think it is. You’ve been given employee access to their facilities, but make sure to stay under the radar. Good luck, Brainchild." = "Звуки досить зловісні мені. Нам потрібно, щоб досліджувати компанію і подивитися, якщо є що-небудь, щоб турбуватися про. Це може бути ваш найбільший випадок в якості захисника, якщо зір Consolidated не те, що ми думаємо. Ви отримали доступ співробітників до їх об'єктів, але переконайтеся, що перебування під радаром. Успіхів, Brainchild.";
 "boss" = "бос";
 "ever existing" = "коли-небудь існувала";
+"Reduce Motion:" = "Зменшити рух:";
+"This option will reduce any gyroscopic motion animations" = "Цей варіант зменшить будь-які гіроскопічні анімації руху";

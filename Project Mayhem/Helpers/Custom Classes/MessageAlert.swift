@@ -40,20 +40,20 @@ class MessageAlert: NSObject {
         
         switch title {
         case "\(messageFrom) Vision Consolidated":
-            //purple gradient
-            grad.colors = [UIColor(red: 128/255, green: 0, blue: 128/255, alpha: 1.0).cgColor, UIColor(red: 216/255, green: 191/255, blue: 216/255, alpha: 1.0).cgColor]
+            //blue gradient
+            grad.colors = [UIColor(red: 0, green: 4/255, blue: 40/255, alpha: 1.0).cgColor, UIColor(red: 0, green: 78/255, blue: 146/255, alpha: 1.0).cgColor]
             break
         case "\(messageFrom) Victoria Lambson":
-            //red
-            grad.colors = [UIColor(red: 220/255, green: 28/255, blue: 19/255, alpha: 1.0).cgColor, UIColor(red: 246/255, green: 189/255, blue: 192/255, alpha: 1.0).cgColor]
+            //pink
+            grad.colors = [UIColor(red: 204/255, green: 43/255, blue:94/255, alpha: 1.0).cgColor, UIColor(red: 117/255, green: 58/255, blue: 136/255, alpha: 1.0).cgColor]
             break
         case "\(messageFrom) Yush Raj Kapoor":
             //green
             grad.colors = [UIColor(red: 0, green: 86/255, blue: 62/255, alpha: 1.0).cgColor, UIColor(red: 0, green: 180/255, blue: 134/255, alpha: 1.0).cgColor]
             break
         case "\(messageFrom) Defender Command":
-            //orange
-            grad.colors = [UIColor(red: 255/255, green: 128/255, blue: 0/255, alpha: 1.0).cgColor, UIColor(red: 249/255, green: 192/255, blue: 136/255, alpha: 1.0).cgColor]
+            //teal
+            grad.colors = [UIColor(red: 67/255, green: 206/255, blue: 162/255, alpha: 1.0).cgColor, UIColor(red: 24/255, green: 90/255, blue: 157/255, alpha: 1.0).cgColor]
             break
         default:
             break
@@ -110,7 +110,8 @@ class MessageAlert: NSObject {
         alertView.center = targetView.center
         gradient.frame = alertView.bounds
         alertView.layer.addSublayer(gradient)
-        targetView.addSubview(alertView)
+        
+        backgroundView.addSubview(alertView)
         alertView.addSubview(titleLabel)
         alertView.addSubview(msgbtn.messageLabel)
         alertView.addSubview(msgbtn.button)
@@ -120,6 +121,8 @@ class MessageAlert: NSObject {
             self.alertView.isHidden = false
             self.alertView.alpha = 1.0
         })
+        
+        alertView.add3DTileMotion()
         
         let tap = CustomTapGestureRecognizer(target: self, action: #selector(tapExit))
         tap.button = msgbtn.button
@@ -160,7 +163,6 @@ class MessageAlert: NSObject {
             self.alertView.alpha = 0.0
         }, completion: { done in
             if done {
-                self.alertView.removeFromSuperview()
                 self.backgroundView.removeFromSuperview()
             }
         })
@@ -169,6 +171,6 @@ class MessageAlert: NSObject {
 
 
 class CustomTapGestureRecognizer: UITapGestureRecognizer {
-   var button: UIButton?
+    var button: UIButton?
 }
 

@@ -24,20 +24,9 @@ let database = CKContainer.default().publicCloudDatabase
 let vidArr = ["Chap1Intro", "lvl7Intro", "lvl7Outro", "subPostChapter15", "ProjectVenomTrailer"]
 var mediaCount = 0
 let messageFrom = "Message From".localized()
+var menuState = false
 
-func wait(time: Float, actions: @escaping () -> Void) {
-    let timeInterval = TimeInterval(time)
-    DispatchQueue.main.asyncAfter(deadline: .now() + timeInterval) {
-        actions()
-    }
-}
-
-func wait(actions: @escaping () -> Void) {
-    wait(time: 1.0, actions: {
-        actions()
-    })
-}
-
+// MARK: - General
 func activateAVSession(option:AVAudioSession.CategoryOptions) {
     do {
         try AVAudioSession.sharedInstance().setCategory(.playAndRecord, options: option)
@@ -55,22 +44,32 @@ func openLink(st: String) {
     UIApplication.shared.open(url)
 }
 
-func isOnPhoneCall() -> Bool {
-    if isCallKitSupported() {
-        for call in CXCallObserver().calls {
-            if call.hasEnded == false {
-                print("on call")
-                return true
-            }
+func isView(selfView: UIViewController, checkView: AnyClass) -> Bool {
+    if let viewController = selfView.navigationController?.visibleViewController {
+        if viewController.isKind(of: checkView.self) {
+            return true
         }
-        print("not on call")
         return false
     }
-    else {
-        return false
+    return false
+}
+
+
+// MARK: - Wait Functions
+func wait(time: Float, actions: @escaping () -> Void) {
+    let timeInterval = TimeInterval(time)
+    DispatchQueue.main.asyncAfter(deadline: .now() + timeInterval) {
+        actions()
     }
 }
 
+func wait(actions: @escaping () -> Void) {
+    wait(time: 1.0, actions: {
+        actions()
+    })
+}
+
+// MARK: - Haptic Feedback
 func impact(style: UIImpactFeedbackGenerator.FeedbackStyle) {
     let generator = UIImpactFeedbackGenerator(style: style)
     generator.impactOccurred()
@@ -81,6 +80,7 @@ func impact(style: UINotificationFeedbackGenerator.FeedbackType) {
     generator.notificationOccurred(style)
 }
 
+// MARK: - Label Height
 func countLines(of label: UILabel, maxHeight: CGFloat) -> Int {
     // viewDidLayoutSubviews() in ViewController or layoutIfNeeded() in view subclass
     guard let labelText = label.text else {
@@ -104,6 +104,7 @@ func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat{
     return label.frame.height
 }
 
+// MARK: - Phone Stuff
 func isCallKitSupported() -> Bool {
     let userLocale = NSLocale.current
     
@@ -117,14 +118,23 @@ func isCallKitSupported() -> Bool {
     }
 }
 
-func vidToURL(name: String, type: String) -> NSURL {
-    if let filePath = Bundle.main.path(forResource: name, ofType: type) {
-        let fileURL = NSURL(fileURLWithPath: filePath)
-        return fileURL
+func isOnPhoneCall() -> Bool {
+    if isCallKitSupported() {
+        for call in CXCallObserver().calls {
+            if call.hasEnded == false {
+                print("on call")
+                return true
+            }
+        }
+        print("not on call")
+        return false
     }
-    return NSURL()
+    else {
+        return false
+    }
 }
 
+// MARK: - Videos
 func downloadVideos() {
     mediaCount = 0
     for vid in vidArr {
@@ -172,6 +182,35 @@ func downloadVideos() {
     }
 }
 
+func uploadVideos() {
+    let thing = ["subPostChapter15", "lvl7Intro", "lvl7Outro", "ProjectVenomTrailer", "Chap1Intro"]
+    for vid in thing {
+        let url = vidToURL(name: vid, type: "mov")
+        
+        let videoRecord = CKRecord(recordType: "Videos", recordID: CKRecord.ID(recordName: vid))
+        videoRecord["title"] = vid
+        
+        let videoAsset = CKAsset(fileURL: url as URL)
+        videoRecord["video"] = videoAsset
+        print("uploading \(vid)")
+        videosCurrentlyDownloading = true
+        
+        database.save(videoRecord) { (record, error) -> Void in
+            if error == nil {
+                if mediaCount == vidArr.count {
+                    print("\n\nVideo Uploads Complete\n\n")
+                    videosCurrentlyDownloading = false
+                }
+                print("\(vid) uploaded successfully")
+            } else {
+                print("upload error: \(error!)")
+                videosCurrentlyDownloading = false
+            }
+        }
+    }
+}
+
+
 func weekTimer() -> Bool {
     let date = Date().timeIntervalSince1970
     let dateToCheck = game.double(forKey: "weekDate")
@@ -201,104 +240,15 @@ func retrieveVideo(name: String) -> String {
     }
 }
 
-
-func uploadVideos() {
-    let thing = ["subPostChapter15", "lvl7Intro", "lvl7Outro", "ProjectVenomTrailer", "Chap1Intro"]
-    for vid in thing {
-        let url = vidToURL(name: vid, type: "mov")
-        
-        let videoRecord = CKRecord(recordType: "Videos", recordID: CKRecord.ID(recordName: vid))
-        videoRecord["title"] = vid
-        
-        let videoAsset = CKAsset(fileURL: url as URL)
-        videoRecord["video"] = videoAsset
-        print("uploading \(vid)")
-        videosCurrentlyDownloading = true
-        
-        database.save(videoRecord) { (record, error) -> Void in
-            if error == nil {
-                if mediaCount == vidArr.count {
-                    print("\n\nVideo Uploads Complete\n\n")
-                    videosCurrentlyDownloading = false
-                }
-                print("\(vid) uploaded successfully")
-            } else {
-                print("upload error: \(error!)")
-                videosCurrentlyDownloading = false
-            }
-        }
+func vidToURL(name: String, type: String) -> NSURL {
+    if let filePath = Bundle.main.path(forResource: name, ofType: type) {
+        let fileURL = NSURL(fileURLWithPath: filePath)
+        return fileURL
     }
+    return NSURL()
 }
 
-func isView(selfView: UIViewController, checkView: AnyClass) -> Bool {
-    if let viewController = selfView.navigationController?.visibleViewController {
-        if viewController.isKind(of: checkView.self) {
-            return true
-        }
-        return false
-    }
-    return false
-}
-
-extension String {
-    func localized() -> String {
-        return NSLocalizedString(self, tableName: "Localizable", bundle: .main, value: self, comment: self)
-    }
-    
-    func index(from: Int) -> Index {
-        return self.index(startIndex, offsetBy: from)
-    }
-    
-    func substring(from: Int) -> String {
-        let fromIndex = index(from: from)
-        return String(self[fromIndex...])
-    }
-    
-    func substring(to: Int) -> String {
-        let toIndex = index(from: to)
-        return String(self[..<toIndex])
-    }
-    
-    func substring(with r: Range<Int>) -> String {
-        let startIndex = index(from: r.lowerBound)
-        let endIndex = index(from: r.upperBound)
-        return String(self[startIndex..<endIndex])
-    }
-    
-    mutating func removeLastSpace() -> String {
-        if (last == " ") {
-            return String(dropLast())
-        }
-        return self
-    }
-}
-
-
-extension StringProtocol {
-    func index<S: StringProtocol>(of string: S, options: String.CompareOptions = []) -> Index? {
-        range(of: string, options: options)?.lowerBound
-    }
-    func endIndex<S: StringProtocol>(of string: S, options: String.CompareOptions = []) -> Index? {
-        range(of: string, options: options)?.upperBound
-    }
-    func indices<S: StringProtocol>(of string: S, options: String.CompareOptions = []) -> [Index] {
-        ranges(of: string, options: options).map(\.lowerBound)
-    }
-    func ranges<S: StringProtocol>(of string: S, options: String.CompareOptions = []) -> [Range<Index>] {
-        var result: [Range<Index>] = []
-        var startIndex = self.startIndex
-        while startIndex < endIndex,
-              let range = self[startIndex...]
-                .range(of: string, options: options) {
-            result.append(range)
-            startIndex = range.lowerBound < range.upperBound ? range.upperBound :
-                index(range.lowerBound, offsetBy: 1, limitedBy: endIndex) ?? endIndex
-        }
-        return result
-    }
-}
-
-
+// MARK: = IAPs
 func getIAP(productIdentifier: String) -> SKProduct {
     for i in IAPs ?? [] {
         if i.productIdentifier == productIdentifier {

@@ -242,6 +242,7 @@ class chapter6: UIViewController {
             view.endEditing(true)
             heder.flickerIn()
             stop()
+            circleView.stopAnimation()
             textStack.isUserInteractionEnabled = false
             wait {
                 self.alert.showAlert(title: "\(messageFrom) Victoria Lambson", message: "This is quite interesting. What does Neuschwanstein castle have to do with Project Mayhem? This was never reported in our security reports.".localized(), viewController: self, buttonPush: #selector(self.dismissMessageAlert))

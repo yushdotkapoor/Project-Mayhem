@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-var menuState = false
+
 
 class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     @IBOutlet weak var leave: UILabel!
@@ -29,8 +29,6 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     var skipVal = ["chap1", "chap2", "chap3", "chap4", "chap5", "chap6", "chap7", "chap8", "chap9", "chap10", "chap11", "chap12", "chap13", "chap14", "preChap15"]
     var skippable = ["medulla", "frontalCortex", "cerebellum", "occipitalLobe", "opticChiasm", "lateralGeniculateNucleus", "supramarginalGyrus", "HerschlsGyrus", "amygdala", "thalamus", "hippocampus", "fusiformGyrus", "corpusCallosum", "lateralVentricle", "duraMater"]
     var skippableFree = ["medulla", "frontalCortex", "cerebellum", "occipitalLobe"]
-    
-    var setAdmin = "ventralTegmentalArea"
     
     let notificationCenter = NotificationCenter.default
     
@@ -163,7 +161,7 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     @IBAction func submitName(_ sender: Any) {
         let name = nameField.text?.removeLastSpace()
         print(name)
-        if !skip() && !admin() {
+        if !skip() {
             let gameName = game.string(forKey: "name")
             if gameName != name && gameName != nil {
                 let l1 = "This name conflicts with the name you gave before:".localized()
@@ -239,15 +237,7 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
         return false
     }
     
-    func admin() -> Bool {
-        if setAdmin.lowercased() == nameField.text?.removeLastSpace().lowercased() {
-            game.setValue(true, forKey: "isAdmin")
-            game.setValue("ADMIN", forKey: "key")
-            alert(title: "Admin Access", message: "granted", actionTitle: "Okay")
-            return true
-        }
-        return false
-    }
+    
     
     @IBAction func goNext(_ sender: Any) {
         notificationCenter.removeObserver(self, name: UIApplication.didEnterBackgroundNotification, object: nil)

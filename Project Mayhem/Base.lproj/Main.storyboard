@@ -188,7 +188,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="2aE-lW-wLG">
-                                        <rect key="frame" x="40" y="144" width="348" height="1451"/>
+                                        <rect key="frame" x="40" y="144" width="348" height="1596"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SPS-3R-K7E">
                                                 <rect key="frame" x="0.0" y="0.0" width="348" height="115"/>
@@ -430,14 +430,42 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="P9j-8Q-J9A">
+                                                <rect key="frame" x="0.0" y="1139" width="348" height="70"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bh2-3t-T5S">
+                                                        <rect key="frame" x="0.0" y="0.0" width="348" height="31"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REduce Motion:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KWC-rC-onu">
+                                                                <rect key="frame" x="0.0" y="0.0" width="299" height="31"/>
+                                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bRu-Z4-ck0">
+                                                                <rect key="frame" x="299" y="0.0" width="51" height="31"/>
+                                                                <connections>
+                                                                    <action selector="reduceMotionSwitchChanged:" destination="fkB-KW-fdR" eventType="valueChanged" id="g9p-Ra-d9F"/>
+                                                                </connections>
+                                                            </switch>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This option will reduce any gyroscopic motion animations" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CAr-Wz-RC1">
+                                                        <rect key="frame" x="0.0" y="46" width="348" height="24"/>
+                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For best experience, make sure haptics(Settings) Are on and that minimize flashing(above) is turned off." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="elD-NK-I5e">
-                                                <rect key="frame" x="0.0" y="1139" width="348" height="24"/>
+                                                <rect key="frame" x="0.0" y="1284" width="348" height="24"/>
                                                 <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Xwn-Qs-dJJ">
-                                                <rect key="frame" x="0.0" y="1238" width="348" height="126"/>
+                                                <rect key="frame" x="0.0" y="1383" width="348" height="126"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1U-pc-kGe" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="348" height="32"/>
@@ -466,7 +494,7 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cPc-g0-tUH">
-                                                <rect key="frame" x="0.0" y="1439" width="348" height="12"/>
+                                                <rect key="frame" x="0.0" y="1584" width="348" height="12"/>
                                                 <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -532,9 +560,12 @@
                         <outlet property="flashingSwitch" destination="K22-SS-wCe" id="36n-zI-j4q"/>
                         <outlet property="minFlash" destination="M4s-Ft-2fo" id="HIG-dB-bwL"/>
                         <outlet property="minFlashDescription" destination="QFI-DI-Cei" id="0bf-Sc-7zO"/>
+                        <outlet property="motionSwitch" destination="bRu-Z4-ck0" id="RuN-nA-CyR"/>
                         <outlet property="mus" destination="4I6-sB-xev" id="PKi-zJ-omk"/>
                         <outlet property="purchaseRestore" destination="I1U-pc-kGe" id="MTI-Zu-lhh"/>
                         <outlet property="purchaseprice" destination="AUm-Sy-6Pl" id="1s1-EZ-AEd"/>
+                        <outlet property="reduceMotion" destination="KWC-rC-onu" id="646-tk-fha"/>
+                        <outlet property="reduceMotionDescription" destination="CAr-Wz-RC1" id="ldN-us-jXG"/>
                         <outlet property="slider" destination="79i-1e-J6k" id="rsi-eZ-4OY"/>
                         <outlet property="titl" destination="ILS-fD-ilw" id="uc6-03-8bh"/>
                         <outlet property="version" destination="cPc-g0-tUH" id="Q0v-A1-xZD"/>
@@ -562,7 +593,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="b7K-pK-Zuh">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo transparent" translatesAutoresizingMaskIntoConstraints="NO" id="b7K-pK-Zuh">
                                 <rect key="frame" x="64" y="78" width="300" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="b7K-pK-Zuh" secondAttribute="height" multiplier="75:32" id="Uhh-6C-CDU"/>
@@ -617,6 +648,7 @@
                         <outlet property="enter" destination="2mq-Sy-8qd" id="qWL-JG-xhc"/>
                         <outlet property="enterCenterConstraint" destination="LF0-A8-mDg" id="Njk-WJ-Xtp"/>
                         <outlet property="lbl" destination="CYU-mN-gQ4" id="74X-pe-h9U"/>
+                        <outlet property="logo" destination="b7K-pK-Zuh" id="4ss-rO-XI9"/>
                         <outlet property="logoCenterConstraint" destination="ET7-8S-LuS" id="7Aj-0A-IfI"/>
                         <outlet property="tearDrop" destination="S4h-Tl-E2E" id="Idx-ct-bP7"/>
                         <segue destination="GTF-CI-eye" kind="presentation" identifier="MainScreenToLevels" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="UJg-12-gS4"/>
@@ -1421,7 +1453,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zzk-5U-pwB">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zzk-5U-pwB">
                                 <rect key="frame" x="0.0" y="626" width="428" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -4412,11 +4444,11 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="jHL-sV-Dcf">
                                         <rect key="frame" x="30" y="784" width="368" height="458"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oq9-hf-ZeE">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oq9-hf-ZeE">
                                                 <rect key="frame" x="1.3333333333333428" y="0.0" width="365.66666666666663" height="105"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy Our Merch" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GZY-7c-rMH">
-                                                        <rect key="frame" x="41.333333333333343" y="0.0" width="283" height="35"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy Our Merch" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GZY-7c-rMH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="365.66666666666669" height="35"/>
                                                         <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="35"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -4556,9 +4588,9 @@
         <segue reference="C8e-VB-o7G"/>
         <segue reference="Fhg-H5-PTW"/>
         <segue reference="J9s-s4-0U4"/>
-        <segue reference="RdG-kq-cY7"/>
-        <segue reference="dKZ-mV-wuG"/>
-        <segue reference="tG0-fy-sbd"/>
+        <segue reference="ohR-Mk-EQe"/>
+        <segue reference="Jbk-WL-IF2"/>
+        <segue reference="DOc-8U-B4Z"/>
         <segue reference="TbV-l9-R97"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -4583,6 +4615,7 @@
         <image name="drop.fill" catalog="system" width="101" height="128"/>
         <image name="instagram" width="60" height="60"/>
         <image name="lightbulb.fill" catalog="system" width="113" height="128"/>
+        <image name="logo transparent" width="3000" height="2000"/>
         <image name="low_Tide" width="4096" height="2160"/>
         <image name="lvl15Normal" width="596" height="596"/>
         <image name="lvl4_0" width="1479" height="2500"/>

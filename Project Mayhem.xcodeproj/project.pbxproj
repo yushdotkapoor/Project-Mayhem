@@ -54,7 +54,6 @@
 		9D60219826419240007D990D /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 9D60219726419240007D990D /* SDWebImage */; };
 		9D6762FA2618534D005E9346 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D6762F92618534D005E9346 /* GoogleService-Info.plist */; };
 		9D6C28E725DCCC950039D12C /* MessageAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C28E625DCCC950039D12C /* MessageAlert.swift */; };
-		9D6C28EB25DCD8330039D12C /* messageTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C28EA25DCD8330039D12C /* messageTemplate.swift */; };
 		9D6C704925ECD47800E8CF6C /* speechModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C704825ECD47800E8CF6C /* speechModule.swift */; };
 		9D6C705725EE082400E8CF6C /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C705625EE082400E8CF6C /* Credits.swift */; };
 		9D6E493625EE12EF00B09E8A /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E493525EE12EF00B09E8A /* MusicPlayer.swift */; };
@@ -78,11 +77,9 @@
 		9DA2E9BD25F0451600262638 /* audioExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2E9BC25F0451600262638 /* audioExtensions.swift */; };
 		9DA2E9D025F09C6000262638 /* NoisyWalk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2E9C825F09C6000262638 /* NoisyWalk.ttf */; };
 		9DA2E9D125F09C6000262638 /* PigpenCipher.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2E9C925F09C6000262638 /* PigpenCipher.otf */; };
-		9DA2E9D225F09C6000262638 /* CoolKidFont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2E9CA25F09C6000262638 /* CoolKidFont.ttf */; };
 		9DA2E9D325F09C6000262638 /* aAmbyarSobat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2E9CB25F09C6000262638 /* aAmbyarSobat.ttf */; };
 		9DA2E9D525F09C6000262638 /* Adonay.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2E9CD25F09C6000262638 /* Adonay.ttf */; };
 		9DA2E9D625F09C6000262638 /* astro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2E9CE25F09C6000262638 /* astro.ttf */; };
-		9DA2E9D725F09C6000262638 /* screaming_neon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2E9CF25F09C6000262638 /* screaming_neon.ttf */; };
 		9DAE47C42680568D0090177A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DAE47C62680568D0090177A /* Main.storyboard */; };
 		9DAE47CB268056F50090177A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9DAE47CD268056F50090177A /* Localizable.strings */; };
 		9DB074A625DE1E1700515283 /* subChapter1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB074A525DE1E1700515283 /* subChapter1.swift */; };
@@ -90,12 +87,8 @@
 		9DBEB558261BC69A00EFF309 /* Glitch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9DBEB557261BC69A00EFF309 /* Glitch.wav */; };
 		9DC5C2812651C63100EB0F10 /* Siren in Frameworks */ = {isa = PBXBuildFile; productRef = 9DC5C2802651C63100EB0F10 /* Siren */; };
 		9DD618E725E62BB20036089B /* ProjectVenomTrailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD618E625E62BB20036089B /* ProjectVenomTrailer.swift */; };
-		9DD618EB25E62BCE0036089B /* videoTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD618EA25E62BCE0036089B /* videoTemplate.swift */; };
 		9DD618EF25E62EBC0036089B /* subPostChapter15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD618EE25E62EBC0036089B /* subPostChapter15.swift */; };
 		9DEA6A0625948BBA002A8739 /* chapter2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEA6A0525948BBA002A8739 /* chapter2.swift */; };
-		9DEA6A0C259515D8002A8739 /* keyboardTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEA6A0B259515D8002A8739 /* keyboardTemplate.swift */; };
-		9DEA6A112595162B002A8739 /* chapterTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEA6A102595162B002A8739 /* chapterTemplate.swift */; };
-		9DEA6A1725951730002A8739 /* foregroundEventTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEA6A1625951730002A8739 /* foregroundEventTemplate.swift */; };
 		9DEA6A3825972495002A8739 /* chapter3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEA6A3725972495002A8739 /* chapter3.swift */; };
 		9DEB282625C54C3A00E3F102 /* chapter6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB282525C54C3A00E3F102 /* chapter6.swift */; };
 		9DEB282C25C5D78700E3F102 /* chapter7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB282B25C5D78700E3F102 /* chapter7.swift */; };
@@ -194,7 +187,6 @@
 		9D5FFA88263CE186005AC98A /* skibbity.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = skibbity.mp3; sourceTree = "<group>"; };
 		9D6762F92618534D005E9346 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9D6C28E625DCCC950039D12C /* MessageAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAlert.swift; sourceTree = "<group>"; };
-		9D6C28EA25DCD8330039D12C /* messageTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageTemplate.swift; sourceTree = "<group>"; };
 		9D6C704825ECD47800E8CF6C /* speechModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = speechModule.swift; sourceTree = "<group>"; };
 		9D6C705625EE082400E8CF6C /* Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
 		9D6E493525EE12EF00B09E8A /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
@@ -217,11 +209,9 @@
 		9DA2E9BC25F0451600262638 /* audioExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audioExtensions.swift; sourceTree = "<group>"; };
 		9DA2E9C825F09C6000262638 /* NoisyWalk.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NoisyWalk.ttf; path = "Project Mayhem/Fonts/NoisyWalk.ttf"; sourceTree = SOURCE_ROOT; };
 		9DA2E9C925F09C6000262638 /* PigpenCipher.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = PigpenCipher.otf; path = "Project Mayhem/Fonts/PigpenCipher.otf"; sourceTree = SOURCE_ROOT; };
-		9DA2E9CA25F09C6000262638 /* CoolKidFont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CoolKidFont.ttf; path = "Project Mayhem/Fonts/CoolKidFont.ttf"; sourceTree = SOURCE_ROOT; };
 		9DA2E9CB25F09C6000262638 /* aAmbyarSobat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = aAmbyarSobat.ttf; path = "Project Mayhem/Fonts/aAmbyarSobat.ttf"; sourceTree = SOURCE_ROOT; };
 		9DA2E9CD25F09C6000262638 /* Adonay.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Adonay.ttf; path = "Project Mayhem/Fonts/Adonay.ttf"; sourceTree = SOURCE_ROOT; };
 		9DA2E9CE25F09C6000262638 /* astro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = astro.ttf; path = "Project Mayhem/Fonts/astro.ttf"; sourceTree = SOURCE_ROOT; };
-		9DA2E9CF25F09C6000262638 /* screaming_neon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = screaming_neon.ttf; path = "Project Mayhem/Fonts/screaming_neon.ttf"; sourceTree = SOURCE_ROOT; };
 		9DAE47C52680568D0090177A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9DAE47C8268056D60090177A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		9DAE47CC268056F50090177A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -293,12 +283,8 @@
 		9DBBF72F25C279310022FC63 /* chapter5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter5.swift; sourceTree = "<group>"; };
 		9DBEB557261BC69A00EFF309 /* Glitch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Glitch.wav; sourceTree = "<group>"; };
 		9DD618E625E62BB20036089B /* ProjectVenomTrailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectVenomTrailer.swift; sourceTree = "<group>"; };
-		9DD618EA25E62BCE0036089B /* videoTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoTemplate.swift; sourceTree = "<group>"; };
 		9DD618EE25E62EBC0036089B /* subPostChapter15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subPostChapter15.swift; sourceTree = "<group>"; };
 		9DEA6A0525948BBA002A8739 /* chapter2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter2.swift; sourceTree = "<group>"; };
-		9DEA6A0B259515D8002A8739 /* keyboardTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keyboardTemplate.swift; sourceTree = "<group>"; };
-		9DEA6A102595162B002A8739 /* chapterTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapterTemplate.swift; sourceTree = "<group>"; };
-		9DEA6A1625951730002A8739 /* foregroundEventTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foregroundEventTemplate.swift; sourceTree = "<group>"; };
 		9DEA6A3725972495002A8739 /* chapter3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter3.swift; sourceTree = "<group>"; };
 		9DEB282525C54C3A00E3F102 /* chapter6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter6.swift; sourceTree = "<group>"; };
 		9DEB282B25C5D78700E3F102 /* chapter7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter7.swift; sourceTree = "<group>"; };
@@ -476,7 +462,6 @@
 				9D8C42AE25C7BE5C0039F857 /* Settings.bundle */,
 				9D0C543B25C50F79000EE579 /* Helpers */,
 				9D5614242591D2DA00F1695A /* View Controllers */,
-				9DEA6A0A259515B0002A8739 /* Templates */,
 				9DA2E9C725F09C2E00262638 /* Fonts */,
 				9D561387259195E700F1695A /* Preview Content */,
 			);
@@ -559,25 +544,11 @@
 				9DA2E9CB25F09C6000262638 /* aAmbyarSobat.ttf */,
 				9DA2E9CD25F09C6000262638 /* Adonay.ttf */,
 				9DA2E9CE25F09C6000262638 /* astro.ttf */,
-				9DA2E9CA25F09C6000262638 /* CoolKidFont.ttf */,
 				9DA2E9C825F09C6000262638 /* NoisyWalk.ttf */,
 				9DA2E9C925F09C6000262638 /* PigpenCipher.otf */,
 				9D9AA5AF25F793D200C1493A /* Tomorrow.ttf */,
-				9DA2E9CF25F09C6000262638 /* screaming_neon.ttf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		9DEA6A0A259515B0002A8739 /* Templates */ = {
-			isa = PBXGroup;
-			children = (
-				9DEA6A0B259515D8002A8739 /* keyboardTemplate.swift */,
-				9DEA6A1625951730002A8739 /* foregroundEventTemplate.swift */,
-				9DEA6A102595162B002A8739 /* chapterTemplate.swift */,
-				9DD618EA25E62BCE0036089B /* videoTemplate.swift */,
-				9D6C28EA25DCD8330039D12C /* messageTemplate.swift */,
-			);
-			path = Templates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -681,6 +652,7 @@
 				TargetAttributes = {
 					9D56137D259195E600F1695A = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1250;
 					};
 					9D56138E259195E800F1695A = {
 						CreatedOnToolsVersion = 12.3;
@@ -763,8 +735,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D561389259195E700F1695A /* Preview Assets.xcassets in Resources */,
-				9DA2E9D225F09C6000262638 /* CoolKidFont.ttf in Resources */,
-				9DA2E9D725F09C6000262638 /* screaming_neon.ttf in Resources */,
 				9D561386259195E700F1695A /* Assets.xcassets in Resources */,
 				9DA2E9D325F09C6000262638 /* aAmbyarSobat.ttf in Resources */,
 				9DA2E9D125F09C6000262638 /* PigpenCipher.otf in Resources */,
@@ -843,7 +813,6 @@
 				9DD618E725E62BB20036089B /* ProjectVenomTrailer.swift in Sources */,
 				9D1A40BD263B6B3D00F6DF9B /* Notifications.swift in Sources */,
 				9D1A40BF263B8E5000F6DF9B /* StorageManager.swift in Sources */,
-				9D6C28EB25DCD8330039D12C /* messageTemplate.swift in Sources */,
 				9DD618EF25E62EBC0036089B /* subPostChapter15.swift in Sources */,
 				9D1A40C8263BBB2300F6DF9B /* MessageViewCell.swift in Sources */,
 				9D6C705725EE082400E8CF6C /* Credits.swift in Sources */,
@@ -868,17 +837,14 @@
 				9D8B292E25DC189A007750DF /* CALayerExtension.swift in Sources */,
 				9D6E493625EE12EF00B09E8A /* MusicPlayer.swift in Sources */,
 				9DA2E9BD25F0451600262638 /* audioExtensions.swift in Sources */,
-				9DEA6A0C259515D8002A8739 /* keyboardTemplate.swift in Sources */,
 				9D5614302591DC5400F1695A /* AppDelegate.swift in Sources */,
 				9D8B292A25DC187D007750DF /* UIColorExtension.swift in Sources */,
 				9D7F3AB4267161BA00CED071 /* Downloader.swift in Sources */,
 				9D6C704925ECD47800E8CF6C /* speechModule.swift in Sources */,
 				9DEB283F25C6095000E3F102 /* stringExtensions.swift in Sources */,
-				9DD618EB25E62BCE0036089B /* videoTemplate.swift in Sources */,
 				9D74262725CA41F3008D9645 /* chapter12.swift in Sources */,
 				9D1502AF260F0BB300A767C3 /* CheckInternet.swift in Sources */,
 				9DEA6A3825972495002A8739 /* chapter3.swift in Sources */,
-				9DEA6A112595162B002A8739 /* chapterTemplate.swift in Sources */,
 				9D5FFA81263CC1B9005AC98A /* BadgeButton.swift in Sources */,
 				9DEB283825C5D7EE00E3F102 /* chapter10.swift in Sources */,
 				9D0A07E6264F9DE0002834CC /* CircularProgressBarView.swift in Sources */,
@@ -887,7 +853,6 @@
 				9D56140F2591CFFD00F1695A /* CustomButton.swift in Sources */,
 				9D5B42C5259C97FB00A4F34A /* animations.swift in Sources */,
 				9DED07D3261D588800ACBE2B /* Introduction.swift in Sources */,
-				9DEA6A1725951730002A8739 /* foregroundEventTemplate.swift in Sources */,
 				9DEB283025C5D7D000E3F102 /* chapter8.swift in Sources */,
 				9D7DE96425E78C4900F80990 /* VenomPreview.swift in Sources */,
 				9D0C543D25C50F97000EE579 /* audioKitHelpers.swift in Sources */,
@@ -1149,10 +1114,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Project Mayhem/Project Mayhem.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 19;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Project Mayhem/Preview Content\"";
 				DEVELOPMENT_TEAM = 68L233566P;
@@ -1183,11 +1149,15 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.9;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1199,10 +1169,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Project Mayhem/Project Mayhem.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_ASSET_PATHS = "\"Project Mayhem/Preview Content\"";
 				DEVELOPMENT_TEAM = 68L233566P;
 				ENABLE_PREVIEWS = YES;
@@ -1232,11 +1203,14 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.9;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1328,7 +1302,7 @@
 				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = 68L233566P;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -1337,7 +1311,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.9;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1354,7 +1328,7 @@
 				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = 68L233566P;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -1363,7 +1337,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.9;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

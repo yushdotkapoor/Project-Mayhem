@@ -185,3 +185,5 @@
 "Sounds pretty sinister to me. We need you to investigate the company and see if there is anything to worry about. This could be your biggest case as a Defender, if Vision Consolidated is not what we think it is. You’ve been given employee access to their facilities, but make sure to stay under the radar. Good luck, Brainchild." = "꽤 나에게 불길한 소리. 우리는 아무 걱정이 있다면 당신이 회사를 조사하고 확인해야합니다. 비전 통합은 우리가 생각하는 것 아닌 경우는 수비수로 당신의 가장 큰 사건이 될 수 있습니다. 당신은 그들의 시설 직원의 액세스 권한을 부여하지만, 레이더에서 숙박을 확인했습니다. 행운을 빌어 요, 발명품.";
 "boss" = "사장님";
 "ever existing" = "지금까지 기존의";
+"Reduce Motion:" = "모션 감소 :";
+"This option will reduce any gyroscopic motion animations" = "이 옵션은 자이로 스코픽 모션 애니메이션을 줄입니다";

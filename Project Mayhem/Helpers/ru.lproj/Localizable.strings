@@ -185,3 +185,5 @@
 "Sounds pretty sinister to me. We need you to investigate the company and see if there is anything to worry about. This could be your biggest case as a Defender, if Vision Consolidated is not what we think it is. You’ve been given employee access to their facilities, but make sure to stay under the radar. Good luck, Brainchild." = "Звуки довольно зловещие мне. Нам нужно, чтобы исследовать компанию и посмотреть, если есть что-нибудь, чтобы беспокоиться о. Это может быть ваш самый большой случай в качестве защитника, если зрение Consolidated не то, что мы думаем. Вы получили доступ сотрудников к их объектам, но убедитесь, что пребывание под радаром. Успехов, Brainchild.";
 "boss" = "босс";
 "ever existing" = "когда-либо существовавшее";
+"Reduce Motion:" = "Уменьшить движение:";
+"This option will reduce any gyroscopic motion animations" = "Эта опция уменьшит любые гироскопические анимации движения";

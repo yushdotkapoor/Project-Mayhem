@@ -99,7 +99,7 @@ class chapter15: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate 
         let redRange = (string as NSString).range(of: "\(redNext)")
         let greenRange = (string as NSString).range(of: "\(greenNext)")
         let blueRange = (string as NSString).range(of: "\(blueNext)")
-
+        
         let mutableAttributedString = NSMutableAttributedString.init(string: string)
         mutableAttributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(red: 255/255, green: 0, blue: 0, alpha: 1.0) , range: redRange)
         mutableAttributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.green, range: greenRange)
@@ -138,6 +138,7 @@ class chapter15: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate 
             }
             else {
                 captureSession.stopRunning()
+                
                 for (i,cap) in captures.enumerated() {
                     if cap {
                         rings[i].tintColor = colors.last

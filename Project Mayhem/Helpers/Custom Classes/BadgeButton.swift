@@ -17,7 +17,7 @@ class MIBadgeButton: UIButton {
             addBadgeToButon(badge: badge)
         }
     }
-
+    
     public var badgeBackgroundColor = UIColor.red {
         didSet {
             badgeLabel.backgroundColor = badgeBackgroundColor
@@ -65,9 +65,9 @@ class MIBadgeButton: UIButton {
         let badgeSize = badgeLabel.frame.size
         
         /*
-        let height = max(18, Double(badgeSize.height) + 5.0)
-        let width = max(height, Double(badgeSize.width) + 10.0)
-        */
+         let height = max(18, Double(badgeSize.height) + 5.0)
+         let width = max(height, Double(badgeSize.width) + 10.0)
+         */
         
         let height = max(10, Double(badgeSize.height) + 5.0)
         let width = max(height, height)

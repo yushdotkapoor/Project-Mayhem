@@ -32,6 +32,9 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var minFlash: UILabel!
     @IBOutlet weak var minFlashDescription: UILabel!
     @IBOutlet weak var bestExp: UILabel!
+    @IBOutlet weak var reduceMotion: UILabel!
+    @IBOutlet weak var reduceMotionDescription: UILabel!
+    @IBOutlet weak var motionSwitch: UISwitch!
     
     
     
@@ -54,6 +57,8 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
         purchaseRestore.setTitle("Restore Purchases".localized(), for: .normal)
         welcStatementButton.setTitle("Welcome Statement".localized(), for: .normal)
         feedbackButton.setTitle("Leave Feedback".localized(), for: .normal)
+        reduceMotion.text = "Reduce Motion:".localized()
+        reduceMotionDescription.text = "This option will reduce any gyroscopic motion animations".localized()
         
         
         
@@ -62,8 +67,10 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
         
         let volume = game.float(forKey: "volume")
         let sensitive = game.bool(forKey: "photosensitive")
+        let mot = game.bool(forKey: "reduceMotion")
         
         flashingSwitch.setOn(sensitive, animated: false)
+        motionSwitch.setOn(mot, animated: false)
         
         slider.value = volume
         
@@ -186,6 +193,12 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
         let state = flashingSwitch.isOn
         game.setValue(state, forKey: "photosensitive")
     }
+    
+    @IBAction func reduceMotionSwitchChanged(_ sender: Any) {
+        let state = motionSwitch.isOn
+        game.setValue(state, forKey: "reduceMotion")
+    }
+    
     
     @IBAction func restorePurchases(_ sender: Any) {
         ProjectMayhemProducts.store.restorePurchases()
