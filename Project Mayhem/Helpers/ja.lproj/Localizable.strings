@@ -187,3 +187,5 @@
 "ever existing" = "これまでに、既存の";
 "Reduce Motion:" = "動きを減らす：";
 "This option will reduce any gyroscopic motion animations" = "このオプションは、ジャイロスコープモーションアニメーションを削減します";
+"Tap to view Hint!" = "ヒントを表示するにはタップしてください。";
+"This may take a few minutes" = "これには数分かかる場合があります";

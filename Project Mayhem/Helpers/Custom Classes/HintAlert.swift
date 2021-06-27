@@ -16,7 +16,7 @@ class HintAlert: NSObject, UIScrollViewDelegate {
     
     private var msgCt = 0
     
-    
+    var blurViews:[String:[UIView]] = [:]
     
     var tier1Hint = ["1":"Leave what?".localized(), "2":"How could you make sure that you can hear everything?".localized(),"3":"Tappity tap".localized(),"4":"Move your phone a bit. Just kidding, a lot.".localized(),"5":"","5Perm":"","6":"","7":"Rule number 1: have patience. Rule number 2: have good memory skills. Rule number 3: see what happens when you tap (r1,c2).".localized(),"8":"What's that on the top right?".localized(),"9":"These are not just some random characters! Have you ever heard of 🐷🖊️ Cipher?".localized(),"10":"I wonder what I could do with a QR code, once it is aligned".localized(),"11.1":"Maybe the morse code at the top and the coordinates at the bottom have some sort of relationship.".localized(),"11.2":"Great works from a great man, who indeed has a name!".localized(),"11.2Perm":"","12.1": "Battery, battery, battery. It bugs me that the battery isn't completely full".localized(), "12.2":"Roses are red, violets are blue, I'm pretty sure that this is a date. What are you supposed to do? \"Get in a blue box and get your timey wimey on.\"".localized(),"12.3":"Is there a way to change the size of text?".localized(),"13.1":"Dude c'mon. The text on the screen IS the hint".localized(),"13.2":"Earthquake simulator?".localized(),"13.3":"Earthquake simulator?: Look for the red".localized(),"14": "a=swipe\nb=right\nc=down\n-(a*(-b)*c)/b","15.1":"When I am black, I am actually white. When I am white, I am actually black. What am I?".localized(),"15.2":"The answer is not in this level. Look closely 👁️".localized()]
     
@@ -109,7 +109,7 @@ class HintAlert: NSObject, UIScrollViewDelegate {
         tier1Hint["12.2"] = "\(m12) \"\(m13)\""
         tier2Hint["5"] = "\"A\" \(m14)"
         tier2Hint["5Perm"] = "\"A\" \(m14)"
-        tier2Hint["11.2"] = "\(m15) ----graph, ----ence, ----acter."
+        tier2Hint["11.1"] = "\(m15) ----graph, ----ence, ----acter."
         
         hint = hintButton
         controller = viewController
@@ -117,16 +117,7 @@ class HintAlert: NSObject, UIScrollViewDelegate {
         dictRef = message
         tb = toolbar
         
-        let alertController = UIAlertController(title: "Are you sure?".localized(), message: "Are you sure you would like to see a hint?".localized(), preferredStyle: .alert)
-        let no = UIAlertAction(title: "No".localized(), style: .default, handler: {_ in
-            self.dismissAlert()
-        })
-        let yes = UIAlertAction(title: "Yes".localized(), style: .default, handler: {_ in
-            self.okActuallyShowTheHint(hintButton: hintButton)
-        })
-        alertController.addAction(no)
-        alertController.addAction(yes)
-        viewController.present(alertController, animated: true, completion: nil)
+        okActuallyShowTheHint(hintButton: hintButton)
     }
     
     func okActuallyShowTheHint(hintButton: UIButton) {
@@ -212,6 +203,10 @@ class HintAlert: NSObject, UIScrollViewDelegate {
     }
     
     func showTheMeat(xRef:CGFloat) {
+        showTheMeat(xRef: xRef, createBlur: true)
+    }
+    
+    func showTheMeat(xRef:CGFloat, createBlur: Bool) {
         var text = tier1Hint[dictRef]
         var msgHt:CGFloat = 0
         
@@ -233,10 +228,36 @@ class HintAlert: NSObject, UIScrollViewDelegate {
         messageLabel.textAlignment = .center
         messageLabel.textColor = .white
         
+        let blur = UIView()
+        blur.frame = messageLabel.frame
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = blur.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        blur.addSubview(blurEffectView)
+        blur.layer.cornerRadius = 10
+        blur.clipsToBounds = true
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.showHint(_:)))
+        blur.addGestureRecognizer(tap)
+        
+        
+        let tapMe = UILabel()
+        tapMe.frame = messageLabel.frame
+        tapMe.font = tapMe.font.withSize(14)
+        tapMe.textAlignment = .center
+        tapMe.textColor = .white
+        tapMe.text = "Tap to view Hint!".localized()
+        tapMe.startPulse()
+        
+        
+        blurViews["\(msgCt)"] = [blur, tapMe]
         
         scrollView.addSubview(messageLabel)
-        
+        if createBlur {
+            scrollView.addSubview(blur)
+            scrollView.addSubview(tapMe)
+        }
         msgCt += 1
         
         if msgCt == 1 {
@@ -244,6 +265,37 @@ class HintAlert: NSObject, UIScrollViewDelegate {
         } else if msgCt == 2 {
             bouncer(num: 1)
             controller?.view.bringSubviewToFront(tb!)
+        }
+    }
+    
+    func stopAnimation(index: String) {
+        let b = blurViews[index]
+        let t = b![1]
+        
+        t.stopPulse()
+    }
+    
+    func stopAllAnimations() {
+        for i in blurViews.keys {
+            let b = blurViews[i]
+            let t = b![1]
+            
+            t.stopPulse()
+        }
+    }
+    
+    @objc func showHint(_ sender: UITapGestureRecognizer? = nil) {
+        // handling code
+        impact(style: .heavy)
+        let pageNumber = round(scrollView.contentOffset.x / (scrollView.frame.size.width)*1)
+        let st = "\(Int(pageNumber))"
+        let arr = blurViews[st]
+        stopAnimation(index: st)
+        for i in arr! {
+            i.fadeOut()
+            wait {
+                i.removeFromSuperview()
+            }
         }
     }
     
@@ -262,19 +314,38 @@ class HintAlert: NSObject, UIScrollViewDelegate {
             if hintNum > 0 {
                 //ask to use hint
                 // display hints remaining
+                
                 let t1 = "Tap here if you would like to use one of your remaining hints".localized()
                 let t2 = "Hints remaining:".localized()
                 let buttontext = "\(t1)\n\(t2) \(hintNum)"
                 
                 message2Height = heightForView(text: buttontext, font: UIFont(name: "Helvetica", size: 16.0)!, width: alertView.frame.size.width - 20)
                 
-                btn = UIButton(frame: CGRect(x: xRef + 10, y: titleLabel.frame.size.height + 5, width: alertView.frame.size.width - 20, height: message2Height!))
-                btn.setTitle(buttontext, for: .normal)
-                btn.titleLabel?.numberOfLines = 0
-                btn.titleLabel?.font = UIFont(name: "Helvetica", size: 16.0)
-                btn.titleLabel?.textAlignment = .center
-                btn.setTitleColor(.blue, for: .normal)
-                btn.addTarget(self, action: #selector(useHint), for: .touchUpInside)
+                let blur = UIView(frame: CGRect(x: xRef + 10, y: titleLabel.frame.size.height + 5, width: alertView.frame.size.width - 20, height: message2Height!))
+                let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
+                let blurEffectView = UIVisualEffectView(effect: blurEffect)
+                blurEffectView.frame = blur.bounds
+                blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+                blur.addSubview(blurEffectView)
+                blur.layer.cornerRadius = 10
+                blur.clipsToBounds = true
+                
+                let tap = UITapGestureRecognizer(target: self, action: #selector(self.useHint))
+                blur.addGestureRecognizer(tap)
+                
+                
+                let tapMe = UILabel()
+                tapMe.frame = blur.frame
+                tapMe.numberOfLines = 0
+                tapMe.font = tapMe.font.withSize(14)
+                tapMe.textAlignment = .center
+                tapMe.textColor = .white
+                tapMe.text = buttontext
+                
+                blurViews["\(msgCt)"] = [blur, tapMe]
+        
+                scrollView.addSubview(blur)
+                scrollView.addSubview(tapMe)
             } else {
                 //Purchase action
                 let buttontext = "Tap here to unlock a second and more helpful hint.".localized()
@@ -288,9 +359,16 @@ class HintAlert: NSObject, UIScrollViewDelegate {
                 btn.titleLabel?.textAlignment = .center
                 btn.setTitleColor(.blue, for: .normal)
                 btn.addTarget(self, action: #selector(actionSheetForPurchase), for: .touchUpInside)
+                scrollView.addSubview(btn)
             }
-            scrollView.addSubview(btn)
+            
             controller?.view.bringSubviewToFront(tb!)
+        }
+    }
+    
+    func removeBlurView(index: String) {
+        for i in blurViews["1"]! {
+            i.removeFromSuperview()
         }
     }
     
@@ -299,13 +377,16 @@ class HintAlert: NSObject, UIScrollViewDelegate {
         var currentValue = game.integer(forKey: identifier)
         currentValue -= 1
         game.setValue(currentValue, forKey: identifier)
-        btn.removeFromSuperview()
+        removeBlurView(index: "1")
         var ref = Int.parse(from: dictRef)!
         if ref > 50 {
             ref = ref / 10
         }
         game.setValue(true, forKey: "hint\(ref)")
-        checkIfPaywallRequired()
+        message2Height = heightForView(text: tier2Hint[dictRef]!, font: UIFont(name: "Helvetica", size: 16.0)!, width: alertView.frame.size.width - 20)
+        showTheMeat(xRef: alertView.frame.size.width, createBlur: false)
+        showHint()
+        stopAnimation(index: "1")
     }
     
     @objc func actionSheetForPurchase() {
@@ -390,6 +471,7 @@ class HintAlert: NSObject, UIScrollViewDelegate {
             }, completion: { done in
                 if done {
                     self.backgroundView.removeFromSuperview()
+                    self.stopAllAnimations()
                 }
             })
         }

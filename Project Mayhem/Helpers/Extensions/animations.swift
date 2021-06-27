@@ -219,11 +219,27 @@ extension UIView {
         effectGroup.motionEffects = [ horizontalEffect,
                                       verticalEffect ]
         
-        
-        
         addMotionEffect(effectGroup)
     }
     
     
+    func startPulse() {
+        if !isUserInteractionEnabled || !menuState {
+        UIView.animate(withDuration: 0.15, animations: {
+            self.transform = CGAffineTransform(scaleX: 1.25, y: 1.25)
+        }, completion: {_ in
+            UIView.animate(withDuration: 0.85, delay: 0.15, animations: {
+                self.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+            }, completion: {_ in
+                self.startPulse()
+            })
+        })
+        }
+    }
+    
+    func stopPulse() {
+        isUserInteractionEnabled = true
+    }
 }
+
 

@@ -145,6 +145,7 @@ func downloadVideos() {
         database.fetch(withRecordID: CKRecord.ID(recordName: vid)) { results, error in
             if error != nil {
                 print(" Error Downloading Record  " + error!.localizedDescription)
+                downloadVideos()
             } else {
                 if results != nil {
                     let record = results! as CKRecord

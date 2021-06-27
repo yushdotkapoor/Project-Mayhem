@@ -57,19 +57,30 @@
                                     <constraint firstAttribute="width" secondItem="84Q-gX-k9f" secondAttribute="height" multiplier="1:1" id="f3g-zF-CVJ"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This may take a few minutes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mF1-Kr-MEQ">
+                                <rect key="frame" x="15" y="832.33333333333337" width="398" height="19.666666666666629"/>
+                                <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Z0g-cF-c5J"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="mF1-Kr-MEQ" firstAttribute="leading" secondItem="Z0g-cF-c5J" secondAttribute="leading" constant="15" id="31o-15-fQ3"/>
+                            <constraint firstItem="Z0g-cF-c5J" firstAttribute="trailing" secondItem="mF1-Kr-MEQ" secondAttribute="trailing" constant="15" id="Cdl-eK-z9K"/>
+                            <constraint firstItem="Z0g-cF-c5J" firstAttribute="bottom" secondItem="mF1-Kr-MEQ" secondAttribute="bottom" constant="40" id="DRi-rG-buU"/>
                             <constraint firstItem="QB6-xz-HdJ" firstAttribute="centerX" secondItem="6Kp-M9-s18" secondAttribute="centerX" id="P6I-yD-KIP"/>
                             <constraint firstItem="84Q-gX-k9f" firstAttribute="centerX" secondItem="6Kp-M9-s18" secondAttribute="centerX" id="Tpt-2t-UPK"/>
                             <constraint firstItem="QB6-xz-HdJ" firstAttribute="centerY" secondItem="6Kp-M9-s18" secondAttribute="centerY" id="WGW-dF-Hpd"/>
+                            <constraint firstItem="mF1-Kr-MEQ" firstAttribute="centerX" secondItem="6Kp-M9-s18" secondAttribute="centerX" id="jGs-9c-Ysj"/>
                             <constraint firstItem="84Q-gX-k9f" firstAttribute="centerY" secondItem="6Kp-M9-s18" secondAttribute="centerY" id="xcD-zi-kNg"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="circleView" destination="84Q-gX-k9f" id="1uf-r6-eKj"/>
                         <outlet property="label" destination="QB6-xz-HdJ" id="yuL-sJ-cci"/>
+                        <outlet property="minutes" destination="mF1-Kr-MEQ" id="5Qx-2C-yOD"/>
                         <segue destination="LOs-5Y-8Py" kind="presentation" identifier="DownloadToMain" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="QSc-TT-MC7"/>
                     </connections>
                 </viewController>
@@ -4589,7 +4600,7 @@
         <segue reference="Fhg-H5-PTW"/>
         <segue reference="J9s-s4-0U4"/>
         <segue reference="ohR-Mk-EQe"/>
-        <segue reference="Jbk-WL-IF2"/>
+        <segue reference="QSc-TT-MC7"/>
         <segue reference="DOc-8U-B4Z"/>
         <segue reference="TbV-l9-R97"/>
     </inferredMetricsTieBreakers>

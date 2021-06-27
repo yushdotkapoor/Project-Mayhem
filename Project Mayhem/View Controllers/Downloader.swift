@@ -11,6 +11,7 @@ import UIKit
 class Downloader: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var circleView: CircularProgressBarView!
+    @IBOutlet weak var minutes: UILabel!
     
     var notificationTimer:Timer?
     
@@ -20,6 +21,7 @@ class Downloader: UIViewController {
         circleView.createCircularPath(radius: 120)
         
         label.text = "Downloading Content".localized()
+        minutes.text = "This may take a few minutes".localized()
         
         notificationTimer = Timer.scheduledTimer(withTimeInterval: 1.1, repeats: true) { timer in
             self.checkNotification()
