@@ -32,7 +32,7 @@ class MainScreen: UIViewController {
         //COMMENT LINE BELOW BEFORE DEPLOYMENT
         //game.setValue(true, forKey: "isAdmin")
         
-        if (!videosCurrentlyDownloading && !game.bool(forKey: "downloaded")) || weekTimer() {
+        if (!videosCurrentlyDownloading && !game.bool(forKey: "downloaded")) || weekTimer() || !validateVideos() {
             //uploadVideos()
             downloadVideos()
         }

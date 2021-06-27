@@ -241,6 +241,20 @@ func retrieveVideo(name: String) -> String {
     }
 }
 
+func validateVideos() -> Bool {
+    let fileManager = FileManager.default
+    var toReturn = true
+    for i in vidArr {
+        let path = (getDirectoryPath() as NSString).appendingPathComponent("\(i).mov")
+        print("Pathfinder \(path)")
+        if !fileManager.fileExists(atPath: path) {
+            print("Error: There seems to be a video file missing")
+            toReturn = false
+        }
+    }
+    return toReturn
+}
+
 func vidToURL(name: String, type: String) -> NSURL {
     if let filePath = Bundle.main.path(forResource: name, ofType: type) {
         let fileURL = NSURL(fileURLWithPath: filePath)

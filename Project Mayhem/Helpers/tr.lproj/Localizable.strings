@@ -189,3 +189,4 @@
 "This option will reduce any gyroscopic motion animations" = "Bu seçenek, jiroskopik hareket animasyonlarını azaltır";
 "Tap to view Hint!" = "İpucu görüntülemek için dokunun!";
 "This may take a few minutes" = "Bu bir kaç dakika alabilir";
+"For some reason, the files for this chapter are corrupted. Auto resolution has been deployed to try an fix this issue. Please stay on the app and retry entering the chapter in a few minutes. If the problem persists, contact me through the chat." = "Nedense, bu bölüm için dosyalar bozuldu. Bu sorunu düzeltmek için otomatik çözünürlük açıldı. Lütfen uygulamada kalın ve bir kaç dakika içinde bölümü tekrar deneyin. Sorun devam ederse, sohbetten benimle iletişime geçin.";

@@ -76,7 +76,7 @@ class Levels: UIViewController {
         //loadAll()
         MusicPlayer.shared.volumeControl(factor: 0.4)
         
-        if (!videosCurrentlyDownloading && !game.bool(forKey: "downloaded")) || weekTimer() {
+        if (!videosCurrentlyDownloading && !game.bool(forKey: "downloaded")) || weekTimer() || !validateVideos() {
             //uploadVideos()
             downloadVideos()
         }

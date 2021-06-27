@@ -189,3 +189,4 @@
 "This option will reduce any gyroscopic motion animations" = "ตัวเลือกนี้จะลดภาพเคลื่อนไหวการเคลื่อนที่ของไจโรสโคป";
 "Tap to view Hint!" = "แตะเพื่อดูคำแนะนำ!";
 "This may take a few minutes" = "นี้อาจใช้เวลาไม่กี่นาที";
+"For some reason, the files for this chapter are corrupted. Auto resolution has been deployed to try an fix this issue. Please stay on the app and retry entering the chapter in a few minutes. If the problem persists, contact me through the chat." = "ด้วยเหตุผลบางอย่างไฟล์สำหรับบทนี้เสียหาย การแก้ไขอัตโนมัติได้รับการปรับใช้เพื่อลองแก้ไขปัญหานี้ โปรดอยู่ในแอปและลองอีกครั้งในอีกไม่กี่นาที หากปัญหายังคงมีอยู่โปรดติดต่อฉันผ่านการแชท";

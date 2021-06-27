@@ -189,3 +189,4 @@
 "This option will reduce any gyroscopic motion animations" = "Ez az opció csökkenti a giroszkópikus mozgás animációt";
 "Tap to view Hint!" = "Érintse meg a Tipp megtekintéséhez!";
 "This may take a few minutes" = "Ez néhány percig tarthat";
+"For some reason, the files for this chapter are corrupted. Auto resolution has been deployed to try an fix this issue. Please stay on the app and retry entering the chapter in a few minutes. If the problem persists, contact me through the chat." = "Valamilyen oknál fogva a fejezet fájlok sérültek. Automatikus felbontás telepítésre került, hogy megpróbálja megoldani ezt a problémát. Kérjük, maradjon az alkalmazáson, és próbálja meg újra a fejezetbe néhány perc alatt. Ha a probléma továbbra is fennáll, lépjen kapcsolatba velem a csevegésen keresztül.";

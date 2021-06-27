@@ -76,9 +76,19 @@ class VideoPlayer : NSObject {
         
         //initialSetupWithURL(url: vidToURL(name: "\(urlAsset)", type: "mov") as URL)
         
-        initialSetupWithURL(url: URL(string: "file://\(retrieveVideo(name: urlAsset))")!)
-        
-        prepareToPlay()
+        let u = retrieveVideo(name: urlAsset)
+        if u != "" {
+            initialSetupWithURL(url: URL(string: "file://\(u)")!)
+            prepareToPlay()
+        } else {
+            //alert
+            downloadVideos()
+            let alertController = UIAlertController(title: "Error".localized(), message: "For some reason, the files for this chapter are corrupted. Auto resolution has been deployed to try an fix this issue. Please stay on the app and retry entering the chapter in a few minutes. If the problem persists, contact me through the chat.".localized(), preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "Okay".localized(), style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            godThread!.present(alertController, animated: true, completion: nil)
+            
+        }
     }
     
     override init() {
