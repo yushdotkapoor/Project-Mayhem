@@ -59,6 +59,8 @@ class chapter14: UIViewController {
         bypassImg.alpha = 0.5
         
         foregroundView.isUserInteractionEnabled = false
+        
+        toolbar.add3DMotionShadow()
     }
     
     func makeBorder(lbl:UILabel) {

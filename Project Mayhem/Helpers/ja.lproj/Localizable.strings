@@ -189,4 +189,5 @@
 "This option will reduce any gyroscopic motion animations" = "このオプションは、ジャイロスコープモーションアニメーションを削減します";
 "Tap to view Hint!" = "ヒントを表示するにはタップしてください。";
 "This may take a few minutes" = "これには数分かかる場合があります";
-"For some reason, the files for this chapter are corrupted. Auto resolution has been deployed to try an fix this issue. Please stay on the app and retry entering the chapter in a few minutes. If the problem persists, contact me through the chat." = "何らかの理由で、この章のファイルが破損しています。この問題を修正しようとするために自動解決策が展開されました。アプリに留まり、数分で章に入る再試行してください。問題が解決しない場合は、チャットを通して私に連絡してください。";
+"For some reason, the files for this chapter are corrupted. A fix has been deployed, but make sure your internet connection is stable. Please stay on the app and retry entering the chapter in a few minutes. If the problem persists, contact me through the chat." = "何らかの理由で、この章のファイルが破損しています。修正が展開されましたが、インターネット接続が安定していることを確認してください。アプリに留まり、数分で章に入る再試行してください。問題が解決しない場合は、チャットを通して私に連絡してください。";
+"It seems that you do not have stable network connection for downloading this game's content. To proceed, please connect to an internet network." = "このゲームのコンテンツをダウンロードするための安定したネットワーク接続がないようです。続行するには、インターネットネットワークに接続してください。";

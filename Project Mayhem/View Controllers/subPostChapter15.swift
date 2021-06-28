@@ -51,6 +51,8 @@ class subPostChapter15: UIViewController {
         let doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
         doubleTap.numberOfTapsRequired = 2
         view.addGestureRecognizer(doubleTap)
+        
+        toolbar.add3DMotionShadow()
     }
     
     func part1() {

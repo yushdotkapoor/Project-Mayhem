@@ -44,6 +44,8 @@ class ProjectVenomTrailer: UIViewController {
         doubleTap.numberOfTapsRequired = 2
         view.addGestureRecognizer(doubleTap)
         view.bringSubviewToFront(toolbar)
+        
+        toolbar.add3DMotionShadow()
     }
     
     

@@ -82,12 +82,15 @@ class VideoPlayer : NSObject {
             prepareToPlay()
         } else {
             //alert
-            downloadVideos()
-            let alertController = UIAlertController(title: "Error".localized(), message: "For some reason, the files for this chapter are corrupted. Auto resolution has been deployed to try an fix this issue. Please stay on the app and retry entering the chapter in a few minutes. If the problem persists, contact me through the chat.".localized(), preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "Okay".localized(), style: .cancel, handler: nil)
-            alertController.addAction(defaultAction)
-            godThread!.present(alertController, animated: true, completion: nil)
-            
+            let v = validateVideos()
+            downloadVideos(vidNames: v)
+            print("Error Detected")
+            wait {
+                let alertController = UIAlertController(title: "Error".localized(), message: "For some reason, the files for this chapter are corrupted. A fix has been deployed, but make sure your internet connection is stable. Please stay on the app and retry entering the chapter in a few minutes. If the problem persists, contact me through the chat.".localized(), preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "Okay".localized(), style: .cancel, handler: nil)
+                alertController.addAction(defaultAction)
+                godThread!.present(alertController, animated: true, completion: nil)
+            }
         }
     }
     
@@ -316,10 +319,12 @@ class VideoPlayer : NSObject {
     func phoneCallError() {
         if isOnPhoneCall() {
             pause()
+            wait {
             let alertController = UIAlertController(title: "Error".localized(), message: "Functionality of the application will not work if you are in a call, please disconnect the call to continue playing".localized(), preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "Okay".localized(), style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             godThread!.present(alertController, animated: true, completion: nil)
+            }
         }
     }
     

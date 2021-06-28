@@ -18,6 +18,8 @@ class Downloader: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         circleView.createCircularPath(radius: 120)
         
         label.text = "Downloading Content".localized()
@@ -32,23 +34,37 @@ class Downloader: UIViewController {
         notificationTimer?.invalidate()
     }
     
+    func checkForInternet() {
+        if !CheckInternet.Connection() {
+            alert(title: "Error".localized(), message: "It seems that you do not have stable network connection for downloading this game's content. To proceed, please connect to an internet network.".localized(), actionTitle: "Okay".localized())
+        }
+    }
+    
     
     @objc func checkNotification() {
+        checkForInternet()
         if label.alpha == 0 {
             label.fadeIn()
         } else {
             label.fadeOut()
         }
         if game.bool(forKey: "downloaded") {
+            game.setValue(true, forKey: "introViewed")
             wait {
+                let v = validateVideos()
+                downloadVideos(vidNames: v)
                 self.performSegue(withIdentifier: "DownloadToMain", sender: nil)
             }
         }
-        var dist:Double = Double(mediaCount) / Double(vidArr.count)
+        
+        
+        //var dist:Double = Double(mediaCount) / Double(vidArr.count)
+        var dist:Double = Double(mediaCount)
         var dur = dist * 0.5
         if dist == 0 {
             dist = 1 / 15
-            dur = Double(1 / vidArr.count) * 0.5
+            //dur = Double(1 / vidArr.count) * 0.5
+            dur = 0.5
         }
         
         circleView.grow(distance: dist, duration: dur)

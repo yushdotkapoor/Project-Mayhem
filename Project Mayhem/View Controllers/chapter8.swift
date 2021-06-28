@@ -33,6 +33,8 @@ class chapter8: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.viewTapped(gesture:)))
         view.addGestureRecognizer(tapGesture)
         view.isUserInteractionEnabled = true
+        
+        toolbar.add3DMotionShadow()
     }
     
     override func viewWillAppear(_ animated: Bool) {

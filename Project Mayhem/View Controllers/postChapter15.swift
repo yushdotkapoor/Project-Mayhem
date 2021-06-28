@@ -54,6 +54,8 @@ class postChapter15: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         game.setValue("postChap15", forKey: "active")
         flickerStart()
+        
+        toolbar.add3DMotionShadow()
     }
     
     func flickerStart() {

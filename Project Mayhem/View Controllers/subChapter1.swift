@@ -28,6 +28,8 @@ class subChapter1: UIViewController {
             print("User accepted notifications: \(accepted)")
         })
         
+        toolbar.add3DMotionShadow()
+        
         doubleTapInstructions.text = "Double Tap to Skip".localized()
         
         
@@ -55,6 +57,7 @@ class subChapter1: UIViewController {
                 self.performSegue(withIdentifier: "subChap1ToChap1", sender: nil)
             }
         }
+        
     }
     
     func nextChapter() {

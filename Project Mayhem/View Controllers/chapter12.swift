@@ -49,6 +49,8 @@ class chapter12: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(batteryStateDidChange), name: UIDevice.batteryStateDidChangeNotification, object: nil)
         
         gemini.layer.cornerRadius = gemini.frame.size.height / 2
+        
+        toolbar.add3DMotionShadow()
     }
     
     override func viewWillAppear(_ animated: Bool) {

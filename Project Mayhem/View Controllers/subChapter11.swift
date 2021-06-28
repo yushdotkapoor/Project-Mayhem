@@ -55,6 +55,8 @@ class subChapter11: UIViewController, UIScrollViewDelegate {
         scrollView.maximumZoomScale = 10
         scrollView.minimumZoomScale = 1
         view.bringSubviewToFront(toolbar)
+        
+        toolbar.add3DMotionShadow()
     }
     
     @objc func doneClicked() {

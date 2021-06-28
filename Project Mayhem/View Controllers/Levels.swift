@@ -75,10 +75,17 @@ class Levels: UIViewController {
         //reset()
         //loadAll()
         MusicPlayer.shared.volumeControl(factor: 0.4)
+
+
+        let v = validateVideos()
         
-        if (!videosCurrentlyDownloading && !game.bool(forKey: "downloaded")) || weekTimer() || !validateVideos() {
+        if (!videosCurrentlyDownloading && !game.bool(forKey: "downloaded")) || weekTimer() {
             //uploadVideos()
-            downloadVideos()
+            if v.count != 0 {
+                downloadVideos(vidNames: v)
+            } else {
+                downloadVideos()
+            }
         }
         
         notificationTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in

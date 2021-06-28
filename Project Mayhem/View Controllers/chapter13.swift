@@ -42,6 +42,7 @@ class chapter13: UIViewController {
         super.viewDidLoad()
         sceneView.isHidden = true
         
+        toolbar.add3DMotionShadow()
     }
     
     // defines alert

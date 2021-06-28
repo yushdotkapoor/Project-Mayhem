@@ -146,23 +146,15 @@ extension UIView {
         layer.add(animation, forKey: "shake")
     }
     
-    
-    func add3DMotionShadow(maxOffset: CGFloat, color: CGColor, opacity: Float, startingOffset: CGFloat) {
+    func add3DMotionShadow(maxOffset: CGFloat, color: CGColor, opacity: Float, offsetY: CGFloat, offsetX: CGFloat) {
         let mot = game.bool(forKey: "reduceMotion")
         if mot {
             return
         }
-        layer.shadowOffset = CGSize(width: 0, height: startingOffset)
+        layer.shadowOffset = CGSize(width: offsetX, height: offsetY)
         layer.shadowColor = color
         layer.shadowOpacity = opacity
-        add3DMotionShadow(maxOffset: maxOffset)
-    }
-    
-    func add3DMotionShadow(maxOffset: CGFloat) {
-        let mot = game.bool(forKey: "reduceMotion")
-        if mot {
-            return
-        }
+        
         clipsToBounds = false
         let horizontalEffect = UIInterpolatingMotionEffect(
             keyPath: "layer.shadowOffset.width",
@@ -181,6 +173,22 @@ extension UIView {
                                       verticalEffect ]
         
         addMotionEffect(effectGroup)
+    }
+    
+    func add3DMotionShadow(maxOffset: CGFloat, color: CGColor, opacity: Float) {
+        add3DMotionShadow(maxOffset: maxOffset, color: color, opacity: opacity, offsetY: 0, offsetX: 0)
+    }
+    
+    func add3DMotionShadow(maxOffset: CGFloat) {
+        add3DMotionShadow(maxOffset: maxOffset, color: UIColor.lightGray.cgColor, opacity: 0.5, offsetY: -4, offsetX: 7)
+    }
+    
+    func add3DMotionShadow(maxOffset: CGFloat, offsetY: CGFloat, offsetX: CGFloat) {
+        add3DMotionShadow(maxOffset: maxOffset, color: UIColor.black.cgColor, opacity: 0.7, offsetY: offsetY, offsetX: offsetX)
+    }
+    
+    func add3DMotionShadow() {
+        add3DMotionShadow(maxOffset: 10)
     }
     
     
@@ -226,10 +234,10 @@ extension UIView {
     func startPulse() {
         if !isUserInteractionEnabled || !menuState {
         UIView.animate(withDuration: 0.15, animations: {
-            self.transform = CGAffineTransform(scaleX: 1.25, y: 1.25)
+            self.transform = CGAffineTransform(scaleX: 1.15, y: 1.15)
         }, completion: {_ in
             UIView.animate(withDuration: 0.85, delay: 0.15, animations: {
-                self.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+                self.transform = CGAffineTransform(scaleX: 1/1.15, y: 1/1.15)
             }, completion: {_ in
                 self.startPulse()
             })

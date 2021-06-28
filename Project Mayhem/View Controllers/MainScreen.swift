@@ -32,18 +32,13 @@ class MainScreen: UIViewController {
         //COMMENT LINE BELOW BEFORE DEPLOYMENT
         //game.setValue(true, forKey: "isAdmin")
         
-        if (!videosCurrentlyDownloading && !game.bool(forKey: "downloaded")) || weekTimer() || !validateVideos() {
-            //uploadVideos()
-            downloadVideos()
-        }
-        
         Auth.auth().signInAnonymously()
         setupChat()
         
-        lbl.add3DMotionShadow(maxOffset: 20, color: UIColor.white.cgColor, opacity: 0.5, startingOffset: 0)
-        enter.add3DMotionShadow(maxOffset: 20, color: UIColor.gray.cgColor, opacity: 0.5, startingOffset: 0)
-        tearDrop.add3DMotionShadow(maxOffset: 20, color: UIColor.gray.cgColor, opacity: 0.5, startingOffset: 0)
-        logo.add3DMotionShadow(maxOffset: 20, color: UIColor.gray.cgColor, opacity: 0.75, startingOffset: 0)
+        lbl.add3DMotionShadow(maxOffset: 20, color: UIColor.white.cgColor, opacity: 0.5)
+        enter.add3DMotionShadow(maxOffset: 20, color: UIColor.gray.cgColor, opacity: 0.5)
+        tearDrop.add3DMotionShadow(maxOffset: 20, color: UIColor.gray.cgColor, opacity: 0.5)
+        logo.add3DMotionShadow(maxOffset: 20, color: UIColor.gray.cgColor, opacity: 0.75)
         
         enter.addOutline(color: UIColor.gray.cgColor)
         tearDrop.addOutline(color: UIColor.gray.cgColor)
@@ -94,6 +89,17 @@ class MainScreen: UIViewController {
         let intro = game.bool(forKey: "introViewed")
         if intro == false {
             performSegue(withIdentifier: "mainToIntroduction", sender: self)
+        } else {
+            let v = validateVideos()
+            
+            if (!videosCurrentlyDownloading && !game.bool(forKey: "downloaded")) || weekTimer() {
+                //uploadVideos()
+                if v.count != 0 {
+                    downloadVideos(vidNames: v)
+                } else {
+                    downloadVideos()
+                }
+            }
         }
         
         lbl.fadeIn()

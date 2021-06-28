@@ -73,6 +73,8 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
         
         view.bringSubviewToFront(toolbar)
         
+        toolbar.add3DMotionShadow()
+        
     }
     
     

@@ -25,8 +25,6 @@ class chapter11: UIViewController, SFSpeechRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         resetInProgress = false
         currentString = ""
         label.alpha = 0.0
@@ -34,6 +32,8 @@ class chapter11: UIViewController, SFSpeechRecognizerDelegate {
         morseText.text = morseText.text?.stringToMorse()
         game.setValue("chap11", forKey: "active")
         godThread = self
+        
+        toolbar.add3DMotionShadow()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -53,6 +53,8 @@ class chapter7: UIViewController {
         titl.text = "Navigate".localized()
         orderString = []
         current = 0
+        
+        toolbar.add3DMotionShadow()
     }
     
     override func viewWillAppear(_ animated: Bool) {

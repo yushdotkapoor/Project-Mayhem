@@ -135,9 +135,15 @@ func isOnPhoneCall() -> Bool {
 }
 
 // MARK: - Videos
+
 func downloadVideos() {
+    let a = vidArr
+    downloadVideos(vidNames: a)
+}
+
+func downloadVideos(vidNames: [String]) {
     mediaCount = 0
-    for vid in vidArr {
+    for vid in vidNames {
         var videoURL:NSURL?
         print("Downloading \(vid)")
         game.setValue(false, forKey: "downloaded")
@@ -145,7 +151,7 @@ func downloadVideos() {
         database.fetch(withRecordID: CKRecord.ID(recordName: vid)) { results, error in
             if error != nil {
                 print(" Error Downloading Record  " + error!.localizedDescription)
-                downloadVideos()
+                downloadVideos(vidNames: [vid])
             } else {
                 if results != nil {
                     let record = results! as CKRecord
@@ -167,7 +173,7 @@ func downloadVideos() {
                     mediaCount += 1
                     
                     print("end download \(vid)")
-                    if mediaCount == vidArr.count {
+                    if mediaCount == vidNames.count {
                         videosCurrentlyDownloading = false
                         print("\n\nVideo Downloads Completed\n\n")
                         let date = Date().timeIntervalSince1970 + 604800
@@ -241,15 +247,14 @@ func retrieveVideo(name: String) -> String {
     }
 }
 
-func validateVideos() -> Bool {
+func validateVideos() -> [String] {
     let fileManager = FileManager.default
-    var toReturn = true
+    var toReturn:[String] = []
     for i in vidArr {
         let path = (getDirectoryPath() as NSString).appendingPathComponent("\(i).mov")
-        print("Pathfinder \(path)")
         if !fileManager.fileExists(atPath: path) {
             print("Error: There seems to be a video file missing")
-            toReturn = false
+            toReturn.append(i)
         }
     }
     return toReturn

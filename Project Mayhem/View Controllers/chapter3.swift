@@ -42,6 +42,7 @@ class chapter3: UIViewController {
             message.frame.size.height = height
             message.text = text
         }
+        toolbar.add3DMotionShadow()
     }
     
     override func viewWillAppear(_ animated: Bool) {

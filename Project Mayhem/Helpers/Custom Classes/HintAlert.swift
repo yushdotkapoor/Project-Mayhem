@@ -94,7 +94,7 @@ class HintAlert: NSObject, UIScrollViewDelegate {
     let m8 = "a=swipe".localized()
     let m9 = "b=right".localized()
     let m10 = "c=down".localized()
-    let m11 = "-(a*(-b)*c)/b".localized()
+    let m11 = "-(a*(-b)*c)/b" //not localized
     let m12 = "Roses are red, violets are blue, I'm pretty sure that this is a date. What are you supposed to do?".localized()
     let m13 = "Get in a blue box and get your timey wimey on.".localized()
     let m14 = "is known as a musical note and has different pitches. Remember, nothing is off limits!".localized()

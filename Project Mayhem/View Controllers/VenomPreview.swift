@@ -14,6 +14,12 @@ class VenomPreview: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var comingSoon: UILabel!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        toolbar.add3DMotionShadow()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         backButton.alpha = 0.0

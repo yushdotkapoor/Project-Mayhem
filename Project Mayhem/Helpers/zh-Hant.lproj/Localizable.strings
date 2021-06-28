@@ -189,4 +189,5 @@
 "This option will reduce any gyroscopic motion animations" = "此選項將減少任何陀螺儀運動動畫";
 "Tap to view Hint!" = "點擊查看提示！";
 "This may take a few minutes" = "這可能需要幾分鐘的時間";
-"For some reason, the files for this chapter are corrupted. Auto resolution has been deployed to try an fix this issue. Please stay on the app and retry entering the chapter in a few minutes. If the problem persists, contact me through the chat." = "出於某種原因，本章的文件已損壞。已部署自動分辨率以嘗試解決此問題。請留在應用程序上並重試在幾分鐘內輸入章節。如果問題仍然存在，請通過聊天聯繫我。";
+"For some reason, the files for this chapter are corrupted. A fix has been deployed, but make sure your internet connection is stable. Please stay on the app and retry entering the chapter in a few minutes. If the problem persists, contact me through the chat." = "出於某種原因，本章的文件已損壞。修復已部署，但確保您的Internet連接穩定。請留在應用程序上並重試在幾分鐘內輸入章節。如果問題仍然存在，請通過聊天聯繫我。";
+"It seems that you do not have stable network connection for downloading this game's content. To proceed, please connect to an internet network." = "似乎您沒有穩定的網絡連接來下載此遊戲的內容。要繼續，請連接到互聯網網絡。";

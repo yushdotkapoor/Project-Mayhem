@@ -21,7 +21,7 @@ class Introduction: UIViewController {
         super.viewDidLoad()
         let active = game.string(forKey: "active")
         if active != "settings" {
-            downloadVideos()
+            downloadVideos(vidNames: ["Chap1Intro"])
         }
         t2n.text = "Things to note:".localized()
         hope.text = "I hope you enjoy this game as much as I did making it!".localized()
@@ -46,7 +46,7 @@ class Introduction: UIViewController {
     }
     
     @IBAction func goBack(_ sender: Any) {
-        game.setValue(true, forKey: "introViewed")
+        
         let active = game.string(forKey: "active")
         if active == "settings" {
             performSegue(withIdentifier: "introductionToSettings", sender: self)

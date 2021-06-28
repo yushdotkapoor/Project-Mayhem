@@ -61,7 +61,6 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
         reduceMotionDescription.text = "This option will reduce any gyroscopic motion animations".localized()
         
         
-        
         let p1 = "Version".localized()
         version.text = "\(p1) \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] ?? "null")"
         
