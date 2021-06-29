@@ -59,16 +59,26 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
             let data = messages["data"] as? String
             let type = messages["type"] as? String
             if type == "text" {
-                rList[threadID]!.preview = data ?? ""
+                rList[threadID]?.preview = data ?? ""
             } else if type == "photo" {
-                rList[threadID]!.preview = "Photo Message".localized()
+                rList[threadID]?.preview = "Photo Message".localized()
             } else if type == "video" {
-                rList[threadID]!.preview = "Video Message".localized()
+                rList[threadID]?.preview = "Video Message".localized()
             } else if type == "linkPreview" {
-                rList[threadID]!.preview = "URL Message".localized()
+                rList[threadID]?.preview = "URL Message".localized()
             }
             self.sortReload()
         })
+    }
+    
+    func checkToRender(g: NSEnumerator, messages: NSDictionary) -> Bool {
+        for s in g {
+            let dat = messages[s] as? [String:String]
+            if dat?["sender"] != self.myKey && dat?["sender"] != nil {
+                return true
+            }
+        }
+        return false
     }
     
     func notificationListener() {
@@ -78,7 +88,10 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
             let read = value["recipients"] as? [String:String] ?? [:]
             let messages = value["messages"] as! NSDictionary
             
-            if messages.count > 2 {
+            let g = messages.keyEnumerator()
+            let render = self.checkToRender(g: g, messages: messages)
+
+            if render {
                 
                 var count = 0
                 
@@ -117,8 +130,11 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
             let read = value["recipients"] as? [String:String] ?? [:]
             let messages = value["messages"] as! NSDictionary
             
-            if messages.count > 2 {
-                
+            let g = messages.keyEnumerator()
+            let render = self.checkToRender(g: g, messages: messages)
+
+            
+            if render {
                 self.getCurrentMessage(threadID: threadID)
                 
                 let last = value["last"] as? String ?? ""

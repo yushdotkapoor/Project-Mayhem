@@ -162,10 +162,12 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     
     @IBAction func submitName(_ sender: Any) {
         let name = nameField.text?.removeLastSpace()
-        print(name)
         if !skip() {
             let gameName = game.string(forKey: "name")
-            if gameName != name && gameName != nil {
+            if name == "" {
+                //alert the user that the field cannot be blank
+                alert(title: "Error".localized(), message: "You must enter your name in the provided field. Otherwise, I cannot trust you.".localized(), actionTitle: "Okay".localized())
+            } else if gameName != name && gameName != nil {
                 let l1 = "This name conflicts with the name you gave before:".localized()
                 let l2 = "Would you like to change your name from".localized()
                 let l3 = "to".localized()
@@ -187,42 +189,37 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     }
     
     func setName(name: String) {
-        if name != "" {
-            nextChap.alpha = 0.0
-            game.setValue(name, forKey: "name")
-            game.setValue(true, forKey: "chap1")
-            game.setValue("none", forKey: "active")
-            view.endEditing(true)
-            nameField.text = ""
-            let m1 = "Welcome to Project Mayhem,".localized()
-            welcome.text = "\(m1) \(name)"
-            welcome.fadeIn()
+        nextChap.alpha = 0.0
+        game.setValue(name, forKey: "name")
+        game.setValue(true, forKey: "chap1")
+        game.setValue("none", forKey: "active")
+        view.endEditing(true)
+        nameField.text = ""
+        let m1 = "Welcome to Project Mayhem,".localized()
+        welcome.text = "\(m1) \(name)"
+        welcome.fadeIn()
+        wait {
+            self.nameStack.fadeOut()
+            self.good.fadeOut()
+            self.glad.fadeOut()
+            self.clickTheRick.fadeOut()
             wait {
-                self.nameStack.fadeOut()
-                self.good.fadeOut()
-                self.glad.fadeOut()
-                self.clickTheRick.fadeOut()
-                wait {
-                    self.welcome.flickerIn(iterations: 10)
-                    self.welcome.text = "\(m1) Branechild"
-                    self.welcome.textColor = .red
+                self.welcome.flickerIn(iterations: 10)
+                self.welcome.text = "\(m1) Branechild"
+                self.welcome.textColor = .red
+                self.vibrate(count: 5)
+                wait(time: 0.75, actions: {
                     self.vibrate(count: 5)
-                    wait(time: 0.75, actions: {
-                        self.vibrate(count: 5)
-                        self.welcome.flickerIn(iterations: 10)
-                        self.welcome.text = "\(m1) Brainchild"
-                        self.welcome.textColor = .black
-                        self.nextChap.isUserInteractionEnabled = true
-                        impact(style: .success)
-                        self.nextChap.fadeIn()
-                    })
-                }
+                    self.welcome.flickerIn(iterations: 10)
+                    self.welcome.text = "\(m1) Brainchild"
+                    self.welcome.textColor = .black
+                    self.nextChap.isUserInteractionEnabled = true
+                    impact(style: .success)
+                    self.nextChap.fadeIn()
+                })
             }
         }
-        else {
-            //alert the user that the field cannot be blank
-            alert(title: "Error".localized(), message: "You must enter your name in the provided field. Otherwise, I cannot trust you.".localized(), actionTitle: "Okay".localized())
-        }
+        
     }
     
     func skip() -> Bool {

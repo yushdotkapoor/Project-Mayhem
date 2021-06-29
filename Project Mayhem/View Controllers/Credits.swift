@@ -138,15 +138,7 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
     @IBAction func feedback(_ sender: Any) {
         rList.removeAll()
         
-        var selectNavigation = "MessagesNavigation"
-        
-        if (game.string(forKey: "key") == "ADMIN") {
-            selectNavigation = "AdminNavigation"
-        }
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: selectNavigation)
-        self.present(controller, animated: true, completion: nil)
+        goToChat(vc: self)
     }
     
     @IBAction func visionConsolidatedWebsite(_ sender: Any) {

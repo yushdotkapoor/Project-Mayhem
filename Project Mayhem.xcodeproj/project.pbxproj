@@ -98,6 +98,7 @@
 		9DEB283F25C6095000E3F102 /* stringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB283E25C6095000E3F102 /* stringExtensions.swift */; };
 		9DED07D3261D588800ACBE2B /* Introduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DED07D2261D588800ACBE2B /* Introduction.swift */; };
 		9DF618BF25F71F910057CFA6 /* postCredits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF618BE25F71F910057CFA6 /* postCredits.swift */; };
+		9DFEE976268A35A6009F3796 /* Blast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEE975268A35A6009F3796 /* Blast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -294,6 +295,7 @@
 		9DEB283E25C6095000E3F102 /* stringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stringExtensions.swift; sourceTree = "<group>"; };
 		9DED07D2261D588800ACBE2B /* Introduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Introduction.swift; sourceTree = "<group>"; };
 		9DF618BE25F71F910057CFA6 /* postCredits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postCredits.swift; sourceTree = "<group>"; };
+		9DFEE975268A35A6009F3796 /* Blast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -384,6 +386,7 @@
 				9D1A40C5263BA8EF00F6DF9B /* MessageView.swift */,
 				9D1A40BC263B6B3D00F6DF9B /* Notifications.swift */,
 				9D1A40C7263BBB2300F6DF9B /* MessageViewCell.swift */,
+				9DFEE975268A35A6009F3796 /* Blast.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -837,6 +840,7 @@
 				9D8B292E25DC189A007750DF /* CALayerExtension.swift in Sources */,
 				9D6E493625EE12EF00B09E8A /* MusicPlayer.swift in Sources */,
 				9DA2E9BD25F0451600262638 /* audioExtensions.swift in Sources */,
+				9DFEE976268A35A6009F3796 /* Blast.swift in Sources */,
 				9D5614302591DC5400F1695A /* AppDelegate.swift in Sources */,
 				9D8B292A25DC187D007750DF /* UIColorExtension.swift in Sources */,
 				9D7F3AB4267161BA00CED071 /* Downloader.swift in Sources */,
@@ -1118,7 +1122,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Project Mayhem/Project Mayhem.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 22;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Project Mayhem/Preview Content\"";
 				DEVELOPMENT_TEAM = 68L233566P;
@@ -1149,7 +1153,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1173,7 +1177,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Project Mayhem/Project Mayhem.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_ASSET_PATHS = "\"Project Mayhem/Preview Content\"";
 				DEVELOPMENT_TEAM = 68L233566P;
 				ENABLE_PREVIEWS = YES;
@@ -1203,7 +1207,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1302,7 +1306,7 @@
 				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = 68L233566P;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -1311,7 +1315,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1328,7 +1332,7 @@
 				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 21;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = 68L233566P;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -1337,7 +1341,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

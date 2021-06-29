@@ -358,7 +358,7 @@ class HintAlert: NSObject, UIScrollViewDelegate {
                 btn.titleLabel?.font = UIFont(name: "Helvetica", size: 16.0)
                 btn.titleLabel?.textAlignment = .center
                 btn.setTitleColor(.blue, for: .normal)
-                btn.addTarget(self, action: #selector(actionSheetForPurchase), for: .touchUpInside)
+                btn.addTarget(self, action: #selector(actionSheetForPurchase(_:)), for: .touchUpInside)
                 scrollView.addSubview(btn)
             }
             
@@ -389,7 +389,8 @@ class HintAlert: NSObject, UIScrollViewDelegate {
         stopAnimation(index: "1")
     }
     
-    @objc func actionSheetForPurchase() {
+    @objc func actionSheetForPurchase(_ sender: AnyObject) {
+        print(sender)
         let bH = getIAP(productIdentifier: "com.YushRajKapoor.ProjectMayhem.betterHints")
         let fH = getIAP(productIdentifier: "com.YushRajKapoor.ProjectMayhem.FiveHints")
         let allPrice = bH.price
@@ -419,6 +420,11 @@ class HintAlert: NSObject, UIScrollViewDelegate {
             alertController.addAction(okay)
             self.controller!.present(alertController, animated: true, completion: nil)
         } else {
+            if let popoverController = actionSheet.popoverPresentationController {
+                popoverController.sourceView = self.controller?.view
+                popoverController.sourceRect = CGRect(x: (self.controller?.view.bounds.midX)!, y: (self.controller?.view.bounds.midY)!, width: 0, height: 0)
+                popoverController.permittedArrowDirections = []
+            }
             controller!.present(actionSheet, animated: true)
         }
     }
@@ -445,15 +451,7 @@ class HintAlert: NSObject, UIScrollViewDelegate {
     @objc func chat() {
         rList.removeAll()
         
-        var selectNavigation = "MessagesNavigation"
-        
-        if (game.string(forKey: "key") == "ADMIN") {
-            selectNavigation = "AdminNavigation"
-        }
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let con = storyboard.instantiateViewController(withIdentifier: selectNavigation)
-        controller!.present(con, animated: true, completion: nil)
+        goToChat(vc: controller!)
     }
     
     @objc func dismissAlert() {

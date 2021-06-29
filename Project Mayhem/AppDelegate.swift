@@ -12,7 +12,7 @@ import StoreKit
 import Siren
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, SKRequestDelegate, MessagingDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, SKRequestDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
     
     var window: UIWindow?
     
@@ -34,6 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, S
         
         OneSignal.initWithLaunchOptions(launchOptions)
         OneSignal.setAppId("12db9d9f-4c00-4d45-83e7-0cf7e40026cd")
+        
+        
+        let center = UNUserNotificationCenter.current()
+           center.delegate = self
         
         
         //default values for the start of the game
@@ -64,6 +68,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, S
         Messaging.messaging().delegate = self
         
         game.setValue("\(Messaging.messaging().fcmToken ?? "")", forKey: "token")
+        
+        if(launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] != nil){
+             print("user tapped and now is doing stuff!")
+            goToChat(vc: (self.window?.rootViewController?.topViewController!)!)
+         }
         
         return true
     }
@@ -145,12 +154,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, S
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        let data = response.notification.request.content.userInfo
+        
+        let topView = self.window?.rootViewController?.topViewController
+        
+        if topView is ChatViewController || topView is MessageView {
+            //test to reduce
+        } else if !data.isEmpty {
+            goToChat(vc: (self.window?.rootViewController?.topViewController)!)
+        }
+        
         completionHandler()
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([])
+      
+         let topView = self.window?.rootViewController?.topViewController
+        if topView is ChatViewController || topView is MessageView {
+            completionHandler([])
+        } else {
+            completionHandler([.list, .banner, .sound])
+        }
     }
+
     
     private func application(_ application: UIApplication, didReceive notification: UNNotificationRequest) {
         UIApplication.shared.applicationIconBadgeNumber = 1

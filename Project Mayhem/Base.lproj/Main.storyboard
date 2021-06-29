@@ -58,7 +58,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This may take a few minutes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mF1-Kr-MEQ">
-                                <rect key="frame" x="15" y="832.33333333333337" width="398" height="19.666666666666629"/>
+                                <rect key="frame" x="40" y="832.33333333333337" width="348" height="19.666666666666629"/>
                                 <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -67,8 +67,8 @@
                         <viewLayoutGuide key="safeArea" id="Z0g-cF-c5J"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mF1-Kr-MEQ" firstAttribute="leading" secondItem="Z0g-cF-c5J" secondAttribute="leading" constant="15" id="31o-15-fQ3"/>
-                            <constraint firstItem="Z0g-cF-c5J" firstAttribute="trailing" secondItem="mF1-Kr-MEQ" secondAttribute="trailing" constant="15" id="Cdl-eK-z9K"/>
+                            <constraint firstItem="mF1-Kr-MEQ" firstAttribute="leading" secondItem="Z0g-cF-c5J" secondAttribute="leading" constant="40" id="31o-15-fQ3"/>
+                            <constraint firstItem="Z0g-cF-c5J" firstAttribute="trailing" secondItem="mF1-Kr-MEQ" secondAttribute="trailing" constant="40" id="Cdl-eK-z9K"/>
                             <constraint firstItem="Z0g-cF-c5J" firstAttribute="bottom" secondItem="mF1-Kr-MEQ" secondAttribute="bottom" constant="40" id="DRi-rG-buU"/>
                             <constraint firstItem="QB6-xz-HdJ" firstAttribute="centerX" secondItem="6Kp-M9-s18" secondAttribute="centerX" id="P6I-yD-KIP"/>
                             <constraint firstItem="84Q-gX-k9f" firstAttribute="centerX" secondItem="6Kp-M9-s18" secondAttribute="centerX" id="Tpt-2t-UPK"/>
@@ -978,6 +978,65 @@
             </objects>
             <point key="canvasLocation" x="1711.5234375" y="-609.22401171303068"/>
         </scene>
+        <!--Blast-->
+        <scene sceneID="FQd-qO-uZr">
+            <objects>
+                <viewController id="bhO-CC-9Yh" customClass="Blast" customModule="Project_Mayhem" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gE9-jy-Ybt">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcV-EZ-xhQ" customClass="CustomButton" customModule="Project_Mayhem" customModuleProvider="target">
+                                <rect key="frame" x="174" y="758" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="03H-jC-BSC"/>
+                                    <constraint firstAttribute="height" constant="30" id="YgY-Au-0B6"/>
+                                </constraints>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="send:" destination="bhO-CC-9Yh" eventType="touchUpInside" id="3li-Hm-9U8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send a Message Blast" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zer-V1-zCa">
+                                <rect key="frame" x="20" y="20" width="388" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LFY-MK-3VV">
+                                <rect key="frame" x="20" y="96" width="388" height="200"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Jzf-Uz-YNV"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PLU-9D-bDh"/>
+                        <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PLU-9D-bDh" firstAttribute="trailing" secondItem="LFY-MK-3VV" secondAttribute="trailing" constant="20" id="6oS-j3-tpS"/>
+                            <constraint firstItem="LFY-MK-3VV" firstAttribute="top" secondItem="zer-V1-zCa" secondAttribute="bottom" constant="40" id="JgI-n0-jDW"/>
+                            <constraint firstItem="zer-V1-zCa" firstAttribute="leading" secondItem="PLU-9D-bDh" secondAttribute="leading" constant="20" id="XEq-uS-DuL"/>
+                            <constraint firstItem="lcV-EZ-xhQ" firstAttribute="centerX" secondItem="gE9-jy-Ybt" secondAttribute="centerX" id="ZaB-f9-pgJ"/>
+                            <constraint firstItem="zer-V1-zCa" firstAttribute="centerX" secondItem="gE9-jy-Ybt" secondAttribute="centerX" id="gMV-v5-6o9"/>
+                            <constraint firstItem="PLU-9D-bDh" firstAttribute="trailing" secondItem="zer-V1-zCa" secondAttribute="trailing" constant="20" id="qxh-lB-79B"/>
+                            <constraint firstItem="LFY-MK-3VV" firstAttribute="leading" secondItem="PLU-9D-bDh" secondAttribute="leading" constant="20" id="rCG-1F-QBp"/>
+                            <constraint firstItem="zer-V1-zCa" firstAttribute="top" secondItem="PLU-9D-bDh" secondAttribute="top" constant="20" id="wkI-Nz-JeM"/>
+                            <constraint firstItem="PLU-9D-bDh" firstAttribute="bottom" secondItem="lcV-EZ-xhQ" secondAttribute="bottom" constant="50" id="zSq-vT-PWi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="submit" destination="lcV-EZ-xhQ" id="t0A-NT-bP8"/>
+                        <outlet property="textField" destination="LFY-MK-3VV" id="2E7-Ow-5RJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Cn-MY-h11" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2494" y="-1990"/>
+        </scene>
         <!--Messages-->
         <scene sceneID="PwX-Sj-b53">
             <objects>
@@ -1063,7 +1122,13 @@
                             <constraint firstItem="0K5-Tz-s6f" firstAttribute="trailing" secondItem="4fS-uM-nhG" secondAttribute="trailing" id="xot-Ew-3K5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Messages" id="qy9-29-1Y0"/>
+                    <navigationItem key="navigationItem" title="Messages" id="qy9-29-1Y0">
+                        <barButtonItem key="rightBarButtonItem" title="Blast" id="iRa-ro-Ehy">
+                            <connections>
+                                <segue destination="bhO-CC-9Yh" kind="presentation" id="DUf-Dq-5Qt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="myTable" destination="4fS-uM-nhG" id="8xS-75-yOI"/>
                     </connections>

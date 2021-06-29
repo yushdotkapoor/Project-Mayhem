@@ -157,6 +157,12 @@ class ChatViewController: MessagesViewController {
         })
         actionSheet.addAction(UIAlertAction(title: "Cancel".localized(), style: .cancel, handler: nil))
         
+        if let popoverController = actionSheet.popoverPresentationController {
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            popoverController.permittedArrowDirections = []
+        }
+        
         present(actionSheet, animated: true)
     }
     
@@ -538,8 +544,11 @@ class ChatViewController: MessagesViewController {
         }
     }
     
-    
     private func save(_ message: Message) {
+        save(message, sendNotification: true)
+    }
+    
+    private func save(_ message: Message, sendNotification: Bool) {
         
         let text = message.data
         var offset = 0
@@ -599,8 +608,9 @@ class ChatViewController: MessagesViewController {
                 //titl = myKey
                 titl = "Someone needs your fucking help, bitch"
             }
-            
-            notification.sendPushNotification(to: self.otherUserToken, title: titl, body: body)
+            if sendNotification {
+                notification.sendPushNotification(to: self.otherUserToken, title: titl, body: body)
+            }
             
             self.messagesCollectionView.scrollToLastItem()
             
@@ -789,7 +799,7 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
                                           kind: .photo(media),
                                           data: "\(urlString)")
                     
-                    self?.save(message)
+                    self?.save(message, sendNotification: false)
                     self?.messagesCollectionView.scrollToLastItem(animated: true)
                     
                     
@@ -800,6 +810,7 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
             })
         }
         else if let videoUrl = info[.mediaURL] as? URL {
+            let vURL = createTemporaryURLforVideoFile(url: videoUrl as NSURL)
             let fileName = "photo_message_" + mID.replacingOccurrences(of: " ", with: "—") + ".mov"
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
                 media.url = URL(string: self.plzWaitVideo)
@@ -814,7 +825,7 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
             
             // Upload Video
             
-            StorageManager.shared.uploadMessageVideo(with: videoUrl, fileName: fileName, completion: { [weak self] result in
+            StorageManager.shared.uploadMessageVideo(with: vURL as URL, fileName: fileName, completion: { [weak self] result in
                 
                 switch result {
                 case .success(let urlString):
@@ -833,15 +844,30 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
                                           kind: .video(media),
                                           data: urlString)
                     
-                    self?.save(message)
+                    self?.save(message, sendNotification: false)
                     self?.messagesCollectionView.scrollToLastItem(animated: true)
                     
                 case .failure(let error):
-                    print("message photo upload error: \(error)")
+                    print("message video upload error: \(error)")
                     self?.alert(title: "Error".localized(), message: "The video was unable to be sent. The problem could be your network connection.".localized(), actionTitle: "Okay".localized())
                 }
             })
         }
+    }
+    
+    func createTemporaryURLforVideoFile(url: NSURL) -> NSURL {
+        /// Create the temporary directory.
+        let temporaryDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
+        /// create a temporary file for us to copy the video to.
+        let temporaryFileURL = temporaryDirectoryURL.appendingPathComponent(url.lastPathComponent ?? "")
+        /// Attempt the copy.
+        do {
+            try FileManager().copyItem(at: url.absoluteURL!, to: temporaryFileURL)
+        } catch {
+            print("There was an error copying the video file to the temporary location.")
+        }
+
+        return temporaryFileURL as NSURL
     }
 }
 
