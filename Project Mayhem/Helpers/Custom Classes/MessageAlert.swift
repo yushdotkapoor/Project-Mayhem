@@ -151,6 +151,9 @@ class MessageAlert: NSObject {
         button.frame = CGRect(x: alertView.frame.size.width / 2 - 37.5, y: messageLabel.frame.size.height + titleHeight + 20, width: 75, height: 25)
         button.setupButton()
         button.setTitle("Close".localized(), for: .normal)
+        button.titleLabel?.minimumScaleFactor = 0.5
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
+        button.contentEdgeInsets = UIEdgeInsets(top: button.contentEdgeInsets.top, left: 5, bottom: button.contentEdgeInsets.bottom, right: 5)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(viewController, action: buttonPush, for: .touchUpInside)
         

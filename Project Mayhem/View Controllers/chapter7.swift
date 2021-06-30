@@ -113,11 +113,17 @@ class chapter7: UIViewController {
         label.numberOfLines = 0
         label.textColor = .white
         
-        doubleTapInstructions = UILabel(frame: CGRect(x: talkingView!.bounds.size.width - 220, y: lblheight + 20, width: 200, height: 20))
-        doubleTapInstructions?.text = "Double Tap to Skip".localized()
-        doubleTapInstructions?.textAlignment = .center
+        
+        let dtts = "Double Tap to Skip".localized()
+        
+        let dttsHeight = heightForView(text: dtts, font: (UIFont(name: "astro", size: 12) ?? UIFont(name: "Helvetica", size: 12))!, width: 200)
+        
+        doubleTapInstructions = UILabel(frame: CGRect(x: talkingView!.bounds.size.width - 220, y: lblheight + 20, width: 200, height: dttsHeight))
+        doubleTapInstructions?.text = dtts
+        doubleTapInstructions?.textAlignment = .right
         doubleTapInstructions?.font = UIFont(name: "astro", size: 12)
-        doubleTapInstructions?.numberOfLines = 1
+        doubleTapInstructions?.numberOfLines = 0
+        doubleTapInstructions?.lineBreakMode = .byWordWrapping
         doubleTapInstructions?.textColor = .green
         doubleTapInstructions?.alpha = 0.0
         

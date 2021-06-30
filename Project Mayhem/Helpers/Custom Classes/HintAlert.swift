@@ -154,6 +154,9 @@ class HintAlert: NSObject, UIScrollViewDelegate {
         button.frame = CGRect(x: alertView.frame.size.width / 2 - 37.5, y: message1Height! + titleLabelHeight + 55, width: 75, height: 25)
         button.setupButton()
         button.setTitle("Close".localized(), for: .normal)
+        button.titleLabel?.minimumScaleFactor = 0.5
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
+        button.contentEdgeInsets = UIEdgeInsets(top: button.contentEdgeInsets.top, left: 5, bottom: button.contentEdgeInsets.bottom, right: 5)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(dismissAlert), for: .touchUpInside)
         
@@ -161,6 +164,9 @@ class HintAlert: NSObject, UIScrollViewDelegate {
         stuck.frame = CGRect(x: alertView.frame.size.width / 2 - 37.5, y: message1Height! + titleLabelHeight + 55, width: 75, height: 25)
         stuck.setupButton()
         stuck.setTitle("Stuck?".localized(), for: .normal)
+        stuck.titleLabel?.minimumScaleFactor = 0.5
+        stuck.titleLabel?.adjustsFontSizeToFitWidth = true
+        stuck.contentEdgeInsets = UIEdgeInsets(top: stuck.contentEdgeInsets.top, left: 5, bottom: stuck.contentEdgeInsets.bottom, right: 5)
         stuck.setTitleColor(.white, for: .normal)
         stuck.addTarget(self, action: #selector(chat), for: .touchUpInside)
         

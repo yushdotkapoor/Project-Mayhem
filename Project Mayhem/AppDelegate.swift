@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, S
         
         AppsFlyerLib.shared().appsFlyerDevKey = "pFA4cAKh8K3p2G6sRXEsC4"
         AppsFlyerLib.shared().appleAppID = "1551711683"
-        AppsFlyerLib.shared().delegate = self
+        AppsFlyerLib.shared().delegate = self 
         AppsFlyerLib.shared().isDebug = false
         AppsFlyerLib.shared().waitForATTUserAuthorization(timeoutInterval: 120)
         
@@ -35,6 +35,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, S
         OneSignal.initWithLaunchOptions(launchOptions)
         OneSignal.setAppId("12db9d9f-4c00-4d45-83e7-0cf7e40026cd")
         
+        //game.setValue("en", forKey: "AppleLanguage")
+        var lang = game.string(forKey: "AppleLanguage")
+        
+        if lang == "" {
+            lang = Locale.preferredLanguages.first
+            game.setValue(lang, forKey: "AppleLanguage")
+        }
+        game.synchronize()
+        Bundle.setLanguage(lang)
         
         let center = UNUserNotificationCenter.current()
            center.delegate = self

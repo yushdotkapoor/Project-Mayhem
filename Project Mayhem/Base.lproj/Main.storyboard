@@ -199,7 +199,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="2aE-lW-wLG">
-                                        <rect key="frame" x="40" y="144" width="348" height="1596"/>
+                                        <rect key="frame" x="40" y="144" width="348" height="1727"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SPS-3R-K7E">
                                                 <rect key="frame" x="0.0" y="0.0" width="348" height="115"/>
@@ -469,14 +469,47 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="o9J-aA-CR6">
+                                                <rect key="frame" x="0.0" y="1284" width="348" height="56"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Csh-RO-5XV">
+                                                        <rect key="frame" x="0.0" y="0.0" width="348" height="29"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Gur-2i-7py">
+                                                                <rect key="frame" x="0.0" y="0.0" width="130" height="29"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="130" id="b6j-kz-EKU"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qU7-NW-nMF">
+                                                                <rect key="frame" x="130" y="0.0" width="218" height="29"/>
+                                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="17"/>
+                                                                <state key="normal" title="lan"/>
+                                                                <connections>
+                                                                    <action selector="language:" destination="fkB-KW-fdR" eventType="touchUpInside" id="ydt-u4-6Iz"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set your language preference" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mfG-s2-dML">
+                                                        <rect key="frame" x="0.0" y="44" width="348" height="12"/>
+                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For best experience, make sure haptics(Settings) Are on and that minimize flashing(above) is turned off." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="elD-NK-I5e">
-                                                <rect key="frame" x="0.0" y="1284" width="348" height="24"/>
+                                                <rect key="frame" x="0.0" y="1415" width="348" height="24"/>
                                                 <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Xwn-Qs-dJJ">
-                                                <rect key="frame" x="0.0" y="1383" width="348" height="126"/>
+                                                <rect key="frame" x="0.0" y="1514" width="348" height="126"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1U-pc-kGe" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="348" height="32"/>
@@ -505,7 +538,7 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cPc-g0-tUH">
-                                                <rect key="frame" x="0.0" y="1584" width="348" height="12"/>
+                                                <rect key="frame" x="0.0" y="1715" width="348" height="12"/>
                                                 <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -569,6 +602,9 @@
                         <outlet property="fiveHintsButton" destination="0yI-ra-ehQ" id="xci-HP-4uS"/>
                         <outlet property="fiveHintsDescription" destination="2Bg-FR-pHl" id="Ecc-CN-ObG"/>
                         <outlet property="flashingSwitch" destination="K22-SS-wCe" id="36n-zI-j4q"/>
+                        <outlet property="languageDescription" destination="mfG-s2-dML" id="eNb-F4-f49"/>
+                        <outlet property="languageRepresentation" destination="qU7-NW-nMF" id="DUs-Zf-S1B"/>
+                        <outlet property="languageTitle" destination="Gur-2i-7py" id="2NC-kO-NCC"/>
                         <outlet property="minFlash" destination="M4s-Ft-2fo" id="HIG-dB-bwL"/>
                         <outlet property="minFlashDescription" destination="QFI-DI-Cei" id="0bf-Sc-7zO"/>
                         <outlet property="motionSwitch" destination="bRu-Z4-ck0" id="RuN-nA-CyR"/>
@@ -1228,8 +1264,11 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double tap to skip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKR-ca-6ep">
-                                <rect key="frame" x="204.33333333333337" y="84" width="193.66666666666663" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double tap to skip" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKR-ca-6ep">
+                                <rect key="frame" x="198" y="84" width="200" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="VVC-AP-dQ6"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="12"/>
                                 <color key="textColor" systemColor="systemGreenColor"/>
                                 <nil key="highlightedColor"/>
@@ -1351,7 +1390,7 @@
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="i'm glad you can follow commands" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ix0-xW-b5f">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="i'm glad you can follow commands" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ix0-xW-b5f">
                                                 <rect key="frame" x="0.0" y="30" width="300" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="NcE-9p-wl0"/>
@@ -1384,18 +1423,15 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RMq-p3-Kb7">
                                                 <rect key="frame" x="0.0" y="60" width="388" height="34"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6Pq-Na-mhJ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="323" height="34"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6Pq-Na-mhJ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="325" height="34"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                     </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3m-h7-wzm">
-                                                        <rect key="frame" x="333" y="0.0" width="55" height="34"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="55" id="al2-bZ-N66"/>
-                                                        </constraints>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3m-h7-wzm">
+                                                        <rect key="frame" x="335" y="0.0" width="53" height="34"/>
                                                         <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="15"/>
                                                         <state key="normal" title="Submit"/>
                                                         <connections>
@@ -1498,10 +1534,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="s0j-pf-Dpx">
-                                <rect key="frame" x="54.333333333333343" y="119" width="319.66666666666663" height="90"/>
+                                <rect key="frame" x="50" y="119" width="328" height="90"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Before I begin briefing you," textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fay-Kj-Tmb">
-                                        <rect key="frame" x="0.0" y="0.0" width="319.66666666666669" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Before I begin briefing you," textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Fay-Kj-Tmb">
+                                        <rect key="frame" x="4.3333333333333428" y="0.0" width="319.66666666666663" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="mbQ-Op-MT5"/>
                                         </constraints>
@@ -1509,8 +1545,8 @@
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="make sure you can" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79N-T7-HQ8">
-                                        <rect key="frame" x="46.999999999999986" y="30" width="225.33333333333331" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="make sure you can" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="79N-T7-HQ8">
+                                        <rect key="frame" x="51.333333333333329" y="30" width="225.33333333333337" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="wM3-6j-J3Y"/>
                                         </constraints>
@@ -1518,8 +1554,8 @@
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hear me" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sht-t6-CAj">
-                                        <rect key="frame" x="110" y="60" width="99.666666666666686" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hear me" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Sht-t6-CAj">
+                                        <rect key="frame" x="114.33333333333334" y="60" width="99.666666666666657" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="6U4-CW-6Lh"/>
                                         </constraints>
@@ -1596,12 +1632,14 @@
                             <constraint firstItem="zzk-5U-pwB" firstAttribute="centerX" secondItem="IRO-VC-IKW" secondAttribute="centerX" id="0x7-9A-EyW"/>
                             <constraint firstItem="eZe-4m-Cdh" firstAttribute="leading" secondItem="rGQ-of-450" secondAttribute="leading" constant="10" id="2lK-Ht-hfK"/>
                             <constraint firstItem="rGQ-of-450" firstAttribute="bottom" secondItem="d9W-15-ftp" secondAttribute="bottom" constant="10" id="4He-7y-X2G"/>
+                            <constraint firstItem="rGQ-of-450" firstAttribute="trailing" secondItem="s0j-pf-Dpx" secondAttribute="trailing" constant="50" id="Ah7-G6-p8k"/>
                             <constraint firstItem="s0j-pf-Dpx" firstAttribute="centerX" secondItem="IRO-VC-IKW" secondAttribute="centerX" id="HVr-sG-gl8"/>
                             <constraint firstItem="d9W-15-ftp" firstAttribute="leading" secondItem="rGQ-of-450" secondAttribute="leading" constant="20" id="Hkx-Nb-Y0K"/>
                             <constraint firstItem="rGQ-of-450" firstAttribute="trailing" secondItem="zzk-5U-pwB" secondAttribute="trailing" id="I7C-3L-c2y"/>
                             <constraint firstItem="rGQ-of-450" firstAttribute="trailing" secondItem="d9W-15-ftp" secondAttribute="trailing" constant="20" id="JML-UB-JeZ"/>
                             <constraint firstItem="zzk-5U-pwB" firstAttribute="leading" secondItem="rGQ-of-450" secondAttribute="leading" id="UCD-cm-pft"/>
                             <constraint firstItem="s0j-pf-Dpx" firstAttribute="top" secondItem="rGQ-of-450" secondAttribute="top" constant="75" id="WaR-3k-EYs"/>
+                            <constraint firstItem="s0j-pf-Dpx" firstAttribute="leading" secondItem="rGQ-of-450" secondAttribute="leading" constant="50" id="cFw-jn-upN"/>
                             <constraint firstAttribute="bottom" secondItem="zzk-5U-pwB" secondAttribute="bottom" id="sPK-hB-ABm"/>
                             <constraint firstItem="rGQ-of-450" firstAttribute="bottom" secondItem="eZe-4m-Cdh" secondAttribute="bottom" constant="10" id="yLJ-KI-3y0"/>
                         </constraints>
@@ -1968,12 +2006,6 @@
                                     <constraint firstItem="RDX-JJ-Na7" firstAttribute="width" secondItem="RDX-JJ-Na7" secondAttribute="height" multiplier="1:1" id="fmU-hg-hiU"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From the darkness, comes the light" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XC-sK-4mn">
-                                <rect key="frame" x="20" y="94" width="388" height="101"/>
-                                <fontDescription key="fontDescription" name="aAmbyarSobat" family="a Ambyar Sobat" pointSize="50"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="VTG-K4-2nW">
                                 <rect key="frame" x="20" y="225" width="388" height="36"/>
                                 <subviews>
@@ -2005,6 +2037,12 @@
                                     <constraint firstAttribute="height" constant="45" id="zFq-Ff-cIQ"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From the darkness, comes the light" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XC-sK-4mn">
+                                <rect key="frame" x="20" y="94" width="388" height="101"/>
+                                <fontDescription key="fontDescription" name="aAmbyarSobat" family="a Ambyar Sobat" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MEh-9R-0Av"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3242,7 +3280,7 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mdR-rb-hRX">
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                             </arscnView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Lew-oY-Xh1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="Lew-oY-Xh1">
                                 <rect key="frame" x="15" y="94" width="398" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="45"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -4199,8 +4237,11 @@
                                     <constraint firstItem="5cA-U0-0G0" firstAttribute="width" secondItem="5cA-U0-0G0" secondAttribute="height" multiplier="1:1" id="zTx-IW-N0P"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double tap to skip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REP-Xj-Vv3">
-                                <rect key="frame" x="204.33333333333337" y="84" width="193.66666666666663" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double tap to skip" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REP-Xj-Vv3">
+                                <rect key="frame" x="198" y="84" width="200" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="GNU-OZ-5nQ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="12"/>
                                 <color key="textColor" systemColor="systemGreenColor"/>
                                 <nil key="highlightedColor"/>
@@ -4276,8 +4317,11 @@
                                     <constraint firstItem="j9l-R7-0Su" firstAttribute="width" secondItem="j9l-R7-0Su" secondAttribute="height" multiplier="1:1" id="Fec-aU-Np2"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double tap to skip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRc-zj-426">
-                                <rect key="frame" x="204.33333333333337" y="84" width="193.66666666666663" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double tap to skip" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRc-zj-426">
+                                <rect key="frame" x="198" y="84" width="200" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="jeH-W6-QCb"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="12"/>
                                 <color key="textColor" systemColor="systemGreenColor"/>
                                 <nil key="highlightedColor"/>
@@ -4664,8 +4708,8 @@
         <segue reference="C8e-VB-o7G"/>
         <segue reference="Fhg-H5-PTW"/>
         <segue reference="J9s-s4-0U4"/>
-        <segue reference="ohR-Mk-EQe"/>
-        <segue reference="QSc-TT-MC7"/>
+        <segue reference="yhz-V3-kvn"/>
+        <segue reference="Jbk-WL-IF2"/>
         <segue reference="DOc-8U-B4Z"/>
         <segue reference="TbV-l9-R97"/>
     </inferredMetricsTieBreakers>

@@ -57,6 +57,8 @@
 		9D6C704925ECD47800E8CF6C /* speechModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C704825ECD47800E8CF6C /* speechModule.swift */; };
 		9D6C705725EE082400E8CF6C /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C705625EE082400E8CF6C /* Credits.swift */; };
 		9D6E493625EE12EF00B09E8A /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6E493525EE12EF00B09E8A /* MusicPlayer.swift */; };
+		9D727105268B93250055C9E1 /* bundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D727104268B93250055C9E1 /* bundleExtension.swift */; };
+		9D727107268B9A9E0055C9E1 /* AppLanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D727106268B9A9E0055C9E1 /* AppLanguageManager.swift */; };
 		9D74262425CA41F3008D9645 /* chapter14.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74261F25CA41F3008D9645 /* chapter14.swift */; };
 		9D74262525CA41F3008D9645 /* chapter15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74262025CA41F3008D9645 /* chapter15.swift */; };
 		9D74262625CA41F3008D9645 /* chapter11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74262125CA41F3008D9645 /* chapter11.swift */; };
@@ -159,7 +161,7 @@
 		9D1A40C1263B8EE100F6DF9B /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
 		9D1A40C5263BA8EF00F6DF9B /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		9D1A40C7263BBB2300F6DF9B /* MessageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewCell.swift; sourceTree = "<group>"; };
-		9D420EBA25DF02AF00A3A13D /* globalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globalFunctions.swift; sourceTree = "<group>"; };
+		9D420EBA25DF02AF00A3A13D /* globalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globalFunctions.swift; sourceTree = "<group>"; usesTabs = 0; };
 		9D438CB825E6015F005CC20A /* postChapter15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postChapter15.swift; sourceTree = "<group>"; };
 		9D4BFC6825DE41260013D840 /* subChapter11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subChapter11.swift; sourceTree = "<group>"; };
 		9D4BFC7425DE5FF00013D840 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
@@ -191,6 +193,10 @@
 		9D6C704825ECD47800E8CF6C /* speechModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = speechModule.swift; sourceTree = "<group>"; };
 		9D6C705625EE082400E8CF6C /* Credits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
 		9D6E493525EE12EF00B09E8A /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
+		9D727104268B93250055C9E1 /* bundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bundleExtension.swift; sourceTree = "<group>"; };
+		9D727106268B9A9E0055C9E1 /* AppLanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanguageManager.swift; sourceTree = "<group>"; };
+		9D72710C268CAEF90055C9E1 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Main.strings; sourceTree = "<group>"; };
+		9D72710E268CAEFA0055C9E1 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9D74261F25CA41F3008D9645 /* chapter14.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chapter14.swift; sourceTree = "<group>"; };
 		9D74262025CA41F3008D9645 /* chapter15.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chapter15.swift; sourceTree = "<group>"; };
 		9D74262125CA41F3008D9645 /* chapter11.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chapter11.swift; sourceTree = "<group>"; };
@@ -239,7 +245,6 @@
 		9DAE481726805EE00090177A /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/Main.strings; sourceTree = "<group>"; };
 		9DAE48192680620B0090177A /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Main.strings; sourceTree = "<group>"; };
 		9DAE481B268063490090177A /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Main.strings; sourceTree = "<group>"; };
-		9DAE481D268063960090177A /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Main.strings"; sourceTree = "<group>"; };
 		9DAE481F268063CD0090177A /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Main.strings; sourceTree = "<group>"; };
 		9DAE4821268064010090177A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		9DAE4823268064340090177A /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/Main.strings; sourceTree = "<group>"; };
@@ -270,7 +275,6 @@
 		9DAE484326806EEE0090177A /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9DAE484426806EEF0090177A /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9DAE484526806EF00090177A /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
-		9DAE484626806EF00090177A /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		9DAE484726806EF20090177A /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9DAE484826806EF30090177A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9DAE484926806EF40090177A /* sk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sk; path = sk.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -400,6 +404,7 @@
 				9DEB283E25C6095000E3F102 /* stringExtensions.swift */,
 				9DA2E9BC25F0451600262638 /* audioExtensions.swift */,
 				9D8B292D25DC189A007750DF /* CALayerExtension.swift */,
+				9D727104268B93250055C9E1 /* bundleExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -419,6 +424,7 @@
 				9D1502AE260F0BB300A767C3 /* CheckInternet.swift */,
 				9D6E493525EE12EF00B09E8A /* MusicPlayer.swift */,
 				9D0C543C25C50F97000EE579 /* audioKitHelpers.swift */,
+				9D727106268B9A9E0055C9E1 /* AppLanguageManager.swift */,
 				9D6C704825ECD47800E8CF6C /* speechModule.swift */,
 			);
 			path = "Custom Classes";
@@ -698,7 +704,6 @@
 				ko,
 				ms,
 				pl,
-				"pt-PT",
 				ro,
 				sv,
 				th,
@@ -709,6 +714,9 @@
 				sk,
 				nb,
 				Base,
+				"ar-crap",
+				"ar-Crap",
+				pt,
 			);
 			mainGroup = 9D561375259195E600F1695A;
 			packageReferences = (
@@ -816,6 +824,7 @@
 				9DD618E725E62BB20036089B /* ProjectVenomTrailer.swift in Sources */,
 				9D1A40BD263B6B3D00F6DF9B /* Notifications.swift in Sources */,
 				9D1A40BF263B8E5000F6DF9B /* StorageManager.swift in Sources */,
+				9D727105268B93250055C9E1 /* bundleExtension.swift in Sources */,
 				9DD618EF25E62EBC0036089B /* subPostChapter15.swift in Sources */,
 				9D1A40C8263BBB2300F6DF9B /* MessageViewCell.swift in Sources */,
 				9D6C705725EE082400E8CF6C /* Credits.swift in Sources */,
@@ -832,6 +841,7 @@
 				9DEA6A0625948BBA002A8739 /* chapter2.swift in Sources */,
 				9D74262625CA41F3008D9645 /* chapter11.swift in Sources */,
 				9DEB282C25C5D78700E3F102 /* chapter7.swift in Sources */,
+				9D727107268B9A9E0055C9E1 /* AppLanguageManager.swift in Sources */,
 				9D74262825CA41F3008D9645 /* chapter13.swift in Sources */,
 				9D5614202591D1C300F1695A /* MainScreen.swift in Sources */,
 				9D4BFC7525DE5FF00013D840 /* PlayerView.swift in Sources */,
@@ -940,7 +950,6 @@
 				9DAE481726805EE00090177A /* ms */,
 				9DAE48192680620B0090177A /* nb */,
 				9DAE481B268063490090177A /* pl */,
-				9DAE481D268063960090177A /* pt-PT */,
 				9DAE481F268063CD0090177A /* ro */,
 				9DAE4821268064010090177A /* ru */,
 				9DAE4823268064340090177A /* sk */,
@@ -949,6 +958,7 @@
 				9DAE4829268064DA0090177A /* tr */,
 				9DAE482B2680650C0090177A /* uk */,
 				9DAE482D2680653F0090177A /* vi */,
+				9D72710C268CAEF90055C9E1 /* pt */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -979,7 +989,6 @@
 				9DAE484326806EEE0090177A /* ms */,
 				9DAE484426806EEF0090177A /* nb */,
 				9DAE484526806EF00090177A /* pl */,
-				9DAE484626806EF00090177A /* pt-PT */,
 				9DAE484726806EF20090177A /* ro */,
 				9DAE484826806EF30090177A /* ru */,
 				9DAE484926806EF40090177A /* sk */,
@@ -989,6 +998,7 @@
 				9DAE484D26806EF70090177A /* tr */,
 				9DAE484E26806EF70090177A /* uk */,
 				9DAE484F26806EF80090177A /* vi */,
+				9D72710E268CAEFA0055C9E1 /* pt */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1122,7 +1132,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Project Mayhem/Project Mayhem.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Project Mayhem/Preview Content\"";
 				DEVELOPMENT_TEAM = 68L233566P;
@@ -1153,7 +1163,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.3;
+				MARKETING_VERSION = 1.2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1177,7 +1187,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Project Mayhem/Project Mayhem.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_ASSET_PATHS = "\"Project Mayhem/Preview Content\"";
 				DEVELOPMENT_TEAM = 68L233566P;
 				ENABLE_PREVIEWS = YES;
@@ -1207,7 +1217,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.3;
+				MARKETING_VERSION = 1.2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1306,7 +1316,7 @@
 				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = 68L233566P;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -1315,7 +1325,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.3;
+				MARKETING_VERSION = 1.2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1332,7 +1342,7 @@
 				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = 68L233566P;
 				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -1341,7 +1351,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.3;
+				MARKETING_VERSION = 1.2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

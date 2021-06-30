@@ -288,7 +288,8 @@ class VideoPlayer : NSObject {
                         
                         if let group = asset.mediaSelectionGroup(forMediaCharacteristic: AVMediaCharacteristic.legible) {
                             
-                            let code = Locale.preferredLanguages.first
+                           // let code = Locale.preferredLanguages.first
+                            let code = game.string(forKey: "AppleLanguage")
                             let locale = Locale(identifier: code ?? "en-US")
                             print("Locale: \(locale)")
                             

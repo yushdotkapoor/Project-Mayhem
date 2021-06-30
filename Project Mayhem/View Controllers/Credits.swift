@@ -9,7 +9,7 @@ import UIKit
 import MessageUI
 import StoreKit
 
-class Credits: UIViewController, MFMailComposeViewControllerDelegate {
+class Credits: UIViewController, MFMailComposeViewControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var flashingSwitch: UISwitch!
     @IBOutlet weak var dhruvSoundCloud: UIButton!
@@ -35,12 +35,55 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var reduceMotion: UILabel!
     @IBOutlet weak var reduceMotionDescription: UILabel!
     @IBOutlet weak var motionSwitch: UISwitch!
+    @IBOutlet weak var languageTitle: UILabel!
+    @IBOutlet weak var languageDescription: UILabel!
+    @IBOutlet weak var languageRepresentation: UIButton!
     
+    var toolBar = UIToolbar()
+    var picker  = UIPickerView()
     
+    var pickerSelection:Int?
     
+    var languages:[String:String] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setLocalizations()
+        
+        let volume = game.float(forKey: "volume")
+        let sensitive = game.bool(forKey: "photosensitive")
+        let mot = game.bool(forKey: "reduceMotion")
+        
+        flashingSwitch.setOn(sensitive, animated: false)
+        motionSwitch.setOn(mot, animated: false)
+        
+        slider.value = volume
+        
+        purchaseRestore.setupButton()
+        welcStatementButton.setupButton()
+        feedbackButton.setupButton()
+        
+        checkIfPurchased()
+        
+        for i in [betterHintButton, fiveHintsButton,welcStatementButton, purchaseRestore, feedbackButton] {
+            i?.titleLabel?.minimumScaleFactor = 0.5
+            i?.titleLabel?.adjustsFontSizeToFitWidth = true
+        }
+      
+        
+    }
+    
+    func resizeStuff() {
+        for i in [betterHintButton, fiveHintsButton,welcStatementButton, purchaseRestore, feedbackButton] {
+            i?.titleLabel?.minimumScaleFactor = 0.5
+            i?.titleLabel?.adjustsFontSizeToFitWidth = true
+        }
+    }
+    
+    func setLocalizations() {
+
+        
         titl.text = "Settings".localized()
         dev.text = "Developer:".localized()
         mus.text = "Music:".localized()
@@ -59,25 +102,18 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
         feedbackButton.setTitle("Leave Feedback".localized(), for: .normal)
         reduceMotion.text = "Reduce Motion:".localized()
         reduceMotionDescription.text = "This option will reduce any gyroscopic motion animations".localized()
-        
+        languageTitle.text = "Language:".localized()
+        languageDescription.text = "Set your language preference".localized()
         
         let p1 = "Version".localized()
         version.text = "\(p1) \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] ?? "null")"
         
-        let volume = game.float(forKey: "volume")
-        let sensitive = game.bool(forKey: "photosensitive")
-        let mot = game.bool(forKey: "reduceMotion")
+        languages = ["Arabic".localized(): "ar", "Catalan".localized(): "ca", "Chinese (Simplified)".localized(): "zh-Hans", "Chinese (Traditional)".localized(): "zh-Hant", "Croatian".localized(): "hr", "Czech".localized(): "cs", "Danish".localized(): "da", "Dutch".localized(): "nl", "English".localized(): "en", "Finnish".localized(): "fi", "French".localized(): "fr", "German".localized(): "de", "Greek".localized(): "el", "Hebrew".localized(): "he", "Hindi".localized(): "hi", "Hungarian".localized(): "hu", "Indonesian".localized(): "id", "Italian".localized(): "it", "Japanese".localized(): "ja", "Korean".localized(): "ko", "Malay".localized(): "ms", "Norwegian".localized(): "nb", "Polish".localized(): "pl", "Portuguese".localized(): "pt", "Romanian".localized(): "ro", "Russian".localized(): "ru", "Slovak".localized(): "sk", "Spanish".localized(): "es", "Swedish".localized(): "sv", "Thai".localized(): "th", "Turkish".localized(): "tr", "Ukranian".localized(): "uk", "Vietnamese".localized(): "vi"]
         
-        flashingSwitch.setOn(sensitive, animated: false)
-        motionSwitch.setOn(mot, animated: false)
+        let lan = game.string(forKey: "AppleLanguage")!
+        let languageT = getLanguageFromCode(code: lan)
+        languageRepresentation.setTitle(languageT, for: .normal)
         
-        slider.value = volume
-        
-        purchaseRestore.setupButton()
-        welcStatementButton.setupButton()
-        feedbackButton.setupButton()
-        
-        checkIfPurchased()
         
     }
     
@@ -159,6 +195,110 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate {
     
     @objc func donate(tapGestureRecognizer: UITapGestureRecognizer) {
         openLink(st: "https://www.paypal.com/paypalme/yushkapoor")
+    }
+    
+    @IBAction func language(_ sender: Any) {
+        picker = UIPickerView.init()
+        picker.delegate = self
+        picker.dataSource = self
+        picker.backgroundColor = UIColor.black
+        picker.setValue(UIColor.white, forKey: "textColor")
+        picker.autoresizingMask = .flexibleWidth
+        picker.contentMode = .center
+        let languageRow = getRowOfLanguageCode(code: game.string(forKey: "AppleLanguage")!)
+        
+        picker.selectRow(languageRow, inComponent: 0, animated: false)
+        
+        picker.frame = CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
+        self.view.addSubview(picker)
+                
+        toolBar = UIToolbar.init(frame: CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 50))
+        toolBar.barStyle = .black
+        toolBar.sizeToFit()
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.onDoneButtonTapped))
+        toolBar.setItems([flexibleSpace, doneButton], animated: false)
+        
+        self.view.addSubview(toolBar)
+    }
+    
+    @objc func onDoneButtonTapped() {
+        toolBar.removeFromSuperview()
+        picker.removeFromSuperview()
+        
+        
+        if let row = pickerSelection {
+        let languageString = getLanguage(row: row)
+        print(languageString)
+        
+        let lang = getLanguageCode(row: row)
+        
+        Bundle.setLanguage(lang)
+        game.set(lang, forKey: "AppleLanguage")
+        game.synchronize()
+        
+        languageRepresentation.setTitle(languageString, for: .normal)
+        setLocalizations()
+        
+        }
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+        
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return languages.count
+    }
+        
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let lan = getLanguage(row: row).localized()
+        let str = "\(lan) (\(languages[lan]!))"
+        return str
+    }
+        
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        pickerSelection = row
+    }
+    
+    func getLanguage(row: Int) -> String {
+        let lan = languages.keys.sorted()
+        for (i, f) in lan.enumerated() {
+            if i == row {
+                return f
+            }
+        }
+        return ""
+    }
+    
+    func getLanguageCode(row: Int) -> String {
+        let lan = languages.keys.sorted()
+        for (i, f) in lan.enumerated() {
+            if i == row {
+                return languages[f] ?? ""
+            }
+        }
+        return ""
+    }
+    
+    func getRowOfLanguageCode(code: String) -> Int {
+        let lan = languages.keys.sorted()
+        for (i, f) in lan.enumerated() {
+            if languages[f] == code {
+                return i
+            }
+        }
+        return 0
+        
+    }
+    
+    func getLanguageFromCode(code: String) -> String {
+        for f in languages.keys {
+            if languages[f] == code {
+                return f
+            }
+        }
+        return ""
     }
     
     

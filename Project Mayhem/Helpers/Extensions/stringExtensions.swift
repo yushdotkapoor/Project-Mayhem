@@ -1,8 +1,8 @@
 //
-//  stringExtensions·swift
+//  stringExtensions.swift
 //  Project Mayhem
 //
-//  Created by Yush Raj Kapoor on 1/30/21·
+//  Created by Yush Raj Kapoor on 1/30/21.
 //
 
 import UIKit
@@ -10,7 +10,22 @@ import UIKit
 extension String {
     
     func localized() -> String {
-        return NSLocalizedString(self, tableName: "Localizable", bundle: .main, value: self, comment: self)
+        let l = game.string(forKey: "AppleLanguage")
+        let a = AppLanguageManager.shared
+        a.setCurrentBundlePath(l ?? "en")
+        let b = a.bundle
+        
+        let path = b.path(forResource: "Localizable", ofType: "strings")
+        var content = ""
+        print("jiffyBear \(path)")
+        do {
+            content = try String(contentsOfFile: path!)
+        } catch {/* error handling here */print("jiffyError")}
+        
+        
+        print("jiffylube \(content)")
+        
+        return NSLocalizedString(self, tableName: "Localizable", bundle: b, comment: "")
     }
     
     func stringToMorse() -> String {

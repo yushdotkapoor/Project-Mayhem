@@ -48,6 +48,7 @@ class chapter6: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         titl.text = "From the darkness, comes the light".localized()
         
         game.setValue("chap6", forKey: "active")
