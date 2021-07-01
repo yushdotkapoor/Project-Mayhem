@@ -24,14 +24,7 @@ class subChapter1: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (success, error) in
-                    if let error = error {
-                        print("Request Authorization Failed (\(error), \(error.localizedDescription))")
-                    }
-                    else{
-                        print("User accepted notifications")
-                    }
-                }
+        //ask to register for notification
         
         toolbar.add3DMotionShadow()
         

@@ -80,6 +80,7 @@ class MainScreen: UIViewController {
             //create thread for admin
             ref.child("users/\(admin)/threads/\(id)").setValue(array)
         }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
