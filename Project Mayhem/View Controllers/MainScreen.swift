@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import OneSignal
 import Firebase
 import CoreMotion
 
@@ -24,23 +23,6 @@ class MainScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        ref.child("Localizations").observeSingleEvent(of: .value, with: { (snapshot) in
-            let val = snapshot.value as? NSDictionary
-            let codes = val!["Codes"] as? [String:String]
-            let translations = val!["Translations"] as? [String: String]
-            
-            languageCodes = codes ?? [:]
-            languageTranslations = translations ?? [:]
-            print(languageTranslations["Hebrew"])
-            for i in languageCodes.keys {
-                let code = (languageCodes[i] ?? "") as String
-                let trans = (languageTranslations[i] ?? "") as String
-                createDirectory(langCode: code, values: trans)
-                
-            }
-        })
         
         let c = UIColor(red: 30/255, green: 30/255, blue: 30/255, alpha: 1.0)
         tearDrop.setupButton(color: c, pressColor: UIColor.black)
@@ -60,9 +42,6 @@ class MainScreen: UIViewController {
         
         enter.addOutline(color: UIColor.gray.cgColor)
         tearDrop.addOutline(color: UIColor.gray.cgColor)
-        
-        
-        
     }
     
     
@@ -111,13 +90,30 @@ class MainScreen: UIViewController {
             performSegue(withIdentifier: "mainToIntroduction", sender: self)
         } else {
             let v = validateVideos()
+            let vL = validateLocalizationFiles()
+            let wt = weekTimer()
             
-            if (!videosCurrentlyDownloading && !game.bool(forKey: "downloaded")) || weekTimer() {
+            
+            if (!videosCurrentlyDownloading && !game.bool(forKey: "downloaded")) || wt {
                 //uploadVideos()
-                if v.count != 0 {
-                    downloadVideos(vidNames: v)
+                if !CheckInternet.Connection() {
+                    alert(title: "Error".localized(), message: "Game content for this application needs to be downloaded! It seems that you are not connected to the Internet. Please connect to the Internet to continue.".localized(), actionTitle: "Okay".localized())
+                } else if notAbleToUseCellular() {
+                    alert(title: "Error".localized(), message: "Game content for this application needs to be downloaded! It seems that you have decided to not use cellular data to download content. Please find another Internet source or enable cellular data through the game settings.".localized(), actionTitle: "Okay".localized(), actions: {
+                        self.performSegue(withIdentifier: "mainToCredits", sender: nil)
+                    })
                 } else {
-                    downloadVideos()
+                    if v.count != 0 {
+                        downloadVideos(vidNames: v)
+                    } else {
+                        downloadVideos()
+                    }
+                }
+            }
+            
+            if wt || vL.count != 0 {
+                if notAbleToUseCellular() {} else {
+                    downloadLocaleFiles()
                 }
             }
         }

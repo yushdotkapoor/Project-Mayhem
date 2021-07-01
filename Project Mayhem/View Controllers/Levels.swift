@@ -68,23 +68,49 @@ class Levels: UIViewController {
         }
     }
     
+    func localizeStrings() {
+        let a = getData(string: "Buttons") as! [CustomButtonOutline]
+        for (i, n) in a.enumerated() {
+            let str = "\("CHAPTER".localized()) \(i+1)"
+            n.setTitle(str, for: .normal)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         del = 0.5
         
+        localizeStrings()
+        
         //reset()
         //loadAll()
         MusicPlayer.shared.volumeControl(factor: 0.4)
-
-
-        let v = validateVideos()
         
-        if (!videosCurrentlyDownloading && !game.bool(forKey: "downloaded")) || weekTimer() {
-            //uploadVideos()
-            if v.count != 0 {
-                downloadVideos(vidNames: v)
+        
+        let v = validateVideos()
+        let vL = validateLocalizationFiles()
+        let wt = weekTimer()
+        
+        if (!videosCurrentlyDownloading && !game.bool(forKey: "downloaded")) || wt {
+            if !CheckInternet.Connection() {
+                alert(title: "Error".localized(), message: "Data in this application needs to be updated! It seems that you are not connected to the Internet. Please connect to the Internet to continue.".localized(), actionTitle: "Okay".localized())
+            } else if notAbleToUseCellular() {
+                alert(title: "Error".localized(), message: "Data in this application needs to be updated! It seems that you have decided to not use cellular data to download content. Please find another Internet source or enable cellular data through the game settings.".localized(), actionTitle: "Okay".localized(), actions: {
+                    self.performSegue(withIdentifier: "mainToCredits", sender: nil)
+                })
             } else {
-                downloadVideos()
+                //uploadVideos()
+                if v.count != 0 {
+                    downloadVideos(vidNames: v)
+                } else {
+                    downloadVideos()
+                }
+            }
+        }
+        
+        if wt || vL.count != 0 {
+            if notAbleToUseCellular() {} else {
+                downloadLocaleFiles()
             }
         }
         

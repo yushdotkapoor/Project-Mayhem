@@ -1,228 +1,19 @@
-"Enter" =  "يدخل";   
-"Downloading Content" = "تحميل المحتوى";
-"You may be prompted the following:" = "قد تتم مطالبتك ما يلي:";
-"would like permission to track you across apps and websites owned by other companies" = "أود الحصول على إذن لتتبع لكم عبر التطبيقات ومواقع الويب المملوكة من قبل شركات أخرى";
-"You do NOT have to select the option to track because it has no real benefit in gameplay, it is just used for analytics such as where you downloaded the game from." = "ليس لديك لتحديد الخيار لتعقب لأنه لا يوجد لديه مصلحة حقيقية في هذه اللعبة، ويتم استخدامها فقط للتحليلات مثل حيث قمت بتحميل اللعبة من.";
-"You will not need ANY external devices although a paper, writing utensil, a wrinkly brain, and access to internet can be very useful." = "لن تحتاج الأجهزة ANY الخارجية على الرغم من ورقة والكتابة إناء، الدماغ متجعد، والوصول إلى الإنترنت يمكن أن تكون مفيدة جدا.";
-"I'm going to be as transparent about the game as I possibly can because I know that this will build trust. This game utilizes many of the iPhone's capabilities, many of which require permission from you. All of these capabilities are used for gameplay ONLY and it is possible that the game may not progress without them." = "انا ذاهب الى أن تكون شفافة حول اللعبة وأنا ربما يمكن لأنني أعرف أن هذا سيكون بناء الثقة. هذه اللعبة تستخدم العديد من قدرات آي فون، وكثير منها تتطلب الحصول على إذن منك. وتستخدم جميع هذه القدرات لهذه اللعبة فقط وأنه من الممكن أن اللعبة قد لا تقدم بدونها.";
-"If you ever want to leave feedback or get stuck on a level, please don't hesitate to contact me! You can directly message me in the settings page or from the main chapter menu." = "إذا كنت تريد من أي وقت مضى إلى ترك ردود فعل أو تتعثر على المستوى، لا تترددوا في الاتصال بي! يمكن لك رسالة مباشرة لي في صفحة إعدادات أو من القائمة الرئيسية الفصل.";
-"You can view this page in the settings tab at any time. Good luck, you will need it!" = "يمكنك مشاهدة هذه الصفحة في علامة التبويب الإعدادات في أي وقت. حظ موفق، فسوف تحتاجه!";
-"Things to note:" = "أشياء يمكن ملاحظة ما يلي:";
-"I hope you enjoy this game as much as I did making it!" = "وآمل أن تستمتع هذه اللعبة بقدر ما لم يجعل ذلك!";
-"Vision Consolidated welcomes you to Project Mayhem" = "ترحب الرؤية الموحدة لك لمشروع الفوضى";
+"Enter" = "يدخل";
+"Downloading Content" = "تنزيل المحتوى";
+"You will not need any external devices although a paper, writing utensil, a wrinkly brain, and access to internet can be very useful." = "لن تحتاج إلى أي أجهز خارجية على الرغم من أن الورق، والكتابة إناء، في الدماغ التجاعيد، والوصول إلى الإنترنت يمكن أن يكون مفيدا للغاية.";
+"This game utilizes many of the iPhone's capabilities, many of which require permission from you. All of these capabilities are used for gameplay ONLY and it is possible that the game may not progress without them." = "تستخدم هذه اللعبة العديد من قدرات iPhone، العديد منها تتطلب إذنا منك. يتم استخدام كل هذه القدرات في اللعب فقط ومن الممكن أن اللعبة قد لا تقدم بدونها.";
+"If you ever want to leave feedback or get stuck on a level, please don't hesitate to contact me! You can directly message me in the settings page or from the main chapter menu." = "إذا كنت ترغب في ترك تعليقات أو تعثر على مستوى، فالرجاء عدم التردد في الاتصال بي! يمكنك إرسال رسالة لي مباشرة في صفحة الإعدادات أو من قائمة الفصل الرئيسي.";
+"You can view this page in the settings tab at any time. Good luck, you will need it!" = "يمكنك عرض هذه الصفحة في علامة التبويب الإعدادات في أي وقت. حظ موفق، فسوف تحتاجه!";
+"Things to note:" = "أشياء يجب ملاحظتها:";
+"I hope you enjoy this game as much as I did making it!" = "آمل أن تستمتع بهذه اللعبة بقدر ما فعلت ذلك!";
+"Vision Consolidated welcomes you to Project Mayhem" = "الرؤية الموحدة ترحب بكم في مشروع الفوضى";
 "Greetings" = "تحيات";
-"Version" = "إصدار";
-"Settings" = "إعدادات";
-"Developer:" = "مطور:";
-"Music:" = "موسيقى:";
-"Buy Project Mayhem Merchandise" = "بيع مشروع الفوضى بضائع";
-"Better Hints" = "تلميحات أفضل";
-"Purchase Hints for all levels" = "تلميحات شراء لجميع المستويات";
-"Five Hints" = "خمسة تلميحات";
-"Purchase Extra hints for 5 levels" = "شراء تلميحات إضافية لمدة 5 مستويات";
-"Volume:" = "مقدار:";
-"NOTE: this slider only controls the relative volume of the background music, and will not affect the videos" = "ملاحظة: هذا المنزلق لا يسيطر سوى على الحجم النسبي للموسيقى الخلفية، وسوف لن يؤثر على أشرطة الفيديو";
-"Minimize Flashing:" = "تقليل اللمعان:";
-"This option is prefered for photosensitive users and will minimize sudden flashing colors or lights" = "ويفضل هذا الخيار للمستخدمين حساس وسيقلل فجأة وميض الألوان أو الأضواء";
-"For best experience, make sure haptics(Settings) Are on and that minimize flashing(above) is turned off." = "للحصول على أفضل تجربة، وجعل اللمس المؤكد (إعدادات) هل على وتقلل امض (أعلاه) متوقف.";
-"Restore Purchases" = "استعادة المشتريات";
-"Welcome Statement" = "بيان ترحيب";
-"Leave Feedback" = "اترك تقييم للخدمة";
-"Double Tap to Skip" = "انقر نقرا لتخطي";
-"Welcome" = "مرحبا";
-"Come back ASAP" = "أعود في اسرع وقت ممكن";
-"Don't come back until I tell you to" = "لا يعود حتى أقول لك ل";
-"Leave" = "غادر";
-"good" = "حسن";
-"i'm glad you can follow commands" = "أنا سعيد يمكنك متابعة الأوامر";
-"now enter your name below" = "الآن أدخل اسمك أدناه";
-"Click here if you dare" = "اضغط هنا إذا كنت تجرؤ";
-"Submit" = "إرسال";
-"Now Come Back" = "الآن نعود";
-"Purchase an Extra Five Hints" = "شراء تلميحات خمسة إضافية";
-"Unlockable Hints:" = "تلميحات أونلوكبل:";
-"Purchased" = "اشترى";
-"All Hints Unlocked" = "جميع تلميحات مفتوح";
-"All hints have been unlocked." = "تم مقفلة جميع تلميحات.";
-"Max Purchased" = "ماكس شراؤها";
-"Restore" = "يعيد";
-"Purchase Restore Complete." = "شراء اكتمال الاستعادة.";
 "Okay" = "تمام";
-"Before I begin briefing you," = "قبل أن أبدأ يطلع لك،";
-"make sure you can" = "تأكد من أنك يمكن أن";
-"hear me" = "اسمعني";
 "Error" = "خطأ";
-"Functionality of the application will not work if you are in a call, please disconnect the call to continue playing" = "وظيفة التطبيق لا يعمل إذا كنت في مكالمة، يرجى فصل الدعوة إلى الاستمرار في اللعب";
-"Message From" = "رسالة من";
-", I have an assignment for you. I know you’ve heard of Vision Consolidated’s new Intelligence Enhancement and Cognitive Treatment (INTELLECT). Internal sources say that the development of the service has been very unregulated. In fact, they called it" = "، لدي مهمة بالنسبة لك. وأنا أعلم أنك قد سمعت من تعزيز الاستخبارات الجديد الرؤية الموحدة والمعرفي العلاج (INTELLECT). وتقول مصادر الداخلية أن تطوير هذه الخدمة تم المنظم جدا. في الواقع، أطلقوا عليه";
-"Welcome to the Vision Consolidated Research and Development Division! We hope you have a pleasant experience working with us!" = "مرحبا بكم في قسم الأبحاث والتنمية الرؤية الموحدة! نأمل أن يكون لديك تجربة ممتعة العمل معنا!";
-"Dear employees, I am pleased to announce that one week from today, we will revolutionize human nature with INTELLECT. Our scientists have been working for decades developing ‘Brane’, our custom programming language and integrating it with a human mind. Vision Consolidated will become the pioneer in Brain-Computer Interfaces (BCIs) and have an incredible impact on the future!" = "عزيزي الموظفين، ويسرني أن أعلن أن أسبوعا واحدا اعتبارا من اليوم، ونحن سوف تحدث ثورة في طبيعة الإنسان مع INTELLECT. تم علمائنا تعمل على مدى عقود النامية الغشاء، لدينا لغة البرمجة المخصصة ودمج ذلك مع العقل البشري. والرؤية الموحدة تصبح رائدة في مجال واجهات الدماغ والحاسوب (BCIS) ويكون لها تأثير لا يصدق على المستقبل!";
-"King" = "ملك";
-"Great work getting access within Vision! My name is Vickie and I am also a Defender. I will try to guide you through Vision’s systems to aid in your investigation. Vision has better security than most U.S. government agencies, but we have insider knowledge on how to bypass those hurdles. The director has briefed me on who you are and I must say, I'm quite a fan of yours, Brainchild. Anyway, I’ll let you get back to your mission. Just know that I will be monitoring you all the way through!" = "العمل العظيم الحصول على الوصول ضمن الرؤية! اسمي فيكي وأنا أيضا المدافع. سأحاول أن توجه لكم من خلال أنظمة الرؤية على المساعدات في التحقيق الخاص بك. رؤية ديه أمنية أفضل من معظم وكالات الحكومة الأميركية، ولكن علينا معرفة من الداخل حول كيفية تجاوز تلك العقبات. وقد أطلع مدير لي على من أنت وأنا يجب أن أقول، وأنا جدا معجب لك، بنات أفكار. على أي حال، سوف تتيح لك الحصول على العودة إلى مهمتكم. فقط أعلم أنني سوف تكون مراقبة على طول الطريق من خلال!";
-"Nice!" = "لطيف!";
-"You've found an easter egg! It's totally useless, just like me!" = "كنت قد وجدت بيضة عيد الفصح! انها غير مجدية تماما، مثلي تماما!";
-"Yay!" = "ياي!";
-"This is quite interesting. What does Neuschwanstein castle have to do with Project Mayhem? This was never reported in our security reports." = "هذا مثير للاهتمام للغاية. ماذا يكون نويشفانشتاين القلعة علاقة مع مشروع الفوضى؟ كان هذا أبدا ورد في تقارير أمننا.";
-"From the darkness, comes the light" = "من الظلام، ويأتي الضوء";
-"Navigate" = "التنقل";
-"Again, another location. First Neuschwanstein castle and now Burj Khalifa?" = "مرة أخرى، موقع آخر. أولا نويشفانشتاين القلعة والآن برج خليفة؟";
-"You might want to see this." = "قد ترغب في رؤية هذا.";
-"I don’t remember there being a CEO before Yush, and there is also no historical record of" = "أنا لا أتذكر أن يكون هناك مدير تنفيذي قبل Yush، وهناك أيضا رقم قياسي لم التاريخي";
-"We are detecting harsh radio waves around you. See if you have a device to visualize them. In regards to your health, you should be fine, I think, but be careful, we don’t know what is being transmitted." = "نحن الكشف عن موجات الراديو قاسية من حولك. معرفة ما إذا كان لديك جهاز لتصور لهم. في ما يخص صحتك، يجب أن يكون على ما يرام، كما أعتقد، ولكن كن حذرا، ونحن لا نعرف ما يتم إرسالها.";
-"Sometimes we need to take a step back to get some perspective" = "أحيانا نحتاج لاتخاذ خطوة إلى الوراء للحصول على بعض منظور";
-"Good work, Brainchild. You look to be very close to gaining access to Project Mayhem’s private servers. When you do, make sure to upload everything to a secure cloud. Victoria tells me you noticed a secret message in a meeting transcript. Murder? What does it mean? Did you notice anything else related to this?" = "العمل الجيد، بنات أفكار. يمكنك نتطلع إلى أن تكون قريبة جدا من الوصول إلى خوادم خاصة مشروع الفوضى و. عندما قمت بذلك، تأكد من تحميل كل شيء إلى سحابة آمنة. فيكتوريا يقول لي هل لاحظت رسالة سرية في نص الاجتماع. قتل؟ ماذا يعني ذلك؟ هل لاحظت أي شيء آخر المتعلقة بهذا؟";
-"We need to talk." = "يجب أن نتكلم.";
-"Tell me where the third location is" = "قل لي أين الموقع الثالث هو";
-"Well Done" = "أتقنه";
-"Have fun living with what you just did ;)" = "المتعة المعيشة مع ما فعلت للتو.)";
-"System Reset in" = "إعادة النظام في";
-"Happy death day" = "يوم وفاة سعيد";
-"Coming Soon" = "قريبا";
-"Did you Enjoy" = "هل استمتعت";
-"Please consider leaving a rating or review!" = "يرجى النظر في ترك تقييم أو مراجعة!";
-"Dismiss" = "رفض";
-"Leave Star Rating on App Store" = "إجازة خمس نجوم في المتجر";
-"Leave Review on App Store" = "ترك الاستعراض على المتجر";
-"Leave Feedback to Developer" = "ترك ردود فعل لالمطور";
-"Credits" = "قروض";
-"Developer" = "مطور";
-"Vision Consolidated thanks you for playing Project Mayhem" = "بفضل الرؤية الموحدة لك للعب مشروع الفوضى";
-"Music By" = "موسيقى";
-"Those who thrive in Mayhem, are the silent rulers of all" = "أولئك الذين تزدهر في الفوضى، هي الحكام صامت من كل";
-"Review on App Store" = "الاستعراض على المتجر";
-"Buy Our Merchandise" = "بيع لدينا بضائع";
-"We have Project Mayhem hoodies, shirts, masks, and more! Tap the picture below to Check it out!" = "لدينا هوديس مشروع الفوضى، والقمصان، والأقنعة، وأكثر! اضغط على الصورة أدناه للتحقق من ذلك!";
-"Hint" = "تلميح";
-"Close" = "يغلق";
-"Stuck?" = "عالق؟";
-"Purchase hints" = "تلميحات شراء";
-"Choose which hints you would like to purchase" = "اختيار أي تلميحات كنت ترغب في شراء";
-"All Hints" = "جميع تلميحات";
-"Five Hints" = "خمسة تلميحات";
-"Cancel" = "يلغي";
-"If you are seeing this, message me. This message should not appear." = "إذا كنت ترى هذا، رسالة لي. يجب ألا تظهر هذه الرسالة.";
-"Error: Max Purchase Count" = "الخطأ: عدد ماكس شراء";
-"Tap here to unlock a second and more helpful hint." = "اضغط هنا لفتح تلميحا الثاني وأكثر فائدة.";
-"Tap here if you would like to use one of your remaining hints" = "اضغط هنا إذا كنت ترغب في استخدام واحد من تلميحات المتبقية";
-"Hints remaining:" = "تلميحات المتبقية:";
+"Comments? Questions? Message me here!" = "تعليقات؟ أسئلة؟ رسالة لي هنا!";
+"Make sure you have push notifications enabled to get notifications for replies!" = "تأكد من تمكين إشعارات الدفع للحصول على الإخطارات للردود!";
 "Yes" = "نعم";
 "No" = "لا";
-"Are you sure?" = "هل أنت واثق؟";
-"Are you sure you would like to see a hint?" = "هل أنت متأكد من أنك تود أن ترى تلميحا؟";
-"Save" = "يحفظ";
-"Share" = "يشارك";
-"Attach Media" = "إرفاق الإعلام";
-"What would you like to attach?" = "ما تريد أن تعلق؟";
-"Camera" = "آلة تصوير";
-"Oh no!" = "أوه لا!";
-"It seems that this device cannot access the camera" = "ويبدو أن هذا الجهاز لا يمكن الوصول إلى الكاميرا";
-"Photo Library" = "مكتبة الصور";
-"URL message" = "رسالة URL";
-"Photo Message" = "صور رسالة";
-"Video Message" = "رسالة فيديو";
-"URL" = "URL";
-"Could not save video:" = "لا يمكن حفظ الفيديو:";
-"The photo was unable to be sent. The problem could be your network connection." = "الصورة كانت غير قادرة على إرسالها. يمكن أن تكون المشكلة اتصال الشبكة.";
-"The video was unable to be sent. The problem could be your network connection." = "لم يتمكن ليتم إرسالها الفيديو. يمكن أن تكون المشكلة اتصال الشبكة.";
-"Please check your internet connection! You will not be able to send or recieve messages without internet" = "الرجاء التحقق من اتصال الانترنت الخاص بك! فلن تكون قادرة على إرسال أو تلقي الرسائل دون الإنترنت";
-"URL Message" = "URL رسالة";
-"Comments? Questions? Message me here!" = "تعليقات؟ أسئلة؟ رسالة لي هنا!";
-"Make sure you have push notifications enabled to get notifications for replies!" = "تأكد أن لديك دفع الإخطارات مكنت الحصول على الإشعارات لردود!";
-"Leave what?" = "اترك ماذا؟";
-"How could you make sure that you can hear everything?" = "كيف يمكن التأكد من أن كنت تستطيع أن تسمع كل شيء؟";
-"Tappity tap" = "Tappity الصنبور";
-"Move your phone a bit. Just kidding, a lot." = "نقل هاتفك قليلا. تمزح عادل، والكثير.";
-"do re mi fa so laaaaaaaaaaaaaaaaaaaaaaaaaaaaa" = "القيام بإعادة ميل كرة القدم حتى laaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-"Also, Nice ;)" = "أيضا لطيفة ؛)";
-"It seems that you have Microphone permissions turned off. This level requires the microphone to pass. However, if you're adamant or if this does not apply to you, then contact me and I will sort things out." = "يبدو أن لديك أذونات ميكروفون إيقاف تشغيل. هذا المستوى يتطلب الميكروفون لتمرير. ومع ذلك، إذا كنت مصرا أو إذا كان هذا لا ينطبق عليك، ثم الاتصال بي وأنا سوف ترتيب الأمور.";
-"Seems like this is a coded message!" = "ويبدو أن هذا هو رسالة مشفرة!";
-"Rule number 1: have patience. Rule number 2: have good memory skills. Rule number 3: see what happens when you tap (r1,c2)." = "القاعدة رقم 1: لديك الصبر. القاعدة رقم 2: لديهم مهارات ذاكرة جيدة. القاعدة رقم 3: انظر ماذا يحدث عند النقر (R1، C2).";
-"What's that on the top right?" = "ما هذا على رأس أليس كذلك؟";
-"These are not just some random characters! Have you ever heard of 🐷🖊️ Cipher?" = "هذه ليست سوى بعض أحرف عشوائية! هل سمعت من 🐷🖊️ الصفر؟";
-"I wonder what I could do with a QR code, once it is aligned" = "وأتساءل ما يمكن أن تفعله مع رمز الاستجابة السريعة، حالما يتم محاذاة";
-"Maybe the morse code at the top and the coordinates at the bottom have some sort of relationship." = "ربما مورس في أعلى والإحداثيات في الجزء السفلي يكون نوعا من العلاقة.";
-"Great works from a great man, who indeed has a name!" = "الأعمال العظيمة من رجل عظيم، لديه بالفعل اسم!";
-"Battery, battery, battery. It bugs me that the battery isn't completely full" = "بطارية، بطارية، بطارية. ومن البق لي أن البطارية ليست كاملة تماما";
-"Roses are red, violets are blue, I'm pretty sure that this is a date. What are you supposed to do?" = "والورود الحمراء، بنفسج الزرقاء، وأنا جدا من أن هذا هو التاريخ. ماذا من المفترض ان تفعل؟";
-"Is there a way to change the size of text?" = "هل هناك طريقة لتغيير حجم النص؟";
-"Dude c'mon. The text on the screen IS the hint" = "هيا المتأنق. النص على الشاشة هو التلميح";
-"Earthquake simulator?" = "زلزال محاكاة؟";
-"Earthquake simulator?: Look for the red" = "زلزال محاكاة ؟: ابحث عن الأحمر";
-"As the Curtain Rose, the people cheered and the bootleggers took Pictures." = "كما الستار روز، هلل الناس وأخذ مروجون الخمور صور.";
-"When I am black, I am actually white. When I am white, I am actually black. What am I?" = "عندما أكون أسود، إنني أبيض في الواقع. عندما أكون أبيض، أنا أسود في الواقع. ما أنا؟";
-"The answer is not in this level. Look closely 👁️" = "الجواب ليس في هذا المستوى. ننظر عن كثب 👁️";
-"Maybe it's best if you go home." = "ربما كان من الأفضل إذا كنت العودة إلى ديارهم.";
-"If you were on the phone and could not hear the other person on speaker, what would you do?" = "لو كنت على الهاتف ولم أستطع سماع شخص آخر على المتكلم، ماذا كنت ستفعل؟";
-"Tap the little circles simultaneously." = "اضغط على دوائر صغيرة في وقت واحد.";
-"Stright lines, fast movements, phone flat." = "خطوط المشي على طول، الحركات السريعة، شقة الهاتف.";
-"is known as a musical note and has different pitches. Remember, nothing is off limits!" = "هو يعرف مذكرة الموسيقية ولها درجات مختلفة. تذكر، ليس هناك ما هو خارج حدود!";
-"Morse code, isn't it? Let's see what the internet can do for you." = "مورس، أليس كذلك؟ دعونا نرى ما الإنترنت يمكن أن نفعله لك.";
-"I suggest writing down a grid and tapping around to see what happens." = "أقترح تدوين شبكة والاستفادة من حولنا لنرى ما سيحدث.";
-"I wonder what happens if we look for the app settings?" = "وأتساءل ماذا يحدث إذا نظرنا للإعدادات التطبيق؟";
-"Use your resources to decode this message" = "استخدام الموارد الخاصة بك على فك رموز هذه الرسالة";
-"Scan the QR code and see what pops up." = "مسح رمز الاستجابة السريعة ونرى ما دفعها.";
-"The coordinates at the bottom correspond to the location of a character in the letter. The second part to the morse code is as follows:" = "إحداثيات في أسفل تتوافق إلى موقع حرف في الرسالة. الجزء الثاني إلى مورس على النحو التالي:";
-"Say the name of the playright!" = "يقول اسم playright!";
-"Let's fill that battery." = "ملء دعونا أن البطارية.";
-"Maybe we can travel back in time." = "ربما نستطيع السفر إلى الوراء في الوقت المناسب.";
-"It's possible that there is a setting to change the general size of fonts?" = "فمن الممكن أن يكون هناك إعداد لتغيير الحجم العام من الخطوط؟";
-"You gotta physically move back" = "فلدي لك التحرك جسديا الظهر";
-"Let's undo." = "دعونا التراجع.";
-"Let's keep undoing and see what the red letters spell out." = "دعونا نبقى في إبطال ونرى ما تهجئة الحروف الحمراء خارج.";
-"a=swipe" = "وانتقد =";
-"b=right" = "ب = الحق";
-"c=down" = "ج = أسفل";
-"-(a*(-b)*c)/b" = "- (أ * (- ب) * ج) / ب";
-"Make sure you make the SMART move." = "تأكد من جعل هذه الخطوة الذكية.";
-"There are 15 hidden letters in the levels prior." = "هناك 15 حروف الخفية في مستويات قبل.";
-"Please advise" = "يرجى تقديم النصيحة";
-"This name conflicts with the name you gave before:" = "هذا الاسم يتعارض مع الاسم الذي قدم من قبل:";
-"Welcome to Project Mayhem," = "مرحبا بكم في مشروع الفوضى،";
-"You must enter your name in the provided field. Otherwise, I cannot trust you." = "يجب عليك إدخال اسمك في الحقل المخصص لذلك. خلاف ذلك، وأنا لا يمكن أن نثق بكم.";
-"Level Skip Notification" = "إعلام المستوى تخطي";
-"Thanks for making my life easier" = "شكرا لجعل حياتي أسهل";
-"Get in a blue box and get your timey wimey on." = "تحصل في المربع الأزرق والحصول على wimey timey الخاصة بك على.";
-"Sounds pretty sinister to me. We need you to investigate the company and see if there is anything to worry about. This could be your biggest case as a Defender, if Vision Consolidated is not what we think it is. You’ve been given employee access to their facilities, but make sure to stay under the radar. Good luck, Brainchild." = "أصوات جميلة شريرة بالنسبة لي. نحن بحاجة لكم للتحقيق في الشركة ومعرفة ما إذا كان هناك أي شيء يدعو للقلق. هذا يمكن أن يكون أكبر قضية ك مدافع، إذا هو الرؤية الموحدة ليس ما نفكر به هو. كنت قد أعطيت وصول الموظف إلى مرافقها، ولكن تأكد من البقاء تحت الرادار. حظا سعيدا، بنات أفكار.";
-"boss" = "رئيس";
-"ever existing" = "القائمة من أي وقت مضى";
-"Reduce Motion:" = "قلل الحركة:";
-"This option will reduce any gyroscopic motion animations" = "هذا الخيار سوف يقلل من أي رسوم متحركة الحركة Gyroscopic";
-"Tap to view Hint!" = "اضغط لعرض تلميح!";
+"Game content for this application needs to be downloaded! It seems that you have decided to not use cellular data to download content. Please find another Internet source or enable cellular data through the game settings." = "يحتاج محتوى اللعبة لهذا التطبيق إلى تنزيله! يبدو أنك قررت عدم استخدام البيانات الخلوية لتنزيل المحتوى. يرجى الاطلاع على مصدر إنترنت آخر أو تمكين البيانات الخلوية من خلال إعدادات اللعبة.";
+"Game content for this application needs to be downloaded! It seems that you are not connected to the Internet. Please connect to the Internet to continue." = "يحتاج محتوى اللعبة لهذا التطبيق إلى تنزيله! يبدو أنك غير متصل بالإنترنت. يرجى الاتصال بالإنترنت للمتابعة.";
 "This may take a few minutes" = "قد يستغرق هذا بضع دقائق";
-"For some reason, the files for this chapter are corrupted. A fix has been deployed, but make sure your internet connection is stable. Please stay on the app and retry entering the chapter in a few minutes. If the problem persists, contact me through the chat." = "لسبب ما، فإن الملفات لهذا الفصل تالفة. تم نشر إصلاح، ولكن تأكد من أن اتصالك بالإنترنت مستقر. يرجى البقاء على التطبيق وإعادة محاولة الدخول في الفصل في بضع دقائق. إذا استمرت المشكلة، فاتصل بي من خلال الدردشة.";
-"It seems that you do not have stable network connection for downloading this game's content. To proceed, please connect to an internet network." = "يبدو أنه ليس لديك اتصال شبكة مستقرة لتنزيل محتوى هذه اللعبة. للمتابعة، يرجى الاتصال بشبكة الإنترنت.";
-"Language:" = "لغة:";
-"Set your language preference" = "تعيين تفضيل لغتك";
-"Arabic" = "عربى";
-"Catalan" = "الكاتالونية";
-"Chinese (Simplified)" = "الصينية المبسطة)";
-"Chinese (Traditional)" = "تقاليد صينية)";
-"Croatian" = "الكرواتية";
-"Czech" = "جمهورية التشيك";
-"Danish" = "دانماركي";
-"Dutch" = "اللغة الهولندية";
-"English" = "الإنجليزية";
-"Finnish" = "الفنلندية";
-"French" = "الفرنسية";
-"German" = "ألمانية";
-"Greek" = "اليونانية";
-"Hebrew" = "اللغة العبرية";
-"Hindi" = "اللغة الهندية";
-"Hungarian" = "المجر";
-"Indonesian" = "إندونيسي";
-"Italian" = "الإيطالية";
-"Japanese" = "اليابانية";
-"Korean" = "الكورية";
-"Malay" = "لغة الملايو";
-"Norwegian" = "النرويجية";
-"Polish" = "تلميع";
-"Portuguese" = "البرتغالية";
-"Romanian" = "روماني";
-"Russian" = "الروسية";
-"Slovak" = "سلوفاكي";
-"Spanish" = "الأسبانية";
-"Swedish" = "سويدية";
-"Thai" = "التايلاندية";
-"Turkish" = "اللغة التركية";
-"Ukranian" = "اوبراني";
-"Vietnamese" = "الفيتنامية";

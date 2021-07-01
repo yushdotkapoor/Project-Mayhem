@@ -15,16 +15,6 @@ extension String {
         a.setCurrentBundlePath(l ?? "en")
         let b = a.bundle
         
-        let path = b.path(forResource: "Localizable", ofType: "strings")
-        var content = ""
-        print("jiffyBear \(path)")
-        do {
-            content = try String(contentsOfFile: path!)
-        } catch {/* error handling here */print("jiffyError")}
-        
-        
-        print("jiffylube \(content)")
-        
         return NSLocalizedString(self, tableName: "Localizable", bundle: b, comment: "")
     }
     

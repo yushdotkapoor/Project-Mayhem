@@ -39,10 +39,8 @@ final class AppLanguageManager {
     func setCurrentBundlePath(_ languageCode: String) {
        
         let file = getLocalizationFile(code: languageCode)
-        print("beluga get local file \(file)")
         
         guard let langBundle = Bundle(path: file) else {
-            print("NO BELUGA NOT WERKIN")
             currentBundle = Bundle.main
             return
         }
@@ -52,7 +50,6 @@ final class AppLanguageManager {
     func getLocalizationFile(code: String) -> String {
         let fileManager = FileManager.default
         let path = (getDirectoryPath() as NSString).appendingPathComponent("\(code)-fire.lproj")
-        print("Pathfinder \(path)")
         var isDirectory:ObjCBool = true
         if fileManager.fileExists(atPath: path, isDirectory: &isDirectory) {
             return path

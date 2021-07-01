@@ -8,7 +8,6 @@
 import UIKit
 import AVKit
 import LocalAuthentication
-import OneSignal
 
 class subChapter1: UIViewController {
     @IBOutlet var playerView: PlayerView!
@@ -24,9 +23,15 @@ class subChapter1: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        OneSignal.promptForPushNotifications(userResponse: { accepted in
-            print("User accepted notifications: \(accepted)")
-        })
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (success, error) in
+                    if let error = error {
+                        print("Request Authorization Failed (\(error), \(error.localizedDescription))")
+                    }
+                    else{
+                        print("User accepted notifications")
+                    }
+                }
         
         toolbar.add3DMotionShadow()
         

@@ -16,6 +16,13 @@
 		9D15027A260EE08200A767C3 /* ProjectMayhemProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D150279260EE08200A767C3 /* ProjectMayhemProducts.swift */; };
 		9D150280260EE0A700A767C3 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D15027F260EE0A700A767C3 /* IAPHelper.swift */; };
 		9D1502AF260F0BB300A767C3 /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1502AE260F0BB300A767C3 /* CheckInternet.swift */; };
+		9D17D8A5268D7FFC00BE2174 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9D17D8A4268D7FFC00BE2174 /* FirebaseDatabase */; };
+		9D17D8A7268D7FFC00BE2174 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9D17D8A6268D7FFC00BE2174 /* FirebaseStorage */; };
+		9D17D8A9268D7FFC00BE2174 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9D17D8A8268D7FFC00BE2174 /* FirebaseCrashlytics */; };
+		9D17D8AB268D7FFC00BE2174 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 9D17D8AA268D7FFC00BE2174 /* FirebaseMessaging */; };
+		9D17D8AD268D7FFC00BE2174 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9D17D8AC268D7FFC00BE2174 /* FirebaseAuth */; };
+		9D17D8AF268D7FFC00BE2174 /* FirebaseInAppMessagingSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 9D17D8AE268D7FFC00BE2174 /* FirebaseInAppMessagingSwift-Beta */; };
+		9D17D8B1268D7FFC00BE2174 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 9D17D8B0268D7FFC00BE2174 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		9D18487D25D7A7B7007960C0 /* HintAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D18487C25D7A7B7007960C0 /* HintAlert.swift */; };
 		9D1A40BB263B680300F6DF9B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A40BA263B680300F6DF9B /* ChatViewController.swift */; };
 		9D1A40BD263B6B3D00F6DF9B /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A40BC263B6B3D00F6DF9B /* Notifications.swift */; };
@@ -44,13 +51,6 @@
 		9D5B42C5259C97FB00A4F34A /* animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B42C4259C97FB00A4F34A /* animations.swift */; };
 		9D5FFA81263CC1B9005AC98A /* BadgeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5FFA80263CC1B9005AC98A /* BadgeButton.swift */; };
 		9D5FFA89263CE186005AC98A /* skibbity.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D5FFA88263CE186005AC98A /* skibbity.mp3 */; };
-		9D60217926418E62007D990D /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = 9D60217826418E62007D990D /* AppsFlyerLib */; };
-		9D60218B26419141007D990D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9D60218A26419141007D990D /* FirebaseAnalytics */; };
-		9D60218D26419141007D990D /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9D60218C26419141007D990D /* FirebaseCrashlytics */; };
-		9D60218F26419141007D990D /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 9D60218E26419141007D990D /* FirebaseMessaging */; };
-		9D60219126419141007D990D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9D60219026419141007D990D /* FirebaseAuth */; };
-		9D60219326419141007D990D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9D60219226419141007D990D /* FirebaseStorage */; };
-		9D60219526419141007D990D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9D60219426419141007D990D /* FirebaseDatabase */; };
 		9D60219826419240007D990D /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 9D60219726419240007D990D /* SDWebImage */; };
 		9D6762FA2618534D005E9346 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D6762F92618534D005E9346 /* GoogleService-Info.plist */; };
 		9D6C28E725DCCC950039D12C /* MessageAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C28E625DCCC950039D12C /* MessageAlert.swift */; };
@@ -71,9 +71,6 @@
 		9D8C42AF25C7BE5C0039F857 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9D8C42AE25C7BE5C0039F857 /* Settings.bundle */; };
 		9D8C42BF25C7F9C30039F857 /* nonPastableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C42BE25C7F9C30039F857 /* nonPastableTextField.swift */; };
 		9D92875A25F86DD7005170A1 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D92875925F86DD7005170A1 /* AudioKit */; };
-		9D92877625F86F44005170A1 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = 9D92877525F86F44005170A1 /* OneSignal */; };
-		9D9287C025F8711F005170A1 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9287BF25F8711F005170A1 /* NotificationService.swift */; };
-		9D9287C425F8711F005170A1 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9D9287BD25F8711F005170A1 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9D95C65B26418CA200D6DE77 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D95C65A26418CA200D6DE77 /* MessageKit */; };
 		9D9AA5C125F793D300C1493A /* Tomorrow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D9AA5AF25F793D200C1493A /* Tomorrow.ttf */; };
 		9DA2E9BD25F0451600262638 /* audioExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2E9BC25F0451600262638 /* audioExtensions.swift */; };
@@ -118,13 +115,6 @@
 			remoteGlobalIDString = 9D56137D259195E600F1695A;
 			remoteInfo = "Project Mayhem";
 		};
-		9D9287C225F8711F005170A1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9D561376259195E600F1695A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9D9287BC25F8711F005170A1;
-			remoteInfo = OneSignalNotificationServiceExtension;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -134,7 +124,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				9D9287C425F8711F005170A1 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,14 +193,10 @@
 		9D74262325CA41F3008D9645 /* chapter13.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chapter13.swift; sourceTree = "<group>"; };
 		9D7DE96325E78C4900F80990 /* VenomPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenomPreview.swift; sourceTree = "<group>"; };
 		9D7F3AB3267161BA00CED071 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
-		9D87B57526408CE80004D76E /* OneSignalNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneSignalNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
 		9D8B292925DC187D007750DF /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		9D8B292D25DC189A007750DF /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		9D8C42AE25C7BE5C0039F857 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9D8C42BE25C7F9C30039F857 /* nonPastableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nonPastableTextField.swift; sourceTree = "<group>"; };
-		9D9287BD25F8711F005170A1 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D9287BF25F8711F005170A1 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationService.swift; path = "/Users/yushrajkapoor/Desktop/Xcode/Project Mayhem/OneSignalNotificationServiceExtension/NotificationService.swift"; sourceTree = "<absolute>"; };
-		9D9287C125F8711F005170A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D9AA5AF25F793D200C1493A /* Tomorrow.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tomorrow.ttf; sourceTree = "<group>"; };
 		9DA2E9BC25F0451600262638 /* audioExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audioExtensions.swift; sourceTree = "<group>"; };
 		9DA2E9C825F09C6000262638 /* NoisyWalk.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NoisyWalk.ttf; path = "Project Mayhem/Fonts/NoisyWalk.ttf"; sourceTree = SOURCE_ROOT; };
@@ -307,19 +292,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D60219526419141007D990D /* FirebaseDatabase in Frameworks */,
-				9D60217926418E62007D990D /* AppsFlyerLib in Frameworks */,
+				9D17D8B1268D7FFC00BE2174 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				9D0B0AD425FEBA3100C3B1F5 /* CloudKit.framework in Frameworks */,
-				9D60218F26419141007D990D /* FirebaseMessaging in Frameworks */,
-				9D60218B26419141007D990D /* FirebaseAnalytics in Frameworks */,
 				9D92875A25F86DD7005170A1 /* AudioKit in Frameworks */,
+				9D17D8AB268D7FFC00BE2174 /* FirebaseMessaging in Frameworks */,
 				9DC5C2812651C63100EB0F10 /* Siren in Frameworks */,
-				9D60219326419141007D990D /* FirebaseStorage in Frameworks */,
-				9D92877625F86F44005170A1 /* OneSignal in Frameworks */,
 				9D95C65B26418CA200D6DE77 /* MessageKit in Frameworks */,
-				9D60219126419141007D990D /* FirebaseAuth in Frameworks */,
 				9D60219826419240007D990D /* SDWebImage in Frameworks */,
-				9D60218D26419141007D990D /* FirebaseCrashlytics in Frameworks */,
+				9D17D8A7268D7FFC00BE2174 /* FirebaseStorage in Frameworks */,
+				9D17D8AD268D7FFC00BE2174 /* FirebaseAuth in Frameworks */,
+				9D17D8A9268D7FFC00BE2174 /* FirebaseCrashlytics in Frameworks */,
+				9D17D8A5268D7FFC00BE2174 /* FirebaseDatabase in Frameworks */,
+				9D17D8AF268D7FFC00BE2174 /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
 				9D150276260EDF7700A767C3 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,13 +316,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		9D561397259195E800F1695A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9D9287BA25F8711F005170A1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -436,7 +413,6 @@
 				9D561380259195E600F1695A /* Project Mayhem */,
 				9D561392259195E800F1695A /* Project MayhemTests */,
 				9D56139D259195E800F1695A /* Project MayhemUITests */,
-				9D9287BE25F8711F005170A1 /* OneSignalNotificationServiceExtension */,
 				9D56137F259195E600F1695A /* Products */,
 				9D0B0AD225FEBA3100C3B1F5 /* Frameworks */,
 			);
@@ -449,7 +425,6 @@
 				9D56137E259195E600F1695A /* Project Mayhem.app */,
 				9D56138F259195E800F1695A /* Project MayhemTests.xctest */,
 				9D56139A259195E800F1695A /* Project MayhemUITests.xctest */,
-				9D9287BD25F8711F005170A1 /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -537,16 +512,6 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		9D9287BE25F8711F005170A1 /* OneSignalNotificationServiceExtension */ = {
-			isa = PBXGroup;
-			children = (
-				9D87B57526408CE80004D76E /* OneSignalNotificationServiceExtension.entitlements */,
-				9D9287BF25F8711F005170A1 /* NotificationService.swift */,
-				9D9287C125F8711F005170A1 /* Info.plist */,
-			);
-			path = OneSignalNotificationServiceExtension;
-			sourceTree = "<group>";
-		};
 		9DA2E9C725F09C2E00262638 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -576,22 +541,20 @@
 			buildRules = (
 			);
 			dependencies = (
-				9D9287C325F8711F005170A1 /* PBXTargetDependency */,
 			);
 			name = "Project Mayhem";
 			packageProductDependencies = (
 				9D92875925F86DD7005170A1 /* AudioKit */,
-				9D92877525F86F44005170A1 /* OneSignal */,
 				9D95C65A26418CA200D6DE77 /* MessageKit */,
-				9D60217826418E62007D990D /* AppsFlyerLib */,
-				9D60218A26419141007D990D /* FirebaseAnalytics */,
-				9D60218C26419141007D990D /* FirebaseCrashlytics */,
-				9D60218E26419141007D990D /* FirebaseMessaging */,
-				9D60219026419141007D990D /* FirebaseAuth */,
-				9D60219226419141007D990D /* FirebaseStorage */,
-				9D60219426419141007D990D /* FirebaseDatabase */,
 				9D60219726419240007D990D /* SDWebImage */,
 				9DC5C2802651C63100EB0F10 /* Siren */,
+				9D17D8A4268D7FFC00BE2174 /* FirebaseDatabase */,
+				9D17D8A6268D7FFC00BE2174 /* FirebaseStorage */,
+				9D17D8A8268D7FFC00BE2174 /* FirebaseCrashlytics */,
+				9D17D8AA268D7FFC00BE2174 /* FirebaseMessaging */,
+				9D17D8AC268D7FFC00BE2174 /* FirebaseAuth */,
+				9D17D8AE268D7FFC00BE2174 /* FirebaseInAppMessagingSwift-Beta */,
+				9D17D8B0268D7FFC00BE2174 /* FirebaseAnalyticsWithoutAdIdSupport */,
 			);
 			productName = "Project Mayhem";
 			productReference = 9D56137E259195E600F1695A /* Project Mayhem.app */;
@@ -633,23 +596,6 @@
 			productReference = 9D56139A259195E800F1695A /* Project MayhemUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		9D9287BC25F8711F005170A1 /* OneSignalNotificationServiceExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9D9287C525F8711F005170A1 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
-			buildPhases = (
-				9D9287B925F8711F005170A1 /* Sources */,
-				9D9287BA25F8711F005170A1 /* Frameworks */,
-				9D9287BB25F8711F005170A1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = OneSignalNotificationServiceExtension;
-			productName = OneSignalNotificationServiceExtension;
-			productReference = 9D9287BD25F8711F005170A1 /* OneSignalNotificationServiceExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -670,9 +616,6 @@
 					9D561399259195E800F1695A = {
 						CreatedOnToolsVersion = 12.3;
 						TestTargetID = 9D56137D259195E600F1695A;
-					};
-					9D9287BC25F8711F005170A1 = {
-						CreatedOnToolsVersion = 12.4;
 					};
 				};
 			};
@@ -715,18 +658,15 @@
 				nb,
 				Base,
 				"ar-crap",
-				"ar-Crap",
 				pt,
 			);
 			mainGroup = 9D561375259195E600F1695A;
 			packageReferences = (
 				9D92875825F86DD7005170A1 /* XCRemoteSwiftPackageReference "AudioKit" */,
-				9D92877425F86F44005170A1 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
 				9D95C65926418CA200D6DE77 /* XCRemoteSwiftPackageReference "MessageKit" */,
-				9D60217726418E62007D990D /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */,
-				9D60218926419141007D990D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				9D60219626419240007D990D /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				9DC5C27F2651C63000EB0F10 /* XCRemoteSwiftPackageReference "Siren" */,
+				9D17D8A3268D7FFC00BE2174 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 9D56137F259195E600F1695A /* Products */;
 			projectDirPath = "";
@@ -735,7 +675,6 @@
 				9D56137D259195E600F1695A /* Project Mayhem */,
 				9D56138E259195E800F1695A /* Project MayhemTests */,
 				9D561399259195E800F1695A /* Project MayhemUITests */,
-				9D9287BC25F8711F005170A1 /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -778,13 +717,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9D9287BB25F8711F005170A1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -805,7 +737,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.c\n\"${BUILD_DIR%Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.c\n${BUILD_DIR%Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -893,14 +825,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9D9287B925F8711F005170A1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9D9287C025F8711F005170A1 /* NotificationService.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -913,11 +837,6 @@
 			isa = PBXTargetDependency;
 			target = 9D56137D259195E600F1695A /* Project Mayhem */;
 			targetProxy = 9D56139B259195E800F1695A /* PBXContainerItemProxy */;
-		};
-		9D9287C325F8711F005170A1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9D9287BC25F8711F005170A1 /* OneSignalNotificationServiceExtension */;
-			targetProxy = 9D9287C225F8711F005170A1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1061,6 +980,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1115,6 +1035,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1310,58 +1231,6 @@
 			};
 			name = Release;
 		};
-		9D9287C625F8711F005170A1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
-				DEVELOPMENT_TEAM = 68L233566P;
-				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.2.4;
-				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem.OneSignalNotificationServiceExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		9D9287C725F8711F005170A1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
-				DEVELOPMENT_TEAM = 68L233566P;
-				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.2.4;
-				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem.OneSignalNotificationServiceExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1401,32 +1270,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9D9287C525F8711F005170A1 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9D9287C625F8711F005170A1 /* Debug */,
-				9D9287C725F8711F005170A1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9D60217726418E62007D990D /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.2.6;
-			};
-		};
-		9D60218926419141007D990D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		9D17D8A3268D7FFC00BE2174 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 7.11.1;
+				minimumVersion = 8.2.0;
 			};
 		};
 		9D60219626419240007D990D /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
@@ -1443,14 +1295,6 @@
 			requirement = {
 				branch = "v5-main";
 				kind = branch;
-			};
-		};
-		9D92877425F86F44005170A1 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/OneSignal/OneSignal-XCFramework";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.2.3;
 			};
 		};
 		9D95C65926418CA200D6DE77 /* XCRemoteSwiftPackageReference "MessageKit" */ = {
@@ -1472,40 +1316,40 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9D60217826418E62007D990D /* AppsFlyerLib */ = {
+		9D17D8A4268D7FFC00BE2174 /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9D60217726418E62007D990D /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */;
-			productName = AppsFlyerLib;
+			package = 9D17D8A3268D7FFC00BE2174 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
 		};
-		9D60218A26419141007D990D /* FirebaseAnalytics */ = {
+		9D17D8A6268D7FFC00BE2174 /* FirebaseStorage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9D60218926419141007D990D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		9D60218C26419141007D990D /* FirebaseCrashlytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9D60218926419141007D990D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseCrashlytics;
-		};
-		9D60218E26419141007D990D /* FirebaseMessaging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9D60218926419141007D990D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseMessaging;
-		};
-		9D60219026419141007D990D /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9D60218926419141007D990D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		9D60219226419141007D990D /* FirebaseStorage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9D60218926419141007D990D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 9D17D8A3268D7FFC00BE2174 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
 		};
-		9D60219426419141007D990D /* FirebaseDatabase */ = {
+		9D17D8A8268D7FFC00BE2174 /* FirebaseCrashlytics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9D60218926419141007D990D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseDatabase;
+			package = 9D17D8A3268D7FFC00BE2174 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		9D17D8AA268D7FFC00BE2174 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D17D8A3268D7FFC00BE2174 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		9D17D8AC268D7FFC00BE2174 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D17D8A3268D7FFC00BE2174 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		9D17D8AE268D7FFC00BE2174 /* FirebaseInAppMessagingSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D17D8A3268D7FFC00BE2174 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessagingSwift-Beta";
+		};
+		9D17D8B0268D7FFC00BE2174 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9D17D8A3268D7FFC00BE2174 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
 		};
 		9D60219726419240007D990D /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1516,11 +1360,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9D92875825F86DD7005170A1 /* XCRemoteSwiftPackageReference "AudioKit" */;
 			productName = AudioKit;
-		};
-		9D92877525F86F44005170A1 /* OneSignal */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9D92877425F86F44005170A1 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
-			productName = OneSignal;
 		};
 		9D95C65A26418CA200D6DE77 /* MessageKit */ = {
 			isa = XCSwiftPackageProductDependency;

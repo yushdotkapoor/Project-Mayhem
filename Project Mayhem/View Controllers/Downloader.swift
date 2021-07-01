@@ -12,13 +12,12 @@ class Downloader: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var circleView: CircularProgressBarView!
     @IBOutlet weak var minutes: UILabel!
+    var networkAlert = false
     
     var notificationTimer:Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         circleView.createCircularPath(radius: 120)
         
@@ -36,13 +35,16 @@ class Downloader: UIViewController {
     
     func checkForInternet() {
         if !CheckInternet.Connection() {
+            networkAlert = true
             alert(title: "Error".localized(), message: "It seems that you do not have stable network connection for downloading this game's content. To proceed, please connect to an internet network.".localized(), actionTitle: "Okay".localized())
         }
     }
     
     
     @objc func checkNotification() {
-        checkForInternet()
+        if !networkAlert && !game.bool(forKey: "downloaded") {
+            checkForInternet()
+        }
         if label.alpha == 0 {
             label.fadeIn()
         } else {

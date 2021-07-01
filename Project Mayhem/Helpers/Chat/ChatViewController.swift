@@ -598,7 +598,7 @@ class ChatViewController: MessagesViewController {
                 body = "Video Message".localized()
             }
             else if sub == "linkPreview" {
-                body = "URL".localized()
+                body = "URL"
             }
             else {
                 body = "\(message.data)"

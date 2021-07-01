@@ -22,6 +22,7 @@ var videosCurrentlyDownloading = false
 var IAPs:[SKProduct]?
 let database = CKContainer.default().publicCloudDatabase
 let vidArr = ["Chap1Intro", "lvl7Intro", "lvl7Outro", "subPostChapter15", "ProjectVenomTrailer"]
+let localeArr = ["ar", "ca", "zh-Hans", "zh-Hant", "hr", "cs", "da", "nl", "en", "fi", "fr", "de", "el", "he", "hi", "hu", "id", "it", "ja", "ko", "ms", "nb", "pl", "pt", "ro", "ru", "sk", "es", "sv", "th", "tr", "uk", "vi"]
 var mediaCount = 0
 let messageFrom = "Message From".localized()
 var menuState = false
@@ -66,6 +67,10 @@ func goToChat(vc: UIViewController) {
 	let storyboard = UIStoryboard(name: "Main", bundle: nil)
 	let con = storyboard.instantiateViewController(withIdentifier: selectNavigation)
 	vc.present(con, animated: true, completion: nil)
+}
+
+func notAbleToUseCellular() -> Bool {
+    return !game.bool(forKey: "useCellular") && game.bool(forKey: "onCellular")
 }
 
 // MARK: - Wait Functions
@@ -164,7 +169,9 @@ func downloadVideos(vidNames: [String]) {
 		database.fetch(withRecordID: CKRecord.ID(recordName: vid)) { results, error in
 			if error != nil {
 				print(" Error Downloading Record  " + error!.localizedDescription)
-				downloadVideos(vidNames: [vid])
+                wait {
+                    downloadVideos(vidNames: [vid])
+                }
 			} else {
 				if results != nil {
 					let record = results! as CKRecord
@@ -304,18 +311,13 @@ func createDirectory(langCode: String, values: String) {
     let DocumentDirectory = NSURL(fileURLWithPath: NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0])
     let DirPath = DocumentDirectory.appendingPathComponent("\(code)-fire.lproj")
     
-    do
-    {
-        try FileManager.default.removeItem(atPath: DirPath!.path)
+    do {
         try FileManager.default.createDirectory(atPath: DirPath!.path, withIntermediateDirectories: true, attributes: nil)
         
-    }
-    catch let error as NSError
-    {
+    } catch let error as NSError {
         print("Unable to create directory \(error.debugDescription)")
     }
     
-    //let str = values
     let str = values
     
     let fm = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -323,8 +325,41 @@ func createDirectory(langCode: String, values: String) {
     
     do {
         try str.write(to: filename, atomically: true, encoding: String.Encoding.utf16)
-    } catch {
-        print("FUCK ME \(filename)")
-        // failed to write file – bad permissions, bad filename, missing permissions, or more likely it can't be converted to the encoding
+    } catch let error as NSError {
+        print("ERROR in writing file \(error.debugDescription)")
     }
+}
+
+func validateLocalizationFiles() -> [String] {
+    let fileManager = FileManager.default
+    var toReturn:[String] = []
+    for i in localeArr {
+        let path = (getDirectoryPath() as NSString).appendingPathComponent("\(i)-fire.lproj/Localizable.strings")
+        if !fileManager.fileExists(atPath: path) {
+            print("Error: There seems to be a video file missing")
+            toReturn.append(i)
+        }
+    }
+    return toReturn
+}
+
+
+func downloadLocaleFiles() {
+    ref.child("Localizations").observeSingleEvent(of: .value, with: { (snapshot) in
+        let val = snapshot.value as? NSDictionary
+        let codes = val!["Codes"] as? [String:String]
+        let translations = val!["Translations"] as? [String: String]
+        
+        languageCodes = codes ?? [:]
+        languageTranslations = translations ?? [:]
+        for i in languageCodes.keys {
+            let code = (languageCodes[i] ?? "") as String
+            let trans = (languageTranslations[i] ?? "") as String
+            
+            //removeLocaleDirectories(code: code)
+            
+           createDirectory(langCode: code, values: trans)
+            
+        }
+    })
 }

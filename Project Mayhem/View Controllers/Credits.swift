@@ -38,6 +38,9 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate, UIPickerVi
     @IBOutlet weak var languageTitle: UILabel!
     @IBOutlet weak var languageDescription: UILabel!
     @IBOutlet weak var languageRepresentation: UIButton!
+    @IBOutlet weak var cellularSwitch: UISwitch!
+    @IBOutlet weak var celularTitle: UILabel!
+    @IBOutlet weak var cellularDescription: UILabel!
     
     var toolBar = UIToolbar()
     var picker  = UIPickerView()
@@ -54,9 +57,11 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate, UIPickerVi
         let volume = game.float(forKey: "volume")
         let sensitive = game.bool(forKey: "photosensitive")
         let mot = game.bool(forKey: "reduceMotion")
+        let cell = game.bool(forKey: "useCellular")
         
         flashingSwitch.setOn(sensitive, animated: false)
         motionSwitch.setOn(mot, animated: false)
+        cellularSwitch.setOn(cell, animated: false)
         
         slider.value = volume
         
@@ -82,8 +87,6 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate, UIPickerVi
     }
     
     func setLocalizations() {
-
-        
         titl.text = "Settings".localized()
         dev.text = "Developer:".localized()
         mus.text = "Music:".localized()
@@ -93,7 +96,7 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate, UIPickerVi
         fiveHintsButton.setTitle("Five Hints".localized(), for: .normal)
         fiveHintsDescription.text = "Purchase Extra hints for 5 levels".localized()
         vol.text = "Volume:".localized()
-        volumeDescription.text = "NOTE: this slider only controls the relative volume of the background music, and will not affect the videos".localized()
+        volumeDescription.text = "This slider only controls the relative volume of the background music, and will not affect the videos".localized()
         minFlash.text = "Minimize Flashing:".localized()
         minFlashDescription.text = "This option is prefered for photosensitive users and will minimize sudden flashing colors or lights".localized()
         bestExp.text = "For best experience, make sure haptics(Settings) Are on and that minimize flashing(above) is turned off.".localized()
@@ -104,6 +107,8 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate, UIPickerVi
         reduceMotionDescription.text = "This option will reduce any gyroscopic motion animations".localized()
         languageTitle.text = "Language:".localized()
         languageDescription.text = "Set your language preference".localized()
+        cellularDescription.text = "Use Cellular data to Download content for gameplay".localized()
+        celularTitle.text = "Use Cellular:".localized()
         
         let p1 = "Version".localized()
         version.text = "\(p1) \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] ?? "null")"
@@ -113,9 +118,9 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate, UIPickerVi
         let lan = game.string(forKey: "AppleLanguage")!
         let languageT = getLanguageFromCode(code: lan)
         languageRepresentation.setTitle(languageT, for: .normal)
-        
-        
     }
+    
+    
     
     func checkIfPurchased() {
         
@@ -195,6 +200,11 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate, UIPickerVi
     
     @objc func donate(tapGestureRecognizer: UITapGestureRecognizer) {
         openLink(st: "https://www.paypal.com/paypalme/yushkapoor")
+    }
+    
+    @IBAction func cellularSwitchChanged(_ sender: Any) {
+        let state = cellularSwitch.isOn
+        game.setValue(state, forKey: "useCellular")
     }
     
     @IBAction func language(_ sender: Any) {
