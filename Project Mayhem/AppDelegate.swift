@@ -9,6 +9,8 @@ import Network
 import StoreKit
 import Siren
 
+var administratorToken:String?
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, SKRequestDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
     
@@ -23,6 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, S
         FirebaseApp.configure()
         
         Siren.shared.wail()
+        
+        ref.child("users/Admin/token").observeSingleEvent(of: .value, with: { (snapshot) in
+            let val = snapshot.value as? String ?? ""
+            administratorToken = val
+        })
         
         downloadLocaleFiles()
         

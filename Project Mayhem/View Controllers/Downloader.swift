@@ -37,6 +37,10 @@ class Downloader: UIViewController {
         notificationTimer = Timer.scheduledTimer(withTimeInterval: 1.1, repeats: true) { timer in
             self.checkNotification()
         }
+        let xFactor = validateVideos()
+        if !xFactor.contains("Chap1Intro") {
+            game.setValue(1.0, forKey: "chap1IntroDownloadProgress")
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

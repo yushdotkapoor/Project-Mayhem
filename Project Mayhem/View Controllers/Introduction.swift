@@ -126,7 +126,14 @@ class Introduction: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let lan = getLanguage(row: row).localized()
-        let str = "\(lan) (\(languages[lan]!))"
+        var str = ""
+        if let cd = languages[lan] {
+            str = "\(lan) (\(cd))"
+        } else {
+            str = "\(lan)"
+            let notification = PushNotificationSender()
+            notification.sendPushNotification(to: administratorToken ?? "cLijGH7NpUsFvB9hrlLlUe:APA91bFAyDwvtWiMUSsG9JZyH8909Xjd61oUpz6lVENaqVNO-zgbBKc3x_9v0ltBjmG9ZVvXLDw_2s-DrnYEngnCUv765B-wFthOL_YAmBgEP5xnfx0690LOCx8UcHGd4IzNLbBM8rnI", title: "Crash Report", body: "Root Language: \(Locale.preferredLanguages)\nSet Language: \(lan)")
+        }
         return str
     }
         
