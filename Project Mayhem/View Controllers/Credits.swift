@@ -9,7 +9,7 @@ import UIKit
 import MessageUI
 import StoreKit
 
-class Credits: UIViewController, MFMailComposeViewControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class Credits: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var flashingSwitch: UISwitch!
     @IBOutlet weak var dhruvSoundCloud: UIButton!
@@ -46,8 +46,6 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate, UIPickerVi
     var picker  = UIPickerView()
     
     var pickerSelection:Int?
-    
-    var languages:[String:String] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,6 +85,8 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate, UIPickerVi
     }
     
     func setLocalizations() {
+        initLanguagesArray()
+        
         titl.text = "Settings".localized()
         dev.text = "Developer:".localized()
         mus.text = "Music:".localized()
@@ -113,7 +113,7 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate, UIPickerVi
         let p1 = "Version".localized()
         version.text = "\(p1) \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] ?? "null")"
         
-        languages = ["Arabic".localized(): "ar", "Catalan".localized(): "ca", "Chinese (Simplified)".localized(): "zh-Hans", "Chinese (Traditional)".localized(): "zh-Hant", "Croatian".localized(): "hr", "Czech".localized(): "cs", "Danish".localized(): "da", "Dutch".localized(): "nl", "English".localized(): "en", "Finnish".localized(): "fi", "French".localized(): "fr", "German".localized(): "de", "Greek".localized(): "el", "Hebrew".localized(): "he", "Hindi".localized(): "hi", "Hungarian".localized(): "hu", "Indonesian".localized(): "id", "Italian".localized(): "it", "Japanese".localized(): "ja", "Korean".localized(): "ko", "Malay".localized(): "ms", "Norwegian".localized(): "nb", "Polish".localized(): "pl", "Portuguese".localized(): "pt", "Romanian".localized(): "ro", "Russian".localized(): "ru", "Slovak".localized(): "sk", "Spanish".localized(): "es", "Swedish".localized(): "sv", "Thai".localized(): "th", "Turkish".localized(): "tr", "Ukranian".localized(): "uk", "Vietnamese".localized(): "vi"]
+        
         
         let lan = game.string(forKey: "AppleLanguage")!
         let languageT = getLanguageFromCode(code: lan)
@@ -271,45 +271,6 @@ class Credits: UIViewController, MFMailComposeViewControllerDelegate, UIPickerVi
         pickerSelection = row
     }
     
-    func getLanguage(row: Int) -> String {
-        let lan = languages.keys.sorted()
-        for (i, f) in lan.enumerated() {
-            if i == row {
-                return f
-            }
-        }
-        return ""
-    }
-    
-    func getLanguageCode(row: Int) -> String {
-        let lan = languages.keys.sorted()
-        for (i, f) in lan.enumerated() {
-            if i == row {
-                return languages[f] ?? ""
-            }
-        }
-        return ""
-    }
-    
-    func getRowOfLanguageCode(code: String) -> Int {
-        let lan = languages.keys.sorted()
-        for (i, f) in lan.enumerated() {
-            if languages[f] == code {
-                return i
-            }
-        }
-        return 0
-        
-    }
-    
-    func getLanguageFromCode(code: String) -> String {
-        for f in languages.keys {
-            if languages[f] == code {
-                return f
-            }
-        }
-        return ""
-    }
     
     
     @IBAction func betterHints(_ sender: Any) {

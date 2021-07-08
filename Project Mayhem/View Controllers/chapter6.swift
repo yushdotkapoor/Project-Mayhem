@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+import StoreKit
 
 var chap6Timer = false
 
@@ -302,7 +303,13 @@ class chapter6: UIViewController {
     
     func complete() {
         NotificationCenter.default.removeObserver(self)
+        let pre = game.bool(forKey: "chap6")
         game.setValue(true, forKey: "chap6")
+        if !pre {
+            if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                SKStoreReviewController.requestReview(in: scene)
+            }
+        }
         nextChap.isUserInteractionEnabled = true
         impact(style: .success)
         nextChap.fadeIn()

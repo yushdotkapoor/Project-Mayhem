@@ -93,9 +93,9 @@ class Levels: UIViewController {
         
         if (!videosCurrentlyDownloading && !game.bool(forKey: "downloaded")) || wt {
             if !CheckInternet.Connection() {
-                alert(title: "Error".localized(), message: "Data in this application needs to be updated! It seems that you are not connected to the Internet. Please connect to the Internet to continue.".localized(), actionTitle: "Okay".localized())
+                alert(title: "Error".localized(), message: "Game content for this application needs to be downloaded! It seems that you are not connected to the Internet. Please connect to the Internet to continue.".localized(), actionTitle: "Okay".localized())
             } else if notAbleToUseCellular() {
-                alert(title: "Error".localized(), message: "Data in this application needs to be updated! It seems that you have decided to not use cellular data to download content. Please find another Internet source or enable cellular data through the game settings.".localized(), actionTitle: "Okay".localized(), actions: {
+                alert(title: "Error".localized(), message: "Game content for this application needs to be downloaded! It seems that you have decided to not use cellular data to download content. Please find another Internet source or enable cellular data through the game settings.".localized(), actionTitle: "Okay".localized(), actions: {
                     self.performSegue(withIdentifier: "mainToCredits", sender: nil)
                 })
             } else {

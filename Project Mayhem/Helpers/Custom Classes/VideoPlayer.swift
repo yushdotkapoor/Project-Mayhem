@@ -98,9 +98,8 @@ class VideoPlayer : NSObject {
         super.init()
     }
     
+    
     // MARK: - Public
-    
-    
     func isPlaying() -> Bool {
         if let player = assetPlayer {
             return player.rate > 0

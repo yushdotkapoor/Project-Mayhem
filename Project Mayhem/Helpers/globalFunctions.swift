@@ -28,6 +28,7 @@ let messageFrom = "Message From".localized()
 var menuState = false
 var languageTranslations:[String:String] = [:]
 var languageCodes:[String:String] = [:]
+var languages:[String:String] = [:]
 
 // MARK: - General
 func activateAVSession(option:AVAudioSession.CategoryOptions) {
@@ -166,46 +167,56 @@ func downloadVideos(vidNames: [String]) {
 		print("Downloading \(vid)")
 		game.setValue(false, forKey: "downloaded")
 		videosCurrentlyDownloading = true
-		database.fetch(withRecordID: CKRecord.ID(recordName: vid)) { results, error in
-			if error != nil {
-				print(" Error Downloading Record  " + error!.localizedDescription)
+        let op = CKFetchRecordsOperation(recordIDs: [CKRecord.ID(recordName: vid)])
+        op.perRecordProgressBlock =  { record, progress in
+            DispatchQueue.main.async {
+                print("\(record.recordName) progress: \(progress)")
+                if record.recordName == "Chap1Intro" {
+                    game.setValue(progress, forKey: "chap1IntroDownloadProgress")
+                }
+            }
+        }
+        op.fetchRecordsCompletionBlock = { recordDict, error in
+            if error != nil {
+                print(" Error Downloading Record  " + error!.localizedDescription)
                 wait {
                     downloadVideos(vidNames: [vid])
                 }
-			} else {
-				if results != nil {
-					let record = results! as CKRecord
-					let videoFile = record.object(forKey: "video") as! CKAsset
-					
-					videoURL = videoFile.fileURL! as NSURL
-					let videoData = NSData(contentsOf: videoURL! as URL)
-					
-					let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-					let fileURL = documentsDirectory.appendingPathComponent("\(vid).mov")
-					
-					do {
-						try videoData!.write(to: fileURL)
-						print("\(vid) saved @ \(fileURL)")
-					} catch {
-						print("error saving file:", error)
-					}
-					
-					mediaCount += 1
-					
-					print("end download \(vid)")
-					if mediaCount == vidNames.count {
-						videosCurrentlyDownloading = false
-						print("\n\nVideo Downloads Completed\n\n")
-						let date = Date().timeIntervalSince1970 + 604800
-						game.setValue(Double(date), forKey: "weekDate")
-						game.setValue(true, forKey: "downloaded")
-					}
-				} else {
-					print("results Empty")
-					videosCurrentlyDownloading = false
-				}
-			}
-		}
+            } else {
+                if recordDict != nil {
+                    let record = (recordDict?.values.first)! as CKRecord
+                    let videoFile = record.object(forKey: "video") as! CKAsset
+                    
+                    videoURL = videoFile.fileURL! as NSURL
+                    let videoData = NSData(contentsOf: videoURL! as URL)
+                    
+                    let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                    let fileURL = documentsDirectory.appendingPathComponent("\(vid).mov")
+                    
+                    do {
+                        try videoData!.write(to: fileURL)
+                        print("\(vid) saved @ \(fileURL)")
+                    } catch {
+                        print("error saving file:", error)
+                    }
+                    
+                    mediaCount += 1
+                    
+                    print("end download \(vid)")
+                    if mediaCount == vidNames.count {
+                        videosCurrentlyDownloading = false
+                        print("\n\nVideo Downloads Completed\n\n")
+                        let date = Date().timeIntervalSince1970 + 604800
+                        game.setValue(Double(date), forKey: "weekDate")
+                        game.setValue(true, forKey: "downloaded")
+                    }
+                } else {
+                    print("results Empty")
+                    videosCurrentlyDownloading = false
+                }
+            }
+        }
+        database.add(op)
 	}
 }
 
@@ -241,6 +252,11 @@ func uploadVideos() {
 func weekTimer() -> Bool {
 	let date = Date().timeIntervalSince1970
 	let dateToCheck = game.double(forKey: "weekDate")
+    
+    if dateToCheck == 0.0 {
+        game.setValue(date, forKey: "weekDate")
+        return true
+    }
 	
 	if date > dateToCheck {
 		return true
@@ -362,4 +378,48 @@ func downloadLocaleFiles() {
             
         }
     })
+}
+
+func getLanguage(row: Int) -> String {
+    let lan = languages.keys.sorted()
+    for (i, f) in lan.enumerated() {
+        if i == row {
+            return f
+        }
+    }
+    return ""
+}
+
+func getLanguageCode(row: Int) -> String {
+    let lan = languages.keys.sorted()
+    for (i, f) in lan.enumerated() {
+        if i == row {
+            return languages[f] ?? ""
+        }
+    }
+    return ""
+}
+
+func getRowOfLanguageCode(code: String) -> Int {
+    let lan = languages.keys.sorted()
+    for (i, f) in lan.enumerated() {
+        if languages[f] == code {
+            return i
+        }
+    }
+    return 0
+    
+}
+
+func getLanguageFromCode(code: String) -> String {
+    for f in languages.keys {
+        if languages[f] == code {
+            return f
+        }
+    }
+    return ""
+}
+
+func initLanguagesArray() {
+    languages = ["Arabic".localized(): "ar", "Catalan".localized(): "ca", "Chinese (Simplified)".localized(): "zh-Hans", "Chinese (Traditional)".localized(): "zh-Hant", "Croatian".localized(): "hr", "Czech".localized(): "cs", "Danish".localized(): "da", "Dutch".localized(): "nl", "English".localized(): "en", "Finnish".localized(): "fi", "French".localized(): "fr", "German".localized(): "de", "Greek".localized(): "el", "Hebrew".localized(): "he", "Hindi".localized(): "hi", "Hungarian".localized(): "hu", "Indonesian".localized(): "id", "Italian".localized(): "it", "Japanese".localized(): "ja", "Korean".localized(): "ko", "Malay".localized(): "ms", "Norwegian".localized(): "nb", "Polish".localized(): "pl", "Portuguese".localized(): "pt", "Romanian".localized(): "ro", "Russian".localized(): "ru", "Slovak".localized(): "sk", "Spanish".localized(): "es", "Swedish".localized(): "sv", "Thai".localized(): "th", "Turkish".localized(): "tr", "Ukranian".localized(): "uk", "Vietnamese".localized(): "vi"]
 }

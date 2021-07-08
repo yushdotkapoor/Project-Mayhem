@@ -13,16 +13,26 @@ class Downloader: UIViewController {
     @IBOutlet weak var circleView: CircularProgressBarView!
     @IBOutlet weak var minutes: UILabel!
     var networkAlert = false
+    @IBOutlet weak var progress: UILabel!
+    @IBOutlet weak var centerStack: UIStackView!
     
     var notificationTimer:Timer?
+    var noPacketsTimer:Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        game.setValue(0.0, forKey: "chap1IntroDownloadProgress")
+        progress.text = "0.00%"
         
         circleView.createCircularPath(radius: 120)
         
         label.text = "Downloading Content".localized()
         minutes.text = "This may take a few minutes".localized()
+        
+        noPacketsTimer = Timer.scheduledTimer(withTimeInterval: 15, repeats: false) { timer in
+            self.checkNoIncomingPackets()
+        }
         
         notificationTimer = Timer.scheduledTimer(withTimeInterval: 1.1, repeats: true) { timer in
             self.checkNotification()
@@ -31,6 +41,7 @@ class Downloader: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         notificationTimer?.invalidate()
+        noPacketsTimer?.invalidate()
     }
     
     func checkForInternet() {
@@ -40,17 +51,27 @@ class Downloader: UIViewController {
         }
     }
     
+    @objc func checkNoIncomingPackets() {
+        let prog = game.double(forKey: "chap1IntroDownloadProgress")
+        if prog == 0.0 && CheckInternet.Connection() {
+            alert(title: "Error".localized(), message: "It seems that you have a poor internet connection. Try reseting your connection or change your connection to a faster one.".localized(), actionTitle: "Okay".localized())
+        }
+        
+    }
+    
     
     @objc func checkNotification() {
-        if !networkAlert && !game.bool(forKey: "downloaded") {
+        let prog = game.double(forKey: "chap1IntroDownloadProgress")
+        if !networkAlert && prog != 1.0 {
             checkForInternet()
         }
-        if label.alpha == 0 {
-            label.fadeIn()
+        if centerStack.alpha == 0 {
+            centerStack.fadeIn()
         } else {
-            label.fadeOut()
+            centerStack.fadeOut()
         }
-        if game.bool(forKey: "downloaded") {
+        
+        if prog == 1.0 {
             game.setValue(true, forKey: "introViewed")
             wait {
                 let v = validateVideos()
@@ -60,16 +81,14 @@ class Downloader: UIViewController {
         }
         
         
-        //var dist:Double = Double(mediaCount) / Double(vidArr.count)
-        var dist:Double = Double(mediaCount)
-        var dur = dist * 0.5
-        if dist == 0 {
-            dist = 1 / 15
-            //dur = Double(1 / vidArr.count) * 0.5
-            dur = 0.5
-        }
+        let dist:Double = prog
+        let dur = 0.5
+        
+        
+        progress.text = "\(String(format: "%.2f", (dist*100)))%"
         
         circleView.grow(distance: dist, duration: dur)
+        
     }
     
     

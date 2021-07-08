@@ -7,6 +7,7 @@
 
 import UIKit
 import ARKit
+import StoreKit
 
 class chapter13: UIViewController {
     @IBOutlet weak var nextChap: UIButton!
@@ -286,7 +287,13 @@ class chapter13: UIViewController {
     
     func complete() {
         sceneView.stop(self)
+        let pre = game.bool(forKey: "chap13")
         game.setValue(true, forKey: "chap13")
+        if !pre {
+            if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                SKStoreReviewController.requestReview(in: scene)
+            }
+        }
         game.setValue("none", forKey: "active")
         NotificationCenter.default.removeObserver(self)
         nextChap.isUserInteractionEnabled = true
