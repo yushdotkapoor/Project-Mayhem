@@ -284,9 +284,8 @@ class VideoPlayer : NSObject {
                     if let playView = playerView, let layer = playView.layer as? AVPlayerLayer {
                         layer.player = assetPlayer
                         
-                        
                         if let group = asset.mediaSelectionGroup(forMediaCharacteristic: AVMediaCharacteristic.legible) {
-                            
+                           
                            // let code = Locale.preferredLanguages.first
                             let code = game.string(forKey: "AppleLanguage")
                             let locale = Locale(identifier: code ?? "en-US")
@@ -299,6 +298,8 @@ class VideoPlayer : NSObject {
                                 print("option \(option)")
                                 playerItem?.select(option, in: group)
                             }
+                        } else {
+                            downloadVideos()
                         }
                         
                         

@@ -453,17 +453,17 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ge4-Hw-RIK">
                                                 <rect key="frame" x="0.0" y="994" width="348" height="70"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15G-9G-mUq">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="15G-9G-mUq">
                                                         <rect key="frame" x="0.0" y="0.0" width="348" height="31"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimize flashing:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="M4s-Ft-2fo">
-                                                                <rect key="frame" x="0.0" y="0.0" width="299" height="31"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimize flashing:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="M4s-Ft-2fo">
+                                                                <rect key="frame" x="0.0" y="0.0" width="292.66666666666669" height="31"/>
                                                                 <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K22-SS-wCe">
-                                                                <rect key="frame" x="299" y="0.0" width="51" height="31"/>
+                                                                <rect key="frame" x="292.66666666666669" y="0.0" width="57.333333333333314" height="31"/>
                                                                 <connections>
                                                                     <action selector="switchChanged:" destination="fkB-KW-fdR" eventType="valueChanged" id="CKn-zh-BUX"/>
                                                                 </connections>
@@ -481,17 +481,17 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="P9j-8Q-J9A">
                                                 <rect key="frame" x="0.0" y="1139" width="348" height="70"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bh2-3t-T5S">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Bh2-3t-T5S">
                                                         <rect key="frame" x="0.0" y="0.0" width="348" height="31"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reduce Motion:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KWC-rC-onu">
-                                                                <rect key="frame" x="0.0" y="0.0" width="299" height="31"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reduce Motion:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KWC-rC-onu">
+                                                                <rect key="frame" x="0.0" y="0.0" width="292.66666666666669" height="31"/>
                                                                 <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bRu-Z4-ck0">
-                                                                <rect key="frame" x="299" y="0.0" width="51" height="31"/>
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bRu-Z4-ck0">
+                                                                <rect key="frame" x="292.66666666666669" y="0.0" width="57.333333333333314" height="31"/>
                                                                 <connections>
                                                                     <action selector="reduceMotionSwitchChanged:" destination="fkB-KW-fdR" eventType="valueChanged" id="g9p-Ra-d9F"/>
                                                                 </connections>
@@ -512,7 +512,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Csh-RO-5XV">
                                                         <rect key="frame" x="0.0" y="0.0" width="348" height="29"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Gur-2i-7py">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Gur-2i-7py">
                                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="29"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="130" id="b6j-kz-EKU"/>
@@ -542,17 +542,17 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="K1A-mY-bFj">
                                                 <rect key="frame" x="0.0" y="1415" width="348" height="70"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGJ-f6-dVx">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="VGJ-f6-dVx">
                                                         <rect key="frame" x="0.0" y="0.0" width="348" height="31"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Cellular:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="ZMA-5R-iUU">
-                                                                <rect key="frame" x="0.0" y="0.0" width="299" height="31"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Cellular:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="ZMA-5R-iUU">
+                                                                <rect key="frame" x="0.0" y="0.0" width="292.66666666666669" height="31"/>
                                                                 <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0HI-Au-gh4">
-                                                                <rect key="frame" x="299" y="0.0" width="51" height="31"/>
+                                                                <rect key="frame" x="292.66666666666669" y="0.0" width="57.333333333333314" height="31"/>
                                                                 <connections>
                                                                     <action selector="cellularSwitchChanged:" destination="fkB-KW-fdR" eventType="valueChanged" id="K4T-7N-piV"/>
                                                                 </connections>
@@ -677,6 +677,7 @@
                         <outlet property="minFlashDescription" destination="QFI-DI-Cei" id="0bf-Sc-7zO"/>
                         <outlet property="motionSwitch" destination="bRu-Z4-ck0" id="RuN-nA-CyR"/>
                         <outlet property="mus" destination="4I6-sB-xev" id="PKi-zJ-omk"/>
+                        <outlet property="purchaseMerchStack" destination="Z5q-iU-wCM" id="Gda-ZD-Bqf"/>
                         <outlet property="purchaseRestore" destination="I1U-pc-kGe" id="MTI-Zu-lhh"/>
                         <outlet property="purchaseprice" destination="AUm-Sy-6Pl" id="1s1-EZ-AEd"/>
                         <outlet property="reduceMotion" destination="KWC-rC-onu" id="646-tk-fha"/>
@@ -4513,7 +4514,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wYg-5p-OMd">
                                         <rect key="frame" x="104.66666666666667" y="60" width="218.66666666666663" height="55"/>
                                         <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="55"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" name="MayhemBlue"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="jgJ-gE-921">
@@ -4525,7 +4526,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vision Consolidated thanks you for playing Project Mayhem" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLP-5x-0uc">
                                                         <rect key="frame" x="25.333333333333343" y="0.0" width="317.33333333333326" height="75"/>
                                                         <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="25"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" name="MayhemBlue"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YhZ-Lg-mPl">
@@ -4583,20 +4584,23 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfb-Tv-4b5">
-                                        <rect key="frame" x="128.66666666666666" y="640" width="170.99999999999997" height="32"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfb-Tv-4b5" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="640" width="368" height="32"/>
                                         <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
-                                        <state key="normal" title="Leave Feedback"/>
+                                        <state key="normal" title="Leave Feedback">
+                                            <color key="titleColor" name="MayhemBlue"/>
+                                        </state>
                                         <connections>
                                             <action selector="feedback:" destination="evH-Ez-9ta" eventType="touchUpInside" id="sRb-E5-QzZ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nf9-ya-NGz">
-                                        <rect key="frame" x="103" y="702" width="222" height="32"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nf9-ya-NGz" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="702" width="368" height="32"/>
                                         <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
-                                        <state key="normal" title="REview on App Store"/>
+                                        <state key="normal" title="REview on App Store">
+                                            <color key="titleColor" name="MayhemBlue"/>
+                                        </state>
                                         <connections>
-                                            <action selector="feedback:" destination="evH-Ez-9ta" eventType="touchUpInside" id="zmn-w3-Dgw"/>
                                             <action selector="review:" destination="evH-Ez-9ta" eventType="touchUpInside" id="CzM-pZ-dKO"/>
                                         </connections>
                                     </button>
@@ -4639,17 +4643,21 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="wYg-5p-OMd" firstAttribute="centerX" secondItem="wCU-hK-n8E" secondAttribute="centerX" id="0dV-QV-yQ8"/>
+                                    <constraint firstItem="Nf9-ya-NGz" firstAttribute="leading" secondItem="wCU-hK-n8E" secondAttribute="leading" constant="30" id="4Ji-ll-PFm"/>
                                     <constraint firstItem="pkW-qH-Ex9" firstAttribute="centerX" secondItem="wCU-hK-n8E" secondAttribute="centerX" id="4Xh-yq-amb"/>
                                     <constraint firstItem="jfb-Tv-4b5" firstAttribute="top" secondItem="pkW-qH-Ex9" secondAttribute="bottom" constant="50" id="71N-Wo-jAu"/>
                                     <constraint firstAttribute="bottom" secondItem="jHL-sV-Dcf" secondAttribute="bottom" constant="130" id="8xt-48-gbb"/>
                                     <constraint firstItem="jHL-sV-Dcf" firstAttribute="leading" secondItem="wCU-hK-n8E" secondAttribute="leading" constant="30" id="GxM-cH-lId"/>
+                                    <constraint firstAttribute="trailing" secondItem="Nf9-ya-NGz" secondAttribute="trailing" constant="30" id="MNj-0G-Yij"/>
                                     <constraint firstItem="pkW-qH-Ex9" firstAttribute="leading" secondItem="wCU-hK-n8E" secondAttribute="leading" constant="30" id="WLW-e7-TgK"/>
                                     <constraint firstItem="jHL-sV-Dcf" firstAttribute="top" secondItem="Nf9-ya-NGz" secondAttribute="bottom" constant="50" id="WiV-lr-k48"/>
+                                    <constraint firstItem="jfb-Tv-4b5" firstAttribute="leading" secondItem="wCU-hK-n8E" secondAttribute="leading" constant="30" id="Z0q-M1-V21"/>
                                     <constraint firstItem="Nf9-ya-NGz" firstAttribute="centerX" secondItem="wCU-hK-n8E" secondAttribute="centerX" id="ZP6-s0-BuK"/>
                                     <constraint firstItem="jgJ-gE-921" firstAttribute="top" secondItem="wYg-5p-OMd" secondAttribute="bottom" constant="30" id="cWc-6T-1mS"/>
                                     <constraint firstItem="Nf9-ya-NGz" firstAttribute="top" secondItem="jfb-Tv-4b5" secondAttribute="bottom" constant="30" id="hZe-VF-Xcg"/>
                                     <constraint firstItem="wYg-5p-OMd" firstAttribute="top" secondItem="wCU-hK-n8E" secondAttribute="top" constant="60" id="iBZ-5P-1Mc"/>
                                     <constraint firstItem="jfb-Tv-4b5" firstAttribute="centerX" secondItem="wCU-hK-n8E" secondAttribute="centerX" id="iKp-4a-zcu"/>
+                                    <constraint firstAttribute="trailing" secondItem="jfb-Tv-4b5" secondAttribute="trailing" constant="30" id="jfb-Th-KvJ"/>
                                     <constraint firstItem="jgJ-gE-921" firstAttribute="leading" secondItem="wCU-hK-n8E" secondAttribute="leading" constant="30" id="kdz-qI-Kw3"/>
                                     <constraint firstItem="pkW-qH-Ex9" firstAttribute="top" secondItem="jgJ-gE-921" secondAttribute="bottom" constant="100" id="kmr-ZH-Reo"/>
                                     <constraint firstAttribute="trailing" secondItem="jHL-sV-Dcf" secondAttribute="trailing" constant="30" id="te2-1a-AZ4"/>
@@ -4712,14 +4720,15 @@
                     </view>
                     <connections>
                         <outlet property="dev" destination="AUB-Ts-ds6" id="8yS-Hf-Bsc"/>
+                        <outlet property="fullMerchStack" destination="jHL-sV-Dcf" id="vuz-l6-mAg"/>
                         <outlet property="hint" destination="RQh-Ss-fxU" id="yCK-Mk-vPk"/>
-                        <outlet property="leave" destination="jfb-Tv-4b5" id="3vA-5K-L0t"/>
+                        <outlet property="leave" destination="jfb-Tv-4b5" id="zqo-yX-zyS"/>
                         <outlet property="merch" destination="GZY-7c-rMH" id="DbR-P3-XSN"/>
                         <outlet property="merchDescription" destination="JsU-gY-OFU" id="rM8-Xm-rnk"/>
                         <outlet property="music" destination="uKU-hh-zCb" id="hI1-Y8-se0"/>
                         <outlet property="nextChap" destination="8wA-lt-XeQ" id="NVz-3R-ENB"/>
                         <outlet property="quote" destination="pkW-qH-Ex9" id="nwm-xs-Gez"/>
-                        <outlet property="review" destination="Nf9-ya-NGz" id="sIG-4D-XC3"/>
+                        <outlet property="review" destination="Nf9-ya-NGz" id="z4h-LI-0mv"/>
                         <outlet property="thx" destination="hLP-5x-0uc" id="JHR-k2-yPL"/>
                         <outlet property="titl" destination="wYg-5p-OMd" id="Yzl-qx-8Rp"/>
                         <outlet property="toolbar" destination="SvG-vC-zAC" id="TZX-cy-xXq"/>
@@ -4747,7 +4756,7 @@
         <segue reference="C8e-VB-o7G"/>
         <segue reference="Fhg-H5-PTW"/>
         <segue reference="J9s-s4-0U4"/>
-        <segue reference="UJg-12-gS4"/>
+        <segue reference="RdG-kq-cY7"/>
         <segue reference="Jbk-WL-IF2"/>
         <segue reference="tG0-fy-sbd"/>
         <segue reference="TbV-l9-R97"/>

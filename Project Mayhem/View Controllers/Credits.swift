@@ -41,6 +41,7 @@ class Credits: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var cellularSwitch: UISwitch!
     @IBOutlet weak var celularTitle: UILabel!
     @IBOutlet weak var cellularDescription: UILabel!
+    @IBOutlet weak var purchaseMerchStack: UIStackView!
     
     var toolBar = UIToolbar()
     var picker  = UIPickerView()
@@ -49,6 +50,9 @@ class Credits: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //hides the Project Mayhem Merchandise Purchase thing
+        purchaseMerchStack.isHidden = true
         
         setLocalizations()
         
@@ -108,7 +112,7 @@ class Credits: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         languageTitle.text = "Language:".localized()
         languageDescription.text = "Set your language preference".localized()
         cellularDescription.text = "Use Cellular data to Download content for gameplay".localized()
-        celularTitle.text = "Use Cellular:".localized()
+        celularTitle.text = "Use Cellular Data:".localized()
         
         let p1 = "Version".localized()
         version.text = "\(p1) \(Bundle.main.infoDictionary?["CFBundleShortVersionString"] ?? "null")"

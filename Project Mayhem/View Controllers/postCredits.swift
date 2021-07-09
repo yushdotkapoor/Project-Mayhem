@@ -18,15 +18,23 @@ class postCredits: UIViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var thx: UILabel!
     @IBOutlet weak var music: UILabel!
     @IBOutlet weak var quote: UILabel!
-    @IBOutlet weak var leave: UIButton!
-    @IBOutlet weak var review: UIButton!
+    @IBOutlet weak var leave: CustomButtonOutline!
+    @IBOutlet weak var review: CustomButtonOutline!
     @IBOutlet weak var merch: UILabel!
     @IBOutlet weak var merchDescription: UILabel!
+    @IBOutlet weak var fullMerchStack: UIStackView!
     
     let customAlert = HintAlert()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //removes merch stack view
+        fullMerchStack.isHidden = true
+        
+        let col = UIColor(named: "MayhemBlue") ?? .systemBlue
+        leave.setupButton(color: col)
+        review.setupButton(color: col)
+        
         titl.text = "Credits".localized()
         dev.text = "Developer".localized()
         thx.text = "Vision Consolidated thanks you for playing Project Mayhem".localized()
