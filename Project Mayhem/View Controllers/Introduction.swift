@@ -86,13 +86,19 @@ class Introduction: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
         toolBar = UIToolbar.init(frame: CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 50))
         toolBar.barStyle = .black
         toolBar.sizeToFit()
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(self.onCancelButtonTapped))
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.onDoneButtonTapped))
-        toolBar.setItems([flexibleSpace, doneButton], animated: false)
+        toolBar.setItems([cancelButton, flexibleSpace, doneButton], animated: false)
         
         self.view.addSubview(toolBar)
     
     
+    }
+    
+    @objc func onCancelButtonTapped() {
+        self.toolBar.removeFromSuperview()
+        self.picker.removeFromSuperview()
     }
     
     @objc func onDoneButtonTapped() {

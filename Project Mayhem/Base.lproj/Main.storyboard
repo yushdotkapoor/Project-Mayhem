@@ -14,14 +14,20 @@
         <array key="Adonay.ttf">
             <string>Adonay</string>
         </array>
+        <array key="Capsule.ttf">
+            <string>Capsule</string>
+        </array>
         <array key="NoisyWalk.ttf">
             <string>NoisyWalk-Regular</string>
         </array>
         <array key="PigpenCipher.otf">
             <string>PigpenCipher</string>
         </array>
-        <array key="Tomorrow.ttf">
-            <string>Tomorrow-Regular</string>
+        <array key="Roustel.otf">
+            <string>Roustel-Regular</string>
+        </array>
+        <array key="Satella.ttf">
+            <string>Satella</string>
         </array>
         <array key="aAmbyarSobat.ttf">
             <string>aAmbyarSobat</string>
@@ -40,29 +46,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Nik-t1-YLB">
-                                <rect key="frame" x="114" y="423" width="200" height="80.333333333333314"/>
+                                <rect key="frame" x="114" y="415.66666666666669" width="200" height="95"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxg-bx-ckz">
-                                        <rect key="frame" x="90.666666666666657" y="0.0" width="19" height="26.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <rect key="frame" x="92.333333333333343" y="0.0" width="15.333333333333329" height="28.333333333333332"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downloading Content" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QB6-xz-HdJ">
-                                        <rect key="frame" x="0.0" y="36.333333333333314" width="200" height="44"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downloading Content" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QB6-xz-HdJ">
+                                        <rect key="frame" x="0.0" y="38.333333333333314" width="200" height="56.666666666666657"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="KQZ-zg-J1f"/>
-                                            <constraint firstAttribute="height" constant="44" id="og6-vm-yaW"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This may take a few minutes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mF1-Kr-MEQ">
-                                <rect key="frame" x="40" y="832.33333333333337" width="348" height="19.666666666666629"/>
-                                <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="14"/>
+                                <rect key="frame" x="40" y="829.33333333333337" width="348" height="22.666666666666629"/>
+                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -113,29 +118,29 @@
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I hope you enjoy this game as much as I did making it!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asA-G8-kij">
-                                        <rect key="frame" x="20" y="283" width="388" height="50.666666666666686"/>
-                                        <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="21"/>
+                                        <rect key="frame" x="20" y="270.66666666666669" width="388" height="46.666666666666686"/>
+                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="21"/>
                                         <color key="textColor" name="MayhemBlue"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Things to note:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3J-LF-pCd">
-                                        <rect key="frame" x="20" y="429.66666666666669" width="388" height="30"/>
-                                        <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="25"/>
+                                        <rect key="frame" x="20" y="412.33333333333331" width="388" height="28"/>
+                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jHS-XT-AMH">
-                                        <rect key="frame" x="25" y="363.66666666666669" width="378" height="36"/>
+                                        <rect key="frame" x="25" y="347.33333333333331" width="378" height="35"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Language:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Me9-ok-OWg">
-                                                <rect key="frame" x="0.0" y="0.0" width="178" height="36"/>
-                                                <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="182.33333333333334" height="35"/>
+                                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMN-e2-l9g">
-                                                <rect key="frame" x="188" y="0.0" width="190" height="36"/>
-                                                <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="20"/>
+                                                <rect key="frame" x="192.33333333333337" y="0.0" width="185.66666666666663" height="35"/>
+                                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="20"/>
                                                 <state key="normal" title="Placeholder"/>
                                                 <connections>
                                                     <action selector="changeTheLanguage:" destination="X6o-mc-4xf" eventType="touchUpInside" id="P8p-yo-dVi"/>
@@ -144,20 +149,20 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="notes" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aa7-Nx-wur">
-                                        <rect key="frame" x="20" y="479.66666666666669" width="388" height="21.666666666666686"/>
-                                        <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="18"/>
+                                        <rect key="frame" x="20" y="460.33333333333331" width="388" height="20"/>
+                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Greetings" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8Q-rY-YcY">
-                                        <rect key="frame" x="97.333333333333329" y="50" width="233.33333333333337" height="60"/>
-                                        <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="50"/>
+                                        <rect key="frame" x="90.333333333333329" y="50" width="247.33333333333337" height="55.666666666666657"/>
+                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="50"/>
                                         <color key="textColor" name="MayhemGray"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vision Consolidated welcomes you to Project Mayhem" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoZ-3Q-km2">
-                                        <rect key="frame" x="20" y="150" width="388" height="108"/>
-                                        <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="30"/>
+                                        <rect key="frame" x="20" y="145.66666666666666" width="388" height="100"/>
+                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="30"/>
                                         <color key="textColor" name="MayhemBlue"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -236,25 +241,25 @@
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="2aE-lW-wLG">
-                                        <rect key="frame" x="40" y="144" width="348" height="1872"/>
+                                        <rect key="frame" x="40" y="153.66666666666663" width="348" height="2023.3333333333335"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SPS-3R-K7E">
-                                                <rect key="frame" x="0.0" y="0.0" width="348" height="115"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="348" height="122.66666666666667"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Un-LG-qF5">
-                                                        <rect key="frame" x="0.0" y="0.0" width="348" height="20"/>
-                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="348" height="24.666666666666668"/>
+                                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="22"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yush Raj Kapoor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ta-5q-lJ8">
-                                                        <rect key="frame" x="0.0" y="35" width="348" height="15"/>
-                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="15"/>
+                                                        <rect key="frame" x="0.0" y="39.666666666666686" width="348" height="18"/>
+                                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ckj-lj-yka">
-                                                        <rect key="frame" x="0.0" y="65" width="348" height="50"/>
+                                                        <rect key="frame" x="0.0" y="72.666666666666686" width="348" height="50"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cux-sC-OfE">
                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -277,28 +282,28 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="DeW-vU-x2X">
-                                                <rect key="frame" x="0.0" y="190" width="348" height="147"/>
+                                                <rect key="frame" x="0.0" y="197.66666666666663" width="348" height="159"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4I6-sB-xev">
-                                                        <rect key="frame" x="0.0" y="0.0" width="348" height="20"/>
-                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="348" height="24.666666666666668"/>
+                                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="22"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Between 0 and 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOG-VW-Dgm">
-                                                        <rect key="frame" x="0.0" y="35" width="348" height="17"/>
-                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="17"/>
+                                                        <rect key="frame" x="0.0" y="39.666666666666686" width="348" height="21.333333333333329"/>
+                                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="19"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dhruv Goel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIl-qm-Kyo">
-                                                        <rect key="frame" x="0.0" y="67" width="348" height="15"/>
-                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="15"/>
+                                                        <rect key="frame" x="0.0" y="76" width="348" height="18"/>
+                                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="hAa-WV-fkq">
-                                                        <rect key="frame" x="0.0" y="97" width="348" height="50"/>
+                                                        <rect key="frame" x="0.0" y="109" width="348" height="50"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tg-RS-6vw">
                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -331,16 +336,16 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Z5q-iU-wCM">
-                                                <rect key="frame" x="0.0" y="412" width="348" height="85"/>
+                                                <rect key="frame" x="0.0" y="431.66666666666674" width="348" height="89.666666666666629"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy Project Mayhem Merch" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Iv-rj-1cv">
-                                                        <rect key="frame" x="0.0" y="0.0" width="348" height="20"/>
-                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="348" height="24.666666666666668"/>
+                                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="22"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Kfi-JD-MtD">
-                                                        <rect key="frame" x="0.0" y="35" width="348" height="50"/>
+                                                        <rect key="frame" x="0.0" y="39.666666666666629" width="348" height="50"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qa6-gI-VoD">
                                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -363,63 +368,63 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="3Wo-Vh-GPy">
-                                                <rect key="frame" x="0.0" y="572" width="348" height="168"/>
+                                                <rect key="frame" x="0.0" y="596.33333333333337" width="348" height="187.33333333333337"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="I7e-5u-kap">
-                                                        <rect key="frame" x="0.0" y="0.0" width="348" height="59"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="348" height="68.666666666666671"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ek5-cB-QtL">
-                                                                <rect key="frame" x="0.0" y="0.0" width="348" height="32"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="348" height="37"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNa-Iy-kxb">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="297.66666666666669" height="32"/>
-                                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="290.33333333333331" height="37"/>
+                                                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="22"/>
                                                                         <state key="normal" title="Better Hints"/>
                                                                         <connections>
                                                                             <action selector="betterHints:" destination="fkB-KW-fdR" eventType="touchUpInside" id="baw-q2-j2K"/>
                                                                         </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1.99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AUm-Sy-6Pl">
-                                                                        <rect key="frame" x="297.66666666666669" y="0.0" width="50.333333333333314" height="32"/>
-                                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                                        <rect key="frame" x="290.33333333333331" y="0.0" width="57.666666666666686" height="37"/>
+                                                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="22"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchase Hints for all levels" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MOF-1K-Suq">
-                                                                <rect key="frame" x="0.0" y="47" width="348" height="12"/>
-                                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
+                                                                <rect key="frame" x="0.0" y="52" width="348" height="16.666666666666671"/>
+                                                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="15"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="96T-az-4ij">
-                                                        <rect key="frame" x="0.0" y="109" width="348" height="59"/>
+                                                        <rect key="frame" x="0.0" y="118.66666666666663" width="348" height="68.666666666666686"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GbA-nr-AuR">
-                                                                <rect key="frame" x="0.0" y="0.0" width="348" height="32"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="348" height="37"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0yI-ra-ehQ">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="297.66666666666669" height="32"/>
-                                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="290.33333333333331" height="37"/>
+                                                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="22"/>
                                                                         <state key="normal" title="Five Hints"/>
                                                                         <connections>
                                                                             <action selector="fiveHints:" destination="fkB-KW-fdR" eventType="touchUpInside" id="0ML-P6-IXh"/>
                                                                         </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XGI-2G-MJW">
-                                                                        <rect key="frame" x="297.66666666666669" y="0.0" width="50.333333333333314" height="32"/>
-                                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                                        <rect key="frame" x="290.33333333333331" y="0.0" width="57.666666666666686" height="37"/>
+                                                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="22"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchase Extra hints for 5 levels" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2Bg-FR-pHl">
-                                                                <rect key="frame" x="0.0" y="47" width="348" height="12"/>
-                                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
+                                                                <rect key="frame" x="0.0" y="52" width="348" height="16.666666666666671"/>
+                                                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="15"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -428,37 +433,37 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="KXW-16-S0F">
-                                                <rect key="frame" x="0.0" y="815" width="348" height="104"/>
+                                                <rect key="frame" x="0.0" y="858.66666666666674" width="348" height="122.66666666666663"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="volume:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dT-PK-sRs">
-                                                        <rect key="frame" x="0.0" y="0.0" width="348" height="20"/>
-                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volume:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dT-PK-sRs">
+                                                        <rect key="frame" x="0.0" y="0.0" width="348" height="24.666666666666668"/>
+                                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="22"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="79i-1e-J6k">
-                                                        <rect key="frame" x="-2" y="29" width="352" height="31"/>
+                                                        <rect key="frame" x="-2" y="33.666666666666629" width="352" height="31"/>
                                                         <connections>
                                                             <action selector="sliderChanged:" destination="fkB-KW-fdR" eventType="valueChanged" id="Tys-3D-GXI"/>
                                                         </connections>
                                                     </slider>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOTE: this slider only controls the relative volume of the background music, and will not affect the videos" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4H-ff-fYz">
-                                                        <rect key="frame" x="0.0" y="68" width="348" height="36"/>
-                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
+                                                        <rect key="frame" x="0.0" y="72.666666666666629" width="348" height="50"/>
+                                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="15"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ge4-Hw-RIK">
-                                                <rect key="frame" x="0.0" y="994" width="348" height="70"/>
+                                                <rect key="frame" x="0.0" y="1056.3333333333333" width="348" height="96"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="15G-9G-mUq">
                                                         <rect key="frame" x="0.0" y="0.0" width="348" height="31"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimize flashing:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="M4s-Ft-2fo">
                                                                 <rect key="frame" x="0.0" y="0.0" width="292.66666666666669" height="31"/>
-                                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="22"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -471,22 +476,22 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This option is prefered for photosensitive users and will minimize sudden flashing colors or lights" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QFI-DI-Cei">
-                                                        <rect key="frame" x="0.0" y="46" width="348" height="24"/>
-                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
+                                                        <rect key="frame" x="0.0" y="46" width="348" height="50"/>
+                                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="15"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="P9j-8Q-J9A">
-                                                <rect key="frame" x="0.0" y="1139" width="348" height="70"/>
+                                                <rect key="frame" x="0.0" y="1227.3333333333333" width="348" height="79.333333333333258"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Bh2-3t-T5S">
                                                         <rect key="frame" x="0.0" y="0.0" width="348" height="31"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reduce Motion:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KWC-rC-onu">
                                                                 <rect key="frame" x="0.0" y="0.0" width="292.66666666666669" height="31"/>
-                                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="22"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -499,31 +504,31 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This option will reduce any gyroscopic motion animations" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CAr-Wz-RC1">
-                                                        <rect key="frame" x="0.0" y="46" width="348" height="24"/>
-                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
+                                                        <rect key="frame" x="0.0" y="46" width="348" height="33.333333333333343"/>
+                                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="15"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="o9J-aA-CR6">
-                                                <rect key="frame" x="0.0" y="1284" width="348" height="56"/>
+                                                <rect key="frame" x="0.0" y="1381.6666666666665" width="348" height="62.666666666666742"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Csh-RO-5XV">
-                                                        <rect key="frame" x="0.0" y="0.0" width="348" height="29"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="348" height="31"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Gur-2i-7py">
-                                                                <rect key="frame" x="0.0" y="0.0" width="130" height="29"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="130" height="31"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="130" id="b6j-kz-EKU"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="22"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qU7-NW-nMF">
-                                                                <rect key="frame" x="130" y="0.0" width="218" height="29"/>
-                                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="17"/>
+                                                                <rect key="frame" x="130" y="0.0" width="218" height="31"/>
+                                                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="17"/>
                                                                 <state key="normal" title="lan"/>
                                                                 <connections>
                                                                     <action selector="language:" destination="fkB-KW-fdR" eventType="touchUpInside" id="ydt-u4-6Iz"/>
@@ -532,22 +537,22 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set your language preference" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mfG-s2-dML">
-                                                        <rect key="frame" x="0.0" y="44" width="348" height="12"/>
-                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
+                                                        <rect key="frame" x="0.0" y="46" width="348" height="16.666666666666671"/>
+                                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="15"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="K1A-mY-bFj">
-                                                <rect key="frame" x="0.0" y="1415" width="348" height="70"/>
+                                                <rect key="frame" x="0.0" y="1519.3333333333333" width="348" height="79.333333333333258"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="VGJ-f6-dVx">
                                                         <rect key="frame" x="0.0" y="0.0" width="348" height="31"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Cellular:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="ZMA-5R-iUU">
                                                                 <rect key="frame" x="0.0" y="0.0" width="292.66666666666669" height="31"/>
-                                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="22"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -560,41 +565,41 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Cellular data to Download content for gameplay" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hGh-1u-sVD">
-                                                        <rect key="frame" x="0.0" y="46" width="348" height="24"/>
-                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
+                                                        <rect key="frame" x="0.0" y="46" width="348" height="33.333333333333343"/>
+                                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="15"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For best experience, make sure haptics(Settings) Are on and that minimize flashing(above) is turned off." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="elD-NK-I5e">
-                                                <rect key="frame" x="0.0" y="1560" width="348" height="24"/>
-                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
+                                                <rect key="frame" x="0.0" y="1673.6666666666665" width="348" height="50"/>
+                                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Xwn-Qs-dJJ">
-                                                <rect key="frame" x="0.0" y="1659" width="348" height="126"/>
+                                                <rect key="frame" x="0.0" y="1798.6666666666665" width="348" height="135"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1U-pc-kGe" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="348" height="32"/>
-                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="348" height="35"/>
+                                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="20"/>
                                                         <state key="normal" title="Restore Purchases"/>
                                                         <connections>
                                                             <action selector="restorePurchases:" destination="fkB-KW-fdR" eventType="touchUpInside" id="1CZ-Zl-SBa"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdP-6N-tL3" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="47" width="348" height="32"/>
-                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                        <rect key="frame" x="0.0" y="50" width="348" height="35"/>
+                                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="20"/>
                                                         <state key="normal" title="Welcome Statement"/>
                                                         <connections>
                                                             <action selector="statement:" destination="fkB-KW-fdR" eventType="touchUpInside" id="Tp0-ix-UOE"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPc-AB-s24" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="94" width="348" height="32"/>
-                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                        <rect key="frame" x="0.0" y="100.00000000000023" width="348" height="35"/>
+                                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="20"/>
                                                         <state key="normal" title="Leave Feedback"/>
                                                         <connections>
                                                             <action selector="feedback:" destination="fkB-KW-fdR" eventType="touchUpInside" id="tbb-IK-X2F"/>
@@ -603,16 +608,16 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cPc-g0-tUH">
-                                                <rect key="frame" x="0.0" y="1860" width="348" height="12"/>
-                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="12"/>
+                                                <rect key="frame" x="0.0" y="2008.6666666666667" width="348" height="14.666666666666742"/>
+                                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="13"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILS-fD-ilw">
-                                        <rect key="frame" x="20" y="74" width="388" height="35"/>
-                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="35"/>
+                                        <rect key="frame" x="20" y="74" width="388" height="44.666666666666657"/>
+                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="40"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -704,8 +709,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROJECT MAYHEM" textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYU-mN-gQ4">
-                                <rect key="frame" x="20" y="284" width="388" height="36.666666666666686"/>
-                                <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="26"/>
+                                <rect key="frame" x="20" y="284" width="388" height="39.666666666666686"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -717,19 +722,19 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mq-Sy-8qd" customClass="CustomButton" customModule="Project_Mayhem" customModuleProvider="target">
-                                <rect key="frame" x="64" y="410.66666666666669" width="300" height="36"/>
+                                <rect key="frame" x="64" y="413.66666666666669" width="300" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="NJs-UH-1M7"/>
                                     <constraint firstAttribute="height" constant="36" id="nA8-MZ-m01"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="20"/>
-                                <state key="normal" title="Enter"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="25"/>
+                                <state key="normal" title="ENTER"/>
                                 <connections>
                                     <action selector="enter:" destination="LOs-5Y-8Py" eventType="touchUpInside" id="Ofx-Vg-fwV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4h-Tl-E2E" customClass="CustomButton" customModule="Project_Mayhem" customModuleProvider="target">
-                                <rect key="frame" x="196.66666666666666" y="536.66666666666663" width="35" height="35"/>
+                                <rect key="frame" x="196.66666666666666" y="539.66666666666663" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="S4h-Tl-E2E" secondAttribute="height" multiplier="1:1" id="3EW-tn-9F6"/>
                                     <constraint firstAttribute="width" constant="35" id="GTs-ZG-W35"/>
@@ -813,7 +818,7 @@
                                             <constraint firstAttribute="width" constant="300" id="cNa-br-cIK"/>
                                             <constraint firstAttribute="height" constant="40" id="mwY-8g-ApI"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Capsule" family="Capsule" pointSize="22"/>
                                         <state key="normal" title="CHAPTER 1"/>
                                         <connections>
                                             <segue destination="hvg-20-91m" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="JQx-RZ-YQ2"/>
@@ -825,7 +830,7 @@
                                             <constraint firstAttribute="width" constant="300" id="3x6-P5-jW6"/>
                                             <constraint firstAttribute="height" constant="40" id="5r9-mC-RJ8"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Capsule" family="Capsule" pointSize="22"/>
                                         <state key="normal" title="CHAPTER 2"/>
                                         <connections>
                                             <segue destination="sHN-yQ-Lsv" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="4Jn-Pi-K9C"/>
@@ -837,7 +842,7 @@
                                             <constraint firstAttribute="width" constant="300" id="SoT-fB-1jh"/>
                                             <constraint firstAttribute="height" constant="40" id="dYd-od-2uV"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Capsule" family="Capsule" pointSize="22"/>
                                         <state key="normal" title="CHAPTER 3"/>
                                         <connections>
                                             <segue destination="OpN-T9-thB" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="rPy-e3-cah"/>
@@ -849,7 +854,7 @@
                                             <constraint firstAttribute="width" constant="300" id="C1Z-Q8-Pd8"/>
                                             <constraint firstAttribute="height" constant="40" id="pD7-K6-dee"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Capsule" family="Capsule" pointSize="22"/>
                                         <state key="normal" title="CHAPTER 4"/>
                                         <connections>
                                             <segue destination="3iP-v0-bga" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="AYo-vC-fRx"/>
@@ -861,7 +866,7 @@
                                             <constraint firstAttribute="height" constant="40" id="R5i-LB-9L4"/>
                                             <constraint firstAttribute="width" constant="300" id="fyl-Fn-pdn"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Capsule" family="Capsule" pointSize="22"/>
                                         <state key="normal" title="CHAPTER 5"/>
                                         <connections>
                                             <action selector="chapter5PurchaseBlock:" destination="GTF-CI-eye" eventType="touchUpInside" id="r2P-L7-YRV"/>
@@ -873,7 +878,7 @@
                                             <constraint firstAttribute="width" constant="300" id="bg7-dM-hYy"/>
                                             <constraint firstAttribute="height" constant="40" id="zGu-Wy-QH9"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Capsule" family="Capsule" pointSize="22"/>
                                         <state key="normal" title="CHAPTER 6"/>
                                         <connections>
                                             <segue destination="3GX-UM-rT4" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="WVd-jK-rxp"/>
@@ -885,7 +890,7 @@
                                             <constraint firstAttribute="height" constant="40" id="Cpr-YQ-mb8"/>
                                             <constraint firstAttribute="width" constant="300" id="MuE-KH-MR5"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Capsule" family="Capsule" pointSize="22"/>
                                         <state key="normal" title="CHAPTER 7"/>
                                         <connections>
                                             <segue destination="eN9-01-vdi" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="dbV-cl-syM"/>
@@ -897,7 +902,7 @@
                                             <constraint firstAttribute="height" constant="40" id="0Qm-gZ-hu9"/>
                                             <constraint firstAttribute="width" constant="300" id="4Tj-RN-V2o"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Capsule" family="Capsule" pointSize="22"/>
                                         <state key="normal" title="CHAPTER 8"/>
                                         <connections>
                                             <segue destination="gwX-k8-aYX" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="9rP-sF-Yht"/>
@@ -909,7 +914,7 @@
                                             <constraint firstAttribute="height" constant="40" id="gWo-FQ-1FT"/>
                                             <constraint firstAttribute="width" constant="300" id="nkM-zW-OlD"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Capsule" family="Capsule" pointSize="22"/>
                                         <state key="normal" title="CHAPTER 9"/>
                                         <connections>
                                             <segue destination="jAy-7q-lBT" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="o2i-uy-ToW"/>
@@ -921,7 +926,7 @@
                                             <constraint firstAttribute="height" constant="40" id="Iif-mg-o8M"/>
                                             <constraint firstAttribute="width" constant="300" id="Ix3-gR-Y1z"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Capsule" family="Capsule" pointSize="22"/>
                                         <state key="normal" title="CHAPTER 10"/>
                                         <connections>
                                             <segue destination="4fV-be-1GN" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="3Az-ps-1h0"/>
@@ -933,7 +938,7 @@
                                             <constraint firstAttribute="height" constant="40" id="pID-i6-c7j"/>
                                             <constraint firstAttribute="width" constant="300" id="zaD-8J-EIO"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Capsule" family="Capsule" pointSize="22"/>
                                         <state key="normal" title="CHAPTER 11"/>
                                         <connections>
                                             <segue destination="aVE-cq-VyM" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="8eE-Im-0TI"/>
@@ -945,7 +950,7 @@
                                             <constraint firstAttribute="height" constant="40" id="1NJ-kM-vKc"/>
                                             <constraint firstAttribute="width" constant="300" id="rXf-Vs-GF1"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Capsule" family="Capsule" pointSize="22"/>
                                         <state key="normal" title="CHAPTER 12"/>
                                         <connections>
                                             <segue destination="FJe-aw-Y0g" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="8va-rm-XAP"/>
@@ -957,7 +962,7 @@
                                             <constraint firstAttribute="width" constant="300" id="3GL-VI-MxH"/>
                                             <constraint firstAttribute="height" constant="40" id="7Bh-Qa-riC"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Capsule" family="Capsule" pointSize="22"/>
                                         <state key="normal" title="CHAPTER 14"/>
                                         <connections>
                                             <segue destination="kGn-9U-lje" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="j8f-cg-Hji"/>
@@ -969,7 +974,7 @@
                                             <constraint firstAttribute="height" constant="40" id="1ZJ-3f-n9d"/>
                                             <constraint firstAttribute="width" constant="300" id="I9X-se-cbL"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Capsule" family="Capsule" pointSize="22"/>
                                         <state key="normal" title="CHAPTER 15"/>
                                         <connections>
                                             <segue destination="smS-gE-5H0" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="dHH-0f-i87"/>
@@ -981,7 +986,7 @@
                                             <constraint firstAttribute="width" constant="300" id="0o1-nN-e8L"/>
                                             <constraint firstAttribute="height" constant="40" id="QMg-gr-et6"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Capsule" family="Capsule" pointSize="22"/>
                                         <state key="normal" title="CHAPTER 13"/>
                                         <connections>
                                             <segue destination="v3Q-ax-3fC" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="9I8-69-dGt"/>
@@ -1334,11 +1339,11 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double tap to skip" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKR-ca-6ep">
-                                <rect key="frame" x="198" y="84" width="200" height="17"/>
+                                <rect key="frame" x="198" y="84" width="200" height="19.333333333333329"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="VVC-AP-dQ6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
                                 <color key="textColor" systemColor="systemGreenColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1424,30 +1429,30 @@
                                 <rect key="frame" x="0.0" y="44" width="428" height="882"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pCG-cn-hf5">
-                                        <rect key="frame" x="81" y="308" width="266.33333333333331" height="60"/>
+                                        <rect key="frame" x="66.333333333333343" y="306" width="295.66666666666663" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEAVE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJe-k4-zOl">
-                                                <rect key="frame" x="0.0" y="0.0" width="266.33333333333331" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="295.66666666666669" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="SVM-Wh-3DI"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="25"/>
+                                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="25"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't come back until I tell you to" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rk6-6p-Y5z">
-                                                <rect key="frame" x="0.0" y="30" width="266.33333333333331" height="30"/>
+                                                <rect key="frame" x="0.0" y="30" width="295.66666666666669" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="eaW-BC-Iwl"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="17"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kOW-UA-pq2">
-                                        <rect key="frame" x="64" y="428" width="300" height="90"/>
+                                        <rect key="frame" x="64" y="426" width="300" height="90"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="good" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kv9-c2-Nts">
                                                 <rect key="frame" x="80" y="0.0" width="140" height="30"/>
@@ -1455,7 +1460,7 @@
                                                     <constraint firstAttribute="height" constant="30" id="SR0-Xt-cGX"/>
                                                     <constraint firstAttribute="width" constant="140" id="SSF-CB-SpC"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="25"/>
+                                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="25"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1465,43 +1470,43 @@
                                                     <constraint firstAttribute="width" constant="300" id="NcE-9p-wl0"/>
                                                     <constraint firstAttribute="height" constant="60" id="rhg-aK-ENC"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="25"/>
+                                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="25"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkP-PB-AW0">
-                                        <rect key="frame" x="20" y="184" width="388" height="60"/>
+                                        <rect key="frame" x="20" y="182" width="388" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Umx-Lk-Z2G"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="25"/>
+                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="25"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="eWy-Ls-Vdf">
-                                        <rect key="frame" x="20" y="50" width="388" height="94"/>
+                                        <rect key="frame" x="20" y="50" width="388" height="92"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="now enter your name below" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgr-lI-HgB">
-                                                <rect key="frame" x="0.0" y="0.0" width="388" height="30"/>
-                                                <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="25"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="388" height="28"/>
+                                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="25"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RMq-p3-Kb7">
-                                                <rect key="frame" x="0.0" y="60" width="388" height="34"/>
+                                                <rect key="frame" x="0.0" y="58" width="388" height="34"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6Pq-Na-mhJ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="325" height="34"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="328" height="34"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3m-h7-wzm">
-                                                        <rect key="frame" x="335" y="0.0" width="53" height="34"/>
-                                                        <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="15"/>
+                                                        <rect key="frame" x="338" y="0.0" width="50" height="34"/>
+                                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="15"/>
                                                         <state key="normal" title="Submit"/>
                                                         <connections>
                                                             <action selector="submitName:" destination="F4e-Zn-CZO" eventType="touchUpInside" id="c33-gK-qTg"/>
@@ -1519,17 +1524,17 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrG-hy-n6p">
-                                        <rect key="frame" x="412" y="0.0" width="6" height="30"/>
+                                        <rect key="frame" x="411.66666666666669" y="0.0" width="6.3333333333333144" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="2VX-C8-zwA"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="10"/>
+                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="10"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LH-as-vwV">
-                                        <rect key="frame" x="130.66666666666666" y="554" width="166.99999999999997" height="33"/>
-                                        <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="17"/>
+                                        <rect key="frame" x="119" y="552" width="190" height="31"/>
+                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="17"/>
                                         <state key="normal" title="Click here if you dare"/>
                                         <connections>
                                             <action selector="rickyLink:" destination="F4e-Zn-CZO" eventType="touchUpInside" id="sHJ-Q9-g43"/>
@@ -1603,8 +1608,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Before I begin briefing you, make sure you can hear me" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Fay-Kj-Tmb">
-                                <rect key="frame" x="30" y="144" width="368" height="60"/>
-                                <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="25"/>
+                                <rect key="frame" x="30" y="144" width="368" height="55.666666666666657"/>
+                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="25"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1664,7 +1669,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="SDb-oX-9zg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="10"/>
+                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1775,30 +1780,30 @@
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="YRL-IC-i13">
-                                        <rect key="frame" x="20" y="50" width="388" height="687.66666666666663"/>
+                                        <rect key="frame" x="20" y="50" width="388" height="764"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message From the CEO" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBD-ia-bKh">
-                                                <rect key="frame" x="0.0" y="0.0" width="388" height="34.666666666666664"/>
-                                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="388" height="34"/>
+                                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="30"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="150" translatesAutoresizingMaskIntoConstraints="NO" id="Iey-n5-Pzv">
-                                                <rect key="frame" x="0.0" y="74.666666666666686" width="388" height="613"/>
+                                                <rect key="frame" x="0.0" y="74" width="388" height="690"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVi-ZT-csJ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="388" height="433"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="388" height="510"/>
                                                         <string key="text">Dear employees, I am pleased to announce that one week from today, we will revolutionize human nature with INTELLECT. Our scientists have been working for decades developing ‘Brane’, our custom programming language and integrating it with a human mind. Vision Consolidated will become the pioneer in Brain-Computer Interfaces (BCIs) and have an incredible impact on the future! -Yush “King” Kapoor"</string>
-                                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="25"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="e" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xX1-h3-ig0">
-                                                        <rect key="frame" x="0.0" y="583" width="388" height="30"/>
+                                                        <rect key="frame" x="0.0" y="660" width="388" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="fnK-ns-Lhx"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="10"/>
+                                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="10"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -1872,11 +1877,11 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="f" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtO-ET-TvM">
-                                <rect key="frame" x="262.33333333333331" y="548" width="3.3333333333333144" height="30"/>
+                                <rect key="frame" x="261.66666666666669" y="548" width="5" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="0dD-Qb-BbP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="10"/>
+                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="10"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1995,11 +2000,11 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="i" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdf-fC-1aw">
-                                <rect key="frame" x="50" y="448" width="2.6666666666666643" height="30"/>
+                                <rect key="frame" x="50" y="448" width="2.3333333333333357" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Z64-zg-VT9"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="10"/>
+                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="10"/>
                                 <color key="textColor" systemColor="systemOrangeColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -2047,7 +2052,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="VTG-K4-2nW">
-                                <rect key="frame" x="20" y="225" width="388" height="36"/>
+                                <rect key="frame" x="20" y="255.33333333333337" width="388" height="36"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="X5L-HA-LGC">
                                         <rect key="frame" x="0.0" y="0.0" width="344" height="36"/>
@@ -2078,8 +2083,8 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From the darkness, comes the light" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XC-sK-4mn">
-                                <rect key="frame" x="20" y="94" width="388" height="101"/>
-                                <fontDescription key="fontDescription" name="aAmbyarSobat" family="a Ambyar Sobat" pointSize="50"/>
+                                <rect key="frame" x="20" y="94.000000000000014" width="388" height="131.33333333333337"/>
+                                <fontDescription key="fontDescription" name="Roustel-Regular" family="Roustel" pointSize="44"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -2307,11 +2312,11 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vgx-kO-38g">
-                                <rect key="frame" x="29.000000000000004" y="609" width="6.6666666666666679" height="30"/>
+                                <rect key="frame" x="28.999999999999996" y="609" width="6.3333333333333321" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="q9M-mH-vdr"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="10"/>
+                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="10"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -2410,11 +2415,11 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="r" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kp-kP-ckU">
-                                <rect key="frame" x="29.999999999999996" y="832" width="4.3333333333333321" height="30"/>
+                                <rect key="frame" x="30" y="832" width="5" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="aLf-46-tI7"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="10"/>
+                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -2534,11 +2539,11 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGu-13-vcd">
-                                <rect key="frame" x="366" y="830" width="7" height="30"/>
+                                <rect key="frame" x="366.66666666666669" y="830" width="6.3333333333333144" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="8bE-bU-a5i"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="10"/>
+                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -2676,11 +2681,11 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="L" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nbk-Rr-f6W">
-                                <rect key="frame" x="55" y="652" width="5.6666666666666643" height="30"/>
+                                <rect key="frame" x="55" y="652" width="6.3333333333333357" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="bwo-jZ-TUz"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="10"/>
+                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -2919,9 +2924,9 @@
                                     <constraint firstItem="E90-IL-bsR" firstAttribute="centerX" secondItem="0tW-Nq-ruj" secondAttribute="centerX" id="wFU-B6-WrN"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Navigate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aEP-35-QTA">
-                                <rect key="frame" x="10" y="94" width="408" height="63"/>
-                                <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="45"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAVIGATE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aEP-35-QTA">
+                                <rect key="frame" x="10" y="94" width="408" height="90.666666666666686"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="80"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -2993,11 +2998,11 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="t" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVg-Hu-POe">
-                                <rect key="frame" x="414.33333333333331" y="742" width="3.6666666666666856" height="30"/>
+                                <rect key="frame" x="412.33333333333331" y="742" width="5.6666666666666856" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="H1u-iT-6te"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="10"/>
+                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -3222,16 +3227,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="t" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPb-ox-zsl">
-                                        <rect key="frame" x="5" y="746" width="3.6666666666666661" height="30"/>
+                                        <rect key="frame" x="5" y="746" width="5.6666666666666679" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="pec-p8-YaV"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="10"/>
+                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="10"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="j1e-mL-kug">
-                                        <rect key="frame" x="20" y="60" width="388" height="211"/>
+                                        <rect key="frame" x="20" y="60" width="388" height="219"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cancer" translatesAutoresizingMaskIntoConstraints="NO" id="l9o-uC-FLL">
                                                 <rect key="frame" x="119" y="0.0" width="150" height="149"/>
@@ -3241,14 +3246,14 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="twenty-nine," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUO-Rk-XCI">
-                                                <rect key="frame" x="116.66666666666667" y="149" width="154.66666666666663" height="31"/>
-                                                <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="30"/>
+                                                <rect key="frame" x="70.333333333333329" y="149" width="247.33333333333337" height="35"/>
+                                                <fontDescription key="fontDescription" name="Capsule" family="Capsule" pointSize="30"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2002" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bc1-8p-x2t">
-                                                <rect key="frame" x="151.33333333333334" y="180" width="85.333333333333343" height="31"/>
-                                                <fontDescription key="fontDescription" name="Adonay" family="Adonay" pointSize="30"/>
+                                                <rect key="frame" x="134.33333333333334" y="184" width="119.33333333333334" height="35"/>
+                                                <fontDescription key="fontDescription" name="Capsule" family="Capsule" pointSize="30"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -3322,7 +3327,7 @@
                             </arscnView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="Lew-oY-Xh1">
                                 <rect key="frame" x="15" y="94" width="398" height="0.0"/>
-                                <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="45"/>
+                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="55"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -3533,11 +3538,11 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="u" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lB7-ha-Ebo">
-                                        <rect key="frame" x="176.66666666666666" y="626" width="6.3333333333333428" height="30"/>
+                                        <rect key="frame" x="176.66666666666666" y="626" width="5.6666666666666572" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="ZeT-F4-OBl"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="10"/>
+                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="9"/>
                                         <color key="textColor" systemColor="systemTealColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -3746,8 +3751,8 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LABEL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJ3-EY-Hpp">
-                                        <rect key="frame" x="185" y="80" width="58" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <rect key="frame" x="183.33333333333334" y="80" width="61.333333333333343" height="22.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="20"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -3759,11 +3764,11 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="y" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gQ-S1-fF1">
-                                        <rect key="frame" x="412.33333333333331" y="70" width="5.6666666666666856" height="30"/>
+                                        <rect key="frame" x="413" y="70" width="5" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="P69-tv-tVf"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="10"/>
+                                        <fontDescription key="fontDescription" name="Roustel-Regular" family="Roustel" pointSize="10"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -3851,17 +3856,17 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGa-CU-314">
-                                <rect key="frame" x="359.66666666666669" y="264" width="14" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <rect key="frame" x="355.33333333333331" y="264" width="18.333333333333314" height="33.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="e" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbN-Px-bzW">
-                                <rect key="frame" x="10" y="294" width="6" height="30"/>
+                                <rect key="frame" x="10" y="294" width="6.3333333333333321" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="9l1-vi-LdX"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Tomorrow-Regular" family="Tomorrow" pointSize="10"/>
+                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.4160996079" blue="0.63727360960000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -4278,11 +4283,11 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double tap to skip" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REP-Xj-Vv3">
-                                <rect key="frame" x="198" y="84" width="200" height="17"/>
+                                <rect key="frame" x="198" y="84" width="200" height="19.333333333333329"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="GNU-OZ-5nQ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
                                 <color key="textColor" systemColor="systemGreenColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -4358,11 +4363,11 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double tap to skip" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRc-zj-426">
-                                <rect key="frame" x="198" y="84" width="200" height="17"/>
+                                <rect key="frame" x="198" y="84" width="200" height="19.333333333333329"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="jeH-W6-QCb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="17"/>
                                 <color key="textColor" systemColor="systemGreenColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -4404,14 +4409,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROJECT VENOM" textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07b-eM-e9g">
-                                        <rect key="frame" x="20" y="284" width="388" height="36.666666666666686"/>
-                                        <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="26"/>
+                                        <rect key="frame" x="20" y="284" width="388" height="39.666666666666686"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="35"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming soon" textAlignment="center" lineBreakMode="middleTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lad-fN-uUj">
-                                        <rect key="frame" x="20" y="470.66666666666669" width="388" height="28"/>
-                                        <fontDescription key="fontDescription" name="Astro" family="Astro" pointSize="20"/>
+                                        <rect key="frame" x="20" y="473.66666666666669" width="388" height="28.333333333333314"/>
+                                        <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -4512,38 +4517,38 @@
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wYg-5p-OMd">
-                                        <rect key="frame" x="104.66666666666667" y="60" width="218.66666666666663" height="55"/>
-                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="55"/>
+                                        <rect key="frame" x="111.66666666666669" y="60" width="205" height="61.333333333333343"/>
+                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="55"/>
                                         <color key="textColor" name="MayhemBlue"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="jgJ-gE-921">
-                                        <rect key="frame" x="30" y="145" width="368" height="305"/>
+                                        <rect key="frame" x="30" y="151.33333333333337" width="368" height="326"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="PIO-SP-oQC">
-                                                <rect key="frame" x="0.0" y="0.0" width="368" height="305"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="368" height="326"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vision Consolidated thanks you for playing Project Mayhem" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLP-5x-0uc">
-                                                        <rect key="frame" x="25.333333333333343" y="0.0" width="317.33333333333326" height="75"/>
-                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="25"/>
+                                                        <rect key="frame" x="7" y="0.0" width="354.33333333333331" height="83.333333333333329"/>
+                                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="25"/>
                                                         <color key="textColor" name="MayhemBlue"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YhZ-Lg-mPl">
-                                                        <rect key="frame" x="82.666666666666671" y="125" width="202.66666666666663" height="65"/>
+                                                        <rect key="frame" x="96.666666666666686" y="133.33333333333334" width="175" height="71.333333333333343"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AUB-Ts-ds6">
-                                                                <rect key="frame" x="0.0" y="0.0" width="202.66666666666666" height="35"/>
-                                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="35"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="175" height="39"/>
+                                                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="35"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ghi-jq-LxD">
-                                                                <rect key="frame" x="0.0" y="45" width="202.66666666666666" height="20"/>
+                                                                <rect key="frame" x="0.0" y="49" width="175" height="22.333333333333329"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yush Raj Kapoor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5I8-24-zwh">
-                                                                        <rect key="frame" x="11.666666666666657" y="0.0" width="179.33333333333334" height="20"/>
-                                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                                        <rect key="frame" x="5.6666666666666714" y="0.0" width="163.33333333333331" height="22.333333333333332"/>
+                                                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="20"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -4555,17 +4560,17 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hPd-p0-KGE">
-                                                        <rect key="frame" x="104.66666666666667" y="240" width="158.66666666666663" height="65"/>
+                                                        <rect key="frame" x="105.33333333333336" y="254.66666666666666" width="157.66666666666663" height="71.333333333333343"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music By" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uKU-hh-zCb">
-                                                                <rect key="frame" x="0.0" y="0.0" width="158.66666666666666" height="35"/>
-                                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="35"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="157.66666666666666" height="39"/>
+                                                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="35"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dhruv Goel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sPf-Ht-yvi">
-                                                                <rect key="frame" x="0.0" y="45" width="158.66666666666666" height="20"/>
-                                                                <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                                <rect key="frame" x="0.0" y="49" width="157.66666666666666" height="22.333333333333329"/>
+                                                                <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="20"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -4579,14 +4584,14 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Those who thrive in Mayhem, are the silent rulers of all&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkW-qH-Ex9">
-                                        <rect key="frame" x="30" y="550" width="368" height="40"/>
-                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                        <rect key="frame" x="30" y="577.33333333333337" width="368" height="44.666666666666629"/>
+                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfb-Tv-4b5" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="640" width="368" height="32"/>
-                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                        <rect key="frame" x="30" y="672" width="368" height="35"/>
+                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="20"/>
                                         <state key="normal" title="Leave Feedback">
                                             <color key="titleColor" name="MayhemBlue"/>
                                         </state>
@@ -4595,9 +4600,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nf9-ya-NGz" customClass="CustomButtonOutline" customModule="Project_Mayhem" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="702" width="368" height="32"/>
-                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
-                                        <state key="normal" title="REview on App Store">
+                                        <rect key="frame" x="30" y="737" width="368" height="35"/>
+                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="20"/>
+                                        <state key="normal" title="Review on App Store">
                                             <color key="titleColor" name="MayhemBlue"/>
                                         </state>
                                         <connections>
@@ -4605,27 +4610,27 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="jHL-sV-Dcf">
-                                        <rect key="frame" x="30" y="784" width="368" height="458"/>
+                                        <rect key="frame" x="30" y="821.99999999999989" width="368" height="468.66666666666663"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oq9-hf-ZeE">
-                                                <rect key="frame" x="1.3333333333333428" y="0.0" width="365.66666666666663" height="105"/>
+                                                <rect key="frame" x="8.3333333333333428" y="0.0" width="351.33333333333326" height="115.66666666666667"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy Our Merch" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GZY-7c-rMH">
-                                                        <rect key="frame" x="0.0" y="0.0" width="365.66666666666669" height="35"/>
-                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="35"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="351.33333333333331" height="39"/>
+                                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="35"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We have Project Mayhem hoodies, shirts, masks, and more! Tap the picture below to Check it out!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsU-gY-OFU">
-                                                        <rect key="frame" x="0.0" y="45" width="365.66666666666669" height="60"/>
-                                                        <fontDescription key="fontDescription" name="NoisyWalk-Regular" family="Noisy Walk" pointSize="20"/>
+                                                        <rect key="frame" x="0.0" y="49.000000000000007" width="351.33333333333331" height="66.666666666666686"/>
+                                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFv-Qy-p9b">
-                                                <rect key="frame" x="20" y="130" width="328" height="328"/>
+                                                <rect key="frame" x="20" y="140.66666666666663" width="328" height="328"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="kFv-Qy-p9b" secondAttribute="height" multiplier="1:1" id="Mjz-T0-1Rz"/>
                                                 </constraints>
@@ -4741,25 +4746,25 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YpZ-NR-fiI"/>
-        <segue reference="gzU-Ae-XQS"/>
-        <segue reference="Fs4-JY-ETg"/>
-        <segue reference="kju-Ul-nqJ"/>
-        <segue reference="7ds-ad-yt1"/>
-        <segue reference="pGP-Mq-ek9"/>
-        <segue reference="M5Z-aZ-g0d"/>
-        <segue reference="RvQ-UE-tQi"/>
-        <segue reference="xf8-3T-zHd"/>
-        <segue reference="suA-ve-50D"/>
-        <segue reference="3Rt-Ua-3z9"/>
-        <segue reference="hHU-xE-2Nw"/>
-        <segue reference="C8e-VB-o7G"/>
-        <segue reference="Fhg-H5-PTW"/>
-        <segue reference="J9s-s4-0U4"/>
-        <segue reference="RdG-kq-cY7"/>
-        <segue reference="Jbk-WL-IF2"/>
-        <segue reference="tG0-fy-sbd"/>
-        <segue reference="TbV-l9-R97"/>
+        <segue reference="8eE-Im-0TI"/>
+        <segue reference="AYo-vC-fRx"/>
+        <segue reference="dHH-0f-i87"/>
+        <segue reference="j8f-cg-Hji"/>
+        <segue reference="9I8-69-dGt"/>
+        <segue reference="8va-rm-XAP"/>
+        <segue reference="dbV-cl-syM"/>
+        <segue reference="9rP-sF-Yht"/>
+        <segue reference="o2i-uy-ToW"/>
+        <segue reference="3Az-ps-1h0"/>
+        <segue reference="WVd-jK-rxp"/>
+        <segue reference="9vb-rW-7Ne"/>
+        <segue reference="rPy-e3-cah"/>
+        <segue reference="4Jn-Pi-K9C"/>
+        <segue reference="lvv-Yn-sCd"/>
+        <segue reference="UJg-12-gS4"/>
+        <segue reference="DBI-6g-87H"/>
+        <segue reference="DOc-8U-B4Z"/>
+        <segue reference="MZk-YQ-gFo"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Bypass" width="2500" height="2500"/>

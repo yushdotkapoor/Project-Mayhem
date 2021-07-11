@@ -31,7 +31,7 @@ class ProjectVenomTrailer: UIViewController {
         game.setValue("projectVenomTrailer", forKey: "active")
         funcToPass = self.ended
         godThread = self
-        video = VideoPlayer(urlAsset: vidName, view: playerView, arr: pauseArray, startTime: timeStamp, volume: 0.15)
+        video = VideoPlayer(urlAss: vidName, view: playerView, arr: pauseArray, startTime: timeStamp, volume: 0.15)
         
         
         flashInstructions()
@@ -77,7 +77,7 @@ class ProjectVenomTrailer: UIViewController {
         if timeStamp - 2 < 0 {
             timeStamp = 2
         }
-        video = VideoPlayer(urlAsset: vidName, view: playerView, arr: pauseArray, startTime: timeStamp - 2, volume: 0.15)
+        video = VideoPlayer(urlAss: vidName, view: playerView, arr: pauseArray, startTime: timeStamp - 2, volume: 0.15)
         godThread = self
         flashInstructions()
     }

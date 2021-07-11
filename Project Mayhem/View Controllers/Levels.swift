@@ -285,7 +285,7 @@ class Levels: UIViewController {
             button.setTitle("PROJECT VENOM", for: .normal)
             button.setTitleColor(.link, for: .normal)
             button.addTarget(self, action: #selector(visionTrailer), for: .touchUpInside)
-            button.titleLabel?.font = UIFont(name: "Adonay", size: 25.0)
+            button.titleLabel?.font = UIFont(name: "Capsule", size: 22.0)
             view.addSubview(button)
             UIView.animate(withDuration: 0.5, delay: 1) {
                 button.frame.origin.x = (UIScreen.main.bounds.width - 300) / 2
@@ -306,7 +306,7 @@ class Levels: UIViewController {
                 button.setTitle("PROJECT VENOM", for: .normal)
                 button.setTitleColor(.link, for: .normal)
                 button.addTarget(self, action: #selector(visionTrailer), for: .touchUpInside)
-                button.titleLabel?.font = UIFont(name: "Adonay", size: 25.0)
+                button.titleLabel?.font = UIFont(name: "Capsule", size: 22.0)
                 scrollView.addSubview(button)
                 UIView.animate(withDuration: 0.5, delay: 1.2) {
                     button.frame.origin.x = (UIScreen.main.bounds.width - 300) / 2

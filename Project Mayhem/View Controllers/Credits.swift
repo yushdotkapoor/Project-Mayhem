@@ -77,7 +77,7 @@ class Credits: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
             i?.titleLabel?.minimumScaleFactor = 0.5
             i?.titleLabel?.adjustsFontSizeToFitWidth = true
         }
-      
+        
         
     }
     
@@ -103,7 +103,7 @@ class Credits: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         volumeDescription.text = "This slider only controls the relative volume of the background music, and will not affect the videos".localized()
         minFlash.text = "Minimize Flashing:".localized()
         minFlashDescription.text = "This option is prefered for photosensitive users and will minimize sudden flashing colors or lights".localized()
-        bestExp.text = "For best experience, make sure haptics(Settings) Are on and that minimize flashing(above) is turned off.".localized()
+        bestExp.text = "For best experience, make sure haptics (Settings) are on and that minimize flashing (above) is turned off.".localized()
         purchaseRestore.setTitle("Restore Purchases".localized(), for: .normal)
         welcStatementButton.setTitle("Welcome Statement".localized(), for: .normal)
         feedbackButton.setTitle("Leave Feedback".localized(), for: .normal)
@@ -225,15 +225,21 @@ class Credits: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         
         picker.frame = CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
         self.view.addSubview(picker)
-                
+        
         toolBar = UIToolbar.init(frame: CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 50))
         toolBar.barStyle = .black
         toolBar.sizeToFit()
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel, target: self, action: #selector(self.onCancelButtonTapped))
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.onDoneButtonTapped))
-        toolBar.setItems([flexibleSpace, doneButton], animated: false)
+        toolBar.setItems([cancelButton, flexibleSpace, doneButton], animated: false)
         
         self.view.addSubview(toolBar)
+    }
+    
+    @objc func onCancelButtonTapped() {
+        self.toolBar.removeFromSuperview()
+        self.picker.removeFromSuperview()
     }
     
     @objc func onDoneButtonTapped() {
@@ -242,35 +248,35 @@ class Credits: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         
         
         if let row = pickerSelection {
-        let languageString = getLanguage(row: row)
-        print(languageString)
-        
-        let lang = getLanguageCode(row: row)
-        
-        Bundle.setLanguage(lang)
-        game.set(lang, forKey: "AppleLanguage")
-        game.synchronize()
-        
-        languageRepresentation.setTitle(languageString, for: .normal)
-        setLocalizations()
-        
+            let languageString = getLanguage(row: row)
+            print(languageString)
+            
+            let lang = getLanguageCode(row: row)
+            
+            Bundle.setLanguage(lang)
+            game.set(lang, forKey: "AppleLanguage")
+            game.synchronize()
+            
+            languageRepresentation.setTitle(languageString, for: .normal)
+            setLocalizations()
+            
         }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-        
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return languages.count
     }
-        
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let lan = getLanguage(row: row).localized()
         let str = "\(lan) (\(languages[lan]!))"
         return str
     }
-        
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickerSelection = row
     }

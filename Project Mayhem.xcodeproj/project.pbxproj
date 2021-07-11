@@ -30,6 +30,10 @@
 		9D1A40C2263B8EE100F6DF9B /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A40C1263B8EE100F6DF9B /* PhotoViewerViewController.swift */; };
 		9D1A40C6263BA8EF00F6DF9B /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A40C5263BA8EF00F6DF9B /* MessageView.swift */; };
 		9D1A40C8263BBB2300F6DF9B /* MessageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A40C7263BBB2300F6DF9B /* MessageViewCell.swift */; };
+		9D39F8C6269AC5FA009FFD8B /* Capsule.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D39F8C5269AC5FA009FFD8B /* Capsule.ttf */; };
+		9D39F8CC269AC627009FFD8B /* Roustel.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D39F8CB269AC627009FFD8B /* Roustel.otf */; };
+		9D39F8CE269AC805009FFD8B /* Adonay.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D39F8CD269AC805009FFD8B /* Adonay.ttf */; };
+		9D39F8D0269AC9AC009FFD8B /* Satella.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D39F8CF269AC9AC009FFD8B /* Satella.ttf */; };
 		9D420EBB25DF02AF00A3A13D /* globalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D420EBA25DF02AF00A3A13D /* globalFunctions.swift */; };
 		9D438CB925E6015F005CC20A /* postChapter15.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D438CB825E6015F005CC20A /* postChapter15.swift */; };
 		9D4BFC6925DE41260013D840 /* subChapter11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4BFC6825DE41260013D840 /* subChapter11.swift */; };
@@ -72,12 +76,10 @@
 		9D8C42BF25C7F9C30039F857 /* nonPastableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C42BE25C7F9C30039F857 /* nonPastableTextField.swift */; };
 		9D92875A25F86DD7005170A1 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D92875925F86DD7005170A1 /* AudioKit */; };
 		9D95C65B26418CA200D6DE77 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D95C65A26418CA200D6DE77 /* MessageKit */; };
-		9D9AA5C125F793D300C1493A /* Tomorrow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D9AA5AF25F793D200C1493A /* Tomorrow.ttf */; };
 		9DA2E9BD25F0451600262638 /* audioExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2E9BC25F0451600262638 /* audioExtensions.swift */; };
 		9DA2E9D025F09C6000262638 /* NoisyWalk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2E9C825F09C6000262638 /* NoisyWalk.ttf */; };
 		9DA2E9D125F09C6000262638 /* PigpenCipher.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2E9C925F09C6000262638 /* PigpenCipher.otf */; };
 		9DA2E9D325F09C6000262638 /* aAmbyarSobat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2E9CB25F09C6000262638 /* aAmbyarSobat.ttf */; };
-		9DA2E9D525F09C6000262638 /* Adonay.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2E9CD25F09C6000262638 /* Adonay.ttf */; };
 		9DA2E9D625F09C6000262638 /* astro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2E9CE25F09C6000262638 /* astro.ttf */; };
 		9DAE47C42680568D0090177A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DAE47C62680568D0090177A /* Main.storyboard */; };
 		9DAE47CB268056F50090177A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9DAE47CD268056F50090177A /* Localizable.strings */; };
@@ -150,6 +152,10 @@
 		9D1A40C1263B8EE100F6DF9B /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
 		9D1A40C5263BA8EF00F6DF9B /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		9D1A40C7263BBB2300F6DF9B /* MessageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewCell.swift; sourceTree = "<group>"; };
+		9D39F8C5269AC5FA009FFD8B /* Capsule.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Capsule.ttf; path = "../../../../../Downloads/capsule-font/Capsule.ttf"; sourceTree = "<group>"; };
+		9D39F8CB269AC627009FFD8B /* Roustel.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Roustel.otf; path = "../../../../../Downloads/roustel-font/Roustel.otf"; sourceTree = "<group>"; };
+		9D39F8CD269AC805009FFD8B /* Adonay.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Adonay.ttf; path = "../../../Project Venom/Project Venom/Fontsjh/Adonay.ttf"; sourceTree = "<group>"; };
+		9D39F8CF269AC9AC009FFD8B /* Satella.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Satella.ttf; path = ../../../../../Downloads/Satella.ttf; sourceTree = "<group>"; };
 		9D420EBA25DF02AF00A3A13D /* globalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globalFunctions.swift; sourceTree = "<group>"; usesTabs = 0; };
 		9D438CB825E6015F005CC20A /* postChapter15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postChapter15.swift; sourceTree = "<group>"; };
 		9D4BFC6825DE41260013D840 /* subChapter11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subChapter11.swift; sourceTree = "<group>"; };
@@ -197,12 +203,10 @@
 		9D8B292D25DC189A007750DF /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		9D8C42AE25C7BE5C0039F857 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9D8C42BE25C7F9C30039F857 /* nonPastableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nonPastableTextField.swift; sourceTree = "<group>"; };
-		9D9AA5AF25F793D200C1493A /* Tomorrow.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tomorrow.ttf; sourceTree = "<group>"; };
 		9DA2E9BC25F0451600262638 /* audioExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audioExtensions.swift; sourceTree = "<group>"; };
 		9DA2E9C825F09C6000262638 /* NoisyWalk.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NoisyWalk.ttf; path = "Project Mayhem/Fonts/NoisyWalk.ttf"; sourceTree = SOURCE_ROOT; };
 		9DA2E9C925F09C6000262638 /* PigpenCipher.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = PigpenCipher.otf; path = "Project Mayhem/Fonts/PigpenCipher.otf"; sourceTree = SOURCE_ROOT; };
 		9DA2E9CB25F09C6000262638 /* aAmbyarSobat.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = aAmbyarSobat.ttf; path = "Project Mayhem/Fonts/aAmbyarSobat.ttf"; sourceTree = SOURCE_ROOT; };
-		9DA2E9CD25F09C6000262638 /* Adonay.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Adonay.ttf; path = "Project Mayhem/Fonts/Adonay.ttf"; sourceTree = SOURCE_ROOT; };
 		9DA2E9CE25F09C6000262638 /* astro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = astro.ttf; path = "Project Mayhem/Fonts/astro.ttf"; sourceTree = SOURCE_ROOT; };
 		9DAE47C52680568D0090177A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9DAE47C8268056D60090177A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -516,11 +520,13 @@
 			isa = PBXGroup;
 			children = (
 				9DA2E9CB25F09C6000262638 /* aAmbyarSobat.ttf */,
-				9DA2E9CD25F09C6000262638 /* Adonay.ttf */,
+				9D39F8CD269AC805009FFD8B /* Adonay.ttf */,
 				9DA2E9CE25F09C6000262638 /* astro.ttf */,
+				9D39F8C5269AC5FA009FFD8B /* Capsule.ttf */,
 				9DA2E9C825F09C6000262638 /* NoisyWalk.ttf */,
+				9D39F8CF269AC9AC009FFD8B /* Satella.ttf */,
 				9DA2E9C925F09C6000262638 /* PigpenCipher.otf */,
-				9D9AA5AF25F793D200C1493A /* Tomorrow.ttf */,
+				9D39F8CB269AC627009FFD8B /* Roustel.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -686,19 +692,21 @@
 			files = (
 				9D561389259195E700F1695A /* Preview Assets.xcassets in Resources */,
 				9D561386259195E700F1695A /* Assets.xcassets in Resources */,
+				9D39F8C6269AC5FA009FFD8B /* Capsule.ttf in Resources */,
 				9DA2E9D325F09C6000262638 /* aAmbyarSobat.ttf in Resources */,
 				9DA2E9D125F09C6000262638 /* PigpenCipher.otf in Resources */,
-				9DA2E9D525F09C6000262638 /* Adonay.ttf in Resources */,
 				9D5613BD259196DE00F1695A /* LaunchScreen.storyboard in Resources */,
 				9D5FFA89263CE186005AC98A /* skibbity.mp3 in Resources */,
-				9D9AA5C125F793D300C1493A /* Tomorrow.ttf in Resources */,
 				9D8C42AF25C7BE5C0039F857 /* Settings.bundle in Resources */,
 				9DAE47CB268056F50090177A /* Localizable.strings in Resources */,
 				9DA2E9D025F09C6000262638 /* NoisyWalk.ttf in Resources */,
 				9DBEB558261BC69A00EFF309 /* Glitch.wav in Resources */,
 				9DA2E9D625F09C6000262638 /* astro.ttf in Resources */,
 				9D6762FA2618534D005E9346 /* GoogleService-Info.plist in Resources */,
+				9D39F8D0269AC9AC009FFD8B /* Satella.ttf in Resources */,
 				9D0B0ADE25FEE3CD00C3B1F5 /* Between0And1.m4a in Resources */,
+				9D39F8CC269AC627009FFD8B /* Roustel.otf in Resources */,
+				9D39F8CE269AC805009FFD8B /* Adonay.ttf in Resources */,
 				9DAE47C42680568D0090177A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

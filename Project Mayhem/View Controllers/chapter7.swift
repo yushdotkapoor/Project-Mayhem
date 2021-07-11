@@ -50,7 +50,7 @@ class chapter7: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titl.text = "Navigate".localized()
+        titl.text = "Navigate".localized().uppercased()
         orderString = []
         current = 0
         
@@ -116,12 +116,12 @@ class chapter7: UIViewController {
         
         let dtts = "Double Tap to Skip".localized()
         
-        let dttsHeight = heightForView(text: dtts, font: (UIFont(name: "astro", size: 12) ?? UIFont(name: "Helvetica", size: 12))!, width: 200)
+        let dttsHeight = heightForView(text: dtts, font: (UIFont(name: "Courier New Bold", size: 17) ?? UIFont(name: "Helvetica", size: 17))!, width: 200)
         
         doubleTapInstructions = UILabel(frame: CGRect(x: talkingView!.bounds.size.width - 220, y: lblheight + 20, width: 200, height: dttsHeight))
         doubleTapInstructions?.text = dtts
         doubleTapInstructions?.textAlignment = .right
-        doubleTapInstructions?.font = UIFont(name: "astro", size: 12)
+        doubleTapInstructions?.font = UIFont(name: "Courier New Bold", size: 17)
         doubleTapInstructions?.numberOfLines = 0
         doubleTapInstructions?.lineBreakMode = .byWordWrapping
         doubleTapInstructions?.textColor = .green
@@ -140,7 +140,7 @@ class chapter7: UIViewController {
         backgroundView!.bringSubviewToFront(talkingView!)
         view.bringSubviewToFront(toolbar)
         
-        video = VideoPlayer(urlAsset: vidName, view: vidView!, arr: pauseArray, startTime: timeStamp, volume: 0.2)
+        video = VideoPlayer(urlAss: vidName, view: vidView!, arr: pauseArray, startTime: timeStamp, volume: 0.2)
         
         talkingView!.fadeIn()
         talkingView?.add3DTileMotion()
@@ -200,7 +200,7 @@ class chapter7: UIViewController {
         if timeStamp - 2 < 0 {
             timeStamp = 2
         }
-        video = VideoPlayer(urlAsset: vidName, view: vidView!, arr: pauseArray, startTime: timeStamp - 2, volume: 0.2)
+        video = VideoPlayer(urlAss: vidName, view: vidView!, arr: pauseArray, startTime: timeStamp - 2, volume: 0.2)
         flashInstructions()
     }
     

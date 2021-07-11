@@ -37,10 +37,10 @@ class subPostChapter15: UIViewController {
         
         funcToPass = part1
         godThread = self
-        video = VideoPlayer(urlAsset: vidName, view: playerView, arr: pauseArray, startTime: 0, volume: 0.1)
+        video = VideoPlayer(urlAss: vidName, view: playerView, arr: pauseArray, startTime: 0, volume: 0.1)
         talk = speechModule(activeCode: game.string(forKey: "active")!, rippleView: ripplingView!)
         
-        tomorrow = UIFont(name: "Tomorrow", size: 20)
+        satella = UIFont(name: "Satella", size: 20)
         
         flashInstructions()
         
@@ -229,7 +229,7 @@ class subPostChapter15: UIViewController {
     
     func createLabel(text: String, callBack: Selector) -> CustomButtonOutline {
         let labelWidth = UIScreen.main.bounds.size.width - 20
-        let titleLabelHeight = heightForView(text: text, font: tomorrow ?? .systemFont(ofSize: 25) , width: labelWidth)
+        let titleLabelHeight = heightForView(text: text, font: satella ?? .systemFont(ofSize: 25) , width: labelWidth)
         var heightsBefore:CGFloat = 0
         for i in speakLabels {
             heightsBefore += i.frame.height + 20
@@ -245,7 +245,7 @@ class subPostChapter15: UIViewController {
         button.titleLabel?.minimumScaleFactor = 0.5
         button.titleLabel?.numberOfLines = 0
         button.titleLabel?.frame = CGRect(x: 15, y: 0, width: (button.titleLabel?.frame.size.width)! - 30, height: (button.titleLabel?.frame.size.height)!)
-        button.titleLabel?.font = tomorrow
+        button.titleLabel?.font = satella
         button.alpha = 0.0
         button.addTarget(self, action: callBack, for: .touchUpInside)
         

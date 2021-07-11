@@ -17,7 +17,7 @@ var ripplingView:UIView?
 var talk:speechModule?
 var wordToSearch:[String]?
 var funcToPass:(() -> Void)?
-var tomorrow = UIFont(name: "Tomorrow", size: 20)
+var satella = UIFont(name: "Satella", size: 20)
 var videosCurrentlyDownloading = false
 var IAPs:[SKProduct]?
 let database = CKContainer.default().publicCloudDatabase
@@ -291,10 +291,16 @@ func validateVideos() -> [String] {
 		if !fileManager.fileExists(atPath: path) {
 			print("Error: There seems to be a video file missing")
 			toReturn.append(i)
-		}
+        } else {
+            let asset = AVURLAsset(url: URL(string: "file://\(path)")!, options: [AVURLAssetPreferPreciseDurationAndTimingKey : true])
+            if asset.mediaSelectionGroup(forMediaCharacteristic: AVMediaCharacteristic.legible) == nil && i != "Chap1Intro" {
+                downloadVideos(vidNames: [i])
+            }
+        }
 	}
 	return toReturn
 }
+
 
 func vidToURL(name: String, type: String) -> NSURL {
 	if let filePath = Bundle.main.path(forResource: name, ofType: type) {

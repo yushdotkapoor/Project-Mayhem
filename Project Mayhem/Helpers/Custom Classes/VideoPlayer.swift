@@ -62,7 +62,7 @@ class VideoPlayer : NSObject {
     // MARK: - Init
     
     
-    convenience init(urlAsset:String, view:PlayerView, arr:[Double], startTime:Double, volume: Float) {
+    convenience init(urlAss:String, view:PlayerView, arr:[Double], startTime:Double, volume: Float) {
         self.init()
         
         MusicPlayer.shared.volumeControl(factor: volume)
@@ -74,9 +74,9 @@ class VideoPlayer : NSObject {
             playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         }
         
-        //initialSetupWithURL(url: vidToURL(name: "\(urlAsset)", type: "mov") as URL)
+        //initialSetupWithURL(url: vidToURL(name: "\(urlAss)", type: "mov") as URL)
         
-        let u = retrieveVideo(name: urlAsset)
+        let u = retrieveVideo(name: urlAss)
         if u != "" {
             initialSetupWithURL(url: URL(string: "file://\(u)")!)
             prepareToPlay()
