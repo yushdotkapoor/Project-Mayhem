@@ -44,7 +44,6 @@ class chapter5: UIViewController {
             notificationCenter.addObserver(self, selector: #selector(background), name: UIApplication.willResignActiveNotification, object: nil)
             notificationCenter.addObserver(self, selector: #selector(reenter), name: UIApplication.didBecomeActiveNotification, object: nil)
         }
-        toolbar.add3DMotionShadow()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -60,7 +60,6 @@ class chapter10: UIViewController {
         view.addGestureRecognizer(tapGesture)
         view.isUserInteractionEnabled = true
         
-        toolbar.add3DMotionShadow()
         
     }
     

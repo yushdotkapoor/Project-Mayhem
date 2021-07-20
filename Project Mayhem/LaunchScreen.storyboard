@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zlE-Ih-ijD">
-                                <rect key="frame" x="50" y="746" width="328" height="46"/>
+                                <rect key="frame" x="50" y="780" width="328" height="46"/>
                                 <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -26,7 +26,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zlE-Ih-ijD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="APk-7K-G0f"/>
-                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="zlE-Ih-ijD" secondAttribute="bottom" constant="100" id="H9d-5V-jR9"/>
+                            <constraint firstAttribute="bottom" secondItem="zlE-Ih-ijD" secondAttribute="bottom" constant="100" id="H9d-5V-jR9"/>
                             <constraint firstItem="zlE-Ih-ijD" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" constant="50" id="Pse-Z2-ViO"/>
                             <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="zlE-Ih-ijD" secondAttribute="trailing" constant="50" id="pSD-8x-JvT"/>
                         </constraints>

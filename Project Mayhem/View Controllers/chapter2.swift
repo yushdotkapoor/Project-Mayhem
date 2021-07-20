@@ -23,7 +23,7 @@ class chapter2: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        toolbar.add3DMotionShadow()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

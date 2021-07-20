@@ -45,7 +45,6 @@ class ProjectVenomTrailer: UIViewController {
         view.addGestureRecognizer(doubleTap)
         view.bringSubviewToFront(toolbar)
         
-        toolbar.add3DMotionShadow()
     }
     
     

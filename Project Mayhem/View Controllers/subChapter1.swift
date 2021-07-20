@@ -26,7 +26,7 @@ class subChapter1: UIViewController {
         
         //ask to register for notification
         
-        toolbar.add3DMotionShadow()
+        
         
         doubleTapInstructions.text = "Double Tap to Skip".localized()
         

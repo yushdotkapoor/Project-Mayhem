@@ -17,7 +17,6 @@ class VenomPreview: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        toolbar.add3DMotionShadow()
     }
     
     override func viewWillAppear(_ animated: Bool) {

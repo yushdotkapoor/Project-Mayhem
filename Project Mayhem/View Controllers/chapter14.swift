@@ -60,7 +60,6 @@ class chapter14: UIViewController {
         
         foregroundView.isUserInteractionEnabled = false
         
-        toolbar.add3DMotionShadow()
     }
     
     func makeBorder(lbl:UILabel) {

@@ -33,7 +33,6 @@ class chapter11: UIViewController, SFSpeechRecognizerDelegate {
         game.setValue("chap11", forKey: "active")
         godThread = self
         
-        toolbar.add3DMotionShadow()
     }
     
     override func viewWillAppear(_ animated: Bool) {

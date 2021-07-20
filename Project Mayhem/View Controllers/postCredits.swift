@@ -46,7 +46,6 @@ class postCredits: UIViewController, MFMailComposeViewControllerDelegate {
         merch.text = "Buy Our Merchandise".localized()
         merchDescription.text = "We have Project Mayhem hoodies, shirts, masks, and more! Tap the picture below to Check it out!".localized()
         
-        toolbar.add3DMotionShadow()
     }
     
     override func viewWillAppear(_ animated: Bool) {

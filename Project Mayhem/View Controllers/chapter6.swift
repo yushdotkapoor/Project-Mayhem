@@ -95,7 +95,6 @@ class chapter6: UIViewController {
         
         circleView.createCircularPath(radius: 10)
         
-        toolbar.add3DMotionShadow()
     }
     
     override func viewWillAppear(_ animated: Bool) {

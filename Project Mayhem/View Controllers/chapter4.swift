@@ -32,7 +32,6 @@ class chapter4: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        toolbar.add3DMotionShadow()
     }
     
     func startLevel() {

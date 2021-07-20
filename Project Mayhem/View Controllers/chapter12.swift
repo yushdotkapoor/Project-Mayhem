@@ -50,7 +50,6 @@ class chapter12: UIViewController {
         
         gemini.layer.cornerRadius = gemini.frame.size.height / 2
         
-        toolbar.add3DMotionShadow()
     }
     
     override func viewWillAppear(_ animated: Bool) {

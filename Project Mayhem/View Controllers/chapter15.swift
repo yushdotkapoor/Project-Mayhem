@@ -231,7 +231,6 @@ class chapter15: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate 
         startImageSwitch()
         view.bringSubviewToFront(toolbar)
         
-        toolbar.add3DMotionShadow()
     }
     
     func startImageSwitch() {

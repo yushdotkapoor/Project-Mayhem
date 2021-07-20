@@ -54,7 +54,6 @@ class chapter7: UIViewController {
         orderString = []
         current = 0
         
-        toolbar.add3DMotionShadow()
     }
     
     override func viewWillAppear(_ animated: Bool) {

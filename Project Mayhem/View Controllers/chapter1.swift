@@ -73,7 +73,7 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
         
         view.bringSubviewToFront(toolbar)
         
-        toolbar.add3DMotionShadow()
+        
         
     }
     
@@ -277,7 +277,7 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     
     @IBAction func rickyLink(_ sender: Any) {
         ref.child("users/\(game.string(forKey: "key")!)/RickRolled").setValue("Y")
-        openLink(st: "https://www.youtube.com/watch?v=oHg5SJYRHA0")
+        openLink(st: "https://www.youtube.com/watch?v=QtBDL8EiNZo")
     }
     
     var customAlert = HintAlert()
