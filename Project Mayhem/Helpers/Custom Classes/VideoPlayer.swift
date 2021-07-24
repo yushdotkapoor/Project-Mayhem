@@ -41,6 +41,7 @@ class VideoPlayer : NSObject {
     var playBlock = false
     var stopFlash = false
     var functionCalled = false
+    var isGreen = false
     
     var playerRate:Float = 1 {
         didSet {
@@ -132,7 +133,34 @@ class VideoPlayer : NSObject {
         }
     }
     
+    func viewDidTripleTap(willPass: Bool) {
+        if !willPass {
+            impact(style: .light)
+            return
+        }
+        if let pauseTime = pauseArray?.last {
+            var time = 0.0
+            if let player = assetPlayer {
+                time = CMTimeGetSeconds(player.currentTime())
+            }
+            
+            if pauseTime > time {
+                if pauseTime > time + 3.1 && video!.isPlaying(){
+                    seekToPosition(seconds: pauseTime - 3)
+                    impact(style: .light)
+                }
+                else {
+                    impact(style: .error)
+                }
+            }
+        }
+    }
+    
     func startFlash(lbl:UILabel, chap:[String], willFlash:Bool) {
+        startFlash(lbl: lbl, chap: chap, willFlash: willFlash, hasTriple: false)
+    }
+    
+    func startFlash(lbl:UILabel, chap:[String], willFlash:Bool, hasTriple:Bool) {
         let alpha = lbl.alpha
         let active = game.string(forKey: "active")
         if willFlash && !stopFlash {
@@ -140,7 +168,7 @@ class VideoPlayer : NSObject {
                 if i - currentTime > 0 && i - currentTime < 4 {
                     lbl.fadeOut()
                     wait {
-                        self.startFlash(lbl:lbl, chap:chap, willFlash: willFlash)
+                        self.startFlash(lbl:lbl, chap:chap, willFlash: willFlash, hasTriple: hasTriple)
                     }
                     return
                 }
@@ -149,6 +177,17 @@ class VideoPlayer : NSObject {
             
             if chap.contains(active!) && isPlaying() {
                 if alpha == 0.0 {
+                    if hasTriple {
+                        if isGreen {
+                            lbl.text = "Triple Tap to Skip All".localized()
+                            lbl.textColor = .red
+                            isGreen = false
+                        } else {
+                            lbl.text = "Double Tap to Skip".localized()
+                            lbl.textColor = .green
+                            isGreen = true
+                        }
+                    }
                     lbl.fadeIn()
                 }
                 else {
@@ -159,7 +198,7 @@ class VideoPlayer : NSObject {
                 lbl.alpha = 0.0
             }
             wait {
-                self.startFlash(lbl:lbl, chap:chap, willFlash: willFlash)
+                self.startFlash(lbl:lbl, chap:chap, willFlash: willFlash, hasTriple: hasTriple)
             }
         }
     }

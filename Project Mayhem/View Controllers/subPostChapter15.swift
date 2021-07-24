@@ -52,6 +52,9 @@ class subPostChapter15: UIViewController {
         doubleTap.numberOfTapsRequired = 2
         view.addGestureRecognizer(doubleTap)
         
+        let tripleTap = UITapGestureRecognizer(target: self, action: #selector(tripleTapped))
+        tripleTap.numberOfTapsRequired = 3
+        view.addGestureRecognizer(tripleTap)
     }
     
     func part1() {
@@ -258,13 +261,20 @@ class subPostChapter15: UIViewController {
     
     func flashInstructions() {
         let t = game.bool(forKey: "subPostChapter15Watched")
-        video?.startFlash(lbl: doubleTapInstructions, chap: ["subPostChap15"], willFlash: t)
+        video?.startFlash(lbl: doubleTapInstructions, chap: ["subPostChap15"], willFlash: t, hasTriple: true)
     }
     
     @objc func doubleTapped() {
         let t = game.bool(forKey: "subPostChapter15Watched")
         video?.viewDidDoubleTap(willPass: t)
     }
+    
+    @objc func tripleTapped() {
+        let t = game.bool(forKey: "subPostChapter15Watched")
+        funcToPass = end
+        video?.viewDidTripleTap(willPass: t)
+    }
+    
     
     @objc func background() {
         timeStamp = video!.currentTime
