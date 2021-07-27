@@ -12,17 +12,18 @@ class Downloader: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var circleView: CircularProgressBarView!
     @IBOutlet weak var minutes: UILabel!
-    var networkAlert = false
+    
     @IBOutlet weak var progress: UILabel!
     @IBOutlet weak var centerStack: UIStackView!
     
     var notificationTimer:Timer?
     var noPacketsTimer:Timer?
+    var networkAlert = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        game.setValue(0.0, forKey: "chap1IntroDownloadProgress")
+        game.setValue(0.0, forKey: "Chap1IntroDownloadProgress")
         progress.text = "0.00%"
         
         circleView.createCircularPath(radius: 120)
@@ -39,7 +40,7 @@ class Downloader: UIViewController {
         }
         let xFactor = validateVideos()
         if !xFactor.contains("Chap1Intro") {
-            game.setValue(1.0, forKey: "chap1IntroDownloadProgress")
+            game.setValue(1.0, forKey: "Chap1IntroDownloadProgress")
         }
     }
     
@@ -56,7 +57,7 @@ class Downloader: UIViewController {
     }
     
     @objc func checkNoIncomingPackets() {
-        let prog = game.double(forKey: "chap1IntroDownloadProgress")
+        let prog = game.double(forKey: "Chap1IntroDownloadProgress")
         if prog == 0.0 && CheckInternet.Connection() {
             alert(title: "Error".localized(), message: "It seems that you have a poor internet connection. Try reseting your connection or change your connection to a faster one.".localized(), actionTitle: "Okay".localized())
         }
@@ -65,7 +66,7 @@ class Downloader: UIViewController {
     
     
     @objc func checkNotification() {
-        let prog = game.double(forKey: "chap1IntroDownloadProgress")
+        let prog = game.double(forKey: "Chap1IntroDownloadProgress")
         if !networkAlert && prog != 1.0 {
             checkForInternet()
         }

@@ -23,6 +23,8 @@ class CircularProgressBarView: UIView {
         super.init(coder: coder)
     }
     
+    
+    
     func createCircularPath(radius: Int) {
         // created circularPath for circleLayer and progressLayer
         let circularPath = UIBezierPath(arcCenter: CGPoint(x: frame.size.width / 2.0, y: frame.size.height / 2.0), radius: CGFloat(radius), startAngle: startPoint, endAngle: endPoint, clockwise: true)

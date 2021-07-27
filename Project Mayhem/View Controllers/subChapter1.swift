@@ -24,9 +24,6 @@ class subChapter1: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //ask to register for notification
-        
-        
         
         doubleTapInstructions.text = "Double Tap to Skip".localized()
         

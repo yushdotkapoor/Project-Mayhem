@@ -25,6 +25,7 @@ class VideoPlayer : NSObject {
     private var playerItem:AVPlayerItem?
     private var urlAsset:AVURLAsset?
     private var videoOutput:AVPlayerItemVideoOutput?
+    var videoTitle:String?
     
     
     var assetDuration:Double = 0
@@ -59,6 +60,10 @@ class VideoPlayer : NSObject {
         }
     }
     
+    var notificationTimer:Timer?
+    var noPacketsTimer:Timer?
+    var networkAlert = false
+    
     
     // MARK: - Init
     
@@ -66,6 +71,7 @@ class VideoPlayer : NSObject {
     convenience init(urlAss:String, view:PlayerView, arr:[Double], startTime:Double, volume: Float) {
         self.init()
         
+        videoTitle = urlAss
         MusicPlayer.shared.volumeControl(factor: volume)
         pauseArray = arr
         playerView = view
@@ -75,8 +81,7 @@ class VideoPlayer : NSObject {
             playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         }
         
-        //initialSetupWithURL(url: vidToURL(name: "\(urlAss)", type: "mov") as URL)
-        
+     
         let u = retrieveVideo(name: urlAss)
         if u != "" {
             initialSetupWithURL(url: URL(string: "file://\(u)")!)
@@ -86,13 +91,122 @@ class VideoPlayer : NSObject {
             let v = validateVideos()
             downloadVideos(vidNames: v)
             print("Error Detected")
+            game.setValue(v, forKey: "QueuedDownloads")
+            for k in v {
+                game.setValue(0.0, forKey: "\(k)DownloadProgress")
+            }
             wait {
-                let alertController = UIAlertController(title: "Error".localized(), message: "For some reason, the files for this chapter are corrupted. A fix has been deployed, but make sure your internet connection is stable. Please stay on the app and retry entering the chapter in a few minutes. If the problem persists, contact me through the chat.".localized(), preferredStyle: .alert)
-                let defaultAction = UIAlertAction(title: "Okay".localized(), style: .cancel, handler: nil)
+                let alertController = UIAlertController(title: "Error".localized(), message: "For some reason, the files for this chapter are corrupted. A fix has been deployed, but make sure your internet connection is stable. Please stay in the chapter and the chapter should automatically start once files are downloaded. If this problem persists, please contact me through the game chat.".localized(), preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "Okay".localized(), style: .cancel, handler: {_ in
+                    self.overlayTag()
+                })
                 alertController.addAction(defaultAction)
                 godThread!.present(alertController, animated: true, completion: nil)
             }
         }
+    }
+    
+    func overlayTag() {
+        let screenWidth = UIScreen.main.bounds.width
+        
+        let back = UIView(frame: CGRect(x: 20, y: 64, width: screenWidth - 40, height: 90))
+        back.clipsToBounds = false
+        back.layer.cornerRadius = 10
+        back.backgroundColor = UIColor(named: "MayhemBlue")
+        
+        
+        let circleRadius:CGFloat = 25
+        
+        
+        let lbl = UILabel(frame: CGRect(x: 20, y: 20, width: back.frame.width - circleRadius*2 - 40, height: 50))
+        lbl.textColor = .white
+        lbl.text = "\("Downloading Content".localized()) (0.00%)"
+        lbl.numberOfLines = 0
+        lbl.textAlignment = .left
+        
+        
+        let circle = CircularProgressBarView(frame: CGRect(x: back.frame.width - circleRadius*2 - 20, y: 20, width: circleRadius*2, height: circleRadius*2))
+        circle.createCircularPath(radius: Int(circleRadius))
+        
+        
+        back.addSubview(lbl)
+        back.addSubview(circle)
+        back.alpha = 0
+        
+        godThread?.view.addSubview(back)
+        back.fadeIn()
+        
+        noPacketsTimer = Timer.scheduledTimer(withTimeInterval: 15, repeats: false) { timer in
+            self.checkNoIncomingPackets()
+        }
+        
+        notificationTimer = Timer.scheduledTimer(withTimeInterval: 1.1, repeats: true) { timer in
+            self.checkNotification(v: circle, l: lbl, fullAssCard: back)
+        }
+        
+    }
+    
+    func checkForInternet() {
+        if !CheckInternet.Connection() {
+            networkAlert = true
+            let alertController = UIAlertController(title: "Error".localized(), message: "It seems that you do not have stable network connection for downloading this game's content. To proceed, please connect to an internet network.".localized(), preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "Okay".localized(), style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            godThread!.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    @objc func checkNoIncomingPackets() {
+        let prog = game.double(forKey: "Chap1IntroDownloadProgress")
+        if prog == 0.0 && CheckInternet.Connection() {
+            let alertController = UIAlertController(title: "Error".localized(), message: "It seems that you have a poor internet connection. Try reseting your connection or change your connection to a faster one.".localized(), preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "Okay".localized(), style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            godThread!.present(alertController, animated: true, completion: nil)
+        }
+        
+    }
+    
+    @objc func checkNotification(v: CircularProgressBarView, l: UILabel, fullAssCard: UIView) {
+        var prog = 0.0
+        let QDown = game.array(forKey: "QueuedDownloads")
+        for n in QDown ?? [] {
+            let progress = game.double(forKey: "\(n)DownloadProgress")
+            prog += progress
+        }
+        prog = prog/Double((QDown ?? []).count)
+        print("prog \(prog)")
+        
+        if !networkAlert && prog != 1.0 {
+            checkForInternet()
+        }
+        if l.alpha == 0 {
+            l.fadeIn()
+        } else {
+            l.fadeOut()
+        }
+        
+        if prog == 1.0 {
+            game.setValue(true, forKey: "introViewed")
+            wait {
+                fullAssCard.fadeOut()
+                self.notificationTimer?.invalidate()
+                self.noPacketsTimer?.invalidate()
+                let u = retrieveVideo(name: self.videoTitle!)
+                self.initialSetupWithURL(url: URL(string: "file://\(u)")!)
+                self.prepareToPlay()
+            }
+        }
+        
+        
+        let dist:Double = prog
+        let dur = 0.5
+        
+        
+        l.text = "\("Downloading Content".localized()) (\(String(format: "%.2f", (dist*100)))%)"
+        
+        v.grow(distance: dist, duration: dur)
+        
     }
     
     override init() {
@@ -275,6 +389,9 @@ class VideoPlayer : NSObject {
         urlAsset = nil
         stopFlash = true
         MusicPlayer.shared.volumeControl(factor: 0.4)
+        
+        notificationTimer?.invalidate()
+        noPacketsTimer?.invalidate()
     }
     
     // MARK: - Private
@@ -328,17 +445,16 @@ class VideoPlayer : NSObject {
                            // let code = Locale.preferredLanguages.first
                             let code = game.string(forKey: "AppleLanguage")
                             let locale = Locale(identifier: code ?? "en-US")
-                            print("Locale: \(locale)")
                             
                             let options =
                                 AVMediaSelectionGroup.mediaSelectionOptions(from: group.options, with: locale)
-                            print("options \(options)")
                             if let option = options.first {
-                                print("option \(option)")
                                 playerItem?.select(option, in: group)
                             }
                         } else {
-                            downloadVideos()
+                            if videoTitle != "Chap1Intro" {
+                                downloadVideos()
+                            }
                         }
                         
                         

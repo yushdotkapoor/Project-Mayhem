@@ -171,9 +171,7 @@ func downloadVideos(vidNames: [String]) {
         op.perRecordProgressBlock =  { record, progress in
             DispatchQueue.main.async {
                 print("\(record.recordName) progress: \(progress)")
-                if record.recordName == "Chap1Intro" {
-                    game.setValue(progress, forKey: "chap1IntroDownloadProgress")
-                }
+                game.setValue(progress, forKey: "\(record.recordName)DownloadProgress")
             }
         }
         op.fetchRecordsCompletionBlock = { recordDict, error in

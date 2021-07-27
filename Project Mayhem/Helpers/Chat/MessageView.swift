@@ -161,7 +161,9 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
                             }
                         }
                     }
-                    
+                    if temp.user == "" {
+                        self.alert(title: "Error", message: "Something is wrong with the message structure and could potentially result in messages not being sent or recieved. ThreadID: \(threadID)", actionTitle: "OK")
+                    }
                     rList[threadID] = temp
                     
                     self.sortReload()
