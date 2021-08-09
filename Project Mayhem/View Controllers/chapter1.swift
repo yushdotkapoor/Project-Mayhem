@@ -8,8 +8,6 @@
 import UIKit
 import AVFoundation
 
-
-
 class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     @IBOutlet weak var leave: UILabel!
     @IBOutlet weak var now: UILabel!
@@ -73,8 +71,10 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
         
         view.bringSubviewToFront(toolbar)
         
-        
-        
+        ref.child("Data/RickRollLink").observeSingleEvent(of: .value, with: { (snapshot) in
+            let val = snapshot.value as? String ?? ""
+            game.setValue(val, forKey: "RikeshLink")
+        })
     }
     
     
@@ -169,10 +169,9 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
                 alert(title: "Error".localized(), message: "You must enter your name in the provided field. Otherwise, I cannot trust you.".localized(), actionTitle: "Okay".localized())
             } else if gameName != name && gameName != nil {
                 let l1 = "This name conflicts with the name you gave before:".localized()
-                let l2 = "Would you like to change your name from".localized()
-                let l3 = "to".localized()
+                let l2 = "Would you like to change your name to".localized()
                 
-                let alertController = UIAlertController(title: "Please advise".localized(), message: "\(l1) \(gameName!). \(l2) \(gameName!) \(l3) \(name!)?", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Please advise".localized(), message: "\(l1) \(gameName!). \(l2) \(name!)?", preferredStyle: .alert)
                 let yes = UIAlertAction(title: "Yes".localized(), style: .default, handler: { action in
                     self.setName(name: name!)
                 })
@@ -195,7 +194,7 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
         game.setValue("none", forKey: "active")
         view.endEditing(true)
         nameField.text = ""
-        let m1 = "Welcome to Project Mayhem,".localized()
+        let m1 = "Welcome to Project Mayhem".localized()
         welcome.text = "\(m1) \(name)"
         welcome.fadeIn()
         wait {
@@ -205,13 +204,13 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
             self.clickTheRick.fadeOut()
             wait {
                 self.welcome.flickerIn(iterations: 10)
-                self.welcome.text = "\(m1) Branechild"
+                self.welcome.text = "\(m1), Branechild"
                 self.welcome.textColor = .red
                 self.vibrate(count: 5)
                 wait(time: 0.75, actions: {
                     self.vibrate(count: 5)
                     self.welcome.flickerIn(iterations: 10)
-                    self.welcome.text = "\(m1) Brainchild"
+                    self.welcome.text = "\(m1), Brainchild"
                     self.welcome.textColor = .black
                     self.nextChap.isUserInteractionEnabled = true
                     impact(style: .success)
@@ -277,7 +276,8 @@ class chapter1: UIViewController, UNUserNotificationCenterDelegate {
     
     @IBAction func rickyLink(_ sender: Any) {
         ref.child("users/\(game.string(forKey: "key")!)/RickRolled").setValue("Y")
-        openLink(st: "https://www.youtube.com/watch?v=QtBDL8EiNZo")
+        let l = game.string(forKey: "RikeshLink") ?? ""
+        openLink(st: l)
     }
     
     var customAlert = HintAlert()

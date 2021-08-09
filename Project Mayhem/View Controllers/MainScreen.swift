@@ -32,16 +32,15 @@ class MainScreen: UIViewController {
         //COMMENT LINE BELOW BEFORE DEPLOYMENT
         //game.setValue(true, forKey: "isAdmin")
         
-        Auth.auth().signInAnonymously()
         setupChat()
+        
+        enter.addOutline(color: UIColor.gray.cgColor)
+        tearDrop.addOutline(color: UIColor.gray.cgColor)
         
         lbl.add3DMotionShadow(maxOffset: 20, color: UIColor.white.cgColor, opacity: 0.5)
         enter.add3DMotionShadow(maxOffset: 20, color: UIColor.gray.cgColor, opacity: 0.5)
         tearDrop.add3DMotionShadow(maxOffset: 20, color: UIColor.gray.cgColor, opacity: 0.5)
         logo.add3DMotionShadow(maxOffset: 20, color: UIColor.gray.cgColor, opacity: 0.75)
-        
-        enter.addOutline(color: UIColor.gray.cgColor)
-        tearDrop.addOutline(color: UIColor.gray.cgColor)
     }
     
     

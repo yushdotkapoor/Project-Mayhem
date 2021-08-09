@@ -120,7 +120,7 @@ class VideoPlayer : NSObject {
         
         let lbl = UILabel(frame: CGRect(x: 20, y: 20, width: back.frame.width - circleRadius*2 - 40, height: 50))
         lbl.textColor = .white
-        lbl.text = "\("Downloading Content".localized()) (0.00%)"
+        lbl.text = "\("Connecting".localized())"
         lbl.numberOfLines = 0
         lbl.textAlignment = .left
         
@@ -572,7 +572,6 @@ class VideoPlayer : NSObject {
     private func initialSetupWithURL(url:URL) {
         let options = [AVURLAssetPreferPreciseDurationAndTimingKey : true]
         urlAsset = AVURLAsset(url: url, options: options)
-        
     }
     
     // MARK: - Observations

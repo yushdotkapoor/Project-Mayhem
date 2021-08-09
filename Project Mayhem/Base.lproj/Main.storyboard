@@ -462,13 +462,13 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="348" height="31"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimize flashing:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="M4s-Ft-2fo">
-                                                                <rect key="frame" x="0.0" y="0.0" width="292.66666666666669" height="31"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="305" height="31"/>
                                                                 <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="22"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K22-SS-wCe">
-                                                                <rect key="frame" x="292.66666666666669" y="0.0" width="57.333333333333314" height="31"/>
+                                                                <rect key="frame" x="305" y="0.0" width="45" height="31"/>
                                                                 <connections>
                                                                     <action selector="switchChanged:" destination="fkB-KW-fdR" eventType="valueChanged" id="CKn-zh-BUX"/>
                                                                 </connections>
@@ -490,13 +490,13 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="348" height="31"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reduce Motion:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KWC-rC-onu">
-                                                                <rect key="frame" x="0.0" y="0.0" width="292.66666666666669" height="31"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="305" height="31"/>
                                                                 <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="22"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bRu-Z4-ck0">
-                                                                <rect key="frame" x="292.66666666666669" y="0.0" width="57.333333333333314" height="31"/>
+                                                                <rect key="frame" x="305" y="0.0" width="45" height="31"/>
                                                                 <connections>
                                                                     <action selector="reduceMotionSwitchChanged:" destination="fkB-KW-fdR" eventType="valueChanged" id="g9p-Ra-d9F"/>
                                                                 </connections>
@@ -551,13 +551,13 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="348" height="31"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Cellular:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="ZMA-5R-iUU">
-                                                                <rect key="frame" x="0.0" y="0.0" width="292.66666666666669" height="31"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="305" height="31"/>
                                                                 <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="22"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0HI-Au-gh4">
-                                                                <rect key="frame" x="292.66666666666669" y="0.0" width="57.333333333333314" height="31"/>
+                                                                <rect key="frame" x="305" y="0.0" width="45" height="31"/>
                                                                 <connections>
                                                                     <action selector="cellularSwitchChanged:" destination="fkB-KW-fdR" eventType="valueChanged" id="K4T-7N-piV"/>
                                                                 </connections>
@@ -3764,11 +3764,11 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="y" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gQ-S1-fF1">
-                                        <rect key="frame" x="413" y="70" width="5" height="30"/>
+                                        <rect key="frame" x="410.66666666666669" y="70" width="7.3333333333333144" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="P69-tv-tVf"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Roustel-Regular" family="Roustel" pointSize="10"/>
+                                        <fontDescription key="fontDescription" name="Satella" family="Satella" pointSize="10"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -4748,12 +4748,12 @@
     <inferredMetricsTieBreakers>
         <segue reference="8eE-Im-0TI"/>
         <segue reference="AYo-vC-fRx"/>
-        <segue reference="dHH-0f-i87"/>
+        <segue reference="Fs4-JY-ETg"/>
         <segue reference="j8f-cg-Hji"/>
-        <segue reference="9I8-69-dGt"/>
-        <segue reference="8va-rm-XAP"/>
+        <segue reference="7ds-ad-yt1"/>
+        <segue reference="pGP-Mq-ek9"/>
         <segue reference="dbV-cl-syM"/>
-        <segue reference="9rP-sF-Yht"/>
+        <segue reference="RvQ-UE-tQi"/>
         <segue reference="o2i-uy-ToW"/>
         <segue reference="3Az-ps-1h0"/>
         <segue reference="WVd-jK-rxp"/>
@@ -4761,7 +4761,7 @@
         <segue reference="rPy-e3-cah"/>
         <segue reference="4Jn-Pi-K9C"/>
         <segue reference="lvv-Yn-sCd"/>
-        <segue reference="UJg-12-gS4"/>
+        <segue reference="hkN-ae-wdF"/>
         <segue reference="DBI-6g-87H"/>
         <segue reference="DOc-8U-B4Z"/>
         <segue reference="MZk-YQ-gFo"/>

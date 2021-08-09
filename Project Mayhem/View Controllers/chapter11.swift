@@ -68,10 +68,8 @@ class chapter11: UIViewController, SFSpeechRecognizerDelegate {
             self.present(alertController, animated: true, completion: nil)
         }
         else {
-            let t1 = "I don’t remember there being a CEO before Yush, and there is also no historical record of this".localized()
-            let t2 = "boss".localized()
-            let t3 = "ever existing".localized()
-            alert.showAlert(title: "\(messageFrom) Victoria Lambson", message: "\(t1) \"\(t2)\" \(t3)".localized(), viewController: self, buttonPush: #selector(dismissMessageAlert))
+            
+            alert.showAlert(title: "\(messageFrom) Victoria Lambson", message: "I don’t remember there being a CEO before Yush, and there is also no historical record of this so called boss ever existing.".localized(), viewController: self, buttonPush: #selector(dismissMessageAlert))
         }
     }
     

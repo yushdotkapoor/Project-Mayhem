@@ -26,7 +26,6 @@ public extension Bundle {
         let oneToken: String = "com.YushRajKapoor.ProjectMayhem"
 
         DispatchQueue.once(token: oneToken) {
-            print("Do This Once!")
             object_setClass(Bundle.main, BundleEx.self as AnyClass)
         }
 

@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, S
         })
         
         downloadLocaleFiles()
+        Auth.auth().signInAnonymously()
         
         //game.setValue("en", forKey: "AppleLanguage")
         var lang = game.string(forKey: "AppleLanguage")
@@ -65,6 +66,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, S
         }
         
         audio()
+        
+        ref.child("Data/RickRollLink").observeSingleEvent(of: .value, with: { (snapshot) in
+            let val = snapshot.value as? String ?? ""
+            game.setValue(val, forKey: "RikeshLink")
+        })
         
         let theSession = AVAudioSession.sharedInstance()
         NotificationCenter.default.addObserver(self, selector: #selector(handleInterruption), name: AVAudioSession.interruptionNotification, object: theSession)
