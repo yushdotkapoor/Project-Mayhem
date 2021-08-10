@@ -54,10 +54,11 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     
     func getCurrentMessage(threadID:String) {
-        ref.child("users/\(myKey!)/threads/\(threadID)/messages").observe(.childAdded, with: { (snapshot) in
+        ref.child("users/\(myKey!)/threads/\(threadID)/messages").queryLimited(toLast: 1).observe(.childAdded, with: { (snapshot) in
             let messages = snapshot.value as! NSDictionary
             let data = messages["data"] as? String
             let type = messages["type"] as? String
+            let dat = messages["date"] as? String ?? ""
             if type == "text" {
                 rList[threadID]?.preview = data ?? ""
             } else if type == "photo" {
@@ -67,6 +68,12 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
             } else if type == "linkPreview" {
                 rList[threadID]?.preview = "URL Message".localized()
             }
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd' 'HH:mm:ss' 'Z"
+            let convertedDate = dateFormatter.date(from: dat)
+            
+            let newDate = convertedDate?.betterDate()
+            rList[threadID]?.date = Double(newDate ?? "00")!
             self.sortReload()
         })
     }
@@ -113,7 +120,7 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
                     
                     if count == 2 {
                         self.getCurrentMessage(threadID: threadID)
-                        self.sortReload()
+                        //self.sortReload()
                     }
                 }
                 
@@ -133,20 +140,10 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
             let g = messages.keyEnumerator()
             let render = self.checkToRender(g: g, messages: messages)
 
-            
             if render {
                 self.getCurrentMessage(threadID: threadID)
                 
-                let last = value["last"] as? String ?? ""
                 var temp:messageStruct = messageStruct()
-                
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd' 'HH:mm:ss' 'Z"
-                let convertedDate = dateFormatter.date(from: last)
-                
-                let newDate = convertedDate?.betterDate()
-                temp.date = Double(newDate ?? "00")!
-                
                 
                 if threadID != "0" {
                     let noteVal = read["\(key!)"]!
@@ -165,9 +162,6 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
                         self.alert(title: "Error", message: "Something is wrong with the message structure and could potentially result in messages not being sent or recieved. ThreadID: \(threadID)", actionTitle: "OK")
                     }
                     rList[threadID] = temp
-                    
-                    self.sortReload()
-                    
                 }
             }
             
@@ -221,8 +215,9 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if isView(selfView: self, checkView: MessageView.self) {
         if !CheckInternet.Connection() {
-            self.alert(title: "Uh-Oh", message: "Please check your internet connection! You will not be able to send or recieve messages without internet.".localized(), actionTitle: "Okay".localized())
+            self.alert(title: "Error".localized(), message: "Please check your internet connection! You will not be able to send, recieve, or view messages without internet.".localized(), actionTitle: "Okay".localized())
             return
         }
         
@@ -234,7 +229,10 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
         game.setValue(user, forKey: "selectedUser")
         game.setValue(thread, forKey: "chatID")
         navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     
 }
+
+

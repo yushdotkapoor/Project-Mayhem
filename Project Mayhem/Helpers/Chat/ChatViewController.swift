@@ -67,6 +67,17 @@ class ChatViewController: MessagesViewController {
     
     var removalIndex:[Int] = []
     
+    var lockOn = false
+    
+    var msgLimit = 20
+    let limitCoefficient = 20
+    
+    private(set) lazy var refreshControl: UIRefreshControl = {
+        let control = UIRefreshControl()
+        control.addTarget(self, action: #selector(loadMoreMessages), for: .valueChanged)
+        return control
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,6 +111,8 @@ class ChatViewController: MessagesViewController {
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
         messagesCollectionView.messageCellDelegate = self
+        messagesCollectionView.refreshControl = refreshControl
+        
         self.showMessageTimestampOnSwipeLeft = true
         
         messagesCollectionView.contentInset.top += 10
@@ -138,7 +151,6 @@ class ChatViewController: MessagesViewController {
                 imagePicker.videoQuality = .typeHigh
                 imagePicker.showsCameraControls = true
                 
-                
                 self.present(imagePicker, animated: true, completion: nil)
             } else {
                 self.alert(title: "Oh no!".localized(), message: "It seems that this device cannot access the camera".localized(), actionTitle: "Okay".localized())
@@ -151,7 +163,6 @@ class ChatViewController: MessagesViewController {
             imagePicker.allowsEditing = true
             imagePicker.mediaTypes = ["public.movie", "public.image"]
             imagePicker.videoQuality = .typeHigh
-            
             
             self.present(imagePicker, animated: true, completion: nil)
         })
@@ -168,14 +179,24 @@ class ChatViewController: MessagesViewController {
     
     
     func listen() {
-        ref.child("users/\(myKey)/threads/\(selectedThread)/messages").observe(.childAdded, with: { (snapshot) in
+        var maxCount = msgLimit
+        
+        ref.child("users/\(myKey)/threads/\(selectedThread)/messages").observe(.value, with: { [self] (snapshot) in
+            maxCount = Int(snapshot.childrenCount)
+            if msgLimit > maxCount {
+                msgLimit = maxCount
+            }
+        })
+        
+        ref.child("users/\(myKey)/threads/\(selectedThread)/messages").queryLimited(toLast: UInt(msgLimit)).observe(.childAdded, with: { (snapshot) in
             if isView(selfView: self, checkView: ChatViewController.self) {
                 let thing = snapshot.value as? [String:String] ?? ["":""]
                 self.load(thing: thing)
             }
         })
         
-        ref.child("users/\(myKey)/threads/\(selectedThread)/messages").observe(.childChanged, with: { (snapshot) in
+        ref.child("users/\(myKey)/threads/\(selectedThread)/messages").queryLimited(toLast: UInt(msgLimit + 1)).observe(.childChanged, with: { (snapshot) in
+            self.msgLimit += 1
             if isView(selfView: self, checkView: ChatViewController.self) {
                 let thing = snapshot.value as? [String:String] ?? ["":""]
                 
@@ -232,15 +253,132 @@ class ChatViewController: MessagesViewController {
                             self.reload(scroll: true)
                         }
                     }
-                    
                     break
                 default:
                     break
-                    
                 }
-                
             }
         })
+    }
+    
+    @objc func loadMoreMessages() {
+            print("TOPO reached the top message")
+            let generator = UIImpactFeedbackGenerator(style: .heavy)
+            generator.impactOccurred()
+            
+            var vishmaArray:[[String:String]] = []
+            msgLimit += limitCoefficient
+            
+            var maxCount = msgLimit
+            
+            ref.child("users/\(myKey)/threads/\(selectedThread)/messages").observe(.value, with: { [self] (snapshot) in
+                maxCount = Int(snapshot.childrenCount)
+                if msgLimit > maxCount {
+                    msgLimit = maxCount
+                }
+            })
+            
+            
+            ref.child("users/\(myKey)/threads/\(selectedThread)/messages").queryLimited(toLast: UInt(msgLimit)).observe(.childAdded, with: { [self] (snapshot) in
+                
+                if isView(selfView: self, checkView: ChatViewController.self) {
+                    let thing = snapshot.value as? [String:String] ?? ["":""]
+                    if thing["id"] != nil {
+                        vishmaArray.append(thing)
+                        
+                        if vishmaArray.count == msgLimit {
+                            passOn(a: vishmaArray)
+                        }
+                    }
+                }
+            })
+    }
+    
+    func passOn(a: [[String:String]]) {
+        var full:[Message] = []
+        for n in a {
+            let m = convertToMessage(thing: n)
+            full.append(m)
+        }
+        let sortedFull = full.sorted{$0.sentDate < $1.sentDate}
+        
+        messages.removeAll()
+        
+        for f in sortedFull {
+            messages.append(f)
+            if f.messageId == sortedFull.last?.messageId {
+                reload(scroll: false)
+                self.refreshControl.endRefreshing()
+            }
+        }
+    }
+    
+    func convertToMessage(thing: [String:String]) -> Message {
+        var sender = self.otherUser
+        
+        if self.currentUser.senderId == thing["sender"] ?? "" {
+            sender = self.currentUser
+        }
+        
+        let data = thing["data"] ?? ""
+        let date = thing["date"] ?? ""
+        let type = thing["type"] ?? ""
+        let id = thing["id"] ?? ""
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd' 'HH:mm:ss' 'Z"
+        let convertedDate = dateFormatter.date(from: date)
+        
+        
+        switch type {
+        case "text":
+            let mess = Message(sender: sender, messageId: id, sentDate: convertedDate ?? Date(), kind: .text("\(data)"), data: data)
+            return mess
+        case "photo":
+            let placeHolder = UIImage(named: "download")!
+            
+            let media = Media(url: nil,
+                              image: nil,
+                              placeholderImage: placeHolder,
+                              size: CGSize(width: 300, height: 300))
+            
+            let mess = Message(sender: sender, messageId: id, sentDate: convertedDate ?? Date(), kind: .photo(media), data: data)
+            
+            
+            if data == plzWaitPhoto {
+                removalIndex.append(messages.count)
+            }
+            
+            return mess
+        case "video":
+            let placeHolder = UIImage(named: "download")!
+            
+            let media = Media(url: nil,
+                              image: nil,
+                              placeholderImage: placeHolder,
+                              size: CGSize(width: 300, height: 300))
+            
+            let mess = Message(sender: sender, messageId: id, sentDate: convertedDate ?? Date(), kind: .video(media), data: data)
+            
+            if data == plzWaitVideo {
+                removalIndex.append(messages.count)
+            }
+            
+            return mess
+        case "linkPreview":
+            let data2 = data.replacingOccurrences(of: "https://", with: "")
+            let data3 = data2.replacingOccurrences(of: "http://", with: "")
+            let data4 = data3.replacingOccurrences(of: "www.", with: "")
+            let url = "https://www.google.com/s2/favicons?domain=www.\(data4)"
+            
+            let link = Link(text: "", url: URL(string: "https://\(data4)")!, title: getTitleOfURL(webpage: data4), teaser: "", thumbnailImage: load(url: url))
+            
+            let mess = Message(sender: sender, messageId: id, sentDate: convertedDate ?? Date(), kind: .linkPreview(link), data: data)
+            
+            return mess
+        default:
+            //this should never return
+            return Message(sender: sender, messageId: id, sentDate: convertedDate ?? Date(), kind: .linkPreview(Link(text: "", url: URL(string: "https://i.ibb.co/GvXnHn9/hollow-chocolate-easter-egg-520741-hero-02-1a6923fb61204a458c63e70bcf3021ac.jpg")!, title: "Easter Egg!", teaser: "", thumbnailImage: UIImage(systemName: "safari")!)), data: data)
+        }
     }
     
     func delayLoad(count: Int, imgURL: URL, message: Message, kind: String) {
@@ -267,97 +405,54 @@ class ChatViewController: MessagesViewController {
         self.reload(scroll: false)
     }
     
+    func vibrationLock() -> Bool {
+        if lockOn {
+            return false
+        } else {
+            lockOn = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+                self.lockOn = false
+            })
+            return true
+        }
+    }
+    
     func load(thing: [String:String]) {
+        load(thing: thing, scrollable: true)
+    }
+    
+    func load(thing: [String:String], scrollable: Bool) {
         var sender = self.otherUser
         
         if self.currentUser.senderId == thing["sender"] ?? "" {
             sender = self.currentUser
         }
         
-        let data = thing["data"] ?? ""
-        let date = thing["date"] ?? ""
-        let type = thing["type"] ?? ""
-        let id = thing["id"] ?? ""
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd' 'HH:mm:ss' 'Z"
-        let convertedDate = dateFormatter.date(from: date)
-        
-        if #available(iOS 10.0, *) {
-            let generator = UIImpactFeedbackGenerator(style: .medium)
-            let generator2 = UIImpactFeedbackGenerator(style: .heavy)
-            
-            // if user sends message, vibrate lightly
-            if sender.senderId == myKey {
-                generator.impactOccurred()
-            }
-            else {
-                //if other sends message, vibrate medium
-                generator2.impactOccurred()
+        // if user sends message, vibrate lightly
+        if sender.senderId == myKey {
+            if vibrationLock() {
+                impact(style: .medium)
             }
         }
+        else {
+            //if other sends message, vibrate medium
+            if vibrationLock() {
+                impact(style: .heavy)
+            }
+            
+        }
         
-        switch type {
-        case "text":
-            self.messages.append(Message(sender: sender, messageId: id, sentDate: convertedDate ?? Date(), kind: .text("\(data)"), data: data))
-            self.reload(scroll: true)
-            break
-        case "photo":
-            guard let placeHolder = UIImage(named: "download") else {
-                return
-            }
-            
-            let media = Media(url: nil,
-                              image: nil,
-                              placeholderImage: placeHolder,
-                              size: CGSize(width: 300, height: 300))
-            
-            let mess = Message(sender: sender, messageId: id, sentDate: convertedDate ?? Date(), kind: .photo(media), data: data)
-            
-            
-            if data == plzWaitPhoto {
-                removalIndex.append(messages.count)
-            }
-            
+        let mess = convertToMessage(thing: thing)
+        
+        if !scrollable {
+            self.messages.insert(mess, at: 0)
+        } else {
             self.messages.append(mess)
-            
-            self.reload(scroll: true)
-            break
-            
-        case "video":
-            guard let placeHolder = UIImage(named: "download") else {
-                return
-            }
-            
-            let media = Media(url: nil,
-                              image: nil,
-                              placeholderImage: placeHolder,
-                              size: CGSize(width: 300, height: 300))
-            
-            let mess = Message(sender: sender, messageId: id, sentDate: convertedDate ?? Date(), kind: .video(media), data: data)
-            
-            if data == plzWaitVideo {
-                removalIndex.append(messages.count)
-            }
-            
-            self.messages.append(mess)
-            
-            self.reload(scroll: true)
-            break
-            
-            
-        case "linkPreview":
-            let data2 = data.replacingOccurrences(of: "https://", with: "")
-            let data3 = data2.replacingOccurrences(of: "http://", with: "")
-            let data4 = data3.replacingOccurrences(of: "www.", with: "")
-            let url = "https://www.google.com/s2/favicons?domain=www.\(data4)"
-            
-            let link = Link(text: "", url: URL(string: "https://\(data4)")!, title: getTitleOfURL(webpage: data4), teaser: "", thumbnailImage: load(url: url))
-            
-            self.messages.append(Message(sender: sender, messageId: id, sentDate: convertedDate ?? Date(), kind: .linkPreview(link), data: data))
-            self.reload(scroll: true)
-            break
-        default:
-            break
+        }
+        
+        if messages.count == msgLimit {
+            print("TOPO message.count == msgLimit")
+            self.reload(scroll: scrollable)
         }
     }
     
@@ -447,9 +542,11 @@ class ChatViewController: MessagesViewController {
         
         let matches = detector.matches(in: input, options: [], range: NSRange(location: 0, length: input.utf16.count))
         
+        let checkForEmail = input.isValidEmail()
+        
         let count = matches.count
         
-        if count == 0 || type == "photo" || type == "video" {
+        if count == 0 || type == "photo" || type == "video" || checkForEmail {
             return false
         }
         else {
@@ -513,7 +610,6 @@ class ChatViewController: MessagesViewController {
                     let body = "URL message".localized()
                     
                     if otraKey == "ADMIN" {
-                        //titl = myKey
                         titl = "Someone needs your fucking help, bitch"
                     }
                     
@@ -605,7 +701,6 @@ class ChatViewController: MessagesViewController {
             }
             
             if otraKey == "ADMIN" {
-                //titl = myKey
                 titl = "Someone needs your fucking help, bitch"
             }
             if sendNotification {
@@ -866,7 +961,7 @@ extension ChatViewController: UIImagePickerControllerDelegate, UINavigationContr
         } catch {
             print("There was an error copying the video file to the temporary location.")
         }
-
+        
         return temporaryFileURL as NSURL
     }
 }
@@ -1016,6 +1111,7 @@ extension ChatViewController: MessageCellDelegate {
         }
     }
     
+    
     func didTapMessage(in cell: MessageCollectionViewCell) {
         guard let indexPath = messagesCollectionView.indexPath(for: cell) else {
             return
@@ -1053,3 +1149,5 @@ extension MessageCollectionViewCell {
         }
     }
 }
+
+

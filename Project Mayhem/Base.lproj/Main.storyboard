@@ -1169,10 +1169,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5tb-a7-8JY">
-                                                    <rect key="frame" x="15" y="0.0" width="368.33333333333331" height="65"/>
+                                                    <rect key="frame" x="10" y="0.0" width="378.33333333333331" height="65"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="d8p-m2-ehI">
-                                                            <rect key="frame" x="0.0" y="0.0" width="368.33333333333331" height="45"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="d8p-m2-ehI">
+                                                            <rect key="frame" x="0.0" y="0.0" width="378.33333333333331" height="45"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ULS-kO-5om">
                                                                     <rect key="frame" x="0.0" y="0.0" width="15" height="45"/>
@@ -1182,7 +1182,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqc-SJ-EWB">
-                                                                    <rect key="frame" x="30" y="0.0" width="338.33333333333331" height="45"/>
+                                                                    <rect key="frame" x="25" y="0.0" width="353.33333333333331" height="45"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="40" id="NsW-A8-uyx"/>
                                                                     </constraints>
@@ -1193,7 +1193,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="io9-oQ-nNK">
-                                                            <rect key="frame" x="0.0" y="45" width="368.33333333333331" height="20"/>
+                                                            <rect key="frame" x="0.0" y="45" width="378.33333333333331" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="3Sn-Je-xvi"/>
                                                             </constraints>
@@ -1206,8 +1206,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="5tb-a7-8JY" secondAttribute="bottom" constant="5" id="Jqr-SX-jDf"/>
-                                                <constraint firstAttribute="trailing" secondItem="5tb-a7-8JY" secondAttribute="trailing" constant="15" id="Mka-1X-9lM"/>
-                                                <constraint firstItem="5tb-a7-8JY" firstAttribute="leading" secondItem="yVu-ne-kkL" secondAttribute="leading" constant="15" id="SLf-9W-PAL"/>
+                                                <constraint firstAttribute="trailing" secondItem="5tb-a7-8JY" secondAttribute="trailing" constant="10" id="Mka-1X-9lM"/>
+                                                <constraint firstItem="5tb-a7-8JY" firstAttribute="leading" secondItem="yVu-ne-kkL" secondAttribute="leading" constant="10" id="SLf-9W-PAL"/>
                                                 <constraint firstItem="5tb-a7-8JY" firstAttribute="top" secondItem="yVu-ne-kkL" secondAttribute="top" id="mt6-AK-SJu"/>
                                             </constraints>
                                         </tableViewCellContentView>

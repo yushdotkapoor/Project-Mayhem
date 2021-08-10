@@ -113,8 +113,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, S
         
         
         
-        if(launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] != nil){
-            print("user tapped and now is doing stuff!")
+        if launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] != nil {
             goToChat(vc: (self.window?.rootViewController?.topViewController!)!)
         }
         
