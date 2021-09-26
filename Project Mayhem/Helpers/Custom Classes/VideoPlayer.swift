@@ -66,8 +66,6 @@ class VideoPlayer : NSObject {
     
     
     // MARK: - Init
-    
-    
     convenience init(urlAss:String, view:PlayerView, arr:[Double], startTime:Double, volume: Float) {
         self.init()
         
@@ -114,9 +112,7 @@ class VideoPlayer : NSObject {
         back.layer.cornerRadius = 10
         back.backgroundColor = UIColor(named: "MayhemBlue")
         
-        
         let circleRadius:CGFloat = 25
-        
         
         let lbl = UILabel(frame: CGRect(x: 20, y: 20, width: back.frame.width - circleRadius*2 - 40, height: 50))
         lbl.textColor = .white
@@ -322,17 +318,30 @@ class VideoPlayer : NSObject {
         lbl.fadeOut()
     }
     
+    func loopTillReady(pl: AVPlayer) {
+        if (pl.currentItem?.status == .readyToPlay) {
+            print("PLAY w/out options")
+            pl.play()
+        } else if pl.currentItem?.status == .failed {
+            let alertController = UIAlertController(title: "Error".localized(), message: "For some reason, the video player is failing. This should not happen, and this is an Apple issue. Contact me if the problem persists as you may have to redownload the app.".localized(), preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "Okay".localized(), style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            godThread!.present(alertController, animated: true, completion: nil)
+        } else {
+            wait {
+                self.loopTillReady(pl:pl)
+            }
+        }
+    }
+    
     func seekToPosition(seconds:Float64) {
         if let player = assetPlayer {
             pause()
             if let timeScale = player.currentItem?.asset.duration.timescale {
-                player.seek(to: CMTimeMakeWithSeconds(seconds, preferredTimescale: timeScale), completionHandler: { (complete) in
+                player.seek(to: CMTimeMakeWithSeconds(seconds, preferredTimescale: timeScale), completionHandler: { [self] (complete) in
                     self.functionCalled = false
                     self.playBlock = false
-                    if (player.currentItem?.status == .readyToPlay) {
-                        print("PLAY w/out options")
-                        player.play()
-                    }
+                    loopTillReady(pl: player)
                 })
             }
         }
@@ -551,7 +560,7 @@ class VideoPlayer : NSObject {
         }
     }
     
-    private func moviewPlayerLoadedTimeRangeDidUpdated(ranges:Array<NSValue>) {
+    private func moviePlayerLoadedTimeRangeDidUpdated(ranges:Array<NSValue>) {
         var maximum:TimeInterval = 0
         for value in ranges {
             let range:CMTimeRange = value.timeRangeValue
@@ -581,7 +590,7 @@ class VideoPlayer : NSObject {
                 if key == "status", let player = assetPlayer {
                     playerDidChangeStatus(status: player.status)
                 } else if key == "loadedTimeRanges", let item = playerItem {
-                    moviewPlayerLoadedTimeRangeDidUpdated(ranges: item.loadedTimeRanges)
+                    moviePlayerLoadedTimeRangeDidUpdated(ranges: item.loadedTimeRanges)
                 }
             }
         }

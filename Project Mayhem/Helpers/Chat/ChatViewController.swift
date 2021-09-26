@@ -177,92 +177,119 @@ class ChatViewController: MessagesViewController {
         present(actionSheet, animated: true)
     }
     
+    var first = true
+    var first2 = true
     
     func listen() {
         var maxCount = msgLimit
+ 
         
-        ref.child("users/\(myKey)/threads/\(selectedThread)/messages").observe(.value, with: { [self] (snapshot) in
+        ref.child("users/\(myKey)/threads/\(selectedThread)/messages").queryLimited(toLast: UInt(msgLimit)).observe(.value, with: { [self] (snapshot) in
+            
             maxCount = Int(snapshot.childrenCount)
+            if maxCount == msgLimit {
+                receiveMedia(snap: snapshot)
+                return
+            }
+            
+            if first {
             if msgLimit > maxCount {
                 msgLimit = maxCount
             }
-        })
-        
-        ref.child("users/\(myKey)/threads/\(selectedThread)/messages").queryLimited(toLast: UInt(msgLimit)).observe(.childAdded, with: { (snapshot) in
-            if isView(selfView: self, checkView: ChatViewController.self) {
-                let thing = snapshot.value as? [String:String] ?? ["":""]
-                self.load(thing: thing)
+                first = false
+            } else {
+                msgLimit += 1
             }
-        })
-        
-        ref.child("users/\(myKey)/threads/\(selectedThread)/messages").queryLimited(toLast: UInt(msgLimit + 1)).observe(.childChanged, with: { (snapshot) in
-            self.msgLimit += 1
+            
             if isView(selfView: self, checkView: ChatViewController.self) {
-                let thing = snapshot.value as? [String:String] ?? ["":""]
-                
-                var sender = self.otherUser
-                
-                if self.currentUser.senderId == thing["sender"] ?? "" {
-                    sender = self.currentUser
+                if let thing = snapshot.value as? NSDictionary {
+                    var keys = thing.allKeys as? [String]
+                    keys!.sort()
+                    if first2 {
+                        for j in keys! {
+                            self.load(thing: thing[j] as! [String : String])
+                        }
+                        first2 = false
+                    } else {
+                        self.load(thing: thing[keys!.last!] as! [String : String])
+                    }
                 }
                 
-                let data = thing["data"] ?? ""
-                let date = thing["date"] ?? ""
-                let type = thing["type"] ?? ""
-                let id = thing["id"] ?? ""
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd' 'HH:mm:ss' 'Z"
-                let convertedDate = dateFormatter.date(from: date)
-                
-                switch type {
-                case "photo":
-                    guard let imageUrl = URL(string: data),
-                          let placeholder = UIImage(systemName: "plus") else {
-                        return
-                    }
-                    
-                    let media = Media(url: imageUrl,
-                                      image: nil,
-                                      placeholderImage: placeholder,
-                                      size: CGSize(width: 300, height: 300))
-                    
-                    for i in self.removalIndex {
-                        let messID = self.messages[i].messageId
-                        if messID == id {
-                            self.messages[i] = Message(sender: sender, messageId: id, sentDate: convertedDate ?? Date(), kind: .photo(media), data: "\(imageUrl)")
-                            self.reload(scroll: true)
-                        }
-                    }
-                    break
-                    
-                case "video":
-                    guard let imageUrl = URL(string: data),
-                          let placeholder = UIImage(systemName: "plus") else {
-                        return
-                    }
-                    
-                    let media = Media(url: imageUrl,
-                                      image: self.videoPreviewImage(url: imageUrl),
-                                      placeholderImage: placeholder,
-                                      size: CGSize(width: 300, height: 300))
-                    
-                    for i in self.removalIndex {
-                        let messID = self.messages[i].messageId
-                        if messID == id {
-                            self.messages[i] = Message(sender: sender, messageId: id, sentDate: convertedDate ?? Date(), kind: .video(media), data: "\(imageUrl)")
-                            self.reload(scroll: true)
-                        }
-                    }
-                    break
-                default:
-                    break
-                }
             }
         })
     }
     
+    func receiveMedia(snap: DataSnapshot) {
+        if isView(selfView: self, checkView: ChatViewController.self) {
+            if let snapVal = snap.value as? NSDictionary {
+                var keys = snapVal.allKeys as? [String]
+                keys!.sort()
+                for j in keys! {
+                    let thing = snapVal[j] as! [String : String]
+                    
+                    var sender = self.otherUser
+                    
+                    if self.currentUser.senderId == thing["sender"] ?? "" {
+                        sender = self.currentUser
+                    }
+                    
+                    let data = thing["data"] ?? ""
+                    let date = thing["date"] ?? ""
+                    let type = thing["type"] ?? ""
+                    let id = thing["id"] ?? ""
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd' 'HH:mm:ss' 'Z"
+                    let convertedDate = dateFormatter.date(from: date)
+                    
+                    switch type {
+                    case "photo":
+                        guard let imageUrl = URL(string: data),
+                              let placeholder = UIImage(systemName: "plus") else {
+                            return
+                        }
+                        
+                        let media = Media(url: imageUrl,
+                                          image: nil,
+                                          placeholderImage: placeholder,
+                                          size: CGSize(width: 300, height: 300))
+                        
+                        for i in self.removalIndex {
+                            let messID = self.messages[i].messageId
+                            if messID == id {
+                                self.messages[i] = Message(sender: sender, messageId: id, sentDate: convertedDate ?? Date(), kind: .photo(media), data: "\(imageUrl)")
+                                self.reload(scroll: true)
+                            }
+                        }
+                        break
+                        
+                    case "video":
+                        guard let imageUrl = URL(string: data),
+                              let placeholder = UIImage(systemName: "plus") else {
+                            return
+                        }
+                        
+                        let media = Media(url: imageUrl,
+                                          image: self.videoPreviewImage(url: imageUrl),
+                                          placeholderImage: placeholder,
+                                          size: CGSize(width: 300, height: 300))
+                        
+                        for i in self.removalIndex {
+                            let messID = self.messages[i].messageId
+                            if messID == id {
+                                self.messages[i] = Message(sender: sender, messageId: id, sentDate: convertedDate ?? Date(), kind: .video(media), data: "\(imageUrl)")
+                                self.reload(scroll: true)
+                            }
+                        }
+                        break
+                    default:
+                        break
+                    }
+                }
+            }
+        }
+    }
+    
     @objc func loadMoreMessages() {
-            print("TOPO reached the top message")
             let generator = UIImpactFeedbackGenerator(style: .heavy)
             generator.impactOccurred()
             
@@ -381,7 +408,8 @@ class ChatViewController: MessagesViewController {
         }
     }
     
-    func delayLoad(count: Int, imgURL: URL, message: Message, kind: String) {
+    func delayLoad(count: Int, message: Message) {
+        let imgURL = URL(string: message.data)!
         let placeholder = UIImage(systemName: "plus")
         var currentMessage = message
         var media = Media(url: imgURL,
@@ -389,11 +417,11 @@ class ChatViewController: MessagesViewController {
                           placeholderImage: placeholder!,
                           size: CGSize(width: 300, height: 300))
         
-        switch kind {
-        case "photo":
+        switch message.kind {
+        case .photo(_):
             currentMessage.kind = .photo(media)
             break
-        case "video":
+        case .video(_):
             media.image = videoPreviewImage(url: imgURL)
             currentMessage.kind = .video(media)
             break
@@ -708,7 +736,7 @@ class ChatViewController: MessagesViewController {
             }
             
             self.messagesCollectionView.scrollToLastItem()
-            
+           // msgLimit += 1
         }
     }
     
@@ -1072,10 +1100,7 @@ extension ChatViewController: MessageCellDelegate {
             if media.url == nil {
                 let ct = indexPath.section
                 
-                let imgURL = URL(string: message.data)!
-                let kind = "photo"
-                
-                self.delayLoad(count: ct, imgURL: imgURL, message: message , kind: kind)
+                self.delayLoad(count: ct, message: message)
             }
             else {
                 print("loaded")
@@ -1092,10 +1117,8 @@ extension ChatViewController: MessageCellDelegate {
         case .video(let media):
             if media.url == nil {
                 let ct = indexPath.section
-                let imgURL = URL(string: message.data)!
-                let kind = "video"
                 
-                self.delayLoad(count: ct, imgURL: imgURL, message: message , kind: kind)
+                self.delayLoad(count: ct, message: message)
             }
             else {
                 guard let videoUrl = media.url else {

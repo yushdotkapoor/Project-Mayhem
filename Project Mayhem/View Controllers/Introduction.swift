@@ -12,7 +12,6 @@ class Introduction: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
     @IBOutlet weak var notes: UILabel!
     @IBOutlet weak var t2n: UILabel!
     @IBOutlet weak var hope: UILabel!
-    
     @IBOutlet weak var greet: UILabel!
     @IBOutlet weak var welc: UILabel!
     @IBOutlet weak var changeLanguage: UILabel!
