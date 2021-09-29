@@ -68,6 +68,7 @@
 		9D74262625CA41F3008D9645 /* chapter11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74262125CA41F3008D9645 /* chapter11.swift */; };
 		9D74262725CA41F3008D9645 /* chapter12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74262225CA41F3008D9645 /* chapter12.swift */; };
 		9D74262825CA41F3008D9645 /* chapter13.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74262325CA41F3008D9645 /* chapter13.swift */; };
+		9D77656D2704C97D0059FE52 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D77656C2704C97D0059FE52 /* Credentials.swift */; };
 		9D7DE96425E78C4900F80990 /* VenomPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7DE96325E78C4900F80990 /* VenomPreview.swift */; };
 		9D7F3AB4267161BA00CED071 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F3AB3267161BA00CED071 /* Downloader.swift */; };
 		9D8B292A25DC187D007750DF /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8B292925DC187D007750DF /* UIColorExtension.swift */; };
@@ -197,6 +198,7 @@
 		9D74262125CA41F3008D9645 /* chapter11.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chapter11.swift; sourceTree = "<group>"; };
 		9D74262225CA41F3008D9645 /* chapter12.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chapter12.swift; sourceTree = "<group>"; };
 		9D74262325CA41F3008D9645 /* chapter13.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chapter13.swift; sourceTree = "<group>"; };
+		9D77656C2704C97D0059FE52 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		9D7DE96325E78C4900F80990 /* VenomPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenomPreview.swift; sourceTree = "<group>"; };
 		9D7F3AB3267161BA00CED071 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		9D8B292925DC187D007750DF /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 				9D1A40BE263B8E5000F6DF9B /* StorageManager.swift */,
 				9D1A40C5263BA8EF00F6DF9B /* MessageView.swift */,
 				9D1A40BC263B6B3D00F6DF9B /* Notifications.swift */,
+				9D77656C2704C97D0059FE52 /* Credentials.swift */,
 				9D1A40C7263BBB2300F6DF9B /* MessageViewCell.swift */,
 				9DFEE975268A35A6009F3796 /* Blast.swift */,
 			);
@@ -804,6 +807,7 @@
 				9D0A07E6264F9DE0002834CC /* CircularProgressBarView.swift in Sources */,
 				9D150280260EE0A700A767C3 /* IAPHelper.swift in Sources */,
 				9D4BFC7925DE600C0013D840 /* VideoPlayer.swift in Sources */,
+				9D77656D2704C97D0059FE52 /* Credentials.swift in Sources */,
 				9D56140F2591CFFD00F1695A /* CustomButton.swift in Sources */,
 				9D5B42C5259C97FB00A4F34A /* animations.swift in Sources */,
 				9DED07D3261D588800ACBE2B /* Introduction.swift in Sources */,
