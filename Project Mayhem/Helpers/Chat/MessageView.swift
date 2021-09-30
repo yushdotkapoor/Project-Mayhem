@@ -92,6 +92,7 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
         ref.child("users/\(myKey!)/threads").observe(.childChanged, with: { (snapshot) in
             let value = snapshot.value as! NSDictionary
             let threadID = snapshot.key
+            print("JAHH \(threadID)")
             let read = value["recipients"] as? [String:String] ?? [:]
             let messages = value["messages"] as! NSDictionary
             
@@ -116,7 +117,6 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
                             rList[threadID]?.notification = true;
                         }
                     }
-                    
                     
                     if count == 2 {
                         self.getCurrentMessage(threadID: threadID)
@@ -228,6 +228,7 @@ class MessageView: UIViewController, UITableViewDelegate, UITableViewDataSource 
         vc.title = user
         game.setValue(user, forKey: "selectedUser")
         game.setValue(thread, forKey: "chatID")
+        print("JAHH \(thread)")
         navigationController?.pushViewController(vc, animated: true)
         }
     }
