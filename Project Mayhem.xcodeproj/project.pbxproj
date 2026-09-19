@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,7 +30,7 @@
 		9D1A40C6263BA8EF00F6DF9B /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A40C5263BA8EF00F6DF9B /* MessageView.swift */; };
 		9D1A40C8263BBB2300F6DF9B /* MessageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A40C7263BBB2300F6DF9B /* MessageViewCell.swift */; };
 		9D39F8C6269AC5FA009FFD8B /* Capsule.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D39F8C5269AC5FA009FFD8B /* Capsule.ttf */; };
-		9D39F8CC269AC627009FFD8B /* Roustel.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D39F8CB269AC627009FFD8B /* Roustel.otf */; };
+		9D39F8CC269AC627009FFD8B /* Roustel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D39F8CB269AC627009FFD8B /* Roustel.ttf */; };
 		9D39F8CE269AC805009FFD8B /* Adonay.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D39F8CD269AC805009FFD8B /* Adonay.ttf */; };
 		9D39F8D0269AC9AC009FFD8B /* Satella.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D39F8CF269AC9AC009FFD8B /* Satella.ttf */; };
 		9D420EBB25DF02AF00A3A13D /* globalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D420EBA25DF02AF00A3A13D /* globalFunctions.swift */; };
@@ -77,6 +77,8 @@
 		9D8C42BF25C7F9C30039F857 /* nonPastableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C42BE25C7F9C30039F857 /* nonPastableTextField.swift */; };
 		9D92875A25F86DD7005170A1 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D92875925F86DD7005170A1 /* AudioKit */; };
 		9D95C65B26418CA200D6DE77 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D95C65A26418CA200D6DE77 /* MessageKit */; };
+		9DA0C0DE2E7C0003005170A1 /* AudioKitEX in Frameworks */ = {isa = PBXBuildFile; productRef = 9DA0C0DE2E7C0002005170A1 /* AudioKitEX */; };
+		9DA0C0DE2E7C0006005170A1 /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9DA0C0DE2E7C0005005170A1 /* SoundpipeAudioKit */; };
 		9DA2E9BD25F0451600262638 /* audioExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2E9BC25F0451600262638 /* audioExtensions.swift */; };
 		9DA2E9D025F09C6000262638 /* NoisyWalk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2E9C825F09C6000262638 /* NoisyWalk.ttf */; };
 		9DA2E9D125F09C6000262638 /* PigpenCipher.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2E9C925F09C6000262638 /* PigpenCipher.otf */; };
@@ -152,10 +154,10 @@
 		9D1A40C1263B8EE100F6DF9B /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
 		9D1A40C5263BA8EF00F6DF9B /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		9D1A40C7263BBB2300F6DF9B /* MessageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewCell.swift; sourceTree = "<group>"; };
-		9D39F8C5269AC5FA009FFD8B /* Capsule.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Capsule.ttf; path = "../../../../../Downloads/capsule-font/Capsule.ttf"; sourceTree = "<group>"; };
-		9D39F8CB269AC627009FFD8B /* Roustel.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Roustel.otf; path = "../../../../../Downloads/roustel-font/Roustel.otf"; sourceTree = "<group>"; };
-		9D39F8CD269AC805009FFD8B /* Adonay.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Adonay.ttf; path = "../../../Project Venom/Project Venom/Fontsjh/Adonay.ttf"; sourceTree = "<group>"; };
-		9D39F8CF269AC9AC009FFD8B /* Satella.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Satella.ttf; path = ../../../../../Downloads/Satella.ttf; sourceTree = "<group>"; };
+		9D39F8C5269AC5FA009FFD8B /* Capsule.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Capsule.ttf; sourceTree = "<group>"; };
+		9D39F8CB269AC627009FFD8B /* Roustel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Roustel.ttf; sourceTree = "<group>"; };
+		9D39F8CD269AC805009FFD8B /* Adonay.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Adonay.ttf; sourceTree = "<group>"; };
+		9D39F8CF269AC9AC009FFD8B /* Satella.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Satella.ttf; sourceTree = "<group>"; };
 		9D420EBA25DF02AF00A3A13D /* globalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globalFunctions.swift; sourceTree = "<group>"; usesTabs = 0; };
 		9D438CB825E6015F005CC20A /* postChapter15.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postChapter15.swift; sourceTree = "<group>"; };
 		9D4BFC6825DE41260013D840 /* subChapter11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = subChapter11.swift; sourceTree = "<group>"; };
@@ -301,6 +303,8 @@
 				9D17D8B1268D7FFC00BE2174 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				9D0B0AD425FEBA3100C3B1F5 /* CloudKit.framework in Frameworks */,
 				9D92875A25F86DD7005170A1 /* AudioKit in Frameworks */,
+				9DA0C0DE2E7C0003005170A1 /* AudioKitEX in Frameworks */,
+				9DA0C0DE2E7C0006005170A1 /* SoundpipeAudioKit in Frameworks */,
 				9D17D8AB268D7FFC00BE2174 /* FirebaseMessaging in Frameworks */,
 				9DC5C2812651C63100EB0F10 /* Siren in Frameworks */,
 				9D95C65B26418CA200D6DE77 /* MessageKit in Frameworks */,
@@ -529,7 +533,7 @@
 				9DA2E9C825F09C6000262638 /* NoisyWalk.ttf */,
 				9D39F8CF269AC9AC009FFD8B /* Satella.ttf */,
 				9DA2E9C925F09C6000262638 /* PigpenCipher.otf */,
-				9D39F8CB269AC627009FFD8B /* Roustel.otf */,
+				9D39F8CB269AC627009FFD8B /* Roustel.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -554,6 +558,8 @@
 			name = "Project Mayhem";
 			packageProductDependencies = (
 				9D92875925F86DD7005170A1 /* AudioKit */,
+				9DA0C0DE2E7C0002005170A1 /* AudioKitEX */,
+				9DA0C0DE2E7C0005005170A1 /* SoundpipeAudioKit */,
 				9D95C65A26418CA200D6DE77 /* MessageKit */,
 				9D60219726419240007D990D /* SDWebImage */,
 				9DC5C2802651C63100EB0F10 /* Siren */,
@@ -672,6 +678,8 @@
 			mainGroup = 9D561375259195E600F1695A;
 			packageReferences = (
 				9D92875825F86DD7005170A1 /* XCRemoteSwiftPackageReference "AudioKit" */,
+				9DA0C0DE2E7C0001005170A1 /* XCRemoteSwiftPackageReference "AudioKitEX" */,
+				9DA0C0DE2E7C0004005170A1 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */,
 				9D95C65926418CA200D6DE77 /* XCRemoteSwiftPackageReference "MessageKit" */,
 				9D60219626419240007D990D /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				9DC5C27F2651C63000EB0F10 /* XCRemoteSwiftPackageReference "Siren" */,
@@ -708,7 +716,7 @@
 				9DA2E9D625F09C6000262638 /* astro.ttf in Resources */,
 				9D39F8D0269AC9AC009FFD8B /* Satella.ttf in Resources */,
 				9D0B0ADE25FEE3CD00C3B1F5 /* Between0And1.m4a in Resources */,
-				9D39F8CC269AC627009FFD8B /* Roustel.otf in Resources */,
+				9D39F8CC269AC627009FFD8B /* Roustel.ttf in Resources */,
 				9D39F8CE269AC805009FFD8B /* Adonay.ttf in Resources */,
 				9DAE47C42680568D0090177A /* Main.storyboard in Resources */,
 			);
@@ -1068,7 +1076,7 @@
 				CURRENT_PROJECT_VERSION = 31;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Project Mayhem/Preview Content\"";
-				DEVELOPMENT_TEAM = 68L233566P;
+				DEVELOPMENT_TEAM = BLXDQ5R8AB;
 				ENABLE_PREVIEWS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1091,12 +1099,13 @@
 					"\"${PODS_TARGET_SRCROOT}/Sources/FBLPromises/include\"",
 				);
 				INFOPLIST_FILE = "Project Mayhem/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Project Mayhem";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.10;
+				MARKETING_VERSION = 1.2.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1122,7 +1131,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 31;
 				DEVELOPMENT_ASSET_PATHS = "\"Project Mayhem/Preview Content\"";
-				DEVELOPMENT_TEAM = 68L233566P;
+				DEVELOPMENT_TEAM = BLXDQ5R8AB;
 				ENABLE_PREVIEWS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1145,12 +1154,13 @@
 					"\"${PODS_TARGET_SRCROOT}/Sources/FBLPromises/include\"",
 				);
 				INFOPLIST_FILE = "Project Mayhem/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Project Mayhem";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.10;
+				MARKETING_VERSION = 1.2.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.YushRajKapoor.ProjectMayhem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1305,8 +1315,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AudioKit/AudioKit";
 			requirement = {
-				branch = "v5-main";
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.2;
 			};
 		};
 		9D95C65926418CA200D6DE77 /* XCRemoteSwiftPackageReference "MessageKit" */ = {
@@ -1315,6 +1325,22 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 3.6.0;
+			};
+		};
+		9DA0C0DE2E7C0001005170A1 /* XCRemoteSwiftPackageReference "AudioKitEX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKitEX";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.0;
+			};
+		};
+		9DA0C0DE2E7C0004005170A1 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/SoundpipeAudioKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.4;
 			};
 		};
 		9DC5C27F2651C63000EB0F10 /* XCRemoteSwiftPackageReference "Siren" */ = {
@@ -1377,6 +1403,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9D95C65926418CA200D6DE77 /* XCRemoteSwiftPackageReference "MessageKit" */;
 			productName = MessageKit;
+		};
+		9DA0C0DE2E7C0002005170A1 /* AudioKitEX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9DA0C0DE2E7C0001005170A1 /* XCRemoteSwiftPackageReference "AudioKitEX" */;
+			productName = AudioKitEX;
+		};
+		9DA0C0DE2E7C0005005170A1 /* SoundpipeAudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9DA0C0DE2E7C0004005170A1 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */;
+			productName = SoundpipeAudioKit;
 		};
 		9DC5C2802651C63100EB0F10 /* Siren */ = {
 			isa = XCSwiftPackageProductDependency;

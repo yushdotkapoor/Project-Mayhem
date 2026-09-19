@@ -7,6 +7,8 @@
 
 import Foundation
 import AudioKit
+import AudioKitEX
+import SoundpipeAudioKit
 import AVKit
 
 class Tone {
