@@ -5,6 +5,7 @@ import UserNotifications
 import AVFoundation
 import CallKit
 import Firebase
+import FirebaseAuth
 import Network
 import StoreKit
 import Siren
