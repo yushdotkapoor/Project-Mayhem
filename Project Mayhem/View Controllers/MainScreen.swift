@@ -32,7 +32,7 @@ class MainScreen: UIViewController {
         //COMMENT LINE BELOW BEFORE DEPLOYMENT
         //game.setValue(true, forKey: "isAdmin")
         
-        setupChat()
+        setupUser()
         
         enter.addOutline(color: UIColor.gray.cgColor)
         tearDrop.addOutline(color: UIColor.gray.cgColor)
@@ -45,7 +45,7 @@ class MainScreen: UIViewController {
     
     
     
-    func setupChat() {
+    func setupUser() {
         let key = UIDevice.current.identifierForVendor?.uuidString
         let admin = "ADMIN"
         let isAdmin = game.bool(forKey: "isAdmin")
@@ -58,26 +58,13 @@ class MainScreen: UIViewController {
             game.setValue(admin, forKey: "key")
         } else {
             game.setValue(key, forKey: "key")
-            game.setValue(admin, forKey: "selectedUser")
         }
         
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd' 'HH:mm:ss' 'Z"
-        let convertedDate = dateFormatter.string(from: date)
-        
-        let chatPgViewed = game.bool(forKey: "chatPageViewed")
-        if chatPgViewed == false {
+        if game.bool(forKey: "userRecordCreated") == false {
+            let data = ["key": key!, "token":"\(token ?? "")", "Q": "Y"] as [String : Any]
             
-            let id = "\(key!) - \(admin)"
-            game.setValue(id, forKey: "chatID")
-            let array = ["recipients":[admin: "N", key: "Y"], "messages":["01": ["type":"text", "sender":"ADMIN", "date":"\(convertedDate)", "data":"Comments? Questions? Message me here!".localized(), "id":"01"], "02": ["type":"text", "sender":"ADMIN", "date":"\(convertedDate)", "data":"Make sure you have push notifications enabled to get notifications for replies!".localized(), "id":"02"]], "last":"\(convertedDate)"] as [String : Any]
-            let data = ["key": key!, "threads":["\(id)":array], "token":"\(token ?? "")", "Q": "Y"] as [String : Any]
-            
-            ref.child("users/\(key!)").setValue(data)
-            
-            //create thread for admin
-            ref.child("users/\(admin)/threads/\(id)").setValue(array)
+            ref.child("users/\(key!)").updateChildValues(data)
+            game.setValue(true, forKey: "userRecordCreated")
         }
         
     }

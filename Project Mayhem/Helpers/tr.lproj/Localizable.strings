@@ -2,7 +2,7 @@
 "Downloading Content" = "İçerik İndirme";
 "You will not need any external devices although a paper, writing utensil, a wrinkly brain, and access to internet can be very useful." = "Bir kağıt, yazı gereçleri, buruşuk bir beyin ve internete erişim çok faydalı olsa da, herhangi bir harici cihaza ihtiyacınız olmayacak.";
 "This game utilizes many of the iPhone's capabilities, many of which require permission from you. All of these capabilities are used for gameplay ONLY and it is possible that the game may not progress without them." = "Bu oyun, birçoğu sizden izin gerektiren iPhone'un birçok özelliğini kullanır. Tüm bu yetenekler YALNIZCA oyun oynamak için kullanılır ve oyunun onlar olmadan ilerlememesi mümkündür.";
-"If you ever want to leave feedback or get stuck on a level, please don't hesitate to contact me! You can directly message me in the settings page or from the main chapter menu." = "Geri bildirim bırakmak veya bir seviyede takılıp kalmak isterseniz, lütfen benimle iletişime geçmekten çekinmeyin! Ayarlar sayfasından veya ana bölüm menüsünden bana direkt mesaj atabilirsiniz.";
+"If you ever want to leave feedback or get stuck on a level, please don't hesitate to contact me via the email in the settings page!" = "Geri bildirimde bulunmak isterseniz veya bir seviyede takılırsanız, lütfen ayarlar sayfasındaki e-posta adresi aracılığıyla benimle iletişime geçmekten çekinmeyin!";
 "You can view this page in the settings tab at any time. Good luck, you will need it!" = "Bu sayfayı istediğiniz zaman ayarlar sekmesinde görüntüleyebilirsiniz. İyi şanslar, ihtiyacın olacak!";
 "Things to note:" = "Dikkat edilmesi gerekenler:";
 "I hope you enjoy this game as much as I did making it!" = "Umarım bu oyundan benim yaptığım kadar zevk alırsınız!";
@@ -20,3 +20,4 @@
 "It seems that you have a poor internet connection. Try reseting your connection or change your connection to a faster one." = "Görünüşe göre internet bağlantınız zayıf. Bağlantınızı sıfırlamayı deneyin veya bağlantınızı daha hızlı bir bağlantıyla değiştirin.";
 "Change Language:" = "Dili değiştir:";
 "It seems that you have a poor internet connection. Try reseting your connection or change your connection to a faster one." = "Görünüşe göre internet bağlantınız zayıf. Bağlantınızı sıfırlamayı deneyin veya bağlantınızı daha hızlı bir bağlantıyla değiştirin.";
+"Contact me:" = "Bana ulaşın:";

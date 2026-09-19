@@ -56,7 +56,6 @@ class HintAlert: NSObject, UIScrollViewDelegate {
     private var d2 = UIView()
     
     private let button = CustomButtonOutline()
-    private let stuck = CustomButtonOutline()
     
     private let gradient = CAGradientLayer()
     
@@ -160,16 +159,6 @@ class HintAlert: NSObject, UIScrollViewDelegate {
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(dismissAlert), for: .touchUpInside)
         
-        //set up stuck button
-        stuck.frame = CGRect(x: alertView.frame.size.width / 2 - 37.5, y: message1Height! + titleLabelHeight + 55, width: 75, height: 25)
-        stuck.setupButton()
-        stuck.setTitle("Stuck?".localized(), for: .normal)
-        stuck.titleLabel?.minimumScaleFactor = 0.5
-        stuck.titleLabel?.adjustsFontSizeToFitWidth = true
-        stuck.contentEdgeInsets = UIEdgeInsets(top: stuck.contentEdgeInsets.top, left: 5, bottom: stuck.contentEdgeInsets.bottom, right: 5)
-        stuck.setTitleColor(.white, for: .normal)
-        stuck.addTarget(self, action: #selector(chat), for: .touchUpInside)
-        
         //set up dot stack
         d1 = UIView(frame: CGRect(x: alertView.frame.size.width / 2 - 15, y: message1Height! + titleLabelHeight + 15, width: 8, height: 8))
         d1.layer.cornerRadius = 4
@@ -220,7 +209,6 @@ class HintAlert: NSObject, UIScrollViewDelegate {
             msgHt = message1Height!
             alertView.addSubview(scrollView)
             alertView.addSubview(button)
-            alertView.addSubview(stuck)
         } else if msgCt == 1 {
             text = tier2Hint[dictRef]
             msgHt = message2Height!
@@ -417,12 +405,10 @@ class HintAlert: NSObject, UIScrollViewDelegate {
         })
         actionSheet.addAction(UIAlertAction(title: "Cancel".localized(), style: .cancel, handler: nil))
         if game.integer(forKey: "fivePackPurchaseCount") >= 3 {
-            let p1 = "If you are seeing this, message me. This message should not appear.".localized()
+            let p1 = "If you are seeing this, contact me via the email in the settings page. This message should not appear.".localized()
             let p2 = "Error: Max Purchase Count".localized()
             let alertController = UIAlertController(title: "Error".localized(), message: "\(p1)\n\(p2)", preferredStyle: .alert)
-            let okay = UIAlertAction(title: "Okay".localized(), style: .default, handler: {_ in
-                self.chat()
-            })
+            let okay = UIAlertAction(title: "Okay".localized(), style: .default, handler: nil)
             alertController.addAction(okay)
             self.controller!.present(alertController, animated: true, completion: nil)
         } else {
@@ -453,12 +439,6 @@ class HintAlert: NSObject, UIScrollViewDelegate {
         }
     }
     
-    
-    @objc func chat() {
-        rList.removeAll()
-        
-        goToChat(vc: controller!)
-    }
     
     @objc func dismissAlert() {
         if menuState {
@@ -513,8 +493,7 @@ class HintAlert: NSObject, UIScrollViewDelegate {
         
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.4, options: .curveEaseIn, animations: { [self] in
             self.scrollView.setContentOffset(CGPoint(x: goTo, y: 0), animated: true)
-            button.frame = CGRect(x: alertView.frame.size.width / 4 - 37.5, y: msgHt + titleLabel.frame.size.height + 30, width: 75, height: 25)
-            stuck.frame = CGRect(x: alertView.frame.size.width / 4 * 3 - 37.5, y: msgHt + titleLabel.frame.size.height + 30, width: 75, height: 25)
+            button.frame = CGRect(x: alertView.frame.size.width / 2 - 37.5, y: msgHt + titleLabel.frame.size.height + 30, width: 75, height: 25)
             alertView.frame = CGRect(x: 0, y: 0, width: alertView.frame.size.width, height: msgHt + titleLabel.frame.size.height + 70)
             d1.frame = CGRect(x: alertView.frame.size.width / 2 - 15, y: msgHt + titleLabel.frame.size.height + 15, width: 8, height: 8)
             d2.frame = CGRect(x: alertView.frame.size.width / 2 + 5, y: msgHt + titleLabel.frame.size.height + 15, width: 8, height: 8)

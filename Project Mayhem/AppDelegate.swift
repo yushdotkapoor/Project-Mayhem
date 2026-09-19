@@ -9,8 +9,6 @@ import Network
 import StoreKit
 import Siren
 
-var administratorToken:String?
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, SKRequestDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
     
@@ -25,11 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, S
         FirebaseApp.configure()
         
         Siren.shared.wail()
-        
-        ref.child("users/Admin/token").observeSingleEvent(of: .value, with: { (snapshot) in
-            let val = snapshot.value as? String ?? ""
-            administratorToken = val
-        })
         
         downloadLocaleFiles()
         Auth.auth().signInAnonymously()
@@ -113,9 +106,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, S
         
         
         
-        if launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] != nil {
-            goToChat(vc: (self.window?.rootViewController?.topViewController!)!)
-        }
+        UIApplication.shared.applicationIconBadgeNumber = 0
         
         return true
     }
@@ -226,34 +217,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CXCallObserverDelegate, S
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        
-        let data = response.notification.request.content.userInfo
-        var titl = "Project Mayhem"
-        if !data.isEmpty {
-            let aps = data[AnyHashable("aps")] as! NSDictionary
-            let alert = aps["alert"] as! [String:String]
-            titl = alert["title"]!
-        }
-        
-        let topView = self.window?.rootViewController?.topViewController
-        
-        if topView is ChatViewController || topView is MessageView {
-            //test to reduce
-        } else if titl == "Yush" || titl == "Someone needs your fucking help, bitch" {
-            goToChat(vc: (self.window?.rootViewController?.topViewController)!)
-        }
-        
         completionHandler()
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         
-        let topView = self.window?.rootViewController?.topViewController
-        if topView is ChatViewController || topView is MessageView {
-            completionHandler([])
-        } else {
-            completionHandler([.list, .banner, .sound])
-        }
+        completionHandler([.list, .banner, .sound])
     }
     
     

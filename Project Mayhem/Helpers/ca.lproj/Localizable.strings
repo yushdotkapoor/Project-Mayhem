@@ -2,7 +2,7 @@
 "Downloading Content" = "Descàrrega de contingut";
 "You will not need any external devices although a paper, writing utensil, a wrinkly brain, and access to internet can be very useful." = "No necessitareu cap dispositiu extern, tot i que pot ser molt útil un paper, un utensili per escriure, un cervell arrugat i l’accés a Internet.";
 "This game utilizes many of the iPhone's capabilities, many of which require permission from you. All of these capabilities are used for gameplay ONLY and it is possible that the game may not progress without them." = "Aquest joc utilitza moltes de les capacitats de l'iPhone, moltes de les quals us requereixen permís. Totes aquestes funcions s’utilitzen NOMÉS per al joc i és possible que el joc no progressi sense elles.";
-"If you ever want to leave feedback or get stuck on a level, please don't hesitate to contact me! You can directly message me in the settings page or from the main chapter menu." = "Si mai voleu deixar comentaris o quedar-vos atrapats a un nivell, no dubteu en posar-vos en contacte amb mi. Podeu enviar-me un missatge directament a la pàgina de configuració o al menú del capítol principal.";
+"If you ever want to leave feedback or get stuck on a level, please don't hesitate to contact me via the email in the settings page!" = "Si mai voleu deixar comentaris o us quedeu encallats en un nivell, no dubteu a contactar-me a través del correu electrònic que trobareu a la pàgina de configuració!";
 "You can view this page in the settings tab at any time. Good luck, you will need it!" = "Podeu veure aquesta pàgina a la pestanya de configuració en qualsevol moment. Bona sort, la necessitareu!";
 "Things to note:" = "Coses a tenir en compte:";
 "I hope you enjoy this game as much as I did making it!" = "Espero que gaudiu d’aquest joc tant com ho vaig fer jo!";
@@ -20,3 +20,4 @@
 "It seems that you have a poor internet connection. Try reseting your connection or change your connection to a faster one." = "Sembla que teniu una connexió a Internet deficient. Proveu de restablir la vostra connexió o canvieu-la per una de més ràpida.";
 "Change Language:" = "Canviar d'idioma:";
 "It seems that you have a poor internet connection. Try reseting your connection or change your connection to a faster one." = "Sembla que teniu una connexió a Internet deficient. Proveu de restablir la vostra connexió o canvieu-la per una de més ràpida.";
+"Contact me:" = "Contacta'm:";

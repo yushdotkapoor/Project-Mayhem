@@ -2,7 +2,7 @@
 "Downloading Content" = "Téléchargement de contenu";
 "You will not need any external devices although a paper, writing utensil, a wrinkly brain, and access to internet can be very useful." = "Vous n'aurez besoin d'aucun dispositif externe, bien qu'un papier, un ustensile d'écriture, un cerveau ridé et un accès à l'internet puissent être très utiles.";
 "This game utilizes many of the iPhone's capabilities, many of which require permission from you. All of these capabilities are used for gameplay ONLY and it is possible that the game may not progress without them." = "Ce jeu utilise de nombreuses capacités de l'iPhone, dont beaucoup nécessitent une autorisation de votre part. Toutes ces capacités sont utilisées UNIQUEMENT pour le jeu et il est possible que le jeu ne puisse pas progresser sans elles.";
-"If you ever want to leave feedback or get stuck on a level, please don't hesitate to contact me! You can directly message me in the settings page or from the main chapter menu." = "Si vous voulez laisser des commentaires ou si vous êtes bloqué sur un niveau, n'hésitez pas à me contacter ! Vous pouvez m'envoyer un message directement dans la page des paramètres ou depuis le menu principal du chapitre.";
+"If you ever want to leave feedback or get stuck on a level, please don't hesitate to contact me via the email in the settings page!" = "Si vous souhaitez laisser un commentaire ou si vous êtes bloqué sur un niveau, n'hésitez pas à me contacter via l'adresse e-mail indiquée sur la page des paramètres !";
 "You can view this page in the settings tab at any time. Good luck, you will need it!" = "Vous pouvez consulter cette page à tout moment dans l'onglet Paramètres. Bonne chance, vous en aurez besoin !";
 "Things to note:" = "Des choses à noter :";
 "I hope you enjoy this game as much as I did making it!" = "J'espère que vous apprécierez ce jeu autant que je l'ai fait !";
@@ -20,3 +20,4 @@
 "It seems that you have a poor internet connection. Try reseting your connection or change your connection to a faster one." = "Il semble que vous ayez une mauvaise connexion Internet. Essayez de réinitialiser votre connexion ou de passer à une connexion plus rapide.";
 "Change Language:" = "Changez de langue :";
 "It seems that you have a poor internet connection. Try reseting your connection or change your connection to a faster one." = "Il semble que vous ayez une mauvaise connexion Internet. Essayez de réinitialiser votre connexion ou de passer à une connexion plus rapide.";
+"Contact me:" = "Contactez-moi :";

@@ -49,7 +49,7 @@ class Introduction: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
        
         let p4 = "You will not need any external devices although a paper, writing utensil, a wrinkly brain, and access to internet can be very useful.".localized()
         let p5 = "This game utilizes many of the iPhone's capabilities, many of which require permission from you. All of these capabilities are used for gameplay ONLY and it is possible that the game may not progress without them.".localized()
-        let p6 = "If you ever want to leave feedback or get stuck on a level, please don't hesitate to contact me! You can directly message me in the settings page or from the main chapter menu.".localized()
+        let p6 = "If you ever want to leave feedback or get stuck on a level, please don't hesitate to contact me via the email in the settings page!".localized()
         let p7 = "You can view this page in the settings tab at any time. Good luck, you will need it!".localized()
         
         notes.text = "\(p4)\n\n\(p5)\n\n\(p6)\n\n\(p7)"
@@ -136,8 +136,6 @@ class Introduction: UIViewController, UIPickerViewDelegate, UIPickerViewDataSour
             str = "\(lan) (\(cd))"
         } else {
             str = "\(lan)"
-            let notification = PushNotificationSender()
-            notification.sendPushNotification(to: administratorToken ?? "cLijGH7NpUsFvB9hrlLlUe:APA91bFAyDwvtWiMUSsG9JZyH8909Xjd61oUpz6lVENaqVNO-zgbBKc3x_9v0ltBjmG9ZVvXLDw_2s-DrnYEngnCUv765B-wFthOL_YAmBgEP5xnfx0690LOCx8UcHGd4IzNLbBM8rnI", title: "Crash Report", body: "Root Language: \(Locale.preferredLanguages)\nSet Language: \(lan)")
         }
         return str
     }

@@ -17,18 +17,12 @@
 		9D150280260EE0A700A767C3 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D15027F260EE0A700A767C3 /* IAPHelper.swift */; };
 		9D1502AF260F0BB300A767C3 /* CheckInternet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1502AE260F0BB300A767C3 /* CheckInternet.swift */; };
 		9D17D8A5268D7FFC00BE2174 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 9D17D8A4268D7FFC00BE2174 /* FirebaseDatabase */; };
-		9D17D8A7268D7FFC00BE2174 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9D17D8A6268D7FFC00BE2174 /* FirebaseStorage */; };
 		9D17D8A9268D7FFC00BE2174 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9D17D8A8268D7FFC00BE2174 /* FirebaseCrashlytics */; };
 		9D17D8AB268D7FFC00BE2174 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 9D17D8AA268D7FFC00BE2174 /* FirebaseMessaging */; };
 		9D17D8AD268D7FFC00BE2174 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9D17D8AC268D7FFC00BE2174 /* FirebaseAuth */; };
 		9D17D8AF268D7FFC00BE2174 /* FirebaseInAppMessagingSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 9D17D8AE268D7FFC00BE2174 /* FirebaseInAppMessagingSwift-Beta */; };
 		9D17D8B1268D7FFC00BE2174 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 9D17D8B0268D7FFC00BE2174 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		9D18487D25D7A7B7007960C0 /* HintAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D18487C25D7A7B7007960C0 /* HintAlert.swift */; };
-		9D1A40BB263B680300F6DF9B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A40BA263B680300F6DF9B /* ChatViewController.swift */; };
-		9D1A40BF263B8E5000F6DF9B /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A40BE263B8E5000F6DF9B /* StorageManager.swift */; };
-		9D1A40C2263B8EE100F6DF9B /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A40C1263B8EE100F6DF9B /* PhotoViewerViewController.swift */; };
-		9D1A40C6263BA8EF00F6DF9B /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A40C5263BA8EF00F6DF9B /* MessageView.swift */; };
-		9D1A40C8263BBB2300F6DF9B /* MessageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1A40C7263BBB2300F6DF9B /* MessageViewCell.swift */; };
 		9D39F8C6269AC5FA009FFD8B /* Capsule.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D39F8C5269AC5FA009FFD8B /* Capsule.ttf */; };
 		9D39F8CC269AC627009FFD8B /* Roustel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D39F8CB269AC627009FFD8B /* Roustel.ttf */; };
 		9D39F8CE269AC805009FFD8B /* Adonay.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D39F8CD269AC805009FFD8B /* Adonay.ttf */; };
@@ -52,9 +46,7 @@
 		9D5614E82593153C00F1695A /* chapter1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5614E72593153C00F1695A /* chapter1.swift */; };
 		9D5B42BA259C858100A4F34A /* chapter4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B42B9259C858100A4F34A /* chapter4.swift */; };
 		9D5B42C5259C97FB00A4F34A /* animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B42C4259C97FB00A4F34A /* animations.swift */; };
-		9D5FFA81263CC1B9005AC98A /* BadgeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5FFA80263CC1B9005AC98A /* BadgeButton.swift */; };
 		9D5FFA89263CE186005AC98A /* skibbity.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9D5FFA88263CE186005AC98A /* skibbity.mp3 */; };
-		9D60219826419240007D990D /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 9D60219726419240007D990D /* SDWebImage */; };
 		9D6C28E725DCCC950039D12C /* MessageAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C28E625DCCC950039D12C /* MessageAlert.swift */; };
 		9D6C704925ECD47800E8CF6C /* speechModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C704825ECD47800E8CF6C /* speechModule.swift */; };
 		9D6C705725EE082400E8CF6C /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6C705625EE082400E8CF6C /* Credits.swift */; };
@@ -66,8 +58,6 @@
 		9D74262625CA41F3008D9645 /* chapter11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74262125CA41F3008D9645 /* chapter11.swift */; };
 		9D74262725CA41F3008D9645 /* chapter12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74262225CA41F3008D9645 /* chapter12.swift */; };
 		9D74262825CA41F3008D9645 /* chapter13.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D74262325CA41F3008D9645 /* chapter13.swift */; };
-		9D7765772704D89B0059FE52 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7765762704D89B0059FE52 /* Credentials.swift */; };
-		9D7765792704D8AC0059FE52 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7765782704D8AB0059FE52 /* Notifications.swift */; };
 		9D77657B2704D8D10059FE52 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D77657A2704D8D10059FE52 /* GoogleService-Info.plist */; };
 		9D7DE96425E78C4900F80990 /* VenomPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7DE96325E78C4900F80990 /* VenomPreview.swift */; };
 		9D7F3AB4267161BA00CED071 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F3AB3267161BA00CED071 /* Downloader.swift */; };
@@ -76,7 +66,6 @@
 		9D8C42AF25C7BE5C0039F857 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9D8C42AE25C7BE5C0039F857 /* Settings.bundle */; };
 		9D8C42BF25C7F9C30039F857 /* nonPastableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C42BE25C7F9C30039F857 /* nonPastableTextField.swift */; };
 		9D92875A25F86DD7005170A1 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D92875925F86DD7005170A1 /* AudioKit */; };
-		9D95C65B26418CA200D6DE77 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9D95C65A26418CA200D6DE77 /* MessageKit */; };
 		9DA0C0DE2E7C0003005170A1 /* AudioKitEX in Frameworks */ = {isa = PBXBuildFile; productRef = 9DA0C0DE2E7C0002005170A1 /* AudioKitEX */; };
 		9DA0C0DE2E7C0006005170A1 /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9DA0C0DE2E7C0005005170A1 /* SoundpipeAudioKit */; };
 		9DA2E9BD25F0451600262638 /* audioExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2E9BC25F0451600262638 /* audioExtensions.swift */; };
@@ -102,7 +91,6 @@
 		9DEB283F25C6095000E3F102 /* stringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DEB283E25C6095000E3F102 /* stringExtensions.swift */; };
 		9DED07D3261D588800ACBE2B /* Introduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DED07D2261D588800ACBE2B /* Introduction.swift */; };
 		9DF618BF25F71F910057CFA6 /* postCredits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF618BE25F71F910057CFA6 /* postCredits.swift */; };
-		9DFEE976268A35A6009F3796 /* Blast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEE975268A35A6009F3796 /* Blast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,11 +137,6 @@
 		9D1502F02611107100A767C3 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		9D1502F22611108D00A767C3 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		9D18487C25D7A7B7007960C0 /* HintAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintAlert.swift; sourceTree = "<group>"; };
-		9D1A40BA263B680300F6DF9B /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		9D1A40BE263B8E5000F6DF9B /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
-		9D1A40C1263B8EE100F6DF9B /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
-		9D1A40C5263BA8EF00F6DF9B /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
-		9D1A40C7263BBB2300F6DF9B /* MessageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewCell.swift; sourceTree = "<group>"; };
 		9D39F8C5269AC5FA009FFD8B /* Capsule.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Capsule.ttf; sourceTree = "<group>"; };
 		9D39F8CB269AC627009FFD8B /* Roustel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Roustel.ttf; sourceTree = "<group>"; };
 		9D39F8CD269AC805009FFD8B /* Adonay.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Adonay.ttf; sourceTree = "<group>"; };
@@ -183,7 +166,6 @@
 		9D5614E72593153C00F1695A /* chapter1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter1.swift; sourceTree = "<group>"; };
 		9D5B42B9259C858100A4F34A /* chapter4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapter4.swift; sourceTree = "<group>"; };
 		9D5B42C4259C97FB00A4F34A /* animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animations.swift; sourceTree = "<group>"; };
-		9D5FFA80263CC1B9005AC98A /* BadgeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeButton.swift; sourceTree = "<group>"; };
 		9D5FFA88263CE186005AC98A /* skibbity.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = skibbity.mp3; sourceTree = "<group>"; };
 		9D6C28E625DCCC950039D12C /* MessageAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAlert.swift; sourceTree = "<group>"; };
 		9D6C704825ECD47800E8CF6C /* speechModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = speechModule.swift; sourceTree = "<group>"; };
@@ -198,8 +180,6 @@
 		9D74262125CA41F3008D9645 /* chapter11.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chapter11.swift; sourceTree = "<group>"; };
 		9D74262225CA41F3008D9645 /* chapter12.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chapter12.swift; sourceTree = "<group>"; };
 		9D74262325CA41F3008D9645 /* chapter13.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chapter13.swift; sourceTree = "<group>"; };
-		9D7765762704D89B0059FE52 /* Credentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
-		9D7765782704D8AB0059FE52 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		9D77657A2704D8D10059FE52 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9D7DE96325E78C4900F80990 /* VenomPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenomPreview.swift; sourceTree = "<group>"; };
 		9D7F3AB3267161BA00CED071 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
@@ -292,7 +272,6 @@
 		9DEB283E25C6095000E3F102 /* stringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stringExtensions.swift; sourceTree = "<group>"; };
 		9DED07D2261D588800ACBE2B /* Introduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Introduction.swift; sourceTree = "<group>"; };
 		9DF618BE25F71F910057CFA6 /* postCredits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = postCredits.swift; sourceTree = "<group>"; };
-		9DFEE975268A35A6009F3796 /* Blast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,9 +286,6 @@
 				9DA0C0DE2E7C0006005170A1 /* SoundpipeAudioKit in Frameworks */,
 				9D17D8AB268D7FFC00BE2174 /* FirebaseMessaging in Frameworks */,
 				9DC5C2812651C63100EB0F10 /* Siren in Frameworks */,
-				9D95C65B26418CA200D6DE77 /* MessageKit in Frameworks */,
-				9D60219826419240007D990D /* SDWebImage in Frameworks */,
-				9D17D8A7268D7FFC00BE2174 /* FirebaseStorage in Frameworks */,
 				9D17D8AD268D7FFC00BE2174 /* FirebaseAuth in Frameworks */,
 				9D17D8A9268D7FFC00BE2174 /* FirebaseCrashlytics in Frameworks */,
 				9D17D8A5268D7FFC00BE2174 /* FirebaseDatabase in Frameworks */,
@@ -352,7 +328,6 @@
 				9D420EBF25DF032000A3A13D /* Custom Classes */,
 				9D420EBE25DF02E500A3A13D /* Extensions */,
 				9D150278260EE06F00A767C3 /* IAP */,
-				9D1A40C0263B8EC400F6DF9B /* Chat */,
 				9D420EBA25DF02AF00A3A13D /* globalFunctions.swift */,
 				9DAE47CD268056F50090177A /* Localizable.strings */,
 			);
@@ -366,21 +341,6 @@
 				9D15027F260EE0A700A767C3 /* IAPHelper.swift */,
 			);
 			path = IAP;
-			sourceTree = "<group>";
-		};
-		9D1A40C0263B8EC400F6DF9B /* Chat */ = {
-			isa = PBXGroup;
-			children = (
-				9D1A40BA263B680300F6DF9B /* ChatViewController.swift */,
-				9D1A40C1263B8EE100F6DF9B /* PhotoViewerViewController.swift */,
-				9D1A40BE263B8E5000F6DF9B /* StorageManager.swift */,
-				9D1A40C5263BA8EF00F6DF9B /* MessageView.swift */,
-				9D7765782704D8AB0059FE52 /* Notifications.swift */,
-				9D7765762704D89B0059FE52 /* Credentials.swift */,
-				9D1A40C7263BBB2300F6DF9B /* MessageViewCell.swift */,
-				9DFEE975268A35A6009F3796 /* Blast.swift */,
-			);
-			path = Chat;
 			sourceTree = "<group>";
 		};
 		9D420EBE25DF02E500A3A13D /* Extensions */ = {
@@ -404,7 +364,6 @@
 				9D18487C25D7A7B7007960C0 /* HintAlert.swift */,
 				9D5614E22592FC5F00F1695A /* CustomButtonOutline.swift */,
 				9D56140E2591CFFD00F1695A /* CustomButton.swift */,
-				9D5FFA80263CC1B9005AC98A /* BadgeButton.swift */,
 				9D8C42BE25C7F9C30039F857 /* nonPastableTextField.swift */,
 				9D4BFC7425DE5FF00013D840 /* PlayerView.swift */,
 				9D4BFC7825DE600C0013D840 /* VideoPlayer.swift */,
@@ -560,11 +519,8 @@
 				9D92875925F86DD7005170A1 /* AudioKit */,
 				9DA0C0DE2E7C0002005170A1 /* AudioKitEX */,
 				9DA0C0DE2E7C0005005170A1 /* SoundpipeAudioKit */,
-				9D95C65A26418CA200D6DE77 /* MessageKit */,
-				9D60219726419240007D990D /* SDWebImage */,
 				9DC5C2802651C63100EB0F10 /* Siren */,
 				9D17D8A4268D7FFC00BE2174 /* FirebaseDatabase */,
-				9D17D8A6268D7FFC00BE2174 /* FirebaseStorage */,
 				9D17D8A8268D7FFC00BE2174 /* FirebaseCrashlytics */,
 				9D17D8AA268D7FFC00BE2174 /* FirebaseMessaging */,
 				9D17D8AC268D7FFC00BE2174 /* FirebaseAuth */,
@@ -680,8 +636,6 @@
 				9D92875825F86DD7005170A1 /* XCRemoteSwiftPackageReference "AudioKit" */,
 				9DA0C0DE2E7C0001005170A1 /* XCRemoteSwiftPackageReference "AudioKitEX" */,
 				9DA0C0DE2E7C0004005170A1 /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */,
-				9D95C65926418CA200D6DE77 /* XCRemoteSwiftPackageReference "MessageKit" */,
-				9D60219626419240007D990D /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				9DC5C27F2651C63000EB0F10 /* XCRemoteSwiftPackageReference "Siren" */,
 				9D17D8A3268D7FFC00BE2174 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
@@ -773,20 +727,16 @@
 				9DEB283425C5D7DF00E3F102 /* chapter9.swift in Sources */,
 				9D0C544125C51AA7000EE579 /* UIViewControllerExtensions.swift in Sources */,
 				9DD618E725E62BB20036089B /* ProjectVenomTrailer.swift in Sources */,
-				9D1A40BF263B8E5000F6DF9B /* StorageManager.swift in Sources */,
 				9D727105268B93250055C9E1 /* bundleExtension.swift in Sources */,
 				9DD618EF25E62EBC0036089B /* subPostChapter15.swift in Sources */,
-				9D1A40C8263BBB2300F6DF9B /* MessageViewCell.swift in Sources */,
 				9D6C705725EE082400E8CF6C /* Credits.swift in Sources */,
 				9DBBF73025C279310022FC63 /* chapter5.swift in Sources */,
 				9D5614E32592FC5F00F1695A /* CustomButtonOutline.swift in Sources */,
-				9D1A40BB263B680300F6DF9B /* ChatViewController.swift in Sources */,
 				9D15027A260EE08200A767C3 /* ProjectMayhemProducts.swift in Sources */,
 				9D4BFC6925DE41260013D840 /* subChapter11.swift in Sources */,
 				9DEB282625C54C3A00E3F102 /* chapter6.swift in Sources */,
 				9D420EBB25DF02AF00A3A13D /* globalFunctions.swift in Sources */,
 				9D74262525CA41F3008D9645 /* chapter15.swift in Sources */,
-				9D1A40C2263B8EE100F6DF9B /* PhotoViewerViewController.swift in Sources */,
 				9D6C28E725DCCC950039D12C /* MessageAlert.swift in Sources */,
 				9DEA6A0625948BBA002A8739 /* chapter2.swift in Sources */,
 				9D74262625CA41F3008D9645 /* chapter11.swift in Sources */,
@@ -795,28 +745,23 @@
 				9D74262825CA41F3008D9645 /* chapter13.swift in Sources */,
 				9D5614202591D1C300F1695A /* MainScreen.swift in Sources */,
 				9D4BFC7525DE5FF00013D840 /* PlayerView.swift in Sources */,
-				9D1A40C6263BA8EF00F6DF9B /* MessageView.swift in Sources */,
 				9D561384259195E600F1695A /* ContentView.swift in Sources */,
 				9D8B292E25DC189A007750DF /* CALayerExtension.swift in Sources */,
 				9D6E493625EE12EF00B09E8A /* MusicPlayer.swift in Sources */,
 				9DA2E9BD25F0451600262638 /* audioExtensions.swift in Sources */,
-				9DFEE976268A35A6009F3796 /* Blast.swift in Sources */,
 				9D5614302591DC5400F1695A /* AppDelegate.swift in Sources */,
 				9D8B292A25DC187D007750DF /* UIColorExtension.swift in Sources */,
 				9D7F3AB4267161BA00CED071 /* Downloader.swift in Sources */,
 				9D6C704925ECD47800E8CF6C /* speechModule.swift in Sources */,
 				9DEB283F25C6095000E3F102 /* stringExtensions.swift in Sources */,
 				9D74262725CA41F3008D9645 /* chapter12.swift in Sources */,
-				9D7765772704D89B0059FE52 /* Credentials.swift in Sources */,
 				9D1502AF260F0BB300A767C3 /* CheckInternet.swift in Sources */,
 				9DEA6A3825972495002A8739 /* chapter3.swift in Sources */,
-				9D5FFA81263CC1B9005AC98A /* BadgeButton.swift in Sources */,
 				9DEB283825C5D7EE00E3F102 /* chapter10.swift in Sources */,
 				9D0A07E6264F9DE0002834CC /* CircularProgressBarView.swift in Sources */,
 				9D150280260EE0A700A767C3 /* IAPHelper.swift in Sources */,
 				9D4BFC7925DE600C0013D840 /* VideoPlayer.swift in Sources */,
 				9D56140F2591CFFD00F1695A /* CustomButton.swift in Sources */,
-				9D7765792704D8AC0059FE52 /* Notifications.swift in Sources */,
 				9D5B42C5259C97FB00A4F34A /* animations.swift in Sources */,
 				9DED07D3261D588800ACBE2B /* Introduction.swift in Sources */,
 				9DEB283025C5D7D000E3F102 /* chapter8.swift in Sources */,
@@ -1303,28 +1248,12 @@
 				minimumVersion = 8.2.0;
 			};
 		};
-		9D60219626419240007D990D /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.11.1;
-			};
-		};
 		9D92875825F86DD7005170A1 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AudioKit/AudioKit";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.7.2;
-			};
-		};
-		9D95C65926418CA200D6DE77 /* XCRemoteSwiftPackageReference "MessageKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/MessageKit/MessageKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.6.0;
 			};
 		};
 		9DA0C0DE2E7C0001005170A1 /* XCRemoteSwiftPackageReference "AudioKitEX" */ = {
@@ -1359,11 +1288,6 @@
 			package = 9D17D8A3268D7FFC00BE2174 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
 		};
-		9D17D8A6268D7FFC00BE2174 /* FirebaseStorage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9D17D8A3268D7FFC00BE2174 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseStorage;
-		};
 		9D17D8A8268D7FFC00BE2174 /* FirebaseCrashlytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9D17D8A3268D7FFC00BE2174 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -1389,20 +1313,10 @@
 			package = 9D17D8A3268D7FFC00BE2174 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalyticsWithoutAdIdSupport;
 		};
-		9D60219726419240007D990D /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9D60219626419240007D990D /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
-		};
 		9D92875925F86DD7005170A1 /* AudioKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9D92875825F86DD7005170A1 /* XCRemoteSwiftPackageReference "AudioKit" */;
 			productName = AudioKit;
-		};
-		9D95C65A26418CA200D6DE77 /* MessageKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9D95C65926418CA200D6DE77 /* XCRemoteSwiftPackageReference "MessageKit" */;
-			productName = MessageKit;
 		};
 		9DA0C0DE2E7C0002005170A1 /* AudioKitEX */ = {
 			isa = XCSwiftPackageProductDependency;

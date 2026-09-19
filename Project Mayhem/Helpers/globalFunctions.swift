@@ -58,18 +58,6 @@ func isView(selfView: UIViewController, checkView: AnyClass) -> Bool {
 	return false
 }
 
-func goToChat(vc: UIViewController) {
-	var selectNavigation = "MessagesNavigation"
-	
-	if (game.string(forKey: "key") == "ADMIN") {
-		selectNavigation = "AdminNavigation"
-	}
-	
-	let storyboard = UIStoryboard(name: "Main", bundle: nil)
-	let con = storyboard.instantiateViewController(withIdentifier: selectNavigation)
-	vc.present(con, animated: true, completion: nil)
-}
-
 func notAbleToUseCellular() -> Bool {
     return !game.bool(forKey: "useCellular") && game.bool(forKey: "onCellular")
 }

@@ -2,7 +2,7 @@
 "Downloading Content" = "Stahování obsahu";
 "You will not need any external devices although a paper, writing utensil, a wrinkly brain, and access to internet can be very useful." = "Nebudete potřebovat žádné externí zařízení, i když papír, psací potřeby, vrásčitý mozek a přístup k internetu mohou být velmi užitečné.";
 "This game utilizes many of the iPhone's capabilities, many of which require permission from you. All of these capabilities are used for gameplay ONLY and it is possible that the game may not progress without them." = "Tato hra využívá mnoho možností iPhonu, z nichž mnohé vyžadují vaše svolení. Všechny tyto možnosti se používají POUZE pro hraní a je možné, že bez nich hra nepokročí.";
-"If you ever want to leave feedback or get stuck on a level, please don't hesitate to contact me! You can directly message me in the settings page or from the main chapter menu." = "Pokud budete chtít někdy zanechat zpětnou vazbu nebo se zaseknete na nějaké úrovni, neváhejte mě kontaktovat! Můžete mi přímo napsat zprávu na stránce nastavení nebo v hlavní nabídce kapitoly.";
+"If you ever want to leave feedback or get stuck on a level, please don't hesitate to contact me via the email in the settings page!" = "Pokud budete chtít někdy zanechat zpětnou vazbu nebo se zaseknete na nějaké úrovni, neváhejte mě kontaktovat prostřednictvím e-mailu na stránce nastavení!";
 "You can view this page in the settings tab at any time. Good luck, you will need it!" = "Tuto stránku můžete kdykoli zobrazit na kartě nastavení. Hodně štěstí, budete ho potřebovat!";
 "Things to note:" = "Co je třeba vzít na vědomí:";
 "I hope you enjoy this game as much as I did making it!" = "Doufám, že se vám tato hra bude líbit stejně jako mně!";
@@ -20,3 +20,4 @@
 "It seems that you have a poor internet connection. Try reseting your connection or change your connection to a faster one." = "Zdá se, že máte špatné připojení k internetu. Zkuste obnovit připojení nebo změnit připojení na rychlejší.";
 "Change Language:" = "Změna jazyka:";
 "It seems that you have a poor internet connection. Try reseting your connection or change your connection to a faster one." = "Zdá se, že máte špatné připojení k internetu. Zkuste obnovit připojení nebo změnit připojení na rychlejší.";
+"Contact me:" = "Kontaktujte mě:";

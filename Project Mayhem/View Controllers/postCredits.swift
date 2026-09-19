@@ -18,7 +18,6 @@ class postCredits: UIViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var thx: UILabel!
     @IBOutlet weak var music: UILabel!
     @IBOutlet weak var quote: UILabel!
-    @IBOutlet weak var leave: CustomButtonOutline!
     @IBOutlet weak var review: CustomButtonOutline!
     @IBOutlet weak var merch: UILabel!
     @IBOutlet weak var merchDescription: UILabel!
@@ -32,7 +31,6 @@ class postCredits: UIViewController, MFMailComposeViewControllerDelegate {
         fullMerchStack.isHidden = true
         
         let col = UIColor(named: "MayhemBlue") ?? .systemBlue
-        leave.setupButton(color: col)
         review.setupButton(color: col)
         
         titl.text = "Credits".localized()
@@ -41,7 +39,6 @@ class postCredits: UIViewController, MFMailComposeViewControllerDelegate {
         music.text = "Music By".localized()
         let j1 = "Those who thrive in Mayhem, are the silent rulers of all".localized()
         quote.text = "\"\(j1)\"".localized()
-        leave.setTitle("Leave Feedback".localized(), for: .normal)
         review.setTitle("Review on App Store".localized(), for: .normal)
         merch.text = "Buy Our Merchandise".localized()
         merchDescription.text = "We have Project Mayhem hoodies, shirts, masks, and more! Tap the picture below to Check it out!".localized()
@@ -83,9 +80,6 @@ class postCredits: UIViewController, MFMailComposeViewControllerDelegate {
         alert.addAction(UIAlertAction(title: "Leave Review on App Store".localized(), style: .default, handler: { _ in
             self.writeReview()
         }))
-        alert.addAction(UIAlertAction(title: "Leave Feedback to Developer".localized(), style: .default, handler: { _ in
-            self.leaveTheFeedback()
-        }))
         present(alert, animated: true)
     }
     
@@ -103,16 +97,6 @@ class postCredits: UIViewController, MFMailComposeViewControllerDelegate {
         }
         
         UIApplication.shared.open(writeReviewURL)
-    }
-    
-    
-    @IBAction func feedback(_ sender: Any) {
-        leaveTheFeedback()
-    }
-    
-    func leaveTheFeedback() {
-        rList.removeAll()
-        goToChat(vc: self)
     }
     
     

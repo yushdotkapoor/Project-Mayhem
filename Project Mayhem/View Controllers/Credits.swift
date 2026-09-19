@@ -18,12 +18,12 @@ class Credits: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var betterHintButton: UIButton!
     @IBOutlet weak var purchaseRestore: CustomButtonOutline!
     @IBOutlet weak var welcStatementButton: CustomButtonOutline!
-    @IBOutlet weak var feedbackButton: CustomButtonOutline!
     @IBOutlet weak var fiveHintsButton: UIButton!
     @IBOutlet weak var fiveHintPurchasePrice: UILabel!
     @IBOutlet weak var fiveHintsDescription: UILabel!
     @IBOutlet weak var titl: UILabel!
     @IBOutlet weak var dev: UILabel!
+    @IBOutlet weak var devName: UILabel!
     @IBOutlet weak var mus: UILabel!
     @IBOutlet weak var buy: UILabel!
     @IBOutlet weak var betterHintDescription: UILabel!
@@ -48,6 +48,8 @@ class Credits: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var pickerSelection:Int?
     
+    let supportEmail = "visionconsolidated@gmail.com"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,11 +71,12 @@ class Credits: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         
         purchaseRestore.setupButton()
         welcStatementButton.setupButton()
-        feedbackButton.setupButton()
         
         checkIfPurchased()
         
-        for i in [betterHintButton, fiveHintsButton,welcStatementButton, purchaseRestore, feedbackButton] {
+        devName.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(contactDeveloper)))
+        
+        for i in [betterHintButton, fiveHintsButton,welcStatementButton, purchaseRestore] {
             i?.titleLabel?.minimumScaleFactor = 0.5
             i?.titleLabel?.adjustsFontSizeToFitWidth = true
         }
@@ -82,7 +85,7 @@ class Credits: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func resizeStuff() {
-        for i in [betterHintButton, fiveHintsButton,welcStatementButton, purchaseRestore, feedbackButton] {
+        for i in [betterHintButton, fiveHintsButton,welcStatementButton, purchaseRestore] {
             i?.titleLabel?.minimumScaleFactor = 0.5
             i?.titleLabel?.adjustsFontSizeToFitWidth = true
         }
@@ -93,6 +96,9 @@ class Credits: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         
         titl.text = "Settings".localized()
         dev.text = "Developer:".localized()
+        let contact = NSMutableAttributedString(string: "Yush Raj Kapoor\n\("Contact me:".localized())\n")
+        contact.append(NSAttributedString(string: supportEmail, attributes: [.underlineStyle: NSUnderlineStyle.single.rawValue]))
+        devName.attributedText = contact
         mus.text = "Music:".localized()
         buy.text = "Buy Project Mayhem Merchandise".localized()
         betterHintButton.setTitle("Better Hints".localized(), for: .normal)
@@ -106,7 +112,6 @@ class Credits: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         bestExp.text = "For best experience, make sure haptics (Settings) are on and that minimize flashing (above) is turned off.".localized()
         purchaseRestore.setTitle("Restore Purchases".localized(), for: .normal)
         welcStatementButton.setTitle("Welcome Statement".localized(), for: .normal)
-        feedbackButton.setTitle("Leave Feedback".localized(), for: .normal)
         reduceMotion.text = "Reduce Motion:".localized()
         reduceMotionDescription.text = "This option will reduce any gyroscopic motion animations".localized()
         languageTitle.text = "Language:".localized()
@@ -180,15 +185,13 @@ class Credits: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     
     
-    @IBAction func feedback(_ sender: Any) {
-        rList.removeAll()
-        
-        goToChat(vc: self)
-    }
-    
     @IBAction func visionConsolidatedWebsite(_ sender: Any) {
         openLink(st: "https://visionconsolidated.wixsite.com/website/project-mayhem-shop")    }
     
+    
+    @objc func contactDeveloper() {
+        openLink(st: "mailto:\(supportEmail)?subject=Project%20Mayhem")
+    }
     
     @IBAction func instagram(_ sender: Any) {
         openLink(st: "https://www.instagram.com/vision_consolidated/")

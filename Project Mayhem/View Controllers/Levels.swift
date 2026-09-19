@@ -49,24 +49,10 @@ class Levels: UIViewController {
     @IBOutlet weak var chap14Center: NSLayoutConstraint!
     @IBOutlet weak var chap15Center: NSLayoutConstraint!
     @IBOutlet weak var logo: UIImageView!
-    @IBOutlet weak var messagesIcon: MIBadgeButton!
     
     
     var del = 0.5
     
-    var notificationTimer:Timer?
-    
-    var hasNotification:notificationInfo = notificationInfo()
-    
-    class notificationInfo {
-        var shows:Bool
-        var arr:[String]
-        
-        init() {
-            shows = false
-            arr = []
-        }
-    }
     
     func localizeStrings() {
         let a = getData(string: "Buttons") as! [CustomButtonOutline]
@@ -114,86 +100,11 @@ class Levels: UIViewController {
             }
         }
         
-        notificationTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            self.checkNotification()
-        }
-        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.backTapped(gesture:)))
         logo.addGestureRecognizer(tapGesture)
         logo.isUserInteractionEnabled = true
         
-        notificationListener(type: .childAdded)
-        notificationListener(type: .childChanged)
-        
-        messagesIcon.setImage(UIImage(systemName: "message.fill")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        messagesIcon.badgeEdgeInsets = UIEdgeInsets(top: 13, left: 0, bottom: 0, right: 0)
-        messagesIcon.badge = ""
-        removeNotification()
-        
         ref.child("users/\(game.string(forKey: "key")!)/token").setValue(game.string(forKey: "token"))
-    }
-    
-    func notificationListener(type: DataEventType) {
-        let key = game.string(forKey: "key")
-        var count = 0
-        
-        ref.child("users/\(key!)/threads").observe(type, with: { (snapshot) in
-            let value = snapshot.value as! NSDictionary
-            let threadID = snapshot.key
-            let read = value["recipients"] as? [String:String] ?? [:]
-            for n in read {
-                let ke = n.key
-                let val = n.value
-                
-                count += 1
-                
-                if ke == key! && threadID != "0"  {
-                    if isView(selfView: self, checkView: MessageView.self) {
-                        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-                    }
-                    self.hasNotification.arr.append(val)
-                }
-            }
-        })
-    }
-    
-    @objc func checkNotification() {
-        if hasNotification.shows {
-            UIApplication.shared.applicationIconBadgeNumber = 1
-        } else {
-            UIApplication.shared.applicationIconBadgeNumber = 0
-        }
-        
-        if hasNotification.arr.isNotEmpty {
-            if hasNotification.arr.contains("Y") && !hasNotification.shows {
-                addNotification()
-            } else if hasNotification.shows && !hasNotification.arr.contains("Y") {
-                removeNotification()
-            }
-        }
-    }
-    
-    func addNotification() {
-        hasNotification.arr = []
-        hasNotification.shows = true
-        messagesIcon.tintColor = .white
-        messagesIcon.alpha = 1
-        messagesIcon.reactivateBadge()
-    }
-    
-    func removeNotification() {
-        hasNotification.arr = []
-        hasNotification.shows = false
-        messagesIcon.tintColor = UIColor(named: "MayhemGray")
-        messagesIcon.alpha = 0.5
-        messagesIcon.removeBadge()
-    }
-    
-    
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        notificationTimer?.invalidate()
     }
     
     @objc func backTapped(gesture: UIGestureRecognizer) {
@@ -352,12 +263,6 @@ class Levels: UIViewController {
             self.view.layoutIfNeeded()
         })
         del += 0.05
-    }
-    
-    
-    @IBAction func chat(_ sender: Any) {
-        rList.removeAll()
-        goToChat(vc: self)
     }
     
     

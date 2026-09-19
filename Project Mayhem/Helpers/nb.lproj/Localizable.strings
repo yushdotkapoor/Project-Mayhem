@@ -2,7 +2,7 @@
 "Downloading Content" = "Laster ned innhold";
 "You will not need any external devices although a paper, writing utensil, a wrinkly brain, and access to internet can be very useful." = "Du trenger ikke eksterne enheter, selv om papir, skriveutstyr, en rynket hjerne og tilgang til internett kan være veldig nyttig.";
 "This game utilizes many of the iPhone's capabilities, many of which require permission from you. All of these capabilities are used for gameplay ONLY and it is possible that the game may not progress without them." = "Dette spillet bruker mange av iPhone-egenskapene, hvorav mange krever tillatelse fra deg. Alle disse funksjonene brukes KUN til spill, og det er mulig at spillet ikke kan utvikle seg uten dem.";
-"If you ever want to leave feedback or get stuck on a level, please don't hesitate to contact me! You can directly message me in the settings page or from the main chapter menu." = "Hvis du noen gang vil gi tilbakemelding eller bli sittende fast på et nivå, ikke nøl med å kontakte meg! Du kan sende meg en melding direkte på innstillingssiden eller fra hovedkapittelmenyen.";
+"If you ever want to leave feedback or get stuck on a level, please don't hesitate to contact me via the email in the settings page!" = "Hvis du noen gang vil gi tilbakemelding eller blir sittende fast på et nivå, ikke nøl med å kontakte meg via e-postadressen på innstillingssiden!";
 "You can view this page in the settings tab at any time. Good luck, you will need it!" = "Du kan når som helst se denne siden i innstillingsfanen. Lykke til, du trenger det!";
 "Things to note:" = "Ting å merke seg:";
 "I hope you enjoy this game as much as I did making it!" = "Jeg håper du liker dette spillet like mye som jeg gjorde det!";
@@ -20,3 +20,4 @@
 "It seems that you have a poor internet connection. Try reseting your connection or change your connection to a faster one." = "Det ser ut til at du har en dårlig internettforbindelse. Prøv å tilbakestille tilkoblingen eller endre tilkoblingen til en raskere.";
 "Change Language:" = "Skifte språk:";
 "It seems that you have a poor internet connection. Try reseting your connection or change your connection to a faster one." = "Det ser ut til at du har dårlig internettforbindelse. Prøv å tilbakestille tilkoblingen eller endre tilkoblingen til en raskere.";
+"Contact me:" = "Kontakt meg:";

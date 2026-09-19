@@ -94,7 +94,7 @@ class VideoPlayer : NSObject {
                 game.setValue(0.0, forKey: "\(k)DownloadProgress")
             }
             wait {
-                let alertController = UIAlertController(title: "Error".localized(), message: "For some reason, the files for this chapter are corrupted. A fix has been deployed, but make sure your internet connection is stable. Please stay in the chapter and the chapter should automatically start once files are downloaded. If this problem persists, please contact me through the game chat.".localized(), preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Error".localized(), message: "For some reason, the files for this chapter are corrupted. A fix has been deployed, but make sure your internet connection is stable. Please stay in the chapter and the chapter should automatically start once files are downloaded. If this problem persists, please contact me via the email in the settings page.".localized(), preferredStyle: .alert)
                 let defaultAction = UIAlertAction(title: "Okay".localized(), style: .cancel, handler: {_ in
                     self.overlayTag()
                 })

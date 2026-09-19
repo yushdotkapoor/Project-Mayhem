@@ -2,7 +2,7 @@
 "Downloading Content" = "מוריד תוכן";
 "You will not need any external devices although a paper, writing utensil, a wrinkly brain, and access to internet can be very useful." = "לא תזדקק למכשירים חיצוניים אם כי נייר, כלי כתיבה, מוח מקומט וגישה לאינטרנט יכולים להיות שימושיים מאוד.";
 "This game utilizes many of the iPhone's capabilities, many of which require permission from you. All of these capabilities are used for gameplay ONLY and it is possible that the game may not progress without them." = "משחק זה מנצל יכולות רבות של האייפון, שרבות מהן דורשות אישור ממך. כל היכולות הללו משמשות למשחק בלבד וייתכן שהמשחק לא יתקדם בלעדיהן.";
-"If you ever want to leave feedback or get stuck on a level, please don't hesitate to contact me! You can directly message me in the settings page or from the main chapter menu." = "אם אי פעם תרצו להשאיר משוב או להיתקע ברמה, אל תהססו לפנות אלי! אתה יכול לשלוח לי הודעה ישירה בדף ההגדרות או מתפריט הפרקים הראשי.";
+"If you ever want to leave feedback or get stuck on a level, please don't hesitate to contact me via the email in the settings page!" = "אם אי פעם תרצו להשאיר משוב או נתקעתם בשלב כלשהו, אל תהססו לפנות אליי דרך האימייל בדף ההגדרות!";
 "You can view this page in the settings tab at any time. Good luck, you will need it!" = "תוכל להציג דף זה בכרטיסיית ההגדרות בכל עת. בהצלחה, תצטרך את זה!";
 "Things to note:" = "דברים שיש לציין:";
 "I hope you enjoy this game as much as I did making it!" = "אני מקווה שתיהנו ממשחק זה כמו שעשיתי אותו!";
@@ -20,3 +20,4 @@
 "It seems that you have a poor internet connection. Try reseting your connection or change your connection to a faster one." = "נראה שיש לך חיבור לאינטרנט גרוע. נסה לאפס את החיבור שלך או שנה את החיבור לחיבור מהיר יותר.";
 "Change Language:" = "שנה שפה:";
 "It seems that you have a poor internet connection. Try reseting your connection or change your connection to a faster one." = "נראה שיש לך חיבור לאינטרנט גרוע. נסה לאפס את החיבור שלך או שנה את החיבור לחיבור מהיר יותר.";
+"Contact me:" = "צרו איתי קשר:";
