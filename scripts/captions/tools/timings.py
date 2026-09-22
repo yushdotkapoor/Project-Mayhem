@@ -25,11 +25,14 @@ if cmd == "export":
 elif cmd == "import":
     text = open(SRT, encoding="utf-8").read()
     blocks = re.findall(r"(?:^|\n)(?:# ===== (\w+) =====|\d+\n([\d:,]+) --> ([\d:,]+)\n([^\n]*))", text)
-    video, idx = None, 0
+    parsed, video = {}, None
     for name, s, e, line in blocks:
-        if name: video, idx = name, 0; continue
-        assert idx < len(en[video]), f"too many cues for {video}"
-        en[video][idx] = [round(sec(s), 3), round(sec(e), 3), line]; idx += 1
+        if name: video = name; parsed[video] = []; continue
+        parsed[video].append([round(sec(s), 3), round(sec(e), 3), line])
+    for video, cues in parsed.items():
+        if len(cues) != len(en[video]):
+            print(f"NOTE: {video} now has {len(cues)} cues (was {len(en[video])}); translations must be updated to match")
+        en[video] = cues
     json.dump(en, open(SRC, "w"), ensure_ascii=False, indent=0); print("timings imported into", SRC)
 elif cmd == "shift" and len(sys.argv) == 4:
     video, d = sys.argv[2], float(sys.argv[3])
