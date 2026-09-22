@@ -76,24 +76,20 @@ class MainScreen: UIViewController {
         if intro == false {
             performSegue(withIdentifier: "mainToIntroduction", sender: self)
         } else {
-            let v = validateVideos()
             let vL = validateLocalizationFiles()
             let wt = weekTimer()
             
-            
-            if (!videosCurrentlyDownloading && !game.bool(forKey: "downloaded")) || wt {
-                //uploadVideos()
-                if !CheckInternet.Connection() {
-                    alert(title: "Error".localized(), message: "Game content for this application needs to be downloaded! It seems that you are not connected to the Internet. Please connect to the Internet to continue.".localized(), actionTitle: "Okay".localized())
-                } else if notAbleToUseCellular() {
-                    alert(title: "Error".localized(), message: "Game content for this application needs to be downloaded! It seems that you have decided to not use cellular data to download content. Please find another Internet source or enable cellular data through the game settings.".localized(), actionTitle: "Okay".localized(), actions: {
-                        self.performSegue(withIdentifier: "mainToCredits", sender: nil)
-                    })
-                } else {
-                    if v.count != 0 {
-                        downloadVideos(vidNames: v)
+            if !videosCurrentlyDownloading {
+                checkForVideoUpdates { v in
+                    guard v.count != 0 else { return }
+                    if !CheckInternet.Connection() {
+                        self.alert(title: "Error".localized(), message: "Game content for this application needs to be downloaded! It seems that you are not connected to the Internet. Please connect to the Internet to continue.".localized(), actionTitle: "Okay".localized())
+                    } else if notAbleToUseCellular() {
+                        self.alert(title: "Error".localized(), message: "Game content for this application needs to be downloaded! It seems that you have decided to not use cellular data to download content. Please find another Internet source or enable cellular data through the game settings.".localized(), actionTitle: "Okay".localized(), actions: {
+                            self.performSegue(withIdentifier: "mainToCredits", sender: nil)
+                        })
                     } else {
-                        downloadVideos()
+                        downloadVideos(vidNames: v)
                     }
                 }
             }

@@ -460,10 +460,6 @@ class VideoPlayer : NSObject {
                             if let option = options.first {
                                 playerItem?.select(option, in: group)
                             }
-                        } else {
-                            if videoTitle != "Chap1Intro" {
-                                downloadVideos()
-                            }
                         }
                         
                         
