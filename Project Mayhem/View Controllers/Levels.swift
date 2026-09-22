@@ -73,23 +73,20 @@ class Levels: UIViewController {
         MusicPlayer.shared.volumeControl(factor: 0.4)
         
         
-        let v = validateVideos()
         let vL = validateLocalizationFiles()
         let wt = weekTimer()
         
-        if (!videosCurrentlyDownloading && !game.bool(forKey: "downloaded")) || wt {
-            if !CheckInternet.Connection() {
-                alert(title: "Error".localized(), message: "Game content for this application needs to be downloaded! It seems that you are not connected to the Internet. Please connect to the Internet to continue.".localized(), actionTitle: "Okay".localized())
-            } else if notAbleToUseCellular() {
-                alert(title: "Error".localized(), message: "Game content for this application needs to be downloaded! It seems that you have decided to not use cellular data to download content. Please find another Internet source or enable cellular data through the game settings.".localized(), actionTitle: "Okay".localized(), actions: {
-                    self.performSegue(withIdentifier: "mainToCredits", sender: nil)
-                })
-            } else {
-                //uploadVideos()
-                if v.count != 0 {
-                    downloadVideos(vidNames: v)
+        if !videosCurrentlyDownloading {
+            checkForVideoUpdates { v in
+                guard v.count != 0 else { return }
+                if !CheckInternet.Connection() {
+                    self.alert(title: "Error".localized(), message: "Game content for this application needs to be downloaded! It seems that you are not connected to the Internet. Please connect to the Internet to continue.".localized(), actionTitle: "Okay".localized())
+                } else if notAbleToUseCellular() {
+                    self.alert(title: "Error".localized(), message: "Game content for this application needs to be downloaded! It seems that you have decided to not use cellular data to download content. Please find another Internet source or enable cellular data through the game settings.".localized(), actionTitle: "Okay".localized(), actions: {
+                        self.performSegue(withIdentifier: "mainToCredits", sender: nil)
+                    })
                 } else {
-                    downloadVideos()
+                    downloadVideos(vidNames: v)
                 }
             }
         }
