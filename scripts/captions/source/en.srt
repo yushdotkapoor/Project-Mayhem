@@ -1,0 +1,220 @@
+# ===== lvl7Intro =====
+
+1
+00:00:00,100 --> 00:00:04,900
+Hi there. I see you're trying to access something you probably shouldn't.
+
+2
+00:00:05,300 --> 00:00:09,800
+That's okay. Transparency is the key to trust, and I trust you.
+
+3
+00:00:10,000 --> 00:00:15,000
+I know the Defenders very well, and I've been keeping very close tabs on you.
+
+4
+00:00:15,300 --> 00:00:17,600
+You've got quite a reputation.
+
+5
+00:00:18,000 --> 00:00:21,000
+I'm very proud...
+
+6
+00:00:22,000 --> 00:00:27,800
+I need you to understand that this company is trying to do good for the world.
+
+7
+00:00:28,100 --> 00:00:36,600
+The sole purpose of Intellect, or as you also know it, Project Mayhem, is to increase human efficiency.
+
+8
+00:00:37,000 --> 00:00:39,300
+Let me show you a little demo.
+
+# ===== lvl7Outro =====
+
+9
+00:00:00,200 --> 00:00:02,900
+That took a while for you to complete.
+
+10
+00:00:03,400 --> 00:00:11,200
+See, if you had been enhanced with Intellect, you could have done that puzzle and completed it within a few seconds, or less.
+
+11
+00:00:11,600 --> 00:00:16,500
+The point I'm trying to make here is that Intellect will greatly increase human efficiency.
+
+12
+00:00:16,800 --> 00:00:23,100
+And not only that, it'll make people more responsible, and more safe.
+
+13
+00:00:23,400 --> 00:00:35,500
+Imagine a world where you could be writing a 50-page thesis paper for your PhD while drinking coffee with your friends, and finish that paper within 30 minutes.
+
+14
+00:00:35,700 --> 00:00:37,500
+That's what Intellect can do.
+
+15
+00:00:37,600 --> 00:00:43,000
+Not only that, but people will be more informed on issues that plague society.
+
+16
+00:00:43,200 --> 00:00:47,200
+This is why we do this: to make the world a better place.
+
+17
+00:00:47,400 --> 00:00:48,700
+We are not the enemy.
+
+18
+00:00:48,900 --> 00:00:54,000
+You can go ahead and continue your investigation if you want, but it's just wasting your time.
+
+19
+00:00:54,500 --> 00:00:58,600
+Anyway, can I offer you a piece of advice?
+
+20
+00:00:59,100 --> 00:01:01,600
+Don't trust that commander of yours.
+
+21
+00:01:01,800 --> 00:01:03,600
+Goodbye, Kiddo.
+
+# ===== ProjectVenomTrailer =====
+
+22
+00:00:10,000 --> 00:00:13,500
+Hey Victoria...
+
+23
+00:00:18,400 --> 00:00:22,000
+...it's me.
+
+24
+00:00:24,200 --> 00:00:30,000
+Listen, I wanted to thank you for protecting Branechild and keeping him safe.
+
+25
+00:00:30,100 --> 00:00:33,100
+I know it's not the ideal task, but you're doing really well.
+
+26
+00:00:33,200 --> 00:00:37,400
+Apparently, our little friend Q is still alive.
+
+27
+00:00:37,600 --> 00:00:39,900
+You know what that means.
+
+28
+00:00:40,100 --> 00:00:43,800
+Welcome to Project Venom.
+
+# ===== subPostChapter15 =====
+
+29
+00:00:01,000 --> 00:00:04,600
+I told you,
+
+30
+00:00:05,400 --> 00:00:10,500
+we need to talk.
+
+31
+00:00:12,000 --> 00:00:13,800
+Please,
+
+32
+00:00:14,600 --> 00:00:15,900
+sit.
+
+33
+00:00:16,600 --> 00:00:19,900
+I figured I need to explain, lay everything on the table.
+
+34
+00:00:20,000 --> 00:00:22,400
+Quite frankly, I'm surprised you hadn't got what you needed yet.
+
+35
+00:00:22,500 --> 00:00:24,900
+Our security isn't that tight.
+
+36
+00:00:25,100 --> 00:00:29,500
+Here, everything you need to know is on here.
+
+37
+00:00:29,800 --> 00:00:31,400
+I know, cliché.
+
+38
+00:00:31,700 --> 00:00:33,500
+But before I do,
+
+39
+00:00:33,800 --> 00:00:40,600
+I have a question for you.
+
+40
+00:00:41,900 --> 00:00:50,600
+What exactly did you encounter...
+
+41
+00:00:51,100 --> 00:00:53,900
+...in our security?
+
+42
+00:00:56,800 --> 00:00:58,800
+Of course.
+
+43
+00:01:00,800 --> 00:01:04,000
+Don't worry about it.
+
+44
+00:01:04,400 --> 00:01:09,600
+A magician never reveals his secrets.
+
+45
+00:01:10,700 --> 00:01:12,400
+Let me tell you something.
+
+46
+00:01:12,700 --> 00:01:14,800
+I was once part of the Defenders, too.
+
+47
+00:01:14,900 --> 00:01:19,000
+I served in the first nuclear prevention squadron, codenamed King.
+
+48
+00:01:19,100 --> 00:01:23,900
+I left because of details that you don't need to worry yourself with.
+
+49
+00:01:24,100 --> 00:01:29,600
+They wanted me to do things that I just didn't want to do.
+
+50
+00:01:29,900 --> 00:01:33,300
+Anyway, I hope you find what you need.
+
+51
+00:01:33,600 --> 00:01:38,500
+And just a quick FYI, we are not the ones you should be investigating.
+
+52
+00:01:38,800 --> 00:01:40,100
+You've got bigger fish to fry.
+
+53
+00:01:40,200 --> 00:01:44,600
+Also, I love your codename, although I think it's spelled wrong.
+

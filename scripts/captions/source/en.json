@@ -1,28 +1,28 @@
 {
 "lvl7Intro": [
 [
-0.0,
-4.8,
+0.1,
+4.9,
 "Hi there. I see you're trying to access something you probably shouldn't."
 ],
 [
-4.9,
-9.6,
+5.3,
+9.8,
 "That's okay. Transparency is the key to trust, and I trust you."
 ],
 [
 10.0,
-14.8,
+15.0,
 "I know the Defenders very well, and I've been keeping very close tabs on you."
 ],
 [
-15.0,
-17.8,
+15.3,
+17.6,
 "You've got quite a reputation."
 ],
 [
 18.0,
-21.5,
+21.0,
 "I'm very proud..."
 ],
 [
@@ -31,8 +31,8 @@
 "I need you to understand that this company is trying to do good for the world."
 ],
 [
-28.0,
-36.8,
+28.1,
+36.6,
 "The sole purpose of Intellect, or as you also know it, Project Mayhem, is to increase human efficiency."
 ],
 [
@@ -43,28 +43,28 @@
 ],
 "lvl7Outro": [
 [
-0.0,
-2.8,
+0.2,
+2.9,
 "That took a while for you to complete."
 ],
 [
-3.0,
-11.0,
+3.4,
+11.2,
 "See, if you had been enhanced with Intellect, you could have done that puzzle and completed it within a few seconds, or less."
 ],
 [
-11.4,
+11.6,
 16.5,
 "The point I'm trying to make here is that Intellect will greatly increase human efficiency."
 ],
 [
 16.8,
-23.0,
+23.1,
 "And not only that, it'll make people more responsible, and more safe."
 ],
 [
 23.4,
-35.4,
+35.5,
 "Imagine a world where you could be writing a 50-page thesis paper for your PhD while drinking coffee with your friends, and finish that paper within 30 minutes."
 ],
 [
@@ -83,167 +83,192 @@
 "This is why we do this: to make the world a better place."
 ],
 [
-47.3,
+47.4,
 48.7,
 "We are not the enemy."
 ],
 [
-48.8,
-53.9,
+48.9,
+54.0,
 "You can go ahead and continue your investigation if you want, but it's just wasting your time."
 ],
 [
-54.4,
-58.5,
+54.5,
+58.6,
 "Anyway, can I offer you a piece of advice?"
 ],
 [
-59.0,
+59.1,
 61.6,
 "Don't trust that commander of yours."
 ],
 [
-61.7,
-63.5,
+61.8,
+63.6,
 "Goodbye, Kiddo."
 ]
 ],
 "ProjectVenomTrailer": [
 [
 10.0,
-21.5,
-"Hey Victoria... it's me."
+13.5,
+"Hey Victoria..."
 ],
 [
-24.0,
-29.9,
+18.4,
+22.0,
+"...it's me."
+],
+[
+24.2,
+30.0,
 "Listen, I wanted to thank you for protecting Branechild and keeping him safe."
 ],
 [
-30.0,
-33.0,
+30.1,
+33.1,
 "I know it's not the ideal task, but you're doing really well."
 ],
 [
 33.2,
-37.3,
+37.4,
 "Apparently, our little friend Q is still alive."
 ],
 [
-37.5,
-39.8,
+37.6,
+39.9,
 "You know what that means."
 ],
 [
-40.0,
-43.5,
+40.1,
+43.8,
 "Welcome to Project Venom."
 ]
 ],
 "subPostChapter15": [
 [
-0.8,
-9.8,
-"I told you, we need to talk."
+1.0,
+4.6,
+"I told you,"
 ],
 [
-11.0,
-15.0,
-"Please, sit."
+5.4,
+10.5,
+"we need to talk."
 ],
 [
-16.0,
-19.4,
+12.0,
+13.8,
+"Please,"
+],
+[
+14.6,
+15.9,
+"sit."
+],
+[
+16.6,
+19.9,
 "I figured I need to explain, lay everything on the table."
 ],
 [
-19.5,
-22.6,
+20.0,
+22.4,
 "Quite frankly, I'm surprised you hadn't got what you needed yet."
 ],
 [
-22.7,
-24.8,
+22.5,
+24.9,
 "Our security isn't that tight."
 ],
 [
-25.2,
-28.8,
+25.1,
+29.5,
 "Here, everything you need to know is on here."
 ],
 [
-29.3,
-30.9,
+29.8,
+31.4,
 "I know, cliché."
 ],
 [
-31.0,
-40.0,
-"But before I do, I have a question for you."
+31.7,
+33.5,
+"But before I do,"
 ],
 [
-41.0,
-52.8,
-"What exactly did you encounter in our security?"
+33.8,
+40.6,
+"I have a question for you."
 ],
 [
-56.0,
-58.5,
+41.9,
+50.6,
+"What exactly did you encounter..."
+],
+[
+51.1,
+53.9,
+"...in our security?"
+],
+[
+56.8,
+58.8,
 "Of course."
 ],
 [
 60.8,
-63.5,
+64.0,
 "Don't worry about it."
 ],
 [
-64.0,
-69.0,
+64.4,
+69.6,
 "A magician never reveals his secrets."
 ],
 [
-70.0,
-72.0,
+70.7,
+72.4,
 "Let me tell you something."
 ],
 [
-72.2,
-74.5,
+72.7,
+74.8,
 "I was once part of the Defenders, too."
 ],
 [
-74.6,
-78.8,
+74.9,
+79.0,
 "I served in the first nuclear prevention squadron, codenamed King."
 ],
 [
-79.0,
-83.5,
+79.1,
+83.9,
 "I left because of details that you don't need to worry yourself with."
 ],
 [
-84.5,
-89.5,
+84.1,
+89.6,
 "They wanted me to do things that I just didn't want to do."
 ],
 [
-89.6,
-92.9,
+89.9,
+93.3,
 "Anyway, I hope you find what you need."
 ],
 [
-93.2,
-98.0,
+93.6,
+98.5,
 "And just a quick FYI, we are not the ones you should be investigating."
 ],
 [
-98.2,
-100.0,
+98.8,
+100.1,
 "You've got bigger fish to fry."
 ],
 [
 100.2,
-104.5,
+104.6,
 "Also, I love your codename, although I think it's spelled wrong."
 ]
 ]
