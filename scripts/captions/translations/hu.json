@@ -1,4 +1,5 @@
-{"lvl7Intro":[
+{
+"lvl7Intro": [
 "Szia. Látom, olyasmihez próbálsz hozzáférni, amihez valószínűleg nem kellene.",
 "Semmi baj. Az átláthatóság a bizalom kulcsa, és én bízom benned.",
 "Nagyon jól ismerem a Defenderst, és nagyon szorosan figyeltelek.",
@@ -7,7 +8,8 @@
 "Meg kell értened, hogy ez a cég jót akar tenni a világnak.",
 "Az Intellect, vagy ahogy te ismered, a Project Mayhem egyetlen célja az emberi hatékonyság növelése.",
 "Hadd mutassak egy kis bemutatót."
-],"lvl7Outro":[
+],
+"lvl7Outro": [
 "Ez eltartott egy ideig.",
 "Látod, ha az Intellecttel fejlesztettek volna, ezt a rejtvényt néhány másodperc alatt, vagy még gyorsabban megoldottad volna.",
 "A lényeg, hogy az Intellect hatalmas mértékben növeli majd az emberi hatékonyságot.",
@@ -20,15 +22,17 @@
 "Nyugodtan folytathatod a nyomozásodat, ha akarod, de csak az idődet pazarolod.",
 "Mindenesetre, adhatok egy tanácsot?",
 "Ne bízz abban a parancsnokodban.",
-"Viszlát, Kato."
-],"ProjectVenomTrailer":[
+"Viszlát, kölyök."
+],
+"ProjectVenomTrailer": [
 "Szia Victoria... én vagyok az.",
-"Figyelj, meg akartam köszönni, hogy megvédted Brain Childot és biztonságban tartottad.",
+"Figyelj, meg akartam köszönni, hogy megvédted Branechildot és biztonságban tartottad.",
 "Tudom, hogy nem ideális feladat, de nagyon jól csinálod.",
 "Úgy tűnik, a kis barátunk, Q még mindig él.",
 "Tudod, mit jelent ez.",
 "Üdv a Project Venomban."
-],"subPostChapter15":[
+],
+"subPostChapter15": [
 "Mondtam, hogy beszélnünk kell.",
 "Kérlek, ülj le.",
 "Gondoltam, el kell magyaráznom, mindent az asztalra tenni.",
@@ -50,4 +54,5 @@
 "És csak tájékoztatásul: nem minket kellene vizsgálnod.",
 "Nagyobb halakra kell vadásznod.",
 "Egyébként imádom a fedőnevedet, bár szerintem rosszul van írva."
-]}
+]
+}

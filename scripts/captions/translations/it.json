@@ -1,4 +1,5 @@
-{"lvl7Intro":[
+{
+"lvl7Intro": [
 "Ciao. Vedo che stai cercando di accedere a qualcosa che probabilmente non dovresti.",
 "Non fa niente. La trasparenza è la chiave della fiducia, e io mi fido di te.",
 "Conosco molto bene i Defenders, e ti ho tenuto d'occhio molto da vicino.",
@@ -7,7 +8,8 @@
 "Devi capire che questa azienda sta cercando di fare del bene per il mondo.",
 "L'unico scopo di Intellect, o come lo conosci tu, Project Mayhem, è aumentare l'efficienza umana.",
 "Lascia che ti mostri una piccola dimostrazione."
-],"lvl7Outro":[
+],
+"lvl7Outro": [
 "Ci hai messo un bel po' a completarlo.",
 "Vedi, se fossi stato potenziato con Intellect, avresti potuto risolvere quel rompicapo in pochi secondi, o meno.",
 "Il punto è che Intellect aumenterà enormemente l'efficienza umana.",
@@ -20,15 +22,17 @@
 "Puoi pure continuare la tua indagine se vuoi, ma stai solo perdendo tempo.",
 "Comunque, posso darti un consiglio?",
 "Non fidarti di quel tuo comandante.",
-"Addio, Kato."
-],"ProjectVenomTrailer":[
+"Addio, ragazzo."
+],
+"ProjectVenomTrailer": [
 "Ehi Victoria... sono io.",
-"Ascolta, volevo ringraziarti per aver protetto Brain Child e averlo tenuto al sicuro.",
+"Ascolta, volevo ringraziarti per aver protetto Branechild e averlo tenuto al sicuro.",
 "So che non è il compito ideale, ma te la stai cavando davvero bene.",
 "A quanto pare, il nostro piccolo amico Q è ancora vivo.",
 "Sai cosa significa.",
 "Benvenuta in Project Venom."
-],"subPostChapter15":[
+],
+"subPostChapter15": [
 "Te l'avevo detto, dobbiamo parlare.",
 "Prego, siediti.",
 "Ho pensato che dovessi spiegare, mettere tutto sul tavolo.",
@@ -50,4 +54,5 @@
 "E giusto per informazione: non siamo noi quelli su cui dovresti indagare.",
 "Hai pesci più grossi da friggere.",
 "E poi, adoro il tuo nome in codice, anche se credo sia scritto male."
-]}
+]
+}

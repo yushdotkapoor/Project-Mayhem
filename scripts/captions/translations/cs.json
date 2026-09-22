@@ -1,4 +1,5 @@
-{"lvl7Intro":[
+{
+"lvl7Intro": [
 "Ahoj. Vidím, že se snažíš dostat k něčemu, k čemu bys asi neměl.",
 "To nevadí. Transparentnost je klíčem k důvěře a já ti věřím.",
 "Znám Defenders velmi dobře a velmi pozorně jsem tě sledoval.",
@@ -7,7 +8,8 @@
 "Musíš pochopit, že tato společnost se snaží dělat pro svět dobro.",
 "Jediným účelem Intellectu, nebo jak ho také znáš, Project Mayhem, je zvýšit lidskou efektivitu.",
 "Ukážu ti malou ukázku."
-],"lvl7Outro":[
+],
+"lvl7Outro": [
 "To ti chvíli trvalo.",
 "Víš, kdybys byl vylepšen Intellectem, mohl jsi ten hlavolam vyřešit během několika sekund, nebo rychleji.",
 "Chci tím říct, že Intellect výrazně zvýší lidskou efektivitu.",
@@ -20,15 +22,17 @@
 "Klidně můžeš pokračovat ve svém vyšetřování, ale jen ztrácíš čas.",
 "Každopádně, můžu ti dát radu?",
 "Nevěř tomu svému veliteli.",
-"Sbohem, Kato."
-],"ProjectVenomTrailer":[
+"Sbohem, chlapče."
+],
+"ProjectVenomTrailer": [
 "Ahoj Victorie... to jsem já.",
-"Poslouchej, chtěl jsem ti poděkovat, že chráníš Brain Childa a držíš ho v bezpečí.",
+"Poslouchej, chtěl jsem ti poděkovat, že chráníš Branechilda a držíš ho v bezpečí.",
 "Vím, že to není ideální úkol, ale vedeš si opravdu dobře.",
 "Zjevně je náš malý přítel Q stále naživu.",
 "Víš, co to znamená.",
 "Vítej v Project Venom."
-],"subPostChapter15":[
+],
+"subPostChapter15": [
 "Říkal jsem ti, že si musíme promluvit.",
 "Prosím, posaď se.",
 "Řekl jsem si, že musím všechno vysvětlit, vyložit karty na stůl.",
@@ -50,4 +54,5 @@
 "A jen pro informaci: nejsme ti, které bys měl vyšetřovat.",
 "Máš na práci důležitější věci.",
 "A taky miluju tvoje krycí jméno, i když si myslím, že je napsané špatně."
-]}
+]
+}

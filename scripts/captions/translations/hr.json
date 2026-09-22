@@ -1,4 +1,5 @@
-{"lvl7Intro":[
+{
+"lvl7Intro": [
 "Bok. Vidim da pokušavaš pristupiti nečemu čemu vjerojatno ne bi trebao.",
 "U redu je. Transparentnost je ključ povjerenja, a ja ti vjerujem.",
 "Vrlo dobro poznajem Defenderse i vrlo sam te pomno pratio.",
@@ -7,7 +8,8 @@
 "Moraš shvatiti da ova tvrtka pokušava činiti dobro za svijet.",
 "Jedina svrha Intellecta, ili kako ga ti znaš, Project Mayhema, jest povećati ljudsku učinkovitost.",
 "Dopusti da ti pokažem malu demonstraciju."
-],"lvl7Outro":[
+],
+"lvl7Outro": [
 "Trebalo ti je neko vrijeme da to dovršiš.",
 "Vidiš, da si bio poboljšan Intellectom, mogao si tu zagonetku riješiti u nekoliko sekundi, ili brže.",
 "Želim reći da će Intellect uvelike povećati ljudsku učinkovitost.",
@@ -20,15 +22,17 @@
 "Možeš nastaviti svoju istragu ako želiš, ali samo gubiš vrijeme.",
 "Uglavnom, mogu li ti dati savjet?",
 "Ne vjeruj tom svom zapovjedniku.",
-"Zbogom, Kato."
-],"ProjectVenomTrailer":[
+"Zbogom, mali."
+],
+"ProjectVenomTrailer": [
 "Hej Victoria... ja sam.",
-"Slušaj, htio sam ti zahvaliti što štitiš Brain Childa i čuvaš ga na sigurnom.",
+"Slušaj, htio sam ti zahvaliti što štitiš Branechilda i čuvaš ga na sigurnom.",
 "Znam da to nije idealan zadatak, ali stvarno ti dobro ide.",
 "Očito je naš mali prijatelj Q još uvijek živ.",
 "Znaš što to znači.",
 "Dobro došla u Project Venom."
-],"subPostChapter15":[
+],
+"subPostChapter15": [
 "Rekao sam ti, moramo razgovarati.",
 "Molim te, sjedni.",
 "Shvatio sam da moram sve objasniti, staviti sve karte na stol.",
@@ -50,4 +54,5 @@
 "I samo da znaš: nismo mi ti koje bi trebao istraživati.",
 "Imaš većeg posla.",
 "Osim toga, obožavam tvoje kodno ime, iako mislim da je krivo napisano."
-]}
+]
+}

@@ -1,4 +1,5 @@
-{"lvl7Intro":[
+{
+"lvl7Intro": [
 "Halo. Kulihat kau mencoba mengakses sesuatu yang mungkin seharusnya tidak kau akses.",
 "Tidak apa-apa. Transparansi adalah kunci kepercayaan, dan aku memercayaimu.",
 "Aku sangat mengenal Defenders, dan aku sudah mengawasimu dengan sangat cermat.",
@@ -7,7 +8,8 @@
 "Kau perlu memahami bahwa perusahaan ini berusaha berbuat baik bagi dunia.",
 "Satu-satunya tujuan Intellect, atau yang kau kenal sebagai Project Mayhem, adalah meningkatkan efisiensi manusia.",
 "Biar kutunjukkan sedikit demo."
-],"lvl7Outro":[
+],
+"lvl7Outro": [
 "Butuh waktu cukup lama bagimu untuk menyelesaikannya.",
 "Lihat, jika kau telah ditingkatkan dengan Intellect, kau bisa menyelesaikan teka-teki itu dalam beberapa detik, atau kurang.",
 "Maksudku, Intellect akan sangat meningkatkan efisiensi manusia.",
@@ -20,15 +22,17 @@
 "Silakan lanjutkan penyelidikanmu jika mau, tapi itu hanya membuang-buang waktu.",
 "Omong-omong, boleh kuberi satu saran?",
 "Jangan percaya pada komandanmu itu.",
-"Selamat tinggal, Kato."
-],"ProjectVenomTrailer":[
+"Selamat tinggal, Nak."
+],
+"ProjectVenomTrailer": [
 "Hei Victoria... ini aku.",
-"Dengar, aku ingin berterima kasih karena kau telah melindungi Brain Child dan menjaganya tetap aman.",
+"Dengar, aku ingin berterima kasih karena kau telah melindungi Branechild dan menjaganya tetap aman.",
 "Aku tahu ini bukan tugas yang ideal, tapi kau melakukannya dengan sangat baik.",
 "Rupanya, teman kecil kita Q masih hidup.",
 "Kau tahu apa artinya itu.",
 "Selamat datang di Project Venom."
-],"subPostChapter15":[
+],
+"subPostChapter15": [
 "Sudah kubilang, kita perlu bicara.",
 "Silakan duduk.",
 "Kupikir aku perlu menjelaskan, membeberkan semuanya.",
@@ -50,4 +54,5 @@
 "Dan sekadar info: bukan kami yang seharusnya kau selidiki.",
 "Ada urusan yang lebih besar untukmu.",
 "Selain itu, aku suka nama sandimu, meski kurasa ejaannya salah."
-]}
+]
+}

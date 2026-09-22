@@ -1,4 +1,5 @@
-{"lvl7Intro":[
+{
+"lvl7Intro": [
 "Hallo daar. Ik zie dat je toegang probeert te krijgen tot iets wat je waarschijnlijk niet zou moeten.",
 "Dat is oké. Transparantie is de sleutel tot vertrouwen, en ik vertrouw jou.",
 "Ik ken de Defenders heel goed, en ik heb je heel nauwlettend in de gaten gehouden.",
@@ -7,7 +8,8 @@
 "Je moet begrijpen dat dit bedrijf goed probeert te doen voor de wereld.",
 "Het enige doel van Intellect, of zoals jij het ook kent, Project Mayhem, is het vergroten van de menselijke efficiëntie.",
 "Laat me je een kleine demo laten zien."
-],"lvl7Outro":[
+],
+"lvl7Outro": [
 "Dat duurde even voordat je het af had.",
 "Kijk, als je verbeterd was met Intellect, had je die puzzel binnen een paar seconden, of minder, kunnen oplossen.",
 "Wat ik wil zeggen is dat Intellect de menselijke efficiëntie enorm zal vergroten.",
@@ -20,15 +22,17 @@
 "Je mag je onderzoek gerust voortzetten, maar je verspilt alleen je tijd.",
 "Hoe dan ook, mag ik je een advies geven?",
 "Vertrouw die commandant van je niet.",
-"Vaarwel, Kato."
-],"ProjectVenomTrailer":[
+"Vaarwel, jochie."
+],
+"ProjectVenomTrailer": [
 "Hé Victoria... ik ben het.",
-"Luister, ik wilde je bedanken dat je Brain Child hebt beschermd en veilig hebt gehouden.",
+"Luister, ik wilde je bedanken dat je Branechild hebt beschermd en veilig hebt gehouden.",
 "Ik weet dat het niet de ideale taak is, maar je doet het echt goed.",
 "Blijkbaar leeft onze kleine vriend Q nog.",
 "Je weet wat dat betekent.",
 "Welkom bij Project Venom."
-],"subPostChapter15":[
+],
+"subPostChapter15": [
 "Ik zei het toch, we moeten praten.",
 "Ga alsjeblieft zitten.",
 "Ik dacht dat ik het moest uitleggen, alles op tafel leggen.",
@@ -50,4 +54,5 @@
 "En even ter info: wij zijn niet degenen die je zou moeten onderzoeken.",
 "Je hebt grotere vissen te vangen.",
 "Trouwens, ik vind je codenaam geweldig, al denk ik dat hij verkeerd gespeld is."
-]}
+]
+}

@@ -1,3 +1,6 @@
 Project\ Mayhem/Helpers/Chat/Credentials.swift
 Project\ Mayhem/GoogleService-Info.plist
 .DS_Store
+
+# Caption build output (large mp4s)
+scripts/captions/build/

@@ -1,4 +1,5 @@
-{"lvl7Intro":[
+{
+"lvl7Intro": [
 "Merhaba. Görüyorum ki muhtemelen erişmemen gereken bir şeye erişmeye çalışıyorsun.",
 "Sorun değil. Şeffaflık güvenin anahtarıdır ve ben sana güveniyorum.",
 "Defenders'ı çok iyi tanıyorum ve seni çok yakından takip ediyordum.",
@@ -7,7 +8,8 @@
 "Bu şirketin dünya için iyilik yapmaya çalıştığını anlaman gerekiyor.",
 "Intellect'in, ya da senin bildiğin adıyla Project Mayhem'in tek amacı insan verimliliğini artırmaktır.",
 "Sana küçük bir gösteri yapayım."
-],"lvl7Outro":[
+],
+"lvl7Outro": [
 "Bunu tamamlaman biraz uzun sürdü.",
 "Bak, Intellect ile geliştirilmiş olsaydın, o bulmacayı birkaç saniyede, hatta daha kısa sürede çözebilirdin.",
 "Anlatmak istediğim şu: Intellect insan verimliliğini muazzam ölçüde artıracak.",
@@ -20,15 +22,17 @@
 "İstersen soruşturmana devam edebilirsin ama sadece vaktini boşa harcıyorsun.",
 "Neyse, sana bir tavsiye verebilir miyim?",
 "Şu komutanına güvenme.",
-"Hoşça kal, Kato."
-],"ProjectVenomTrailer":[
+"Hoşça kal, evlat."
+],
+"ProjectVenomTrailer": [
 "Selam Victoria... benim.",
-"Dinle, Brain Child'ı koruduğun ve güvende tuttuğun için teşekkür etmek istedim.",
+"Dinle, Branechild'ı koruduğun ve güvende tuttuğun için teşekkür etmek istedim.",
 "İdeal bir görev olmadığını biliyorum ama gerçekten iyi iş çıkarıyorsun.",
 "Görünüşe göre küçük dostumuz Q hâlâ hayatta.",
 "Bunun ne anlama geldiğini biliyorsun.",
 "Project Venom'a hoş geldin."
-],"subPostChapter15":[
+],
+"subPostChapter15": [
 "Söylemiştim, konuşmamız gerek.",
 "Lütfen otur.",
 "Açıklamam, her şeyi masaya yatırmam gerektiğini düşündüm.",
@@ -50,4 +54,5 @@
 "Ve bilgin olsun: soruşturman gerekenler biz değiliz.",
 "Kızartacak daha büyük balıkların var.",
 "Ayrıca kod adına bayılıyorum, gerçi bence yanlış yazılmış."
-]}
+]
+}

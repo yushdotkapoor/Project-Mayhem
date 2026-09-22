@@ -1,4 +1,5 @@
-{"lvl7Intro":[
+{
+"lvl7Intro": [
 "Hej där. Jag ser att du försöker komma åt något du förmodligen inte borde.",
 "Det är okej. Transparens är nyckeln till förtroende, och jag litar på dig.",
 "Jag känner Defenders mycket väl, och jag har hållit mycket noga koll på dig.",
@@ -7,7 +8,8 @@
 "Du måste förstå att det här företaget försöker göra gott för världen.",
 "Det enda syftet med Intellect, eller som du också känner det, Project Mayhem, är att öka den mänskliga effektiviteten.",
 "Låt mig visa dig en liten demo."
-],"lvl7Outro":[
+],
+"lvl7Outro": [
 "Det tog ett tag för dig att klara det.",
 "Ser du, om du hade förbättrats med Intellect hade du kunnat lösa det pusslet på några sekunder, eller mindre.",
 "Poängen jag vill göra är att Intellect kommer att öka den mänskliga effektiviteten enormt.",
@@ -20,15 +22,17 @@
 "Du får gärna fortsätta din utredning om du vill, men du slösar bara bort din tid.",
 "Hur som helst, får jag ge dig ett råd?",
 "Lita inte på den där befälhavaren du har.",
-"Adjö, Kato."
-],"ProjectVenomTrailer":[
+"Adjö, grabben."
+],
+"ProjectVenomTrailer": [
 "Hej Victoria... det är jag.",
-"Hör på, jag ville tacka dig för att du skyddade Brain Child och höll honom säker.",
+"Hör på, jag ville tacka dig för att du skyddade Branechild och höll honom säker.",
 "Jag vet att det inte är det ideala uppdraget, men du sköter det riktigt bra.",
 "Tydligen lever vår lilla vän Q fortfarande.",
 "Du vet vad det betyder.",
 "Välkommen till Project Venom."
-],"subPostChapter15":[
+],
+"subPostChapter15": [
 "Jag sa ju det, vi måste prata.",
 "Varsågod, sitt ner.",
 "Jag tänkte att jag borde förklara, lägga alla kort på bordet.",
@@ -50,4 +54,5 @@
 "Och bara så du vet: det är inte oss du borde utreda.",
 "Du har större fiskar att fånga.",
 "Förresten, jag älskar ditt kodnamn, fast jag tror att det är felstavat."
-]}
+]
+}

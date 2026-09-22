@@ -1,4 +1,5 @@
-{"lvl7Intro":[
+{
+"lvl7Intro": [
 "Chào. Tôi thấy cậu đang cố truy cập vào thứ mà có lẽ cậu không nên.",
 "Không sao. Minh bạch là chìa khóa của lòng tin, và tôi tin cậu.",
 "Tôi biết rất rõ Defenders, và tôi đã theo dõi cậu rất sát sao.",
@@ -7,7 +8,8 @@
 "Tôi cần cậu hiểu rằng công ty này đang cố gắng làm điều tốt cho thế giới.",
 "Mục đích duy nhất của Intellect, hay như cậu vẫn biết, Project Mayhem, là nâng cao hiệu suất của con người.",
 "Để tôi cho cậu xem một màn trình diễn nhỏ."
-],"lvl7Outro":[
+],
+"lvl7Outro": [
 "Cậu mất khá nhiều thời gian để hoàn thành đấy.",
 "Thấy chưa, nếu cậu được nâng cấp bằng Intellect, cậu đã có thể giải câu đố đó trong vài giây, hoặc ít hơn.",
 "Điều tôi muốn nói là Intellect sẽ nâng cao hiệu suất của con người lên rất nhiều.",
@@ -20,15 +22,17 @@
 "Cậu cứ tiếp tục điều tra nếu muốn, nhưng chỉ phí thời gian thôi.",
 "Dù sao thì, tôi có thể cho cậu một lời khuyên không?",
 "Đừng tin vị chỉ huy đó của cậu.",
-"Tạm biệt, Kato."
-],"ProjectVenomTrailer":[
+"Tạm biệt, nhóc."
+],
+"ProjectVenomTrailer": [
 "Này Victoria... là tôi đây.",
-"Nghe này, tôi muốn cảm ơn cô vì đã bảo vệ Brain Child và giữ cậu ấy an toàn.",
+"Nghe này, tôi muốn cảm ơn cô vì đã bảo vệ Branechild và giữ cậu ấy an toàn.",
 "Tôi biết đây không phải nhiệm vụ lý tưởng, nhưng cô đang làm rất tốt.",
 "Có vẻ như người bạn nhỏ Q của chúng ta vẫn còn sống.",
 "Cô biết điều đó có nghĩa là gì mà.",
 "Chào mừng đến với Project Venom."
-],"subPostChapter15":[
+],
+"subPostChapter15": [
 "Tôi đã nói rồi, chúng ta cần nói chuyện.",
 "Mời ngồi.",
 "Tôi nghĩ mình cần giải thích, nói hết mọi chuyện ra.",
@@ -50,4 +54,5 @@
 "Và nói để cậu biết: chúng tôi không phải những kẻ cậu nên điều tra.",
 "Cậu còn có mục tiêu lớn hơn để nhắm tới.",
 "À, tôi rất thích mật danh của cậu, dù tôi nghĩ nó bị viết sai chính tả."
-]}
+]
+}
