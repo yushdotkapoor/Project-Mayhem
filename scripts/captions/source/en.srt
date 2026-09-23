@@ -155,11 +155,11 @@ But before I do, I have a question for you.
 What exactly did you encounter in our security?
 
 42
-00:01:01,000 --> 00:01:2,800
+00:01:00,000 --> 00:01:2,400
 Of course.
 
 43
-00:01:02,800 --> 00:01:04,800
+00:01:02,600 --> 00:01:04,800
 Don't worry about it.
 
 44
@@ -167,7 +167,7 @@ Don't worry about it.
 A magician never reveals his secrets.
 
 45
-00:01:10,5 00 --> 00:01:12,400
+00:01:10,500 --> 00:01:12,400
 Let me tell you something.
 
 46
